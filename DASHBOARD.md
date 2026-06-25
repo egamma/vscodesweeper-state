@@ -2,9 +2,9 @@
 
 Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**23** issues reviewed · generated 2026-06-25 18:34 UTC
+**23** issues reviewed · generated 2026-06-25 19:57 UTC
 
-propose-close: **4** · needs-info: **1** · keep-open: **18**
+propose-close: **4** · keep-open: **19**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -12,12 +12,12 @@ propose-close: **4** · needs-info: **1** · keep-open: **18**
 | aeschli | [#46654](https://github.com/microsoft/vscode/issues/46654) | [folding] Fold block comments scrolls editor | bug | keep-open | none | 93% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/46654.md) | 2026-06-24 |
 | alexdima | [#41574](https://github.com/microsoft/vscode/issues/41574) | Can we get a few more pixels for clicking the cursor at the beginning of a line? | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/41574.md) | 2026-06-24 |
 | alexdima | [#82087](https://github.com/microsoft/vscode/issues/82087) | Scrollbar in editor is off | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/82087.md) | 2026-06-24 |
-| alexdima | [#87741](https://github.com/microsoft/vscode/issues/87741) | Auto save & new line prevents undo from working | bug | keep-open | none | 78% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/87741.md) | 2026-06-24 |
-| alexdima | [#104844](https://github.com/microsoft/vscode/issues/104844) | Undo behavior: non-focused panel scrolls | bug | needs-info | info-needed | 68% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/104844.md) | 2026-06-24 |
+| alexdima | [#87741](https://github.com/microsoft/vscode/issues/87741) | Auto save & new line prevents undo from working | bug | keep-open | none | 72% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/87741.md) | 2026-06-25 |
+| alexdima | [#104844](https://github.com/microsoft/vscode/issues/104844) | Undo behavior: non-focused panel scrolls | bug | keep-open | none | 66% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/104844.md) | 2026-06-25 |
 | alexdima | [#113854](https://github.com/microsoft/vscode/issues/113854) | "Cannot edit in read-only editor" tooltip may not show in web version | bug | keep-open | none | 93% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/113854.md) | 2026-06-24 |
 | alexdima | [#117327](https://github.com/microsoft/vscode/issues/117327) | An extension spamming console.log will take a lot of CPU time in the render process | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/117327.md) | 2026-06-24 |
 | alexdima | [#117664](https://github.com/microsoft/vscode/issues/117664) | Diff editor scrolls horizontally when dragging selection vertically | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/117664.md) | 2026-06-24 |
-| alexdima | [#118892](https://github.com/microsoft/vscode/issues/118892) | Word wrapping incorrect for variable width font with formatting that changes the width of characters | bug | keep-open | none | 74% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/118892.md) | 2026-06-24 |
+| alexdima | [#118892](https://github.com/microsoft/vscode/issues/118892) | Word wrapping incorrect for variable width font with formatting that changes the width of characters | bug | keep-open | none | 72% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/118892.md) | 2026-06-25 |
 | alexdima | [#118893](https://github.com/microsoft/vscode/issues/118893) | Using key commands to scroll to top or bottom of document does not incorporate editor.paddingTop and editor.paddingButtom | bug | keep-open | none | 74% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/118893.md) | 2026-06-24 |
 | alexdima | [#124095](https://github.com/microsoft/vscode/issues/124095) | Invalid syntax in web worker | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/124095.md) | 2026-06-24 |
 | alexdima | [#124154](https://github.com/microsoft/vscode/issues/124154) | Calling `TextEditorEdit.replace` to replace a line of text introduces a partial selection of the new text | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/124154.md) | 2026-06-24 |
