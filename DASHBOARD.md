@@ -2,7 +2,7 @@
 
 Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**100** issues reviewed · generated 2026-06-25 20:45 UTC
+**100** issues reviewed · generated 2026-06-25 21:03 UTC
 
 propose-close: **3** · keep-open: **97**
 
