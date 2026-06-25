@@ -2,9 +2,9 @@
 
 Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**25** issues reviewed · generated 2026-06-24 18:32 UTC
+**23** issues reviewed · generated 2026-06-25 18:34 UTC
 
-propose-close: **6** · needs-info: **1** · keep-open: **18**
+propose-close: **4** · needs-info: **1** · keep-open: **18**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -29,7 +29,5 @@ propose-close: **6** · needs-info: **1** · keep-open: **18**
 | alexdima | [#135137](https://github.com/microsoft/vscode/issues/135137) | Cannot toggle Tab Trapping | bug | propose-close | none | 93% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/135137.md) | 2026-06-24 |
 | alexdima | [#135981](https://github.com/microsoft/vscode/issues/135981) | VScode copy to Onenote missing blank line | bug | propose-close | *out-of-scope | 82% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/135981.md) | 2026-06-24 |
 | alexdima | [#139340](https://github.com/microsoft/vscode/issues/139340) | Long text always wrap | bug | propose-close | none | 91% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/139340.md) | 2026-06-24 |
-| connor4312 | [#320253](https://github.com/microsoft/vscode/issues/320253) | run and debug | question | propose-close | *as-designed | 86% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320253.md) | 2026-06-24 |
 | hediet, alexdima | [#123303](https://github.com/microsoft/vscode/issues/123303) | Cursors are not merged in this case | bug | keep-open | none | 95% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/123303.md) | 2026-06-24 |
-| lramos15 | [#319542](https://github.com/microsoft/vscode/issues/319542) | Regression: Model cost multiplier removed from model selector | feature-request | propose-close | *as-designed | 90% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/319542.md) | 2026-06-24 |
 | unassigned | [#17901](https://github.com/microsoft/vscode/issues/17901) | Add extension point for custom "prefix behaviors" in command palette | feature-request | keep-open | none | 93% | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/17901.md) | 2026-06-24 |
