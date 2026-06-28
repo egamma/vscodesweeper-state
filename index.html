@@ -25,12 +25,14 @@
   .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
   .card .n { font-size: 22px; font-weight: 600; }
   .card .l { color: var(--muted); font-size: 12px; }
+  /* Auto-fixable is a separate axis: divider before it + green (not blue) active. */
+  .af-card { margin-left: 12px; position: relative; }
+  .af-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .af-card.active { border-color: var(--keep); box-shadow: 0 0 0 1px var(--keep) inset; }
+  .af-card.active .l, .af-card.active .n { color: var(--keep); }
   .controls { margin-bottom: 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
   input[type=search] { width: 100%; max-width: 360px; padding: 8px 10px; border: 1px solid var(--border);
     border-radius: 6px; background: var(--bg); color: var(--fg); font: inherit; }
-  #afToggle { padding: 7px 12px; border: 1px solid var(--border); border-radius: 6px; cursor: pointer;
-    background: var(--bg); color: var(--fg); font: inherit; }
-  #afToggle.active { border-color: var(--keep); color: var(--keep); box-shadow: 0 0 0 1px var(--keep) inset; }
   table { border-collapse: collapse; width: 100%; }
   th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
   th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted); font-weight: 600; }
@@ -66,10 +68,9 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub">Proposal-only triage findings for <code>microsoft/vscode</code> · 548 reviewed · generated 2026-06-28 13:53 UTC</div>
-  <div class="cards" id="cards"><button class="card active" data-action="propose-close"><span class="n">51</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">56</span><span class="l">needs-info</span></button><button class="card" data-action="verification-needed"><span class="n">0</span><span class="l">verification-needed</span></button><button class="card" data-action="route-to-area"><span class="n">36</span><span class="l">route-to-area</span></button><button class="card" data-action="keep-open"><span class="n">405</span><span class="l">keep-open</span></button></div>
-  <div class="controls"><input id="q" type="search" placeholder="Filter by owner, issue #, title, label…">
-    <button id="afToggle" type="button" title="Show only auto-fix candidates">⚡ Auto-fixable only</button></div>
+  <div class="sub">Proposal-only triage findings for <code>microsoft/vscode</code> · 548 reviewed · generated 2026-06-28 14:16 UTC</div>
+  <div class="cards" id="cards"><button class="card active" data-action="propose-close"><span class="n">51</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">56</span><span class="l">needs-info</span></button><button class="card" data-action="verification-needed"><span class="n">0</span><span class="l">verification-needed</span></button><button class="card" data-action="route-to-area"><span class="n">36</span><span class="l">route-to-area</span></button><button class="card" data-action="keep-open"><span class="n">405</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only auto-fix candidates — combines with the action filter"><span class="n">5</span><span class="l">⚡ auto-fixable</span></button></div>
+  <div class="controls"><input id="q" type="search" placeholder="Filter by owner, issue #, title, label…"></div>
   <table>
     <thead><tr>
       <th data-k="owner">Owner</th><th data-k="number">Issue</th><th data-k="title">Title</th><th data-k="itemType">Type</th>
@@ -126,10 +127,10 @@ function applyCell(r){
     : "Copy the suggested comment to paste on the issue";
   return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+esc(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>';
 }
-document.querySelectorAll("#cards .card").forEach(c => c.addEventListener("click", () => {
+document.querySelectorAll("#cards .card[data-action]").forEach(c => c.addEventListener("click", () => {
   const a = c.dataset.action;
   actionFilter = actionFilter === a ? null : a;
-  document.querySelectorAll("#cards .card").forEach(x => x.classList.toggle("active", x.dataset.action === actionFilter));
+  document.querySelectorAll("#cards .card[data-action]").forEach(x => x.classList.toggle("active", x.dataset.action === actionFilter));
   render();
 }));
 document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
@@ -139,8 +140,8 @@ document.querySelectorAll("th").forEach(th => th.addEventListener("click", () =>
   render();
 }));
 qEl.addEventListener("input", render);
-const afBtn = document.getElementById("afToggle");
-afBtn.addEventListener("click", () => { autoFixOnly = !autoFixOnly; afBtn.classList.toggle("active", autoFixOnly); render(); });
+const afCard = document.getElementById("afCard");
+afCard.addEventListener("click", () => { autoFixOnly = !autoFixOnly; afCard.classList.toggle("active", autoFixOnly); render(); });
 
 function toast(msg){
   const t = document.getElementById("toast");
