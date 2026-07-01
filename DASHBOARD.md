@@ -2,9 +2,9 @@
 
 Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1136** issues reviewed · **300** actionable · generated 2026-07-01 15:04 UTC
+**1140** issues reviewed · **300** actionable · generated 2026-07-01 19:09 UTC
 
-propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-open: **929**
+propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-open: **933**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -310,7 +310,7 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | TylerLeonhardt, alexdima | [#153256](https://github.com/microsoft/vscode/issues/153256) | Missing localization for ES modules in `monaco-editor-core` | feature-request | propose-close | none | 92% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/153256.md) | 2026-06-26 |
 
 <details>
-<summary>836 keep-open / no-action items</summary>
+<summary>840 keep-open / no-action items</summary>
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -654,6 +654,7 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | aeschli | [#276227](https://github.com/microsoft/vscode/issues/276227) | Weird Prompt file linting error: No link definition found | bug | keep-open | none | 88% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276227.md) | 2026-07-01 |
 | aeschli | [#276773](https://github.com/microsoft/vscode/issues/276773) | Filename case-sensitivity in discovery of AGENTS.md files isn't consistent | bug | keep-open | none | 55% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276773.md) | 2026-07-01 |
 | aeschli | [#277432](https://github.com/microsoft/vscode/issues/277432) | plan agent: Improve open editor handoff | feature-request | keep-open | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277432.md) | 2026-07-01 |
+| aeschli | [#277433](https://github.com/microsoft/vscode/issues/277433) | add a code execution tool | feature-request | keep-open | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277433.md) | 2026-07-01 |
 | aeschli | [#277735](https://github.com/microsoft/vscode/issues/277735) | Agent: Prompts should not persist tool/model selection after chat response | feature-request | keep-open | none | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277735.md) | 2026-07-01 |
 | aeschli | [#278102](https://github.com/microsoft/vscode/issues/278102) | [wsl] Pipe to `code -` does not work in WSL | bug | keep-open | none | 70% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278102.md) | 2026-07-01 |
 | aeschli | [#278111](https://github.com/microsoft/vscode/issues/278111) | [prompts] add a command to improve a prompt | feature-request | keep-open | none | 70% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278111.md) | 2026-07-01 |
@@ -705,6 +706,7 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | aeschli | [#303254](https://github.com/microsoft/vscode/issues/303254) | Repeated custom-agent rescans emit endless parse errors/diagnostics for cross-tool .agent.md files | bug | keep-open | none | 55% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/303254.md) | 2026-07-01 |
 | aeschli | [#304101](https://github.com/microsoft/vscode/issues/304101) | User-level .instructions.md files with applyTo "**" discovered but not automatically included in chat requests | bug | keep-open | none | 75% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/304101.md) | 2026-07-01 |
 | aeschli | [#304880](https://github.com/microsoft/vscode/issues/304880) | Individual project theming | feature-request | keep-open | none | 72% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/304880.md) | 2026-07-01 |
+| aeschli | [#304903](https://github.com/microsoft/vscode/issues/304903) | Problems pane constantly re-evaluates frontmatter diagnostics for custom agent/instruction/skill/prompt files — excessive CPU and memory | bug | keep-open | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/304903.md) | 2026-07-01 |
 | aeschli | [#305180](https://github.com/microsoft/vscode/issues/305180) | VS code (1.113) stopped showing me `user profile` prompt files from my UserData on windows | bug | keep-open | none | 55% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/305180.md) | 2026-07-01 |
 | aeschli | [#305375](https://github.com/microsoft/vscode/issues/305375) | User prompt triggers "allow reading external file" | bug | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/305375.md) | 2026-07-01 |
 | aeschli | [#306568](https://github.com/microsoft/vscode/issues/306568) | runSubagent ignores "agents" config by omitting "agentName" parameter | feature-request | keep-open | none | 72% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/306568.md) | 2026-07-01 |
@@ -1105,9 +1107,11 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | digitarald, aeschli | [#276633](https://github.com/microsoft/vscode/issues/276633) | Clarify order of custom agent, workspace instructions, and user instructions in context | feature-request | keep-open | none | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276633.md) | 2026-07-01 |
 | digitarald, aeschli | [#281116](https://github.com/microsoft/vscode/issues/281116) | Feature Request: Allow handsoff with resetting context window for custom agent | feature-request | keep-open | none | 82% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/281116.md) | 2026-07-01 |
 | digitarald, aeschli | [#286555](https://github.com/microsoft/vscode/issues/286555) | Switching to a competed session with handoff (like Plan) doesn't show handoffs | bug | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/286555.md) | 2026-07-01 |
+| digitarald, aeschli | [#287947](https://github.com/microsoft/vscode/issues/287947) | Implement built-in agents from Copilot CLI to Copilot Chat | feature-request | keep-open | none | 75% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287947.md) | 2026-07-01 |
 | digitarald, aeschli | [#289427](https://github.com/microsoft/vscode/issues/289427) | Agent doesn't use enough subagents when research/tasks can be done parallel | feature-request | keep-open | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289427.md) | 2026-07-01 |
 | digitarald, aeschli | [#297210](https://github.com/microsoft/vscode/issues/297210) | Prompt files should allow me to select latest model with wildcard | feature-request | keep-open | none | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/297210.md) | 2026-07-01 |
 | digitarald, aeschli | [#306717](https://github.com/microsoft/vscode/issues/306717) | Chat: add 'tiers' frontmatter and 'tier' parameter to runSubagent for semantic model tier routing | feature-request | keep-open | none | 75% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/306717.md) | 2026-07-01 |
+| digitarald, aeschli | [#307361](https://github.com/microsoft/vscode/issues/307361) | General Agent open issues | debt | keep-open | none | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307361.md) | 2026-07-01 |
 | digitarald, aeschli | [#315032](https://github.com/microsoft/vscode/issues/315032) | Subagent fails to resolve custom OAI model although available for main agent | bug | keep-open | none | 70% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315032.md) | 2026-07-01 |
 | digitarald, aeschli, pwang347 | [#295894](https://github.com/microsoft/vscode/issues/295894) | per-model(s) instruction files | feature-request | keep-open | feature-request | 75% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/295894.md) | 2026-07-01 |
 | digitarald, aeschli, pwang347 | [#295976](https://github.com/microsoft/vscode/issues/295976) | "Proceed from plan" section missing when session is reopened | bug | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/295976.md) | 2026-07-01 |
