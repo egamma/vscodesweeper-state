@@ -2,9 +2,9 @@
 
 Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1140** issues reviewed · **300** actionable · generated 2026-07-01 19:09 UTC
+**1140** issues reviewed · **301** actionable · generated 2026-07-02 08:37 UTC
 
-propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-open: **933**
+propose-close: **100** · needs-info: **71** · route-to-area: **38** · keep-open: **931**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -70,11 +70,12 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | aeschli | [#246388](https://github.com/microsoft/vscode/issues/246388) | Git: deletion marker in the gutter disappears when folding adjacent regions | bug | keep-open | none | 85% | yes | `npm run fix -- --issue 246388` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/246388.md) | 2026-07-01 |
 | aeschli | [#247235](https://github.com/microsoft/vscode/issues/247235) | Deleting JSX tag name and then typing a different tag name doesn't update closing tag | bug | keep-open | none | 85% | yes | `npm run fix -- --issue 247235` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/247235.md) | 2026-07-01 |
 | aeschli | [#255388](https://github.com/microsoft/vscode/issues/255388) | Wrong file icon rendering in Files & Folders picker | bug | propose-close | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/255388.md) | 2026-07-01 |
-| aeschli | [#260556](https://github.com/microsoft/vscode/issues/260556) | Configure tools... action should respect the tools I configured in my markdown file | bug | keep-open | none | 78% | yes | `npm run fix -- --issue 260556` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/260556.md) | 2026-07-01 |
+| aeschli | [#260556](https://github.com/microsoft/vscode/issues/260556) | Configure tools... action should respect the tools I configured in my markdown file | bug | propose-close | none | 88% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/260556.md) | 2026-07-02 |
 | aeschli | [#266597](https://github.com/microsoft/vscode/issues/266597) | editor.removeManualFoldingRanges should support empty selection | bug | keep-open | none | 85% | yes | `npm run fix -- --issue 266597` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/266597.md) | 2026-07-01 |
 | aeschli | [#267871](https://github.com/microsoft/vscode/issues/267871) | [html] problem range in embedded content needs to be limited to embedded range. | bug | keep-open | none | 85% | yes | `npm run fix -- --issue 267871` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/267871.md) | 2026-07-01 |
 | aeschli | [#269346](https://github.com/microsoft/vscode/issues/269346) | [html] Incorrect onclick attribute Parsing | bug | keep-open | none | 88% | yes | `npm run fix -- --issue 269346` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/269346.md) | 2026-07-01 |
 | aeschli | [#269406](https://github.com/microsoft/vscode/issues/269406) | Automatic synchronization with Windows High Contrast mode | bug | keep-open | none | 88% | yes | `npm run fix -- --issue 269406` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/269406.md) | 2026-07-01 |
+| aeschli | [#270650](https://github.com/microsoft/vscode/issues/270650) | Copilot Agent prompts fail when chat.useNestedAgentsMdFiles is enabled with SSH FS folders | bug | propose-close | none | 88% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/270650.md) | 2026-07-02 |
 | aeschli | [#272988](https://github.com/microsoft/vscode/issues/272988) | Agent handoffs: prompt should not overriden existing chat input text | bug | keep-open | none | 90% | yes | `npm run fix -- --issue 272988` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/272988.md) | 2026-07-01 |
 | aeschli | [#277934](https://github.com/microsoft/vscode/issues/277934) | GitHub Copilot fails to process workspace when multiple identical copilot-instructions.md files are present | bug | keep-open | none | 78% | yes | `npm run fix -- --issue 277934` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277934.md) | 2026-07-01 |
 | aeschli | [#280873](https://github.com/microsoft/vscode/issues/280873) | bad api doc continuations for rust | bug | propose-close | *caused-by-extension | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/280873.md) | 2026-07-01 |
@@ -310,7 +311,7 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | TylerLeonhardt, alexdima | [#153256](https://github.com/microsoft/vscode/issues/153256) | Missing localization for ES modules in `monaco-editor-core` | feature-request | propose-close | none | 92% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/153256.md) | 2026-06-26 |
 
 <details>
-<summary>840 keep-open / no-action items</summary>
+<summary>839 keep-open / no-action items</summary>
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -632,7 +633,6 @@ propose-close: **98** · needs-info: **71** · route-to-area: **38** · keep-ope
 | aeschli | [#269828](https://github.com/microsoft/vscode/issues/269828) | Render counts next to collapsed toolsets | feature-request | keep-open | none | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/269828.md) | 2026-07-01 |
 | aeschli | [#269857](https://github.com/microsoft/vscode/issues/269857) | [folding] Do not collapse imports when navigating to an error in the imports section | feature-request | keep-open | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/269857.md) | 2026-07-01 |
 | aeschli | [#270160](https://github.com/microsoft/vscode/issues/270160) | Add support for full-match patterns relative to workspace root for Copilot Instructions `applyTo` pattern | feature-request | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/270160.md) | 2026-07-01 |
-| aeschli | [#270650](https://github.com/microsoft/vscode/issues/270650) | Copilot Agent prompts fail when chat.useNestedAgentsMdFiles is enabled with SSH FS folders | bug | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/270650.md) | 2026-07-01 |
 | aeschli | [#271485](https://github.com/microsoft/vscode/issues/271485) | Reconsider adding settings for preferred icon theme for light and dark modes | feature-request | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/271485.md) | 2026-07-01 |
 | aeschli | [#272091](https://github.com/microsoft/vscode/issues/272091) | [html] Auto-complete in embedded JavaScript does not work when no space is present | bug | keep-open | none | 60% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/272091.md) | 2026-07-01 |
 | aeschli | [#272732](https://github.com/microsoft/vscode/issues/272732) | agent files: support variables | feature-request | keep-open | none | 95% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/272732.md) | 2026-07-01 |
