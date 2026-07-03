@@ -1,6 +1,6 @@
 # Top issues — aeschli
 
-Value ranking of reviewed open issues assigned to `aeschli` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-03 21:23 UTC. Also available [grouped by theme](aeschli-themes.md).
+Value ranking of reviewed open issues assigned to `aeschli` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-03 21:32 UTC. Also available [grouped by theme](aeschli-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**. Auto-fix is a tractability hint, not part of the score.
 
