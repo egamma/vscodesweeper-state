@@ -1,8 +1,8 @@
 # VS Code Sweeper — Review Dashboard
 
-Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
+[← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1153** issues reviewed · **309** actionable · generated 2026-07-03 21:24 UTC
+**1153** issues reviewed · **309** actionable · generated 2026-07-03 21:32 UTC
 
 propose-close: **100** · needs-info: **70** · route-to-area: **49** · keep-open: **934**
 
