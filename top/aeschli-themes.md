@@ -1,10 +1,10 @@
 # Top issues by theme — aeschli
 
-Experimental themed view of [the flat ranking](aeschli.md); themes assigned by the review engine. Rank/score are the lane-wide values. Generated 2026-07-03 20:55 UTC.
+Experimental themed view of [the flat ranking](aeschli.md); themes assigned by the review engine. Rank/score are the lane-wide values. Generated 2026-07-03 21:11 UTC.
 
 ## Bugs
 
-### WSL and remote connectivity (19)
+### Remote and WSL connectivity (19)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -46,25 +46,30 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 170 | [#184985](https://github.com/microsoft/vscode/issues/184985) | Manual linked editing doesn't seem to work | 0 | correctness | 0 | yes |
 | 175 | [#239351](https://github.com/microsoft/vscode/issues/239351) | Renaming paired tags doesn't work if you clear the tag completely | 0 | correctness | 0 | yes |
 
-### Plan and handoff sessions (13)
+### Chat and plan sessions (18)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
 | 7 | [#311802](https://github.com/microsoft/vscode/issues/311802) | Start implementation posts into current Plan session instead of handing off to implementation | 5 | correctness | 37 | — |
 | 30 | [#295976](https://github.com/microsoft/vscode/issues/295976) | "Proceed from plan" section missing when session is reopened | 0 | correctness | 11 | — |
 | 36 | [#312195](https://github.com/microsoft/vscode/issues/312195) | Unwanted code insertion during analysis only mode | 1 | correctness | 9 | — |
-| 42 | [#275344](https://github.com/microsoft/vscode/issues/275344) | Can't actually save prompt from `/savePrompt` with a manual save | 0 | correctness | 8 | — |
 | 56 | [#296255](https://github.com/microsoft/vscode/issues/296255) | Chat Handoff should not change when switching mode | 1 | correctness | 6 | — |
 | 65 | [#299044](https://github.com/microsoft/vscode/issues/299044) | [Plan Mode] Claude Sonnet 4.6 executes tool calls instead of outputting text-only plan | 1 | correctness | 5 | — |
+| 82 | [#290814](https://github.com/microsoft/vscode/issues/290814) | broken copilot | 0 | none | 4 | — |
+| 83 | [#305545](https://github.com/microsoft/vscode/issues/305545) | Latest Copilot release causes Extreme HIGH CPU usage | 0 | perf | 4 | — |
 | 91 | [#286555](https://github.com/microsoft/vscode/issues/286555) | Switching to a competed session with handoff (like Plan) doesn't show handoffs | 1 | correctness | 3 | — |
-| 106 | [#267828](https://github.com/microsoft/vscode/issues/267828) | Dragging a prompt file in to chat behaves as if I invoked it | 0 | correctness | 2 | — |
-| 108 | [#272988](https://github.com/microsoft/vscode/issues/272988) | Agent handoffs: prompt should not overriden existing chat input text | 0 | papercut | 2 | yes |
+| 111 | [#286877](https://github.com/microsoft/vscode/issues/286877) | Rendering code blocks that include `// filepath:` is buggy. | 0 | correctness | 2 | — |
 | 113 | [#299185](https://github.com/microsoft/vscode/issues/299185) | Error when trying to save a plan | 0 | correctness | 2 | — |
 | 138 | [#283179](https://github.com/microsoft/vscode/issues/283179) | When clicking "Apply edits" file gets create with wrong name/location | 0 | correctness | 1 | — |
-| 180 | [#275338](https://github.com/microsoft/vscode/issues/275338) | `/savePrompt` should more clearly reveal created prompt | 0 | papercut | 0 | — |
-| 183 | [#280995](https://github.com/microsoft/vscode/issues/280995) | prompt file (slash command) won't use intended agent if run with "run in new chat" | 0 | correctness | 0 | — |
+| 140 | [#290423](https://github.com/microsoft/vscode/issues/290423) | Chat references show literal "Unknown variable type" placeholder | 0 | visual | 1 | — |
+| 142 | [#291496](https://github.com/microsoft/vscode/issues/291496) | GPT-5-Codex (Preview) runaway halucinations and obstinate disobediance. | 0 | correctness | 1 | — |
+| 146 | [#306240](https://github.com/microsoft/vscode/issues/306240) | Github Copilot warnings | 0 | papercut | 1 | — |
+| 187 | [#293458](https://github.com/microsoft/vscode/issues/293458) | Didn't do anything | 0 | none | 0 | — |
+| 193 | [#300066](https://github.com/microsoft/vscode/issues/300066) | Not working | 0 | none | 0 | — |
+| 204 | [#319586](https://github.com/microsoft/vscode/issues/319586) | This is the current issue i am facing as vs code is lagging a lot | 0 | data-loss | 0 | — |
+| 208 | [#323765](https://github.com/microsoft/vscode/issues/323765) | "Try Again" in Chat does not allow selection of new model | 0 | correctness | 0 | — |
 
-### Copilot instructions and prompt files (22)
+### Copilot instructions and prompts (32)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -77,21 +82,31 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 22 | [#304101](https://github.com/microsoft/vscode/issues/304101) | User-level .instructions.md files with applyTo "**" discovered but not automatically included in chat requests | 0 | correctness | 15 | — |
 | 29 | [#285308](https://github.com/microsoft/vscode/issues/285308) | *.instructions.md not read automatically, files not navigated | 0 | correctness | 11 | — |
 | 38 | [#252789](https://github.com/microsoft/vscode/issues/252789) | Lose custom instructions I retry after a window reload | 0 | correctness | 9 | — |
+| 42 | [#275344](https://github.com/microsoft/vscode/issues/275344) | Can't actually save prompt from `/savePrompt` with a manual save | 0 | correctness | 8 | — |
+| 44 | [#305876](https://github.com/microsoft/vscode/issues/305876) | chat.promptFilesLocations ordering ignored | 0 | correctness | 8 | yes |
 | 49 | [#316838](https://github.com/microsoft/vscode/issues/316838) | Copilot Instructions are Ignored | 1 | correctness | 7 | — |
 | 55 | [#276227](https://github.com/microsoft/vscode/issues/276227) | Weird Prompt file linting error: No link definition found | 1 | papercut | 6 | yes |
+| 106 | [#267828](https://github.com/microsoft/vscode/issues/267828) | Dragging a prompt file in to chat behaves as if I invoked it | 0 | correctness | 2 | — |
 | 107 | [#270650](https://github.com/microsoft/vscode/issues/270650) | Copilot Agent prompts fail when chat.useNestedAgentsMdFiles is enabled with SSH FS folders | 0 | correctness | 2 | — |
 | 109 | [#276773](https://github.com/microsoft/vscode/issues/276773) | Filename case-sensitivity in discovery of AGENTS.md files isn't consistent | 0 | correctness | 2 | — |
 | 110 | [#281799](https://github.com/microsoft/vscode/issues/281799) | Chat: Custom instruction causes fetch and Allow dialog | 0 | papercut | 2 | — |
 | 115 | [#308571](https://github.com/microsoft/vscode/issues/308571) | Fails to load my instructions.md file | 0 | none | 2 | — |
 | 116 | [#318701](https://github.com/microsoft/vscode/issues/318701) | chat.instructionsFilesLocations: applyTo frontmatter changes not reflected until VS Code restart (stale cache) | 0 | correctness | 2 | — |
+| 143 | [#292095](https://github.com/microsoft/vscode/issues/292095) | Permission to read prompt file already attached? | 0 | papercut | 1 | — |
 | 145 | [#305180](https://github.com/microsoft/vscode/issues/305180) | VS code (1.113) stopped showing me `user profile` prompt files from my UserData on windows | 0 | correctness | 1 | — |
 | 147 | [#308367](https://github.com/microsoft/vscode/issues/308367) | prompts-diagnostics-provider: false "File not found" errors for existing .md links in multi-root workspace | 0 | papercut | 1 | yes |
-| 151 | [#323094](https://github.com/microsoft/vscode/issues/323094) | AGENTS.md discovery still runs `rg --no-ignore --follow` over the whole tree (regression sibling of #304676) | 0 | perf | 1 | — |
+| 180 | [#275338](https://github.com/microsoft/vscode/issues/275338) | `/savePrompt` should more clearly reveal created prompt | 0 | papercut | 0 | — |
+| 183 | [#280995](https://github.com/microsoft/vscode/issues/280995) | prompt file (slash command) won't use intended agent if run with "run in new chat" | 0 | correctness | 0 | — |
 | 189 | [#294543](https://github.com/microsoft/vscode/issues/294543) | GPT models always read every instruction file | 0 | papercut | 0 | — |
+| 191 | [#299288](https://github.com/microsoft/vscode/issues/299288) | Agent uses web fetch tool to access instructions | 0 | correctness | 0 | — |
 | 192 | [#299480](https://github.com/microsoft/vscode/issues/299480) | Does not load copilot-instructions.md | 0 | correctness | 0 | — |
 | 194 | [#300113](https://github.com/microsoft/vscode/issues/300113) | Personal CLAUDE.md is attached even though its empty | 0 | papercut | 0 | — |
+| 196 | [#305375](https://github.com/microsoft/vscode/issues/305375) | User prompt triggers "allow reading external file" | 0 | papercut | 0 | — |
+| 198 | [#307149](https://github.com/microsoft/vscode/issues/307149) | Skill triggers external file allow dialog | 0 | papercut | 0 | — |
+| 201 | [#318005](https://github.com/microsoft/vscode/issues/318005) | Customizations loader doesn't validate path or available file system provider | 0 | correctness | 0 | — |
+| 206 | [#323036](https://github.com/microsoft/vscode/issues/323036) | Skills in user dir do not show up in the chat input | 0 | — | 0 | — |
 
-### Custom agents and plugins (23)
+### Custom agents and plugins (26)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -101,6 +116,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 31 | [#321765](https://github.com/microsoft/vscode/issues/321765) | Custom agent frontmatter is not automatically loaded on VSCode startup. | 0 | correctness | 11 | — |
 | 45 | [#311329](https://github.com/microsoft/vscode/issues/311329) | Custom subagent resolves to model outside its configured model list | 0 | correctness | 8 | — |
 | 48 | [#312254](https://github.com/microsoft/vscode/issues/312254) | Agents: Plan doesn't show up as a custom agent type | 1 | correctness | 7 | — |
+| 53 | [#305994](https://github.com/microsoft/vscode/issues/305994) | execution_subagent doesn't have skill context | 0 | correctness | 7 | — |
 | 57 | [#314020](https://github.com/microsoft/vscode/issues/314020) | chat plugins: Claude-format plugin frontmatter (rules `paths`, agents `tools`/`model`) is not transformed when installed via marketplace or pluginLocations | 1 | correctness | 6 | — |
 | 62 | [#323728](https://github.com/microsoft/vscode/issues/323728) | slash command blocks input - Copilot Chat with Agent Host, Claude Agent SDK | 0 | correctness | 6 | — |
 | 81 | [#289206](https://github.com/microsoft/vscode/issues/289206) | runSubagent picks the wrong subagent | 0 | correctness | 4 | — |
@@ -108,9 +124,11 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 96 | [#315032](https://github.com/microsoft/vscode/issues/315032) | Subagent fails to resolve custom OAI model although available for main agent | 0 | correctness | 3 | — |
 | 114 | [#306644](https://github.com/microsoft/vscode/issues/306644) | Subagents are not being discovered | 0 | correctness | 2 | — |
 | 118 | [#320993](https://github.com/microsoft/vscode/issues/320993) | Agents Window: Custom agents disappear from dropdown after sending a message | 0 | correctness | 2 | — |
+| 122 | [#303254](https://github.com/microsoft/vscode/issues/303254) | Repeated custom-agent rescans emit endless parse errors/diagnostics for cross-tool .agent.md files | 1 | papercut | 1 | — |
 | 141 | [#291094](https://github.com/microsoft/vscode/issues/291094) | custom agent model - unexpected fallback to Auto when model is unavailable | 0 | correctness | 1 | — |
 | 148 | [#311567](https://github.com/microsoft/vscode/issues/311567) | [Possible Regression] Custom agent MCP tools not available when invoked as sub-agent via Task tool | 0 | correctness | 1 | — |
 | 150 | [#319702](https://github.com/microsoft/vscode/issues/319702) | Clicking on "Plugins" in Agents window opens generic customizations view instead of Plugins view | 0 | correctness | 1 | — |
+| 151 | [#323094](https://github.com/microsoft/vscode/issues/323094) | AGENTS.md discovery still runs `rg --no-ignore --follow` over the whole tree (regression sibling of #304676) | 0 | perf | 1 | — |
 | 185 | [#289427](https://github.com/microsoft/vscode/issues/289427) | Agent doesn't use enough subagents when research/tasks can be done parallel | 0 | none | 0 | — |
 | 186 | [#290762](https://github.com/microsoft/vscode/issues/290762) | Custom Agents: Models in defined in custom agent do not lead to different models showing in models picker, should they? | 0 | none | 0 | — |
 | 188 | [#294230](https://github.com/microsoft/vscode/issues/294230) | Docs: Clarify agent identifier in custom agents handoffs documentation | 0 | papercut | 0 | — |
@@ -119,7 +137,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 205 | [#321461](https://github.com/microsoft/vscode/issues/321461) | agent window updates UI in multiple stages | 0 | visual | 0 | — |
 | 209 | [#323929](https://github.com/microsoft/vscode/issues/323929) | Custom agents disappear and reappear in v1.126 | 0 | correctness | 0 | — |
 
-### Tools and skills configuration (20)
+### Tools and skills (17)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -127,24 +145,21 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 18 | [#292260](https://github.com/microsoft/vscode/issues/292260) | Notebook tools added without being enabled by the user | 1 | correctness | 17 | — |
 | 39 | [#291746](https://github.com/microsoft/vscode/issues/291746) | AI Agent Skills cannot read symbolic links | 0 | correctness | 9 | — |
 | 43 | [#302181](https://github.com/microsoft/vscode/issues/302181) | Skills duplication when 'Agent Skills Location' overlaps with 'Plugin Locations' | 0 | papercut | 8 | — |
-| 44 | [#305876](https://github.com/microsoft/vscode/issues/305876) | chat.promptFilesLocations ordering ignored | 0 | correctness | 8 | yes |
 | 50 | [#321758](https://github.com/microsoft/vscode/issues/321758) | Customizations: Built-in skills are readonly with agents host | 1 | papercut | 7 | — |
 | 51 | [#282750](https://github.com/microsoft/vscode/issues/282750) | Remember workspace specific tool disablement | 0 | correctness | 7 | — |
 | 52 | [#288698](https://github.com/microsoft/vscode/issues/288698) | Tool picker doesn't work properly when editing a prompt | 0 | correctness | 7 | — |
-| 53 | [#305994](https://github.com/microsoft/vscode/issues/305994) | execution_subagent doesn't have skill context | 0 | correctness | 7 | — |
 | 59 | [#256906](https://github.com/microsoft/vscode/issues/256906) | Tool Picker has all tools enabled, but Add Context shows old tools list | 0 | correctness | 6 | — |
 | 60 | [#260556](https://github.com/microsoft/vscode/issues/260556) | Configure tools... action should respect the tools I configured in my markdown file | 0 | papercut | 6 | yes |
 | 112 | [#297587](https://github.com/microsoft/vscode/issues/297587) | Tool descriptions don't mention any languages | 0 | papercut | 2 | — |
 | 144 | [#301382](https://github.com/microsoft/vscode/issues/301382) | "Skipping duplicate agent skill name" log spam | 0 | papercut | 1 | — |
-| 146 | [#306240](https://github.com/microsoft/vscode/issues/306240) | Github Copilot warnings | 0 | papercut | 1 | — |
 | 181 | [#275525](https://github.com/microsoft/vscode/issues/275525) | Invalid autocomplete options in tools array | 0 | papercut | 0 | — |
 | 182 | [#275628](https://github.com/microsoft/vscode/issues/275628) | Every tool is selected after reloading if I open the tools list too early during startup | 0 | correctness | 0 | yes |
+| 184 | [#285872](https://github.com/microsoft/vscode/issues/285872) | Custom Agent references multiple tools using 'search' | 0 | correctness | 0 | — |
 | 190 | [#298131](https://github.com/microsoft/vscode/issues/298131) | Tools frontmatter on do not work with toolsets that have mcp tools. Only built in work | 0 | correctness | 0 | — |
 | 200 | [#308887](https://github.com/microsoft/vscode/issues/308887) | Chat/Configure Tools/Update Tools disables OK button, unless fold tool | 0 | papercut | 0 | — |
 | 202 | [#319160](https://github.com/microsoft/vscode/issues/319160) | Inconsistent tool list syntax between "Configure Tools..." CodeLens and tools icon for custom agents | 0 | papercut | 0 | — |
-| 206 | [#323036](https://github.com/microsoft/vscode/issues/323036) | Skills in user dir do not show up in the chat input | 0 | — | 0 | — |
 
-### HTML language features (23)
+### HTML language support (22)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -156,7 +171,6 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 74 | [#229357](https://github.com/microsoft/vscode/issues/229357) | [html] Vscode detect wrong scope for script with type=module | 1 | correctness | 4 | yes |
 | 80 | [#267871](https://github.com/microsoft/vscode/issues/267871) | [html] problem range in embedded content needs to be limited to embedded range. | 0 | correctness | 4 | yes |
 | 89 | [#71091](https://github.com/microsoft/vscode/issues/71091) | [html] bracket matching in strings | 1 | visual | 3 | — |
-| 92 | [#171153](https://github.com/microsoft/vscode/issues/171153) | [html] validation error on JavaScript block comment with arrow in HTML script | 0 | correctness | 3 | yes |
 | 98 | [#272091](https://github.com/microsoft/vscode/issues/272091) | [html] Auto-complete in embedded JavaScript does not work when no space is present | 1 | papercut | 2 | — |
 | 124 | [#111025](https://github.com/microsoft/vscode/issues/111025) | [html] HTML line wrapping on paste occurs before auto-indenting | 0 | correctness | 1 | — |
 | 125 | [#111760](https://github.com/microsoft/vscode/issues/111760) | [html] handle HTML-escaped characters in JavaScript attribute properties | 0 | correctness | 1 | yes |
@@ -172,7 +186,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 173 | [#213628](https://github.com/microsoft/vscode/issues/213628) | [html] Formatting Breaks with Space Between Commented Lines in Script Tag | 0 | papercut | 0 | — |
 | 178 | [#269346](https://github.com/microsoft/vscode/issues/269346) | [html] Incorrect onclick attribute Parsing | 0 | correctness | 0 | yes |
 
-### CSS and SCSS language features (18)
+### CSS and SCSS language support (18)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -216,7 +230,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 176 | [#246388](https://github.com/microsoft/vscode/issues/246388) | Git: deletion marker in the gutter disappears when folding adjacent regions | 0 | visual | 0 | yes |
 | 203 | [#319286](https://github.com/microsoft/vscode/issues/319286) | [folding] Format large file unfold all code | 0 | correctness | 0 | — |
 
-### JSON schema and validation (8)
+### JSON language support (8)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -229,24 +243,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 127 | [#136645](https://github.com/microsoft/vscode/issues/136645) | [json] Explorer Outline view shows wrong int values when viewing JSON document | 0 | correctness | 1 | — |
 | 131 | [#189802](https://github.com/microsoft/vscode/issues/189802) | [json] validation not working for a large enough number | 0 | correctness | 1 | — |
 
-### Copilot performance and reliability (12)
-
-| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
-| --- | --- | --- | --- | --- | --- | --- |
-| 82 | [#290814](https://github.com/microsoft/vscode/issues/290814) | broken copilot | 0 | none | 4 | — |
-| 83 | [#305545](https://github.com/microsoft/vscode/issues/305545) | Latest Copilot release causes Extreme HIGH CPU usage | 0 | perf | 4 | — |
-| 95 | [#285754](https://github.com/microsoft/vscode/issues/285754) | Unable to prevent GitHub Copilot from editing files. | 0 | correctness | 3 | — |
-| 142 | [#291496](https://github.com/microsoft/vscode/issues/291496) | GPT-5-Codex (Preview) runaway halucinations and obstinate disobediance. | 0 | correctness | 1 | — |
-| 143 | [#292095](https://github.com/microsoft/vscode/issues/292095) | Permission to read prompt file already attached? | 0 | papercut | 1 | — |
-| 187 | [#293458](https://github.com/microsoft/vscode/issues/293458) | Didn't do anything | 0 | none | 0 | — |
-| 191 | [#299288](https://github.com/microsoft/vscode/issues/299288) | Agent uses web fetch tool to access instructions | 0 | correctness | 0 | — |
-| 193 | [#300066](https://github.com/microsoft/vscode/issues/300066) | Not working | 0 | none | 0 | — |
-| 196 | [#305375](https://github.com/microsoft/vscode/issues/305375) | User prompt triggers "allow reading external file" | 0 | papercut | 0 | — |
-| 198 | [#307149](https://github.com/microsoft/vscode/issues/307149) | Skill triggers external file allow dialog | 0 | papercut | 0 | — |
-| 204 | [#319586](https://github.com/microsoft/vscode/issues/319586) | This is the current issue i am facing as vs code is lagging a lot | 0 | data-loss | 0 | — |
-| 208 | [#323765](https://github.com/microsoft/vscode/issues/323765) | "Try Again" in Chat does not allow selection of new model | 0 | correctness | 0 | — |
-
-### Other (22)
+### Other (20)
 
 | # | Issue | Title | 👍 | Severity | Score | Auto-fix |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -254,37 +251,37 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 79 | [#189129](https://github.com/microsoft/vscode/issues/189129) | [themes] Theme is getting switched on switching profiles | 0 | correctness | 4 | — |
 | 85 | [#149478](https://github.com/microsoft/vscode/issues/149478) | Some keyboard shortcuts ignored in Safari/vscode.dev | 2 | none | 3 | — |
 | 86 | [#243110](https://github.com/microsoft/vscode/issues/243110) | "Insert At Cursor" should be disabled when no text editor is opened | 2 | papercut | 3 | yes |
+| 92 | [#171153](https://github.com/microsoft/vscode/issues/171153) | [html] validation error on JavaScript block comment with arrow in HTML script | 0 | correctness | 3 | yes |
 | 93 | [#182627](https://github.com/microsoft/vscode/issues/182627) | Recent entry URL can get too large for Windows jumplist | 0 | correctness | 3 | yes |
 | 94 | [#243826](https://github.com/microsoft/vscode/issues/243826) | theme-seti overrides langauge extension icons by file extension, not by language | 0 | visual | 3 | — |
+| 95 | [#285754](https://github.com/microsoft/vscode/issues/285754) | Unable to prevent GitHub Copilot from editing files. | 0 | correctness | 3 | — |
 | 97 | [#184679](https://github.com/microsoft/vscode/issues/184679) | Fuzzy search not working well in Recent Folders quickpick in 1.79.0 | 1 | papercut | 2 | — |
 | 100 | [#115672](https://github.com/microsoft/vscode/issues/115672) | Twisties appear only after the view has loaded for the view | 0 | visual | 2 | — |
-| 111 | [#286877](https://github.com/microsoft/vscode/issues/286877) | Rendering code blocks that include `// filepath:` is buggy. | 0 | correctness | 2 | — |
+| 108 | [#272988](https://github.com/microsoft/vscode/issues/272988) | Agent handoffs: prompt should not overriden existing chat input text | 0 | papercut | 2 | yes |
 | 117 | [#319919](https://github.com/microsoft/vscode/issues/319919) | workbench.colorTheme getting wiped when switching profiles | 0 | correctness | 2 | — |
-| 122 | [#303254](https://github.com/microsoft/vscode/issues/303254) | Repeated custom-agent rescans emit endless parse errors/diagnostics for cross-tool .agent.md files | 1 | papercut | 1 | — |
 | 128 | [#142373](https://github.com/microsoft/vscode/issues/142373) | `Recently opened` project names get changed randomly | 0 | visual | 1 | — |
 | 137 | [#280873](https://github.com/microsoft/vscode/issues/280873) | bad api doc continuations for rust | 0 | papercut | 1 | — |
-| 140 | [#290423](https://github.com/microsoft/vscode/issues/290423) | Chat references show literal "Unknown variable type" placeholder | 0 | visual | 1 | — |
 | 158 | [#86299](https://github.com/microsoft/vscode/issues/86299) | [themes] IconTheme doesn't work with spaces in names | 0 | correctness | 0 | — |
 | 169 | [#177363](https://github.com/microsoft/vscode/issues/177363) | The material icons of folders in the HTML files are not displayed. Did anyone have such a problem? | 0 | visual | 0 | — |
 | 174 | [#227484](https://github.com/microsoft/vscode/issues/227484) | Custom controls need to provide proper textual name, role, and state information | 0 | papercut | 0 | — |
 | 177 | [#255388](https://github.com/microsoft/vscode/issues/255388) | Wrong file icon rendering in Files & Folders picker | 0 | visual | 0 | — |
 | 179 | [#269406](https://github.com/microsoft/vscode/issues/269406) | Automatic synchronization with Windows High Contrast mode | 0 | — | 0 | yes |
-| 184 | [#285872](https://github.com/microsoft/vscode/issues/285872) | Custom Agent references multiple tools using 'search' | 0 | correctness | 0 | — |
-| 201 | [#318005](https://github.com/microsoft/vscode/issues/318005) | Customizations loader doesn't validate path or available file system provider | 0 | correctness | 0 | — |
 | 207 | [#323130](https://github.com/microsoft/vscode/issues/323130) | The command panel contains content of deleted files | 0 | — | 0 | — |
 
 ## Feature requests
 
-### Syntax and grammar engines (4)
+### Syntax and semantic highlighting (6)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
 | 1 | [#50140](https://github.com/microsoft/vscode/issues/50140) | Support syntax highlighting with tree-sitter | 736 | backlog-candidate | 100 |
-| 17 | [#242156](https://github.com/microsoft/vscode/issues/242156) | Add basic toml support | 53 | backlog-candidate | 10 |
 | 26 | [#216](https://github.com/microsoft/vscode/issues/216) | [grammars] provide alternative to TextMate grammars | 50 | backlog-candidate | 7 |
-| 277 | [#197881](https://github.com/microsoft/vscode/issues/197881) | [languages] contribution point `languages` provide the ability to extends | 0 | backlog-candidate | 0 |
+| 61 | [#97063](https://github.com/microsoft/vscode/issues/97063) | [semantic] proposals for new standard semantic token types | 7 | backlog-candidate | 3 |
+| 178 | [#128565](https://github.com/microsoft/vscode/issues/128565) | [semantic highlighting] Source language suffix should be added to semantic token fallback scopes when looked up | 1 | backlog-candidate | 0 |
+| 234 | [#94269](https://github.com/microsoft/vscode/issues/94269) | [semantic tokens] provide code assist for tokenModifiers | 0 | backlog-candidate | 0 |
+| 354 | [#315240](https://github.com/microsoft/vscode/issues/315240) | Default `editor.linkedEditing` to true | 0 | backlog-candidate | 0 |
 
-### JSON language support (47)
+### JSON language support (46)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
@@ -298,7 +295,6 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 56 | [#74943](https://github.com/microsoft/vscode/issues/74943) | [json] Override/disable json-schema for package.json | 24 | backlog-candidate | 3 |
 | 62 | [#251315](https://github.com/microsoft/vscode/issues/251315) | Support JSON schema draft 2020-12 | 4 | active | 3 |
 | 63 | [#26289](https://github.com/microsoft/vscode/issues/26289) | [json] use the schemastore catalog | 23 | backlog-candidate | 2 |
-| 64 | [#36280](https://github.com/microsoft/vscode/issues/36280) | [html] JSON edit support inside HTML document / script tag with type="application/json" | 20 | backlog-candidate | 2 |
 | 67 | [#76505](https://github.com/microsoft/vscode/issues/76505) | [json] format on save should remove last trailing comma in JSON with json-language-features | 18 | backlog-candidate | 2 |
 | 69 | [#42758](https://github.com/microsoft/vscode/issues/42758) | [json] improve property suggestions with oneOf | 15 | backlog-candidate | 2 |
 | 71 | [#230136](https://github.com/microsoft/vscode/issues/230136) | [json] Add support for extensions associating JSON schemas with documents dynamically (via API) | 7 | backlog-candidate | 2 |
@@ -336,7 +332,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 315 | [#269250](https://github.com/microsoft/vscode/issues/269250) | [json] show a notification when retrying to load a schema fails | 0 | backlog-candidate | 0 |
 | 336 | [#284339](https://github.com/microsoft/vscode/issues/284339) | Allow .json files to support comments when a specific comment line is at the top of the file. | 0 | backlog-candidate | 0 |
 
-### Theming and icons (44)
+### Themes and icon themes (43)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
@@ -352,7 +348,6 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 46 | [#200451](https://github.com/microsoft/vscode/issues/200451) | [themes] globally change saturation and contrast | 28 | backlog-candidate | 4 |
 | 57 | [#263108](https://github.com/microsoft/vscode/issues/263108) | Surface the vscode://schemas/color-theme schema to allow for programmatic use | 24 | backlog-candidate | 3 |
 | 59 | [#188989](https://github.com/microsoft/vscode/issues/188989) | [themes] mark favorites themes | 23 | backlog-candidate | 3 |
-| 61 | [#97063](https://github.com/microsoft/vscode/issues/97063) | [semantic] proposals for new standard semantic token types | 7 | backlog-candidate | 3 |
 | 65 | [#56855](https://github.com/microsoft/vscode/issues/56855) | [themes] Allow custom variables and references in workbench color customizations section | 19 | backlog-candidate | 2 |
 | 77 | [#45963](https://github.com/microsoft/vscode/issues/45963) | [icon themes] Expose API to provide a dynamic icon theme. | 14 | backlog-candidate | 1 |
 | 78 | [#72945](https://github.com/microsoft/vscode/issues/72945) | [themes] Support for hue, saturation, lightness (HSL) color codes for theming | 14 | backlog-candidate | 1 |
@@ -367,17 +362,17 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 152 | [#177650](https://github.com/microsoft/vscode/issues/177650) | [icon-themes] explore using attribute selectors to allow name patterns and simplify implementation | 2 | backlog-candidate | 0 |
 | 154 | [#188594](https://github.com/microsoft/vscode/issues/188594) | [themes] support non-HEX formats in color customizations | 2 | backlog-candidate | 0 |
 | 159 | [#305166](https://github.com/microsoft/vscode/issues/305166) | Support for native, context-aware File and Folder Icons (JetBrains-style) | 2 | active | 0 |
-| 178 | [#128565](https://github.com/microsoft/vscode/issues/128565) | [semantic highlighting] Source language suffix should be added to semantic token fallback scopes when looked up | 1 | backlog-candidate | 0 |
+| 176 | [#119047](https://github.com/microsoft/vscode/issues/119047) | [themes] use both English and UI language to search color theme names | 1 | backlog-candidate | 0 |
 | 198 | [#318198](https://github.com/microsoft/vscode/issues/318198) | Default themes should not include markdown suffix | 1 | active | 0 |
 | 202 | [#26130](https://github.com/microsoft/vscode/issues/26130) | [theming] Theming for workbench icons | 0 | dormant | 0 |
 | 203 | [#38145](https://github.com/microsoft/vscode/issues/38145) | [icons] allow name specific root folder icons | 0 | dormant | 0 |
 | 226 | [#84486](https://github.com/microsoft/vscode/issues/84486) | [themes] provide command to change theme | 0 | backlog-candidate | 0 |
 | 228 | [#86308](https://github.com/microsoft/vscode/issues/86308) | [themes] Minimal icon theme should use icon font | 0 | backlog-candidate | 0 |
-| 234 | [#94269](https://github.com/microsoft/vscode/issues/94269) | [semantic tokens] provide code assist for tokenModifiers | 0 | backlog-candidate | 0 |
 | 244 | [#111616](https://github.com/microsoft/vscode/issues/111616) | [theme icons] Include color class in ThemeIcon.asClassName() | 0 | backlog-candidate | 0 |
 | 245 | [#117437](https://github.com/microsoft/vscode/issues/117437) | [product icon themes] No fallback for using icon contribution point | 0 | backlog-candidate | 0 |
 | 246 | [#117822](https://github.com/microsoft/vscode/issues/117822) | [product icon themes] theme icons support for vscode.show(Information\|Warning\|Error)Message | 0 | backlog-candidate | 0 |
 | 263 | [#145677](https://github.com/microsoft/vscode/issues/145677) | [themes] Preserve my search for theme search in marketplace | 0 | backlog-candidate | 0 |
+| 277 | [#197881](https://github.com/microsoft/vscode/issues/197881) | [languages] contribution point `languages` provide the ability to extends | 0 | backlog-candidate | 0 |
 | 284 | [#228977](https://github.com/microsoft/vscode/issues/228977) | [themes] support sematic colorization for 'excludedCode' | 0 | backlog-candidate | 0 |
 | 290 | [#250444](https://github.com/microsoft/vscode/issues/250444) | Add a custom icon for prompt, chat mode and instruction files | 0 | backlog-candidate | 0 |
 | 310 | [#266685](https://github.com/microsoft/vscode/issues/266685) | Add support for SVGs for product icons | 0 | backlog-candidate | 0 |
@@ -448,17 +443,12 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 291 | [#251674](https://github.com/microsoft/vscode/issues/251674) | Support folding in instruction file | 0 | backlog-candidate | 0 |
 | 318 | [#269857](https://github.com/microsoft/vscode/issues/269857) | [folding] Do not collapse imports when navigating to an error in the imports section | 0 | backlog-candidate | 0 |
 
-### Custom agents and skills (65)
+### Custom agents and profiles (32)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
 | 9 | [#251251](https://github.com/microsoft/vscode/issues/251251) | Feature Request: Add Temperature for Custom Agent Profiles | 84 | backlog-candidate | 16 |
-| 20 | [#251515](https://github.com/microsoft/vscode/issues/251515) | Support Storing Toolset Files Directly Within the Workspace | 44 | backlog-candidate | 9 |
-| 27 | [#295755](https://github.com/microsoft/vscode/issues/295755) | Feature Request: Support Branch Selection for Organization‑Level Copilot Agents | 40 | backlog-candidate | 7 |
-| 40 | [#301181](https://github.com/microsoft/vscode/issues/301181) | Distribute Skills and Instructions from Organization Repositories | 18 | active | 5 |
 | 48 | [#263279](https://github.com/microsoft/vscode/issues/263279) | Agent Mode: Disable tools by default besides core tools | 14 | backlog-candidate | 4 |
-| 95 | [#288502](https://github.com/microsoft/vscode/issues/288502) | Skills should support tools references and enforce them in system prompt | 5 | active | 1 |
-| 101 | [#251747](https://github.com/microsoft/vscode/issues/251747) | Enable Auto-Attach for MCP Prompts / Embedded Resources | 4 | active | 1 |
 | 104 | [#277433](https://github.com/microsoft/vscode/issues/277433) | add a code execution tool | 4 | backlog-candidate | 1 |
 | 105 | [#281116](https://github.com/microsoft/vscode/issues/281116) | Feature Request: Allow handsoff with resetting context window for custom agent | 4 | backlog-candidate | 1 |
 | 110 | [#310436](https://github.com/microsoft/vscode/issues/310436) | Restrict skills to specific agents | 3 | active | 1 |
@@ -473,52 +463,24 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 123 | [#304721](https://github.com/microsoft/vscode/issues/304721) | Support contributing agent skill folders with supporting files from extensions | 0 | active | 1 |
 | 124 | [#311920](https://github.com/microsoft/vscode/issues/311920) | Agent profiles and namespacing for Copilot custom agents | 0 | active | 1 |
 | 142 | [#309043](https://github.com/microsoft/vscode/issues/309043) | Agents: Add model_reasoning_effort to custom agents and prompts. | 3 | active | 0 |
-| 158 | [#298713](https://github.com/microsoft/vscode/issues/298713) | Support loading agent skills from packages | 2 | active | 0 |
-| 187 | [#259183](https://github.com/microsoft/vscode/issues/259183) | Enable workspace-scoped tool sets | 1 | backlog-candidate | 0 |
 | 190 | [#275082](https://github.com/microsoft/vscode/issues/275082) | Agent Handoffs: Improve editing experience | 1 | dormant | 0 |
 | 193 | [#281791](https://github.com/microsoft/vscode/issues/281791) | GitHub Copilot agents should remember models on a per-agent basis. | 1 | backlog-candidate | 0 |
-| 194 | [#297210](https://github.com/microsoft/vscode/issues/297210) | Prompt files should allow me to select latest model with wildcard | 1 | backlog-candidate | 0 |
-| 195 | [#298928](https://github.com/microsoft/vscode/issues/298928) | Copilot Fix ignores extension-provided code.target and code actions, generating incorrect fixes | 1 | active | 0 |
-| 196 | [#312279](https://github.com/microsoft/vscode/issues/312279) | Let me / multiple skills in one message | 1 | backlog-candidate | 0 |
-| 289 | [#250421](https://github.com/microsoft/vscode/issues/250421) | Reconsider `languageModelToolSets` validation Notifications | 0 | backlog-candidate | 0 |
-| 292 | [#252011](https://github.com/microsoft/vscode/issues/252011) | Allow Diagnostic providers to enrich AI-driven fix workflows with context via an optional method | 0 | backlog-candidate | 0 |
-| 296 | [#253048](https://github.com/microsoft/vscode/issues/253048) | Copilot Coding Agent doesn't create copilot-instructions.md without help | 0 | backlog-candidate | 0 |
-| 302 | [#256486](https://github.com/microsoft/vscode/issues/256486) | Add a `contexts` field to the .md metadata for a custom chat mode | 0 | dormant | 0 |
 | 305 | [#259972](https://github.com/microsoft/vscode/issues/259972) | Show Built-in Tools at the bottom, collapsed or in a seperate tab | 0 | backlog-candidate | 0 |
 | 306 | [#259973](https://github.com/microsoft/vscode/issues/259973) | Allow MCP Servers in non-agent mode | 0 | dormant | 0 |
 | 307 | [#260214](https://github.com/microsoft/vscode/issues/260214) | Agent: Expose tool to run prompts controlled by the agent | 0 | backlog-candidate | 0 |
 | 309 | [#261697](https://github.com/microsoft/vscode/issues/261697) | Feature Request: Customizable continuous actions per chat mode file | 0 | backlog-candidate | 0 |
-| 311 | [#266750](https://github.com/microsoft/vscode/issues/266750) | "inherit" instructions in profiles | 0 | backlog-candidate | 0 |
-| 314 | [#269134](https://github.com/microsoft/vscode/issues/269134) | Tool references in prompts: support `extensionId/*` | 0 | backlog-candidate | 0 |
-| 320 | [#273813](https://github.com/microsoft/vscode/issues/273813) | Running a prompt without having the tools installed should show a warning in chat | 0 | backlog-candidate | 0 |
-| 322 | [#275053](https://github.com/microsoft/vscode/issues/275053) | Agent file editing - missing potential fix | 0 | backlog-candidate | 0 |
-| 325 | [#276105](https://github.com/microsoft/vscode/issues/276105) | Lots of tools I didn't choose in my tool set | 0 | backlog-candidate | 0 |
-| 326 | [#276633](https://github.com/microsoft/vscode/issues/276633) | Clarify order of custom agent, workspace instructions, and user instructions in context | 0 | backlog-candidate | 0 |
-| 327 | [#277735](https://github.com/microsoft/vscode/issues/277735) | Agent: Prompts should not persist tool/model selection after chat response | 0 | active | 0 |
-| 329 | [#279184](https://github.com/microsoft/vscode/issues/279184) | Provide the ability to disable extension specific instructions in agent mode | 0 | backlog-candidate | 0 |
-| 333 | [#280684](https://github.com/microsoft/vscode/issues/280684) | Selecting tools for custom agent always opens the md file | 0 | dormant | 0 |
-| 334 | [#282241](https://github.com/microsoft/vscode/issues/282241) | Use the `#tool:fullReferenceName` syntax in the chat input | 0 | active | 0 |
-| 337 | [#284627](https://github.com/microsoft/vscode/issues/284627) | Allow agent skill scripts to retrieve the workspace root/workspace file | 0 | active | 0 |
-| 338 | [#288703](https://github.com/microsoft/vscode/issues/288703) | Support regex matching in custom copilot instruction injection | 0 | backlog-candidate | 0 |
-| 339 | [#290272](https://github.com/microsoft/vscode/issues/290272) | Skill changes in skill.md don’t apply until VS Code restart or new chat session | 0 | active | 0 |
-| 340 | [#290374](https://github.com/microsoft/vscode/issues/290374) | Extend Profile Isolation to AI Configuration Files (Copilot Instructions, AGENTS.md, Prompts) | 0 | active | 0 |
+| 323 | [#275888](https://github.com/microsoft/vscode/issues/275888) | Let me hide Ask & Edit modes | 0 | dormant | 0 |
 | 341 | [#294640](https://github.com/microsoft/vscode/issues/294640) | Feature Request: Add Optional "response_structure" Field to .agent.md Files (Custom Agents) | 0 | active | 0 |
-| 342 | [#295894](https://github.com/microsoft/vscode/issues/295894) | per-model(s) instruction files | 0 | active | 0 |
-| 343 | [#297651](https://github.com/microsoft/vscode/issues/297651) | [FEATURE REQUEST]: Include Copilot Chat Tools in Settings Sync | 0 | active | 0 |
 | 344 | [#300411](https://github.com/microsoft/vscode/issues/300411) | runSubagent - more parameters, e.g. for model and tools | 0 | active | 0 |
-| 345 | [#301490](https://github.com/microsoft/vscode/issues/301490) | Plugin-installed skill resource files not accessible to search tools (grep_search, file_search, semantic_search) | 0 | backlog-candidate | 0 |
-| 346 | [#303777](https://github.com/microsoft/vscode/issues/303777) | Support skill-scoped hooks (on-load) in SKILL.md | 0 | active | 0 |
 | 348 | [#306568](https://github.com/microsoft/vscode/issues/306568) | runSubagent ignores "agents" config by omitting "agentName" parameter | 0 | active | 0 |
 | 349 | [#306717](https://github.com/microsoft/vscode/issues/306717) | Chat: add 'tiers' frontmatter and 'tier' parameter to runSubagent for semantic model tier routing | 0 | active | 0 |
 | 350 | [#311874](https://github.com/microsoft/vscode/issues/311874) | Inline Skill Picker with Fuzzy Search while typing in Chat | 0 | active | 0 |
 | 351 | [#312179](https://github.com/microsoft/vscode/issues/312179) | Allow folders with skills shipped via extensions to be read without user confirmations | 0 | active | 0 |
 | 352 | [#312528](https://github.com/microsoft/vscode/issues/312528) | Create Copilot Chat settings for setting a global Custom Agent as default Agent | 0 | active | 0 |
-| 353 | [#314388](https://github.com/microsoft/vscode/issues/314388) | Runtime errors when prompt/agent references model or agent that doesn't exist | 0 | active | 0 |
 | 355 | [#315593](https://github.com/microsoft/vscode/issues/315593) | Allow to change models for Custom agents inside Agent Plugin | 0 | active | 0 |
-| 356 | [#319321](https://github.com/microsoft/vscode/issues/319321) | Feature Request: Presaved MCP Toolsets / Named Presets for Context-Aware Tool Activation | 0 | active | 0 |
 | 359 | [#320641](https://github.com/microsoft/vscode/issues/320641) | Copilot Agent Host: SDK Driven Agents/Skills/etc | 0 | active | 0 |
 
-### CSS and SCSS support (41)
+### CSS and SCSS support (40)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
@@ -549,7 +511,6 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 209 | [#43111](https://github.com/microsoft/vscode/issues/43111) | [css] Lab colors and other CSS Color Module Level 4 features | 0 | dormant | 0 |
 | 218 | [#62569](https://github.com/microsoft/vscode/issues/62569) | [scss] rename not working for placeholder selectors | 0 | backlog-candidate | 0 |
 | 219 | [#66703](https://github.com/microsoft/vscode/issues/66703) | [css] support IE10 repeat syntax | 0 | backlog-candidate | 0 |
-| 221 | [#77582](https://github.com/microsoft/vscode/issues/77582) | [css][html] Publish language servers modules on npm | 0 | backlog-candidate | 0 |
 | 222 | [#79141](https://github.com/microsoft/vscode/issues/79141) | [css] Add support for CSS @supports selector() function | 0 | backlog-candidate | 0 |
 | 223 | [#79439](https://github.com/microsoft/vscode/issues/79439) | [css] code completion for gradient functions | 0 | backlog-candidate | 0 |
 | 225 | [#83835](https://github.com/microsoft/vscode/issues/83835) | [css] support css-variable completion in calc | 0 | backlog-candidate | 0 |
@@ -564,13 +525,14 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 280 | [#224977](https://github.com/microsoft/vscode/issues/224977) | [css] allow to overtype the semicolon | 0 | backlog-candidate | 0 |
 | 281 | [#227697](https://github.com/microsoft/vscode/issues/227697) | LSP DocumentColor Refresh Request | 0 | backlog-candidate | 0 |
 
-### HTML language support (34)
+### HTML language support (35)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
 | 15 | [#26338](https://github.com/microsoft/vscode/issues/26338) | [html] Javascript intellisense in inline scripts from external references | 125 | backlog-candidate | 12 |
 | 35 | [#25898](https://github.com/microsoft/vscode/issues/25898) | [html] provide translations of tag documentation | 48 | backlog-candidate | 5 |
 | 45 | [#58315](https://github.com/microsoft/vscode/issues/58315) | [html] Automatically delete HTML closing tag when converting to self-closing tag | 36 | backlog-candidate | 4 |
+| 64 | [#36280](https://github.com/microsoft/vscode/issues/36280) | [html] JSON edit support inside HTML document / script tag with type="application/json" | 20 | backlog-candidate | 2 |
 | 70 | [#114115](https://github.com/microsoft/vscode/issues/114115) | [html] support imports in embedded JavaScript | 15 | backlog-candidate | 2 |
 | 76 | [#31141](https://github.com/microsoft/vscode/issues/31141) | [html] provide rename for embedded JavaScript | 14 | backlog-candidate | 1 |
 | 83 | [#140698](https://github.com/microsoft/vscode/issues/140698) | [html] Improve `html.autoCreateQuotes` to handle manually typed quotes | 10 | backlog-candidate | 1 |
@@ -579,7 +541,6 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 149 | [#89850](https://github.com/microsoft/vscode/issues/89850) | [html] HTML breadcrumbs don't work right when optional end tags omitted | 2 | backlog-candidate | 0 |
 | 153 | [#181935](https://github.com/microsoft/vscode/issues/181935) | [html] Allow renaming images using F2 | 2 | backlog-candidate | 0 |
 | 160 | [#12787](https://github.com/microsoft/vscode/issues/12787) | [html] closing </script> tag is not proposed | 1 | backlog-candidate | 0 |
-| 161 | [#44612](https://github.com/microsoft/vscode/issues/44612) | [razor] comment out razor code with @* *@ | 1 | backlog-candidate | 0 |
 | 163 | [#66148](https://github.com/microsoft/vscode/issues/66148) | [html] code complete for href anchors | 1 | backlog-candidate | 0 |
 | 179 | [#128716](https://github.com/microsoft/vscode/issues/128716) | [html] propose `charset="UTF-8"` `target="_blank"` and `rel="stylesheet"` | 1 | backlog-candidate | 0 |
 | 205 | [#41134](https://github.com/microsoft/vscode/issues/41134) | [html] extract class name to css file | 0 | dormant | 0 |
@@ -588,6 +549,7 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 213 | [#49210](https://github.com/microsoft/vscode/issues/49210) | [html-templating] easy way to inherite advanced html features | 0 | dormant | 0 |
 | 217 | [#59445](https://github.com/microsoft/vscode/issues/59445) | [html] support less syntax in html file | 0 | backlog-candidate | 0 |
 | 220 | [#68548](https://github.com/microsoft/vscode/issues/68548) | [html] [custom data] allow to give custom HTML tags/attributes a higher completion rank | 0 | backlog-candidate | 0 |
+| 221 | [#77582](https://github.com/microsoft/vscode/issues/77582) | [css][html] Publish language servers modules on npm | 0 | backlog-candidate | 0 |
 | 224 | [#81352](https://github.com/microsoft/vscode/issues/81352) | [html] Jump to after next opening HTML tag | 0 | backlog-candidate | 0 |
 | 236 | [#96834](https://github.com/microsoft/vscode/issues/96834) | [html] No values suggested for `autocapitalize` | 0 | backlog-candidate | 0 |
 | 237 | [#97949](https://github.com/microsoft/vscode/issues/97949) | [html] don't let '/' trigger a suggest in embedded JavaScript | 0 | backlog-candidate | 0 |
@@ -603,46 +565,82 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 286 | [#242999](https://github.com/microsoft/vscode/issues/242999) | [html] Filter <link> path suggestion by file type | 0 | backlog-candidate | 0 |
 | 288 | [#249690](https://github.com/microsoft/vscode/issues/249690) | [html] Rename Symbol doesn't work on attribute names | 0 | backlog-candidate | 0 |
 
-### Prompt and instruction files (36)
+### Skills and toolsets (20)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 20 | [#251515](https://github.com/microsoft/vscode/issues/251515) | Support Storing Toolset Files Directly Within the Workspace | 44 | backlog-candidate | 9 |
+| 27 | [#295755](https://github.com/microsoft/vscode/issues/295755) | Feature Request: Support Branch Selection for Organization‑Level Copilot Agents | 40 | backlog-candidate | 7 |
+| 95 | [#288502](https://github.com/microsoft/vscode/issues/288502) | Skills should support tools references and enforce them in system prompt | 5 | active | 1 |
+| 101 | [#251747](https://github.com/microsoft/vscode/issues/251747) | Enable Auto-Attach for MCP Prompts / Embedded Resources | 4 | active | 1 |
+| 118 | [#255124](https://github.com/microsoft/vscode/issues/255124) | Panel chat gear dropdown should have hints on hover | 0 | backlog-candidate | 1 |
+| 119 | [#256007](https://github.com/microsoft/vscode/issues/256007) | Chat - Apply in Editor feedback | 0 | backlog-candidate | 1 |
+| 158 | [#298713](https://github.com/microsoft/vscode/issues/298713) | Support loading agent skills from packages | 2 | active | 0 |
+| 187 | [#259183](https://github.com/microsoft/vscode/issues/259183) | Enable workspace-scoped tool sets | 1 | backlog-candidate | 0 |
+| 195 | [#298928](https://github.com/microsoft/vscode/issues/298928) | Copilot Fix ignores extension-provided code.target and code actions, generating incorrect fixes | 1 | active | 0 |
+| 196 | [#312279](https://github.com/microsoft/vscode/issues/312279) | Let me / multiple skills in one message | 1 | backlog-candidate | 0 |
+| 289 | [#250421](https://github.com/microsoft/vscode/issues/250421) | Reconsider `languageModelToolSets` validation Notifications | 0 | backlog-candidate | 0 |
+| 292 | [#252011](https://github.com/microsoft/vscode/issues/252011) | Allow Diagnostic providers to enrich AI-driven fix workflows with context via an optional method | 0 | backlog-candidate | 0 |
+| 293 | [#252530](https://github.com/microsoft/vscode/issues/252530) | Make `security.promptForPromptProtocolHandling` a real setting and an allow list | 0 | backlog-candidate | 0 |
+| 317 | [#269828](https://github.com/microsoft/vscode/issues/269828) | Render counts next to collapsed toolsets | 0 | backlog-candidate | 0 |
+| 334 | [#282241](https://github.com/microsoft/vscode/issues/282241) | Use the `#tool:fullReferenceName` syntax in the chat input | 0 | active | 0 |
+| 337 | [#284627](https://github.com/microsoft/vscode/issues/284627) | Allow agent skill scripts to retrieve the workspace root/workspace file | 0 | active | 0 |
+| 343 | [#297651](https://github.com/microsoft/vscode/issues/297651) | [FEATURE REQUEST]: Include Copilot Chat Tools in Settings Sync | 0 | active | 0 |
+| 345 | [#301490](https://github.com/microsoft/vscode/issues/301490) | Plugin-installed skill resource files not accessible to search tools (grep_search, file_search, semantic_search) | 0 | backlog-candidate | 0 |
+| 346 | [#303777](https://github.com/microsoft/vscode/issues/303777) | Support skill-scoped hooks (on-load) in SKILL.md | 0 | active | 0 |
+| 356 | [#319321](https://github.com/microsoft/vscode/issues/319321) | Feature Request: Presaved MCP Toolsets / Named Presets for Context-Aware Tool Activation | 0 | active | 0 |
+
+### Prompts and instructions (47)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
 | 31 | [#270160](https://github.com/microsoft/vscode/issues/270160) | Add support for full-match patterns relative to workspace root for Copilot Instructions `applyTo` pattern | 26 | backlog-candidate | 6 |
 | 39 | [#288838](https://github.com/microsoft/vscode/issues/288838) | [Feature Request] Add frontmatter option to open .prompt.md files in a new chat session | 23 | backlog-candidate | 5 |
+| 40 | [#301181](https://github.com/microsoft/vscode/issues/301181) | Distribute Skills and Instructions from Organization Repositories | 18 | active | 5 |
 | 72 | [#291685](https://github.com/microsoft/vscode/issues/291685) | Make sharing of copilot instructions, skills etc globally easy for organizations | 5 | active | 2 |
 | 92 | [#262876](https://github.com/microsoft/vscode/issues/262876) | [prompts] One-Click install of Copilot Instructions / Prompts from private Github repos | 6 | backlog-candidate | 1 |
-| 100 | [#251603](https://github.com/microsoft/vscode/issues/251603) | Issue: GitHub Copilot toolsets.jsonc file not syncing across devices | 4 | backlog-candidate | 1 |
 | 102 | [#255196](https://github.com/microsoft/vscode/issues/255196) | Copilot instructions in multi-root should apply per folder | 4 | backlog-candidate | 1 |
 | 103 | [#275981](https://github.com/microsoft/vscode/issues/275981) | [Feedback] [Plan Mode] Confusing UX for "Open in Editor" option and .prompt.md file extension | 4 | backlog-candidate | 1 |
 | 108 | [#291311](https://github.com/microsoft/vscode/issues/291311) | Agent mode does not reference instruction files after reading a file outside its initial context. | 3 | active | 1 |
 | 109 | [#307369](https://github.com/microsoft/vscode/issues/307369) | chat.agentFilesLocations and chat.agentSkillsLocations should support glob/wildcard patterns | 3 | active | 1 |
-| 118 | [#255124](https://github.com/microsoft/vscode/issues/255124) | Panel chat gear dropdown should have hints on hover | 0 | backlog-candidate | 1 |
-| 119 | [#256007](https://github.com/microsoft/vscode/issues/256007) | Chat - Apply in Editor feedback | 0 | backlog-candidate | 1 |
 | 141 | [#284849](https://github.com/microsoft/vscode/issues/284849) | Support for Custom Attributes in `.prompt.md` YAML Front Matter | 3 | backlog-candidate | 0 |
 | 156 | [#278850](https://github.com/microsoft/vscode/issues/278850) | Prompts and instructions aren't syncing if non-default profile is used | 2 | backlog-candidate | 0 |
 | 157 | [#280091](https://github.com/microsoft/vscode/issues/280091) | Support for `${userHome}` variable in `chat.promptFilesLocations` setting | 2 | backlog-candidate | 0 |
 | 189 | [#267596](https://github.com/microsoft/vscode/issues/267596) | Feature: Toggle custom Copilot instructions per chat session | 1 | backlog-candidate | 0 |
-| 293 | [#252530](https://github.com/microsoft/vscode/issues/252530) | Make `security.promptForPromptProtocolHandling` a real setting and an allow list | 0 | backlog-candidate | 0 |
+| 194 | [#297210](https://github.com/microsoft/vscode/issues/297210) | Prompt files should allow me to select latest model with wildcard | 1 | backlog-candidate | 0 |
 | 294 | [#252552](https://github.com/microsoft/vscode/issues/252552) | Support human facing comments in custom chat mode files | 0 | backlog-candidate | 0 |
+| 296 | [#253048](https://github.com/microsoft/vscode/issues/253048) | Copilot Coding Agent doesn't create copilot-instructions.md without help | 0 | backlog-candidate | 0 |
 | 297 | [#253201](https://github.com/microsoft/vscode/issues/253201) | Support comments in header section | 0 | backlog-candidate | 0 |
 | 298 | [#253498](https://github.com/microsoft/vscode/issues/253498) | Using the same link again should do file validation before I accept it | 0 | backlog-candidate | 0 |
 | 299 | [#253515](https://github.com/microsoft/vscode/issues/253515) | Support `content` instead of `url` for vscode:chat-* links | 0 | backlog-candidate | 0 |
 | 300 | [#253517](https://github.com/microsoft/vscode/issues/253517) | More options when opening vscode:chat-prompt links in VS Code | 0 | backlog-candidate | 0 |
+| 302 | [#256486](https://github.com/microsoft/vscode/issues/256486) | Add a `contexts` field to the .md metadata for a custom chat mode | 0 | dormant | 0 |
 | 303 | [#257285](https://github.com/microsoft/vscode/issues/257285) | Users need to be guided to make a proper instruction file | 0 | dormant | 0 |
 | 304 | [#258425](https://github.com/microsoft/vscode/issues/258425) | A better way to manage prompts/instructions/agents with the same name. | 0 | backlog-candidate | 0 |
 | 308 | [#260672](https://github.com/microsoft/vscode/issues/260672) | Instructions: Allow filtering instructions to specific modes | 0 | dormant | 0 |
+| 311 | [#266750](https://github.com/microsoft/vscode/issues/266750) | "inherit" instructions in profiles | 0 | backlog-candidate | 0 |
 | 312 | [#267086](https://github.com/microsoft/vscode/issues/267086) | Support cursor rules | 0 | backlog-candidate | 0 |
 | 313 | [#268330](https://github.com/microsoft/vscode/issues/268330) | Add ability to create Chatmode/Prompt from current chat | 0 | backlog-candidate | 0 |
+| 314 | [#269134](https://github.com/microsoft/vscode/issues/269134) | Tool references in prompts: support `extensionId/*` | 0 | backlog-candidate | 0 |
 | 316 | [#269564](https://github.com/microsoft/vscode/issues/269564) | Allow to import prompt/instruction/modes file via `vscode` link for files that need authentication | 0 | backlog-candidate | 0 |
 | 319 | [#273615](https://github.com/microsoft/vscode/issues/273615) | Enable Ctrl+Click on slash commands in chat input to open prompt file | 0 | backlog-candidate | 0 |
-| 323 | [#275888](https://github.com/microsoft/vscode/issues/275888) | Let me hide Ask & Edit modes | 0 | dormant | 0 |
+| 320 | [#273813](https://github.com/microsoft/vscode/issues/273813) | Running a prompt without having the tools installed should show a warning in chat | 0 | backlog-candidate | 0 |
 | 324 | [#275979](https://github.com/microsoft/vscode/issues/275979) | Prompt file type detection should be case-insensitive | 0 | dormant | 0 |
+| 325 | [#276105](https://github.com/microsoft/vscode/issues/276105) | Lots of tools I didn't choose in my tool set | 0 | backlog-candidate | 0 |
+| 326 | [#276633](https://github.com/microsoft/vscode/issues/276633) | Clarify order of custom agent, workspace instructions, and user instructions in context | 0 | backlog-candidate | 0 |
+| 327 | [#277735](https://github.com/microsoft/vscode/issues/277735) | Agent: Prompts should not persist tool/model selection after chat response | 0 | active | 0 |
 | 328 | [#278111](https://github.com/microsoft/vscode/issues/278111) | [prompts] add a command to improve a prompt | 0 | backlog-candidate | 0 |
+| 329 | [#279184](https://github.com/microsoft/vscode/issues/279184) | Provide the ability to disable extension specific instructions in agent mode | 0 | backlog-candidate | 0 |
 | 330 | [#279367](https://github.com/microsoft/vscode/issues/279367) | Support substitution variables in prompt files | 0 | backlog-candidate | 0 |
 | 331 | [#279464](https://github.com/microsoft/vscode/issues/279464) | The completions in the front matter is influenced by the space after the `:` | 0 | dormant | 0 |
 | 332 | [#280624](https://github.com/microsoft/vscode/issues/280624) | [prompts] fill in default content for new files created with `New File` | 0 | backlog-candidate | 0 |
+| 333 | [#280684](https://github.com/microsoft/vscode/issues/280684) | Selecting tools for custom agent always opens the md file | 0 | dormant | 0 |
 | 335 | [#283149](https://github.com/microsoft/vscode/issues/283149) | Unable to specify line numbers when providing file context in prompt files | 0 | backlog-candidate | 0 |
-| 354 | [#315240](https://github.com/microsoft/vscode/issues/315240) | Default `editor.linkedEditing` to true | 0 | backlog-candidate | 0 |
+| 338 | [#288703](https://github.com/microsoft/vscode/issues/288703) | Support regex matching in custom copilot instruction injection | 0 | backlog-candidate | 0 |
+| 339 | [#290272](https://github.com/microsoft/vscode/issues/290272) | Skill changes in skill.md don’t apply until VS Code restart or new chat session | 0 | active | 0 |
+| 340 | [#290374](https://github.com/microsoft/vscode/issues/290374) | Extend Profile Isolation to AI Configuration Files (Copilot Instructions, AGENTS.md, Prompts) | 0 | active | 0 |
+| 342 | [#295894](https://github.com/microsoft/vscode/issues/295894) | per-model(s) instruction files | 0 | active | 0 |
+| 353 | [#314388](https://github.com/microsoft/vscode/issues/314388) | Runtime errors when prompt/agent references model or agent that doesn't exist | 0 | active | 0 |
 
 ### WSL and remote development (14)
 
@@ -663,17 +661,19 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 285 | [#238498](https://github.com/microsoft/vscode/issues/238498) | [wsl] bring back "Reopen Folder in WSL" to the remote menu | 0 | backlog-candidate | 0 |
 | 301 | [#254361](https://github.com/microsoft/vscode/issues/254361) | [WSL] Add server installation `dnf install wget` for Fedora | 0 | backlog-candidate | 0 |
 
-### Other (17)
+### Other (19)
 
 | # | Issue | Title | 👍 | Signal | Score |
 | --- | --- | --- | --- | --- | --- |
+| 17 | [#242156](https://github.com/microsoft/vscode/issues/242156) | Add basic toml support | 53 | backlog-candidate | 10 |
 | 28 | [#28080](https://github.com/microsoft/vscode/issues/28080) | [decorations] Support hover decorations over the line numbers (i.e. gutter) | 72 | backlog-candidate | 6 |
 | 36 | [#105487](https://github.com/microsoft/vscode/issues/105487) | [cli] specify command that runs on window open | 44 | backlog-candidate | 5 |
 | 38 | [#274545](https://github.com/microsoft/vscode/issues/274545) | [npm] package.json dependency autocomplete: autocomplete all versions | 23 | backlog-candidate | 5 |
 | 73 | [#192144](https://github.com/microsoft/vscode/issues/192144) | VSCode client libraries have invalid exports | 2 | backlog-candidate | 2 |
 | 79 | [#54248](https://github.com/microsoft/vscode/issues/54248) | [json] package.json: complete package versions from scopes or private registries | 13 | backlog-candidate | 1 |
+| 100 | [#251603](https://github.com/microsoft/vscode/issues/251603) | Issue: GitHub Copilot toolsets.jsonc file not syncing across devices | 4 | backlog-candidate | 1 |
+| 161 | [#44612](https://github.com/microsoft/vscode/issues/44612) | [razor] comment out razor code with @* *@ | 1 | backlog-candidate | 0 |
 | 165 | [#69546](https://github.com/microsoft/vscode/issues/69546) | [json] add colon automatically | 1 | backlog-candidate | 0 |
-| 176 | [#119047](https://github.com/microsoft/vscode/issues/119047) | [themes] use both English and UI language to search color theme names | 1 | backlog-candidate | 0 |
 | 207 | [#41320](https://github.com/microsoft/vscode/issues/41320) | [xml] add on enter rules | 0 | backlog-candidate | 0 |
 | 216 | [#56719](https://github.com/microsoft/vscode/issues/56719) | [npm] hover should show relevant latest version | 0 | backlog-candidate | 0 |
 | 230 | [#86764](https://github.com/microsoft/vscode/issues/86764) | [css] hover for property values | 0 | backlog-candidate | 0 |
@@ -681,6 +681,6 @@ Experimental themed view of [the flat ranking](aeschli.md); themes assigned by t
 | 250 | [#123615](https://github.com/microsoft/vscode/issues/123615) | [api][commands] Open new window and a file | 0 | dormant | 0 |
 | 253 | [#124577](https://github.com/microsoft/vscode/issues/124577) | [api] Give access to recently opened workspaces: `vscode.getRecentlyOpened` | 0 | backlog-candidate | 0 |
 | 260 | [#142402](https://github.com/microsoft/vscode/issues/142402) | Tags for properties contribution is missing from completion | 0 | backlog-candidate | 0 |
-| 317 | [#269828](https://github.com/microsoft/vscode/issues/269828) | Render counts next to collapsed toolsets | 0 | backlog-candidate | 0 |
 | 321 | [#273815](https://github.com/microsoft/vscode/issues/273815) | Allow prompts to run in without any instruction files | 0 | backlog-candidate | 0 |
+| 322 | [#275053](https://github.com/microsoft/vscode/issues/275053) | Agent file editing - missing potential fix | 0 | backlog-candidate | 0 |
 | 358 | [#319981](https://github.com/microsoft/vscode/issues/319981) | there is no slash-br | 0 | backlog-candidate | 0 |
