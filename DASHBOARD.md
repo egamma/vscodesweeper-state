@@ -2,9 +2,9 @@
 
 Proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1143** issues reviewed · **308** actionable · generated 2026-07-03 16:45 UTC
+**1153** issues reviewed · **309** actionable · generated 2026-07-03 21:24 UTC
 
-propose-close: **99** · needs-info: **70** · route-to-area: **49** · keep-open: **925**
+propose-close: **100** · needs-info: **70** · route-to-area: **49** · keep-open: **934**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -127,6 +127,7 @@ propose-close: **99** · needs-info: **70** · route-to-area: **49** · keep-ope
 | aeschli, pwang347 | [#310436](https://github.com/microsoft/vscode/issues/310436) | Restrict skills to specific agents | feature-request | route-to-area | none | 72% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/310436.md) | 2026-07-03 |
 | aeschli, pwang347 | [#312256](https://github.com/microsoft/vscode/issues/312256) | bug: Custom agents duplicated in agent picker when same name exists in both org-synced and local paths | bug | propose-close | *extension-candidate | 78% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312256.md) | 2026-07-03 |
 | aeschli, pwang347 | [#315593](https://github.com/microsoft/vscode/issues/315593) | Allow to change models for Custom agents inside Agent Plugin | feature-request | needs-info | info-needed | 78% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315593.md) | 2026-07-03 |
+| aiday-mar | [#176982](https://github.com/microsoft/vscode/issues/176982) | Json sort command does not honor indentation with tabs | bug | propose-close | none | 88% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/176982.md) | 2026-07-03 |
 | alexdima | [#83196](https://github.com/microsoft/vscode/issues/83196) | Enteraction appending text before the new line | feature-request | keep-open | none | 78% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/83196.md) | 2026-06-26 |
 | alexdima | [#87741](https://github.com/microsoft/vscode/issues/87741) | Auto save & new line prevents undo from working | bug | keep-open | none | 74% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/87741.md) | 2026-06-26 |
 | alexdima | [#94610](https://github.com/microsoft/vscode/issues/94610) | Scrollbar doens't respond to touch screen dragging | feature-request | propose-close | none | 86% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/94610.md) | 2026-06-26 |
@@ -318,7 +319,7 @@ propose-close: **99** · needs-info: **70** · route-to-area: **49** · keep-ope
 | TylerLeonhardt, alexdima | [#153256](https://github.com/microsoft/vscode/issues/153256) | Missing localization for ES modules in `monaco-editor-core` | feature-request | propose-close | none | 92% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/153256.md) | 2026-06-26 |
 
 <details>
-<summary>835 keep-open / no-action items</summary>
+<summary>844 keep-open / no-action items</summary>
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -782,6 +783,15 @@ propose-close: **99** · needs-info: **70** · route-to-area: **49** · keep-ope
 | aeschli, sbatten | [#117822](https://github.com/microsoft/vscode/issues/117822) | [product icon themes] theme icons support for vscode.show(Information\|Warning\|Error)Message | feature-request | keep-open | none | 80% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/117822.md) | 2026-07-03 |
 | aeschli, sbatten | [#138727](https://github.com/microsoft/vscode/issues/138727) | support theme icons in menus in the shadow dom | debt | keep-open | none | 90% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/138727.md) | 2026-07-03 |
 | aeschli, vijayupadya | [#275295](https://github.com/microsoft/vscode/issues/275295) | Created file from plan mode handoff is linkified in chat | polish | keep-open | none | 80% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275295.md) | 2026-07-03 |
+| aiday-mar | [#105302](https://github.com/microsoft/vscode/issues/105302) | Hover not showing on inline decorations | bug | keep-open | none | 78% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/105302.md) | 2026-07-03 |
+| aiday-mar | [#107491](https://github.com/microsoft/vscode/issues/107491) | Selecting 2 color values and changing them both with color picker | feature-request | keep-open | none | 90% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/107491.md) | 2026-07-03 |
+| aiday-mar | [#140899](https://github.com/microsoft/vscode/issues/140899) | Add support for palettes/named colors in the color picker | feature-request | keep-open | none | 90% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/140899.md) | 2026-07-03 |
+| aiday-mar | [#144036](https://github.com/microsoft/vscode/issues/144036) | Feature Request: Add way of getting all the color presentations in a specific range of a document in the vscode API | feature-request | keep-open | none | 78% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/144036.md) | 2026-07-03 |
+| aiday-mar | [#152474](https://github.com/microsoft/vscode/issues/152474) | Elements inside a gitlens hover appear to jiggle | bug | keep-open | none | 85% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/152474.md) | 2026-07-03 |
+| aiday-mar | [#187834](https://github.com/microsoft/vscode/issues/187834) | [Feature]: Add editor decorations to sticky scroll lines | feature-request | keep-open | none | 92% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/187834.md) | 2026-07-03 |
+| aiday-mar | [#191648](https://github.com/microsoft/vscode/issues/191648) | Should json sort on save also apply to JsonL | feature-request | keep-open | none | 80% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/191648.md) | 2026-07-03 |
+| aiday-mar | [#198122](https://github.com/microsoft/vscode/issues/198122) | Rethink how z-index is assigned within the editor | feature-request | keep-open | none | 90% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/198122.md) | 2026-07-03 |
+| aiday-mar | [#201732](https://github.com/microsoft/vscode/issues/201732) | Indent instead of de-indent when soft wrapping long lines in signatures | feature-request | keep-open | none | 80% | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/201732.md) | 2026-07-03 |
 | alexdima | [#23991](https://github.com/microsoft/vscode/issues/23991) | Keyboard mappings with `setxkbmap` on Linux not working | bug | keep-open | none | 88% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/23991.md) | 2026-06-26 |
 | alexdima | [#24783](https://github.com/microsoft/vscode/issues/24783) | vscode reads AltGr key as cursor-left move through X11 connections | bug | keep-open | none | 78% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/24783.md) | 2026-06-26 |
 | alexdima | [#32840](https://github.com/microsoft/vscode/issues/32840) | Cannot display emoji ✔️, 🙋‍♂️ | upstream | keep-open | none | 78% | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/32840.md) | 2026-06-26 |
