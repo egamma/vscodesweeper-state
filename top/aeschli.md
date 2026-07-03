@@ -1,10 +1,10 @@
 # Top issues — aeschli
 
-Value ranking of reviewed open issues assigned to `aeschli` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-03 21:11 UTC. Also available [grouped by theme](aeschli-themes.md).
+Value ranking of reviewed open issues assigned to `aeschli` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-03 21:23 UTC. Also available [grouped by theme](aeschli-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**. Auto-fix is a tractability hint, not part of the score.
 
-## Bugs (top 50 of 209)
+## Bugs (top 25 of 209)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Auto-fix | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -33,6 +33,12 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 23 | [#266597](https://github.com/microsoft/vscode/issues/266597) | editor.removeManualFoldingRanges should support empty selection | 1 | 6 | 1 | correctness | niche | 14 | — | yes | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/266597.md) |
 | 24 | [#273226](https://github.com/microsoft/vscode/issues/273226) | [html] completions: better handle unclosed string literals | 0 | 11 | 0 | correctness | common | 14 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273226.md) |
 | 25 | [#193603](https://github.com/microsoft/vscode/issues/193603) | [wsl] Can't run `code .` when offline and VS Code got updated | 3 | 4 | 1 | correctness | niche | 12 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/193603.md) |
+
+<details>
+<summary>184 more bugs (score ≤ 12)</summary>
+
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Auto-fix | Review |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 26 | [#265301](https://github.com/microsoft/vscode/issues/265301) | When WSL is closed / crashes, all open instances of VSCode have to be closed completely - reload window and attempting to reconnect fails | 2 | 0 | 1 | correctness | niche | 12 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/265301.md) |
 | 27 | [#137938](https://github.com/microsoft/vscode/issues/137938) | [html] "Auto Closing Tags" adds unnecessary tags in some cases with prettier-vscode | 2 | 1 | 1 | correctness | common | 11 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/137938.md) |
 | 28 | [#245849](https://github.com/microsoft/vscode/issues/245849) | [folding] folding gets messed up after Copilot edits a file | 1 | 7 | 0 | correctness | common | 11 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/245849.md) |
@@ -58,12 +64,6 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 48 | [#312254](https://github.com/microsoft/vscode/issues/312254) | Agents: Plan doesn't show up as a custom agent type | 1 | 3 | 0 | correctness | niche | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312254.md) |
 | 49 | [#316838](https://github.com/microsoft/vscode/issues/316838) | Copilot Instructions are Ignored | 1 | 3 | 0 | correctness | niche | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316838.md) |
 | 50 | [#321758](https://github.com/microsoft/vscode/issues/321758) | Customizations: Built-in skills are readonly with agents host | 1 | 0 | 2 | papercut | niche | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321758.md) |
-
-<details>
-<summary>159 more bugs (score ≤ 7)</summary>
-
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Auto-fix | Review |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 51 | [#282750](https://github.com/microsoft/vscode/issues/282750) | Remember workspace specific tool disablement | 0 | 0 | 1 | correctness | niche | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/282750.md) |
 | 52 | [#288698](https://github.com/microsoft/vscode/issues/288698) | Tool picker doesn't work properly when editing a prompt | 0 | 0 | 1 | correctness | niche | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/288698.md) |
 | 53 | [#305994](https://github.com/microsoft/vscode/issues/305994) | execution_subagent doesn't have skill context | 0 | 5 | 0 | correctness | common | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/305994.md) |
@@ -226,7 +226,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-## Feature requests (top 42 of 360)
+## Feature requests (top 25 of 360)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -255,6 +255,12 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 23 | [#47331](https://github.com/microsoft/vscode/issues/47331) | [html][css] Investigate cross css/html, multi file support | 72 | 12 | 3 | backlog-candidate | 7 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/47331.md) |
 | 24 | [#63972](https://github.com/microsoft/vscode/issues/63972) | [folding] Move line up/down should skip over folded regions or folded sections | 70 | 14 | 1 | backlog-candidate | 7 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/63972.md) |
 | 25 | [#130250](https://github.com/microsoft/vscode/issues/130250) | [folding] Show number of lines folded | 64 | 13 | 1 | backlog-candidate | 7 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/130250.md) |
+
+<details>
+<summary>335 more feature requests (score ≤ 7)</summary>
+
+| # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Review |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 26 | [#216](https://github.com/microsoft/vscode/issues/216) | [grammars] provide alternative to TextMate grammars | 50 | 13 | 3 | backlog-candidate | 7 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/216.md) |
 | 27 | [#295755](https://github.com/microsoft/vscode/issues/295755) | Feature Request: Support Branch Selection for Organization‑Level Copilot Agents | 40 | 3 | 1 | backlog-candidate | 7 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/295755.md) |
 | 28 | [#28080](https://github.com/microsoft/vscode/issues/28080) | [decorations] Support hover decorations over the line numbers (i.e. gutter) | 72 | 5 | 1 | backlog-candidate | 6 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/28080.md) |
@@ -272,12 +278,6 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 40 | [#301181](https://github.com/microsoft/vscode/issues/301181) | Distribute Skills and Instructions from Organization Repositories | 18 | 2 | 0 | active | 5 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/301181.md) |
 | 41 | [#92736](https://github.com/microsoft/vscode/issues/92736) | [themes] Allow gradients along with colors | 45 | 3 | 0 | backlog-candidate | 4 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/92736.md) |
 | 42 | [#179152](https://github.com/microsoft/vscode/issues/179152) | Add support for remote development on Windows Sandbox | 45 | 2 | 0 | backlog-candidate | 4 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/179152.md) |
-
-<details>
-<summary>318 more feature requests (score ≤ 4)</summary>
-
-| # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Review |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 43 | [#66053](https://github.com/microsoft/vscode/issues/66053) | [css][html] SVG language support | 44 | 11 | 0 | backlog-candidate | 4 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/66053.md) |
 | 44 | [#70794](https://github.com/microsoft/vscode/issues/70794) | [folding] custom folding text for folded ranges | 38 | 13 | 3 | backlog-candidate | 4 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/70794.md) |
 | 45 | [#58315](https://github.com/microsoft/vscode/issues/58315) | [html] Automatically delete HTML closing tag when converting to self-closing tag | 36 | 17 | 0 | backlog-candidate | 4 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/58315.md) |
