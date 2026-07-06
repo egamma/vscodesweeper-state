@@ -1,8 +1,8 @@
 # Top issues — aiday-mar
 
-Value ranking of reviewed open issues assigned to `aiday-mar` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-04 12:46 UTC.
+Value ranking of reviewed open issues assigned to `aiday-mar` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-06 16:00 UTC. Also available [grouped by theme](aiday-mar-themes.md).
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**. Auto-fix is a tractability hint, not part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Auto-fix is a tractability hint, not part of the score.
 
 ## Bugs (top 25 of 172)
 
@@ -204,7 +204,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 9 | [#247250](https://github.com/microsoft/vscode/issues/247250) | Diagnostics hover sort and clarity | 25 | 2 | 1 | backlog-candidate | 71 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/247250.md) |
 | 10 | [#40115](https://github.com/microsoft/vscode/issues/40115) | indent back to line start after enter newline and press up | 45 | 29 | 1 | backlog-candidate | 69 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/40115.md) |
 | 11 | [#67678](https://github.com/microsoft/vscode/issues/67678) | Auto-indent on closing brace | 42 | 15 | 1 | backlog-candidate | 64 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/67678.md) |
-| 12 | [#282673](https://github.com/microsoft/vscode/issues/282673) | Add a setting for color picker to parse ARGB instead of RGBA | 26 | 7 | 0 | backlog-candidate | 57 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/282673.md) |
+| 12 | [#282673](https://github.com/microsoft/vscode/issues/282673) | Add a setting for color picker to parse ARGB instead of RGBA | 26 | 7 | 0 | backlog-candidate | 56 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/282673.md) |
 | 13 | [#139840](https://github.com/microsoft/vscode/issues/139840) | Use modern (CSS color level 4) syntax for colors in the color picker | 27 | 6 | 2 | backlog-candidate | 52 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/139840.md) |
 | 14 | [#133587](https://github.com/microsoft/vscode/issues/133587) | Allow pinning hover popovers (datatips) | 31 | 5 | 0 | backlog-candidate | 50 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/133587.md) |
 | 15 | [#207579](https://github.com/microsoft/vscode/issues/207579) | Refactor preview is missing checkboxes on groups | 23 | 6 | 0 | backlog-candidate | 50 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/207579.md) |
@@ -224,8 +224,8 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 26 | [#294080](https://github.com/microsoft/vscode/issues/294080) | Feature request: command to adjust space-based indentation width, without a formatter | 5 | 4 | 0 | active | 21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294080.md) |
-| 27 | [#232685](https://github.com/microsoft/vscode/issues/232685) | Test and iterate on TS expandable hover apis | 1 | 24 | 1 | backlog-candidate | 21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/232685.md) |
+| 26 | [#232685](https://github.com/microsoft/vscode/issues/232685) | Test and iterate on TS expandable hover apis | 1 | 24 | 1 | backlog-candidate | 21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/232685.md) |
+| 27 | [#294080](https://github.com/microsoft/vscode/issues/294080) | Feature request: command to adjust space-based indentation width, without a formatter | 5 | 4 | 0 | active | 20 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294080.md) |
 | 28 | [#201600](https://github.com/microsoft/vscode/issues/201600) | Enter custom tab size from the UI | 14 | 4 | 0 | backlog-candidate | 19 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/201600.md) |
 | 29 | [#225179](https://github.com/microsoft/vscode/issues/225179) | Python: Improved Bracket Pair Detection for strings that contain `{{` | 4 | 13 | 1 | backlog-candidate | 19 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/225179.md) |
 | 30 | [#19847](https://github.com/microsoft/vscode/issues/19847) | Explore using formatters for indentation adjustment when formatters are available | 11 | 8 | 1 | backlog-candidate | 18 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/19847.md) |
@@ -245,7 +245,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 44 | [#245302](https://github.com/microsoft/vscode/issues/245302) | [Sticky Scroll] If a function consist of multiline arguments, sticky the function also multiline | 6 | 3 | 0 | backlog-candidate | 11 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/245302.md) |
 | 45 | [#261241](https://github.com/microsoft/vscode/issues/261241) | Accessibility Issue: "Tokenization is skipped..." | 4 | 0 | 0 | backlog-candidate | 11 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/261241.md) |
 | 46 | [#50952](https://github.com/microsoft/vscode/issues/50952) | onEnterRules should be multi-line aware | 5 | 3 | 1 | dormant | 10 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/50952.md) |
-| 47 | [#284243](https://github.com/microsoft/vscode/issues/284243) | [Feature] : Add “Open in Integrated Terminal” option to editor tab context menu | 0 | 3 | 1 | active | 9 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/284243.md) |
+| 47 | [#284243](https://github.com/microsoft/vscode/issues/284243) | [Feature] : Add “Open in Integrated Terminal” option to editor tab context menu | 0 | 3 | 1 | dormant | 9 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/284243.md) |
 | 48 | [#286296](https://github.com/microsoft/vscode/issues/286296) | Support decorations that hide characters | 2 | 2 | 0 | backlog-candidate | 8 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/286296.md) |
 | 49 | [#34621](https://github.com/microsoft/vscode/issues/34621) | Unify indentation and formatting APIs | 5 | 0 | 0 | backlog-candidate | 6 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/34621.md) |
 | 50 | [#229647](https://github.com/microsoft/vscode/issues/229647) | Undo stacks are not granular enough for Korean | 2 | 3 | 0 | backlog-candidate | 6 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/229647.md) |
