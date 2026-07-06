@@ -1,6 +1,6 @@
 # Top issues — aiday-mar
 
-Value ranking of reviewed open issues assigned to `aiday-mar` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-06 16:00 UTC. Also available [grouped by theme](aiday-mar-themes.md).
+Value ranking of reviewed open issues assigned to `aiday-mar` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-06 16:02 UTC. Also available [grouped by theme](aiday-mar-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Auto-fix is a tractability hint, not part of the score.
 
