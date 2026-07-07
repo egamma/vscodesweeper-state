@@ -2,7 +2,7 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1423** issues reviewed · **369** actionable · generated 2026-07-04 16:15 UTC
+**1423** issues reviewed · **369** actionable · generated 2026-07-07 13:49 UTC
 
 propose-close: **114** · needs-info: **72** · route-to-area: **47** · keep-open: **1190**
 
@@ -136,7 +136,7 @@ propose-close: **114** · needs-info: **72** · route-to-area: **47** · keep-op
 | aiday-mar | [#178075](https://github.com/microsoft/vscode/issues/178075) | De-indentation breaks pair autoclosing | bug | keep-open | none | 78% | Traced | yes | `npm run fix -- --issue 178075` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/178075.md) | 2026-07-03 |
 | aiday-mar | [#178184](https://github.com/microsoft/vscode/issues/178184) | Difference in hover sequence results between run-time and test-time | bug | keep-open | none | 82% | Source-confirmed | yes | `npm run fix -- --issue 178184` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/178184.md) | 2026-07-03 |
 | aiday-mar | [#187944](https://github.com/microsoft/vscode/issues/187944) | `editor.detectIndentation` produces incorrect values for empty files when `editor.insertSpaces` is `true` | bug | keep-open | none | 88% | Source-confirmed | yes | `npm run fix -- --issue 187944` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/187944.md) | 2026-07-04 |
-| aiday-mar | [#188878](https://github.com/microsoft/vscode/issues/188878) | Can't hover on top few pixels of editor | bug | keep-open | none | 82% | Source-confirmed | yes | `npm run fix -- --issue 188878` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/188878.md) | 2026-07-04 |
+| aiday-mar | [#188878](https://github.com/microsoft/vscode/issues/188878) | Can't hover on top few pixels of editor | bug | keep-open | none | 82% | Source-confirmed | yes | [draft PR](https://github.com/egamma/vscode/pull/2) | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/188878.md) | 2026-07-04 |
 | aiday-mar | [#199050](https://github.com/microsoft/vscode/issues/199050) | Unexpected indentation added on new line if a string contains a '{' | bug | propose-close | none | 92% | Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/199050.md) | 2026-07-04 |
 | aiday-mar | [#199223](https://github.com/microsoft/vscode/issues/199223) | Using 'function' in a Lua string causes wrong indentation | bug | keep-open | none | 88% | Source-confirmed | yes | `npm run fix -- --issue 199223` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/199223.md) | 2026-07-03 |
 | aiday-mar | [#211150](https://github.com/microsoft/vscode/issues/211150) | `HoverContext` should have non-optional readonly members | debt | propose-close | none | 75% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/211150.md) | 2026-07-03 |
