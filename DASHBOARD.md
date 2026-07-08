@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**2371** open issues reviewed · **690** actionable · **75** closed since review · generated 2026-07-08 19:42 UTC
+**2373** open issues reviewed · **690** actionable · **75** closed since review · generated 2026-07-08 19:48 UTC
 
-propose-close: **204** · needs-info: **140** · route-to-area: **34** · keep-open: **1993**
+propose-close: **204** · needs-info: **140** · route-to-area: **34** · keep-open: **1995**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -700,7 +700,7 @@ propose-close: **204** · needs-info: **140** · route-to-area: **34** · keep-o
 | TylerLeonhardt, hediet | [#167151](https://github.com/microsoft/vscode/issues/167151) | iPad: text selection (cursor) | bug | propose-close | *duplicate | 72% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/167151.md) | 2026-07-08 |
 
 <details>
-<summary>1681 keep-open / no-action items</summary>
+<summary>1683 keep-open / no-action items</summary>
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1572,6 +1572,8 @@ propose-close: **204** · needs-info: **140** · route-to-area: **34** · keep-o
 | alexdima | [#323238](https://github.com/microsoft/vscode/issues/323238) | Option to display relative line numbers for virtual/wrapped lines | feature-request | keep-open | none | 85% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323238.md) | 2026-07-08 |
 | alexdima | [#323388](https://github.com/microsoft/vscode/issues/323388) | Feature Request: Native support ${num:$Snippet(prefix)} to nest other code snippets & trigger snippets inside quotes/brackets | feature-request | keep-open | none | 72% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323388.md) | 2026-07-08 |
 | alexdima | [#324147](https://github.com/microsoft/vscode/issues/324147) | Remote Tunnel Access fails after a while | bug | keep-open | none | 75% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324147.md) | 2026-07-08 |
+| alexdima | [#324151](https://github.com/microsoft/vscode/issues/324151) | Unable to connect to tunnel after updating service remotely | bug | keep-open | none | 85% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324151.md) | 2026-07-08 |
+| alexdima | [#324152](https://github.com/microsoft/vscode/issues/324152) | Unable to connect to tunnel after updating service remotely | bug | keep-open | none | 90% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324152.md) | 2026-07-08 |
 | alexdima | [#324365](https://github.com/microsoft/vscode/issues/324365) | Function List on Scrollbar Hover | feature-request | keep-open | none | 70% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324365.md) | 2026-07-08 |
 | alexdima, aiday-mar | [#65648](https://github.com/microsoft/vscode/issues/65648) | Bidi text edit support | feature-request | keep-open | none | 88% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/65648.md) | 2026-07-08 |
 | alexdima, aiday-mar | [#214857](https://github.com/microsoft/vscode/issues/214857) | lineHighlightBorder should frame all warped line | feature-request | keep-open | none | 85% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/214857.md) | 2026-07-08 |
