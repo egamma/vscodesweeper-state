@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1751** open issues reviewed · **398** actionable · **74** closed since review · generated 2026-07-08 10:07 UTC
+**1752** open issues reviewed · **399** actionable · **74** closed since review · generated 2026-07-08 10:17 UTC
 
-propose-close: **87** · needs-info: **81** · route-to-area: **47** · keep-open: **1536**
+propose-close: **88** · needs-info: **81** · route-to-area: **47** · keep-open: **1536**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Verify | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -367,6 +367,7 @@ propose-close: **87** · needs-info: **81** · route-to-area: **47** · keep-ope
 | hediet | [#230105](https://github.com/microsoft/vscode/issues/230105) | Conflict resolver worked not expected when I click accpect incoming or current | bug | keep-open | none | 82% | Source-confirmed | yes | `npm run fix -- --issue 230105` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/230105.md) | 2026-07-08 |
 | hediet | [#232970](https://github.com/microsoft/vscode/issues/232970) | Null editorGhostText.foreground color in default high contrast themes | bug | propose-close | *as-designed | 72% | Traced | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/232970.md) | 2026-07-08 |
 | hediet | [#233156](https://github.com/microsoft/vscode/issues/233156) | Illegal value for lineNumber | bug | propose-close | *duplicate | 82% | Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/233156.md) | 2026-07-08 |
+| hediet | [#233170](https://github.com/microsoft/vscode/issues/233170) | Support comment toggling for languages that do not support content on the first column | feature-request | propose-close | none | 88% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/233170.md) | 2026-07-08 |
 | hediet | [#234728](https://github.com/microsoft/vscode/issues/234728) | [Bug] `"editor.glyphMargin": false` not working for diff editors | bug | keep-open | none | 88% | Source-confirmed | yes | `npm run fix -- --issue 234728` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/234728.md) | 2026-07-08 |
 | hediet | [#234752](https://github.com/microsoft/vscode/issues/234752) | Staging Lines Changes EOL of Whole File | bug | keep-open | none | 80% | Source-confirmed | yes | `npm run fix -- --issue 234752` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/234752.md) | 2026-07-08 |
 | hediet | [#235436](https://github.com/microsoft/vscode/issues/235436) | 1px gap to side of minimap lets code show through | bug | keep-open | none | 82% | Source-confirmed | yes | `npm run fix -- --issue 235436` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/235436.md) | 2026-07-08 |
