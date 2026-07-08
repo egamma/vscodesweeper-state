@@ -2,7 +2,7 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**1450** issues reviewed · **372** actionable · generated 2026-07-07 14:50 UTC
+**1450** issues reviewed · **372** actionable · generated 2026-07-08 08:07 UTC
 
 propose-close: **116** · needs-info: **72** · route-to-area: **47** · keep-open: **1215**
 
@@ -356,7 +356,7 @@ propose-close: **116** · needs-info: **72** · route-to-area: **47** · keep-op
 | alexdima, sbatten | [#315117](https://github.com/microsoft/vscode/issues/315117) | Release validation using quality metrics | feature-request | route-to-area | feature-request | 72% | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315117.md) | 2026-06-26 |
 | alexdima, Yoyokrazy | [#314465](https://github.com/microsoft/vscode/issues/314465) | UI Bug: Triple click to highlight moves the cursor to a new line | bug | needs-info | info-needed | 74% | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314465.md) | 2026-06-26 |
 | connor4312, aeschli | [#307368](https://github.com/microsoft/vscode/issues/307368) | Remote tunnel connection broken after each update | bug | route-to-area | none | 60% | Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307368.md) | 2026-07-03 |
-| dbaeumer | [#246019](https://github.com/microsoft/vscode/issues/246019) | lsp signature_helper Activity parameter highlight position error | bug | keep-open | none | 80% | Source-confirmed | yes | `npm run fix -- --issue 246019` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/246019.md) | 2026-07-07 |
+| dbaeumer | [#246019](https://github.com/microsoft/vscode/issues/246019) | lsp signature_helper Activity parameter highlight position error | bug | keep-open | none | 80% | Source-confirmed | yes | [draft PR](https://github.com/egamma/vscode/pull/3) | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/246019.md) | 2026-07-07 |
 | dbaeumer | [#293400](https://github.com/microsoft/vscode/issues/293400) | Discussion: Interest in cross-IDE WebAssembly extension standard? | feature-request | propose-close | *out-of-scope | 82% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293400.md) | 2026-07-07 |
 | dbaeumer | [#307753](https://github.com/microsoft/vscode/issues/307753) | [Unhandled Error] Illegal value for lineNumber | bug | propose-close | none | 92% | Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307753.md) | 2026-07-07 |
 | deepak1556, alexdima | [#207221](https://github.com/microsoft/vscode/issues/207221) | can't access module `original-fs` in remote machine | bug | needs-info | info-needed | 76% | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/207221.md) | 2026-06-26 |
