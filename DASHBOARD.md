@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**2081** open issues reviewed · **556** actionable · **75** closed since review · generated 2026-07-08 16:38 UTC
+**2083** open issues reviewed · **558** actionable · **75** closed since review · generated 2026-07-08 18:19 UTC
 
-propose-close: **140** · needs-info: **106** · route-to-area: **50** · keep-open: **1785**
+propose-close: **142** · needs-info: **106** · route-to-area: **50** · keep-open: **1785**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Verify | Auto-fix? | Fix | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -514,6 +514,7 @@ propose-close: **140** · needs-info: **106** · route-to-area: **50** · keep-o
 | hediet | [#286283](https://github.com/microsoft/vscode/issues/286283) | [Editor] Incorrect word wrap for monospace CJK fonts | bug | keep-open | none | 85% | Source-confirmed | yes | `npm run fix -- --issue 286283` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/286283.md) | 2026-07-08 |
 | hediet | [#287068](https://github.com/microsoft/vscode/issues/287068) | Cannot read properties of undefined (reading 'getModelColumnOfViewPosition') | bug | propose-close | none | 82% | Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287068.md) | 2026-07-08 |
 | hediet | [#289052](https://github.com/microsoft/vscode/issues/289052) | 符号使用问题 | bug | propose-close | *caused-by-extension | 85% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289052.md) | 2026-07-08 |
+| hediet | [#289361](https://github.com/microsoft/vscode/issues/289361) | A little lighter color tone for comparision files | feature-request | propose-close | *as-designed | 86% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289361.md) | 2026-07-08 |
 | hediet | [#289679](https://github.com/microsoft/vscode/issues/289679) | Partial Completion doesnt work with cmd+right | bug | propose-close | *as-designed | 88% | Source-confirmed | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289679.md) | 2026-07-08 |
 | hediet | [#290096](https://github.com/microsoft/vscode/issues/290096) | Allow --ours and --theirs options for multiple files in large merge conflicts | feature-request | route-to-area | none | 75% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/290096.md) | 2026-07-08 |
 | hediet | [#290137](https://github.com/microsoft/vscode/issues/290137) | The keybinding "Github Copilot: Toggle (Enable/Disable)" should also hide/show inline suggestion on trigger. | feature-request | propose-close | *caused-by-extension | 78% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/290137.md) | 2026-07-08 |
@@ -527,6 +528,7 @@ propose-close: **140** · needs-info: **106** · route-to-area: **50** · keep-o
 | hediet | [#293870](https://github.com/microsoft/vscode/issues/293870) | Code getting cut off when using inlay hints | bug | needs-info | info-needed | 72% | Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293870.md) | 2026-07-08 |
 | hediet | [#294298](https://github.com/microsoft/vscode/issues/294298) | bug | bug | needs-info | info-needed | 80% | Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294298.md) | 2026-07-08 |
 | hediet | [#296539](https://github.com/microsoft/vscode/issues/296539) | Non-integer custom line height decorations make text wobbly while scrolling | bug | keep-open | none | 82% | Source-confirmed | yes | `npm run fix -- --issue 296539` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296539.md) | 2026-07-08 |
+| hediet | [#296895](https://github.com/microsoft/vscode/issues/296895) | Bracket pair colourization pairs improperly for curly braces | bug | propose-close | *duplicate | 90% | Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296895.md) | 2026-07-08 |
 | hediet | [#297054](https://github.com/microsoft/vscode/issues/297054) | Unexpected cross-region code modification when editing in green highlighted area | bug | needs-info | info-needed | 75% | Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/297054.md) | 2026-07-08 |
 | hediet | [#297189](https://github.com/microsoft/vscode/issues/297189) | Code folding arrows are overlaid by git diff vertical line | bug | route-to-area | none | 78% | Traced | yes | `npm run fix -- --issue 297189` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/297189.md) | 2026-07-08 |
 | hediet | [#297386](https://github.com/microsoft/vscode/issues/297386) | "Error: Illegal value for lineNumber" from tokenizeIfCheap when modifying documents with editor.edit() | bug | propose-close | none | 85% | Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/297386.md) | 2026-07-08 |
