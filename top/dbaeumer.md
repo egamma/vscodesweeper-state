@@ -1,10 +1,10 @@
 # Top issues — dbaeumer
 
-Value ranking of reviewed open issues assigned to `dbaeumer` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-08 08:07 UTC. Also available [grouped by theme](dbaeumer-themes.md).
+Value ranking of reviewed open issues assigned to `dbaeumer` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-08 10:09 UTC. Also available [grouped by theme](dbaeumer-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Auto-fix is a tractability hint, not part of the score.
 
-## Bugs (top 10 of 11)
+## Bugs (top 10 of 10)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Auto-fix | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -16,17 +16,8 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 6 | [#284658](https://github.com/microsoft/vscode/issues/284658) | Language client fails to register `DocumentSemanticTokensProvider` based on server capabilities | 0 | 0 | 1 | correctness | niche | 35 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/284658.md) |
 | 7 | [#246019](https://github.com/microsoft/vscode/issues/246019) | lsp signature_helper Activity parameter highlight position error | 0 | 4 | 0 | correctness | niche | 14 | — | yes | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/246019.md) |
 | 8 | [#133955](https://github.com/microsoft/vscode/issues/133955) | URI provided by didOpen does not conform to RFC3986 | 0 | 5 | 0 | correctness | niche | 11 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/133955.md) |
-| 9 | [#322730](https://github.com/microsoft/vscode/issues/322730) | Stale TypeScript markers shown | 0 | 1 | 0 | correctness | common | 9 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/322730.md) |
-| 10 | [#291040](https://github.com/microsoft/vscode/issues/291040) | Rename struggles without explicit click onto new line | 0 | 1 | 0 | correctness | common | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291040.md) |
-
-<details>
-<summary>1 more bugs (score ≤ 6)</summary>
-
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Auto-fix | Review |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 11 | [#273203](https://github.com/microsoft/vscode/issues/273203) | Auto complete doesn't realize we are using React 19 | 0 | 3 | 0 | papercut | common | 6 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273203.md) |
-
-</details>
+| 9 | [#291040](https://github.com/microsoft/vscode/issues/291040) | Rename struggles without explicit click onto new line | 0 | 1 | 0 | correctness | common | 7 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291040.md) |
+| 10 | [#273203](https://github.com/microsoft/vscode/issues/273203) | Auto complete doesn't realize we are using React 19 | 0 | 3 | 0 | papercut | common | 6 | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273203.md) |
 
 ## Feature requests (top 10 of 10)
 
