@@ -1,0 +1,566 @@
+# Top issues by theme — alexdima
+
+Experimental themed view of [the flat ranking](alexdima.md); themes assigned by the review engine. Rank/score are the lane-wide values. Generated 2026-07-08 20:30 UTC.
+
+## Bugs
+
+### Editing operations (21)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | [#252371](https://github.com/microsoft/vscode/issues/252371) | Copy and paste not working | 107 | correctness | 100 | — |
+| 24 | [#172460](https://github.com/microsoft/vscode/issues/172460) | Setting trim_trailing_whitespace = true breaks undo history | 8 | correctness | 2 | — |
+| 25 | [#210436](https://github.com/microsoft/vscode/issues/210436) | setting `editor.autoClosingBrackets` to `beforeWhitespace` no longer works | 5 | correctness | 2 | — |
+| 31 | [#236671](https://github.com/microsoft/vscode/issues/236671) | Formatting changes ending on \r result in an extra new line | 0 | correctness | 2 | — |
+| 36 | [#88178](https://github.com/microsoft/vscode/issues/88178) | Copying text from a Markdown document inserts non-breaking spaces instead of regular spaces | 11 | papercut | 1 | yes |
+| 61 | [#238210](https://github.com/microsoft/vscode/issues/238210) | Inconsistent line copy-paste on Chromebook | 1 | correctness | 1 | yes |
+| 90 | [#87741](https://github.com/microsoft/vscode/issues/87741) | Auto save & new line prevents undo from working | 3 | papercut | 0 | yes |
+| 97 | [#104844](https://github.com/microsoft/vscode/issues/104844) | Undo behavior: non-focused panel scrolls | 1 | papercut | 0 | — |
+| 105 | [#171033](https://github.com/microsoft/vscode/issues/171033) | Trim Trailing Whitespace does not trim whitespace before cursor on autoSave | 1 | papercut | 0 | — |
+| 106 | [#171311](https://github.com/microsoft/vscode/issues/171311) | vscode.TextEditor.edit breaks undo/redo history | 1 | correctness | 0 | — |
+| 108 | [#201093](https://github.com/microsoft/vscode/issues/201093) | Join Lines should not include the line after the last fully selected line | 1 | correctness | 0 | yes |
+| 169 | [#180866](https://github.com/microsoft/vscode/issues/180866) | undo image paste in rendered notebook markdown will just remove the attachment | 0 | correctness | 0 | — |
+| 175 | [#184107](https://github.com/microsoft/vscode/issues/184107) | VSCode Isn't completely respecting "editor.insertSpaces". It inserts spaces, but deletes them four at a time (editor.tabSize). | 0 | none | 0 | — |
+| 200 | [#201840](https://github.com/microsoft/vscode/issues/201840) | Changing selection of just after text insertion messes up the undo stack [jsx] | 0 | correctness | 0 | — |
+| 238 | [#236365](https://github.com/microsoft/vscode/issues/236365) | "Undo" history lost after "Save as". | 0 | correctness | 0 | — |
+| 247 | [#275754](https://github.com/microsoft/vscode/issues/275754) | Deleting a tab character using backspace doesn't work. | 0 | correctness | 0 | yes |
+| 251 | [#288887](https://github.com/microsoft/vscode/issues/288887) | Keeps reverting to tabs for input when Code gets focus | 0 | papercut | 0 | — |
+| 272 | [#315636](https://github.com/microsoft/vscode/issues/315636) | Paste is adding text not copied | 0 | correctness | 0 | — |
+| 293 | [#321345](https://github.com/microsoft/vscode/issues/321345) | Fairly often wrong encoding | 0 | correctness | 0 | — |
+| 299 | [#322679](https://github.com/microsoft/vscode/issues/322679) | Middle-click paste Primary Selection doesn't work after copying a file | 0 | correctness | 0 | — |
+| 306 | [#324290](https://github.com/microsoft/vscode/issues/324290) | Copying multiple empty selections adds blank lines when pasted into a single cursor | 0 | correctness | 0 | yes |
+
+### Keyboard input (14)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2 | [#23991](https://github.com/microsoft/vscode/issues/23991) | Keyboard mappings with `setxkbmap` on Linux not working | 286 | correctness | 66 | — |
+| 12 | [#24783](https://github.com/microsoft/vscode/issues/24783) | vscode reads AltGr key as cursor-left move through X11 connections | 21 | correctness | 4 | — |
+| 13 | [#24043](https://github.com/microsoft/vscode/issues/24043) | Neo keyboard layout: Some Keys stopped working | 18 | correctness | 4 | — |
+| 15 | [#216587](https://github.com/microsoft/vscode/issues/216587) | You can't comment code with command + / | 0 | correctness | 4 | — |
+| 26 | [#127932](https://github.com/microsoft/vscode/issues/127932) | Custom keyboard layouts does not works properly on ozone wayland only mode | 3 | correctness | 2 | — |
+| 39 | [#141365](https://github.com/microsoft/vscode/issues/141365) | Wrong keybind is used with colemak & russian layout | 5 | correctness | 1 | — |
+| 117 | [#284990](https://github.com/microsoft/vscode/issues/284990) | Command Palette cannot find related commands when Keyboard Shortcuts view is open | 1 | papercut | 0 | — |
+| 133 | [#137401](https://github.com/microsoft/vscode/issues/137401) | "Keybinding" shown is misleading for Ctrl-modified keyboard layouts (like Dvorak+QWERTY) | 0 | correctness | 0 | — |
+| 135 | [#139305](https://github.com/microsoft/vscode/issues/139305) | Swedish keyboard layout is identified as German and this breaks Cmd+Z to undo | 0 | correctness | 0 | — |
+| 143 | [#159275](https://github.com/microsoft/vscode/issues/159275) | Sticky keys and context menu keybinding (Shift F10) | 0 | papercut | 0 | — |
+| 152 | [#170278](https://github.com/microsoft/vscode/issues/170278) | Alt+NumPadKey with num lock will still write the alt code character on top of performing the action | 0 | papercut | 0 | — |
+| 181 | [#187369](https://github.com/microsoft/vscode/issues/187369) | Option-key navigation between words separated by a non-breaking space on a Mac | 0 | papercut | 0 | yes |
+| 282 | [#315893](https://github.com/microsoft/vscode/issues/315893) | issue with shortcut | 0 | none | 0 | — |
+| 291 | [#320559](https://github.com/microsoft/vscode/issues/320559) | Key combination ALT + NUM 009 does not work - follow up | 0 | correctness | 0 | — |
+
+### Extension host (36)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 3 | [#135021](https://github.com/microsoft/vscode/issues/135021) | Extensions keeping the extension host busy lead to disconnection | 33 | correctness | 10 | — |
+| 11 | [#314075](https://github.com/microsoft/vscode/issues/314075) | Extension host crashes deterministically with SIGTRAP (code 133, INT3 at fixed binary offset 0x431ea0d) on 1.118.1 — downgrade to 1.117.0 fixes it | 1 | crash | 5 | — |
+| 30 | [#117327](https://github.com/microsoft/vscode/issues/117327) | An extension spamming console.log will take a lot of CPU time in the render process | 0 | freeze | 2 | yes |
+| 48 | [#209051](https://github.com/microsoft/vscode/issues/209051) | Cannot run profile extension host from 'show running extensions' page | 3 | correctness | 1 | — |
+| 66 | [#144513](https://github.com/microsoft/vscode/issues/144513) | Remote extension fails to activate in web worker extension host | 0 | correctness | 1 | — |
+| 67 | [#170458](https://github.com/microsoft/vscode/issues/170458) | {"errorType":"CancellationError"} | 0 | correctness | 1 | — |
+| 72 | [#187822](https://github.com/microsoft/vscode/issues/187822) | HTTP request from WASM fails in extension host | 0 | correctness | 1 | — |
+| 78 | [#250590](https://github.com/microsoft/vscode/issues/250590) | Extension host manager caches activation events of uninstalled extensions | 0 | correctness | 1 | yes |
+| 93 | [#184130](https://github.com/microsoft/vscode/issues/184130) | Restarting the extension host ends up starting the web worker extension host | 2 | correctness | 0 | — |
+| 129 | [#124095](https://github.com/microsoft/vscode/issues/124095) | Invalid syntax in web worker | 0 | papercut | 0 | — |
+| 138 | [#148160](https://github.com/microsoft/vscode/issues/148160) | extension.extensionKind is wrong for extensions not running on the host | 0 | correctness | 0 | yes |
+| 139 | [#150113](https://github.com/microsoft/vscode/issues/150113) | Duplicate output in devtools when extension writes to process.stdout | 0 | papercut | 0 | — |
+| 142 | [#158208](https://github.com/microsoft/vscode/issues/158208) | WebAssembly is not defined | 0 | correctness | 0 | yes |
+| 153 | [#170407](https://github.com/microsoft/vscode/issues/170407) | Two extensions with conflicting custom semantic tokens cause vscode to crash | 0 | crash | 0 | yes |
+| 154 | [#170457](https://github.com/microsoft/vscode/issues/170457) | disposed. | 0 | correctness | 0 | — |
+| 156 | [#170520](https://github.com/microsoft/vscode/issues/170520) | Editor duplicates statement | 0 | correctness | 0 | — |
+| 174 | [#183798](https://github.com/microsoft/vscode/issues/183798) | VSCode Insiders Build appears to have broken the github.copilot remote.extensionKind setting | 0 | correctness | 0 | — |
+| 179 | [#186075](https://github.com/microsoft/vscode/issues/186075) | Error after update `Cannot ... of undefined (reading '_lower')` (ext host doesn't load) | 0 | correctness | 0 | — |
+| 183 | [#188307](https://github.com/microsoft/vscode/issues/188307) | ExtensionHostManager: Trying to add a disposable to a DisposableStore that has already been disposed of | 0 | papercut | 0 | yes |
+| 186 | [#191286](https://github.com/microsoft/vscode/issues/191286) | DocumentSemanticTokensProvider fails for the first untitled editor created with showTextDocument since v1.76 | 0 | correctness | 0 | — |
+| 190 | [#195261](https://github.com/microsoft/vscode/issues/195261) | Running extensions editor does not wrap content properly | 0 | visual | 0 | yes |
+| 193 | [#196969](https://github.com/microsoft/vscode/issues/196969) | Activation `onCommand` sometimes never returns when there are multiple extension hosts | 0 | freeze | 0 | — |
+| 194 | [#198883](https://github.com/microsoft/vscode/issues/198883) | Apparent lifecycle discrepancy between `ManagementPersistentConnection` and  `ExtensionHostPersistentConnection` | 0 | correctness | 0 | — |
+| 211 | [#205604](https://github.com/microsoft/vscode/issues/205604) | Cannot read properties of null (reading 'modelInfo') | 0 | correctness | 0 | — |
+| 218 | [#212813](https://github.com/microsoft/vscode/issues/212813) | VSCode started with `--extensionDevelopmentPath` crashes after the computer enters in sleep mode | 0 | crash | 0 | yes |
+| 241 | [#242245](https://github.com/microsoft/vscode/issues/242245) | Newly installed extensions not activating on `workspaceContains` tigger | 0 | correctness | 0 | — |
+| 256 | [#304197](https://github.com/microsoft/vscode/issues/304197) | Implementation leaks when using 'Show and Focus Terminal' | 0 | correctness | 0 | — |
+| 257 | [#304367](https://github.com/microsoft/vscode/issues/304367) | extension GitHub.copilot-chat block other extension to load | 0 | perf | 0 | — |
+| 261 | [#312997](https://github.com/microsoft/vscode/issues/312997) | Out of memory: Cannot allocate Wasm memory for new instance | 0 | crash | 0 | — |
+| 266 | [#314649](https://github.com/microsoft/vscode/issues/314649) | Extension host did not start in 10 seconds, it might be stopped on the first line and needs a debugger to continue. | 0 | correctness | 0 | — |
+| 289 | [#319234](https://github.com/microsoft/vscode/issues/319234) | Using a non-string for `contributes.commands[*].enablement` silently breaks extension commands | 0 | correctness | 0 | yes |
+| 294 | [#321944](https://github.com/microsoft/vscode/issues/321944) | Extension host terminates even with no extensions available | 0 | crash | 0 | — |
+| 296 | [#322341](https://github.com/microsoft/vscode/issues/322341) | SIGPIPE error in Remote SSH Extension Host on client disconnect | 0 | papercut | 0 | yes |
+| 301 | [#323275](https://github.com/microsoft/vscode/issues/323275) | Extension host breaking | 0 | crash | 0 | — |
+| 303 | [#323843](https://github.com/microsoft/vscode/issues/323843) | Updated contributions are not available when restarting extensions | 0 | correctness | 0 | — |
+| 304 | [#323964](https://github.com/microsoft/vscode/issues/323964) | .gitignore will prevent an extension from launching. | 0 | correctness | 0 | yes |
+
+### Selection and cursors (41)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 4 | [#291901](https://github.com/microsoft/vscode/issues/291901) | Out of bounds text selection behaves weird | 15 | correctness | 9 | — |
+| 17 | [#154977](https://github.com/microsoft/vscode/issues/154977) | onDidChangeTextEditorVisibleRanges shows strange behaviour! | 9 | correctness | 3 | — |
+| 37 | [#41574](https://github.com/microsoft/vscode/issues/41574) | Can we get a few more pixels for clicking the cursor at the beginning of a line? | 6 | papercut | 1 | yes |
+| 38 | [#109151](https://github.com/microsoft/vscode/issues/109151) | Text cursor indicator displays incorrect | 6 | visual | 1 | — |
+| 46 | [#198399](https://github.com/microsoft/vscode/issues/198399) | Mutilple cursor also includes wrapped lines | 3 | correctness | 1 | yes |
+| 50 | [#181152](https://github.com/microsoft/vscode/issues/181152) | Can't Highlight Text By Draggin Mouse | 2 | correctness | 1 | — |
+| 54 | [#112064](https://github.com/microsoft/vscode/issues/112064) | Pressing `shift-left/right` will exit multi-caret mode | 1 | correctness | 1 | — |
+| 58 | [#182422](https://github.com/microsoft/vscode/issues/182422) | Not able to fully select an Arabic text inside quotation | 1 | correctness | 1 | — |
+| 59 | [#185112](https://github.com/microsoft/vscode/issues/185112) | Column Select / Multiple Cursors: Ability to not have cursor inserted in wrapped part of wrapped text, without need to disable line wrap | 1 | correctness | 1 | — |
+| 65 | [#126205](https://github.com/microsoft/vscode/issues/126205) | cant select text with duble click | 0 | correctness | 1 | — |
+| 69 | [#183198](https://github.com/microsoft/vscode/issues/183198) | While draging to create mutipile-cursors the start point is where the cursor used to be rather than the position where I clicked. | 0 | correctness | 1 | yes |
+| 100 | [#124154](https://github.com/microsoft/vscode/issues/124154) | Calling `TextEditorEdit.replace` to replace a line of text introduces a partial selection of the new text | 1 | correctness | 0 | yes |
+| 104 | [#159366](https://github.com/microsoft/vscode/issues/159366) | Cursor no longer selects entire tab (accessibility issue) | 1 | papercut | 0 | — |
+| 119 | [#324728](https://github.com/microsoft/vscode/issues/324728) | Swiping on the touchscreen is mistakenly recognized as text selection | 1 | papercut | 0 | — |
+| 145 | [#164589](https://github.com/microsoft/vscode/issues/164589) | One character getting highlighted on mouse click without dragging the mouse | 0 | papercut | 0 | — |
+| 147 | [#165602](https://github.com/microsoft/vscode/issues/165602) | Can not select multi line by click left mouse and drag in editor | 0 | correctness | 0 | — |
+| 148 | [#166024](https://github.com/microsoft/vscode/issues/166024) | Cursor selection scroll down not working when status bar is hidden and in full screen mode | 0 | papercut | 0 | yes |
+| 159 | [#170702](https://github.com/microsoft/vscode/issues/170702) | In read only editor, screen reader cursor movement doesn't trigger line to be read | 0 | correctness | 0 | — |
+| 163 | [#172056](https://github.com/microsoft/vscode/issues/172056) | "Change All Occurrences" cursors get out of sync if one is moved with mouse | 0 | correctness | 0 | — |
+| 166 | [#172902](https://github.com/microsoft/vscode/issues/172902) | Extra selection getting added when you Alt + click on a multiple selection to remove the selection | 0 | papercut | 0 | yes |
+| 172 | [#182441](https://github.com/microsoft/vscode/issues/182441) | Regression: TextEditorEdit.replace does not select empty selection anymore | 0 | correctness | 0 | yes |
+| 173 | [#182641](https://github.com/microsoft/vscode/issues/182641) | Multicursor on duplicated lines disappears | 0 | correctness | 0 | yes |
+| 178 | [#185537](https://github.com/microsoft/vscode/issues/185537) | Cannot select between a sequence of unicode flags | 0 | papercut | 0 | yes |
+| 192 | [#196943](https://github.com/microsoft/vscode/issues/196943) | cursorUp/down behavior inconsistent when moving from selection | 0 | papercut | 0 | — |
+| 203 | [#203107](https://github.com/microsoft/vscode/issues/203107) | cursor problem | 0 | none | 0 | — |
+| 207 | [#205175](https://github.com/microsoft/vscode/issues/205175) | (Ctrl + Shift) Multi-text Selection: Incorrect Selection Relative to Selections | 0 | correctness | 0 | yes |
+| 214 | [#211267](https://github.com/microsoft/vscode/issues/211267) | Misaligned editor cursor in Insiders | 0 | visual | 0 | — |
+| 216 | [#212455](https://github.com/microsoft/vscode/issues/212455) | Can't see blinking cursor when it's moved before a closing character like ) or } | 0 | visual | 0 | — |
+| 217 | [#212551](https://github.com/microsoft/vscode/issues/212551) | redo command doesn't focus cursor | 0 | correctness | 0 | — |
+| 222 | [#216952](https://github.com/microsoft/vscode/issues/216952) | Multi cursor editing with option+right & option+left (cursorWordEndRight vs cursorWordEndLeft) can get the cursor out of sync even when operating on the data of the same shape | 0 | correctness | 0 | — |
+| 224 | [#219294](https://github.com/microsoft/vscode/issues/219294) | The cursor and mouse not consistent! | 0 | correctness | 0 | — |
+| 229 | [#224920](https://github.com/microsoft/vscode/issues/224920) | [Web] Backspace doesn't remove the character right before the cursor but removes the character preceding it | 0 | correctness | 0 | — |
+| 236 | [#234758](https://github.com/microsoft/vscode/issues/234758) | Right-clicking injected text caused funny selection | 0 | visual | 0 | yes |
+| 244 | [#246977](https://github.com/microsoft/vscode/issues/246977) | Selection to the left after double clicking | 0 | correctness | 0 | — |
+| 249 | [#284279](https://github.com/microsoft/vscode/issues/284279) | Stupidly difficult to select text from the beginning of line; cursor icon inconsistent with behavior | 0 | papercut | 0 | — |
+| 253 | [#294610](https://github.com/microsoft/vscode/issues/294610) | Editor scroll happening too near the cursor initial position when moving text selection | 0 | papercut | 0 | — |
+| 259 | [#309282](https://github.com/microsoft/vscode/issues/309282) | Copy Line Up/Down commands do not preserve more than two multi-cursors on the same line | 0 | correctness | 0 | yes |
+| 264 | [#314465](https://github.com/microsoft/vscode/issues/314465) | UI Bug: Triple click to highlight moves the cursor to a new line | 0 | papercut | 0 | — |
+| 268 | [#315438](https://github.com/microsoft/vscode/issues/315438) | Multi-line tabbing mangles text... | 0 | correctness | 0 | — |
+| 290 | [#319371](https://github.com/microsoft/vscode/issues/319371) | cursoring down through Arabic letters in parenthesis is odd | 0 | correctness | 0 | — |
+| 310 | [#324821](https://github.com/microsoft/vscode/issues/324821) | Cursor in prompt window is misplaced to right | 0 | correctness | 0 | — |
+
+### Scrolling and wrapping (42)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 5 | [#228009](https://github.com/microsoft/vscode/issues/228009) | Editor goes berserk and start scrolling on mouse movements | 26 | correctness | 8 | — |
+| 29 | [#55605](https://github.com/microsoft/vscode/issues/55605) | Slow when editing a file with very long lines | 0 | freeze | 2 | — |
+| 32 | [#287506](https://github.com/microsoft/vscode/issues/287506) | Word Wrap & Code Overlap issue | 0 | correctness | 2 | — |
+| 43 | [#166741](https://github.com/microsoft/vscode/issues/166741) | Sticky scroll messes up accurate markdown scroll sync | 3 | correctness | 1 | — |
+| 45 | [#188466](https://github.com/microsoft/vscode/issues/188466) | Scrolling laggy inside Virtualbox VM | 3 | correctness | 1 | — |
+| 51 | [#202324](https://github.com/microsoft/vscode/issues/202324) | scroll behavior in editor is different compared to native scrolling on macOS or other websites on chrome | 2 | papercut | 1 | — |
+| 55 | [#117106](https://github.com/microsoft/vscode/issues/117106) | Advanced wrapping strategy causes hangs for larger files | 1 | freeze | 1 | yes |
+| 57 | [#172760](https://github.com/microsoft/vscode/issues/172760) | Long lines horizontal scrolling broken | 1 | visual | 1 | — |
+| 60 | [#189261](https://github.com/microsoft/vscode/issues/189261) | Scrolling is getting laggy & stuttering as the size of the vscode window becomes larger | 1 | perf | 1 | — |
+| 62 | [#286047](https://github.com/microsoft/vscode/issues/286047) | Unable to scroll horizontally within the editor | 1 | correctness | 1 | — |
+| 79 | [#286490](https://github.com/microsoft/vscode/issues/286490) | Editor rendering glitch while typing – text layout suddenly breaks | 0 | visual | 1 | — |
+| 80 | [#297338](https://github.com/microsoft/vscode/issues/297338) | Ctrl+scroll wheel zoom jumps around | 0 | correctness | 1 | — |
+| 92 | [#149849](https://github.com/microsoft/vscode/issues/149849) | Scrollbar Minimap and visible code are out of sync when CodeLens is used | 2 | visual | 0 | — |
+| 95 | [#218248](https://github.com/microsoft/vscode/issues/218248) | Dragging text upwards triggers scrolling far too early | 2 | papercut | 0 | yes |
+| 101 | [#130332](https://github.com/microsoft/vscode/issues/130332) | Editor > Minimap: Size = "fit" setting incorrectly stretches minimap on small files after an integrated terminal panel is initiated and closed from a larger file. | 1 | visual | 0 | — |
+| 102 | [#156423](https://github.com/microsoft/vscode/issues/156423) | Smooth scrolling has limited upper speed and causes skipping to make up | 1 | papercut | 0 | — |
+| 113 | [#228436](https://github.com/microsoft/vscode/issues/228436) | Editor scrolls horizontally with wrapping enabled | 1 | papercut | 0 | — |
+| 114 | [#228818](https://github.com/microsoft/vscode/issues/228818) | Multiple cursors + Word wrap | 1 | none | 0 | — |
+| 115 | [#234349](https://github.com/microsoft/vscode/issues/234349) | Disabling smooth scrolling doesn't work | 1 | papercut | 0 | — |
+| 123 | [#117664](https://github.com/microsoft/vscode/issues/117664) | Diff editor scrolls horizontally when dragging selection vertically | 0 | visual | 0 | — |
+| 124 | [#118892](https://github.com/microsoft/vscode/issues/118892) | Word wrapping incorrect for variable width font with formatting that changes the width of characters | 0 | visual | 0 | — |
+| 125 | [#118893](https://github.com/microsoft/vscode/issues/118893) | Using key commands to scroll to top or bottom of document does not incorporate editor.paddingTop and editor.paddingButtom | 0 | papercut | 0 | yes |
+| 136 | [#139340](https://github.com/microsoft/vscode/issues/139340) | Long text always wrap | 0 | correctness | 0 | — |
+| 146 | [#164591](https://github.com/microsoft/vscode/issues/164591) | Set scrollTop on textArea on all platforms, not only mac | 0 | correctness | 0 | — |
+| 165 | [#172721](https://github.com/microsoft/vscode/issues/172721) | Wrap not correct | 0 | correctness | 0 | — |
+| 177 | [#185208](https://github.com/microsoft/vscode/issues/185208) | Operating the mouse wheel in another window will cause the mouse wheel to operate abnormally when editing code | 0 | correctness | 0 | — |
+| 185 | [#189091](https://github.com/microsoft/vscode/issues/189091) | side scrolling in double pane window | 0 | papercut | 0 | — |
+| 188 | [#192719](https://github.com/microsoft/vscode/issues/192719) | MacOS scrolling inertia is not cancelled when stopped | 0 | papercut | 0 | — |
+| 191 | [#196491](https://github.com/microsoft/vscode/issues/196491) | [wrapped lines] inline chat zone shows on the wrong line | 0 | visual | 0 | yes |
+| 196 | [#200531](https://github.com/microsoft/vscode/issues/200531) | Click scroll bar by page not smooth(Editor,Workbench list ) | 0 | visual | 0 | yes |
+| 202 | [#202642](https://github.com/microsoft/vscode/issues/202642) | When using monospaced Chinese fonts, the auto line-wrapping in simple mode is incorrect. | 0 | correctness | 0 | — |
+| 204 | [#203599](https://github.com/microsoft/vscode/issues/203599) | When I am working on a particular line and then switch to another app, and upon returning, when I scroll the mouse, the cursor is on another line, in another function. I need to find the line I was working on. | 0 | papercut | 0 | — |
+| 206 | [#204654](https://github.com/microsoft/vscode/issues/204654) | Unwanted scrolling in macOS with native trackpad and pinch zoom gesture. | 0 | papercut | 0 | yes |
+| 209 | [#205324](https://github.com/microsoft/vscode/issues/205324) | Scrolling bug with trackpad & smooth scrolling enabled | 0 | papercut | 0 | — |
+| 212 | [#207365](https://github.com/microsoft/vscode/issues/207365) | Rendering paused for long line for performance reasons. This can be configured via `editor.stopRenderingLineAfter`. | 0 | papercut | 0 | yes |
+| 228 | [#223470](https://github.com/microsoft/vscode/issues/223470) | Scroll momentum transferred between different scrollables | 0 | papercut | 0 | — |
+| 233 | [#232813](https://github.com/microsoft/vscode/issues/232813) | word wrap is different for left and right sides | 0 | visual | 0 | yes |
+| 234 | [#233551](https://github.com/microsoft/vscode/issues/233551) | `editor.wordWrap: "bounded"` don't work when inside a settings block for multiple languages | 0 | correctness | 0 | — |
+| 240 | [#240921](https://github.com/microsoft/vscode/issues/240921) | Word Wrap breaks grapheme clusters | 0 | visual | 0 | — |
+| 246 | [#254424](https://github.com/microsoft/vscode/issues/254424) | Mousewheel Zoom is extremely slow on zoomLevel 1 | 0 | papercut | 0 | — |
+| 269 | [#315541](https://github.com/microsoft/vscode/issues/315541) | Text wrapping not working correctly in Linux | 0 | visual | 0 | — |
+| 287 | [#317783](https://github.com/microsoft/vscode/issues/317783) | too fast scrolling when drag&drop into editor (holding shift) | 0 | papercut | 0 | — |
+
+### Language and tokenization (8)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 6 | [#235344](https://github.com/microsoft/vscode/issues/235344) | `Add line comment` should await the tokenization to get the correct language at the position | 1 | correctness | 6 | — |
+| 9 | [#133397](https://github.com/microsoft/vscode/issues/133397) | Embedded languages use outer language auto-closing characters | 5 | correctness | 5 | — |
+| 64 | [#319118](https://github.com/microsoft/vscode/issues/319118) | Auto-completion disabled for languages with ID >= 256 due to LanguageID bits overlapping with TokenType bits | 1 | correctness | 1 | yes |
+| 76 | [#236602](https://github.com/microsoft/vscode/issues/236602) | Link parsing stoped where comments include a single quote | 0 | correctness | 1 | yes |
+| 109 | [#204333](https://github.com/microsoft/vscode/issues/204333) | implicit onLanguage extension activation event not happening if language is declared, but has no language-configuration.json | 1 | papercut | 0 | — |
+| 250 | [#285392](https://github.com/microsoft/vscode/issues/285392) | invalid language syntax suggestion | 0 | — | 0 | — |
+| 267 | [#315131](https://github.com/microsoft/vscode/issues/315131) | Completion-inserted `()` no longer tracked as auto-closed pair | 0 | correctness | 0 | yes |
+| 309 | [#324696](https://github.com/microsoft/vscode/issues/324696) | Format Document shows "There is no formatter for 'fortios' files installed" even though it's installed and configured. | 0 | none | 0 | — |
+
+### Rendering and decorations (48)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 7 | [#170607](https://github.com/microsoft/vscode/issues/170607) | set decoration's opacity is not working | 28 | visual | 5 | — |
+| 16 | [#204043](https://github.com/microsoft/vscode/issues/204043) | Semantic colorization customization applied even if `editor.semanticTokenColorCustomizations.enabled` is false. | 11 | correctness | 3 | yes |
+| 23 | [#100530](https://github.com/microsoft/vscode/issues/100530) | Symbol occurrence highlighting overlaps occurrences of the selected text | 9 | visual | 2 | yes |
+| 27 | [#321979](https://github.com/microsoft/vscode/issues/321979) | editor.showUnused not working | 3 | correctness | 2 | — |
+| 41 | [#211369](https://github.com/microsoft/vscode/issues/211369) | Syntax highlighting sometimes gets out of sync | 4 | visual | 1 | — |
+| 42 | [#82087](https://github.com/microsoft/vscode/issues/82087) | Scrollbar in editor is off | 3 | visual | 1 | — |
+| 44 | [#174058](https://github.com/microsoft/vscode/issues/174058) | Rendered whitespace characters non-uniform | 3 | visual | 1 | — |
+| 49 | [#210371](https://github.com/microsoft/vscode/issues/210371) | minimap markers include `-->` in the end of the display | 3 | visual | 1 | yes |
+| 52 | [#231128](https://github.com/microsoft/vscode/issues/231128) | font ligatures that span several textmate scopes assume the font settings of last character (last component of the composite symbol) | 2 | visual | 1 | — |
+| 74 | [#210295](https://github.com/microsoft/vscode/issues/210295) | Scrolling breaking semantic highlighting | 0 | visual | 1 | — |
+| 96 | [#286048](https://github.com/microsoft/vscode/issues/286048) | Fonts Ligatures are not working | 2 | none | 0 | — |
+| 99 | [#120460](https://github.com/microsoft/vscode/issues/120460) | [Gutter] Git Decorations bounding box and appearing | 1 | papercut | 0 | — |
+| 107 | [#185870](https://github.com/microsoft/vscode/issues/185870) | Editor rulers disappear randomly in large files | 1 | visual | 0 | — |
+| 111 | [#215390](https://github.com/microsoft/vscode/issues/215390) | Cursor appears before decoration on empty lines | 1 | correctness | 0 | yes |
+| 144 | [#164409](https://github.com/microsoft/vscode/issues/164409) | codicon under block cursor is not displayed properly | 0 | visual | 0 | — |
+| 158 | [#170673](https://github.com/microsoft/vscode/issues/170673) | Extra inlay hints appearing in minimap | 0 | visual | 0 | — |
+| 162 | [#171056](https://github.com/microsoft/vscode/issues/171056) | The side preview area of the text editor and the actual view are not uniform when using codelen | 0 | visual | 0 | — |
+| 164 | [#172349](https://github.com/microsoft/vscode/issues/172349) | Tabs do not align to tab stops when emoji are used | 0 | visual | 0 | yes |
+| 167 | [#175330](https://github.com/microsoft/vscode/issues/175330) | Diagnostics jump around in the minimap when scrolling | 0 | visual | 0 | yes |
+| 171 | [#181631](https://github.com/microsoft/vscode/issues/181631) | Highlights don't line up with the text they are highlighting | 0 | visual | 0 | — |
+| 180 | [#186194](https://github.com/microsoft/vscode/issues/186194) | Formatting Issue in "high-level scrollbar" when editor windows are split | 0 | visual | 0 | — |
+| 187 | [#191855](https://github.com/microsoft/vscode/issues/191855) | Block cursor remains after switching to profile with enabled vim extension and back | 0 | correctness | 0 | yes |
+| 189 | [#193422](https://github.com/microsoft/vscode/issues/193422) | Avoid unnecessary repaint in minimap during typing | 0 | perf | 0 | yes |
+| 197 | [#200634](https://github.com/microsoft/vscode/issues/200634) | Question mark disappears when the next colon is highlighted in high contrast themes | 0 | visual | 0 | — |
+| 198 | [#200799](https://github.com/microsoft/vscode/issues/200799) | "editor.fontLigatures" is invalid for Italic fonts | 0 | none | 0 | — |
+| 199 | [#201805](https://github.com/microsoft/vscode/issues/201805) | Minimap view state | 0 | papercut | 0 | — |
+| 201 | [#202389](https://github.com/microsoft/vscode/issues/202389) | MiniMap: Side = Left Breaks EditorGroup.Border | 0 | visual | 0 | — |
+| 210 | [#205598](https://github.com/microsoft/vscode/issues/205598) | Invoking deltaDecorations recursively could lead to leaking decorations. | 0 | correctness | 0 | — |
+| 213 | [#210045](https://github.com/microsoft/vscode/issues/210045) | Search occurrence containing block cursor is badly highlighted | 0 | visual | 0 | — |
+| 219 | [#213027](https://github.com/microsoft/vscode/issues/213027) | Using #pragma region too close to each other creates overlap in minmap | 0 | visual | 0 | yes |
+| 223 | [#218210](https://github.com/microsoft/vscode/issues/218210) | minimap does not show conflicting changes when the change are empty lines | 0 | visual | 0 | — |
+| 225 | [#219561](https://github.com/microsoft/vscode/issues/219561) | Minimap section headers missing for`jsonc` #region | 0 | papercut | 0 | yes |
+| 226 | [#219811](https://github.com/microsoft/vscode/issues/219811) | Minimap scroll bar stops highlighting all the selected word occurrences in HTML | 0 | papercut | 0 | — |
+| 227 | [#221423](https://github.com/microsoft/vscode/issues/221423) | Refreshing semantic tokens does not visually update | 0 | visual | 0 | — |
+| 230 | [#229021](https://github.com/microsoft/vscode/issues/229021) | Zero-width non-joiner renders differently in different file types | 0 | correctness | 0 | — |
+| 231 | [#229530](https://github.com/microsoft/vscode/issues/229530) | Semantic tokens types do not override "standard token type" and "font style" | 0 | correctness | 0 | — |
+| 232 | [#232009](https://github.com/microsoft/vscode/issues/232009) | After configured `editor.tokenColorCustomizations` , editor rolling type perception error | 0 | visual | 0 | — |
+| 237 | [#235512](https://github.com/microsoft/vscode/issues/235512) | Characters go into each other with fontLigatures and RTL characters. | 0 | visual | 0 | — |
+| 239 | [#236999](https://github.com/microsoft/vscode/issues/236999) | Inconsistency between “window.zoomLevel” and Minimap size | 0 | visual | 0 | yes |
+| 242 | [#244087](https://github.com/microsoft/vscode/issues/244087) | Browser Cursor and VSCode Cursor Overlapping Issue | 0 | visual | 0 | yes |
+| 243 | [#244902](https://github.com/microsoft/vscode/issues/244902) | // MARK text in minimap is strechted when "Render Characters" option is checked | 0 | visual | 0 | — |
+| 245 | [#250072](https://github.com/microsoft/vscode/issues/250072) | Minimap overlaps content by the width of the vertical scrollbar | 0 | visual | 0 | yes |
+| 255 | [#303622](https://github.com/microsoft/vscode/issues/303622) | Broken font formatting in tool confirmations | 0 | visual | 0 | — |
+| 271 | [#315634](https://github.com/microsoft/vscode/issues/315634) | Indicator for amount of changes flickers on and off | 0 | visual | 0 | — |
+| 284 | [#316716](https://github.com/microsoft/vscode/issues/316716) | Editor not displaying properly after some time | 0 | visual | 0 | — |
+| 292 | [#320892](https://github.com/microsoft/vscode/issues/320892) | Indentation guide lines rendering error | 0 | visual | 0 | — |
+| 295 | [#322251](https://github.com/microsoft/vscode/issues/322251) | code not opacity when comment | 0 | none | 0 | — |
+| 302 | [#323647](https://github.com/microsoft/vscode/issues/323647) | Font width issue with zoom level | 0 | visual | 0 | — |
+
+### Remote and tunnels (21)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 8 | [#283762](https://github.com/microsoft/vscode/issues/283762) | VSCode loses connection with remote after "Developer: Restart Extension Host" | 6 | correctness | 5 | yes |
+| 14 | [#316459](https://github.com/microsoft/vscode/issues/316459) | Remote-WSL 0.104.3 fails with `navigator is now a global in nodejs` / `PendingMigrationError`, then WebSocket 1006 when connecting to WSL | 4 | correctness | 4 | — |
+| 33 | [#288018](https://github.com/microsoft/vscode/issues/288018) | Endless loop of downloading VS Code Server | 0 | correctness | 2 | — |
+| 34 | [#315841](https://github.com/microsoft/vscode/issues/315841) | Deadlock in extension host activation blocks tunnels auth | 0 | freeze | 2 | — |
+| 75 | [#233151](https://github.com/microsoft/vscode/issues/233151) | [WSL2] Use relative paths when linking to files | 0 | correctness | 1 | yes |
+| 85 | [#322058](https://github.com/microsoft/vscode/issues/322058) | Updating the remote tunnel service caused a failure | 0 | correctness | 1 | — |
+| 86 | [#322059](https://github.com/microsoft/vscode/issues/322059) | Server update failed (triggered through tunnel) | 0 | correctness | 1 | — |
+| 87 | [#324151](https://github.com/microsoft/vscode/issues/324151) | Unable to connect to tunnel after updating service remotely | 0 | correctness | 1 | — |
+| 88 | [#324152](https://github.com/microsoft/vscode/issues/324152) | Unable to connect to tunnel after updating service remotely | 0 | correctness | 1 | — |
+| 110 | [#207221](https://github.com/microsoft/vscode/issues/207221) | can't access module `original-fs` in remote machine | 1 | correctness | 0 | — |
+| 155 | [#170475](https://github.com/microsoft/vscode/issues/170475) | Port forwarding failed to parse response from server. | 0 | correctness | 0 | — |
+| 176 | [#184504](https://github.com/microsoft/vscode/issues/184504) | Workbench failing to connect to server | 0 | correctness | 0 | — |
+| 205 | [#203829](https://github.com/microsoft/vscode/issues/203829) | Fail to install Visual Studio Code Server on Ubuntu Server VM | 0 | correctness | 0 | — |
+| 248 | [#275850](https://github.com/microsoft/vscode/issues/275850) | Switching to Insiders or back to stable in codespaces should handle chat extension properly | 0 | correctness | 0 | — |
+| 260 | [#311334](https://github.com/microsoft/vscode/issues/311334) | GH auth secrets not migrating | 0 | correctness | 0 | — |
+| 262 | [#313012](https://github.com/microsoft/vscode/issues/313012) | vscode-server cli 'code' tool does not report an error when called outside terminal | 0 | correctness | 0 | yes |
+| 265 | [#314604](https://github.com/microsoft/vscode/issues/314604) | 连接wsl出错 | 0 | correctness | 0 | — |
+| 270 | [#315614](https://github.com/microsoft/vscode/issues/315614) | WSL: Server download fails with "aborted" error, causing binary not found on startup | 0 | correctness | 0 | — |
+| 305 | [#324147](https://github.com/microsoft/vscode/issues/324147) | Remote Tunnel Access fails after a while | 0 | correctness | 0 | — |
+| 307 | [#324439](https://github.com/microsoft/vscode/issues/324439) | Codespace is not loading files,and stopped | 0 | none | 0 | — |
+| 308 | [#324462](https://github.com/microsoft/vscode/issues/324462) | Codespace cs50 is failing to connect | 0 | none | 0 | — |
+
+### Copilot agents (15)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 10 | [#318380](https://github.com/microsoft/vscode/issues/318380) | Github-Copilot slow suggestion preferedd over snippet autocomplete | 5 | correctness | 5 | — |
+| 28 | [#321881](https://github.com/microsoft/vscode/issues/321881) | VS Code can become stuck reopening the Agent login window and prevent access to the normal editor | 2 | correctness | 2 | yes |
+| 53 | [#318739](https://github.com/microsoft/vscode/issues/318739) | Copilot inline suggestions override or slow down snippets | 2 | papercut | 1 | — |
+| 63 | [#318556](https://github.com/microsoft/vscode/issues/318556) | Fork not working in Agents window | 1 | correctness | 1 | — |
+| 263 | [#313041](https://github.com/microsoft/vscode/issues/313041) | chat not taking input from letter "n" | 0 | correctness | 0 | — |
+| 273 | [#315644](https://github.com/microsoft/vscode/issues/315644) | Session from agents window disappears when clicking back in vscode window | 0 | correctness | 0 | — |
+| 275 | [#315648](https://github.com/microsoft/vscode/issues/315648) | Icon in sessions view for copilot cli does not match icon in harness | 0 | visual | 0 | — |
+| 277 | [#315730](https://github.com/microsoft/vscode/issues/315730) | Should configuring tools close after closing agent.md | 0 | papercut | 0 | — |
+| 278 | [#315791](https://github.com/microsoft/vscode/issues/315791) | sessions in vscode local not visible in agents app with local | 0 | correctness | 0 | — |
+| 279 | [#315821](https://github.com/microsoft/vscode/issues/315821) | Agents Local: Branch to new session button doesn't do anything | 0 | correctness | 0 | — |
+| 280 | [#315825](https://github.com/microsoft/vscode/issues/315825) | Agents Local: file edits stats not in sync between chat ui and changes sidebar | 0 | correctness | 0 | — |
+| 281 | [#315834](https://github.com/microsoft/vscode/issues/315834) | Agents Local: simple node cmd with failure was stuck in terminal forever | 0 | freeze | 0 | — |
+| 285 | [#316999](https://github.com/microsoft/vscode/issues/316999) | [Bug] Incomplete Sanitization in snippetString.ts (Copilot): Unescaped Backslash Corrupts VS Code Snippet Grammar | 0 | none | 0 | — |
+| 286 | [#317529](https://github.com/microsoft/vscode/issues/317529) | Failed to send request: Error: Session 'default-copilot:copilotcli:/untitled-18474d52-54d9-450f-a779-978160e3ed78' not found | 0 | correctness | 0 | — |
+| 298 | [#322662](https://github.com/microsoft/vscode/issues/322662) | Chat took too long to get ready. Please ensure you are signed in to GitHub and that the extension GitHub.copilot-chat is installed and enabled. Click restart to try again if this issue persists. | 0 | correctness | 0 | — |
+
+### Find and links (8)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 18 | [#107090](https://github.com/microsoft/vscode/issues/107090) | Add selection to next Find match does not work with Regex Find Mode | 8 | correctness | 3 | yes |
+| 35 | [#81520](https://github.com/microsoft/vscode/issues/81520) | ctrl + click "go to definition" clashes with ctrl + click "follow link" | 12 | papercut | 1 | — |
+| 89 | [#147447](https://github.com/microsoft/vscode/issues/147447) | cmd+click behavior for Goto Definition and a Document Link | 6 | papercut | 0 | yes |
+| 91 | [#233573](https://github.com/microsoft/vscode/issues/233573) | When searching rtl letters in Arabic using `Ctrl+F` the word gets reversed and disconnected | 3 | visual | 0 | — |
+| 94 | [#199477](https://github.com/microsoft/vscode/issues/199477) | Clicking inside editor and releasing the mouse button on a link outside activates the link (web/monaco) | 2 | papercut | 0 | yes |
+| 103 | [#158996](https://github.com/microsoft/vscode/issues/158996) | "Follow link" hover is not linkified on markdown links | 1 | papercut | 0 | yes |
+| 116 | [#251076](https://github.com/microsoft/vscode/issues/251076) | File protocol links in editor do not open in WSL | 1 | correctness | 0 | yes |
+| 215 | [#211577](https://github.com/microsoft/vscode/issues/211577) | Add selection to next find match (CTRD + D) does not check current selection when changing focus back from editor to find widget | 0 | correctness | 0 | yes |
+
+### Performance and crashes (15)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 19 | [#324223](https://github.com/microsoft/vscode/issues/324223) | Performance loss in the VS Code `fs` abstraction that potentionally hits all extensions | 3 | perf | 3 | yes |
+| 20 | [#214716](https://github.com/microsoft/vscode/issues/214716) | [09f] potential listener LEAK detected, having 175 listeners already. MOST frequent listener (1): | 0 | perf | 3 | — |
+| 21 | [#284184](https://github.com/microsoft/vscode/issues/284184) | VS Code crashes when using “Reverse Lines” on specific text | 0 | crash | 3 | — |
+| 56 | [#150660](https://github.com/microsoft/vscode/issues/150660) | Loading 256kb file takes 15 seconds on a powerful machine | 1 | freeze | 1 | — |
+| 68 | [#172791](https://github.com/microsoft/vscode/issues/172791) | Uncaught Error: Illegal value for lineNumber | 0 | correctness | 1 | — |
+| 70 | [#187442](https://github.com/microsoft/vscode/issues/187442) | [PerfSampleError] | 0 | perf | 1 | — |
+| 71 | [#187444](https://github.com/microsoft/vscode/issues/187444) | [PerfSampleError] | 0 | perf | 1 | — |
+| 82 | [#313035](https://github.com/microsoft/vscode/issues/313035) | [Error] unhandlederror-PerfSampleError: by <<renderer>> in _readFromDomElements#workbench.desktop.main.js:47... | 0 | perf | 1 | — |
+| 83 | [#318328](https://github.com/microsoft/vscode/issues/318328) | Pantalla lenta | 0 | perf | 1 | — |
+| 84 | [#318630](https://github.com/microsoft/vscode/issues/318630) | Performance issues after running vscode open for 8+ hours | 0 | freeze | 1 | — |
+| 98 | [#118599](https://github.com/microsoft/vscode/issues/118599) | import large json file will crash vscode | 1 | freeze | 0 | — |
+| 151 | [#170083](https://github.com/microsoft/vscode/issues/170083) | Uncaught Error: Assertion Failed  Error: Assertion Failed     at y (vscode-file://vscode-app//out/vs/base/worker/workerMain.js#editorWorkerService:13:9228)     at l.computeDiff (vscode-file://vscode-app//out/vs/base/worker/workerMain.js#editorWorkerService | 0 | correctness | 0 | — |
+| 157 | [#170536](https://github.com/microsoft/vscode/issues/170536) | Code Helper CPU using raises up and down everytime causing freezes | 0 | perf | 0 | — |
+| 182 | [#187443](https://github.com/microsoft/vscode/issues/187443) | [PerfSampleError] | 0 | perf | 0 | — |
+| 297 | [#322571](https://github.com/microsoft/vscode/issues/322571) | [Error] unhandlederror-Invalid typed array length: -57045 | 0 | correctness | 0 | yes |
+
+### Other (41)
+
+| # | Issue | Title | 👍 | Severity | Score | Auto-fix |
+| --- | --- | --- | --- | --- | --- | --- |
+| 22 | [#308524](https://github.com/microsoft/vscode/issues/308524) | Update fails with OS error 32 when renaming Code.exe (file locked by child process) | 0 | correctness | 3 | — |
+| 40 | [#160702](https://github.com/microsoft/vscode/issues/160702) | Fractional scaling makes cursor inaccurate on Chromebooks | 4 | correctness | 1 | — |
+| 47 | [#202594](https://github.com/microsoft/vscode/issues/202594) | Middle click on Linux can only paste from copied text, not from the Primary buffer | 3 | correctness | 1 | — |
+| 73 | [#195702](https://github.com/microsoft/vscode/issues/195702) | Flickers/Erratic behavior when Samsung `predictive text` is enabled | 0 | correctness | 1 | — |
+| 77 | [#238405](https://github.com/microsoft/vscode/issues/238405) | Unable work in mobile version | 0 | correctness | 1 | — |
+| 81 | [#309548](https://github.com/microsoft/vscode/issues/309548) | [Unhandled Error] Cannot resolve canonical URI | 0 | correctness | 1 | yes |
+| 112 | [#225358](https://github.com/microsoft/vscode/issues/225358) | Multiline selection in linux | 1 | none | 0 | — |
+| 118 | [#313966](https://github.com/microsoft/vscode/issues/313966) | Indentation still being detected/changed after setting is disabled | 1 | none | 0 | — |
+| 120 | [#108954](https://github.com/microsoft/vscode/issues/108954) | Matching bracket decoration and :after decoration clash | 0 | visual | 0 | — |
+| 121 | [#111945](https://github.com/microsoft/vscode/issues/111945) | Ligature incorrectly activated for 2 different tokens | 0 | visual | 0 | — |
+| 122 | [#113854](https://github.com/microsoft/vscode/issues/113854) | "Cannot edit in read-only editor" tooltip may not show in web version | 0 | papercut | 0 | — |
+| 126 | [#120922](https://github.com/microsoft/vscode/issues/120922) | The scroll bar  is not accessible through keyboard key present on the error pop-up | 0 | papercut | 0 | yes |
+| 127 | [#121195](https://github.com/microsoft/vscode/issues/121195) | iPad editor renders double cursor | 0 | visual | 0 | yes |
+| 128 | [#123303](https://github.com/microsoft/vscode/issues/123303) | Cursors are not merged in this case | 0 | correctness | 0 | yes |
+| 130 | [#126644](https://github.com/microsoft/vscode/issues/126644) | Dragging text doesn't work when cursor is off-center | 0 | papercut | 0 | — |
+| 131 | [#131855](https://github.com/microsoft/vscode/issues/131855) | ctrl+z undo both auto-indentation and default behavior | 0 | papercut | 0 | — |
+| 132 | [#135981](https://github.com/microsoft/vscode/issues/135981) | VScode copy to Onenote missing blank line | 0 | papercut | 0 | — |
+| 134 | [#138998](https://github.com/microsoft/vscode/issues/138998) | column number bug with emojis | 0 | papercut | 0 | yes |
+| 137 | [#147105](https://github.com/microsoft/vscode/issues/147105) | Clicking in the middle of a selected range, does not deselect the text sometimes | 0 | papercut | 0 | yes |
+| 140 | [#155335](https://github.com/microsoft/vscode/issues/155335) | Long line cut after reaching a certain amount of characters should tell you how to view them fully | 0 | papercut | 0 | — |
+| 141 | [#158074](https://github.com/microsoft/vscode/issues/158074) | Changing focus to another editor causes text to get selected sometimes | 0 | papercut | 0 | — |
+| 149 | [#169002](https://github.com/microsoft/vscode/issues/169002) | Editor triggers keyboard open on scroll on mobile | 0 | papercut | 0 | yes |
+| 150 | [#169951](https://github.com/microsoft/vscode/issues/169951) | Right To Left text with numbers | 0 | correctness | 0 | — |
+| 160 | [#170705](https://github.com/microsoft/vscode/issues/170705) | PHP formatting on typing | 0 | correctness | 0 | yes |
+| 161 | [#170735](https://github.com/microsoft/vscode/issues/170735) | Cursor frequently misaligned in codespace IDE. | 0 | correctness | 0 | — |
+| 168 | [#175388](https://github.com/microsoft/vscode/issues/175388) | Error notification shown in addition to modal error dialog | 0 | papercut | 0 | yes |
+| 170 | [#181050](https://github.com/microsoft/vscode/issues/181050) | editor.selectionClipboard option has no effect on vscode.dev | 0 | correctness | 0 | yes |
+| 184 | [#188677](https://github.com/microsoft/vscode/issues/188677) | Inconsistent column number due to unicode symbols between command palette and status bar (+ inconsistent with Chrome and Firefox Devtools) | 0 | papercut | 0 | — |
+| 195 | [#199416](https://github.com/microsoft/vscode/issues/199416) | Nope emoji in quotes breaks cursor position | 0 | correctness | 0 | — |
+| 208 | [#205259](https://github.com/microsoft/vscode/issues/205259) | RTL: WTF! Code is Reversed! | 0 | correctness | 0 | — |
+| 220 | [#213149](https://github.com/microsoft/vscode/issues/213149) | Speech To Text in VS code is awkward on MacOS | 0 | correctness | 0 | — |
+| 221 | [#214364](https://github.com/microsoft/vscode/issues/214364) | Cannot backspace lines on Android | 0 | correctness | 0 | — |
+| 235 | [#234513](https://github.com/microsoft/vscode/issues/234513) | Poor/pathological multi-cursor performance | 0 | freeze | 0 | yes |
+| 252 | [#290138](https://github.com/microsoft/vscode/issues/290138) | Minimap behaves strangely when scrolling past large section of code deleted in chat | 0 | visual | 0 | — |
+| 254 | [#296151](https://github.com/microsoft/vscode/issues/296151) | [Bug] “Word wrap” lacks `overflow-wrap: break-word`, for ligatures whose widths exceed that of the viewport. | 0 | visual | 0 | yes |
+| 258 | [#306236](https://github.com/microsoft/vscode/issues/306236) | Incorrect Minimap Vertical Size | 0 | visual | 0 | — |
+| 274 | [#315646](https://github.com/microsoft/vscode/issues/315646) | Folders not removed from harness folder picker | 0 | correctness | 0 | — |
+| 276 | [#315714](https://github.com/microsoft/vscode/issues/315714) | Branch name in title is cutoff instead of `...` | 0 | visual | 0 | yes |
+| 283 | [#316665](https://github.com/microsoft/vscode/issues/316665) | Right-click in an unfocused window opens the context menu over the focused window | 0 | correctness | 0 | — |
+| 288 | [#318008](https://github.com/microsoft/vscode/issues/318008) | [Error] unhandlederror-Uncaught Error: Illegal value for lineNumber | 0 | correctness | 0 | yes |
+| 300 | [#323124](https://github.com/microsoft/vscode/issues/323124) | VSCode Console Spam: `Cannot read properties of undefined (reading 'toUrl')` | 0 | none | 0 | — |
+
+## Feature requests
+
+### Extension host lifecycle (23)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 1 | [#75627](https://github.com/microsoft/vscode/issues/75627) | Extensions using the "type" command (for ex. Vim) have poor performance due to being single-threaded with other extensions | 270 | dormant | 100 |
+| 4 | [#190917](https://github.com/microsoft/vscode/issues/190917) | Hot reload in extension development - automatically reload the Extension Development Host window | 80 | backlog-candidate | 39 |
+| 14 | [#163255](https://github.com/microsoft/vscode/issues/163255) | WORKSPACE_CONTAINS_TIMEOUT should be configurable | 31 | backlog-candidate | 10 |
+| 26 | [#72529](https://github.com/microsoft/vscode/issues/72529) | Support restart of remote EH to avoid window reloads | 10 | backlog-candidate | 4 |
+| 29 | [#145307](https://github.com/microsoft/vscode/issues/145307) | Add a way to read all enabled extensions across all extension hosts | 5 | dormant | 4 |
+| 33 | [#91375](https://github.com/microsoft/vscode/issues/91375) | Define a `vscode.executeSemanticHighlightProvider` command | 6 | backlog-candidate | 2 |
+| 35 | [#219094](https://github.com/microsoft/vscode/issues/219094) | Extension Profiling Path PII-Masking Hides Relevant Information | 6 | dormant | 2 |
+| 36 | [#114047](https://github.com/microsoft/vscode/issues/114047) | Unexpected editor.selection in onDidChangeActiveTextEditor callback | 5 | backlog-candidate | 2 |
+| 37 | [#179633](https://github.com/microsoft/vscode/issues/179633) | Need a UI message when an extension fails to initialize | 2 | dormant | 2 |
+| 39 | [#168676](https://github.com/microsoft/vscode/issues/168676) | Extension commands do not show any status indicator while waiting for activation | 0 | backlog-candidate | 2 |
+| 42 | [#174255](https://github.com/microsoft/vscode/issues/174255) | "Runtime Status" tab in extension page should break down activation time to code loading + activate call + activate resolved time | 6 | backlog-candidate | 1 |
+| 44 | [#146547](https://github.com/microsoft/vscode/issues/146547) | Add an `onExtensionActivated` activation event | 4 | backlog-candidate | 1 |
+| 48 | [#91861](https://github.com/microsoft/vscode/issues/91861) | Minify dependencies and remove junk files | 2 | backlog-candidate | 1 |
+| 53 | [#289685](https://github.com/microsoft/vscode/issues/289685) | Allow extensions to declare their runtime affinity towards other extensions | 2 | active | 1 |
+| 80 | [#100856](https://github.com/microsoft/vscode/issues/100856) | Extension doesn't activate after install | 0 | backlog-candidate | 0 |
+| 88 | [#132900](https://github.com/microsoft/vscode/issues/132900) | Add telemetry for extension host is detached | 0 | dormant | 0 |
+| 89 | [#133136](https://github.com/microsoft/vscode/issues/133136) | Show Running Extensions in a grid | 0 | backlog-candidate | 0 |
+| 90 | [#133734](https://github.com/microsoft/vscode/issues/133734) | Extend `vscode.extensions.getExtension` to return extensions from other extension host | 0 | backlog-candidate | 0 |
+| 92 | [#134556](https://github.com/microsoft/vscode/issues/134556) | Render activating extensions in the Running Extensions List | 0 | dormant | 0 |
+| 95 | [#143924](https://github.com/microsoft/vscode/issues/143924) | Delay starting the web worker extension host until activating first extension | 0 | dormant | 0 |
+| 96 | [#156811](https://github.com/microsoft/vscode/issues/156811) | Activation event for a particular folder opened | 0 | backlog-candidate | 0 |
+| 99 | [#167514](https://github.com/microsoft/vscode/issues/167514) | Implicit activation events - call out implicit activation in the logs | 0 | backlog-candidate | 0 |
+| 110 | [#313451](https://github.com/microsoft/vscode/issues/313451) | Avoid using `instanceof Promise` due to incompatibility with patched Promise implementations (e.g. zone.js) | 0 | active | 0 |
+
+### International text rendering (9)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 2 | [#246116](https://github.com/microsoft/vscode/issues/246116) | Arabic RTL text not rendered correctly inside VS Code editor. | 94 | backlog-candidate | 61 |
+| 7 | [#277736](https://github.com/microsoft/vscode/issues/277736) | Support Right-to-Left (RTL) Text for Persian in Copilot Chat | 22 | backlog-candidate | 19 |
+| 8 | [#65648](https://github.com/microsoft/vscode/issues/65648) | Bidi text edit support | 43 | backlog-candidate | 18 |
+| 22 | [#124954](https://github.com/microsoft/vscode/issues/124954) | Allow going inside graphemes (with an explicit gesture) | 22 | backlog-candidate | 5 |
+| 47 | [#245965](https://github.com/microsoft/vscode/issues/245965) | Option to Disable Bidirectional Text Rendering in Visual Studio Code | 3 | active | 1 |
+| 54 | [#80820](https://github.com/microsoft/vscode/issues/80820) | "editor font zoom" does not persist | 1 | dormant | 1 |
+| 59 | [#193164](https://github.com/microsoft/vscode/issues/193164) | Editor is broken when opening files with >120M lines | 1 | backlog-candidate | 1 |
+| 102 | [#199858](https://github.com/microsoft/vscode/issues/199858) | I want to set font file names or filepaths into `editor.fontFamily` | 0 | backlog-candidate | 0 |
+| 114 | [#315426](https://github.com/microsoft/vscode/issues/315426) | The handling of characters with ambiguous widths | 0 | active | 0 |
+
+### Syntax highlighting tokens (8)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 3 | [#77140](https://github.com/microsoft/vscode/issues/77140) | Tokenization overhaul | 91 | dormant | 51 |
+| 24 | [#130486](https://github.com/microsoft/vscode/issues/130486) | Stale semantic tokens across several files | 3 | backlog-candidate | 5 |
+| 32 | [#317076](https://github.com/microsoft/vscode/issues/317076) | Visible editor does not refresh document links until tab switch or reopen | 4 | active | 3 |
+| 58 | [#173983](https://github.com/microsoft/vscode/issues/173983) | Selecting text highlighting in large files silently drops highlighting of occurrences | 1 | dormant | 1 |
+| 67 | [#130869](https://github.com/microsoft/vscode/issues/130869) | Adjust auto-highlighting of the cursor position to the setting at select. | 2 | backlog-candidate | 0 |
+| 85 | [#122265](https://github.com/microsoft/vscode/issues/122265) | link parsing should favor on screen urls over offscreen content for huge files | 0 | backlog-candidate | 0 |
+| 98 | [#165231](https://github.com/microsoft/vscode/issues/165231) | Use the Flyweight pattern to encode tokens | 0 | backlog-candidate | 0 |
+| 108 | [#233942](https://github.com/microsoft/vscode/issues/233942) | Semantic tokens are causing a large changed range onTokensChanged event to fire | 0 | backlog-candidate | 0 |
+
+### Word wrap layout (10)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 5 | [#323238](https://github.com/microsoft/vscode/issues/323238) | Option to display relative line numbers for virtual/wrapped lines | 54 | backlog-candidate | 29 |
+| 9 | [#171457](https://github.com/microsoft/vscode/issues/171457) | Allow line specific word wrap toggling | 46 | backlog-candidate | 17 |
+| 10 | [#251134](https://github.com/microsoft/vscode/issues/251134) | Feature Request: Show Visual Indicator for Word Wrap Line Breaks (↩ Symbol Like in IntelliJ IDEA) | 26 | backlog-candidate | 14 |
+| 19 | [#167863](https://github.com/microsoft/vscode/issues/167863) | Column number is incorrect when using tabs. | 18 | backlog-candidate | 6 |
+| 20 | [#237178](https://github.com/microsoft/vscode/issues/237178) | Please add an option to have word wrap toggled off for every editor by default | 18 | backlog-candidate | 6 |
+| 34 | [#214857](https://github.com/microsoft/vscode/issues/214857) | lineHighlightBorder should frame all warped line | 6 | backlog-candidate | 2 |
+| 46 | [#202373](https://github.com/microsoft/vscode/issues/202373) | Cursor position is incorrect in selection when cursorStyle is "Block" | 3 | active | 1 |
+| 69 | [#92177](https://github.com/microsoft/vscode/issues/92177) | API for reading current word-wrap state (and toggling it) on a TextDocument | 1 | backlog-candidate | 0 |
+| 86 | [#126804](https://github.com/microsoft/vscode/issues/126804) | Using left/right arrow keys to jump between wrapped lines causes cursor to skip a character | 0 | backlog-candidate | 0 |
+| 104 | [#202964](https://github.com/microsoft/vscode/issues/202964) | Dynamic softwrap margin whilst retaining horizontal scroll. | 0 | dormant | 0 |
+
+### Agents and sessions (7)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 6 | [#318358](https://github.com/microsoft/vscode/issues/318358) | Enable use of local agent in Agents Window | 14 | backlog-candidate | 20 |
+| 18 | [#318632](https://github.com/microsoft/vscode/issues/318632) | Agents Window - Import Session | 5 | backlog-candidate | 7 |
+| 30 | [#318103](https://github.com/microsoft/vscode/issues/318103) | Agents Window: support extension development workflow (extensionDevelopmentPath + debugger) | 1 | backlog-candidate | 4 |
+| 38 | [#300632](https://github.com/microsoft/vscode/issues/300632) | Sandbox should be linked to auto approve/permissions dropdown somehow | 2 | active | 2 |
+| 64 | [#303879](https://github.com/microsoft/vscode/issues/303879) | Sessions App: Need a way to snooze inline suggestions | 0 | active | 1 |
+| 115 | [#315829](https://github.com/microsoft/vscode/issues/315829) | Agents Local: current branch is hard to find out due to being hidden in collapsed menu | 0 | active | 0 |
+| 121 | [#321878](https://github.com/microsoft/vscode/issues/321878) | Agents: Need a way to heal broken worktree paths | 0 | active | 0 |
+
+### Keyboard and navigation (7)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 11 | [#142456](https://github.com/microsoft/vscode/issues/142456) | Inconsistent keyboard shortcuts between Windows and Linux | 40 | dormant | 13 |
+| 43 | [#76545](https://github.com/microsoft/vscode/issues/76545) | Hyper modifier is unknown | 4 | backlog-candidate | 1 |
+| 61 | [#184842](https://github.com/microsoft/vscode/issues/184842) | workbench.action.navigateBack/Forward incorrect after adding/removing lines | 0 | dormant | 1 |
+| 72 | [#131410](https://github.com/microsoft/vscode/issues/131410) | Allow F12 to be bound to both go to definition and open link | 1 | backlog-candidate | 0 |
+| 76 | [#62498](https://github.com/microsoft/vscode/issues/62498) | Keyboard Shortcuts Ide Tab and Browser Pdf Shift+Alt+... entries | 0 | dormant | 0 |
+| 109 | [#308238](https://github.com/microsoft/vscode/issues/308238) | Feature request: Tab stacks/groups | 0 | dormant | 0 |
+| 116 | [#316587](https://github.com/microsoft/vscode/issues/316587) | Open file from editor without navigating into other scopes | 0 | active | 0 |
+
+### Editing commands snippets (20)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 13 | [#237307](https://github.com/microsoft/vscode/issues/237307) | When pasting multiline text into a comment, it should keep all lines commented out | 23 | backlog-candidate | 12 |
+| 15 | [#134410](https://github.com/microsoft/vscode/issues/134410) | Possible to disable automatic insertion of periods when using Codespaces on macOS? | 20 | active | 9 |
+| 16 | [#263027](https://github.com/microsoft/vscode/issues/263027) | feature request for editor cursor | 20 | backlog-candidate | 7 |
+| 23 | [#145092](https://github.com/microsoft/vscode/issues/145092) | Improved CSV/TSV editing | 15 | backlog-candidate | 5 |
+| 25 | [#167702](https://github.com/microsoft/vscode/issues/167702) | Proper fix for line endings | 20 | backlog-candidate | 4 |
+| 60 | [#322678](https://github.com/microsoft/vscode/issues/322678) | Feature request: allow per-option descriptions in snippet choice placeholders (`${1\|...\|}`) | 1 | active | 1 |
+| 62 | [#275727](https://github.com/microsoft/vscode/issues/275727) | Make it easier for Playwright to write to a Monaco editor | 0 | backlog-candidate | 1 |
+| 63 | [#298464](https://github.com/microsoft/vscode/issues/298464) | Support adding hyphen and underscore when applying the kekab-case and snake_case actions | 0 | backlog-candidate | 1 |
+| 66 | [#116614](https://github.com/microsoft/vscode/issues/116614) | Allow to change double click select expand mode to whole word select | 2 | backlog-candidate | 0 |
+| 70 | [#97780](https://github.com/microsoft/vscode/issues/97780) | Tab key when indenting with spaces does not insert correct number of spaces | 1 | backlog-candidate | 0 |
+| 75 | [#52131](https://github.com/microsoft/vscode/issues/52131) | cursor up/down is confused by selection | 0 | dormant | 0 |
+| 78 | [#83196](https://github.com/microsoft/vscode/issues/83196) | Enteraction appending text before the new line | 0 | active | 0 |
+| 91 | [#133843](https://github.com/microsoft/vscode/issues/133843) | Toggle Line Comment can produce invalid block comment in JSX and CSS (should use single-line comments instead) | 0 | backlog-candidate | 0 |
+| 93 | [#134588](https://github.com/microsoft/vscode/issues/134588) | Add setting to keep tab characters in HTML clipboard | 0 | dormant | 0 |
+| 100 | [#170776](https://github.com/microsoft/vscode/issues/170776) | Detect indentation from content confused by Doxygen comments | 0 | backlog-candidate | 0 |
+| 103 | [#201316](https://github.com/microsoft/vscode/issues/201316) | Sort Lines Ascending command messes up trailing commas | 0 | dormant | 0 |
+| 106 | [#229762](https://github.com/microsoft/vscode/issues/229762) | Move cursor when adding secondary cursors | 0 | dormant | 0 |
+| 111 | [#314987](https://github.com/microsoft/vscode/issues/314987) | Keyboard shortcut do delete a word at the caret | 0 | active | 0 |
+| 122 | [#323076](https://github.com/microsoft/vscode/issues/323076) | "Indentations" to replace tabs and spaces | 0 | active | 0 |
+| 123 | [#323388](https://github.com/microsoft/vscode/issues/323388) | Feature Request: Native support ${num:$Snippet(prefix)} to nest other code snippets & trigger snippets inside quotes/brackets | 0 | active | 0 |
+
+### Decorations and gutters (9)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 12 | [#74094](https://github.com/microsoft/vscode/issues/74094) | TextEditorDecoration applied to incorrect range if racing with user edits | 32 | dormant | 12 |
+| 27 | [#237095](https://github.com/microsoft/vscode/issues/237095) | Support Line decoration editor offset retrieval | 10 | backlog-candidate | 4 |
+| 28 | [#95992](https://github.com/microsoft/vscode/issues/95992) | Can't click to set/clear breakpoint when a gutter decoration exists | 8 | backlog-candidate | 4 |
+| 45 | [#90426](https://github.com/microsoft/vscode/issues/90426) | Add ability for before decorations to indent (stretch across) word wrapped lines | 3 | backlog-candidate | 1 |
+| 50 | [#123600](https://github.com/microsoft/vscode/issues/123600) | Render right or left bracket border thicker depending on the cursor position relative to initial bracket | 2 | backlog-candidate | 1 |
+| 65 | [#51806](https://github.com/microsoft/vscode/issues/51806) | Add DecorationRangeBehavior.Word | 2 | dormant | 0 |
+| 68 | [#77492](https://github.com/microsoft/vscode/issues/77492) | If pasting over text containing TextEditorDecorations, they are retained | 1 | dormant | 0 |
+| 84 | [#120989](https://github.com/microsoft/vscode/issues/120989) | [folding] Decorate fold indicators with error color/iconography | 0 | backlog-candidate | 0 |
+| 94 | [#142246](https://github.com/microsoft/vscode/issues/142246) | Multi-line Highlight | 0 | dormant | 0 |
+
+### Release readiness security (3)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 17 | [#314803](https://github.com/microsoft/vscode/issues/314803) | Feature request: Improve release-readiness traceability from pull requests to Stable | 14 | backlog-candidate | 7 |
+| 40 | [#304171](https://github.com/microsoft/vscode/issues/304171) | Guard the keyring access on macOS | 0 | active | 2 |
+| 112 | [#315117](https://github.com/microsoft/vscode/issues/315117) | Release validation using quality metrics | 0 | active | 0 |
+
+### Scrolling minimap viewport (17)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 21 | [#156013](https://github.com/microsoft/vscode/issues/156013) | I can't scroll screen using Windows Ink | 24 | backlog-candidate | 5 |
+| 31 | [#231351](https://github.com/microsoft/vscode/issues/231351) | Configurable fast scroll to keys other than Alt | 7 | backlog-candidate | 3 |
+| 41 | [#127918](https://github.com/microsoft/vscode/issues/127918) | Make minimap slider visible when scrolling | 7 | backlog-candidate | 1 |
+| 49 | [#109959](https://github.com/microsoft/vscode/issues/109959) | Horizonal Scrolling through pointer on scroll bar | 2 | backlog-candidate | 1 |
+| 51 | [#131203](https://github.com/microsoft/vscode/issues/131203) | Configurable scroll padding | 2 | backlog-candidate | 1 |
+| 74 | [#236606](https://github.com/microsoft/vscode/issues/236606) | Automatically adjust minimap scale according to display scale | 1 | dormant | 0 |
+| 81 | [#101925](https://github.com/microsoft/vscode/issues/101925) | Zooming with Ctrl+MouseWheel doesn't update configuration | 0 | dormant | 0 |
+| 82 | [#102867](https://github.com/microsoft/vscode/issues/102867) | CodeLens messes up page scrolling via cursorPageUp / cursorPageDown | 0 | backlog-candidate | 0 |
+| 87 | [#128527](https://github.com/microsoft/vscode/issues/128527) | editor.scrollbar.scrollByPage doesn't work correctly when Option-clicking (Mac) | 0 | backlog-candidate | 0 |
+| 97 | [#158610](https://github.com/microsoft/vscode/issues/158610) | Horizontal Scroll Bar is Blocked by Comment | 0 | backlog-candidate | 0 |
+| 101 | [#170960](https://github.com/microsoft/vscode/issues/170960) | A setting to change the minimum scrollbar height | 0 | backlog-candidate | 0 |
+| 105 | [#229681](https://github.com/microsoft/vscode/issues/229681) | Minimap folding marker names hide | 0 | dormant | 0 |
+| 113 | [#315288](https://github.com/microsoft/vscode/issues/315288) | Editor Scroll Lock Button | 0 | active | 0 |
+| 117 | [#316593](https://github.com/microsoft/vscode/issues/316593) | Zooming with Ctrl + + should zoom focus area only instead of the whole UI | 0 | active | 0 |
+| 118 | [#316623](https://github.com/microsoft/vscode/issues/316623) | Hide minimap when holding hotkey for go-to-definition by mouse | 0 | active | 0 |
+| 119 | [#317019](https://github.com/microsoft/vscode/issues/317019) | Minimap improvement - click & drag anywhere | 0 | active | 0 |
+| 124 | [#324365](https://github.com/microsoft/vscode/issues/324365) | Function List on Scrollbar Hover | 0 | active | 0 |
+
+### Undo document state (5)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 52 | [#166153](https://github.com/microsoft/vscode/issues/166153) | Change undo/redo to time based, AKA allow undo without erasing redo | 2 | dormant | 1 |
+| 55 | [#99159](https://github.com/microsoft/vscode/issues/99159) | Partial cross-file undo if a file is changed in the meantime | 1 | backlog-candidate | 1 |
+| 57 | [#160072](https://github.com/microsoft/vscode/issues/160072) | Guarantee that TextDocument.version doesn't skip versions | 1 | dormant | 1 |
+| 83 | [#120884](https://github.com/microsoft/vscode/issues/120884) | Code screen will move up after write a unimported package method and undo | 0 | backlog-candidate | 0 |
+| 107 | [#232538](https://github.com/microsoft/vscode/issues/232538) | Give more control over syncing rapidly updating documents with extensions | 0 | dormant | 0 |
+
+### Remote connectivity (5)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 56 | [#124582](https://github.com/microsoft/vscode/issues/124582) | User forwarded port has the first request TTFB too high | 1 | dormant | 1 |
+| 71 | [#118770](https://github.com/microsoft/vscode/issues/118770) | 3rd button in "Cannot reconnect" dialog that allows you to disconnect | 1 | dormant | 0 |
+| 73 | [#132902](https://github.com/microsoft/vscode/issues/132902) | Add telemetry to track reasons for disconnects | 1 | backlog-candidate | 0 |
+| 77 | [#74016](https://github.com/microsoft/vscode/issues/74016) | Expose vscode remote reconnecting UI. | 0 | dormant | 0 |
+| 120 | [#317980](https://github.com/microsoft/vscode/issues/317980) | Remote Extension Host: transparent recovery on server replacement (follow-up to #317774) | 0 | active | 0 |
+
+### Other (1)
+
+| # | Issue | Title | 👍 | Signal | Score |
+| --- | --- | --- | --- | --- | --- |
+| 79 | [#99295](https://github.com/microsoft/vscode/issues/99295) | Allow for "random access" undos | 0 | backlog-candidate | 0 |
