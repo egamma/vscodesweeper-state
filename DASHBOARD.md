@@ -2,7 +2,7 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**2523** open issues reviewed · **793** actionable · **89** closed since review · generated 2026-07-09 20:29 UTC
+**2523** open issues reviewed · **793** actionable · **89** closed since review · generated 2026-07-09 20:04 UTC
 
 propose-close: **227** · needs-info: **199** · route-to-area: **38** · keep-open: **2059**
 
@@ -358,7 +358,7 @@ propose-close: **227** · needs-info: **199** · route-to-area: **38** · keep-o
 | alexdima, sbatten | [#315117](https://github.com/microsoft/vscode/issues/315117) | Release validation using quality metrics | feature-request | propose-close | *out-of-scope | 82% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315117.md) | 2026-07-08 |
 | amunger, hediet | [#232753](https://github.com/microsoft/vscode/issues/232753) | arrow navigation diff view will go to prev/next cell | bug | keep-open | none | 88% | 5/6 Source-confirmed | yes | `npm run fix -- --issue 232753` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/232753.md) | 2026-07-08 |
 | connor4312, aeschli | [#307368](https://github.com/microsoft/vscode/issues/307368) | Remote tunnel connection broken after each update | bug | route-to-area | none | 60% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307368.md) | 2026-07-03 |
-| connor4312, hediet | [#256329](https://github.com/microsoft/vscode/issues/256329) | GitHub Copilot Chat diff UI does not wrap deleted (red) lines, as it does added (green) lines, when word wrap is enabled | bug | keep-open | none | 85% | 5/6 Source-confirmed | yes | `npm run fix -- --issue 256329` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/256329.md) | 2026-07-08 |
+| connor4312, hediet | [#256329](https://github.com/microsoft/vscode/issues/256329) | GitHub Copilot Chat diff UI does not wrap deleted (red) lines, as it does added (green) lines, when word wrap is enabled | bug | keep-open | none | 85% | 5/6 Source-confirmed | yes | [draft PR](https://github.com/egamma/vscode/pull/9) | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/256329.md) | 2026-07-08 |
 | connor4312, hediet | [#292807](https://github.com/microsoft/vscode/issues/292807) | Constant popup of "Diff Algorithm has stopped after 5000 ms" when running a agent session | bug | keep-open | none | 85% | 5/6 Source-confirmed | yes | `npm run fix -- --issue 292807` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292807.md) | 2026-07-08 |
 | dbaeumer | [#246019](https://github.com/microsoft/vscode/issues/246019) | lsp signature_helper Activity parameter highlight position error | bug | keep-open | none | 80% | 5/6 Source-confirmed | yes | [draft PR](https://github.com/egamma/vscode/pull/3) | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/246019.md) | 2026-07-07 |
 | dbaeumer | [#293400](https://github.com/microsoft/vscode/issues/293400) | Discussion: Interest in cross-IDE WebAssembly extension standard? | feature-request | propose-close | *out-of-scope | 82% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293400.md) | 2026-07-07 |

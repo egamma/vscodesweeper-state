@@ -12,4 +12,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 172 bugs · 84 feature requests.
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 11 bugs · 10 feature requests.
 
-_Generated 2026-07-08 20:41 UTC._
+_Generated 2026-07-09 20:30 UTC._
