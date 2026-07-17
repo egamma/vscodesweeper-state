@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**3452** open issues reviewed · **1366** actionable · **143** closed since review · generated 2026-07-17 10:37 UTC
+**3453** open issues reviewed · **1367** actionable · **143** closed since review · generated 2026-07-17 10:42 UTC
 
-propose-close: **460** · needs-info: **463** · route-to-area: **74** · keep-open: **2455**
+propose-close: **461** · needs-info: **463** · route-to-area: **74** · keep-open: **2455**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -915,6 +915,7 @@ propose-close: **460** · needs-info: **463** · route-to-area: **74** · keep-o
 | deepak1556 | [#326308](https://github.com/microsoft/vscode/issues/326308) | Constant crashes upon starting the visual studio code | bug | propose-close | *duplicate | 92% | 6/6 Confirmed | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326308.md) | 2026-07-17 |
 | deepak1556 | [#326309](https://github.com/microsoft/vscode/issues/326309) | 1.129.0 renderer crashes repeatedly (SIGSEGV/SIGBUS/SIGTRAP) when attaching to a Dev Container; downgrade to 1.128.1 fixes it | bug | route-to-area | none | 72% | 3/6 Plausible | no | `npm run implement -- --issue 326309` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326309.md) | 2026-07-17 |
 | deepak1556 | [#326312](https://github.com/microsoft/vscode/issues/326312) | Copy text is not working in the electron instance | bug | needs-info | info-needed | 80% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326312.md) | 2026-07-17 |
+| deepak1556 | [#326316](https://github.com/microsoft/vscode/issues/326316) | VS Code enters infinite crash/relaunch loop when opening a second window on Linux Mint Cinnamon with NVIDIA GPU | bug | propose-close | *duplicate | 88% | 6/6 Confirmed | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326316.md) | 2026-07-17 |
 | deepak1556, alexdima | [#207221](https://github.com/microsoft/vscode/issues/207221) | can't access module `original-fs` in remote machine | bug | propose-close | *as-designed | 82% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/207221.md) | 2026-07-17 |
 | deepak1556, anthonykim1 | [#232741](https://github.com/microsoft/vscode/issues/232741) | terminal history does not work or gets wrong version of fish_history - Linux Snap | bug | propose-close | *duplicate | 88% | 5/6 Source-confirmed | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/232741.md) | 2026-07-17 |
 | deepak1556, benibenj | [#240711](https://github.com/microsoft/vscode/issues/240711) | Missing border under window buttons when the application window is maximized | bug | needs-info | info-needed | 75% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/240711.md) | 2026-07-17 |
