@@ -8,11 +8,12 @@
   :root {
     --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
     --accent: #0969da; --row: #f6f8fa;
-    --close: #cf222e; --info: #9a6700; --open: #afb8c1; --af: #1a7f37; --track: #d0d7de;
+    --close: #cf222e; --info: #9a6700; --open: #afb8c1;
+    --af-hi: #1a7f37; --af-lo: #4ac26b; --track: #d0d7de;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
-      --open:#484f58; --af:#3fb950; --track:#30363d; }
+      --open:#484f58; --af-hi:#3fb950; --af-lo:#1f6f34; --track:#30363d; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -29,7 +30,8 @@
   .legend span { display: inline-flex; align-items: center; gap: 5px; }
   .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
   .sw.close { background: var(--close); } .sw.info { background: var(--info); }
-  .sw.open { background: var(--open); } .sw.af { background: var(--af); } .sw.track { background: var(--track); }
+  .sw.open { background: var(--open); } .sw.track { background: var(--track); }
+  .sw.afhi { background: var(--af-hi); } .sw.aflo { background: var(--af-lo); }
   .modes button { font: inherit; font-size: 12px; cursor: pointer; padding: 4px 10px;
     border: 1px solid var(--border); background: var(--bg); color: var(--fg); border-radius: 6px; }
   .modes button.active { border-color: var(--accent); color: var(--accent); }
@@ -39,15 +41,16 @@
   .seg { display: block; height: 100%; transition: width .2s; }
   .seg + .seg { margin-left: 2px; }
   .seg.close { background: var(--close); } .seg.info { background: var(--info); }
-  .seg.open { background: var(--open); } .seg.af { background: var(--af); }
-  .track { height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
+  .seg.open { background: var(--open); }
+  .seg.afhi { background: var(--af-hi); } .seg.aflo { background: var(--af-lo); }
+  .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
   footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
 </style>
 </head>
 <body>
   <h1>VS Code Sweeper — Sweep Effectiveness</h1>
-  <div class="sub"><a href="index.html">← home</a> · 7 swept users · 5057 issues reviewed · generated 2026-07-18 21:01 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 7 swept users · 5081 issues reviewed · generated 2026-07-18 21:17 UTC</div>
 
   <h2>Closure outcome per swept user</h2>
   <p class="desc">What the review concluded about each issue's fate. Route-to-area counts as keep-open — it improves triage but the issue stays open.</p>
@@ -73,24 +76,25 @@
   </div>
 
   <h2>Auto-fixable share of issues that stay open</h2>
-  <p class="desc">Of the issues the review keeps open, how many the sweeper judged it could fix autonomously (the <code>fix</code>-lane pool).</p>
+  <p class="desc">Of the issues the review keeps open, how many the sweeper judged it could fix autonomously (the <code>fix</code>-lane pool). Dark green = value score above the auto-fix pool's median — the same demand × severity score that ranks the top pages.</p>
   <div class="legend" style="margin-bottom:10px">
-    <span><i class="sw af"></i>auto-fixable</span>
+    <span title="Value score above the auto-fix pool median (the ranking pages' demand × severity score)"><i class="sw afhi"></i>high-value auto-fixable</span>
+    <span><i class="sw aflo"></i>auto-fixable</span>
     <span><i class="sw track"></i>stays open, needs a human</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="login">hediet</span><div class="track" style="width:100.00%" title="stays open: 931"><i class="seg af" style="width:19.01%" title="auto-fixable: 177 (19%)"></i></div><span class="rlabel">177 of 931 (19%)</span></div>
-<div class="crow"><span class="login">deepak1556</span><div class="track" style="width:48.12%" title="stays open: 448"><i class="seg af" style="width:2.46%" title="auto-fixable: 11 (2%)"></i></div><span class="rlabel">11 of 448 (2%)</span></div>
-<div class="crow"><span class="login">roblourens</span><div class="track" style="width:52.42%" title="stays open: 488"><i class="seg af" style="width:11.48%" title="auto-fixable: 56 (11%)"></i></div><span class="rlabel">56 of 488 (11%)</span></div>
-<div class="crow"><span class="login">lramos15</span><div class="track" style="width:47.48%" title="stays open: 442"><i class="seg af" style="width:15.84%" title="auto-fixable: 70 (16%)"></i></div><span class="rlabel">70 of 442 (16%)</span></div>
-<div class="crow"><span class="login">aeschli</span><div class="track" style="width:59.29%" title="stays open: 552"><i class="seg af" style="width:7.97%" title="auto-fixable: 44 (8%)"></i></div><span class="rlabel">44 of 552 (8%)</span></div>
-<div class="crow"><span class="login">alexdima</span><div class="track" style="width:41.57%" title="stays open: 387"><i class="seg af" style="width:20.67%" title="auto-fixable: 80 (21%)"></i></div><span class="rlabel">80 of 387 (21%)</span></div>
-<div class="crow"><span class="login">aiday-mar</span><div class="track" style="width:29.11%" title="stays open: 271"><i class="seg af" style="width:15.50%" title="auto-fixable: 42 (15%)"></i></div><span class="rlabel">42 of 271 (15%)</span></div>
+<div class="crow"><span class="login">hediet</span><div class="track" style="width:100.00%" title="stays open: 931"><i class="seg afhi" style="width:8.59%" title="high-value auto-fixable: 80 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:10.42%" title="auto-fixable: 97"></i></div><span class="rlabel" title="of which 80 high-value">177 of 931 (19%)</span></div>
+<div class="crow"><span class="login">deepak1556</span><div class="track" style="width:48.12%" title="stays open: 448"><i class="seg afhi" style="width:1.79%" title="high-value auto-fixable: 8 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:0.67%" title="auto-fixable: 3"></i></div><span class="rlabel" title="of which 8 high-value">11 of 448 (2%)</span></div>
+<div class="crow"><span class="login">roblourens</span><div class="track" style="width:52.42%" title="stays open: 488"><i class="seg afhi" style="width:5.53%" title="high-value auto-fixable: 27 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:5.94%" title="auto-fixable: 29"></i></div><span class="rlabel" title="of which 27 high-value">56 of 488 (11%)</span></div>
+<div class="crow"><span class="login">lramos15</span><div class="track" style="width:47.48%" title="stays open: 442"><i class="seg afhi" style="width:7.24%" title="high-value auto-fixable: 32 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:8.60%" title="auto-fixable: 38"></i></div><span class="rlabel" title="of which 32 high-value">70 of 442 (16%)</span></div>
+<div class="crow"><span class="login">aeschli</span><div class="track" style="width:59.29%" title="stays open: 552"><i class="seg afhi" style="width:5.43%" title="high-value auto-fixable: 30 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:2.54%" title="auto-fixable: 14"></i></div><span class="rlabel" title="of which 30 high-value">44 of 552 (8%)</span></div>
+<div class="crow"><span class="login">alexdima</span><div class="track" style="width:41.57%" title="stays open: 387"><i class="seg afhi" style="width:9.82%" title="high-value auto-fixable: 38 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:10.85%" title="auto-fixable: 42"></i></div><span class="rlabel" title="of which 38 high-value">80 of 387 (21%)</span></div>
+<div class="crow"><span class="login">aiday-mar</span><div class="track" style="width:29.11%" title="stays open: 271"><i class="seg afhi" style="width:8.49%" title="high-value auto-fixable: 23 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.01%" title="auto-fixable: 19"></i></div><span class="rlabel" title="of which 23 high-value">42 of 271 (15%)</span></div>
   </div>
 
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.
   Every review counts, including issues closed since. Multi-assignee issues count once per assignee.
-  Users with fewer than 100 reviews are not shown (47 users, 699 reviews — mostly co-assignees).</footer>
+  Users with fewer than 100 reviews are not shown (47 users, 723 reviews — mostly co-assignees).</footer>
 <script>
 const bC = document.getElementById("mCounts"), bS = document.getElementById("mShare");
 function setMode(m){

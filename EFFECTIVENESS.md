@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 7 swept users · 5057 issues reviewed · generated 2026-07-18 21:01 UTC
+[← Home](index.html) · 7 swept users · 5081 issues reviewed · generated 2026-07-18 21:17 UTC
 
 ## Closure outcome per swept user
 
@@ -18,14 +18,16 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 
 ## Auto-fixable share of issues that stay open
 
-| User | Stays open | Auto-fixable | Share |
-| --- | --- | --- | --- |
-| hediet | 931 | 177 | 19% |
-| deepak1556 | 448 | 11 | 2% |
-| roblourens | 488 | 56 | 11% |
-| lramos15 | 442 | 70 | 16% |
-| aeschli | 552 | 44 | 8% |
-| alexdima | 387 | 80 | 21% |
-| aiday-mar | 271 | 42 | 15% |
+High-value = value score above the auto-fix pool's median — the same demand × severity score that ranks the top pages.
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (47 users, 699 reviews — mostly co-assignees)._
+| User | Stays open | Auto-fixable | High-value | Share |
+| --- | --- | --- | --- | --- |
+| hediet | 931 | 177 | 80 | 19% |
+| deepak1556 | 448 | 11 | 8 | 2% |
+| roblourens | 488 | 56 | 27 | 11% |
+| lramos15 | 442 | 70 | 32 | 16% |
+| aeschli | 552 | 44 | 30 | 8% |
+| alexdima | 387 | 80 | 38 | 21% |
+| aiday-mar | 271 | 42 | 23 | 15% |
+
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (47 users, 723 reviews — mostly co-assignees)._
