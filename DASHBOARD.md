@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**4899** open issues reviewed · **2090** actionable · **158** closed since review · generated 2026-07-18 18:56 UTC
+**4898** open issues reviewed · **2090** actionable · **159** closed since review · generated 2026-07-18 20:54 UTC
 
-propose-close: **771** · needs-info: **692** · route-to-area: **133** · keep-open: **3303**
+propose-close: **771** · needs-info: **692** · route-to-area: **133** · keep-open: **3302**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2100,7 +2100,7 @@ propose-close: **771** · needs-info: **692** · route-to-area: **133** · keep-
 | TylerLeonhardt, lramos15 | [#317028](https://github.com/microsoft/vscode/issues/317028) | copilot 0.48.1 error on mac | question | needs-info | info-needed | 82% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317028.md) | 2026-07-18 |
 
 <details>
-<summary>2809 keep-open / no-action items</summary>
+<summary>2808 keep-open / no-action items</summary>
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -4799,7 +4799,6 @@ propose-close: **771** · needs-info: **692** · route-to-area: **133** · keep-
 | roblourens, aeschli | [#292095](https://github.com/microsoft/vscode/issues/292095) | Permission to read prompt file already attached? | bug | keep-open | none | 75% | 3/6 Plausible | no | `npm run implement -- --issue 292095` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292095.md) | 2026-07-18 |
 | roblourens, aeschli, justschen, unthinkmedia, Copilot | [#255124](https://github.com/microsoft/vscode/issues/255124) | Panel chat gear dropdown should have hints on hover | feature-request | keep-open | none | 90% | — | no | `npm run implement -- --issue 255124` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/255124.md) | 2026-07-18 |
 | roblourens, aeschli, pwang347 | [#305994](https://github.com/microsoft/vscode/issues/305994) | execution_subagent doesn't have skill context | bug | keep-open | none | 85% | 5/6 Source-confirmed | no | `npm run implement -- --issue 305994` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/305994.md) | 2026-07-18 |
-| roblourens, anthonykim1 | [#314858](https://github.com/microsoft/vscode/issues/314858) | AgentHost: Terminal tool calls with confirmation are shown twice | bug | keep-open | none | 90% | 6/6 Confirmed | no | `npm run implement -- --issue 314858` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314858.md) | 2026-07-18 |
 | roblourens, benibenj | [#286724](https://github.com/microsoft/vscode/issues/286724) | Chat: support an action to send a chat request and clear widget | feature-request | keep-open | none | 80% | — | no | `npm run implement -- --issue 286724` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/286724.md) | 2026-07-18 |
 | roblourens, benibenj | [#317345](https://github.com/microsoft/vscode/issues/317345) | Bad hiding behavior of pickers in toolbar | bug | keep-open | none | 75% | 4/6 Traced | no | `npm run implement -- --issue 317345` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317345.md) | 2026-07-18 |
 | roblourens, bhavyaus | [#275218](https://github.com/microsoft/vscode/issues/275218) | Anthropic BYOK leaves incomplete sentence before tool call | bug | keep-open | none | 75% | 3/6 Plausible | no | `npm run implement -- --issue 275218` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275218.md) | 2026-07-18 |
@@ -4917,10 +4916,11 @@ propose-close: **771** · needs-info: **692** · route-to-area: **133** · keep-
 </details>
 
 <details>
-<summary>158 issues closed since review</summary>
+<summary>159 issues closed since review</summary>
 
 | Owner | Issue | Title | Type | Proposed action | Outcome | Reason | Closed | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| roblourens, anthonykim1 | [#314858](https://github.com/microsoft/vscode/issues/314858) | AgentHost: Terminal tool calls with confirmation are shown twice | bug | keep-open | closed externally | completed | 2026-07-18 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314858.md) |
 | roblourens | [#325280](https://github.com/microsoft/vscode/issues/325280) | Copilot creates a file twice in the same turn | bug | needs-info | closed externally | not_planned | 2026-07-18 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325280.md) |
 | aeschli, pwang347 | [#319160](https://github.com/microsoft/vscode/issues/319160) | Inconsistent tool list syntax between "Configure Tools..." CodeLens and tools icon for custom agents | bug | keep-open | closed externally | completed | 2026-07-18 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/319160.md) |
 | deepak1556 | [#326171](https://github.com/microsoft/vscode/issues/326171) | [Error] unhandlederror-Cannot read properties of undefined (reading '0') | bug | keep-open | closed externally | completed | 2026-07-17 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326171.md) |
