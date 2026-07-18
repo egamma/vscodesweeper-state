@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**4170** open issues reviewed · **1699** actionable · **157** closed since review · generated 2026-07-18 10:38 UTC
+**4169** open issues reviewed · **1698** actionable · **158** closed since review · generated 2026-07-18 13:06 UTC
 
-propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-open: **2897**
+propose-close: **587** · needs-info: **580** · route-to-area: **105** · keep-open: **2897**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1653,7 +1653,6 @@ propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-
 | roblourens | [#324907](https://github.com/microsoft/vscode/issues/324907) | Copilot Agent built-in list_dir returns unbounded output for large directories and freezes/poisons the chat session | bug | keep-open | none | 88% | 5/6 Source-confirmed | yes | `npm run implement -- --issue 324907` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324907.md) | 2026-07-18 |
 | roblourens | [#324959](https://github.com/microsoft/vscode/issues/324959) | Copilot Chat: All previous session history silently lost after upgrade (.json → .jsonl format migration not performed) | bug | route-to-area | none | 55% | 3/6 Plausible | no | `npm run implement -- --issue 324959` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324959.md) | 2026-07-18 |
 | roblourens | [#325149](https://github.com/microsoft/vscode/issues/325149) | Agent Mode fails with GitHub Enterprise auth - "thinking" forever / TypeError: terminated | bug | route-to-area | none | 78% | 4/6 Traced | no | `npm run implement -- --issue 325149` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325149.md) | 2026-07-18 |
-| roblourens | [#325280](https://github.com/microsoft/vscode/issues/325280) | Copilot creates a file twice in the same turn | bug | needs-info | info-needed | 80% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325280.md) | 2026-07-18 |
 | roblourens | [#325287](https://github.com/microsoft/vscode/issues/325287) | Copilot Chat — Agent mode silently active despite Ask mode selected | bug | propose-close | *duplicate | 72% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325287.md) | 2026-07-18 |
 | roblourens | [#325290](https://github.com/microsoft/vscode/issues/325290) | Copilot Chat — Agent mode silently active despite Ask mode selected | bug | propose-close | *duplicate | 88% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325290.md) | 2026-07-18 |
 | roblourens | [#325420](https://github.com/microsoft/vscode/issues/325420) | Gihtub copilot chat not activating | bug | needs-info | info-needed | 82% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325420.md) | 2026-07-18 |
@@ -4188,10 +4187,11 @@ propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-
 </details>
 
 <details>
-<summary>157 issues closed since review</summary>
+<summary>158 issues closed since review</summary>
 
 | Owner | Issue | Title | Type | Proposed action | Outcome | Reason | Closed | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| roblourens | [#325280](https://github.com/microsoft/vscode/issues/325280) | Copilot creates a file twice in the same turn | bug | needs-info | closed externally | not_planned | 2026-07-18 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325280.md) |
 | aeschli, pwang347 | [#319160](https://github.com/microsoft/vscode/issues/319160) | Inconsistent tool list syntax between "Configure Tools..." CodeLens and tools icon for custom agents | bug | keep-open | closed externally | completed | 2026-07-18 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/319160.md) |
 | deepak1556 | [#326171](https://github.com/microsoft/vscode/issues/326171) | [Error] unhandlederror-Cannot read properties of undefined (reading '0') | bug | keep-open | closed externally | completed | 2026-07-17 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326171.md) |
 | deepak1556 | [#326139](https://github.com/microsoft/vscode/issues/326139) | [1.129.0] CodeWindow: renderer process gone (reason: crashed, code: 133) | bug | keep-open | closed externally | duplicate | 2026-07-17 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326139.md) |
