@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**4169** open issues reviewed · **1699** actionable · **157** closed since review · generated 2026-07-18 10:35 UTC
+**4170** open issues reviewed · **1699** actionable · **157** closed since review · generated 2026-07-18 10:38 UTC
 
-propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-open: **2896**
+propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-open: **2897**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1709,7 +1709,7 @@ propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-
 | TylerLeonhardt, hediet | [#167151](https://github.com/microsoft/vscode/issues/167151) | iPad: text selection (cursor) | bug | propose-close | *duplicate | 72% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/167151.md) | 2026-07-08 |
 
 <details>
-<summary>2470 keep-open / no-action items</summary>
+<summary>2471 keep-open / no-action items</summary>
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -3996,6 +3996,7 @@ propose-close: **587** · needs-info: **581** · route-to-area: **105** · keep-
 | roblourens | [#307547](https://github.com/microsoft/vscode/issues/307547) | `runSubagent` tool not available to custom agents invoked as subagents (nested subagent invocation broken) | feature-request | keep-open | none | 65% | — | no | `npm run implement -- --issue 307547` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307547.md) | 2026-07-18 |
 | roblourens | [#307605](https://github.com/microsoft/vscode/issues/307605) | # reference picker should prioritize the active document at the top of the suggestion list | bug | keep-open | none | 90% | 5/6 Source-confirmed | no | `npm run implement -- --issue 307605` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307605.md) | 2026-07-18 |
 | roblourens | [#308121](https://github.com/microsoft/vscode/issues/308121) | Support additionalContext output in PreCompact hook | feature-request | keep-open | none | 78% | — | no | `npm run implement -- --issue 308121` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/308121.md) | 2026-07-18 |
+| roblourens | [#308198](https://github.com/microsoft/vscode/issues/308198) | Feature Request: Add a setting to configure the default agent (Agent/Plan/Ask) for new chat sessions | feature-request | keep-open | none | 77% | — | no | `npm run implement -- --issue 308198` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/308198.md) | 2026-07-18 |
 | roblourens | [#308686](https://github.com/microsoft/vscode/issues/308686) | Add Agent Time/Audit Guardrails To Prevent Long Iteration Loops In Copilot Chat | feature-request | keep-open | none | 75% | — | no | `npm run implement -- --issue 308686` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/308686.md) | 2026-07-18 |
 | roblourens | [#309229](https://github.com/microsoft/vscode/issues/309229) | Allow capturing stderr from DebugAdapterExecutable and routing it to an OutputChannel | feature-request | keep-open | none | 75% | — | no | `npm run implement -- --issue 309229` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/309229.md) | 2026-07-18 |
 | roblourens | [#310704](https://github.com/microsoft/vscode/issues/310704) | Change colour of status bar while attached to running process when broken on exception/breakpoint | feature-request | keep-open | none | 80% | — | no | `npm run implement -- --issue 310704` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/310704.md) | 2026-07-18 |
