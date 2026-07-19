@@ -2,7 +2,7 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**5863** open issues reviewed · **2508** actionable · **164** closed since review · generated 2026-07-19 16:30 UTC
+**5863** open issues reviewed · **2508** actionable · **164** closed since review · generated 2026-07-19 16:32 UTC
 
 propose-close: **940** · needs-info: **807** · route-to-area: **188** · keep-open: **3928**
 
