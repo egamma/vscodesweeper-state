@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 8 swept users · 6027 issues reviewed · generated 2026-07-19 16:32 UTC
+[← Home](index.html) · 8 swept users · 6077 issues reviewed · generated 2026-07-19 18:03 UTC
 
 ## Closure outcome per swept user
 
@@ -24,7 +24,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | User | Stays open | Auto-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | hediet | 931 | 177 | 84 | 19% |
-| justschen | 719 | 85 | 35 | 12% |
+| justschen | 719 | 85 | 36 | 12% |
 | deepak1556 | 448 | 11 | 9 | 2% |
 | roblourens | 488 | 56 | 28 | 11% |
 | lramos15 | 442 | 70 | 32 | 16% |
@@ -32,4 +32,4 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | alexdima | 387 | 80 | 40 | 21% |
 | aiday-mar | 271 | 42 | 24 | 15% |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (46 users, 800 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (46 users, 865 reviews — mostly co-assignees)._

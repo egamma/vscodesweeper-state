@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Top issues — benvillalobos</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
+    --accent: #0969da; --row: #f6f8fa;
+    --sev-high: #cf222e; --sev-mid: #9a6700; --sev-low: #656d76; --good: #1a7f37;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 24px; max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 28px 0 8px; }
+  .sub { color: var(--muted); margin-bottom: 8px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted); font-weight: 600; }
+  th:not([data-k]) { cursor: default; }
+  th[data-k]:hover { color: var(--fg); }
+  td.n, th.n { text-align: right; }
+  tbody tr:hover { background: var(--row); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid transparent; white-space: nowrap; }
+  .sev-crash, .sev-data-loss, .sev-freeze { color: var(--sev-high); border-color: var(--sev-high); }
+  .sev-perf, .sev-correctness { color: var(--sev-mid); border-color: var(--sev-mid); }
+  .sev-visual, .sev-papercut { color: var(--sev-low); border-color: var(--sev-low); }
+  .sig-backlog-candidate, .sig-active { color: var(--accent); border-color: var(--accent); }
+  .sig-dormant { color: var(--muted); border-color: var(--muted); }
+  .fit-aligned { color: var(--good); border-color: var(--good); }
+  .fit-rejected { color: var(--muted); border-color: var(--muted); }
+  .imp { color: var(--sev-high); border-color: var(--sev-high); }
+  .af { color: var(--good); }
+  .bar { display: inline-block; width: 52px; height: 6px; border-radius: 3px; background: var(--border);
+    position: relative; vertical-align: middle; margin-right: 6px; }
+  .bar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+  .muted { color: var(--muted); }
+  footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  button.more { font: inherit; font-size: 13px; cursor: pointer; margin: 10px 0 0;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 6px; padding: 5px 12px; }
+  button.more:hover { border-color: var(--accent); color: var(--accent); }
+  button.copy { font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    border-radius: 6px; padding: 3px 8px; }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+  <h1>Top issues — benvillalobos</h1>
+  <div class="sub"><a href="../index.html">← home</a> · value ranking of reviewed open issues assigned to <code>benvillalobos</code> ·
+    bugs by demand × severity, features by demand (boosted for vision-aligned work) · demand as of review time · <a href="benvillalobos-themes.html">themed view</a> · generated 2026-07-19 18:03 UTC</div>
+  <h2>Bugs — top 10 of 20</h2>
+  <table id="bugs">
+    <thead><tr>
+      <th class="n" data-k="rank">#</th><th data-k="title">Issue</th>
+      <th class="n" data-k="upvotes" title="👍 reactions at review time">👍</th>
+      <th class="n" data-k="comments">Comments</th>
+      <th class="n" data-k="related" title="Open cross-references (duplicate proxy)">Refs</th>
+      <th data-k="severity">Severity</th><th data-k="breadth">Breadth</th>
+      <th class="n" data-k="score">Score</th><th data-k="priority">Priority</th>
+      <th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Same scale as the dashboard.">Rating</th>
+      <th data-k="autoFixable" title="The model's own judgment that it could fix this issue autonomously — a signal, not a button. The Implement column is the action.">Auto-fix</th>
+      <th>Implement</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  <button class="more" id="more-bugs" hidden></button>
+  <h2>Feature requests — top 10 of 23</h2>
+  <table id="features">
+    <thead><tr>
+      <th class="n" data-k="rank">#</th><th data-k="title">Issue</th>
+      <th class="n" data-k="upvotes">👍</th><th class="n" data-k="comments">Comments</th>
+      <th class="n" data-k="related">Refs</th>
+      <th data-k="signal">Signal</th><th class="n" data-k="score">Score</th>
+      <th>Implement</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  <button class="more" id="more-features" hidden></button>
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> — reviews are proposal-only; nothing is applied to microsoft/vscode issues.
+  <strong>Implement</strong> copies a CLI command a maintainer runs to generate an <em>experimental draft PR on microsoft/vscode</em> (head branch on the fork; one AI cross-review comment follows) — or links the PR once it exists.
+  13 reviewed item(s) of other types are not ranked. Scores are relative within each lane (top = 100);
+  the visible head is the smallest prefix carrying ~80% of the lane's total score (min 10, max 25 rows). See the <a href="../dashboard.html">full dashboard</a>.</footer>
+<script>
+const DATA = {"bugs":[{"rank":1,"number":280829,"url":"https://github.com/microsoft/vscode/issues/280829","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/280829.md","title":"Copilot Code Review does not use `/instruction/**/NAME.instructions.md` files","upvotes":3,"comments":8,"related":1,"severity":"correctness","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":100,"reviewedAt":"2026-07-19T17:49:35.121Z"},{"rank":2,"number":309686,"url":"https://github.com/microsoft/vscode/issues/309686","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/309686.md","title":"[Unhandled Error] Cannot read properties of undefined (reading 'toString')","upvotes":0,"comments":3,"related":1,"severity":"correctness","breadth":"niche","priority":"none","verification":"Unverified","rating":"2/6 Unverified","verificationRank":4,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":30,"reviewedAt":"2026-07-19T17:48:44.839Z"},{"rank":3,"number":316136,"url":"https://github.com/microsoft/vscode/issues/316136","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316136.md","title":"Copilot Chat Agent freezes VS Code during Replace String in File / Evaluating","upvotes":1,"comments":1,"related":0,"severity":"freeze","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":21,"reviewedAt":"2026-07-17T10:04:55.264Z"},{"rank":4,"number":287240,"url":"https://github.com/microsoft/vscode/issues/287240","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287240.md","title":"VS Code windows glitches, full restart required","upvotes":0,"comments":0,"related":1,"severity":"visual","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":11,"reviewedAt":"2026-07-19T17:43:22.807Z"},{"rank":5,"number":275429,"url":"https://github.com/microsoft/vscode/issues/275429","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275429.md","title":"Copy hover button does not show aria label on tab focus","upvotes":0,"comments":0,"related":1,"severity":"papercut","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":true,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":9,"reviewedAt":"2026-07-19T17:43:02.466Z"},{"rank":6,"number":235159,"url":"https://github.com/microsoft/vscode/issues/235159","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/235159.md","title":"Number-of-files-found Badge is not at the center of the list item vertically","upvotes":0,"comments":3,"related":0,"severity":"visual","breadth":"common","priority":"none","verification":"Confirmed","rating":"6/6 Confirmed","verificationRank":0,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":5,"reviewedAt":"2026-07-19T17:42:40.668Z"},{"rank":7,"number":277173,"url":"https://github.com/microsoft/vscode/issues/277173","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277173.md","title":"Change copilot icon in copilot code review comments","upvotes":0,"comments":2,"related":0,"severity":"visual","breadth":"common","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":4,"reviewedAt":"2026-07-19T17:41:09.313Z"},{"rank":8,"number":316368,"url":"https://github.com/microsoft/vscode/issues/316368","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316368.md","title":"stop working after update","upvotes":0,"comments":1,"related":0,"severity":"correctness","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":3,"reviewedAt":"2026-07-18T10:04:04.800Z"},{"rank":9,"number":324845,"url":"https://github.com/microsoft/vscode/issues/324845","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324845.md","title":"Fuzzy search pattern doesn't match words if it's corresponding parts start not after a delimiter/from a capital letter","upvotes":0,"comments":1,"related":0,"severity":"correctness","breadth":"niche","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":3,"reviewedAt":"2026-07-19T17:53:20.896Z"},{"rank":10,"number":275262,"url":"https://github.com/microsoft/vscode/issues/275262","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275262.md","title":"Keyboard shortcuts, diffs can be selected as context but don't actually get added","upvotes":0,"comments":1,"related":0,"severity":"papercut","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":1,"reviewedAt":"2026-07-19T17:41:14.452Z"},{"rank":11,"number":271725,"url":"https://github.com/microsoft/vscode/issues/271725","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/271725.md","title":"review code issue","upvotes":0,"comments":0,"related":0,"severity":"correctness","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:42:40.446Z"},{"rank":12,"number":276240,"url":"https://github.com/microsoft/vscode/issues/276240","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276240.md","title":"When Copilot Code Review (CCR) no-ops, there's no notice to user as to why","upvotes":0,"comments":0,"related":0,"severity":"papercut","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:39:37.973Z"},{"rank":13,"number":278450,"url":"https://github.com/microsoft/vscode/issues/278450","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278450.md","title":"GHCP Code Review does not respect Git worktree boundaries","upvotes":0,"comments":0,"related":0,"severity":"correctness","breadth":"niche","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:42:38.052Z"},{"rank":14,"number":280852,"url":"https://github.com/microsoft/vscode/issues/280852","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/280852.md","title":"`ctrl` activates hover on macOS when hover is set to `onKeyboardModifier`","upvotes":0,"comments":0,"related":0,"severity":"papercut","breadth":"niche","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:40:27.905Z"},{"rank":15,"number":289001,"url":"https://github.com/microsoft/vscode/issues/289001","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289001.md","title":"Copilot Hangs & Crashes With Obscure, Incorrect Error Message When Review Tool Is Used on Large File","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:43:57.440Z"},{"rank":16,"number":292984,"url":"https://github.com/microsoft/vscode/issues/292984","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292984.md","title":"Starting a code review does not warn when cancelling existing review","upvotes":0,"comments":0,"related":0,"severity":"papercut","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:45:32.368Z"},{"rank":17,"number":299447,"url":"https://github.com/microsoft/vscode/issues/299447","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/299447.md","title":"SCM review ignores .github/instructions/ files","upvotes":0,"comments":0,"related":0,"severity":"correctness","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":true,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:47:18.375Z"},{"rank":18,"number":300873,"url":"https://github.com/microsoft/vscode/issues/300873","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/300873.md","title":"`Chat: Review` command silently does nothing when active file has not been pushed to remote","upvotes":0,"comments":0,"related":0,"severity":"papercut","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":true,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:47:32.756Z"},{"rank":19,"number":317513,"url":"https://github.com/microsoft/vscode/issues/317513","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317513.md","title":"Terminal Console text distortion","upvotes":0,"comments":0,"related":0,"severity":"visual","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:48:04.792Z"},{"rank":20,"number":322666,"url":"https://github.com/microsoft/vscode/issues/322666","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/322666.md","title":"The follow-link copy button copies the `Follow link (ctrl + click)` text literally","upvotes":0,"comments":0,"related":0,"severity":"papercut","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":true,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-19T17:50:09.520Z"}],"features":[{"rank":1,"number":314299,"url":"https://github.com/microsoft/vscode/issues/314299","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314299.md","title":"Improve pull request triage with semantic labeling","upvotes":24,"comments":3,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":100,"reviewedAt":"2026-07-19T17:47:49.484Z"},{"rank":2,"number":313563,"url":"https://github.com/microsoft/vscode/issues/313563","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313563.md","title":"Incremental CI/CD pipeline execution based on changed modules","upvotes":20,"comments":2,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":82,"reviewedAt":"2026-07-19T17:49:14.144Z"},{"rank":3,"number":208406,"url":"https://github.com/microsoft/vscode/issues/208406","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/208406.md","title":"Option for sticky scroll to prioritize inner blocks","upvotes":14,"comments":9,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":55,"reviewedAt":"2026-07-19T17:40:06.512Z"},{"rank":4,"number":279252,"url":"https://github.com/microsoft/vscode/issues/279252","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/279252.md","title":"Copilot Code Review feels slow","upvotes":2,"comments":1,"related":2,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":32,"reviewedAt":"2026-07-19T17:40:30.713Z"},{"rank":5,"number":276970,"url":"https://github.com/microsoft/vscode/issues/276970","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276970.md","title":"Copilot code review is not discoverable","upvotes":1,"comments":3,"related":2,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"active","visionFit":"aligned","score":29,"reviewedAt":"2026-07-19T17:44:50.963Z"},{"rank":6,"number":151763,"url":"https://github.com/microsoft/vscode/issues/151763","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/151763.md","title":"when hovers are not sticky, alt/opt key should make them temporarily sticky","upvotes":7,"comments":7,"related":1,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"not_applicable","score":23,"reviewedAt":"2026-07-19T17:41:17.307Z"},{"rank":7,"number":271603,"url":"https://github.com/microsoft/vscode/issues/271603","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/271603.md","title":"Allow hiding of welcome prompts","upvotes":0,"comments":0,"related":2,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":20,"reviewedAt":"2026-07-19T17:41:42.099Z"},{"rank":8,"number":276977,"url":"https://github.com/microsoft/vscode/issues/276977","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276977.md","title":"Add a `Chat: Perform Code Review` command","upvotes":1,"comments":1,"related":1,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"active","visionFit":"aligned","score":16,"reviewedAt":"2026-07-19T17:44:10.764Z"},{"rank":9,"number":277902,"url":"https://github.com/microsoft/vscode/issues/277902","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277902.md","title":"Consider: Add setting for \"Start agent review on commit\"","upvotes":0,"comments":0,"related":1,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"active","visionFit":"aligned","score":10,"reviewedAt":"2026-07-19T17:43:34.509Z"},{"rank":10,"number":273983,"url":"https://github.com/microsoft/vscode/issues/273983","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273983.md","title":"Add setting to gradually hide or show copy button on different types of hovers","upvotes":0,"comments":0,"related":1,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"not_applicable","score":8,"reviewedAt":"2026-07-19T17:42:15.583Z"},{"rank":11,"number":278216,"url":"https://github.com/microsoft/vscode/issues/278216","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278216.md","title":"`~find-duplicates` should consider date when returning semantically similar issues","upvotes":0,"comments":0,"related":1,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":7,"reviewedAt":"2026-07-19T17:42:16.565Z"},{"rank":12,"number":314600,"url":"https://github.com/microsoft/vscode/issues/314600","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314600.md","title":"Adopt GitHub Issue Forms with automatic area labeling for incoming issues","upvotes":0,"comments":3,"related":0,"severity":"none","breadth":"broad","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":7,"reviewedAt":"2026-07-19T17:51:53.783Z"},{"rank":13,"number":270444,"url":"https://github.com/microsoft/vscode/issues/270444","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/270444.md","title":"Add a submenu to the snooze option","upvotes":1,"comments":1,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":6,"reviewedAt":"2026-07-19T17:40:00.155Z"},{"rank":14,"number":276976,"url":"https://github.com/microsoft/vscode/issues/276976","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276976.md","title":"Add built in `/code-review` slash command to copilot chat","upvotes":1,"comments":1,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":6,"reviewedAt":"2026-07-19T17:41:53.540Z"},{"rank":15,"number":277901,"url":"https://github.com/microsoft/vscode/issues/277901","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277901.md","title":"Add discoverable main button for code reviews","upvotes":1,"comments":1,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":6,"reviewedAt":"2026-07-19T17:40:38.380Z"},{"rank":16,"number":275701,"url":"https://github.com/microsoft/vscode/issues/275701","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275701.md","title":"Offer code review on Changes Files in chat and remote agents","upvotes":1,"comments":0,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":5,"reviewedAt":"2026-07-19T17:39:37.389Z"},{"rank":17,"number":278229,"url":"https://github.com/microsoft/vscode/issues/278229","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278229.md","title":"`~find-duplicates` should include 1 sentence descriptions on the related issues","upvotes":1,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":3,"reviewedAt":"2026-07-19T17:41:51.214Z"},{"rank":18,"number":314566,"url":"https://github.com/microsoft/vscode/issues/314566","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314566.md","title":"Introduce AI-assisted analysis for Pull Requests","upvotes":0,"comments":2,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"active","visionFit":"unclear","score":2,"reviewedAt":"2026-07-19T17:46:48.677Z"},{"rank":19,"number":273615,"url":"https://github.com/microsoft/vscode/issues/273615","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273615.md","title":"Enable Ctrl+Click on slash commands in chat input to open prompt file","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":0,"reviewedAt":"2026-07-19T01:32:51.931Z"},{"rank":20,"number":277910,"url":"https://github.com/microsoft/vscode/issues/277910","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277910.md","title":"We should have benchmarks on Copilot Code Reviews","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":0,"reviewedAt":"2026-07-19T17:39:16.826Z"},{"rank":21,"number":314421,"url":"https://github.com/microsoft/vscode/issues/314421","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314421.md","title":"Proposal: Community-Augmented Endgame with mandatory regression profiles","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"active","visionFit":"unclear","score":0,"reviewedAt":"2026-07-19T17:46:37.281Z"},{"rank":22,"number":314622,"url":"https://github.com/microsoft/vscode/issues/314622","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314622.md","title":"Introduce multi-tier difficulty labels to improve newcomer onboarding","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"active","visionFit":"unclear","score":0,"reviewedAt":"2026-07-19T17:46:17.384Z"},{"rank":23,"number":314624,"url":"https://github.com/microsoft/vscode/issues/314624","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314624.md","title":"Standardize the pull request template","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"active","visionFit":"not_applicable","score":0,"reviewedAt":"2026-07-19T17:46:22.729Z"}],"cut":{"bugs":10,"features":10}};
+const VDESC = {"Confirmed":"Reproduced against current main — the failing behavior was observed directly, or a commenter supplied a confirmed reproduction.","Source-confirmed":"Traced conclusively in the current source via a checkout — the buggy code path is identified, though not executed.","Traced":"A likely defect path was found in the source, but with some uncertainty that it's the true cause.","Plausible":"The report reads as coherent and credible, but it wasn't reproduced or traced in the code — not yet verified.","Unverified":"A genuine reproduction attempt failed, or the report is too thin to verify.","Inconclusive":"Signals conflict — a reproduction was claimed but confidence is low; treat the rating with caution."};
+function esc(s){const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+// Keep in sync with the dashboard's implementCell / gateImplement (implement.ts).
+function implementCell(r){
+  if (r.prUrl) return '<a href="'+esc(r.prUrl)+'" target="_blank" rel="noopener" title="Existing sweeper draft PR">draft PR ▸</a>';
+  if (!r.implementable) return '<span class="muted">—</span>';
+  return '<button class="copy" data-n="'+esc(r.number)+'" title="Copy the CLI command to implement this issue — opens an experimental DRAFT PR on microsoft/vscode (head on the fork; copilot writes, codex posts one review; needs Node 24+). You decide what happens to it." aria-label="Copy implement command for issue '+esc(r.number)+'">Copy implement cmd</button>';
+}
+function cell(r, lane){
+  const sev = r.severity && r.severity !== "—" && r.severity !== ""
+    ? '<span class="pill sev-'+esc(r.severity)+'">'+esc(r.severity)+"</span>"
+    : '<span class="muted">—</span>';
+  const html = ["<tr>",
+    '<td class="n muted">'+r.rank+"</td>",
+    '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">#'+r.number+"</a> "+esc(r.title)
+      +(r.reviewUrl?' <a class="muted" href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener" title="Review record">record</a>':"")+"</td>",
+    '<td class="n">'+r.upvotes+"</td>",
+    '<td class="n">'+r.comments+"</td>",
+    '<td class="n">'+r.related+"</td>"];
+  if (lane === "bugs") {
+    html.push("<td>"+sev+"</td>");
+    html.push("<td>"+esc(r.breadth)+"</td>");
+    html.push('<td class="n"><span class="bar"><i style="width:'+r.score+'%"></i></span>'+r.score+"</td>");
+    html.push("<td>"+(r.priority === "important" ? '<span class="pill imp">important</span>' : '<span class="muted">—</span>')+"</td>");
+    html.push("<td>"+(r.rating ? '<span title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>" : '<span class="muted">—</span>')+"</td>");
+    html.push("<td>"+(r.autoFixable ? '<span class="af">yes</span>' : '<span class="muted">—</span>')+"</td>");
+    html.push("<td>"+implementCell(r)+"</td>");
+  } else {
+    const fit = r.visionFit === "aligned" ? "aligned" : r.visionFit === "rejected" ? "rejected" : "";
+    const fitPill = fit ? ' <span class="pill fit-'+fit+'">'+(fit === "aligned" ? "vision-aligned" : "off-vision")+"</span>" : "";
+    html.push('<td><span class="pill sig-'+esc(r.signal)+'">'+esc(r.signal)+"</span>"+fitPill+"</td>");
+    html.push('<td class="n"><span class="bar"><i style="width:'+r.score+'%"></i></span>'+r.score+"</td>");
+    html.push("<td>"+implementCell(r)+"</td>");
+  }
+  html.push("</tr>");
+  return html.join("");
+}
+// One delegated handler covers both lanes: copy the implement command, confirm inline.
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const cmd = "npm run implement -- --issue " + btn.dataset.n + " --review";
+  navigator.clipboard.writeText(cmd).then(
+    () => { const t = btn.textContent; btn.textContent = "Copied ✓"; setTimeout(() => { btn.textContent = t; }, 1600); },
+    () => { btn.textContent = "Copy failed"; }
+  );
+});
+const showAll = { bugs: false, features: false };
+function renderTable(id){
+  const t = document.getElementById(id);
+  // Head/tail: by default only the head (rank <= cut, ~80% of the lane's score
+  // mass) is rendered; "Show all" lifts the filter. Sorting applies to the
+  // visible set either way.
+  const cut = DATA.cut[id];
+  const rows = DATA[id].filter(r => showAll[id] || r.rank <= cut).sort((a,b)=>{
+    const k = t.dataset.k || "rank", dir = Number(t.dataset.dir || 1);
+    let x = a[k], y = b[k];
+    if (typeof x === "string") { x = x.toLowerCase(); y = String(y).toLowerCase(); }
+    if (x < y) return -dir; if (x > y) return dir; return a.rank - b.rank;
+  });
+  t.tBodies[0].innerHTML = rows.map(r => cell(r, id)).join("")
+    || '<tr><td colspan="12" class="muted">No records in this lane yet.</td></tr>';
+  const btn = document.getElementById("more-" + id);
+  const hidden = DATA[id].length - cut;
+  if (btn && hidden > 0) {
+    btn.hidden = false;
+    btn.textContent = showAll[id]
+      ? "Collapse to top " + cut
+      : "Show all " + DATA[id].length + " (" + hidden + " more, score ≤ " + DATA[id][cut].score + ")";
+  }
+}
+for (const id of ["bugs","features"]) {
+  const t = document.getElementById(id);
+  t.querySelectorAll("th[data-k]").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.k;
+    if (t.dataset.k === k) t.dataset.dir = String(-Number(t.dataset.dir || 1));
+    else { t.dataset.k = k; t.dataset.dir = k === "title" || k === "severity" || k === "breadth" || k === "signal" || k === "priority" || k === "verificationRank" ? "1" : "-1"; }
+    renderTable(id);
+  }));
+  const btn = document.getElementById("more-" + id);
+  if (btn) btn.addEventListener("click", () => { showAll[id] = !showAll[id]; renderTable(id); });
+  renderTable(id);
+}
+</script>
+</body>
+</html>

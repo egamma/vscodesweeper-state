@@ -2,7 +2,7 @@
 
 Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the repo.
 
-- **[Full review dashboard](dashboard.html)** — 6027 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 6077 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 
 ## Per-maintainer rankings
@@ -15,6 +15,7 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[aeschli](top/aeschli.md)** · [by theme](top/aeschli-themes.md) — 209 bugs · 360 feature requests.
 - **[alexdima](top/alexdima.md)** · [by theme](top/alexdima-themes.md) — 348 bugs · 133 feature requests.
 - **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 172 bugs · 84 feature requests.
+- **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 20 bugs · 23 feature requests.
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 
-_Generated 2026-07-19 16:32 UTC._
+_Generated 2026-07-19 18:04 UTC._
