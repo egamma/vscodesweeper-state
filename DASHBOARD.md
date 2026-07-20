@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**7686** open issues reviewed · **3076** actionable · **236** closed since review · generated 2026-07-20 19:36 UTC
+**7687** open issues reviewed · **3077** actionable · **236** closed since review · generated 2026-07-20 19:41 UTC
 
-propose-close: **1133** · needs-info: **940** · route-to-area: **240** · keep-open: **5373**
+propose-close: **1133** · needs-info: **940** · route-to-area: **241** · keep-open: **5373**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -415,6 +415,7 @@ propose-close: **1133** · needs-info: **940** · route-to-area: **240** · keep
 | connor4312 | [#290436](https://github.com/microsoft/vscode/issues/290436) | `core` is not a valid extension identifier | debt | propose-close | none | 95% | 2/6 Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/290436.md) | 2026-07-20 |
 | connor4312 | [#291067](https://github.com/microsoft/vscode/issues/291067) | Auto-approval information not viewable with screenreader | bug | keep-open | none | 85% | 5/6 Source-confirmed | yes | `npm run implement -- --issue 291067` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291067.md) | 2026-07-20 |
 | connor4312 | [#292313](https://github.com/microsoft/vscode/issues/292313) | the unproperly interupt of stable model | bug | propose-close | *caused-by-extension | 78% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292313.md) | 2026-07-20 |
+| connor4312 | [#293800](https://github.com/microsoft/vscode/issues/293800) | Remote Tunnels fails to open workspace when path contains Chinese(non-ascii) characters. | bug | route-to-area | none | 72% | 4/6 Traced | no | `npm run implement -- --issue 293800` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293800.md) | 2026-07-20 |
 | connor4312 | [#294223](https://github.com/microsoft/vscode/issues/294223) | Markdown code blocks don't render correctly in Test Results pane | bug | keep-open | none | 82% | 5/6 Source-confirmed | yes | `npm run implement -- --issue 294223` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294223.md) | 2026-07-20 |
 | connor4312 | [#294596](https://github.com/microsoft/vscode/issues/294596) | [FR] Allow callStackDown and callStackUp keyboard shortcuts to move through virtual environment | bug | keep-open | none | 75% | 4/6 Traced | yes | `npm run implement -- --issue 294596` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294596.md) | 2026-07-20 |
 | connor4312 | [#295635](https://github.com/microsoft/vscode/issues/295635) | Cmd+enter to approve tool call should work if focus is anywhere in chat view | bug | keep-open | none | 82% | 5/6 Source-confirmed | yes | `npm run implement -- --issue 295635` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/295635.md) | 2026-07-20 |
