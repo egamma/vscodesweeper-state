@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**7140** open issues reviewed · **2919** actionable · **210** closed since review · generated 2026-07-20 10:33 UTC
+**7141** open issues reviewed · **2920** actionable · **210** closed since review · generated 2026-07-20 10:39 UTC
 
-propose-close: **1070** · needs-info: **909** · route-to-area: **233** · keep-open: **4928**
+propose-close: **1071** · needs-info: **909** · route-to-area: **233** · keep-open: **4928**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2623,6 +2623,7 @@ propose-close: **1070** · needs-info: **909** · route-to-area: **233** · keep
 | sandy081 | [#313235](https://github.com/microsoft/vscode/issues/313235) | Isusue flagged by VSC | bug | needs-info | info-needed | 92% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313235.md) | 2026-07-20 |
 | sandy081 | [#313403](https://github.com/microsoft/vscode/issues/313403) | agents-app (inders) - already open project in devcontainer (in vscode) does open in local folder (in agents-app) | feature-request | propose-close | *duplicate | 85% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313403.md) | 2026-07-20 |
 | sandy081 | [#313408](https://github.com/microsoft/vscode/issues/313408) | Detached window for extensions doesn't show extension details or changelog | bug | propose-close | none | 88% | 2/6 Unverified | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313408.md) | 2026-07-20 |
+| sandy081 | [#313469](https://github.com/microsoft/vscode/issues/313469) | mcp.json does not support change of folder | feature-request | propose-close | none | 84% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313469.md) | 2026-07-20 |
 | sandy081 | [#313594](https://github.com/microsoft/vscode/issues/313594) | Extension Signature Verification Failed: Swift | bug | needs-info | info-needed | 72% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313594.md) | 2026-07-20 |
 | sandy081 | [#313714](https://github.com/microsoft/vscode/issues/313714) | Extension Signature Verification Failed: GitHub Pull Requests | bug | needs-info | info-needed | 82% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313714.md) | 2026-07-20 |
 | sandy081 | [#313879](https://github.com/microsoft/vscode/issues/313879) | Unable to update app and open terminals | bug | needs-info | info-needed | 72% | 3/6 Plausible | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313879.md) | 2026-07-20 |
