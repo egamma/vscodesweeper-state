@@ -2,9 +2,9 @@
 
 [← Home](index.html) · proposal-only triage findings for `microsoft/vscode`. Nothing here is applied to the repo.
 
-**8684** open issues reviewed · **3597** actionable · **241** closed since review · generated 2026-07-21 15:43 UTC
+**8683** open issues reviewed · **3596** actionable · **242** closed since review · generated 2026-07-21 15:48 UTC
 
-propose-close: **1398** · needs-info: **1083** · route-to-area: **259** · keep-open: **5944**
+propose-close: **1397** · needs-info: **1083** · route-to-area: **259** · keep-open: **5944**
 
 | Owner | Issue | Title | Type | Action | Label | Conf | Rating | Auto-fix? | Implement | Review | Reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2803,7 +2803,6 @@ propose-close: **1398** · needs-info: **1083** · route-to-area: **259** · kee
 | meganrogge | [#325452](https://github.com/microsoft/vscode/issues/325452) | Terminal quick fix icon overlaps left side bar | bug | keep-open | none | 82% | 5/6 Source-confirmed | yes | `npm run implement -- --issue 325452` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325452.md) | 2026-07-21 |
 | meganrogge | [#325709](https://github.com/microsoft/vscode/issues/325709) | Can't select text in questions widget's question | bug | keep-open | none | 88% | 5/6 Source-confirmed | yes | `npm run implement -- --issue 325709` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325709.md) | 2026-07-21 |
 | meganrogge | [#326083](https://github.com/microsoft/vscode/issues/326083) | Task problem matching inconsistency across task runs? | bug | keep-open | none | 72% | 3/6 Plausible | no | `npm run implement -- --issue 326083` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326083.md) | 2026-07-21 |
-| meganrogge | [#326761](https://github.com/microsoft/vscode/issues/326761) | Key to copy text from Debug Console different from Termal | bug | propose-close | *as-designed | 92% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326761.md) | 2026-07-21 |
 | meganrogge, aiday-mar | [#241058](https://github.com/microsoft/vscode/issues/241058) | Accessibility MacOS: Braille display positions wrong when uparrowing from a blank line to one with contents. | upstream | propose-close | *duplicate | 82% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/241058.md) | 2026-07-20 |
 | meganrogge, aiday-mar | [#247522](https://github.com/microsoft/vscode/issues/247522) | [Accessibility] Mouse echo don't work with NVDA and  JAWS | upstream | propose-close | *duplicate | 88% | 6/6 Confirmed | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/247522.md) | 2026-07-21 |
 | meganrogge, aiday-mar | [#316018](https://github.com/microsoft/vscode/issues/316018) | voice over and braille display on mac os | upstream | propose-close | *duplicate | 82% | — | no | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316018.md) | 2026-07-21 |
@@ -8702,10 +8701,11 @@ propose-close: **1398** · needs-info: **1083** · route-to-area: **259** · kee
 </details>
 
 <details>
-<summary>241 issues closed since review</summary>
+<summary>242 issues closed since review</summary>
 
 | Owner | Issue | Title | Type | Proposed action | Outcome | Reason | Closed | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| meganrogge | [#326761](https://github.com/microsoft/vscode/issues/326761) | Key to copy text from Debug Console different from Termal | bug | propose-close | confirmed propose-close | not_planned | 2026-07-21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326761.md) |
 | benibenj, justschen | [#324482](https://github.com/microsoft/vscode/issues/324482) | Show timestamp for older conversations | feature-request | keep-open | closed externally | completed | 2026-07-21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324482.md) |
 | meganrogge, Copilot | [#326034](https://github.com/microsoft/vscode/issues/326034) | Voice mode: manually typed text is dropped when turning on voice mode in a new chat | bug | keep-open | closed externally | completed | 2026-07-21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326034.md) |
 | deepak1556 | [#326139](https://github.com/microsoft/vscode/issues/326139) | [1.129.0] CodeWindow: renderer process gone (reason: crashed, code: 133) | bug | keep-open | closed externally | completed | 2026-07-21 | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326139.md) |
