@@ -2,7 +2,7 @@
 
 Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the repo.
 
-- **[Full review dashboard](dashboard.html)** — 10747 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 11109 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 - **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
 
@@ -17,7 +17,8 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[deepak1556](top/deepak1556.md)** · [by theme](top/deepak1556-themes.md) — 557 bugs · 38 feature requests.
 - **[connor4312](top/connor4312.md)** · [by theme](top/connor4312-themes.md) — 329 bugs · 245 feature requests.
 - **[aeschli](top/aeschli.md)** · [by theme](top/aeschli-themes.md) — 207 bugs · 360 feature requests.
-- **[meganrogge](top/meganrogge.md)** · [by theme](top/meganrogge-themes.md) — 338 bugs · 209 feature requests.
+- **[anthonykim1](top/anthonykim1.md)** · [by theme](top/anthonykim1-themes.md) — 454 bugs · 93 feature requests.
+- **[meganrogge](top/meganrogge.md)** · [by theme](top/meganrogge-themes.md) — 339 bugs · 208 feature requests.
 - **[TylerLeonhardt](top/TylerLeonhardt.md)** · [by theme](top/TylerLeonhardt-themes.md) — 287 bugs · 259 feature requests.
 - **[alexdima](top/alexdima.md)** · [by theme](top/alexdima-themes.md) — 348 bugs · 132 feature requests.
 - **[chrmarti](top/chrmarti.md)** · [by theme](top/chrmarti-themes.md) — 309 bugs · 67 feature requests.
@@ -26,4 +27,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 20 bugs · 23 feature requests.
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 
-_Generated 2026-07-24 06:55 UTC._
+_Generated 2026-07-24 12:18 UTC._
