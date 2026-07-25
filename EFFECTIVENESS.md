@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 18 swept users · 11606 issues reviewed · generated 2026-07-25 11:00 UTC
+[← Home](index.html) · 18 swept users · 11606 issues reviewed · generated 2026-07-25 13:44 UTC
 
 ## Closure outcome per swept user
 
@@ -22,7 +22,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | meganrogge | 604 | 73 (12%) | 19 (3%) | 512 (85%) | **15%** |
 | alexdima | 548 | 100 (18%) | 68 (12%) | 380 (69%) | **31%** |
 | osortega | 522 | 50 (10%) | 47 (9%) | 425 (81%) | **19%** |
-| chrmarti | 469 | 173 (37%) | 161 (34%) | 135 (29%) | **71%** |
+| chrmarti | 469 | 174 (37%) | 159 (34%) | 136 (29%) | **71%** |
 | benibenj | 401 | 35 (9%) | 17 (4%) | 349 (87%) | **13%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
 | Copilot | 146 | 5 (3%) | 1 (1%) | 140 (96%) | **4%** |
@@ -47,7 +47,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | meganrogge | 512 | 86 | 48 | 17% |
 | alexdima | 380 | 80 | 39 | 21% |
 | osortega | 425 | 67 | 31 | 16% |
-| chrmarti | 135 | 18 | 9 | 13% |
+| chrmarti | 136 | 19 | 9 | 14% |
 | benibenj | 349 | 35 | 10 | 10% |
 | aiday-mar | 269 | 43 | 25 | 16% |
 | Copilot | 140 | 29 | 18 | 21% |
