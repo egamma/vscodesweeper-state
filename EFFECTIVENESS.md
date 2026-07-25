@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 17 swept users · 11109 issues reviewed · generated 2026-07-24 12:17 UTC
+[← Home](index.html) · 18 swept users · 11606 issues reviewed · generated 2026-07-25 11:00 UTC
 
 ## Closure outcome per swept user
 
@@ -8,23 +8,24 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 
 | User | Reviewed | Propose close | Needs info | Keep open | Closure path |
 | --- | --- | --- | --- | --- | --- |
-| lszomoru | 1283 | 194 (15%) | 145 (11%) | 944 (74%) | **26%** |
-| hediet | 1193 | 122 (10%) | 137 (11%) | 934 (78%) | **22%** |
-| justschen | 1009 | 171 (17%) | 116 (11%) | 722 (72%) | **28%** |
-| deepak1556 | 994 | 231 (23%) | 313 (31%) | 450 (45%) | **55%** |
-| roblourens | 742 | 118 (16%) | 134 (18%) | 490 (66%) | **34%** |
-| lramos15 | 738 | 171 (23%) | 125 (17%) | 442 (60%) | **40%** |
-| sandy081 | 684 | 82 (12%) | 56 (8%) | 546 (80%) | **20%** |
-| connor4312 | 666 | 68 (10%) | 44 (7%) | 554 (83%) | **17%** |
-| anthonykim1 | 636 | 97 (15%) | 78 (12%) | 461 (72%) | **28%** |
+| lszomoru | 1283 | 201 (16%) | 148 (12%) | 934 (73%) | **27%** |
+| hediet | 1193 | 126 (11%) | 137 (11%) | 930 (78%) | **22%** |
+| justschen | 1009 | 176 (17%) | 116 (11%) | 717 (71%) | **29%** |
+| deepak1556 | 994 | 232 (23%) | 315 (32%) | 447 (45%) | **55%** |
+| roblourens | 742 | 122 (16%) | 136 (18%) | 484 (65%) | **35%** |
+| lramos15 | 738 | 177 (24%) | 125 (17%) | 436 (59%) | **41%** |
+| sandy081 | 684 | 90 (13%) | 58 (8%) | 536 (78%) | **22%** |
+| connor4312 | 666 | 73 (11%) | 44 (7%) | 549 (82%) | **18%** |
+| anthonykim1 | 636 | 98 (15%) | 78 (12%) | 460 (72%) | **28%** |
 | TylerLeonhardt | 633 | 79 (12%) | 48 (8%) | 506 (80%) | **20%** |
-| aeschli | 617 | 50 (8%) | 17 (3%) | 550 (89%) | **11%** |
-| meganrogge | 604 | 64 (11%) | 19 (3%) | 521 (86%) | **14%** |
-| alexdima | 548 | 93 (17%) | 68 (12%) | 387 (71%) | **29%** |
-| chrmarti | 469 | 172 (37%) | 161 (34%) | 136 (29%) | **71%** |
-| benibenj | 401 | 34 (8%) | 16 (4%) | 351 (88%) | **12%** |
+| aeschli | 617 | 53 (9%) | 18 (3%) | 546 (88%) | **12%** |
+| meganrogge | 604 | 73 (12%) | 19 (3%) | 512 (85%) | **15%** |
+| alexdima | 548 | 100 (18%) | 68 (12%) | 380 (69%) | **31%** |
+| osortega | 522 | 50 (10%) | 47 (9%) | 425 (81%) | **19%** |
+| chrmarti | 469 | 173 (37%) | 161 (34%) | 135 (29%) | **71%** |
+| benibenj | 401 | 35 (9%) | 17 (4%) | 349 (87%) | **13%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
-| Copilot | 135 | 2 (1%) | 1 (1%) | 132 (98%) | **2%** |
+| Copilot | 146 | 5 (3%) | 1 (1%) | 140 (96%) | **4%** |
 
 ## Auto-fixable share of issues that stay open
 
@@ -32,22 +33,23 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 
 | User | Stays open | Auto-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
-| lszomoru | 944 | 137 | 59 | 15% |
-| hediet | 934 | 176 | 83 | 19% |
-| justschen | 722 | 85 | 36 | 12% |
-| deepak1556 | 450 | 11 | 9 | 2% |
-| roblourens | 490 | 58 | 29 | 12% |
-| lramos15 | 442 | 70 | 32 | 16% |
-| sandy081 | 546 | 69 | 28 | 13% |
-| connor4312 | 554 | 60 | 35 | 11% |
-| anthonykim1 | 461 | 67 | 47 | 15% |
-| TylerLeonhardt | 506 | 70 | 37 | 14% |
-| aeschli | 550 | 45 | 31 | 8% |
-| meganrogge | 521 | 77 | 44 | 15% |
-| alexdima | 387 | 80 | 40 | 21% |
-| chrmarti | 136 | 18 | 9 | 13% |
-| benibenj | 351 | 35 | 11 | 10% |
-| aiday-mar | 269 | 42 | 24 | 16% |
-| Copilot | 132 | 24 | 14 | 18% |
+| lszomoru | 934 | 137 | 60 | 15% |
+| hediet | 930 | 173 | 81 | 19% |
+| justschen | 717 | 88 | 38 | 12% |
+| deepak1556 | 447 | 11 | 9 | 2% |
+| roblourens | 484 | 59 | 30 | 12% |
+| lramos15 | 436 | 72 | 34 | 17% |
+| sandy081 | 536 | 71 | 31 | 13% |
+| connor4312 | 549 | 63 | 38 | 11% |
+| anthonykim1 | 460 | 67 | 47 | 15% |
+| TylerLeonhardt | 506 | 72 | 38 | 14% |
+| aeschli | 546 | 46 | 32 | 8% |
+| meganrogge | 512 | 86 | 48 | 17% |
+| alexdima | 380 | 80 | 39 | 21% |
+| osortega | 425 | 67 | 31 | 16% |
+| chrmarti | 135 | 18 | 9 | 13% |
+| benibenj | 349 | 35 | 10 | 10% |
+| aiday-mar | 269 | 43 | 25 | 16% |
+| Copilot | 140 | 29 | 18 | 21% |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (39 users, 788 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 822 reviews — mostly co-assignees)._
