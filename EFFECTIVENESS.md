@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 18 swept users · 11612 issues reviewed · generated 2026-07-25 19:08 UTC
+[← Home](index.html) · 19 swept users · 11765 issues reviewed · generated 2026-07-25 20:48 UTC
 
 ## Closure outcome per swept user
 
@@ -25,7 +25,8 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | chrmarti | 470 | 189 (40%) | 142 (30%) | 139 (30%) | **70%** |
 | benibenj | 401 | 35 (9%) | 17 (4%) | 349 (87%) | **13%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
-| Copilot | 146 | 6 (4%) | 1 (1%) | 139 (95%) | **5%** |
+| Copilot | 163 | 6 (4%) | 2 (1%) | 155 (95%) | **5%** |
+| alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
 
 ## Auto-fixable share of issues that stay open
 
@@ -39,7 +40,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | deepak1556 | 448 | 10 | 8 | 2% |
 | roblourens | 484 | 60 | 31 | 12% |
 | lramos15 | 436 | 72 | 34 | 17% |
-| sandy081 | 536 | 71 | 32 | 13% |
+| sandy081 | 536 | 71 | 31 | 13% |
 | connor4312 | 549 | 63 | 38 | 11% |
 | anthonykim1 | 467 | 83 | 54 | 18% |
 | TylerLeonhardt | 506 | 72 | 38 | 14% |
@@ -50,7 +51,8 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | chrmarti | 139 | 24 | 12 | 17% |
 | benibenj | 349 | 35 | 10 | 10% |
 | aiday-mar | 269 | 43 | 25 | 16% |
-| Copilot | 139 | 29 | 18 | 21% |
+| Copilot | 155 | 32 | 19 | 21% |
+| alexr00 | 149 | 9 | 5 | 6% |
 
 ## Close-proposal reasons
 
@@ -58,16 +60,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 676 | 36% | 21 (3%) | 9 (1%) |
+| `*duplicate` | 681 | 36% | 21 (3%) | 9 (1%) |
 | implemented on main | 493 | 26% | 50 (10%) | 48 (10%) |
 | `*question` | 191 | 10% | 4 (2%) | 1 (1%) |
-| `*caused-by-extension` | 161 | 9% | 15 (9%) | 9 (6%) |
-| `*as-designed` | 146 | 8% | 28 (19%) | 26 (18%) |
-| `*not-reproducible` | 79 | 4% | 4 (5%) | 4 (5%) |
+| `*caused-by-extension` | 162 | 9% | 15 (9%) | 9 (6%) |
+| `*as-designed` | 147 | 8% | 28 (19%) | 26 (18%) |
+| `*not-reproducible` | 80 | 4% | 4 (5%) | 4 (5%) |
 | `*off-topic` | 53 | 3% | 1 (2%) | 1 (2%) |
 | `*out-of-scope` | 44 | 2% | 3 (7%) | 1 (2%) |
 | `*extension-candidate` | 18 | 1% | 2 (11%) | 1 (6%) |
-| all reasons | 1861 | 100% | 128 (7%) | 100 (5%) |
+| all reasons | 1869 | 100% | 128 (7%) | 100 (5%) |
 
 ## Close reasons per swept user
 
@@ -93,5 +95,6 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | benibenj | 35 | 15 (43%) | 9 (26%) | — | — | 8 (23%) | 1 (3%) | — | 2 (6%) |
 | aiday-mar | 22 | 7 (32%) | 14 (64%) | — | — | 1 (5%) | — | — | — |
 | Copilot | 6 | 2 (33%) | 3 (50%) | — | 1 (17%) | — | — | — | — |
+| alexr00 | 8 | 5 (63%) | — | — | 1 (13%) | 1 (13%) | 1 (13%) | — | — |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 822 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (37 users, 823 reviews — mostly co-assignees)._
