@@ -10,10 +10,16 @@
     --accent: #0969da; --row: #f6f8fa;
     --close: #cf222e; --info: #9a6700; --open: #afb8c1;
     --af-hi: #1a7f37; --af-lo: #4ac26b; --track: #d0d7de;
+    /* Categorical reason slots — dataviz reference palette, adjacent order
+       validated on this page's surfaces (light #ffffff / dark #0d1117). */
+    --rs1:#2a78d6; --rs2:#eb6834; --rs3:#1baf7a; --rs4:#eda100;
+    --rs5:#e87ba4; --rs6:#008300; --rs7:#4a3aa7; --rs8:#e34948;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
-      --open:#484f58; --af-hi:#3fb950; --af-lo:#1f6f34; --track:#30363d; }
+      --open:#484f58; --af-hi:#3fb950; --af-lo:#1f6f34; --track:#30363d;
+      --rs1:#3987e5; --rs2:#d95926; --rs3:#199e70; --rs4:#c98500;
+      --rs5:#d55181; --rs6:#008300; --rs7:#9085e9; --rs8:#e66767; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -43,14 +49,26 @@
   .seg.close { background: var(--close); } .seg.info { background: var(--info); }
   .seg.open { background: var(--open); }
   .seg.afhi { background: var(--af-hi); } .seg.aflo { background: var(--af-lo); }
+  .seg.rs1, .sw.rs1 { background: var(--rs1); } .seg.rs2, .sw.rs2 { background: var(--rs2); }
+  .seg.rs3, .sw.rs3 { background: var(--rs3); } .seg.rs4, .sw.rs4 { background: var(--rs4); }
+  .seg.rs5, .sw.rs5 { background: var(--rs5); } .seg.rs6, .sw.rs6 { background: var(--rs6); }
+  .seg.rs7, .sw.rs7 { background: var(--rs7); } .seg.rs8, .sw.rs8 { background: var(--rs8); }
+  details { margin: 10px 0 0; }
+  details summary { cursor: pointer; color: var(--muted); font-size: 12px; }
   .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  table { border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 5px 10px; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  thead th { color: var(--muted); font-weight: 600; }
+  tfoot td { color: var(--muted); border-bottom: none; }
+  .scroll { overflow-x: auto; }
   footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
 </style>
 </head>
 <body>
   <h1>VS Code Sweeper — Sweep Effectiveness</h1>
-  <div class="sub"><a href="index.html">← home</a> · 18 swept users · 11606 issues reviewed · generated 2026-07-25 13:44 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 18 swept users · 11606 issues reviewed · generated 2026-07-25 14:51 UTC</div>
 
   <h2>Closure outcome per swept user</h2>
   <p class="desc">What the review concluded about each issue's fate. Route-to-area counts as keep-open — it improves triage but the issue stays open.</p>
@@ -80,7 +98,7 @@
 <div class="crow"><span class="login">meganrogge</span><div class="bar"><i class="seg close" style="width:5.69%" data-c="5.69" data-s="12.09" title="propose close: 73 (12%)"></i><i class="seg info" style="width:1.48%" data-c="1.48" data-s="3.15" title="needs info: 19 (3%)"></i><i class="seg open" style="width:39.91%" data-c="39.91" data-s="84.77" title="keep open (incl. route to area): 512 (85%)"></i></div><span class="rlabel" data-c="604" data-s="15% closure path">604</span></div>
 <div class="crow"><span class="login">alexdima</span><div class="bar"><i class="seg close" style="width:7.79%" data-c="7.79" data-s="18.25" title="propose close: 100 (18%)"></i><i class="seg info" style="width:5.30%" data-c="5.30" data-s="12.41" title="needs info: 68 (12%)"></i><i class="seg open" style="width:29.62%" data-c="29.62" data-s="69.34" title="keep open (incl. route to area): 380 (69%)"></i></div><span class="rlabel" data-c="548" data-s="31% closure path">548</span></div>
 <div class="crow"><span class="login">osortega</span><div class="bar"><i class="seg close" style="width:3.90%" data-c="3.90" data-s="9.58" title="propose close: 50 (10%)"></i><i class="seg info" style="width:3.66%" data-c="3.66" data-s="9.00" title="needs info: 47 (9%)"></i><i class="seg open" style="width:33.13%" data-c="33.13" data-s="81.42" title="keep open (incl. route to area): 425 (81%)"></i></div><span class="rlabel" data-c="522" data-s="19% closure path">522</span></div>
-<div class="crow"><span class="login">chrmarti</span><div class="bar"><i class="seg close" style="width:13.56%" data-c="13.56" data-s="37.10" title="propose close: 174 (37%)"></i><i class="seg info" style="width:12.39%" data-c="12.39" data-s="33.90" title="needs info: 159 (34%)"></i><i class="seg open" style="width:10.60%" data-c="10.60" data-s="29.00" title="keep open (incl. route to area): 136 (29%)"></i></div><span class="rlabel" data-c="469" data-s="71% closure path">469</span></div>
+<div class="crow"><span class="login">chrmarti</span><div class="bar"><i class="seg close" style="width:14.96%" data-c="14.96" data-s="40.94" title="propose close: 192 (41%)"></i><i class="seg info" style="width:11.07%" data-c="11.07" data-s="30.28" title="needs info: 142 (30%)"></i><i class="seg open" style="width:10.52%" data-c="10.52" data-s="28.78" title="keep open (incl. route to area): 135 (29%)"></i></div><span class="rlabel" data-c="469" data-s="71% closure path">469</span></div>
 <div class="crow"><span class="login">benibenj</span><div class="bar"><i class="seg close" style="width:2.73%" data-c="2.73" data-s="8.73" title="propose close: 35 (9%)"></i><i class="seg info" style="width:1.33%" data-c="1.33" data-s="4.24" title="needs info: 17 (4%)"></i><i class="seg open" style="width:27.20%" data-c="27.20" data-s="87.03" title="keep open (incl. route to area): 349 (87%)"></i></div><span class="rlabel" data-c="401" data-s="13% closure path">401</span></div>
 <div class="crow"><span class="login">aiday-mar</span><div class="bar"><i class="seg close" style="width:1.71%" data-c="1.71" data-s="7.46" title="propose close: 22 (7%)"></i><i class="seg info" style="width:0.31%" data-c="0.31" data-s="1.36" title="needs info: 4 (1%)"></i><i class="seg open" style="width:20.97%" data-c="20.97" data-s="91.19" title="keep open (incl. route to area): 269 (91%)"></i></div><span class="rlabel" data-c="295" data-s="9% closure path">295</span></div>
 <div class="crow"><span class="login">Copilot</span><div class="bar"><i class="seg close" style="width:0.39%" data-c="0.39" data-s="3.42" title="propose close: 5 (3%)"></i><i class="seg info" style="width:0.08%" data-c="0.08" data-s="0.68" title="needs info: 1 (1%)"></i><i class="seg open" style="width:10.91%" data-c="10.91" data-s="95.89" title="keep open (incl. route to area): 140 (96%)"></i></div><span class="rlabel" data-c="146" data-s="4% closure path">146</span></div>
@@ -97,7 +115,7 @@
 <div class="crow"><span class="login">lszomoru</span><div class="track" style="width:100.00%" title="stays open: 934"><i class="seg afhi" style="width:6.42%" title="high-value auto-fixable: 60 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:8.24%" title="auto-fixable: 77"></i></div><span class="rlabel" title="of which 60 high-value">137 of 934 (15%)</span></div>
 <div class="crow"><span class="login">hediet</span><div class="track" style="width:99.57%" title="stays open: 930"><i class="seg afhi" style="width:8.71%" title="high-value auto-fixable: 81 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:9.89%" title="auto-fixable: 92"></i></div><span class="rlabel" title="of which 81 high-value">173 of 930 (19%)</span></div>
 <div class="crow"><span class="login">justschen</span><div class="track" style="width:76.77%" title="stays open: 717"><i class="seg afhi" style="width:5.30%" title="high-value auto-fixable: 38 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:6.97%" title="auto-fixable: 50"></i></div><span class="rlabel" title="of which 38 high-value">88 of 717 (12%)</span></div>
-<div class="crow"><span class="login">deepak1556</span><div class="track" style="width:47.86%" title="stays open: 447"><i class="seg afhi" style="width:2.01%" title="high-value auto-fixable: 9 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:0.45%" title="auto-fixable: 2"></i></div><span class="rlabel" title="of which 9 high-value">11 of 447 (2%)</span></div>
+<div class="crow"><span class="login">deepak1556</span><div class="track" style="width:47.86%" title="stays open: 447"><i class="seg afhi" style="width:1.79%" title="high-value auto-fixable: 8 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:0.45%" title="auto-fixable: 2"></i></div><span class="rlabel" title="of which 8 high-value">10 of 447 (2%)</span></div>
 <div class="crow"><span class="login">roblourens</span><div class="track" style="width:51.82%" title="stays open: 484"><i class="seg afhi" style="width:6.20%" title="high-value auto-fixable: 30 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:5.99%" title="auto-fixable: 29"></i></div><span class="rlabel" title="of which 30 high-value">59 of 484 (12%)</span></div>
 <div class="crow"><span class="login">lramos15</span><div class="track" style="width:46.68%" title="stays open: 436"><i class="seg afhi" style="width:7.80%" title="high-value auto-fixable: 34 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:8.72%" title="auto-fixable: 38"></i></div><span class="rlabel" title="of which 34 high-value">72 of 436 (17%)</span></div>
 <div class="crow"><span class="login">sandy081</span><div class="track" style="width:57.39%" title="stays open: 536"><i class="seg afhi" style="width:5.78%" title="high-value auto-fixable: 31 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.46%" title="auto-fixable: 40"></i></div><span class="rlabel" title="of which 31 high-value">71 of 536 (13%)</span></div>
@@ -108,25 +126,120 @@
 <div class="crow"><span class="login">meganrogge</span><div class="track" style="width:54.82%" title="stays open: 512"><i class="seg afhi" style="width:9.38%" title="high-value auto-fixable: 48 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.42%" title="auto-fixable: 38"></i></div><span class="rlabel" title="of which 48 high-value">86 of 512 (17%)</span></div>
 <div class="crow"><span class="login">alexdima</span><div class="track" style="width:40.69%" title="stays open: 380"><i class="seg afhi" style="width:10.26%" title="high-value auto-fixable: 39 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:10.79%" title="auto-fixable: 41"></i></div><span class="rlabel" title="of which 39 high-value">80 of 380 (21%)</span></div>
 <div class="crow"><span class="login">osortega</span><div class="track" style="width:45.50%" title="stays open: 425"><i class="seg afhi" style="width:7.29%" title="high-value auto-fixable: 31 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:8.47%" title="auto-fixable: 36"></i></div><span class="rlabel" title="of which 31 high-value">67 of 425 (16%)</span></div>
-<div class="crow"><span class="login">chrmarti</span><div class="track" style="width:14.56%" title="stays open: 136"><i class="seg afhi" style="width:6.62%" title="high-value auto-fixable: 9 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.35%" title="auto-fixable: 10"></i></div><span class="rlabel" title="of which 9 high-value">19 of 136 (14%)</span></div>
+<div class="crow"><span class="login">chrmarti</span><div class="track" style="width:14.45%" title="stays open: 135"><i class="seg afhi" style="width:7.41%" title="high-value auto-fixable: 10 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.41%" title="auto-fixable: 10"></i></div><span class="rlabel" title="of which 10 high-value">20 of 135 (15%)</span></div>
 <div class="crow"><span class="login">benibenj</span><div class="track" style="width:37.37%" title="stays open: 349"><i class="seg afhi" style="width:2.87%" title="high-value auto-fixable: 10 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.16%" title="auto-fixable: 25"></i></div><span class="rlabel" title="of which 10 high-value">35 of 349 (10%)</span></div>
 <div class="crow"><span class="login">aiday-mar</span><div class="track" style="width:28.80%" title="stays open: 269"><i class="seg afhi" style="width:9.29%" title="high-value auto-fixable: 25 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:6.69%" title="auto-fixable: 18"></i></div><span class="rlabel" title="of which 25 high-value">43 of 269 (16%)</span></div>
 <div class="crow"><span class="login">Copilot</span><div class="track" style="width:14.99%" title="stays open: 140"><i class="seg afhi" style="width:12.86%" title="high-value auto-fixable: 18 — value score above the auto-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.86%" title="auto-fixable: 11"></i></div><span class="rlabel" title="of which 18 high-value">29 of 140 (21%)</span></div>
   </div>
 
+  <h2>Close-proposal reasons</h2>
+  <p class="desc">Why the review proposed each close — the verdict's proposed label, with
+  implemented-on-main the one label-free close. Acted on = the issue closed since its review;
+  "with the sweeper's comment" = the close carried the proposed comment (verbatim, embedded,
+  or lightly edited) — the strong evidence the proposal drove the close. Adoption columns are
+  only as current as the last reconcile run. Corpus-wide, including below-threshold and
+  unassigned reviews.</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Reason</th><th>Proposals</th><th>Share</th><th>Acted on</th><th>With the sweeper's comment</th></tr></thead>
+    <tbody>
+<tr><td>*duplicate</td><td>668</td><td>36%</td><td>21 (3%)</td><td>9 (1%)</td></tr>
+<tr><td>implemented on main</td><td>511</td><td>27%</td><td>50 (10%)</td><td>48 (9%)</td></tr>
+<tr><td>*question</td><td>190</td><td>10%</td><td>4 (2%)</td><td>1 (1%)</td></tr>
+<tr><td>*caused-by-extension</td><td>160</td><td>9%</td><td>15 (9%)</td><td>9 (6%)</td></tr>
+<tr><td>*as-designed</td><td>144</td><td>8%</td><td>28 (19%)</td><td>26 (18%)</td></tr>
+<tr><td>*not-reproducible</td><td>71</td><td>4%</td><td>4 (6%)</td><td>4 (6%)</td></tr>
+<tr><td>*off-topic</td><td>50</td><td>3%</td><td>1 (2%)</td><td>1 (2%)</td></tr>
+<tr><td>*out-of-scope</td><td>46</td><td>2%</td><td>3 (7%)</td><td>1 (2%)</td></tr>
+<tr><td>*extension-candidate</td><td>21</td><td>1%</td><td>2 (10%)</td><td>1 (5%)</td></tr>
+<tr><td>other</td><td>1</td><td>0%</td><td>—</td><td>—</td></tr>
+    </tbody>
+    <tfoot><tr><td>all reasons</td><td>1862</td><td>100%</td><td>128 (7%)</td><td>100 (5%)</td></tr></tfoot>
+  </table></div>
+
+  <h2>Close reasons per swept user</h2>
+  <p class="desc">Each user's close proposals, stacked by reason. The mix
+  reflects what lands in each inbox — issue composition, not reviewer or sweeper quality
+  (e.g. platform churn produces duplicate families; a proxy-owned inbox collects
+  extension-caused noise). Globally-rare reasons fold into "other".</p>
+  <div class="legendbar">
+    <div class="legend">
+      <span><i class="sw rs1"></i>*duplicate</span>
+      <span><i class="sw rs2"></i>implemented on main</span>
+      <span><i class="sw rs3"></i>*question</span>
+      <span><i class="sw rs4"></i>*caused-by-extension</span>
+      <span><i class="sw rs5"></i>*as-designed</span>
+      <span><i class="sw rs6"></i>*not-reproducible</span>
+      <span><i class="sw rs7"></i>*off-topic</span>
+      <span><i class="sw rs8"></i>other</span>
+    </div>
+    <div class="modes">
+      <button id="rCounts" type="button">Counts</button>
+      <button id="rShare" class="active" type="button" title="Each bar normalized to that user's close proposals — the composition comparison">Share %</button>
+    </div>
+  </div>
+  <div class="chart" id="reasons">
+<div class="crow"><span class="login">lszomoru</span><div class="bar"><i class="seg rs1" style="width:47.26%" data-c="40.95" data-s="47.26" title="*duplicate: 95 (47%)"></i><i class="seg rs2" style="width:18.91%" data-c="16.38" data-s="18.91" title="implemented on main: 38 (19%)"></i><i class="seg rs3" style="width:8.96%" data-c="7.76" data-s="8.96" title="*question: 18 (9%)"></i><i class="seg rs4" style="width:6.97%" data-c="6.03" data-s="6.97" title="*caused-by-extension: 14 (7%)"></i><i class="seg rs5" style="width:7.96%" data-c="6.90" data-s="7.96" title="*as-designed: 16 (8%)"></i><i class="seg rs6" style="width:1.99%" data-c="1.72" data-s="1.99" title="*not-reproducible: 4 (2%)"></i><i class="seg rs7" style="width:4.48%" data-c="3.88" data-s="4.48" title="*off-topic: 9 (4%)"></i><i class="seg rs8" style="width:3.48%" data-c="3.02" data-s="3.48" title="other: 7 (3%)"></i></div><span class="rlabel" data-c="201" data-s="201">201</span></div>
+<div class="crow"><span class="login">hediet</span><div class="bar"><i class="seg rs1" style="width:30.95%" data-c="16.81" data-s="30.95" title="*duplicate: 39 (31%)"></i><i class="seg rs2" style="width:30.95%" data-c="16.81" data-s="30.95" title="implemented on main: 39 (31%)"></i><i class="seg rs3" style="width:7.14%" data-c="3.88" data-s="7.14" title="*question: 9 (7%)"></i><i class="seg rs4" style="width:14.29%" data-c="7.76" data-s="14.29" title="*caused-by-extension: 18 (14%)"></i><i class="seg rs5" style="width:11.11%" data-c="6.03" data-s="11.11" title="*as-designed: 14 (11%)"></i><i class="seg rs7" style="width:3.17%" data-c="1.72" data-s="3.17" title="*off-topic: 4 (3%)"></i><i class="seg rs8" style="width:2.38%" data-c="1.29" data-s="2.38" title="other: 3 (2%)"></i></div><span class="rlabel" data-c="126" data-s="126">126</span></div>
+<div class="crow"><span class="login">justschen</span><div class="bar"><i class="seg rs1" style="width:43.18%" data-c="32.76" data-s="43.18" title="*duplicate: 76 (43%)"></i><i class="seg rs2" style="width:38.64%" data-c="29.31" data-s="38.64" title="implemented on main: 68 (39%)"></i><i class="seg rs3" style="width:2.27%" data-c="1.72" data-s="2.27" title="*question: 4 (2%)"></i><i class="seg rs4" style="width:5.68%" data-c="4.31" data-s="5.68" title="*caused-by-extension: 10 (6%)"></i><i class="seg rs5" style="width:5.68%" data-c="4.31" data-s="5.68" title="*as-designed: 10 (6%)"></i><i class="seg rs6" style="width:2.27%" data-c="1.72" data-s="2.27" title="*not-reproducible: 4 (2%)"></i><i class="seg rs7" style="width:1.14%" data-c="0.86" data-s="1.14" title="*off-topic: 2 (1%)"></i><i class="seg rs8" style="width:1.14%" data-c="0.86" data-s="1.14" title="other: 2 (1%)"></i></div><span class="rlabel" data-c="176" data-s="176">176</span></div>
+<div class="crow"><span class="login">deepak1556</span><div class="bar"><i class="seg rs1" style="width:62.07%" data-c="62.07" data-s="62.07" title="*duplicate: 144 (62%)"></i><i class="seg rs2" style="width:14.22%" data-c="14.22" data-s="14.22" title="implemented on main: 33 (14%)"></i><i class="seg rs3" style="width:5.60%" data-c="5.60" data-s="5.60" title="*question: 13 (6%)"></i><i class="seg rs4" style="width:4.74%" data-c="4.74" data-s="4.74" title="*caused-by-extension: 11 (5%)"></i><i class="seg rs5" style="width:4.74%" data-c="4.74" data-s="4.74" title="*as-designed: 11 (5%)"></i><i class="seg rs6" style="width:6.47%" data-c="6.47" data-s="6.47" title="*not-reproducible: 15 (6%)"></i><i class="seg rs7" style="width:0.86%" data-c="0.86" data-s="0.86" title="*off-topic: 2 (1%)"></i><i class="seg rs8" style="width:1.29%" data-c="1.29" data-s="1.29" title="other: 3 (1%)"></i></div><span class="rlabel" data-c="232" data-s="232">232</span></div>
+<div class="crow"><span class="login">roblourens</span><div class="bar"><i class="seg rs1" style="width:38.52%" data-c="20.26" data-s="38.52" title="*duplicate: 47 (39%)"></i><i class="seg rs2" style="width:28.69%" data-c="15.09" data-s="28.69" title="implemented on main: 35 (29%)"></i><i class="seg rs3" style="width:9.02%" data-c="4.74" data-s="9.02" title="*question: 11 (9%)"></i><i class="seg rs4" style="width:9.02%" data-c="4.74" data-s="9.02" title="*caused-by-extension: 11 (9%)"></i><i class="seg rs5" style="width:4.92%" data-c="2.59" data-s="4.92" title="*as-designed: 6 (5%)"></i><i class="seg rs6" style="width:4.10%" data-c="2.16" data-s="4.10" title="*not-reproducible: 5 (4%)"></i><i class="seg rs7" style="width:3.28%" data-c="1.72" data-s="3.28" title="*off-topic: 4 (3%)"></i><i class="seg rs8" style="width:2.46%" data-c="1.29" data-s="2.46" title="other: 3 (2%)"></i></div><span class="rlabel" data-c="122" data-s="122">122</span></div>
+<div class="crow"><span class="login">lramos15</span><div class="bar"><i class="seg rs1" style="width:25.42%" data-c="19.40" data-s="25.42" title="*duplicate: 45 (25%)"></i><i class="seg rs2" style="width:20.90%" data-c="15.95" data-s="20.90" title="implemented on main: 37 (21%)"></i><i class="seg rs3" style="width:22.03%" data-c="16.81" data-s="22.03" title="*question: 39 (22%)"></i><i class="seg rs4" style="width:6.21%" data-c="4.74" data-s="6.21" title="*caused-by-extension: 11 (6%)"></i><i class="seg rs5" style="width:7.91%" data-c="6.03" data-s="7.91" title="*as-designed: 14 (8%)"></i><i class="seg rs6" style="width:3.95%" data-c="3.02" data-s="3.95" title="*not-reproducible: 7 (4%)"></i><i class="seg rs7" style="width:7.34%" data-c="5.60" data-s="7.34" title="*off-topic: 13 (7%)"></i><i class="seg rs8" style="width:6.21%" data-c="4.74" data-s="6.21" title="other: 11 (6%)"></i></div><span class="rlabel" data-c="177" data-s="177">177</span></div>
+<div class="crow"><span class="login">sandy081</span><div class="bar"><i class="seg rs1" style="width:31.11%" data-c="12.07" data-s="31.11" title="*duplicate: 28 (31%)"></i><i class="seg rs2" style="width:34.44%" data-c="13.36" data-s="34.44" title="implemented on main: 31 (34%)"></i><i class="seg rs3" style="width:4.44%" data-c="1.72" data-s="4.44" title="*question: 4 (4%)"></i><i class="seg rs4" style="width:14.44%" data-c="5.60" data-s="14.44" title="*caused-by-extension: 13 (14%)"></i><i class="seg rs5" style="width:2.22%" data-c="0.86" data-s="2.22" title="*as-designed: 2 (2%)"></i><i class="seg rs6" style="width:2.22%" data-c="0.86" data-s="2.22" title="*not-reproducible: 2 (2%)"></i><i class="seg rs7" style="width:5.56%" data-c="2.16" data-s="5.56" title="*off-topic: 5 (6%)"></i><i class="seg rs8" style="width:5.56%" data-c="2.16" data-s="5.56" title="other: 5 (6%)"></i></div><span class="rlabel" data-c="90" data-s="90">90</span></div>
+<div class="crow"><span class="login">connor4312</span><div class="bar"><i class="seg rs1" style="width:32.88%" data-c="10.34" data-s="32.88" title="*duplicate: 24 (33%)"></i><i class="seg rs2" style="width:34.25%" data-c="10.78" data-s="34.25" title="implemented on main: 25 (34%)"></i><i class="seg rs3" style="width:1.37%" data-c="0.43" data-s="1.37" title="*question: 1 (1%)"></i><i class="seg rs4" style="width:10.96%" data-c="3.45" data-s="10.96" title="*caused-by-extension: 8 (11%)"></i><i class="seg rs5" style="width:8.22%" data-c="2.59" data-s="8.22" title="*as-designed: 6 (8%)"></i><i class="seg rs6" style="width:6.85%" data-c="2.16" data-s="6.85" title="*not-reproducible: 5 (7%)"></i><i class="seg rs7" style="width:1.37%" data-c="0.43" data-s="1.37" title="*off-topic: 1 (1%)"></i><i class="seg rs8" style="width:4.11%" data-c="1.29" data-s="4.11" title="other: 3 (4%)"></i></div><span class="rlabel" data-c="73" data-s="73">73</span></div>
+<div class="crow"><span class="login">anthonykim1</span><div class="bar"><i class="seg rs1" style="width:32.65%" data-c="13.79" data-s="32.65" title="*duplicate: 32 (33%)"></i><i class="seg rs2" style="width:28.57%" data-c="12.07" data-s="28.57" title="implemented on main: 28 (29%)"></i><i class="seg rs3" style="width:6.12%" data-c="2.59" data-s="6.12" title="*question: 6 (6%)"></i><i class="seg rs4" style="width:16.33%" data-c="6.90" data-s="16.33" title="*caused-by-extension: 16 (16%)"></i><i class="seg rs5" style="width:10.20%" data-c="4.31" data-s="10.20" title="*as-designed: 10 (10%)"></i><i class="seg rs6" style="width:3.06%" data-c="1.29" data-s="3.06" title="*not-reproducible: 3 (3%)"></i><i class="seg rs7" style="width:2.04%" data-c="0.86" data-s="2.04" title="*off-topic: 2 (2%)"></i><i class="seg rs8" style="width:1.02%" data-c="0.43" data-s="1.02" title="other: 1 (1%)"></i></div><span class="rlabel" data-c="98" data-s="98">98</span></div>
+<div class="crow"><span class="login">TylerLeonhardt</span><div class="bar"><i class="seg rs1" style="width:40.51%" data-c="13.79" data-s="40.51" title="*duplicate: 32 (41%)"></i><i class="seg rs2" style="width:27.85%" data-c="9.48" data-s="27.85" title="implemented on main: 22 (28%)"></i><i class="seg rs3" style="width:11.39%" data-c="3.88" data-s="11.39" title="*question: 9 (11%)"></i><i class="seg rs4" style="width:11.39%" data-c="3.88" data-s="11.39" title="*caused-by-extension: 9 (11%)"></i><i class="seg rs5" style="width:3.80%" data-c="1.29" data-s="3.80" title="*as-designed: 3 (4%)"></i><i class="seg rs7" style="width:1.27%" data-c="0.43" data-s="1.27" title="*off-topic: 1 (1%)"></i><i class="seg rs8" style="width:3.80%" data-c="1.29" data-s="3.80" title="other: 3 (4%)"></i></div><span class="rlabel" data-c="79" data-s="79">79</span></div>
+<div class="crow"><span class="login">aeschli</span><div class="bar"><i class="seg rs1" style="width:18.87%" data-c="4.31" data-s="18.87" title="*duplicate: 10 (19%)"></i><i class="seg rs2" style="width:52.83%" data-c="12.07" data-s="52.83" title="implemented on main: 28 (53%)"></i><i class="seg rs3" style="width:9.43%" data-c="2.16" data-s="9.43" title="*question: 5 (9%)"></i><i class="seg rs4" style="width:5.66%" data-c="1.29" data-s="5.66" title="*caused-by-extension: 3 (6%)"></i><i class="seg rs6" style="width:1.89%" data-c="0.43" data-s="1.89" title="*not-reproducible: 1 (2%)"></i><i class="seg rs8" style="width:11.32%" data-c="2.59" data-s="11.32" title="other: 6 (11%)"></i></div><span class="rlabel" data-c="53" data-s="53">53</span></div>
+<div class="crow"><span class="login">meganrogge</span><div class="bar"><i class="seg rs1" style="width:30.14%" data-c="9.48" data-s="30.14" title="*duplicate: 22 (30%)"></i><i class="seg rs2" style="width:53.42%" data-c="16.81" data-s="53.42" title="implemented on main: 39 (53%)"></i><i class="seg rs4" style="width:1.37%" data-c="0.43" data-s="1.37" title="*caused-by-extension: 1 (1%)"></i><i class="seg rs5" style="width:10.96%" data-c="3.45" data-s="10.96" title="*as-designed: 8 (11%)"></i><i class="seg rs6" style="width:1.37%" data-c="0.43" data-s="1.37" title="*not-reproducible: 1 (1%)"></i><i class="seg rs8" style="width:2.74%" data-c="0.86" data-s="2.74" title="other: 2 (3%)"></i></div><span class="rlabel" data-c="73" data-s="73">73</span></div>
+<div class="crow"><span class="login">alexdima</span><div class="bar"><i class="seg rs1" style="width:11.00%" data-c="4.74" data-s="11.00" title="*duplicate: 11 (11%)"></i><i class="seg rs2" style="width:41.00%" data-c="17.67" data-s="41.00" title="implemented on main: 41 (41%)"></i><i class="seg rs3" style="width:1.00%" data-c="0.43" data-s="1.00" title="*question: 1 (1%)"></i><i class="seg rs4" style="width:11.00%" data-c="4.74" data-s="11.00" title="*caused-by-extension: 11 (11%)"></i><i class="seg rs5" style="width:29.00%" data-c="12.50" data-s="29.00" title="*as-designed: 29 (29%)"></i><i class="seg rs6" style="width:4.00%" data-c="1.72" data-s="4.00" title="*not-reproducible: 4 (4%)"></i><i class="seg rs7" style="width:1.00%" data-c="0.43" data-s="1.00" title="*off-topic: 1 (1%)"></i><i class="seg rs8" style="width:2.00%" data-c="0.86" data-s="2.00" title="other: 2 (2%)"></i></div><span class="rlabel" data-c="100" data-s="100">100</span></div>
+<div class="crow"><span class="login">osortega</span><div class="bar"><i class="seg rs1" style="width:34.00%" data-c="7.33" data-s="34.00" title="*duplicate: 17 (34%)"></i><i class="seg rs2" style="width:38.00%" data-c="8.19" data-s="38.00" title="implemented on main: 19 (38%)"></i><i class="seg rs3" style="width:4.00%" data-c="0.86" data-s="4.00" title="*question: 2 (4%)"></i><i class="seg rs4" style="width:10.00%" data-c="2.16" data-s="10.00" title="*caused-by-extension: 5 (10%)"></i><i class="seg rs5" style="width:10.00%" data-c="2.16" data-s="10.00" title="*as-designed: 5 (10%)"></i><i class="seg rs6" style="width:2.00%" data-c="0.43" data-s="2.00" title="*not-reproducible: 1 (2%)"></i><i class="seg rs8" style="width:2.00%" data-c="0.43" data-s="2.00" title="other: 1 (2%)"></i></div><span class="rlabel" data-c="50" data-s="50">50</span></div>
+<div class="crow"><span class="login">chrmarti</span><div class="bar"><i class="seg rs1" style="width:22.92%" data-c="18.97" data-s="22.92" title="*duplicate: 44 (23%)"></i><i class="seg rs2" style="width:13.02%" data-c="10.78" data-s="13.02" title="implemented on main: 25 (13%)"></i><i class="seg rs3" style="width:34.90%" data-c="28.88" data-s="34.90" title="*question: 67 (35%)"></i><i class="seg rs4" style="width:10.42%" data-c="8.62" data-s="10.42" title="*caused-by-extension: 20 (10%)"></i><i class="seg rs5" style="width:1.56%" data-c="1.29" data-s="1.56" title="*as-designed: 3 (2%)"></i><i class="seg rs6" style="width:9.90%" data-c="8.19" data-s="9.90" title="*not-reproducible: 19 (10%)"></i><i class="seg rs7" style="width:2.08%" data-c="1.72" data-s="2.08" title="*off-topic: 4 (2%)"></i><i class="seg rs8" style="width:5.21%" data-c="4.31" data-s="5.21" title="other: 10 (5%)"></i></div><span class="rlabel" data-c="192" data-s="192">192</span></div>
+<div class="crow"><span class="login">benibenj</span><div class="bar"><i class="seg rs1" style="width:42.86%" data-c="6.47" data-s="42.86" title="*duplicate: 15 (43%)"></i><i class="seg rs2" style="width:25.71%" data-c="3.88" data-s="25.71" title="implemented on main: 9 (26%)"></i><i class="seg rs5" style="width:22.86%" data-c="3.45" data-s="22.86" title="*as-designed: 8 (23%)"></i><i class="seg rs6" style="width:2.86%" data-c="0.43" data-s="2.86" title="*not-reproducible: 1 (3%)"></i><i class="seg rs8" style="width:5.71%" data-c="0.86" data-s="5.71" title="other: 2 (6%)"></i></div><span class="rlabel" data-c="35" data-s="35">35</span></div>
+<div class="crow"><span class="login">aiday-mar</span><div class="bar"><i class="seg rs1" style="width:31.82%" data-c="3.02" data-s="31.82" title="*duplicate: 7 (32%)"></i><i class="seg rs2" style="width:63.64%" data-c="6.03" data-s="63.64" title="implemented on main: 14 (64%)"></i><i class="seg rs5" style="width:4.55%" data-c="0.43" data-s="4.55" title="*as-designed: 1 (5%)"></i></div><span class="rlabel" data-c="22" data-s="22">22</span></div>
+<div class="crow"><span class="login">Copilot</span><div class="bar"><i class="seg rs1" style="width:20.00%" data-c="0.43" data-s="20.00" title="*duplicate: 1 (20%)"></i><i class="seg rs2" style="width:60.00%" data-c="1.29" data-s="60.00" title="implemented on main: 3 (60%)"></i><i class="seg rs4" style="width:20.00%" data-c="0.43" data-s="20.00" title="*caused-by-extension: 1 (20%)"></i></div><span class="rlabel" data-c="5" data-s="5">5</span></div>
+  </div>
+  <details><summary>Exact counts per user</summary>
+  <div class="scroll"><table>
+    <thead><tr><th>User</th><th>Close proposals</th><th>*duplicate</th><th>implemented on main</th><th>*question</th><th>*caused-by-extension</th><th>*as-designed</th><th>*not-reproducible</th><th>*off-topic</th><th>other</th></tr></thead>
+    <tbody>
+<tr><td>lszomoru</td><td>201</td><td>95 (47%)</td><td>38 (19%)</td><td>18 (9%)</td><td>14 (7%)</td><td>16 (8%)</td><td>4 (2%)</td><td>9 (4%)</td><td>7 (3%)</td></tr>
+<tr><td>hediet</td><td>126</td><td>39 (31%)</td><td>39 (31%)</td><td>9 (7%)</td><td>18 (14%)</td><td>14 (11%)</td><td>—</td><td>4 (3%)</td><td>3 (2%)</td></tr>
+<tr><td>justschen</td><td>176</td><td>76 (43%)</td><td>68 (39%)</td><td>4 (2%)</td><td>10 (6%)</td><td>10 (6%)</td><td>4 (2%)</td><td>2 (1%)</td><td>2 (1%)</td></tr>
+<tr><td>deepak1556</td><td>232</td><td>144 (62%)</td><td>33 (14%)</td><td>13 (6%)</td><td>11 (5%)</td><td>11 (5%)</td><td>15 (6%)</td><td>2 (1%)</td><td>3 (1%)</td></tr>
+<tr><td>roblourens</td><td>122</td><td>47 (39%)</td><td>35 (29%)</td><td>11 (9%)</td><td>11 (9%)</td><td>6 (5%)</td><td>5 (4%)</td><td>4 (3%)</td><td>3 (2%)</td></tr>
+<tr><td>lramos15</td><td>177</td><td>45 (25%)</td><td>37 (21%)</td><td>39 (22%)</td><td>11 (6%)</td><td>14 (8%)</td><td>7 (4%)</td><td>13 (7%)</td><td>11 (6%)</td></tr>
+<tr><td>sandy081</td><td>90</td><td>28 (31%)</td><td>31 (34%)</td><td>4 (4%)</td><td>13 (14%)</td><td>2 (2%)</td><td>2 (2%)</td><td>5 (6%)</td><td>5 (6%)</td></tr>
+<tr><td>connor4312</td><td>73</td><td>24 (33%)</td><td>25 (34%)</td><td>1 (1%)</td><td>8 (11%)</td><td>6 (8%)</td><td>5 (7%)</td><td>1 (1%)</td><td>3 (4%)</td></tr>
+<tr><td>anthonykim1</td><td>98</td><td>32 (33%)</td><td>28 (29%)</td><td>6 (6%)</td><td>16 (16%)</td><td>10 (10%)</td><td>3 (3%)</td><td>2 (2%)</td><td>1 (1%)</td></tr>
+<tr><td>TylerLeonhardt</td><td>79</td><td>32 (41%)</td><td>22 (28%)</td><td>9 (11%)</td><td>9 (11%)</td><td>3 (4%)</td><td>—</td><td>1 (1%)</td><td>3 (4%)</td></tr>
+<tr><td>aeschli</td><td>53</td><td>10 (19%)</td><td>28 (53%)</td><td>5 (9%)</td><td>3 (6%)</td><td>—</td><td>1 (2%)</td><td>—</td><td>6 (11%)</td></tr>
+<tr><td>meganrogge</td><td>73</td><td>22 (30%)</td><td>39 (53%)</td><td>—</td><td>1 (1%)</td><td>8 (11%)</td><td>1 (1%)</td><td>—</td><td>2 (3%)</td></tr>
+<tr><td>alexdima</td><td>100</td><td>11 (11%)</td><td>41 (41%)</td><td>1 (1%)</td><td>11 (11%)</td><td>29 (29%)</td><td>4 (4%)</td><td>1 (1%)</td><td>2 (2%)</td></tr>
+<tr><td>osortega</td><td>50</td><td>17 (34%)</td><td>19 (38%)</td><td>2 (4%)</td><td>5 (10%)</td><td>5 (10%)</td><td>1 (2%)</td><td>—</td><td>1 (2%)</td></tr>
+<tr><td>chrmarti</td><td>192</td><td>44 (23%)</td><td>25 (13%)</td><td>67 (35%)</td><td>20 (10%)</td><td>3 (2%)</td><td>19 (10%)</td><td>4 (2%)</td><td>10 (5%)</td></tr>
+<tr><td>benibenj</td><td>35</td><td>15 (43%)</td><td>9 (26%)</td><td>—</td><td>—</td><td>8 (23%)</td><td>1 (3%)</td><td>—</td><td>2 (6%)</td></tr>
+<tr><td>aiday-mar</td><td>22</td><td>7 (32%)</td><td>14 (64%)</td><td>—</td><td>—</td><td>1 (5%)</td><td>—</td><td>—</td><td>—</td></tr>
+<tr><td>Copilot</td><td>5</td><td>1 (20%)</td><td>3 (60%)</td><td>—</td><td>1 (20%)</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+  </details>
+
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.
   Every review counts, including issues closed since. Multi-assignee issues count once per assignee.
   Users with fewer than 100 reviews are not shown (38 users, 822 reviews — mostly co-assignees).</footer>
 <script>
-const bC = document.getElementById("mCounts"), bS = document.getElementById("mShare");
-function setMode(m){
-  document.querySelectorAll("#closure .seg").forEach(el => { el.style.width = el.dataset[m] + "%"; });
-  document.querySelectorAll("#closure .rlabel").forEach(el => { el.textContent = el.dataset[m]; });
-  bC.classList.toggle("active", m === "c");
-  bS.classList.toggle("active", m === "s");
+function wireModes(countsId, shareId, chartId){
+  const bC = document.getElementById(countsId), bS = document.getElementById(shareId);
+  const set = (m) => {
+    document.querySelectorAll("#" + chartId + " .seg").forEach(el => { el.style.width = el.dataset[m] + "%"; });
+    document.querySelectorAll("#" + chartId + " .rlabel").forEach(el => { el.textContent = el.dataset[m]; });
+    bC.classList.toggle("active", m === "c");
+    bS.classList.toggle("active", m === "s");
+  };
+  bC.addEventListener("click", () => set("c"));
+  bS.addEventListener("click", () => set("s"));
 }
-bC.addEventListener("click", () => setMode("c"));
-bS.addEventListener("click", () => setMode("s"));
+wireModes("mCounts", "mShare", "closure");
+wireModes("rCounts", "rShare", "reasons");
 </script>
 </body>
 </html>
