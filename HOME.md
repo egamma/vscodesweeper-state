@@ -34,4 +34,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 21 bugs · 23 feature requests.
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 
-_Generated 2026-07-26 16:02 UTC._
+_Generated 2026-07-26 16:19 UTC._
