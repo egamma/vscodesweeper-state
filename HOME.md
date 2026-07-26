@@ -2,7 +2,7 @@
 
 Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the repo.
 
-- **[Full review dashboard](dashboard.html)** — 12671 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 12946 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 - **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
 
@@ -13,8 +13,8 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[justschen](top/justschen.md)** · [by theme](top/justschen-themes.md) — 606 bugs · 215 feature requests.
 - **[roblourens](top/roblourens.md)** · [by theme](top/roblourens-themes.md) — 407 bugs · 240 feature requests.
 - **[sandy081](top/sandy081.md)** · [by theme](top/sandy081-themes.md) — 425 bugs · 183 feature requests.
-- **[lramos15](top/lramos15.md)** · [by theme](top/lramos15-themes.md) — 409 bugs · 197 feature requests.
-- **[deepak1556](top/deepak1556.md)** · [by theme](top/deepak1556-themes.md) — 561 bugs · 39 feature requests.
+- **[lramos15](top/lramos15.md)** · [by theme](top/lramos15-themes.md) — 410 bugs · 196 feature requests.
+- **[deepak1556](top/deepak1556.md)** · [by theme](top/deepak1556-themes.md) — 563 bugs · 40 feature requests.
 - **[connor4312](top/connor4312.md)** · [by theme](top/connor4312-themes.md) — 329 bugs · 243 feature requests.
 - **[aeschli](top/aeschli.md)** · [by theme](top/aeschli-themes.md) — 205 bugs · 361 feature requests.
 - **[anthonykim1](top/anthonykim1.md)** · [by theme](top/anthonykim1-themes.md) — 461 bugs · 94 feature requests.
@@ -26,10 +26,11 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[chrmarti](top/chrmarti.md)** · [by theme](top/chrmarti-themes.md) — 300 bugs · 69 feature requests.
 - **[benibenj](top/benibenj.md)** · [by theme](top/benibenj-themes.md) — 200 bugs · 133 feature requests.
 - **[ulugbekna](top/ulugbekna.md)** · [by theme](top/ulugbekna-themes.md) — 246 bugs · 61 feature requests.
+- **[rzhao271](top/rzhao271.md)** · [by theme](top/rzhao271-themes.md) — 183 bugs · 88 feature requests.
 - **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 170 bugs · 83 feature requests.
 - **[alexr00](top/alexr00.md)** · [by theme](top/alexr00-themes.md) — 49 bugs · 101 feature requests.
 - **[sbatten](top/sbatten.md)** · [by theme](top/sbatten-themes.md) — 63 bugs · 34 feature requests.
 - **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 21 bugs · 23 feature requests.
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 
-_Generated 2026-07-26 10:26 UTC._
+_Generated 2026-07-26 13:51 UTC._
