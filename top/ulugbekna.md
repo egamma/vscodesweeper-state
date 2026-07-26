@@ -1,6 +1,6 @@
 # Top issues — ulugbekna
 
-Value ranking of reviewed open issues assigned to `ulugbekna` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-26 10:23 UTC. Also available [grouped by theme](ulugbekna-themes.md).
+Value ranking of reviewed open issues assigned to `ulugbekna` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-26 15:37 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; auto-fix is a tractability hint. Neither is part of the score.
 

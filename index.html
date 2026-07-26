@@ -32,6 +32,10 @@
   .links { font-size: 14px; }
   .muted { color: var(--muted); }
   footer { margin-top: 36px; color: var(--muted); font-size: 12px; }
+  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
@@ -39,7 +43,7 @@
   <p class="lede">Proposal-only AI triage for <code>microsoft/vscode</code>. Nothing here is applied to the repo — every verdict is a suggestion for a human maintainer.</p>
   <a class="dashcard" href="dashboard.html">
     <div class="t">Full review dashboard →</div>
-    <div class="d">13045 issues reviewed across all maintainers · filter by action, search, copy-apply comments</div>
+    <div class="d">13087 issues reviewed across all maintainers · filter by action, search, copy-apply comments</div>
   </a>
   <a class="dashcard" href="effectiveness.html">
     <div class="t">Sweep effectiveness →</div>
@@ -56,8 +60,8 @@
 <div class="mcard"><div class="mhead">justschen</div><div class="stats">606 bugs · 215 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/174295" target="_blank" rel="noopener">#174295</a> Multiple Import Organizers results in corrupted code</div><div class="links"><a href="top/justschen.html">Ranked issues</a> · <a href="top/justschen-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">roblourens</div><div class="stats">407 bugs · 240 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/285141" target="_blank" rel="noopener">#285141</a> Copilot chat always defaults to Agent mode (and doesn't remember the last selected mode)</div><div class="links"><a href="top/roblourens.html">Ranked issues</a> · <a href="top/roblourens-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">sandy081</div><div class="stats">425 bugs · 183 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/306702" target="_blank" rel="noopener">#306702</a> Updating extension to newly published version picks the universal VSIX instead of platform one</div><div class="links"><a href="top/sandy081.html">Ranked issues</a> · <a href="top/sandy081-themes.html">By theme</a></div></div>
+<div class="mcard"><div class="mhead">deepak1556</div><div class="stats">564 bugs · 42 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/252371" target="_blank" rel="noopener">#252371</a> Copy and paste not working</div><div class="links"><a href="top/deepak1556.html">Ranked issues</a> · <a href="top/deepak1556-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">lramos15</div><div class="stats">410 bugs · 196 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/253137" target="_blank" rel="noopener">#253137</a> Meta: Language Model Unavailable</div><div class="links"><a href="top/lramos15.html">Ranked issues</a> · <a href="top/lramos15-themes.html">By theme</a></div></div>
-<div class="mcard"><div class="mhead">deepak1556</div><div class="stats">564 bugs · 40 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/252371" target="_blank" rel="noopener">#252371</a> Copy and paste not working</div><div class="links"><a href="top/deepak1556.html">Ranked issues</a> · <a href="top/deepak1556-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">connor4312</div><div class="stats">329 bugs · 243 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/278108" target="_blank" rel="noopener">#278108</a> Debugger completion filters out matching items</div><div class="links"><a href="top/connor4312.html">Ranked issues</a> · <a href="top/connor4312-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">aeschli</div><div class="stats">205 bugs · 361 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/157275" target="_blank" rel="noopener">#157275</a> Unable to connect to VS Code server: Error in request - ENOENT /run/user/1000/vscode-ipc-*.sock</div><div class="links"><a href="top/aeschli.html">Ranked issues</a> · <a href="top/aeschli-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">anthonykim1</div><div class="stats">461 bugs · 94 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/286742" target="_blank" rel="noopener">#286742</a> Terminal Font Ligatures stopped working in version 1.108</div><div class="links"><a href="top/anthonykim1.html">Ranked issues</a> · <a href="top/anthonykim1-themes.html">By theme</a></div></div>
@@ -76,6 +80,7 @@
 <div class="mcard"><div class="mhead">benvillalobos</div><div class="stats">21 bugs · 23 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/280829" target="_blank" rel="noopener">#280829</a> Copilot Code Review does not use `/instruction/**/NAME.instructions.md` files</div><div class="links"><a href="top/benvillalobos.html">Ranked issues</a> · <a href="top/benvillalobos-themes.html">By theme</a></div></div>
 <div class="mcard"><div class="mhead">dbaeumer</div><div class="stats">12 bugs · 9 feature requests</div><div class="top"><span class="muted">Top bug</span> <a href="https://github.com/microsoft/vscode/issues/267410" target="_blank" rel="noopener">#267410</a> Weird trimming</div><div class="links"><a href="top/dbaeumer.html">Ranked issues</a> · <a href="top/dbaeumer-themes.html">By theme</a></div></div>
 </div>
-  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> · 2026-07-26 15:12 UTC. Bugs rank by demand × severity, feature requests by demand. Feedback on a verdict or a page? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=home" target="_blank" rel="noopener">Open an issue on the state repo</a>.</footer>
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> · 2026-07-26 15:38 UTC. Bugs rank by demand × severity, feature requests by demand. Feedback on a verdict or a page? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=home" target="_blank" rel="noopener">Open an issue on the state repo</a>.</footer>
+  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=home" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
 </body>
 </html>
