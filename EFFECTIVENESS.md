@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 24 swept users · 13008 issues reviewed · generated 2026-07-26 14:39 UTC
+[← Home](index.html) · 24 swept users · 13029 issues reviewed · generated 2026-07-26 14:55 UTC
 
 ## Closure outcome per swept user
 
@@ -11,7 +11,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | lszomoru | 1284 | 201 (16%) | 148 (12%) | 935 (73%) | **27%** |
 | hediet | 1193 | 126 (11%) | 137 (11%) | 930 (78%) | **22%** |
 | justschen | 1009 | 176 (17%) | 116 (11%) | 717 (71%) | **29%** |
-| deepak1556 | 996 | 226 (23%) | 314 (32%) | 456 (46%) | **54%** |
+| deepak1556 | 996 | 223 (22%) | 315 (32%) | 458 (46%) | **54%** |
 | roblourens | 742 | 122 (16%) | 136 (18%) | 484 (65%) | **35%** |
 | lramos15 | 738 | 178 (24%) | 125 (17%) | 435 (59%) | **41%** |
 | sandy081 | 684 | 91 (13%) | 58 (8%) | 535 (78%) | **22%** |
@@ -29,8 +29,8 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | rzhao271 | 332 | 31 (9%) | 33 (10%) | 268 (81%) | **19%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
 | Copilot | 180 | 7 (4%) | 2 (1%) | 171 (95%) | **5%** |
+| dmitrivMS | 174 | 25 (14%) | 24 (14%) | 125 (72%) | **28%** |
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
-| dmitrivMS | 153 | 24 (16%) | 23 (15%) | 106 (69%) | **31%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 
 ## Auto-fixable share of issues that stay open
@@ -42,7 +42,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | lszomoru | 935 | 137 | 62 | 15% |
 | hediet | 930 | 173 | 86 | 19% |
 | justschen | 717 | 88 | 38 | 12% |
-| deepak1556 | 456 | 10 | 8 | 2% |
+| deepak1556 | 458 | 10 | 8 | 2% |
 | roblourens | 484 | 61 | 32 | 13% |
 | lramos15 | 435 | 73 | 36 | 17% |
 | sandy081 | 535 | 71 | 33 | 13% |
@@ -60,8 +60,8 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | rzhao271 | 268 | 51 | 19 | 19% |
 | aiday-mar | 269 | 43 | 26 | 16% |
 | Copilot | 171 | 35 | 21 | 20% |
+| dmitrivMS | 125 | 14 | 9 | 11% |
 | alexr00 | 149 | 9 | 5 | 6% |
-| dmitrivMS | 106 | 9 | 7 | 8% |
 | sbatten | 102 | 20 | 5 | 20% |
 
 ## Close-proposal reasons
@@ -70,16 +70,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 733 | 35% | 38 (5%) | 20 (3%) |
+| `*duplicate` | 732 | 35% | 38 (5%) | 20 (3%) |
 | implemented on main | 529 | 26% | 72 (14%) | 58 (11%) |
 | `*caused-by-extension` | 209 | 10% | 16 (8%) | 10 (5%) |
-| `*question` | 201 | 10% | 5 (2%) | 2 (1%) |
+| `*question` | 202 | 10% | 5 (2%) | 2 (1%) |
 | `*as-designed` | 181 | 9% | 30 (17%) | 27 (15%) |
-| `*not-reproducible` | 94 | 5% | 6 (6%) | 5 (5%) |
+| `*not-reproducible` | 95 | 5% | 6 (6%) | 5 (5%) |
 | `*off-topic` | 58 | 3% | 3 (5%) | 1 (2%) |
 | `*out-of-scope` | 50 | 2% | 3 (6%) | 1 (2%) |
 | `*extension-candidate` | 18 | 1% | 2 (11%) | 1 (6%) |
-| all reasons | 2073 | 100% | 175 (8%) | 125 (6%) |
+| all reasons | 2074 | 100% | 175 (8%) | 125 (6%) |
 
 ## Close reasons per swept user
 
@@ -90,7 +90,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | lszomoru | 201 | 95 (47%) | 38 (19%) | 14 (7%) | 18 (9%) | 16 (8%) | 4 (2%) | 9 (4%) | 7 (3%) |
 | hediet | 126 | 39 (31%) | 39 (31%) | 18 (14%) | 9 (7%) | 14 (11%) | — | 4 (3%) | 3 (2%) |
 | justschen | 176 | 76 (43%) | 68 (39%) | 10 (6%) | 4 (2%) | 10 (6%) | 4 (2%) | 2 (1%) | 2 (1%) |
-| deepak1556 | 226 | 140 (62%) | 32 (14%) | 11 (5%) | 12 (5%) | 11 (5%) | 15 (7%) | 2 (1%) | 3 (1%) |
+| deepak1556 | 223 | 137 (61%) | 32 (14%) | 11 (5%) | 12 (5%) | 11 (5%) | 15 (7%) | 2 (1%) | 3 (1%) |
 | roblourens | 122 | 48 (39%) | 34 (28%) | 11 (9%) | 11 (9%) | 6 (5%) | 5 (4%) | 4 (3%) | 3 (2%) |
 | lramos15 | 178 | 46 (26%) | 36 (20%) | 11 (6%) | 39 (22%) | 15 (8%) | 7 (4%) | 13 (7%) | 11 (6%) |
 | sandy081 | 91 | 29 (32%) | 31 (34%) | 13 (14%) | 4 (4%) | 2 (2%) | 2 (2%) | 5 (5%) | 5 (5%) |
@@ -108,8 +108,8 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | rzhao271 | 31 | 10 (32%) | 9 (29%) | 1 (3%) | 1 (3%) | 7 (23%) | 3 (10%) | — | — |
 | aiday-mar | 22 | 7 (32%) | 14 (64%) | — | — | 1 (5%) | — | — | — |
 | Copilot | 7 | 3 (43%) | 3 (43%) | 1 (14%) | — | — | — | — | — |
+| dmitrivMS | 25 | 14 (56%) | 4 (16%) | 1 (4%) | 1 (4%) | 3 (12%) | 2 (8%) | — | — |
 | alexr00 | 8 | 5 (63%) | — | 1 (13%) | — | 1 (13%) | 1 (13%) | — | — |
-| dmitrivMS | 24 | 15 (63%) | 4 (17%) | 1 (4%) | — | 3 (13%) | 1 (4%) | — | — |
 | sbatten | 18 | 4 (22%) | 6 (33%) | — | 2 (11%) | 3 (17%) | 1 (6%) | — | 2 (11%) |
 
 _Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (33 users, 586 reviews — mostly co-assignees)._
