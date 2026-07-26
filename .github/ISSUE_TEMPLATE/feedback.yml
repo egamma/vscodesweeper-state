@@ -1,0 +1,29 @@
+# Published from the vscodesweeper code repo (src/feedback.ts) — edit it there, not here.
+name: Sweeper feedback
+description: Flag a wrong verdict, a bad proposed comment, or a problem with a sweeper page
+title: "feedback: "
+labels: ["feedback"]
+body:
+  - type: input
+    id: item
+    attributes:
+      label: Item number
+      description: >-
+        The reviewed issue's number, as a plain number — no "#" prefix and no issue
+        link (either would post a reference event on the upstream issue).
+      placeholder: "123456"
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Where you spotted it (dashboard, top/<login>, outcomes, …)
+  - type: textarea
+    id: what
+    attributes:
+      label: What's wrong (or missing)?
+      description: >-
+        What should the sweeper have done differently? A record link
+        (records/microsoft/vscode/items/<n>.md on the state branch) is welcome —
+        but please keep upstream issue references as plain numbers, never links.
+    validations:
+      required: true
