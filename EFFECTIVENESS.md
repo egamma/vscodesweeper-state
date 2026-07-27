@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 32 swept users · 14272 issues reviewed · generated 2026-07-27 21:48 UTC
+[← Home](index.html) · 33 swept users · 14367 issues reviewed · generated 2026-07-27 22:40 UTC
 
 ## Closure outcome per swept user
 
@@ -14,7 +14,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | deepak1556 | 996 | 222 (22%) | 313 (31%) | 461 (46%) | **54%** |
 | roblourens | 740 | 121 (16%) | 135 (18%) | 484 (65%) | **35%** |
 | lramos15 | 738 | 180 (24%) | 125 (17%) | 433 (59%) | **41%** |
-| sandy081 | 685 | 91 (13%) | 58 (8%) | 536 (78%) | **22%** |
+| sandy081 | 686 | 91 (13%) | 58 (8%) | 537 (78%) | **22%** |
 | connor4312 | 666 | 72 (11%) | 44 (7%) | 550 (83%) | **17%** |
 | anthonykim1 | 641 | 100 (16%) | 74 (12%) | 467 (73%) | **27%** |
 | TylerLeonhardt | 633 | 78 (12%) | 49 (8%) | 506 (80%) | **20%** |
@@ -30,7 +30,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | rzhao271 | 332 | 31 (9%) | 33 (10%) | 268 (81%) | **19%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
 | dmitrivMS | 261 | 41 (16%) | 30 (11%) | 190 (73%) | **27%** |
-| Copilot | 244 | 11 (5%) | 4 (2%) | 229 (94%) | **6%** |
+| Copilot | 247 | 11 (4%) | 4 (2%) | 232 (94%) | **6%** |
 | vijayupadya | 189 | 23 (12%) | 33 (17%) | 133 (70%) | **30%** |
 | pwang347 | 170 | 22 (13%) | 26 (15%) | 122 (72%) | **28%** |
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
@@ -40,6 +40,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | jo-oikawa | 135 | 6 (4%) | 4 (3%) | 125 (93%) | **7%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 | jrieken | 123 | 11 (9%) | 2 (2%) | 110 (89%) | **11%** |
+| kycutler | 100 | 7 (7%) | 1 (1%) | 92 (92%) | **8%** |
 
 ## Auto-fixable share of issues that stay open
 
@@ -48,13 +49,13 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | User | Stays open | Auto-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | lszomoru | 935 | 137 | 63 | 15% |
-| hediet | 931 | 174 | 87 | 19% |
+| hediet | 931 | 174 | 88 | 19% |
 | justschen | 715 | 86 | 40 | 12% |
 | deepak1556 | 461 | 10 | 7 | 2% |
 | roblourens | 484 | 62 | 33 | 13% |
 | lramos15 | 433 | 72 | 36 | 17% |
-| sandy081 | 536 | 71 | 34 | 13% |
-| connor4312 | 550 | 63 | 39 | 11% |
+| sandy081 | 537 | 72 | 34 | 13% |
+| connor4312 | 550 | 63 | 40 | 11% |
 | anthonykim1 | 467 | 83 | 54 | 18% |
 | TylerLeonhardt | 506 | 72 | 39 | 14% |
 | aeschli | 548 | 45 | 32 | 8% |
@@ -69,7 +70,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | rzhao271 | 268 | 51 | 19 | 19% |
 | aiday-mar | 269 | 43 | 26 | 16% |
 | dmitrivMS | 190 | 20 | 9 | 11% |
-| Copilot | 229 | 39 | 24 | 17% |
+| Copilot | 232 | 39 | 24 | 17% |
 | vijayupadya | 133 | 13 | 4 | 10% |
 | pwang347 | 122 | 10 | 6 | 8% |
 | alexr00 | 149 | 9 | 5 | 6% |
@@ -79,6 +80,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | jo-oikawa | 125 | 8 | 5 | 6% |
 | sbatten | 102 | 20 | 5 | 20% |
 | jrieken | 110 | 29 | 16 | 26% |
+| kycutler | 92 | 10 | 3 | 11% |
 
 ## Close-proposal reasons
 
@@ -86,16 +88,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 799 | 36% | 38 (5%) | 20 (3%) |
-| implemented on main | 552 | 25% | 72 (13%) | 58 (11%) |
-| `*caused-by-extension` | 221 | 10% | 16 (7%) | 10 (5%) |
-| `*question` | 218 | 10% | 5 (2%) | 2 (1%) |
-| `*as-designed` | 197 | 9% | 30 (15%) | 27 (14%) |
+| `*duplicate` | 801 | 36% | 38 (5%) | 20 (2%) |
+| implemented on main | 554 | 25% | 72 (13%) | 58 (10%) |
+| `*caused-by-extension` | 222 | 10% | 16 (7%) | 10 (5%) |
+| `*question` | 219 | 10% | 5 (2%) | 2 (1%) |
+| `*as-designed` | 198 | 9% | 30 (15%) | 27 (14%) |
 | `*not-reproducible` | 101 | 5% | 6 (6%) | 5 (5%) |
 | `*off-topic` | 59 | 3% | 3 (5%) | 1 (2%) |
 | `*out-of-scope` | 53 | 2% | 3 (6%) | 1 (2%) |
 | `*extension-candidate` | 20 | 1% | 2 (10%) | 1 (5%) |
-| all reasons | 2220 | 100% | 175 (8%) | 125 (6%) |
+| all reasons | 2227 | 100% | 175 (8%) | 125 (6%) |
 
 ## Close reasons per swept user
 
@@ -135,5 +137,6 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | jo-oikawa | 6 | 2 (33%) | 1 (17%) | — | 1 (17%) | 1 (17%) | — | — | 1 (17%) |
 | sbatten | 18 | 4 (22%) | 6 (33%) | — | 2 (11%) | 3 (17%) | 1 (6%) | — | 2 (11%) |
 | jrieken | 11 | 5 (45%) | — | 1 (9%) | — | 4 (36%) | 1 (9%) | — | — |
+| kycutler | 7 | 2 (29%) | 2 (29%) | 1 (14%) | 1 (14%) | 1 (14%) | — | — | — |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (33 users, 529 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (32 users, 606 reviews — mostly co-assignees)._
