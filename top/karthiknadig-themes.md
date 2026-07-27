@@ -1,0 +1,85 @@
+# Top issues by theme — karthiknadig
+
+Experimental themed view of [the flat ranking](karthiknadig.md); themes assigned by the review engine. Rank/score are the lane-wide values. Generated 2026-07-27 09:46 UTC.
+
+## Bugs
+
+### Editor interactions (3)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | [#174295](https://github.com/microsoft/vscode/issues/174295) | Multiple Import Organizers results in corrupted code | 34 | correctness | 5/6 Source-confirmed | 100 | yes | `npm run implement -- --issue 174295` |
+| 8 | [#206795](https://github.com/microsoft/vscode/issues/206795) | Double-clicking on `...` used as argument value selects more than `...` | 1 | papercut | 5/6 Source-confirmed | 1 | — | `npm run implement -- --issue 206795` |
+| 11 | [#294037](https://github.com/microsoft/vscode/issues/294037) | Question widget disappears | 0 | correctness | 5/6 Source-confirmed | 0 | — | `npm run implement -- --issue 294037` |
+
+### AI assistant tools (2)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | [#292337](https://github.com/microsoft/vscode/issues/292337) | Subagent questions dialog closes on backspace | 0 | correctness | 3/6 Plausible | 8 | — | — |
+| 4 | [#314682](https://github.com/microsoft/vscode/issues/314682) | [bug] GitHub Copilot: Raptor mini (Preview) fails with “Sorry, no response was returned” when `execute` tools are enabled | 0 | correctness | 5/6 Source-confirmed | 4 | — | `npm run implement -- --issue 314682` |
+
+### Debug UI flow (2)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 3 | [#287686](https://github.com/microsoft/vscode/issues/287686) | debug: selecting `processId` ui window popups before `preLaunchTask` running. | 0 | correctness | 5/6 Source-confirmed | 5 | — | — |
+| 7 | [#250603](https://github.com/microsoft/vscode/issues/250603) | debug panel not closing | 0 | papercut | 3/6 Plausible | 2 | — | — |
+
+### Python language support (2)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 5 | [#326511](https://github.com/microsoft/vscode/issues/326511) | Python syntax highlighting is unbearably slow | 0 | perf | 3/6 Plausible | 3 | — | — |
+| 13 | [#317361](https://github.com/microsoft/vscode/issues/317361) | Cmd.default prototype in cmd.pyi should be changed. | 0 | none | — | 0 | — | — |
+
+### Terminal behavior (3)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 6 | [#229656](https://github.com/microsoft/vscode/issues/229656) | Misalignment of Running script with Output text in Terminal | 0 | visual | 3/6 Plausible | 2 | — | — |
+| 9 | [#236161](https://github.com/microsoft/vscode/issues/236161) | Reactivating Terminals issue | 0 | none | — | 0 | — | — |
+| 14 | [#322241](https://github.com/microsoft/vscode/issues/322241) | Program Running Issue | 0 | none | 3/6 Plausible | 0 | — | — |
+
+### Python environments (3)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 10 | [#293757](https://github.com/microsoft/vscode/issues/293757) | BUG: Python extension fails to load in web IDE. | 0 | none | 3/6 Plausible | 0 | — | — |
+| 15 | [#324693](https://github.com/microsoft/vscode/issues/324693) | Cannot create new profile from Python Template – Save does not work. | 0 | correctness | 5/6 Source-confirmed | 0 | — | — |
+| 16 | [#327188](https://github.com/microsoft/vscode/issues/327188) | VS Code discovers Conda environments but Python: Select Interpreter does not display them | 0 | none | — | 0 | — | — |
+
+### Language server performance (1)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Auto-fix | Implement |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 12 | [#312972](https://github.com/microsoft/vscode/issues/312972) | Microsoft.CodeAnalysis.LanguageServer.exe using 80% of cpu | 0 | perf | — | 0 | — | `npm run implement -- --issue 312972` |
+
+## Feature requests
+
+### Copilot controls (2)
+
+| # | Issue | Title | 👍 | Signal | Score | Implement |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | [#254473](https://github.com/microsoft/vscode/issues/254473) | Add scripting interface/batch mode for Copilot Agent Mode? | 16 | backlog-candidate | 100 | `npm run implement -- --issue 254473` |
+| 7 | [#317991](https://github.com/microsoft/vscode/issues/317991) | [Feature Request] Add commands/keybindings to switch Copilot Chat model — both picker and direct model selection | 0 | active | 0 | — |
+
+### Chat workflow (2)
+
+| # | Issue | Title | 👍 | Signal | Score | Implement |
+| --- | --- | --- | --- | --- | --- | --- |
+| 2 | [#288970](https://github.com/microsoft/vscode/issues/288970) | AskQuestion Clarification Usage and Improvements | 0 | dormant | 5 | `npm run implement -- --issue 288970` |
+| 6 | [#269114](https://github.com/microsoft/vscode/issues/269114) | Add create issue from chat component feature | 0 | dormant | 0 | `npm run implement -- --issue 269114` |
+
+### Debug diagnostics (2)
+
+| # | Issue | Title | 👍 | Signal | Score | Implement |
+| --- | --- | --- | --- | --- | --- | --- |
+| 3 | [#235574](https://github.com/microsoft/vscode/issues/235574) | Enhancing Debugging Experience: Adding Docstring and Type Hint Support to Debug Console | 0 | dormant | 2 | `npm run implement -- --issue 235574` |
+| 4 | [#320588](https://github.com/microsoft/vscode/issues/320588) | Undefined variable not detected in local problems | 0 | active | 1 | — |
+
+### Other (1)
+
+| # | Issue | Title | 👍 | Signal | Score | Implement |
+| --- | --- | --- | --- | --- | --- | --- |
+| 5 | [#171040](https://github.com/microsoft/vscode/issues/171040) | Automatic enter indentation in offside folding languages | 0 | dormant | 0 | `npm run implement -- --issue 171040` |

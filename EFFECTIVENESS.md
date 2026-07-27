@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 27 swept users · 13682 issues reviewed · generated 2026-07-27 05:39 UTC
+[← Home](index.html) · 28 swept users · 13799 issues reviewed · generated 2026-07-27 09:46 UTC
 
 ## Closure outcome per swept user
 
@@ -30,9 +30,10 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | rzhao271 | 332 | 31 (9%) | 33 (10%) | 268 (81%) | **19%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
 | dmitrivMS | 261 | 41 (16%) | 30 (11%) | 190 (73%) | **27%** |
-| Copilot | 214 | 10 (5%) | 4 (2%) | 200 (93%) | **7%** |
+| Copilot | 232 | 10 (4%) | 4 (2%) | 218 (94%) | **6%** |
 | pwang347 | 170 | 22 (13%) | 26 (15%) | 122 (72%) | **28%** |
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
+| DonJayamanne | 147 | 20 (14%) | 10 (7%) | 117 (80%) | **20%** |
 | bhavyaus | 145 | 12 (8%) | 9 (6%) | 124 (86%) | **14%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 
@@ -43,7 +44,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | User | Stays open | Auto-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | lszomoru | 935 | 137 | 63 | 15% |
-| hediet | 931 | 174 | 89 | 19% |
+| hediet | 931 | 174 | 88 | 19% |
 | justschen | 715 | 86 | 40 | 12% |
 | deepak1556 | 461 | 10 | 7 | 2% |
 | roblourens | 484 | 62 | 33 | 13% |
@@ -62,11 +63,12 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | ulugbekna | 234 | 29 | 16 | 12% |
 | Yoyokrazy | 274 | 60 | 25 | 22% |
 | rzhao271 | 268 | 51 | 19 | 19% |
-| aiday-mar | 269 | 43 | 27 | 16% |
+| aiday-mar | 269 | 43 | 26 | 16% |
 | dmitrivMS | 190 | 20 | 9 | 11% |
-| Copilot | 200 | 38 | 24 | 19% |
+| Copilot | 218 | 39 | 24 | 18% |
 | pwang347 | 122 | 10 | 6 | 8% |
 | alexr00 | 149 | 9 | 5 | 6% |
+| DonJayamanne | 117 | 18 | 11 | 15% |
 | bhavyaus | 124 | 14 | 4 | 11% |
 | sbatten | 102 | 20 | 5 | 20% |
 
@@ -76,16 +78,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 768 | 36% | 38 (5%) | 20 (3%) |
-| implemented on main | 542 | 25% | 72 (13%) | 58 (11%) |
-| `*caused-by-extension` | 211 | 10% | 16 (8%) | 10 (5%) |
-| `*question` | 211 | 10% | 5 (2%) | 2 (1%) |
-| `*as-designed` | 190 | 9% | 30 (16%) | 27 (14%) |
-| `*not-reproducible` | 97 | 5% | 6 (6%) | 5 (5%) |
-| `*off-topic` | 58 | 3% | 3 (5%) | 1 (2%) |
+| `*duplicate` | 776 | 36% | 38 (5%) | 20 (3%) |
+| implemented on main | 545 | 25% | 72 (13%) | 58 (11%) |
+| `*caused-by-extension` | 220 | 10% | 16 (7%) | 10 (5%) |
+| `*question` | 212 | 10% | 5 (2%) | 2 (1%) |
+| `*as-designed` | 192 | 9% | 30 (16%) | 27 (14%) |
+| `*not-reproducible` | 98 | 5% | 6 (6%) | 5 (5%) |
+| `*off-topic` | 59 | 3% | 3 (5%) | 1 (2%) |
 | `*out-of-scope` | 52 | 2% | 3 (6%) | 1 (2%) |
-| `*extension-candidate` | 18 | 1% | 2 (11%) | 1 (6%) |
-| all reasons | 2147 | 100% | 175 (8%) | 125 (6%) |
+| `*extension-candidate` | 19 | 1% | 2 (11%) | 1 (5%) |
+| all reasons | 2173 | 100% | 175 (8%) | 125 (6%) |
 
 ## Close reasons per swept user
 
@@ -118,7 +120,8 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | Copilot | 10 | 4 (40%) | 5 (50%) | 1 (10%) | — | — | — | — | — |
 | pwang347 | 22 | 14 (64%) | 2 (9%) | 1 (5%) | 1 (5%) | 3 (14%) | — | — | 1 (5%) |
 | alexr00 | 8 | 5 (63%) | — | 1 (13%) | — | 1 (13%) | 1 (13%) | — | — |
+| DonJayamanne | 20 | 7 (35%) | 7 (35%) | 2 (10%) | — | 1 (5%) | 1 (5%) | — | 2 (10%) |
 | bhavyaus | 12 | 4 (33%) | 2 (17%) | — | 2 (17%) | 4 (33%) | — | — | — |
 | sbatten | 18 | 4 (22%) | 6 (33%) | — | 2 (11%) | 3 (17%) | 1 (6%) | — | 2 (11%) |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (36 users, 590 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (36 users, 565 reviews — mostly co-assignees)._

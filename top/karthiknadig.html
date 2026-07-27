@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Top issues — karthiknadig</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
+    --accent: #0969da; --row: #f6f8fa;
+    --sev-high: #cf222e; --sev-mid: #9a6700; --sev-low: #656d76; --good: #1a7f37;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 24px; max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 28px 0 8px; }
+  .sub { color: var(--muted); margin-bottom: 8px; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted); font-weight: 600; }
+  th:not([data-k]) { cursor: default; }
+  th[data-k]:hover { color: var(--fg); }
+  td.n, th.n { text-align: right; }
+  tbody tr:hover { background: var(--row); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid transparent; white-space: nowrap; }
+  .sev-crash, .sev-data-loss, .sev-freeze { color: var(--sev-high); border-color: var(--sev-high); }
+  .sev-perf, .sev-correctness { color: var(--sev-mid); border-color: var(--sev-mid); }
+  .sev-visual, .sev-papercut { color: var(--sev-low); border-color: var(--sev-low); }
+  .sig-backlog-candidate, .sig-active { color: var(--accent); border-color: var(--accent); }
+  .sig-dormant { color: var(--muted); border-color: var(--muted); }
+  .fit-aligned { color: var(--good); border-color: var(--good); }
+  .fit-rejected { color: var(--muted); border-color: var(--muted); }
+  .imp { color: var(--sev-high); border-color: var(--sev-high); }
+  .af { color: var(--good); }
+  .bar { display: inline-block; width: 52px; height: 6px; border-radius: 3px; background: var(--border);
+    position: relative; vertical-align: middle; margin-right: 6px; }
+  .bar > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+  .muted { color: var(--muted); }
+  footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+  button.more { font: inherit; font-size: 13px; cursor: pointer; margin: 10px 0 0;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 6px; padding: 5px 12px; }
+  button.more:hover { border-color: var(--accent); color: var(--accent); }
+  button.copy { font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    border-radius: 6px; padding: 3px 8px; }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+<body>
+  <h1>Top issues — karthiknadig</h1>
+  <div class="sub"><a href="../index.html">← home</a> · value ranking of reviewed open issues assigned to <code>karthiknadig</code> ·
+    bugs by demand × severity, features by demand (boosted for vision-aligned work) · demand as of review time · <a href="karthiknadig-themes.html">themed view</a> · generated 2026-07-27 09:46 UTC</div>
+  <h2>Bugs — top 10 of 16</h2>
+  <table id="bugs">
+    <thead><tr>
+      <th class="n" data-k="rank">#</th><th data-k="title">Issue</th>
+      <th class="n" data-k="upvotes" title="👍 reactions at review time">👍</th>
+      <th class="n" data-k="comments">Comments</th>
+      <th class="n" data-k="related" title="Open cross-references (duplicate proxy)">Refs</th>
+      <th data-k="severity">Severity</th><th data-k="breadth">Breadth</th>
+      <th class="n" data-k="score">Score</th><th data-k="priority">Priority</th>
+      <th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Same scale as the dashboard.">Rating</th>
+      <th data-k="autoFixable" title="The model's own judgment that it could fix this issue autonomously — a signal, not a button. The Implement column is the action.">Auto-fix</th>
+      <th>Implement</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  <button class="more" id="more-bugs" hidden></button>
+  <h2>Feature requests — top 7 of 7</h2>
+  <table id="features">
+    <thead><tr>
+      <th class="n" data-k="rank">#</th><th data-k="title">Issue</th>
+      <th class="n" data-k="upvotes">👍</th><th class="n" data-k="comments">Comments</th>
+      <th class="n" data-k="related">Refs</th>
+      <th data-k="signal">Signal</th><th class="n" data-k="score">Score</th>
+      <th>Implement</th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+  <button class="more" id="more-features" hidden></button>
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> — reviews are proposal-only; nothing is applied to microsoft/vscode issues.
+  <strong>Implement</strong> copies a CLI command a maintainer runs to generate an <em>experimental draft PR on microsoft/vscode</em> (head branch on the fork; one AI cross-review comment follows) — or links the PR once it exists.
+  6 reviewed item(s) of other types are not ranked. Scores are relative within each lane (top = 100);
+  the visible head is the smallest prefix carrying ~80% of the lane's total score (min 10, max 25 rows). See the <a href="../dashboard.html">full dashboard</a>.
+  Spotted a wrong verdict or ranking? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=top%2Fkarthiknadig" target="_blank" rel="noopener">Send feedback</a> — the ⚑ next to a row's record link prefills the item.</footer>
+  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=top%2Fkarthiknadig" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
+<script>
+const DATA = {"bugs":[{"rank":1,"number":174295,"url":"https://github.com/microsoft/vscode/issues/174295","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/174295.md","title":"Multiple Import Organizers results in corrupted code","upvotes":34,"comments":25,"related":3,"severity":"correctness","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":true,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":100,"reviewedAt":"2026-07-27T08:27:09.742Z"},{"rank":2,"number":292337,"url":"https://github.com/microsoft/vscode/issues/292337","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292337.md","title":"Subagent questions dialog closes on backspace","upvotes":0,"comments":0,"related":1,"severity":"correctness","breadth":"common","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":8,"reviewedAt":"2026-07-27T08:29:08.266Z"},{"rank":3,"number":287686,"url":"https://github.com/microsoft/vscode/issues/287686","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287686.md","title":"debug: selecting `processId` ui window popups before `preLaunchTask` running.","upvotes":0,"comments":0,"related":1,"severity":"correctness","breadth":"niche","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":5,"reviewedAt":"2026-07-27T07:08:55.014Z"},{"rank":4,"number":314682,"url":"https://github.com/microsoft/vscode/issues/314682","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314682.md","title":"[bug] GitHub Copilot: Raptor mini (Preview) fails with “Sorry, no response was returned” when `execute` tools are enabled","upvotes":0,"comments":6,"related":0,"severity":"correctness","breadth":"niche","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":4,"reviewedAt":"2026-07-27T07:19:39.460Z"},{"rank":5,"number":326511,"url":"https://github.com/microsoft/vscode/issues/326511","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326511.md","title":"Python syntax highlighting is unbearably slow","upvotes":0,"comments":3,"related":0,"severity":"perf","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":3,"reviewedAt":"2026-07-27T07:49:44.420Z"},{"rank":6,"number":229656,"url":"https://github.com/microsoft/vscode/issues/229656","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/229656.md","title":"Misalignment of Running script with Output text in Terminal","upvotes":0,"comments":0,"related":1,"severity":"visual","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":2,"reviewedAt":"2026-07-27T06:48:07.101Z"},{"rank":7,"number":250603,"url":"https://github.com/microsoft/vscode/issues/250603","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/250603.md","title":"debug panel not closing","upvotes":0,"comments":4,"related":1,"severity":"papercut","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":2,"reviewedAt":"2026-07-27T08:29:01.792Z"},{"rank":8,"number":206795,"url":"https://github.com/microsoft/vscode/issues/206795","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/206795.md","title":"Double-clicking on `...` used as argument value selects more than `...`","upvotes":1,"comments":3,"related":0,"severity":"papercut","breadth":"niche","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":1,"reviewedAt":"2026-07-27T07:10:35.728Z"},{"rank":9,"number":236161,"url":"https://github.com/microsoft/vscode/issues/236161","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/236161.md","title":"Reactivating Terminals issue","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T06:47:21.466Z"},{"rank":10,"number":293757,"url":"https://github.com/microsoft/vscode/issues/293757","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293757.md","title":"BUG: Python extension fails to load in web IDE.","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:06:11.208Z"},{"rank":11,"number":294037,"url":"https://github.com/microsoft/vscode/issues/294037","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294037.md","title":"Question widget disappears","upvotes":0,"comments":0,"related":0,"severity":"correctness","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:13:20.348Z"},{"rank":12,"number":312972,"url":"https://github.com/microsoft/vscode/issues/312972","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312972.md","title":"Microsoft.CodeAnalysis.LanguageServer.exe using 80% of cpu","upvotes":0,"comments":0,"related":0,"severity":"perf","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:09:10.365Z"},{"rank":13,"number":317361,"url":"https://github.com/microsoft/vscode/issues/317361","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317361.md","title":"Cmd.default prototype in cmd.pyi should be changed.","upvotes":0,"comments":1,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:10:14.859Z"},{"rank":14,"number":322241,"url":"https://github.com/microsoft/vscode/issues/322241","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/322241.md","title":"Program Running Issue","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"Plausible","rating":"3/6 Plausible","verificationRank":3,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:18:59.431Z"},{"rank":15,"number":324693,"url":"https://github.com/microsoft/vscode/issues/324693","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324693.md","title":"Cannot create new profile from Python Template – Save does not work.","upvotes":0,"comments":0,"related":0,"severity":"correctness","breadth":"common","priority":"none","verification":"Source-confirmed","rating":"5/6 Source-confirmed","verificationRank":1,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:52:30.758Z"},{"rank":16,"number":327188,"url":"https://github.com/microsoft/vscode/issues/327188","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327188.md","title":"VS Code discovers Conda environments but Python: Select Interpreter does not display them","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"","visionFit":"","score":0,"reviewedAt":"2026-07-27T07:48:54.298Z"}],"features":[{"rank":1,"number":254473,"url":"https://github.com/microsoft/vscode/issues/254473","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/254473.md","title":"Add scripting interface/batch mode for Copilot Agent Mode?","upvotes":16,"comments":7,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"backlog-candidate","visionFit":"aligned","score":100,"reviewedAt":"2026-07-27T07:11:30.033Z"},{"rank":2,"number":288970,"url":"https://github.com/microsoft/vscode/issues/288970","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/288970.md","title":"AskQuestion Clarification Usage and Improvements","upvotes":0,"comments":2,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":5,"reviewedAt":"2026-07-27T06:48:36.206Z"},{"rank":3,"number":235574,"url":"https://github.com/microsoft/vscode/issues/235574","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/235574.md","title":"Enhancing Debugging Experience: Adding Docstring and Type Hint Support to Debug Console","upvotes":0,"comments":2,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"unclear","score":2,"reviewedAt":"2026-07-27T06:48:21.934Z"},{"rank":4,"number":320588,"url":"https://github.com/microsoft/vscode/issues/320588","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320588.md","title":"Undefined variable not detected in local problems","upvotes":0,"comments":1,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"active","visionFit":"rejected","score":1,"reviewedAt":"2026-07-27T07:12:44.351Z"},{"rank":5,"number":171040,"url":"https://github.com/microsoft/vscode/issues/171040","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/171040.md","title":"Automatic enter indentation in offside folding languages","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":0,"reviewedAt":"2026-07-27T07:10:37.375Z"},{"rank":6,"number":269114,"url":"https://github.com/microsoft/vscode/issues/269114","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/269114.md","title":"Add create issue from chat component feature","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"niche","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":true,"signal":"dormant","visionFit":"aligned","score":0,"reviewedAt":"2026-07-27T07:08:17.910Z"},{"rank":7,"number":317991,"url":"https://github.com/microsoft/vscode/issues/317991","reviewUrl":"https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317991.md","title":"[Feature Request] Add commands/keybindings to switch Copilot Chat model — both picker and direct model selection","upvotes":0,"comments":0,"related":0,"severity":"none","breadth":"common","priority":"none","verification":"","rating":"","verificationRank":6,"autoFixable":false,"prUrl":"","implementable":false,"signal":"active","visionFit":"not_applicable","score":0,"reviewedAt":"2026-07-27T07:19:41.031Z"}],"cut":{"bugs":10,"features":7}};
+const VDESC = {"Confirmed":"Reproduced against current main — the failing behavior was observed directly, or a commenter supplied a confirmed reproduction.","Source-confirmed":"Traced conclusively in the current source via a checkout — the buggy code path is identified, though not executed.","Traced":"A likely defect path was found in the source, but with some uncertainty that it's the true cause.","Plausible":"The report reads as coherent and credible, but it wasn't reproduced or traced in the code — not yet verified.","Unverified":"A genuine reproduction attempt failed, or the report is too thin to verify.","Inconclusive":"Signals conflict — a reproduction was claimed but confidence is low; treat the rating with caution."};
+const STATE_REPO = "egamma/vscodesweeper-state", PAGE = "top/karthiknadig";
+function esc(s){const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+// Keep in sync with feedbackUrl() in feedback.ts — plain item number only, never
+// owner/repo#N or an upstream issue URL (a submitted reference would ping the issue).
+function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: item " + n, item: n, page: PAGE }); }
+// Keep in sync with the dashboard's implementCell / gateImplement (implement.ts).
+function implementCell(r){
+  if (r.prUrl) return '<a href="'+esc(r.prUrl)+'" target="_blank" rel="noopener" title="Existing sweeper draft PR">draft PR ▸</a>';
+  if (!r.implementable) return '<span class="muted">—</span>';
+  return '<button class="copy" data-n="'+esc(r.number)+'" title="Copy the CLI command to implement this issue — opens an experimental DRAFT PR on microsoft/vscode (head on the fork; copilot writes, codex posts one review; needs Node 24+). You decide what happens to it." aria-label="Copy implement command for issue '+esc(r.number)+'">Copy implement cmd</button>';
+}
+function cell(r, lane){
+  const sev = r.severity && r.severity !== "—" && r.severity !== ""
+    ? '<span class="pill sev-'+esc(r.severity)+'">'+esc(r.severity)+"</span>"
+    : '<span class="muted">—</span>';
+  const html = ["<tr>",
+    '<td class="n muted">'+r.rank+"</td>",
+    '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">#'+r.number+"</a> "+esc(r.title)
+      +(r.reviewUrl?' <a class="muted" href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener" title="Review record">record</a>':"")
+      +(STATE_REPO?' <a class="muted" href="'+feedbackHref(r.number)+'" target="_blank" rel="noopener" title="Report feedback on this verdict — opens a prefilled issue on the state repo (plain item number, so the vscode issue is never pinged)">⚑</a>':"")+"</td>",
+    '<td class="n">'+r.upvotes+"</td>",
+    '<td class="n">'+r.comments+"</td>",
+    '<td class="n">'+r.related+"</td>"];
+  if (lane === "bugs") {
+    html.push("<td>"+sev+"</td>");
+    html.push("<td>"+esc(r.breadth)+"</td>");
+    html.push('<td class="n"><span class="bar"><i style="width:'+r.score+'%"></i></span>'+r.score+"</td>");
+    html.push("<td>"+(r.priority === "important" ? '<span class="pill imp">important</span>' : '<span class="muted">—</span>')+"</td>");
+    html.push("<td>"+(r.rating ? '<span title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>" : '<span class="muted">—</span>')+"</td>");
+    html.push("<td>"+(r.autoFixable ? '<span class="af">yes</span>' : '<span class="muted">—</span>')+"</td>");
+    html.push("<td>"+implementCell(r)+"</td>");
+  } else {
+    const fit = r.visionFit === "aligned" ? "aligned" : r.visionFit === "rejected" ? "rejected" : "";
+    const fitPill = fit ? ' <span class="pill fit-'+fit+'">'+(fit === "aligned" ? "vision-aligned" : "off-vision")+"</span>" : "";
+    html.push('<td><span class="pill sig-'+esc(r.signal)+'">'+esc(r.signal)+"</span>"+fitPill+"</td>");
+    html.push('<td class="n"><span class="bar"><i style="width:'+r.score+'%"></i></span>'+r.score+"</td>");
+    html.push("<td>"+implementCell(r)+"</td>");
+  }
+  html.push("</tr>");
+  return html.join("");
+}
+// One delegated handler covers both lanes: copy the implement command, confirm inline.
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const cmd = "npm run implement -- --issue " + btn.dataset.n + " --review";
+  navigator.clipboard.writeText(cmd).then(
+    () => { const t = btn.textContent; btn.textContent = "Copied ✓"; setTimeout(() => { btn.textContent = t; }, 1600); },
+    () => { btn.textContent = "Copy failed"; }
+  );
+});
+const showAll = { bugs: false, features: false };
+function renderTable(id){
+  const t = document.getElementById(id);
+  // Head/tail: by default only the head (rank <= cut, ~80% of the lane's score
+  // mass) is rendered; "Show all" lifts the filter. Sorting applies to the
+  // visible set either way.
+  const cut = DATA.cut[id];
+  const rows = DATA[id].filter(r => showAll[id] || r.rank <= cut).sort((a,b)=>{
+    const k = t.dataset.k || "rank", dir = Number(t.dataset.dir || 1);
+    let x = a[k], y = b[k];
+    if (typeof x === "string") { x = x.toLowerCase(); y = String(y).toLowerCase(); }
+    if (x < y) return -dir; if (x > y) return dir; return a.rank - b.rank;
+  });
+  t.tBodies[0].innerHTML = rows.map(r => cell(r, id)).join("")
+    || '<tr><td colspan="12" class="muted">No records in this lane yet.</td></tr>';
+  const btn = document.getElementById("more-" + id);
+  const hidden = DATA[id].length - cut;
+  if (btn && hidden > 0) {
+    btn.hidden = false;
+    btn.textContent = showAll[id]
+      ? "Collapse to top " + cut
+      : "Show all " + DATA[id].length + " (" + hidden + " more, score ≤ " + DATA[id][cut].score + ")";
+  }
+}
+for (const id of ["bugs","features"]) {
+  const t = document.getElementById(id);
+  t.querySelectorAll("th[data-k]").forEach(th => th.addEventListener("click", () => {
+    const k = th.dataset.k;
+    if (t.dataset.k === k) t.dataset.dir = String(-Number(t.dataset.dir || 1));
+    else { t.dataset.k = k; t.dataset.dir = k === "title" || k === "severity" || k === "breadth" || k === "signal" || k === "priority" || k === "verificationRank" ? "1" : "-1"; }
+    renderTable(id);
+  }));
+  const btn = document.getElementById("more-" + id);
+  if (btn) btn.addEventListener("click", () => { showAll[id] = !showAll[id]; renderTable(id); });
+  renderTable(id);
+}
+</script>
+</body>
+</html>

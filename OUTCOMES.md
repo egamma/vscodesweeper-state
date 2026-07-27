@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 13682 issues reviewed · generated 2026-07-27 05:39 UTC
+[← Home](index.html) · 13799 issues reviewed · generated 2026-07-27 09:46 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 13682
-- **Close proposals:** 2147 (16% of reviewed)
+- **Issues reviewed:** 13799
+- **Close proposals:** 2173 (16% of reviewed)
 - **Acted on (closed):** 175 (8% of proposals)
 - **Closed with the sweeper's comment:** 125 (71% of acted-on) — 106 verbatim, 12 inside a longer comment, 7 edited
-- **Still awaiting action:** 1972 open close proposals
+- **Still awaiting action:** 1998 open close proposals
 
-_Close proposals count the whole corpus (359 of the 13682 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1972 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (359 of the 13799 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1998 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
