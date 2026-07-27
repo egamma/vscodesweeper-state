@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 29 swept users · 13944 issues reviewed · generated 2026-07-27 13:21 UTC
+[← Home](index.html) · 30 swept users · 14052 issues reviewed · generated 2026-07-27 15:52 UTC
 
 ## Closure outcome per swept user
 
@@ -30,12 +30,13 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | rzhao271 | 332 | 31 (9%) | 33 (10%) | 268 (81%) | **19%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
 | dmitrivMS | 261 | 41 (16%) | 30 (11%) | 190 (73%) | **27%** |
-| Copilot | 240 | 10 (4%) | 4 (2%) | 226 (94%) | **6%** |
+| Copilot | 241 | 10 (4%) | 4 (2%) | 227 (94%) | **6%** |
 | vijayupadya | 189 | 23 (12%) | 33 (17%) | 133 (70%) | **30%** |
 | pwang347 | 170 | 22 (13%) | 26 (15%) | 122 (72%) | **28%** |
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
 | DonJayamanne | 147 | 20 (14%) | 10 (7%) | 117 (80%) | **20%** |
 | bhavyaus | 145 | 12 (8%) | 9 (6%) | 124 (86%) | **14%** |
+| vritant24 | 141 | 21 (15%) | 17 (12%) | 103 (73%) | **27%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 
 ## Auto-fixable share of issues that stay open
@@ -64,14 +65,15 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | ulugbekna | 234 | 29 | 16 | 12% |
 | Yoyokrazy | 274 | 60 | 25 | 22% |
 | rzhao271 | 268 | 51 | 19 | 19% |
-| aiday-mar | 269 | 43 | 27 | 16% |
+| aiday-mar | 269 | 43 | 26 | 16% |
 | dmitrivMS | 190 | 20 | 9 | 11% |
-| Copilot | 226 | 39 | 25 | 17% |
+| Copilot | 227 | 39 | 24 | 17% |
 | vijayupadya | 133 | 13 | 4 | 10% |
 | pwang347 | 122 | 10 | 6 | 8% |
 | alexr00 | 149 | 9 | 5 | 6% |
 | DonJayamanne | 117 | 18 | 11 | 15% |
 | bhavyaus | 124 | 14 | 4 | 11% |
+| vritant24 | 103 | 14 | 8 | 14% |
 | sbatten | 102 | 20 | 5 | 20% |
 
 ## Close-proposal reasons
@@ -80,16 +82,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 781 | 36% | 38 (5%) | 20 (3%) |
-| implemented on main | 551 | 25% | 72 (13%) | 58 (11%) |
+| `*duplicate` | 792 | 36% | 38 (5%) | 20 (3%) |
+| implemented on main | 552 | 25% | 72 (13%) | 58 (11%) |
 | `*caused-by-extension` | 220 | 10% | 16 (7%) | 10 (5%) |
-| `*question` | 215 | 10% | 5 (2%) | 2 (1%) |
+| `*question` | 217 | 10% | 5 (2%) | 2 (1%) |
 | `*as-designed` | 192 | 9% | 30 (16%) | 27 (14%) |
 | `*not-reproducible` | 100 | 5% | 6 (6%) | 5 (5%) |
 | `*off-topic` | 59 | 3% | 3 (5%) | 1 (2%) |
 | `*out-of-scope` | 52 | 2% | 3 (6%) | 1 (2%) |
-| `*extension-candidate` | 19 | 1% | 2 (11%) | 1 (5%) |
-| all reasons | 2189 | 100% | 175 (8%) | 125 (6%) |
+| `*extension-candidate` | 20 | 1% | 2 (10%) | 1 (5%) |
+| all reasons | 2204 | 100% | 175 (8%) | 125 (6%) |
 
 ## Close reasons per swept user
 
@@ -125,6 +127,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | alexr00 | 8 | 5 (63%) | — | 1 (13%) | — | 1 (13%) | 1 (13%) | — | — |
 | DonJayamanne | 20 | 7 (35%) | 7 (35%) | 2 (10%) | — | 1 (5%) | 1 (5%) | — | 2 (10%) |
 | bhavyaus | 12 | 4 (33%) | 2 (17%) | — | 2 (17%) | 4 (33%) | — | — | — |
+| vritant24 | 21 | 13 (62%) | 4 (19%) | — | 3 (14%) | — | — | — | 1 (5%) |
 | sbatten | 18 | 4 (22%) | 6 (33%) | — | 2 (11%) | 3 (17%) | 1 (6%) | — | 2 (11%) |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (35 users, 545 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (34 users, 515 reviews — mostly co-assignees)._
