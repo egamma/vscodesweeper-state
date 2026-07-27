@@ -2,7 +2,7 @@
 
 Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the repo.
 
-- **[Full review dashboard](dashboard.html)** — 14149 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 14272 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 - **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
 
@@ -36,9 +36,10 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[vritant24](top/vritant24.md)** · [by theme](top/vritant24-themes.md) — 81 bugs · 51 feature requests.
 - **[bhavyaus](top/bhavyaus.md)** · [by theme](top/bhavyaus-themes.md) — 74 bugs · 43 feature requests.
 - **[sbatten](top/sbatten.md)** · [by theme](top/sbatten-themes.md) — 63 bugs · 34 feature requests.
+- **[jrieken](top/jrieken.md)** · [by theme](top/jrieken-themes.md) — 65 bugs · 24 feature requests.
 - **[jo-oikawa](top/jo-oikawa.md)** · [by theme](top/jo-oikawa-themes.md) — 32 bugs · 39 feature requests.
 - **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 22 bugs · 24 feature requests.
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 16 bugs · 7 feature requests.
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 
-_Generated 2026-07-27 17:26 UTC._
+_Generated 2026-07-27 21:48 UTC._
