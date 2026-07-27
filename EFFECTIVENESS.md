@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 30 swept users · 14052 issues reviewed · generated 2026-07-27 15:52 UTC
+[← Home](index.html) · 31 swept users · 14149 issues reviewed · generated 2026-07-27 17:26 UTC
 
 ## Closure outcome per swept user
 
@@ -10,11 +10,11 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | --- | --- | --- | --- | --- | --- |
 | lszomoru | 1284 | 201 (16%) | 148 (12%) | 935 (73%) | **27%** |
 | hediet | 1193 | 125 (10%) | 137 (11%) | 931 (78%) | **22%** |
-| justschen | 1007 | 176 (17%) | 116 (12%) | 715 (71%) | **29%** |
+| justschen | 1008 | 177 (18%) | 116 (12%) | 715 (71%) | **29%** |
 | deepak1556 | 996 | 222 (22%) | 313 (31%) | 461 (46%) | **54%** |
 | roblourens | 740 | 121 (16%) | 135 (18%) | 484 (65%) | **35%** |
 | lramos15 | 738 | 180 (24%) | 125 (17%) | 433 (59%) | **41%** |
-| sandy081 | 684 | 91 (13%) | 58 (8%) | 535 (78%) | **22%** |
+| sandy081 | 685 | 91 (13%) | 58 (8%) | 536 (78%) | **22%** |
 | connor4312 | 666 | 72 (11%) | 44 (7%) | 550 (83%) | **17%** |
 | anthonykim1 | 641 | 100 (16%) | 74 (12%) | 467 (73%) | **27%** |
 | TylerLeonhardt | 633 | 78 (12%) | 49 (8%) | 506 (80%) | **20%** |
@@ -30,13 +30,14 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | rzhao271 | 332 | 31 (9%) | 33 (10%) | 268 (81%) | **19%** |
 | aiday-mar | 295 | 22 (7%) | 4 (1%) | 269 (91%) | **9%** |
 | dmitrivMS | 261 | 41 (16%) | 30 (11%) | 190 (73%) | **27%** |
-| Copilot | 241 | 10 (4%) | 4 (2%) | 227 (94%) | **6%** |
+| Copilot | 243 | 10 (4%) | 4 (2%) | 229 (94%) | **6%** |
 | vijayupadya | 189 | 23 (12%) | 33 (17%) | 133 (70%) | **30%** |
 | pwang347 | 170 | 22 (13%) | 26 (15%) | 122 (72%) | **28%** |
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
 | DonJayamanne | 147 | 20 (14%) | 10 (7%) | 117 (80%) | **20%** |
 | bhavyaus | 145 | 12 (8%) | 9 (6%) | 124 (86%) | **14%** |
 | vritant24 | 141 | 21 (15%) | 17 (12%) | 103 (73%) | **27%** |
+| jo-oikawa | 135 | 6 (4%) | 4 (3%) | 125 (93%) | **7%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 
 ## Auto-fixable share of issues that stay open
@@ -46,12 +47,12 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | User | Stays open | Auto-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | lszomoru | 935 | 137 | 63 | 15% |
-| hediet | 931 | 174 | 88 | 19% |
+| hediet | 931 | 174 | 87 | 19% |
 | justschen | 715 | 86 | 40 | 12% |
 | deepak1556 | 461 | 10 | 7 | 2% |
 | roblourens | 484 | 62 | 33 | 13% |
 | lramos15 | 433 | 72 | 36 | 17% |
-| sandy081 | 535 | 71 | 34 | 13% |
+| sandy081 | 536 | 71 | 34 | 13% |
 | connor4312 | 550 | 63 | 40 | 11% |
 | anthonykim1 | 467 | 83 | 54 | 18% |
 | TylerLeonhardt | 506 | 72 | 39 | 14% |
@@ -67,13 +68,14 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | rzhao271 | 268 | 51 | 19 | 19% |
 | aiday-mar | 269 | 43 | 26 | 16% |
 | dmitrivMS | 190 | 20 | 9 | 11% |
-| Copilot | 227 | 39 | 24 | 17% |
+| Copilot | 229 | 39 | 24 | 17% |
 | vijayupadya | 133 | 13 | 4 | 10% |
 | pwang347 | 122 | 10 | 6 | 8% |
 | alexr00 | 149 | 9 | 5 | 6% |
 | DonJayamanne | 117 | 18 | 11 | 15% |
 | bhavyaus | 124 | 14 | 4 | 11% |
 | vritant24 | 103 | 14 | 8 | 14% |
+| jo-oikawa | 125 | 8 | 5 | 6% |
 | sbatten | 102 | 20 | 5 | 20% |
 
 ## Close-proposal reasons
@@ -82,16 +84,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 792 | 36% | 38 (5%) | 20 (3%) |
+| `*duplicate` | 794 | 36% | 38 (5%) | 20 (3%) |
 | implemented on main | 552 | 25% | 72 (13%) | 58 (11%) |
 | `*caused-by-extension` | 220 | 10% | 16 (7%) | 10 (5%) |
-| `*question` | 217 | 10% | 5 (2%) | 2 (1%) |
-| `*as-designed` | 192 | 9% | 30 (16%) | 27 (14%) |
+| `*question` | 218 | 10% | 5 (2%) | 2 (1%) |
+| `*as-designed` | 193 | 9% | 30 (16%) | 27 (14%) |
 | `*not-reproducible` | 100 | 5% | 6 (6%) | 5 (5%) |
 | `*off-topic` | 59 | 3% | 3 (5%) | 1 (2%) |
-| `*out-of-scope` | 52 | 2% | 3 (6%) | 1 (2%) |
+| `*out-of-scope` | 53 | 2% | 3 (6%) | 1 (2%) |
 | `*extension-candidate` | 20 | 1% | 2 (10%) | 1 (5%) |
-| all reasons | 2204 | 100% | 175 (8%) | 125 (6%) |
+| all reasons | 2209 | 100% | 175 (8%) | 125 (6%) |
 
 ## Close reasons per swept user
 
@@ -101,7 +103,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | lszomoru | 201 | 95 (47%) | 38 (19%) | 14 (7%) | 18 (9%) | 16 (8%) | 4 (2%) | 9 (4%) | 7 (3%) |
 | hediet | 125 | 39 (31%) | 38 (30%) | 18 (14%) | 9 (7%) | 14 (11%) | — | 4 (3%) | 3 (2%) |
-| justschen | 176 | 76 (43%) | 68 (39%) | 10 (6%) | 4 (2%) | 10 (6%) | 4 (2%) | 2 (1%) | 2 (1%) |
+| justschen | 177 | 77 (44%) | 68 (38%) | 10 (6%) | 4 (2%) | 10 (6%) | 4 (2%) | 2 (1%) | 2 (1%) |
 | deepak1556 | 222 | 137 (62%) | 31 (14%) | 11 (5%) | 12 (5%) | 11 (5%) | 15 (7%) | 2 (1%) | 3 (1%) |
 | roblourens | 121 | 47 (39%) | 34 (28%) | 11 (9%) | 11 (9%) | 6 (5%) | 5 (4%) | 4 (3%) | 3 (2%) |
 | lramos15 | 180 | 47 (26%) | 36 (20%) | 11 (6%) | 39 (22%) | 16 (9%) | 7 (4%) | 13 (7%) | 11 (6%) |
@@ -128,6 +130,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | DonJayamanne | 20 | 7 (35%) | 7 (35%) | 2 (10%) | — | 1 (5%) | 1 (5%) | — | 2 (10%) |
 | bhavyaus | 12 | 4 (33%) | 2 (17%) | — | 2 (17%) | 4 (33%) | — | — | — |
 | vritant24 | 21 | 13 (62%) | 4 (19%) | — | 3 (14%) | — | — | — | 1 (5%) |
+| jo-oikawa | 6 | 2 (33%) | 1 (17%) | — | 1 (17%) | 1 (17%) | — | — | 1 (17%) |
 | sbatten | 18 | 4 (22%) | 6 (33%) | — | 2 (11%) | 3 (17%) | 1 (6%) | — | 2 (11%) |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (34 users, 515 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (33 users, 527 reviews — mostly co-assignees)._
