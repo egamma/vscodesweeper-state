@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 33 swept users · 14367 issues reviewed · generated 2026-07-27 22:40 UTC
+[← Home](index.html) · 33 swept users · 14386 issues reviewed · generated 2026-07-27 23:59 UTC
 
 ## Closure outcome per swept user
 
@@ -88,16 +88,16 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| `*duplicate` | 801 | 36% | 38 (5%) | 20 (2%) |
-| implemented on main | 554 | 25% | 72 (13%) | 58 (10%) |
+| `*duplicate` | 802 | 36% | 38 (5%) | 20 (2%) |
+| implemented on main | 555 | 25% | 72 (13%) | 58 (10%) |
 | `*caused-by-extension` | 222 | 10% | 16 (7%) | 10 (5%) |
-| `*question` | 219 | 10% | 5 (2%) | 2 (1%) |
-| `*as-designed` | 198 | 9% | 30 (15%) | 27 (14%) |
+| `*question` | 221 | 10% | 5 (2%) | 2 (1%) |
+| `*as-designed` | 199 | 9% | 30 (15%) | 27 (14%) |
 | `*not-reproducible` | 101 | 5% | 6 (6%) | 5 (5%) |
 | `*off-topic` | 59 | 3% | 3 (5%) | 1 (2%) |
-| `*out-of-scope` | 53 | 2% | 3 (6%) | 1 (2%) |
+| `*out-of-scope` | 55 | 2% | 3 (5%) | 1 (2%) |
 | `*extension-candidate` | 20 | 1% | 2 (10%) | 1 (5%) |
-| all reasons | 2227 | 100% | 175 (8%) | 125 (6%) |
+| all reasons | 2234 | 100% | 175 (8%) | 125 (6%) |
 
 ## Close reasons per swept user
 
@@ -139,4 +139,4 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | jrieken | 11 | 5 (45%) | — | 1 (9%) | — | 4 (36%) | 1 (9%) | — | — |
 | kycutler | 7 | 2 (29%) | 2 (29%) | 1 (14%) | 1 (14%) | 1 (14%) | — | — | — |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (32 users, 606 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (33 users, 626 reviews — mostly co-assignees)._
