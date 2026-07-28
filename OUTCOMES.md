@@ -1,31 +1,36 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 14718 issues reviewed · generated 2026-07-28 12:15 UTC
+[← Home](index.html) · 14719 issues reviewed · generated 2026-07-28 15:37 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 14718
+- **Issues reviewed:** 14719
 - **Close proposals:** 2259 (15% of reviewed)
-- **Acted on (closed):** 175 (8% of proposals)
-- **Closed with the sweeper's comment:** 125 (71% of acted-on) — 106 verbatim, 12 inside a longer comment, 7 edited
-- **Still awaiting action:** 2084 open close proposals
+- **Acted on (closed):** 190 (8% of proposals)
+- **Closed with the sweeper's comment:** 128 (67% of acted-on) — 109 verbatim, 12 inside a longer comment, 7 edited
+- **Still awaiting action:** 2069 open close proposals
 
-_Close proposals count the whole corpus (358 of the 14718 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2084 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (452 of the 14719 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2069 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
 | User | Closures | With sweeper comment |
 | --- | --- | --- |
 | alexdima | 87 | 85 (98%) |
-| justschen | 49 | 27 (55%) |
+| justschen | 48 | 27 (56%) |
 | aeschli | 12 | 11 (92%) |
-| vs-code-engineering | 7 | 0 (0%) |
-| deepak1556 | 6 | 0 (0%) |
+| vs-code-engineering | 8 | 0 (0%) |
+| deepak1556 | 7 | 0 (0%) |
+| dmitrivMS | 7 | 0 (0%) |
 | lramos15 | 5 | 0 (0%) |
-| roblourens | 3 | 2 (67%) |
+| roblourens | 4 | 3 (75%) |
+| hediet | 3 | 2 (67%) |
 | sandy081 | 2 | 0 (0%) |
+| (unattributed) | 1 | 0 (0%) |
+| aiday-mar | 1 | 0 (0%) |
 | babakzarrinbal | 1 | 0 (0%) |
 | DavidLangworthy | 1 | 0 (0%) |
+| kycutler | 1 | 0 (0%) |
 | meganrogge | 1 | 0 (0%) |
 | sanket-bhalerao | 1 | 0 (0%) |
 
@@ -33,15 +38,18 @@ _Close proposals count the whole corpus (358 of the 14718 reviewed issues have s
 
 | Review verdict | Closed |
 | --- | --- |
-| propose-close | 175 |
-| keep-open | 94 |
-| needs-info | 85 |
-| route-to-area | 4 |
+| propose-close | 190 |
+| needs-info | 139 |
+| keep-open | 118 |
+| route-to-area | 5 |
 
 | Close reason | Closed |
 | --- | --- |
-| not_planned | 173 |
-| completed | 147 |
-| duplicate | 38 |
+| not_planned | 239 |
+| completed | 162 |
+| duplicate | 50 |
+| not_found | 1 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
+
+_1 closed proposal(s) not yet classified — run `npm run reconcile -- --push`._
