@@ -2,7 +2,7 @@
 
 Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the repo.
 
-- **[Full review dashboard](dashboard.html)** — 14386 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 14576 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 - **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
 
@@ -16,7 +16,7 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[deepak1556](top/deepak1556.md)** · [by theme](top/deepak1556-themes.md) — 565 bugs · 42 feature requests.
 - **[lramos15](top/lramos15.md)** · [by theme](top/lramos15-themes.md) — 410 bugs · 196 feature requests.
 - **[connor4312](top/connor4312.md)** · [by theme](top/connor4312-themes.md) — 329 bugs · 243 feature requests.
-- **[aeschli](top/aeschli.md)** · [by theme](top/aeschli-themes.md) — 204 bugs · 361 feature requests.
+- **[aeschli](top/aeschli.md)** · [by theme](top/aeschli-themes.md) — 206 bugs · 361 feature requests.
 - **[anthonykim1](top/anthonykim1.md)** · [by theme](top/anthonykim1-themes.md) — 461 bugs · 94 feature requests.
 - **[meganrogge](top/meganrogge.md)** · [by theme](top/meganrogge-themes.md) — 340 bugs · 208 feature requests.
 - **[TylerLeonhardt](top/TylerLeonhardt.md)** · [by theme](top/TylerLeonhardt-themes.md) — 287 bugs · 258 feature requests.
@@ -28,6 +28,7 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[ulugbekna](top/ulugbekna.md)** · [by theme](top/ulugbekna-themes.md) — 246 bugs · 61 feature requests.
 - **[Yoyokrazy](top/Yoyokrazy.md)** · [by theme](top/Yoyokrazy-themes.md) — 194 bugs · 85 feature requests.
 - **[rzhao271](top/rzhao271.md)** · [by theme](top/rzhao271-themes.md) — 183 bugs · 88 feature requests.
+- **[DonJayamanne](top/DonJayamanne.md)** · [by theme](top/DonJayamanne-themes.md) — 210 bugs · 58 feature requests.
 - **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 170 bugs · 83 feature requests.
 - **[dmitrivMS](top/dmitrivMS.md)** · [by theme](top/dmitrivMS-themes.md) — 182 bugs · 60 feature requests.
 - **[vijayupadya](top/vijayupadya.md)** · [by theme](top/vijayupadya-themes.md) — 124 bugs · 33 feature requests.
@@ -44,4 +45,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-07-27 23:59 UTC._
+_Generated 2026-07-28 07:18 UTC._
