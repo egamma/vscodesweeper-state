@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 35 swept users · 14718 issues reviewed · generated 2026-07-28 12:15 UTC
+[← Home](index.html) · 35 swept users · 14719 issues reviewed · generated 2026-07-28 13:51 UTC
 
 ## Closure outcome per swept user
 
@@ -37,7 +37,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
 | amunger | 153 | 7 (5%) | 6 (4%) | 140 (92%) | **8%** |
 | bhavyaus | 145 | 12 (8%) | 9 (6%) | 124 (86%) | **14%** |
-| vritant24 | 141 | 21 (15%) | 17 (12%) | 103 (73%) | **27%** |
+| vritant24 | 142 | 21 (15%) | 17 (12%) | 104 (73%) | **27%** |
 | jo-oikawa | 135 | 6 (4%) | 4 (3%) | 125 (93%) | **7%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 | jrieken | 123 | 11 (9%) | 2 (2%) | 110 (89%) | **11%** |
@@ -79,7 +79,7 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | alexr00 | 149 | 9 | 5 | 6% |
 | amunger | 140 | 31 | 9 | 22% |
 | bhavyaus | 124 | 14 | 4 | 11% |
-| vritant24 | 103 | 14 | 8 | 14% |
+| vritant24 | 104 | 14 | 8 | 13% |
 | jo-oikawa | 125 | 8 | 5 | 6% |
 | sbatten | 102 | 20 | 6 | 20% |
 | jrieken | 110 | 29 | 16 | 26% |
