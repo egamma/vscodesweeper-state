@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>fix-issue skill — VS Code Sweeper</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --accent: #0969da; --row: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0 auto; font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 780px; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  h2 { font-size: 16px; margin: 28px 0 8px; }
+  .lede { color: var(--muted); margin: 0 0 16px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
+  pre { background: var(--row); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; overflow-x: auto; }
+  ul { padding-left: 22px; }
+  li { margin: 4px 0; }
+  .callout { border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 6px;
+    padding: 10px 14px; background: var(--row); margin: 12px 0; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>The fix-issue skill</h1>
+  <p class="lede">Let an agent implement a sweeper-reviewed fix for one of your <code>microsoft/vscode</code> issues — from your own checkout, under your own identity, as a draft PR you own.</p>
+
+  <h2>What the sweeper did for you</h2>
+  <p>The sweeper reviewed the open <code>microsoft/vscode</code> backlog with a source checkout and marked the issues an agent can fix — each with a <strong>fix spec</strong> written while tracing the defect: the observable problem, the fix boundary (what must <em>not</em> change), the likely files, and a validation that becomes the regression test. Your ranked list is on <a href="https://egamma.github.io/vscodesweeper-state/index.html">your top-issues page</a> (filter: <em>agent-fixable</em>), and every spec is inspectable there before you run anything.</p>
+
+  <h2>Using it</h2>
+  <p><strong>One-time setup (interim):</strong> the skill is headed for the vscode repo's <code>.github/skills/</code> (once that PR lands, your checkout has it with no install at all). Until then, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/fix-issue/SKILL.md">the generated SKILL.md</a> into your agent's personal skills dir — <code>~/.copilot/skills/fix-issue/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/fix-issue/SKILL.md</code> (Claude Code).</p>
+  <p>Then, in your agent, from your vscode checkout, just ask:</p>
+  <pre>Fix microsoft/vscode issue #262104 using the vscodesweeper fix-issue skill.</pre>
+  <p>The <em>Copy fix prompt</em> button on the dashboard and top pages copies exactly this line for the row's issue — an optional shortcut, nothing more.</p>
+
+  <h2>What to expect</h2>
+  <ul>
+    <li><strong>Live gates first.</strong> The skill refuses if the issue is closed, security-labeled, not reviewed as agent-fixable, or already has an open PR — and warns if the issue changed since its review.</li>
+    <li><strong>The fix + a test.</strong> It implements the review's fix spec narrowly and adds the validation as a test that fails before the change and passes after.</li>
+    <li><strong>You approve the diff.</strong> Nothing is pushed until you've seen the full diff and said go.</li>
+    <li><strong>A draft PR you own.</strong> Branch <code>&lt;you&gt;/fix-&lt;n&gt;</code>, base <code>main</code>, body carries <code>Fixes #n</code> and a "seeded by" link to the review record. You review, flip to ready, and merge — or close it. The sweeper never touches the PR again.</li>
+  </ul>
+  <div class="callout">The PR is a <strong>draft</strong> on purpose: the diff derives from a spec written over issue text. Flipping it to ready is your "I've read this diff" signal.</div>
+
+  <h2>Troubleshooting</h2>
+  <ul>
+    <li><strong>Skill doesn't trigger?</strong> Say "fix-issue skill" explicitly (agents match on the skill description). Copilot CLI loads skills at session start — restart it after pulling a checkout that just gained the skill.</li>
+    <li><strong>"Not agent-fixable" refusal?</strong> The review found no safe fix spec for that issue — the skill only implements reviewed specs. Check the record linked from the dashboard for what the review concluded instead.</li>
+    <li><strong>Skill still not found?</strong> Check the SKILL.md landed at exactly <code>~/.copilot/skills/fix-issue/SKILL.md</code> (or the Claude equivalent) — the folder name must match the skill name.</li>
+  </ul>
+
+  <footer>fix-issue skill v1 · generated 2026-07-31 12:05 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
+</body>
+</html>

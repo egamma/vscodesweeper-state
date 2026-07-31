@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 35 swept users · 15217 issues reviewed · generated 2026-07-29 21:08 UTC
+[← Home](index.html) · 35 swept users · 15217 issues reviewed · generated 2026-07-31 12:05 UTC
 
 ## Closure outcome per swept user
 
@@ -44,11 +44,11 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | jrieken | 123 | 8 (7%) | 2 (2%) | 113 (92%) | **8%** |
 | kycutler | 100 | 7 (7%) | 1 (1%) | 92 (92%) | **8%** |
 
-## Auto-fixable share of issues that stay open
+## Agent-fixable share of issues that stay open
 
-High-value = value score above the auto-fix pool's median — the same demand × severity score that ranks the top pages.
+High-value = value score above the agent-fix pool's median — the same demand × severity score that ranks the top pages.
 
-| User | Stays open | Auto-fixable | High-value | Share |
+| User | Stays open | Agent-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | lszomoru | 942 | 137 | 65 | 15% |
 | hediet | 937 | 174 | 90 | 19% |
@@ -85,6 +85,12 @@ High-value = value score above the auto-fix pool's median — the same demand ×
 | sbatten | 102 | 20 | 6 | 20% |
 | jrieken | 113 | 29 | 16 | 26% |
 | kycutler | 92 | 10 | 3 | 11% |
+
+## fix-issue skill adoption
+
+Skill PRs discovered by `reconcile`'s seeded-by-marker search, per user, against the agent-fixable pool. As current as the last reconcile run.
+
+_No fix-issue skill PRs discovered yet — the funnel fills in as maintainers use the skill._
 
 ## Close-proposal reasons
 

@@ -5,6 +5,7 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[Full review dashboard](dashboard.html)** — 15217 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 - **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
+- **[The fix-issue skill](FIX-SKILL.md)** — let an agent implement a sweeper-reviewed fix as a draft PR you own.
 
 ## Per-maintainer rankings
 
@@ -47,4 +48,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 12 bugs · 9 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-07-29 21:08 UTC._
+_Generated 2026-07-31 12:05 UTC._
