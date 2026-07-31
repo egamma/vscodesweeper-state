@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 35 swept users · 15217 issues reviewed · generated 2026-07-31 12:05 UTC
+[← Home](index.html) · 35 swept users · 15316 issues reviewed · generated 2026-07-31 13:29 UTC
 
 ## Closure outcome per swept user
 
@@ -98,17 +98,17 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| implemented on main | 637 | 28% | 89 (14%) | 70 (11%) |
-| `*duplicate` | 689 | 31% | 56 (8%) | 32 (5%) |
+| implemented on main | 648 | 28% | 89 (14%) | 70 (11%) |
+| `*duplicate` | 706 | 31% | 56 (8%) | 32 (5%) |
 | `*caused-by-extension` | 233 | 10% | 22 (9%) | 14 (6%) |
 | `*question` | 226 | 10% | 10 (4%) | 7 (3%) |
-| `*as-designed` | 216 | 10% | 35 (16%) | 32 (15%) |
+| `*as-designed` | 217 | 9% | 35 (16%) | 32 (15%) |
 | `*not-reproducible` | 115 | 5% | 8 (7%) | 5 (4%) |
 | `*off-topic` | 61 | 3% | 4 (7%) | 2 (3%) |
-| `*out-of-scope` | 58 | 3% | 5 (9%) | 3 (5%) |
-| `*extension-candidate` | 20 | 1% | 2 (10%) | 1 (5%) |
+| `*out-of-scope` | 59 | 3% | 5 (8%) | 3 (5%) |
+| `*extension-candidate` | 21 | 1% | 2 (10%) | 1 (5%) |
 | other | 1 | 0% | — | — |
-| all reasons | 2256 | 100% | 231 (10%) | 166 (7%) |
+| all reasons | 2287 | 100% | 231 (10%) | 166 (7%) |
 
 ## Close reasons per swept user
 
