@@ -1,12 +1,12 @@
 # Top issues — amunger
 
-Value ranking of reviewed open issues assigned to `amunger` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-28 12:15 UTC. Also available [grouped by theme](amunger-themes.md).
+Value ranking of reviewed open issues assigned to `amunger` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-31 14:30 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; auto-fix is a tractability hint. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
 ## Bugs (top 19 of 87)
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#246710](https://github.com/microsoft/vscode/issues/246710) | Hangs forever showing the dialog: "Saving editors with unsaved changes is taking a bit longer...." | 5 | 6 | 1 | freeze | niche | 100 | — | 3/6 Plausible | — | `npm run implement -- --issue 246710` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/246710.md) |
 | 2 | [#268346](https://github.com/microsoft/vscode/issues/268346) | Kernel disposed because Notebook was closed or Cell was Deleted, when in fact notebook wasn't closed and cell wasn't deleted | 0 | 49 | 0 | correctness | niche | 80 | — | 3/6 Plausible | — | `npm run implement -- --issue 268346` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/268346.md) |
@@ -31,7 +31,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 <details>
 <summary>68 more bugs (score ≤ 18)</summary>
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 20 | [#265910](https://github.com/microsoft/vscode/issues/265910) | Saving 7MB notebook takes more than 1 minute | 1 | 3 | 0 | perf | niche | 18 | — | 3/6 Plausible | — | `npm run implement -- --issue 265910` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/265910.md) |
 | 21 | [#254563](https://github.com/microsoft/vscode/issues/254563) | Notebook Cell outputs getting duplicated | 0 | 7 | 0 | correctness | niche | 15 | — | 3/6 Plausible | — | `npm run implement -- --issue 254563` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/254563.md) |

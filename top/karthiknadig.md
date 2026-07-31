@@ -1,12 +1,12 @@
 # Top issues — karthiknadig
 
-Value ranking of reviewed open issues assigned to `karthiknadig` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-27 09:46 UTC. Also available [grouped by theme](karthiknadig-themes.md).
+Value ranking of reviewed open issues assigned to `karthiknadig` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-31 14:30 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; auto-fix is a tractability hint. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 10 of 16)
+## Bugs (top 10 of 15)
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#174295](https://github.com/microsoft/vscode/issues/174295) | Multiple Import Organizers results in corrupted code | 34 | 25 | 3 | correctness | common | 100 | — | 5/6 Source-confirmed | yes | `npm run implement -- --issue 174295` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/174295.md) |
 | 2 | [#292337](https://github.com/microsoft/vscode/issues/292337) | Subagent questions dialog closes on backspace | 0 | 0 | 1 | correctness | common | 8 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292337.md) |
@@ -20,16 +20,15 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 10 | [#293757](https://github.com/microsoft/vscode/issues/293757) | BUG: Python extension fails to load in web IDE. | 0 | 0 | 0 | none | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293757.md) |
 
 <details>
-<summary>6 more bugs (score ≤ 0)</summary>
+<summary>5 more bugs (score ≤ 0)</summary>
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 11 | [#294037](https://github.com/microsoft/vscode/issues/294037) | Question widget disappears | 0 | 0 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 294037` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294037.md) |
 | 12 | [#312972](https://github.com/microsoft/vscode/issues/312972) | Microsoft.CodeAnalysis.LanguageServer.exe using 80% of cpu | 0 | 0 | 0 | perf | niche | 0 | — | — | — | `npm run implement -- --issue 312972` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312972.md) |
 | 13 | [#317361](https://github.com/microsoft/vscode/issues/317361) | Cmd.default prototype in cmd.pyi should be changed. | 0 | 1 | 0 | none | niche | 0 | — | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317361.md) |
 | 14 | [#322241](https://github.com/microsoft/vscode/issues/322241) | Program Running Issue | 0 | 0 | 0 | none | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/322241.md) |
 | 15 | [#324693](https://github.com/microsoft/vscode/issues/324693) | Cannot create new profile from Python Template – Save does not work. | 0 | 0 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324693.md) |
-| 16 | [#327188](https://github.com/microsoft/vscode/issues/327188) | VS Code discovers Conda environments but Python: Select Interpreter does not display them | 0 | 0 | 0 | none | common | 0 | — | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327188.md) |
 
 </details>
 

@@ -1,16 +1,16 @@
 # Top issues — dbaeumer
 
-Value ranking of reviewed open issues assigned to `dbaeumer` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-26 15:37 UTC.
+Value ranking of reviewed open issues assigned to `dbaeumer` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-31 14:30 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; auto-fix is a tractability hint. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
 ## Bugs (top 10 of 11)
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#267410](https://github.com/microsoft/vscode/issues/267410) | Weird trimming | 0 | 8 | 1 | correctness | common | 100 | — | 6/6 Confirmed | — | `npm run implement -- --issue 267410` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/267410.md) |
 | 2 | [#281465](https://github.com/microsoft/vscode/issues/281465) | Undoing a next rename suggestion proposes the same rename refactoring | 0 | 3 | 1 | correctness | common | 74 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 281465` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/281465.md) |
-| 3 | [#291038](https://github.com/microsoft/vscode/issues/291038) | NES rename fails for relatively simple rename | 0 | 1 | 1 | correctness | common | 65 | — | 3/6 Plausible | — | `npm run implement -- --issue 291038` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291038.md) |
+| 3 | [#291038](https://github.com/microsoft/vscode/issues/291038) | NES rename fails for relatively simple rename | 0 | 1 | 1 | correctness | common | 64 | — | 3/6 Plausible | — | `npm run implement -- --issue 291038` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291038.md) |
 | 4 | [#287523](https://github.com/microsoft/vscode/issues/287523) | Bad rename suggestion | 0 | 1 | 1 | correctness | common | 63 | — | — | — | `npm run implement -- --issue 287523` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287523.md) |
 | 5 | [#307753](https://github.com/microsoft/vscode/issues/307753) | [Unhandled Error] Illegal value for lineNumber | 0 | 5 | 0 | correctness | broad | 56 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/307753.md) |
 | 6 | [#284658](https://github.com/microsoft/vscode/issues/284658) | Language client fails to register `DocumentSemanticTokensProvider` based on server capabilities | 0 | 0 | 1 | correctness | niche | 35 | — | 3/6 Plausible | — | `npm run implement -- --issue 284658` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/284658.md) |
@@ -22,7 +22,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 <details>
 <summary>1 more bugs (score ≤ 6)</summary>
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 11 | [#273203](https://github.com/microsoft/vscode/issues/273203) | Auto complete doesn't realize we are using React 19 | 0 | 3 | 0 | papercut | common | 6 | — | 3/6 Plausible | — | `npm run implement -- --issue 273203` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273203.md) |
 

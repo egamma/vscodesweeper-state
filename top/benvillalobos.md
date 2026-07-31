@@ -1,30 +1,30 @@
 # Top issues — benvillalobos
 
-Value ranking of reviewed open issues assigned to `benvillalobos` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-26 15:37 UTC.
+Value ranking of reviewed open issues assigned to `benvillalobos` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-31 14:30 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; auto-fix is a tractability hint. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
 ## Bugs (top 10 of 21)
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#280829](https://github.com/microsoft/vscode/issues/280829) | Copilot Code Review does not use `/instruction/**/NAME.instructions.md` files | 3 | 8 | 1 | correctness | common | 100 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 280829` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/280829.md) |
 | 2 | [#309686](https://github.com/microsoft/vscode/issues/309686) | [Unhandled Error] Cannot read properties of undefined (reading 'toString') | 0 | 3 | 1 | correctness | niche | 30 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/309686.md) |
 | 3 | [#316136](https://github.com/microsoft/vscode/issues/316136) | Copilot Chat Agent freezes VS Code during Replace String in File / Evaluating | 1 | 1 | 0 | freeze | niche | 21 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316136.md) |
 | 4 | [#287240](https://github.com/microsoft/vscode/issues/287240) | VS Code windows glitches, full restart required | 0 | 0 | 1 | visual | niche | 11 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287240.md) |
 | 5 | [#275429](https://github.com/microsoft/vscode/issues/275429) | Copy hover button does not show aria label on tab focus | 0 | 0 | 1 | papercut | common | 9 | — | 5/6 Source-confirmed | yes | `npm run implement -- --issue 275429` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275429.md) |
-| 6 | [#235159](https://github.com/microsoft/vscode/issues/235159) | Number-of-files-found Badge is not at the center of the list item vertically | 0 | 3 | 0 | visual | common | 5 | — | 6/6 Confirmed | — | `npm run implement -- --issue 235159` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/235159.md) |
-| 7 | [#277173](https://github.com/microsoft/vscode/issues/277173) | Change copilot icon in copilot code review comments | 0 | 2 | 0 | visual | common | 4 | — | 3/6 Plausible | — | `npm run implement -- --issue 277173` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277173.md) |
-| 8 | [#316368](https://github.com/microsoft/vscode/issues/316368) | stop working after update | 0 | 1 | 0 | correctness | niche | 3 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316368.md) |
-| 9 | [#324845](https://github.com/microsoft/vscode/issues/324845) | Fuzzy search pattern doesn't match words if it's corresponding parts start not after a delimiter/from a capital letter | 0 | 1 | 0 | correctness | niche | 3 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324845.md) |
-| 10 | [#275262](https://github.com/microsoft/vscode/issues/275262) | Keyboard shortcuts, diffs can be selected as context but don't actually get added | 0 | 1 | 0 | papercut | common | 1 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 275262` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275262.md) |
+| 6 | [#277173](https://github.com/microsoft/vscode/issues/277173) | Change copilot icon in copilot code review comments | 0 | 2 | 0 | visual | common | 4 | — | 3/6 Plausible | — | `npm run implement -- --issue 277173` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277173.md) |
+| 7 | [#316368](https://github.com/microsoft/vscode/issues/316368) | stop working after update | 0 | 1 | 0 | correctness | niche | 3 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316368.md) |
+| 8 | [#324845](https://github.com/microsoft/vscode/issues/324845) | Fuzzy search pattern doesn't match words if it's corresponding parts start not after a delimiter/from a capital letter | 0 | 1 | 0 | correctness | niche | 3 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324845.md) |
+| 9 | [#275262](https://github.com/microsoft/vscode/issues/275262) | Keyboard shortcuts, diffs can be selected as context but don't actually get added | 0 | 1 | 0 | papercut | common | 1 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 275262` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275262.md) |
+| 10 | [#294114](https://github.com/microsoft/vscode/issues/294114) | Github copilot non si connette | 0 | 1 | 0 | none | niche | 1 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294114.md) |
 
 <details>
-<summary>11 more bugs (score ≤ 1)</summary>
+<summary>11 more bugs (score ≤ 0)</summary>
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 11 | [#294114](https://github.com/microsoft/vscode/issues/294114) | Github copilot non si connette | 0 | 1 | 0 | none | niche | 1 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/294114.md) |
+| 11 | [#233425](https://github.com/microsoft/vscode/issues/233425) | Issue reporter fails without telling the user why if content is too large | 0 | 0 | 0 | papercut | niche | 0 | — | 5/6 Source-confirmed | yes | `npm run implement -- --issue 233425` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/233425.md) |
 | 12 | [#271725](https://github.com/microsoft/vscode/issues/271725) | review code issue | 0 | 0 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/271725.md) |
 | 13 | [#276240](https://github.com/microsoft/vscode/issues/276240) | When Copilot Code Review (CCR) no-ops, there's no notice to user as to why | 0 | 0 | 0 | papercut | common | 0 | — | 5/6 Source-confirmed | yes | `npm run implement -- --issue 276240` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276240.md) |
 | 14 | [#278450](https://github.com/microsoft/vscode/issues/278450) | GHCP Code Review does not respect Git worktree boundaries | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 278450` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278450.md) |
@@ -38,7 +38,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-## Feature requests (top 10 of 23)
+## Feature requests (top 10 of 24)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -54,23 +54,24 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 10 | [#273983](https://github.com/microsoft/vscode/issues/273983) | Add setting to gradually hide or show copy button on different types of hovers | 0 | 0 | 1 | dormant | 8 | `npm run implement -- --issue 273983` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273983.md) |
 
 <details>
-<summary>13 more feature requests (score ≤ 7)</summary>
+<summary>14 more feature requests (score ≤ 7)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 11 | [#278216](https://github.com/microsoft/vscode/issues/278216) | `~find-duplicates` should consider date when returning semantically similar issues | 0 | 0 | 1 | dormant · vision-aligned | 7 | `npm run implement -- --issue 278216` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278216.md) |
-| 12 | [#314600](https://github.com/microsoft/vscode/issues/314600) | Adopt GitHub Issue Forms with automatic area labeling for incoming issues | 0 | 3 | 0 | backlog-candidate · vision-aligned | 7 | `npm run implement -- --issue 314600` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314600.md) |
-| 13 | [#276976](https://github.com/microsoft/vscode/issues/276976) | Add built in `/code-review` slash command to copilot chat | 1 | 1 | 0 | dormant · vision-aligned | 6 | `npm run implement -- --issue 276976` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276976.md) |
-| 14 | [#277901](https://github.com/microsoft/vscode/issues/277901) | Add discoverable main button for code reviews | 1 | 1 | 0 | dormant · vision-aligned | 6 | `npm run implement -- --issue 277901` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277901.md) |
-| 15 | [#275701](https://github.com/microsoft/vscode/issues/275701) | Offer code review on Changes Files in chat and remote agents | 1 | 0 | 0 | backlog-candidate · vision-aligned | 5 | `npm run implement -- --issue 275701` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275701.md) |
-| 16 | [#270444](https://github.com/microsoft/vscode/issues/270444) | Add a submenu to the snooze option | 1 | 1 | 0 | dormant · vision-aligned | 4 | `npm run implement -- --issue 270444` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/270444.md) |
-| 17 | [#278229](https://github.com/microsoft/vscode/issues/278229) | `~find-duplicates` should include 1 sentence descriptions on the related issues | 1 | 0 | 0 | dormant · vision-aligned | 3 | `npm run implement -- --issue 278229` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278229.md) |
+| 12 | [#276976](https://github.com/microsoft/vscode/issues/276976) | Add built in `/code-review` slash command to copilot chat | 1 | 1 | 0 | dormant · vision-aligned | 6 | `npm run implement -- --issue 276976` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276976.md) |
+| 13 | [#277901](https://github.com/microsoft/vscode/issues/277901) | Add discoverable main button for code reviews | 1 | 1 | 0 | dormant · vision-aligned | 6 | `npm run implement -- --issue 277901` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277901.md) |
+| 14 | [#275701](https://github.com/microsoft/vscode/issues/275701) | Offer code review on Changes Files in chat and remote agents | 1 | 0 | 0 | backlog-candidate · vision-aligned | 5 | `npm run implement -- --issue 275701` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/275701.md) |
+| 15 | [#270444](https://github.com/microsoft/vscode/issues/270444) | Add a submenu to the snooze option | 1 | 1 | 0 | dormant · vision-aligned | 4 | `npm run implement -- --issue 270444` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/270444.md) |
+| 16 | [#278229](https://github.com/microsoft/vscode/issues/278229) | `~find-duplicates` should include 1 sentence descriptions on the related issues | 1 | 0 | 0 | dormant · vision-aligned | 3 | `npm run implement -- --issue 278229` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278229.md) |
+| 17 | [#314600](https://github.com/microsoft/vscode/issues/314600) | Adopt GitHub Issue Forms with automatic area labeling for incoming issues | 0 | 3 | 0 | backlog-candidate · vision-aligned | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314600.md) |
 | 18 | [#314566](https://github.com/microsoft/vscode/issues/314566) | Introduce AI-assisted analysis for Pull Requests | 0 | 2 | 0 | active | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314566.md) |
-| 19 | [#273615](https://github.com/microsoft/vscode/issues/273615) | Enable Ctrl+Click on slash commands in chat input to open prompt file | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | `npm run implement -- --issue 273615` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273615.md) |
-| 20 | [#277910](https://github.com/microsoft/vscode/issues/277910) | We should have benchmarks on Copilot Code Reviews | 0 | 0 | 0 | dormant · vision-aligned | 0 | `npm run implement -- --issue 277910` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277910.md) |
-| 21 | [#314421](https://github.com/microsoft/vscode/issues/314421) | Proposal: Community-Augmented Endgame with mandatory regression profiles | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314421.md) |
-| 22 | [#314622](https://github.com/microsoft/vscode/issues/314622) | Introduce multi-tier difficulty labels to improve newcomer onboarding | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314622.md) |
-| 23 | [#314624](https://github.com/microsoft/vscode/issues/314624) | Standardize the pull request template | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314624.md) |
+| 19 | [#222922](https://github.com/microsoft/vscode/issues/222922) | Add `Report Issue...` option to gearwheel menus of extension in Extension view | 0 | 0 | 0 | backlog-candidate | 0 | `npm run implement -- --issue 222922` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/222922.md) |
+| 20 | [#273615](https://github.com/microsoft/vscode/issues/273615) | Enable Ctrl+Click on slash commands in chat input to open prompt file | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | `npm run implement -- --issue 273615` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273615.md) |
+| 21 | [#277910](https://github.com/microsoft/vscode/issues/277910) | We should have benchmarks on Copilot Code Reviews | 0 | 0 | 0 | dormant · vision-aligned | 0 | `npm run implement -- --issue 277910` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277910.md) |
+| 22 | [#314421](https://github.com/microsoft/vscode/issues/314421) | Proposal: Community-Augmented Endgame with mandatory regression profiles | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314421.md) |
+| 23 | [#314622](https://github.com/microsoft/vscode/issues/314622) | Introduce multi-tier difficulty labels to improve newcomer onboarding | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314622.md) |
+| 24 | [#314624](https://github.com/microsoft/vscode/issues/314624) | Standardize the pull request template | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314624.md) |
 
 </details>
 

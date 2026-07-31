@@ -1,18 +1,18 @@
 # Top issues — jo-oikawa
 
-Value ranking of reviewed open issues assigned to `jo-oikawa` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-27 17:26 UTC. Also available [grouped by theme](jo-oikawa-themes.md).
+Value ranking of reviewed open issues assigned to `jo-oikawa` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-07-31 14:30 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; auto-fix is a tractability hint. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
 ## Bugs (top 12 of 32)
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#313030](https://github.com/microsoft/vscode/issues/313030) | "Start implementation" button stays in plan mode | 4 | 4 | 0 | correctness | common | 100 | — | 3/6 Plausible | — | `npm run implement -- --issue 313030` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313030.md) |
 | 2 | [#272824](https://github.com/microsoft/vscode/issues/272824) | Chat response: search response is inconsistent | 0 | 18 | 0 | visual | common | 42 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/272824.md) |
 | 3 | [#325062](https://github.com/microsoft/vscode/issues/325062) | Dropdown menu subheader text color isn't accessible in selected state | 0 | 1 | 1 | visual | common | 30 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 325062` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325062.md) |
 | 4 | [#251325](https://github.com/microsoft/vscode/issues/251325) | Accessibility: Insufficient contrast for file path in VSCode Panel failing WCAG 1.4.3 Contrast (Minimum) Requirement | 1 | 1 | 1 | visual | common | 27 | — | 4/6 Traced | yes | `npm run implement -- --issue 251325` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/251325.md) |
-| 5 | [#223297](https://github.com/microsoft/vscode/issues/223297) | Profiles editor is not accessible / usable by keyboard | 0 | 7 | 1 | visual | common | 25 | — | 5/6 Source-confirmed | yes | `npm run implement -- --issue 223297` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/223297.md) |
+| 5 | [#223297](https://github.com/microsoft/vscode/issues/223297) | Profiles editor is not accessible / usable by keyboard | 0 | 7 | 1 | visual | common | 26 | — | 5/6 Source-confirmed | yes | `npm run implement -- --issue 223297` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/223297.md) |
 | 6 | [#182173](https://github.com/microsoft/vscode/issues/182173) | Cannot see the diff anymore in the Light Modern theme | 0 | 8 | 1 | visual | common | 23 | — | — | — | `npm run implement -- --issue 182173` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/182173.md) |
 | 7 | [#261472](https://github.com/microsoft/vscode/issues/261472) | UX: Button and font size inconsistency | 0 | 9 | 0 | visual | common | 20 | — | — | — | `npm run implement -- --issue 261472` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/261472.md) |
 | 8 | [#293892](https://github.com/microsoft/vscode/issues/293892) | Rendering glitch in tool approval | 0 | 2 | 1 | visual | niche | 17 | — | 6/6 Confirmed | — | `npm run implement -- --issue 293892` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293892.md) |
@@ -24,7 +24,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 <details>
 <summary>20 more bugs (score ≤ 13)</summary>
 
-| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Auto-fix | Implement | Review |
+| # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Implement | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 13 | [#245121](https://github.com/microsoft/vscode/issues/245121) | Accessibility - High contrast theme on activity bar inconsistent | 2 | 2 | 0 | visual | niche | 13 | — | 5/6 Source-confirmed | — | `npm run implement -- --issue 245121` | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/245121.md) |
 | 14 | [#317037](https://github.com/microsoft/vscode/issues/317037) | "Files changed" working set accumulates unrelated files and cannot be dismissed — persists across sessions | 1 | 0 | 0 | correctness | niche | 13 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317037.md) |
