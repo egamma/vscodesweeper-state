@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 15566 issues reviewed · generated 2026-07-31 14:30 UTC
+[← Home](index.html) · 16401 issues reviewed · generated 2026-07-31 20:27 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 15566
-- **Close proposals:** 2326 (15% of reviewed)
-- **Acted on (closed):** 231 (10% of proposals)
+- **Issues reviewed:** 16401
+- **Close proposals:** 2485 (15% of reviewed)
+- **Acted on (closed):** 231 (9% of proposals)
 - **Closed with the sweeper's comment:** 166 (72% of acted-on) — 138 verbatim, 16 inside a longer comment, 12 edited
-- **Still awaiting action:** 2095 open close proposals
+- **Still awaiting action:** 2254 open close proposals
 
-_Close proposals count the whole corpus (519 of the 15566 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2095 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (519 of the 16401 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2254 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -56,15 +56,16 @@ _Close proposals count the whole corpus (519 of the 15566 reviewed issues have s
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 722 | 56 | 8% | 32 |
-| implemented-on-main | 664 | 89 | 13% | 70 |
-| *caused-by-extension | 233 | 22 | 9% | 14 |
-| *question | 226 | 10 | 4% | 7 |
-| *as-designed | 220 | 35 | 16% | 32 |
+| *duplicate | 810 | 56 | 7% | 32 |
+| implemented-on-main | 700 | 89 | 13% | 70 |
+| *caused-by-extension | 238 | 22 | 9% | 14 |
+| *question | 233 | 10 | 4% | 7 |
+| *as-designed | 231 | 35 | 15% | 32 |
 | *not-reproducible | 115 | 8 | 7% | 5 |
-| *out-of-scope | 62 | 5 | 8% | 3 |
-| *off-topic | 61 | 4 | 7% | 2 |
-| *extension-candidate | 22 | 2 | 9% | 1 |
+| *out-of-scope | 68 | 5 | 7% | 3 |
+| *off-topic | 62 | 4 | 6% | 2 |
+| *extension-candidate | 24 | 2 | 8% | 1 |
+| invalid | 3 | 0 | 0% | 0 |
 | upstream | 1 | 0 | 0% | 0 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
