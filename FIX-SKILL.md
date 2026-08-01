@@ -29,4 +29,4 @@ The *Copy fix prompt* button on the dashboard/top pages copies exactly this line
 - "Not agent-fixable" refusal → the review found no safe fix spec; check the record for what it concluded instead.
 - Pre-merge testing → copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/fix-issue/SKILL.md) into `~/.copilot/skills/fix-issue/` or `~/.claude/skills/fix-issue/`.
 
-_fix-issue skill v1 · generated 2026-08-01 08:48 UTC._
+_fix-issue skill v1 · generated 2026-08-01 16:09 UTC._
