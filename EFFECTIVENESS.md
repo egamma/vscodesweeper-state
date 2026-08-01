@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 35 swept users · 16401 issues reviewed · generated 2026-07-31 20:27 UTC
+[← Home](index.html) · 35 swept users · 16471 issues reviewed · generated 2026-08-01 08:39 UTC
 
 ## Closure outcome per swept user
 
@@ -31,14 +31,14 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | DonJayamanne | 337 | 38 (11%) | 29 (9%) | 270 (80%) | **20%** |
 | rzhao271 | 332 | 30 (9%) | 33 (10%) | 269 (81%) | **19%** |
 | aiday-mar | 295 | 23 (8%) | 4 (1%) | 268 (91%) | **9%** |
-| Copilot | 276 | 18 (7%) | 4 (1%) | 254 (92%) | **8%** |
+| Copilot | 277 | 18 (6%) | 4 (1%) | 255 (92%) | **8%** |
 | dmitrivMS | 261 | 39 (15%) | 31 (12%) | 191 (73%) | **27%** |
-| vijayupadya | 189 | 21 (11%) | 34 (18%) | 134 (71%) | **29%** |
+| vijayupadya | 189 | 22 (12%) | 34 (18%) | 133 (70%) | **30%** |
 | pwang347 | 170 | 20 (12%) | 26 (15%) | 124 (73%) | **27%** |
 | alexr00 | 161 | 8 (5%) | 4 (2%) | 149 (93%) | **7%** |
 | amunger | 153 | 7 (5%) | 6 (4%) | 140 (92%) | **8%** |
 | bhavyaus | 145 | 11 (8%) | 9 (6%) | 125 (86%) | **14%** |
-| vritant24 | 142 | 20 (14%) | 17 (12%) | 105 (74%) | **26%** |
+| vritant24 | 142 | 21 (15%) | 17 (12%) | 104 (73%) | **27%** |
 | jo-oikawa | 135 | 6 (4%) | 4 (3%) | 125 (93%) | **7%** |
 | sbatten | 126 | 18 (14%) | 6 (5%) | 102 (81%) | **19%** |
 | jrieken | 123 | 8 (7%) | 2 (2%) | 113 (92%) | **8%** |
@@ -54,7 +54,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | hediet | 937 | 174 | 90 | 19% |
 | justschen | 720 | 88 | 41 | 12% |
 | deepak1556 | 465 | 10 | 7 | 2% |
-| roblourens | 487 | 61 | 33 | 13% |
+| roblourens | 487 | 61 | 32 | 13% |
 | lramos15 | 440 | 73 | 37 | 17% |
 | sandy081 | 541 | 72 | 34 | 13% |
 | connor4312 | 552 | 64 | 41 | 12% |
@@ -63,7 +63,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | aeschli | 550 | 46 | 33 | 8% |
 | meganrogge | 518 | 86 | 49 | 17% |
 | mjbvz | 486 | 83 | 38 | 17% |
-| alexdima | 357 | 63 | 29 | 18% |
+| alexdima | 357 | 62 | 29 | 17% |
 | joshspicer | 397 | 44 | 16 | 11% |
 | osortega | 427 | 69 | 34 | 16% |
 | chrmarti | 140 | 24 | 12 | 17% |
@@ -73,17 +73,17 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | DonJayamanne | 270 | 30 | 20 | 11% |
 | rzhao271 | 269 | 51 | 20 | 19% |
 | aiday-mar | 268 | 41 | 26 | 15% |
-| Copilot | 254 | 42 | 26 | 17% |
+| Copilot | 255 | 42 | 26 | 16% |
 | dmitrivMS | 191 | 20 | 9 | 10% |
-| vijayupadya | 134 | 13 | 4 | 10% |
+| vijayupadya | 133 | 13 | 4 | 10% |
 | pwang347 | 124 | 10 | 6 | 8% |
 | alexr00 | 149 | 9 | 5 | 6% |
 | amunger | 140 | 31 | 11 | 22% |
 | bhavyaus | 125 | 14 | 4 | 11% |
-| vritant24 | 105 | 14 | 8 | 13% |
+| vritant24 | 104 | 14 | 8 | 13% |
 | jo-oikawa | 125 | 8 | 5 | 6% |
 | sbatten | 102 | 20 | 6 | 20% |
-| jrieken | 113 | 29 | 16 | 26% |
+| jrieken | 113 | 30 | 17 | 27% |
 | kycutler | 92 | 10 | 3 | 11% |
 
 ## fix-issue skill adoption
@@ -98,17 +98,17 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| implemented on main | 700 | 28% | 89 (13%) | 70 (10%) |
-| `*duplicate` | 810 | 33% | 56 (7%) | 32 (4%) |
-| `*caused-by-extension` | 238 | 10% | 22 (9%) | 14 (6%) |
+| implemented on main | 708 | 28% | 89 (13%) | 70 (10%) |
+| `*duplicate` | 817 | 33% | 56 (7%) | 32 (4%) |
+| `*caused-by-extension` | 245 | 10% | 22 (9%) | 14 (6%) |
 | `*question` | 233 | 9% | 10 (4%) | 7 (3%) |
-| `*as-designed` | 231 | 9% | 35 (15%) | 32 (14%) |
+| `*as-designed` | 232 | 9% | 35 (15%) | 32 (14%) |
 | `*not-reproducible` | 115 | 5% | 8 (7%) | 5 (4%) |
 | `*out-of-scope` | 68 | 3% | 5 (7%) | 3 (4%) |
 | `*off-topic` | 62 | 2% | 4 (6%) | 2 (3%) |
 | `*extension-candidate` | 24 | 1% | 2 (8%) | 1 (4%) |
 | other | 4 | 0% | — | — |
-| all reasons | 2485 | 100% | 231 (9%) | 166 (7%) |
+| all reasons | 2508 | 100% | 231 (9%) | 166 (7%) |
 
 ## Close reasons per swept user
 
@@ -141,15 +141,15 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | aiday-mar | 23 | 14 (61%) | 6 (26%) | — | — | 2 (9%) | 1 (4%) | — | — |
 | Copilot | 18 | 9 (50%) | 4 (22%) | 1 (6%) | — | 4 (22%) | — | — | — |
 | dmitrivMS | 39 | 11 (28%) | 16 (41%) | 1 (3%) | 2 (5%) | 6 (15%) | 2 (5%) | — | 1 (3%) |
-| vijayupadya | 21 | 7 (33%) | 8 (38%) | — | 4 (19%) | — | 2 (10%) | — | — |
+| vijayupadya | 22 | 7 (32%) | 9 (41%) | — | 4 (18%) | — | 2 (9%) | — | — |
 | pwang347 | 20 | 2 (10%) | 12 (60%) | 1 (5%) | 1 (5%) | 3 (15%) | — | 1 (5%) | — |
 | alexr00 | 8 | 1 (13%) | 4 (50%) | 1 (13%) | — | 1 (13%) | 1 (13%) | — | — |
 | amunger | 7 | 2 (29%) | 2 (29%) | 3 (43%) | — | — | — | — | — |
 | bhavyaus | 11 | 2 (18%) | 3 (27%) | — | 2 (18%) | 4 (36%) | — | — | — |
-| vritant24 | 20 | 6 (30%) | 10 (50%) | — | 3 (15%) | — | — | — | 1 (5%) |
+| vritant24 | 21 | 6 (29%) | 11 (52%) | — | 3 (14%) | — | — | — | 1 (5%) |
 | jo-oikawa | 6 | 2 (33%) | 1 (17%) | — | 1 (17%) | 1 (17%) | — | 1 (17%) | — |
 | sbatten | 18 | 6 (33%) | 4 (22%) | — | 2 (11%) | 3 (17%) | 1 (6%) | 2 (11%) | — |
 | jrieken | 8 | — | 2 (25%) | 1 (13%) | — | 4 (50%) | 1 (13%) | — | — |
 | kycutler | 7 | 3 (43%) | 1 (14%) | 1 (14%) | 1 (14%) | 1 (14%) | — | — | — |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (33 users, 532 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (33 users, 603 reviews — mostly co-assignees)._
