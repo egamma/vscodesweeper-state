@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>fix-issue skill — VS Code Sweeper</title>
+<title>sweeper-fix skill — VS Code Sweeper</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --accent: #0969da; --row: #f6f8fa;
@@ -29,16 +29,16 @@
 </style>
 </head>
 <body>
-  <h1>The fix-issue skill</h1>
+  <h1>The sweeper-fix skill</h1>
   <p class="lede">Let an agent implement a sweeper-reviewed fix for one of your <code>microsoft/vscode</code> issues — from your own checkout, under your own identity, as a draft PR you own.</p>
 
   <h2>What the sweeper did for you</h2>
   <p>The sweeper reviewed the open <code>microsoft/vscode</code> backlog with a source checkout and marked the issues an agent can fix — each with a <strong>fix spec</strong> written while tracing the defect: the observable problem, the fix boundary (what must <em>not</em> change), the likely files, and a validation that becomes the regression test. Your ranked list is on <a href="https://egamma.github.io/vscodesweeper-state/index.html">your top-issues page</a> (filter: <em>agent-fixable</em>), and every spec is inspectable there before you run anything.</p>
 
   <h2>Using it</h2>
-  <p><strong>One-time setup (interim):</strong> the skill is headed for the vscode repo's <code>.github/skills/</code> (once that PR lands, your checkout has it with no install at all). Until then, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/fix-issue/SKILL.md">the generated SKILL.md</a> into your agent's personal skills dir — <code>~/.copilot/skills/fix-issue/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/fix-issue/SKILL.md</code> (Claude Code).</p>
+  <p><strong>One-time setup (interim):</strong> the skill is headed for the vscode repo's <code>.github/skills/</code> (once that PR lands, your checkout has it with no install at all). Until then, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md">the generated SKILL.md</a> into your agent's personal skills dir — <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/sweeper-fix/SKILL.md</code> (Claude Code).</p>
   <p>Then, in your agent, from your vscode checkout, just ask:</p>
-  <pre>Fix microsoft/vscode issue #262104 using the vscodesweeper fix-issue skill.</pre>
+  <pre>Fix microsoft/vscode issue #262104 using the sweeper-fix skill.</pre>
   <p>The <em>Copy fix prompt</em> button on the dashboard and top pages copies exactly this line for the row's issue — an optional shortcut, nothing more.</p>
 
   <h2>What to expect</h2>
@@ -52,11 +52,11 @@
 
   <h2>Troubleshooting</h2>
   <ul>
-    <li><strong>Skill doesn't trigger?</strong> Say "fix-issue skill" explicitly (agents match on the skill description). Copilot CLI loads skills at session start — restart it after pulling a checkout that just gained the skill.</li>
+    <li><strong>Skill doesn't trigger?</strong> Say "sweeper-fix skill" explicitly (agents match on the skill description). Copilot CLI loads skills at session start — restart it after pulling a checkout that just gained the skill.</li>
     <li><strong>"Not agent-fixable" refusal?</strong> The review found no safe fix spec for that issue — the skill only implements reviewed specs. Check the record linked from the dashboard for what the review concluded instead.</li>
-    <li><strong>Skill still not found?</strong> Check the SKILL.md landed at exactly <code>~/.copilot/skills/fix-issue/SKILL.md</code> (or the Claude equivalent) — the folder name must match the skill name.</li>
+    <li><strong>Skill still not found?</strong> Check the SKILL.md landed at exactly <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (or the Claude equivalent) — the folder name must match the skill name.</li>
   </ul>
 
-  <footer>fix-issue skill v1 · generated 2026-08-01 16:53 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
+  <footer>sweeper-fix skill v2 · generated 2026-08-02 12:27 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
 </body>
 </html>

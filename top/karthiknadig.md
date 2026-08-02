@@ -1,8 +1,8 @@
 # Top issues — karthiknadig
 
-Value ranking of reviewed open issues assigned to `karthiknadig` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `karthiknadig` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
 ## Bugs (top 10 of 15)
 
@@ -44,4 +44,4 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 6 | [#269114](https://github.com/microsoft/vscode/issues/269114) | Add create issue from chat component feature | 0 | 0 | 0 | dormant · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/269114.md) |
 | 7 | [#317991](https://github.com/microsoft/vscode/issues/317991) | [Feature Request] Add commands/keybindings to switch Copilot Chat model — both picker and direct model selection | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317991.md) |
 
-_6 reviewed item(s) of other types (debt, polish, question, upstream, under-discussion) are not ranked._
+_5 reviewed item(s) of other types (debt, polish, question, upstream, under-discussion) are not ranked._

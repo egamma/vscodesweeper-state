@@ -1,10 +1,10 @@
 # Top issues — alexr00
 
-Value ranking of reviewed open issues assigned to `alexr00` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `alexr00` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 18 of 49)
+## Bugs (top 18 of 48)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -28,7 +28,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 18 | [#182034](https://github.com/microsoft/vscode/issues/182034) | Right Overflow | 0 | 11 | 0 | visual | niche | 15 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/182034.md) |
 
 <details>
-<summary>31 more bugs (score ≤ 14)</summary>
+<summary>30 more bugs (score ≤ 14)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -53,16 +53,15 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 37 | [#247984](https://github.com/microsoft/vscode/issues/247984) | Enabling Tree Sitter removes minty fields in builtInExtensionsCG.ts | 0 | 1 | 0 | visual | common | 3 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/247984.md) |
 | 38 | [#261553](https://github.com/microsoft/vscode/issues/261553) | RuntimeError: memory access out of bounds when using Copilot chat | 0 | 1 | 0 | correctness | niche | 3 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/261553.md) |
 | 39 | [#320371](https://github.com/microsoft/vscode/issues/320371) | implicit PR attachment shows when PR is already attached | 0 | 1 | 0 | visual | niche | 3 | — | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320371.md) |
-| 40 | [#326547](https://github.com/microsoft/vscode/issues/326547) | Bad Syntax highlighting for BASH scripts | 0 | 1 | 0 | none | niche | 3 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326547.md) |
-| 41 | [#188823](https://github.com/microsoft/vscode/issues/188823) | SVGs don't seem to work for `iconPath` in `QuickPickItem` | 0 | 2 | 0 | papercut | niche | 2 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/188823.md) |
-| 42 | [#320899](https://github.com/microsoft/vscode/issues/320899) | the issue of showing previous projects and folders on remote explorer | 0 | 1 | 0 | papercut | niche | 2 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320899.md) |
-| 43 | [#185641](https://github.com/microsoft/vscode/issues/185641) | Perl syntax highlighting bug with embedded JavaScript | 0 | 1 | 0 | visual | niche | 1 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/185641.md) |
-| 44 | [#210670](https://github.com/microsoft/vscode/issues/210670) | Restarting extensions messes the script order in npm scripts pane in the folder side bar. | 0 | 0 | 0 | visual | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/210670.md) |
-| 45 | [#250481](https://github.com/microsoft/vscode/issues/250481) | Ghost text - incorrect coloring using treesitter | 0 | 0 | 0 | visual | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/250481.md) |
-| 46 | [#250488](https://github.com/microsoft/vscode/issues/250488) | Syntax highlighting feels slower | 0 | 0 | 0 | perf | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/250488.md) |
-| 47 | [#320384](https://github.com/microsoft/vscode/issues/320384) | Simple file dialog - change the name when creating a new folder | 0 | 0 | 0 | papercut | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320384.md) |
-| 48 | [#323659](https://github.com/microsoft/vscode/issues/323659) | bug: TreeView selection becomes corrupted when a context key update changes item context menu visibility | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323659.md) |
-| 49 | [#324042](https://github.com/microsoft/vscode/issues/324042) | On 'manageCheckboxStateManually', refreshing node with new checkbox state flips all parent checkbox states recursively | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324042.md) |
+| 40 | [#188823](https://github.com/microsoft/vscode/issues/188823) | SVGs don't seem to work for `iconPath` in `QuickPickItem` | 0 | 2 | 0 | papercut | niche | 2 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/188823.md) |
+| 41 | [#320899](https://github.com/microsoft/vscode/issues/320899) | the issue of showing previous projects and folders on remote explorer | 0 | 1 | 0 | papercut | niche | 2 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320899.md) |
+| 42 | [#185641](https://github.com/microsoft/vscode/issues/185641) | Perl syntax highlighting bug with embedded JavaScript | 0 | 1 | 0 | visual | niche | 1 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/185641.md) |
+| 43 | [#210670](https://github.com/microsoft/vscode/issues/210670) | Restarting extensions messes the script order in npm scripts pane in the folder side bar. | 0 | 0 | 0 | visual | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/210670.md) |
+| 44 | [#250481](https://github.com/microsoft/vscode/issues/250481) | Ghost text - incorrect coloring using treesitter | 0 | 0 | 0 | visual | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/250481.md) |
+| 45 | [#250488](https://github.com/microsoft/vscode/issues/250488) | Syntax highlighting feels slower | 0 | 0 | 0 | perf | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/250488.md) |
+| 46 | [#320384](https://github.com/microsoft/vscode/issues/320384) | Simple file dialog - change the name when creating a new folder | 0 | 0 | 0 | papercut | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320384.md) |
+| 47 | [#323659](https://github.com/microsoft/vscode/issues/323659) | bug: TreeView selection becomes corrupted when a context key update changes item context menu visibility | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323659.md) |
+| 48 | [#324042](https://github.com/microsoft/vscode/issues/324042) | On 'manageCheckboxStateManually', refreshing node with new checkbox state flips all parent checkbox states recursively | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324042.md) |
 
 </details>
 
@@ -112,7 +111,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 34 | [#147251](https://github.com/microsoft/vscode/issues/147251) | Allow comment UI to be triggered via a clickable icon in the gutter | 10 | 6 | 0 | backlog-candidate | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/147251.md) |
 | 35 | [#153936](https://github.com/microsoft/vscode/issues/153936) | Allow limited set of markdown in TreeView#message | 9 | 5 | 0 | backlog-candidate · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/153936.md) |
 | 36 | [#175270](https://github.com/microsoft/vscode/issues/175270) | FR: Allow extension views to be defined as a fixed height. | 8 | 0 | 2 | backlog-candidate | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/175270.md) |
-| 37 | [#292065](https://github.com/microsoft/vscode/issues/292065) | Add Syntax Highlighting Support for TOML Configuration Files in VS Code | 7 | 1 | 0 | active | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292065.md) |
+| 37 | [#292065](https://github.com/microsoft/vscode/issues/292065) | Add Syntax Highlighting Support for TOML Configuration Files in VS Code | 7 | 1 | 0 | dormant | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292065.md) |
 | 38 | [#160197](https://github.com/microsoft/vscode/issues/160197) | Comments: Go to Next Comment Thread *in Files* | 5 | 5 | 0 | backlog-candidate · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/160197.md) |
 | 39 | [#197939](https://github.com/microsoft/vscode/issues/197939) | Let extensions configure the "Start Discussion" for new comments | 5 | 6 | 0 | backlog-candidate · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/197939.md) |
 | 40 | [#206192](https://github.com/microsoft/vscode/issues/206192) | Show Comments in TextMate Scope Inspector | 4 | 7 | 1 | backlog-candidate | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/206192.md) |
@@ -179,4 +178,4 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-_11 reviewed item(s) of other types (debt, polish, question, upstream, under-discussion) are not ranked._
+_12 reviewed item(s) of other types (debt, polish, question, upstream, under-discussion) are not ranked._

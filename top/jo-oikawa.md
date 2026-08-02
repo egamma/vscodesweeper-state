@@ -1,10 +1,10 @@
 # Top issues — jo-oikawa
 
-Value ranking of reviewed open issues assigned to `jo-oikawa` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `jo-oikawa` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 12 of 32)
+## Bugs (top 12 of 31)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -22,7 +22,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 12 | [#319094](https://github.com/microsoft/vscode/issues/319094) | chat.tools.autoApprove: true does not suppress approval prompts for built-in agent tools | 0 | 0 | 1 | none | niche | 14 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/319094.md) |
 
 <details>
-<summary>20 more bugs (score ≤ 13)</summary>
+<summary>19 more bugs (score ≤ 13)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -45,7 +45,6 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 29 | [#316374](https://github.com/microsoft/vscode/issues/316374) | Cannot attach file references using '@' on chat agent window | 0 | 0 | 0 | papercut | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/316374.md) |
 | 30 | [#317761](https://github.com/microsoft/vscode/issues/317761) | Agent Window: File diff view from "Changes" section only shows standard code instead of split comparison layout | 0 | 0 | 0 | correctness | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317761.md) |
 | 31 | [#319594](https://github.com/microsoft/vscode/issues/319594) | Component Explorer fails to start in agents window when using Copilot CLI harness | 0 | 0 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/319594.md) |
-| 32 | [#326152](https://github.com/microsoft/vscode/issues/326152) | "languageModelTools" are duplicated in the tool picker | 0 | 0 | 0 | visual | common | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326152.md) |
 
 </details>
 

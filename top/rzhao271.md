@@ -1,10 +1,10 @@
 # Top issues — rzhao271
 
-Value ranking of reviewed open issues assigned to `rzhao271` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `rzhao271` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 22 of 181)
+## Bugs (top 22 of 182)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -32,7 +32,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 22 | [#195352](https://github.com/microsoft/vscode/issues/195352) | Integration test failure | 0 | 2 | 1 | crash | niche | 2 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/195352.md) |
 
 <details>
-<summary>159 more bugs (score ≤ 2)</summary>
+<summary>160 more bugs (score ≤ 2)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -195,6 +195,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 179 | [#320735](https://github.com/microsoft/vscode/issues/320735) | Settings UI disagrees with actual value for application-scoped setting | 0 | 0 | 0 | correctness | niche | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320735.md) |
 | 180 | [#321344](https://github.com/microsoft/vscode/issues/321344) | italic fonts are totally broken in ≥ v1.123 | 0 | 0 | 0 | visual | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321344.md) |
 | 181 | [#327308](https://github.com/microsoft/vscode/issues/327308) | [Error] unhandlederror-command 'workbench.userDataSync.actions.turnOn' not found | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327308.md) |
+| 182 | [#327360](https://github.com/microsoft/vscode/issues/327360) | Settings editor search: Down Arrow does not focus settings on macOS | 0 | 1 | 0 | correctness | common | 0 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327360.md) |
 
 </details>
 

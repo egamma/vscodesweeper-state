@@ -1,4 +1,4 @@
-# The fix-issue skill
+# The sweeper-fix skill
 
 Let an agent implement a sweeper-reviewed fix for one of your `microsoft/vscode` issues — from your own checkout, under your own identity, as a draft PR you own.
 
@@ -8,10 +8,10 @@ The sweeper reviewed the open `microsoft/vscode` backlog with a source checkout 
 
 ## Using it
 
-**One-time setup (interim):** until the skill lands in the vscode repo's `.github/skills/` (PR pending; then no install at all), copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/fix-issue/SKILL.md) into `~/.copilot/skills/fix-issue/SKILL.md` or `~/.claude/skills/fix-issue/SKILL.md`. Then, from your vscode checkout, ask your agent:
+**One-time setup (interim):** until the skill lands in the vscode repo's `.github/skills/` (PR pending; then no install at all), copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/SKILL.md` or `~/.claude/skills/sweeper-fix/SKILL.md`. Then, from your vscode checkout, ask your agent:
 
 ```
-Fix microsoft/vscode issue #262104 using the vscodesweeper fix-issue skill.
+Fix microsoft/vscode issue #262104 using the sweeper-fix skill.
 ```
 
 The *Copy fix prompt* button on the dashboard/top pages copies exactly this line for the row's issue.
@@ -25,8 +25,8 @@ The *Copy fix prompt* button on the dashboard/top pages copies exactly this line
 
 ## Troubleshooting
 
-- Skill doesn't trigger → say "fix-issue skill" explicitly; restart Copilot CLI after the checkout gains the skill (skills load at session start).
+- Skill doesn't trigger → say "sweeper-fix skill" explicitly; restart Copilot CLI after the checkout gains the skill (skills load at session start).
 - "Not agent-fixable" refusal → the review found no safe fix spec; check the record for what it concluded instead.
-- Pre-merge testing → copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/fix-issue/SKILL.md) into `~/.copilot/skills/fix-issue/` or `~/.claude/skills/fix-issue/`.
+- Pre-merge testing → copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/` or `~/.claude/skills/sweeper-fix/`.
 
-_fix-issue skill v1 · generated 2026-08-01 16:53 UTC._
+_sweeper-fix skill v2 · generated 2026-08-02 12:27 UTC._

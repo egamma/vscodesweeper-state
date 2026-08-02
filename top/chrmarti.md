@@ -1,23 +1,23 @@
 # Top issues — chrmarti
 
-Value ranking of reviewed open issues assigned to `chrmarti` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `chrmarti` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 25 of 299)
+## Bugs (top 25 of 300)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#34385](https://github.com/microsoft/vscode/issues/34385) | XHR Failed on trying to install plugins via Visual Studio code | 108 | 215 | 1 | correctness | common | 100 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/34385.md) |
-| 2 | [#312925](https://github.com/microsoft/vscode/issues/312925) | VS Code crashes (code 5) with Remote SSH + Copilot Chat codebase indexing on M1 | 9 | 5 | 0 | crash | common | 31 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312925.md) |
+| 2 | [#312925](https://github.com/microsoft/vscode/issues/312925) | VS Code crashes (code 5) with Remote SSH + Copilot Chat codebase indexing on M1 | 9 | 5 | 0 | crash | common | 30 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312925.md) |
 | 3 | [#312110](https://github.com/microsoft/vscode/issues/312110) | PendingMigrationError: navigator is now a global in nodejs thrown during module load on remote VS Code server,   causing repeated renderer crashes and Remote SSH disconnections | 3 | 12 | 2 | crash | common | 30 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/312110.md) |
 | 4 | [#300132](https://github.com/microsoft/vscode/issues/300132) | The rg process uses a huge amount of CPU. | 8 | 9 | 1 | perf | common | 24 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/300132.md) |
 | 5 | [#292795](https://github.com/microsoft/vscode/issues/292795) | "Invalid String Length" in Copilot Chat | 10 | 5 | 1 | correctness | common | 21 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292795.md) |
 | 6 | [#267199](https://github.com/microsoft/vscode/issues/267199) | ERR_HTTP2_PROTOCOL_ERROR | 8 | 17 | 1 | correctness | common | 20 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/267199.md) |
-| 7 | [#173861](https://github.com/microsoft/vscode/issues/173861) | Proxy agent patch prevents extensions from re-using HTTP connections | 15 | 2 | 0 | perf | common | 16 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/173861.md) |
+| 7 | [#173861](https://github.com/microsoft/vscode/issues/173861) | Proxy agent patch prevents extensions from re-using HTTP connections | 15 | 2 | 0 | perf | common | 15 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/173861.md) |
 | 8 | [#299322](https://github.com/microsoft/vscode/issues/299322) | Copilot 0.38.0 Extension - "Chat failed to load..." error after 1.110 Update | 11 | 4 | 1 | correctness | niche | 15 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/299322.md) |
 | 9 | [#283560](https://github.com/microsoft/vscode/issues/283560) | "Chat took too long to get ready" - Remote setups (WSL, Dev Containers, Remote SSH) | 3 | 14 | 1 | correctness | common | 13 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/283560.md) |
-| 10 | [#298401](https://github.com/microsoft/vscode/issues/298401) | After updating to the latest version of VS Code, the coding process has become extremely laggy, and memory usage spikes dramatically. | 7 | 6 | 0 | perf | niche | 11 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/298401.md) |
+| 10 | [#298401](https://github.com/microsoft/vscode/issues/298401) | After updating to the latest version of VS Code, the coding process has become extremely laggy, and memory usage spikes dramatically. | 7 | 6 | 0 | perf | niche | 10 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/298401.md) |
 | 11 | [#299324](https://github.com/microsoft/vscode/issues/299324) | Sorry, there was a network error. Please try again later. Request id: 836774d3-2064-4706-8d01-947d2a4d2cd0  Reason: Please check your firewall rules and network connection then try again. Error Code: net::ERR_HTTP2_PROTOCOL_ERROR: [object Object]. | 3 | 11 | 0 | correctness | common | 10 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/299324.md) |
 | 12 | [#301167](https://github.com/microsoft/vscode/issues/301167) | chat.pluginLocations: absolute paths and tilde (~/) paths not resolved in Remote WSL | 3 | 4 | 1 | correctness | common | 10 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/301167.md) |
 | 13 | [#299818](https://github.com/microsoft/vscode/issues/299818) | Critical Error 400: Unsupported value 'xhigh' for model 'gpt-5-mini-2025-08-07' (ARM64/WSL) | 5 | 1 | 0 | correctness | common | 9 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/299818.md) |
@@ -35,7 +35,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 25 | [#131836](https://github.com/microsoft/vscode/issues/131836) | Self-signed certificate error when installing Python support in WSL in spite of custom root certificate correctly installed in WSL | 1 | 21 | 1 | correctness | common | 6 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/131836.md) |
 
 <details>
-<summary>274 more bugs (score ≤ 6)</summary>
+<summary>275 more bugs (score ≤ 6)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -313,10 +313,11 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 297 | [#326631](https://github.com/microsoft/vscode/issues/326631) | [Error] [GitHub.copilot-chat] unhandlederror-Cannot read properties of undefined (reading 'start') | 0 | 0 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326631.md) |
 | 298 | [#326765](https://github.com/microsoft/vscode/issues/326765) | High CPU usage (infinite loop) When Incorrect Proxy URL is Set | 0 | 0 | 0 | perf | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326765.md) |
 | 299 | [#326800](https://github.com/microsoft/vscode/issues/326800) | When using dev containers, copilot uses `~/.copilot` within the container | 0 | 0 | 0 | correctness | common | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326800.md) |
+| 300 | [#328295](https://github.com/microsoft/vscode/issues/328295) | Detached Agents window does not expose MCP servers from Remote (WSL) extension host | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328295.md) |
 
 </details>
 
-## Feature requests (top 10 of 69)
+## Feature requests (top 10 of 71)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -332,7 +333,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 10 | [#277212](https://github.com/microsoft/vscode/issues/277212) | Code review: Allow reviewing stacked commits and vs base branch | 0 | 0 | 2 | dormant · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277212.md) |
 
 <details>
-<summary>59 more feature requests (score ≤ 3)</summary>
+<summary>61 more feature requests (score ≤ 3)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -395,6 +396,8 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 67 | [#325600](https://github.com/microsoft/vscode/issues/325600) | Third-party extensions cannot configure TLS CA verification — structural disparity with BYOK | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325600.md) |
 | 68 | [#325616](https://github.com/microsoft/vscode/issues/325616) | Feature request: User-level default Docker volume mounts for Dev Containers | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325616.md) |
 | 69 | [#325947](https://github.com/microsoft/vscode/issues/325947) | .gitignore_global doesn't work in devcontainers | 0 | 1 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325947.md) |
+| 70 | [#327726](https://github.com/microsoft/vscode/issues/327726) | WSL support in GitHub APP | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327726.md) |
+| 71 | [#328067](https://github.com/microsoft/vscode/issues/328067) | Automatically try open in devcontainer when .devcontainer config is detected | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328067.md) |
 
 </details>
 

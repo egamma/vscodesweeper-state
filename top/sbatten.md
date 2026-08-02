@@ -1,8 +1,8 @@
 # Top issues — sbatten
 
-Value ranking of reviewed open issues assigned to `sbatten` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `sbatten` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
 ## Bugs (top 17 of 51)
 
@@ -68,7 +68,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-## Feature requests (top 10 of 29)
+## Feature requests (top 10 of 28)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -76,38 +76,37 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 2 | [#61793](https://github.com/microsoft/vscode/issues/61793) | MSIX installer | 81 | 57 | 0 | backlog-candidate | 99 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/61793.md) |
 | 3 | [#126311](https://github.com/microsoft/vscode/issues/126311) | Workspace Trust - Declared Untrusted Folders | 48 | 4 | 1 | backlog-candidate · vision-aligned | 80 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/126311.md) |
 | 4 | [#208482](https://github.com/microsoft/vscode/issues/208482) | Allow icons in menus | 39 | 7 | 2 | dormant | 72 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/208482.md) |
-| 5 | [#314803](https://github.com/microsoft/vscode/issues/314803) | Feature request: Improve release-readiness traceability from pull requests to Stable | 14 | 2 | 0 | backlog-candidate | 27 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314803.md) |
-| 6 | [#204250](https://github.com/microsoft/vscode/issues/204250) | Allow for sidebar panes to collapse downwards | 5 | 0 | 0 | dormant | 8 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/204250.md) |
-| 7 | [#145696](https://github.com/microsoft/vscode/issues/145696) | Expose checkbox in extension dialog API | 3 | 8 | 0 | backlog-candidate · vision-aligned | 8 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/145696.md) |
-| 8 | [#185362](https://github.com/microsoft/vscode/issues/185362) | Allow extensions to opt-out of having a "contextualTitle" for a view | 5 | 3 | 0 | backlog-candidate · vision-aligned | 7 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/185362.md) |
-| 9 | [#289899](https://github.com/microsoft/vscode/issues/289899) | Don't ask to enable workspace trust in system folders and temp directories | 0 | 0 | 1 | dormant · vision-aligned | 7 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289899.md) |
-| 10 | [#1792](https://github.com/microsoft/vscode/issues/1792) | Proposal: Add mnemonics to context menu items | 5 | 4 | 0 | active | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/1792.md) |
+| 5 | [#204250](https://github.com/microsoft/vscode/issues/204250) | Allow for sidebar panes to collapse downwards | 5 | 0 | 0 | dormant | 8 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/204250.md) |
+| 6 | [#145696](https://github.com/microsoft/vscode/issues/145696) | Expose checkbox in extension dialog API | 3 | 8 | 0 | backlog-candidate · vision-aligned | 8 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/145696.md) |
+| 7 | [#185362](https://github.com/microsoft/vscode/issues/185362) | Allow extensions to opt-out of having a "contextualTitle" for a view | 5 | 3 | 0 | backlog-candidate · vision-aligned | 7 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/185362.md) |
+| 8 | [#289899](https://github.com/microsoft/vscode/issues/289899) | Don't ask to enable workspace trust in system folders and temp directories | 0 | 0 | 1 | dormant · vision-aligned | 7 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/289899.md) |
+| 9 | [#1792](https://github.com/microsoft/vscode/issues/1792) | Proposal: Add mnemonics to context menu items | 5 | 4 | 0 | active | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/1792.md) |
+| 10 | [#55440](https://github.com/microsoft/vscode/issues/55440) | Disable undo menu item when there is no more history available | 4 | 8 | 0 | backlog-candidate | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/55440.md) |
 
 <details>
-<summary>19 more feature requests (score ≤ 6)</summary>
+<summary>18 more feature requests (score ≤ 5)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 11 | [#55440](https://github.com/microsoft/vscode/issues/55440) | Disable undo menu item when there is no more history available | 4 | 8 | 0 | backlog-candidate | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/55440.md) |
-| 12 | [#207492](https://github.com/microsoft/vscode/issues/207492) | Extension-contributable top-level menus | 3 | 0 | 0 | dormant | 5 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/207492.md) |
-| 13 | [#314317](https://github.com/microsoft/vscode/issues/314317) | Proposal: Stable Preview channel + first-class feature gates for progressive rollout | 1 | 0 | 0 | active | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314317.md) |
-| 14 | [#276145](https://github.com/microsoft/vscode/issues/276145) | Remove intent detection from agentic ask | 0 | 1 | 1 | active · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276145.md) |
-| 15 | [#164014](https://github.com/microsoft/vscode/issues/164014) | window.zoomLevel causing blurry canvas | 3 | 3 | 0 | backlog-candidate | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/164014.md) |
-| 16 | [#308013](https://github.com/microsoft/vscode/issues/308013) | Web search tool is never used | 0 | 3 | 0 | backlog-candidate · vision-aligned | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/308013.md) |
-| 17 | [#204893](https://github.com/microsoft/vscode/issues/204893) | Allow globally disabling extensions from withinn an untrusted workspace | 0 | 1 | 1 | dormant | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/204893.md) |
-| 18 | [#174823](https://github.com/microsoft/vscode/issues/174823) | Workspace Trust - should be made accessible more easily. | 0 | 2 | 0 | backlog-candidate | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/174823.md) |
-| 19 | [#296243](https://github.com/microsoft/vscode/issues/296243) | Handle rate limit errors more gracefully | 0 | 1 | 0 | active · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296243.md) |
-| 20 | [#315079](https://github.com/microsoft/vscode/issues/315079) | Improve communication for continuation options based on past usage | 0 | 1 | 0 | backlog-candidate · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315079.md) |
-| 21 | [#117822](https://github.com/microsoft/vscode/issues/117822) | [product icon themes] theme icons support for vscode.show(Information\|Warning\|Error)Message | 0 | 2 | 0 | backlog-candidate | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/117822.md) |
-| 22 | [#125098](https://github.com/microsoft/vscode/issues/125098) | Trust editor: should allow multi-select of folders from the dialog | 0 | 0 | 0 | backlog-candidate | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/125098.md) |
-| 23 | [#152003](https://github.com/microsoft/vscode/issues/152003) | VirtualFileSystem Workspace Trust API | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/152003.md) |
-| 24 | [#172387](https://github.com/microsoft/vscode/issues/172387) | Terminal ... menu doesn't promote action when there's only one action | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/172387.md) |
-| 25 | [#180582](https://github.com/microsoft/vscode/issues/180582) | Proposal: Canonical URI identity provider | 0 | 1 | 0 | dormant · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/180582.md) |
-| 26 | [#206685](https://github.com/microsoft/vscode/issues/206685) | Toggle between minimal / default size for VS Code sidebar and last custom size. | 0 | 0 | 0 | dormant | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/206685.md) |
-| 27 | [#291933](https://github.com/microsoft/vscode/issues/291933) | Default Trusted folders on various platforms | 0 | 1 | 0 | backlog-candidate | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291933.md) |
-| 28 | [#314032](https://github.com/microsoft/vscode/issues/314032) | LLM Chat completions being used  for UI decoration / title generation/ Progress Messages | 0 | 1 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314032.md) |
-| 29 | [#314606](https://github.com/microsoft/vscode/issues/314606) | Telemetry-based quality gates for Stable release promotion | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314606.md) |
+| 11 | [#207492](https://github.com/microsoft/vscode/issues/207492) | Extension-contributable top-level menus | 3 | 0 | 0 | dormant | 5 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/207492.md) |
+| 12 | [#314317](https://github.com/microsoft/vscode/issues/314317) | Proposal: Stable Preview channel + first-class feature gates for progressive rollout | 1 | 0 | 0 | active | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314317.md) |
+| 13 | [#276145](https://github.com/microsoft/vscode/issues/276145) | Remove intent detection from agentic ask | 0 | 1 | 1 | active · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276145.md) |
+| 14 | [#164014](https://github.com/microsoft/vscode/issues/164014) | window.zoomLevel causing blurry canvas | 3 | 3 | 0 | backlog-candidate | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/164014.md) |
+| 15 | [#308013](https://github.com/microsoft/vscode/issues/308013) | Web search tool is never used | 0 | 3 | 0 | backlog-candidate · vision-aligned | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/308013.md) |
+| 16 | [#204893](https://github.com/microsoft/vscode/issues/204893) | Allow globally disabling extensions from withinn an untrusted workspace | 0 | 1 | 1 | dormant | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/204893.md) |
+| 17 | [#174823](https://github.com/microsoft/vscode/issues/174823) | Workspace Trust - should be made accessible more easily. | 0 | 2 | 0 | backlog-candidate | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/174823.md) |
+| 18 | [#296243](https://github.com/microsoft/vscode/issues/296243) | Handle rate limit errors more gracefully | 0 | 1 | 0 | active · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296243.md) |
+| 19 | [#315079](https://github.com/microsoft/vscode/issues/315079) | Improve communication for continuation options based on past usage | 0 | 1 | 0 | backlog-candidate · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315079.md) |
+| 20 | [#117822](https://github.com/microsoft/vscode/issues/117822) | [product icon themes] theme icons support for vscode.show(Information\|Warning\|Error)Message | 0 | 2 | 0 | backlog-candidate | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/117822.md) |
+| 21 | [#125098](https://github.com/microsoft/vscode/issues/125098) | Trust editor: should allow multi-select of folders from the dialog | 0 | 0 | 0 | backlog-candidate | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/125098.md) |
+| 22 | [#152003](https://github.com/microsoft/vscode/issues/152003) | VirtualFileSystem Workspace Trust API | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/152003.md) |
+| 23 | [#172387](https://github.com/microsoft/vscode/issues/172387) | Terminal ... menu doesn't promote action when there's only one action | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/172387.md) |
+| 24 | [#180582](https://github.com/microsoft/vscode/issues/180582) | Proposal: Canonical URI identity provider | 0 | 1 | 0 | dormant · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/180582.md) |
+| 25 | [#206685](https://github.com/microsoft/vscode/issues/206685) | Toggle between minimal / default size for VS Code sidebar and last custom size. | 0 | 0 | 0 | dormant | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/206685.md) |
+| 26 | [#291933](https://github.com/microsoft/vscode/issues/291933) | Default Trusted folders on various platforms | 0 | 1 | 0 | backlog-candidate | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/291933.md) |
+| 27 | [#314032](https://github.com/microsoft/vscode/issues/314032) | LLM Chat completions being used  for UI decoration / title generation/ Progress Messages | 0 | 1 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314032.md) |
+| 28 | [#314606](https://github.com/microsoft/vscode/issues/314606) | Telemetry-based quality gates for Stable release promotion | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314606.md) |
 
 </details>
 
-_26 reviewed item(s) of other types (debt, polish, question, upstream, under-discussion) are not ranked._
+_27 reviewed item(s) of other types (debt, polish, question, upstream, under-discussion) are not ranked._

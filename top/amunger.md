@@ -1,10 +1,10 @@
 # Top issues — amunger
 
-Value ranking of reviewed open issues assigned to `amunger` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `amunger` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 19 of 87)
+## Bugs (top 19 of 88)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -29,7 +29,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 19 | [#309922](https://github.com/microsoft/vscode/issues/309922) | [Unhandled Error] potential listener LEAK detected, popular — notebook/codeCellRunToolbar / menuService | 0 | 4 | 0 | perf | common | 20 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/309922.md) |
 
 <details>
-<summary>68 more bugs (score ≤ 18)</summary>
+<summary>69 more bugs (score ≤ 18)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,13 +94,14 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 78 | [#278657](https://github.com/microsoft/vscode/issues/278657) | Clicking on path in exception traceback shows error on remote Windows | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/278657.md) |
 | 79 | [#283718](https://github.com/microsoft/vscode/issues/283718) | Copilot in REPL: Cursor up/down affects last cell instead of navigating chat history | 0 | 0 | 0 | papercut | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/283718.md) |
 | 80 | [#298205](https://github.com/microsoft/vscode/issues/298205) | Format Cell not work | 0 | 0 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/298205.md) |
-| 81 | [#320851](https://github.com/microsoft/vscode/issues/320851) | Delete Cell button is not accessible using arrow key navigation in notebook toolbar:A11y_Visual Studio Code Jupyter Extensions_Home_Keyboard | 0 | 0 | 0 | papercut | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320851.md) |
-| 82 | [#321157](https://github.com/microsoft/vscode/issues/321157) | Notebook: "Run Cells In Section" (notebook.section.runCells) does nothing when invoked via keybinding | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321157.md) |
-| 83 | [#321289](https://github.com/microsoft/vscode/issues/321289) | Notebook output Font Size/Family are not correct | 0 | 0 | 0 | visual | common | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321289.md) |
-| 84 | [#321385](https://github.com/microsoft/vscode/issues/321385) | VS Code does not reload modified .ipynb files when stored on external drives and edited on another machine | 0 | 0 | 0 | correctness | niche | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321385.md) |
-| 85 | [#323775](https://github.com/microsoft/vscode/issues/323775) | The right-side panel blocks context menu | 0 | 0 | 0 | visual | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323775.md) |
-| 86 | [#324300](https://github.com/microsoft/vscode/issues/324300) | Bad UX when auto-save is on (all but "off") | 0 | 0 | 0 | papercut | niche | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324300.md) |
-| 87 | [#327470](https://github.com/microsoft/vscode/issues/327470) | runNotebookCell a cell that generates audio takes up a lot of context | 0 | 0 | 0 | perf | niche | 0 | — | 4/6 Traced | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327470.md) |
+| 81 | [#320210](https://github.com/microsoft/vscode/issues/320210) | Notebook Generate ignores extension-contributed chatInstructions | 0 | 0 | 0 | correctness | niche | 0 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320210.md) |
+| 82 | [#320851](https://github.com/microsoft/vscode/issues/320851) | Delete Cell button is not accessible using arrow key navigation in notebook toolbar:A11y_Visual Studio Code Jupyter Extensions_Home_Keyboard | 0 | 0 | 0 | papercut | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/320851.md) |
+| 83 | [#321157](https://github.com/microsoft/vscode/issues/321157) | Notebook: "Run Cells In Section" (notebook.section.runCells) does nothing when invoked via keybinding | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321157.md) |
+| 84 | [#321289](https://github.com/microsoft/vscode/issues/321289) | Notebook output Font Size/Family are not correct | 0 | 0 | 0 | visual | common | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321289.md) |
+| 85 | [#321385](https://github.com/microsoft/vscode/issues/321385) | VS Code does not reload modified .ipynb files when stored on external drives and edited on another machine | 0 | 0 | 0 | correctness | niche | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/321385.md) |
+| 86 | [#323775](https://github.com/microsoft/vscode/issues/323775) | The right-side panel blocks context menu | 0 | 0 | 0 | visual | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323775.md) |
+| 87 | [#324300](https://github.com/microsoft/vscode/issues/324300) | Bad UX when auto-save is on (all but "off") | 0 | 0 | 0 | papercut | niche | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/324300.md) |
+| 88 | [#327470](https://github.com/microsoft/vscode/issues/327470) | runNotebookCell a cell that generates audio takes up a lot of context | 0 | 0 | 0 | perf | niche | 0 | — | 4/6 Traced | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327470.md) |
 
 </details>
 
@@ -113,7 +114,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 3 | [#183350](https://github.com/microsoft/vscode/issues/183350) | Show outputs below cells during interactive sessions | 23 | 2 | 0 | backlog-candidate | 25 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/183350.md) |
 | 4 | [#175295](https://github.com/microsoft/vscode/issues/175295) | A "tight layout" mode that reduces vertical spacing | 18 | 13 | 1 | backlog-candidate | 24 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/175295.md) |
 | 5 | [#203725](https://github.com/microsoft/vscode/issues/203725) | LaTeX not rendering in cell text/html encoded outputs when embedded inside html | 9 | 11 | 2 | backlog-candidate | 16 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/203725.md) |
-| 6 | [#118833](https://github.com/microsoft/vscode/issues/118833) | Notebook output must support more ANSI sequences | 3 | 18 | 4 | backlog-candidate | 13 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/118833.md) |
+| 6 | [#118833](https://github.com/microsoft/vscode/issues/118833) | Notebook output must support more ANSI sequences | 3 | 18 | 4 | backlog-candidate | 14 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/118833.md) |
 | 7 | [#190426](https://github.com/microsoft/vscode/issues/190426) | Set output height limit and scrolling for non-text stream outputs | 10 | 4 | 0 | active | 12 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/190426.md) |
 | 8 | [#228927](https://github.com/microsoft/vscode/issues/228927) | Making all the code-cell outputs scrollable | 7 | 3 | 0 | backlog-candidate | 10 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/228927.md) |
 | 9 | [#259904](https://github.com/microsoft/vscode/issues/259904) | "allow for session" in notebook inline chat should allow for that notebook until it is closed | 0 | 0 | 2 | dormant · vision-aligned | 8 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/259904.md) |

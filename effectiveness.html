@@ -74,7 +74,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Sweep Effectiveness</h1>
-  <div class="sub"><a href="index.html">← home</a> · 35 swept users · 16989 issues reviewed · generated 2026-08-01 16:53 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 35 swept users · 16989 issues reviewed · generated 2026-08-02 12:27 UTC</div>
 
   <h2>Closure outcome per swept user</h2>
   <p class="desc">What the review concluded about each issue's fate. Route-to-area counts as keep-open — it improves triage but the issue stays open.</p>
@@ -128,7 +128,7 @@
   </div>
 
   <h2>Agent-fixable share of issues that stay open</h2>
-  <p class="desc">Of the issues the review keeps open, how many carry a reviewed fix spec an agent can implement — the <a href="fix-skill.html">fix-issue skill</a>'s pool. Dark green = value score above the agent-fix pool's median — the same demand × severity score that ranks the top pages.</p>
+  <p class="desc">Of the issues the review keeps open, how many carry a reviewed fix spec an agent can implement — the <a href="fix-skill.html">sweeper-fix skill</a>'s pool. Dark green = value score above the agent-fix pool's median — the same demand × severity score that ranks the top pages.</p>
   <div class="legend" style="margin-bottom:10px">
     <span title="Value score above the agent-fix pool median (the ranking pages' demand × severity score)"><i class="sw afhi"></i>high-value agent-fixable</span>
     <span><i class="sw aflo"></i>agent-fixable</span>
@@ -172,9 +172,9 @@
 <div class="crow"><span class="login">kycutler</span><div class="track" style="width:9.51%" title="stays open: 93"><i class="seg afhi" style="width:3.23%" title="high-value agent-fixable: 3 — value score above the agent-fix pool median (the ranking pages' demand × severity score)"></i><i class="seg aflo" style="width:7.53%" title="agent-fixable: 7"></i></div><span class="rlabel" title="of which 3 high-value">10 of 93 (11%)</span></div>
   </div>
 
-  <h2>fix-issue skill adoption</h2>
+  <h2>sweeper-fix skill adoption</h2>
   <p class="desc">Skill PRs discovered by <code>reconcile</code>'s seeded-by-marker search, per user, against their agent-fixable pool (the track). As current as the last reconcile run.</p>
-  <p class="desc">No fix-issue skill PRs discovered yet — the funnel fills in as maintainers use the <a href="fix-skill.html">skill</a> (stamps land on each reconcile run).</p>
+  <p class="desc">No sweeper-fix skill PRs discovered yet — the funnel fills in as maintainers use the <a href="fix-skill.html">skill</a> (stamps land on each reconcile run).</p>
 
   <h2>Close-proposal reasons</h2>
   <p class="desc">Why the review proposed each close — the verdict's proposed label, with

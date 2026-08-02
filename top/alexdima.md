@@ -1,10 +1,10 @@
 # Top issues — alexdima
 
-Value ranking of reviewed open issues assigned to `alexdima` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-01 08:39 UTC.
+Value ranking of reviewed open issues assigned to `alexdima` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 12:27 UTC.
 
-Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [fix-issue skill](../FIX-SKILL.md) can implement. Neither is part of the score.
+Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 25 of 247)
+## Bugs (top 25 of 248)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 25 | [#315841](https://github.com/microsoft/vscode/issues/315841) | Deadlock in extension host activation blocks tunnels auth | 0 | 1 | 1 | freeze | common | 3 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315841.md) |
 
 <details>
-<summary>222 more bugs (score ≤ 2)</summary>
+<summary>223 more bugs (score ≤ 2)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -261,6 +261,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 245 | [#326160](https://github.com/microsoft/vscode/issues/326160) | Dead key used as a shortcut or first key of a chord leaves dead-key composition active | 0 | 0 | 0 | correctness | niche | 0 | — | 4/6 Traced | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326160.md) |
 | 246 | [#326199](https://github.com/microsoft/vscode/issues/326199) | VS Code does not connect to tunnel after updating | 0 | 1 | 0 | correctness | common | 0 | — | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326199.md) |
 | 247 | [#326825](https://github.com/microsoft/vscode/issues/326825) | [Error] unhandlederror-Failed to fetch | 0 | 1 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326825.md) |
+| 248 | [#328191](https://github.com/microsoft/vscode/issues/328191) | nightly build lost text zoom | 0 | 1 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328191.md) |
 
 </details>
 

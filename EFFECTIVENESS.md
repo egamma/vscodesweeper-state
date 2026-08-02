@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 35 swept users · 16989 issues reviewed · generated 2026-08-01 16:53 UTC
+[← Home](index.html) · 35 swept users · 16989 issues reviewed · generated 2026-08-02 12:27 UTC
 
 ## Closure outcome per swept user
 
@@ -86,11 +86,11 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | jrieken | 113 | 30 | 17 | 27% |
 | kycutler | 93 | 10 | 3 | 11% |
 
-## fix-issue skill adoption
+## sweeper-fix skill adoption
 
 Skill PRs discovered by `reconcile`'s seeded-by-marker search, per user, against the agent-fixable pool. As current as the last reconcile run.
 
-_No fix-issue skill PRs discovered yet — the funnel fills in as maintainers use the skill._
+_No sweeper-fix skill PRs discovered yet — the funnel fills in as maintainers use the skill._
 
 ## Close-proposal reasons
 
