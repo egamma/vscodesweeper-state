@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 35 swept users · 16989 issues reviewed · generated 2026-08-02 13:24 UTC
+[← Home](index.html) · 35 swept users · 16989 issues reviewed · generated 2026-08-02 13:36 UTC
 
 ## Closure outcome per swept user
 
@@ -40,7 +40,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | vritant24 | 152 | 21 (14%) | 18 (12%) | 113 (74%) | **26%** |
 | bhavyaus | 149 | 11 (7%) | 10 (7%) | 128 (86%) | **14%** |
 | jo-oikawa | 135 | 6 (4%) | 4 (3%) | 125 (93%) | **7%** |
-| sbatten | 127 | 19 (15%) | 6 (5%) | 102 (80%) | **20%** |
+| sbatten | 127 | 18 (14%) | 6 (5%) | 103 (81%) | **19%** |
 | jrieken | 123 | 8 (7%) | 2 (2%) | 113 (92%) | **8%** |
 | kycutler | 101 | 7 (7%) | 1 (1%) | 93 (92%) | **8%** |
 
@@ -82,7 +82,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | vritant24 | 113 | 14 | 8 | 12% |
 | bhavyaus | 128 | 15 | 5 | 12% |
 | jo-oikawa | 125 | 8 | 5 | 6% |
-| sbatten | 102 | 20 | 6 | 20% |
+| sbatten | 103 | 20 | 6 | 19% |
 | jrieken | 113 | 30 | 17 | 27% |
 | kycutler | 93 | 10 | 3 | 11% |
 
@@ -103,12 +103,12 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 | `*caused-by-extension` | 249 | 10% | 23 (9%) | 14 (6%) |
 | `*as-designed` | 239 | 9% | 39 (16%) | 34 (14%) |
 | `*question` | 239 | 9% | 12 (5%) | 8 (3%) |
-| `*not-reproducible` | 115 | 4% | 8 (7%) | 5 (4%) |
+| `*not-reproducible` | 114 | 4% | 8 (7%) | 5 (4%) |
 | `*out-of-scope` | 72 | 3% | 6 (8%) | 3 (4%) |
 | `*off-topic` | 64 | 2% | 6 (9%) | 2 (3%) |
 | `*extension-candidate` | 28 | 1% | 4 (14%) | 1 (4%) |
 | other | 4 | 0% | — | — |
-| all reasons | 2615 | 100% | 259 (10%) | 174 (7%) |
+| all reasons | 2614 | 100% | 259 (10%) | 174 (7%) |
 
 ## Close reasons per swept user
 
@@ -148,7 +148,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | vritant24 | 21 | 6 (29%) | 11 (52%) | — | — | 3 (14%) | — | — | 1 (5%) |
 | bhavyaus | 11 | 2 (18%) | 3 (27%) | — | 4 (36%) | 2 (18%) | — | — | — |
 | jo-oikawa | 6 | 2 (33%) | 1 (17%) | — | 1 (17%) | 1 (17%) | — | 1 (17%) | — |
-| sbatten | 19 | 6 (32%) | 4 (21%) | — | 4 (21%) | 2 (11%) | 1 (5%) | 2 (11%) | — |
+| sbatten | 18 | 6 (33%) | 4 (22%) | — | 4 (22%) | 2 (11%) | — | 2 (11%) | — |
 | jrieken | 8 | — | 2 (25%) | 1 (13%) | 4 (50%) | — | 1 (13%) | — | — |
 | kycutler | 7 | 3 (43%) | 1 (14%) | 1 (14%) | 1 (14%) | 1 (14%) | — | — | — |
 

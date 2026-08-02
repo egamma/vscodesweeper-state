@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 16989 issues reviewed · generated 2026-08-02 13:24 UTC
+[← Home](index.html) · 16989 issues reviewed · generated 2026-08-02 13:36 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 16989
-- **Close proposals:** 2615 (15% of reviewed)
+- **Close proposals:** 2614 (15% of reviewed)
 - **Acted on (closed):** 259 (10% of proposals)
 - **Closed with the sweeper's comment:** 174 (67% of acted-on) — 145 verbatim, 17 inside a longer comment, 12 edited
-- **Still awaiting action:** 2356 open close proposals
+- **Still awaiting action:** 2355 open close proposals
 
-_Close proposals count the whole corpus (596 of the 16989 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2356 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (596 of the 16989 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2355 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -66,7 +66,7 @@ _Close proposals count the whole corpus (596 of the 16989 reviewed issues have s
 | *caused-by-extension | 249 | 23 | 9% | 14 |
 | *as-designed | 239 | 39 | 16% | 34 |
 | *question | 239 | 12 | 5% | 8 |
-| *not-reproducible | 115 | 8 | 7% | 5 |
+| *not-reproducible | 114 | 8 | 7% | 5 |
 | *out-of-scope | 72 | 6 | 8% | 3 |
 | *off-topic | 64 | 6 | 9% | 2 |
 | *extension-candidate | 28 | 4 | 14% | 1 |
