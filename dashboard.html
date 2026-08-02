@@ -99,7 +99,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode</code> · 16,387 open reviewed · 6,508 actionable · 602 closed since review · <a href="outcomes.html">2,615 close proposals to date</a> · <a href="fix-skill.html" title="Getting started with the sweeper-fix skill — what the Agent fix buttons feed">sweeper-fix skill</a> · generated 2026-08-02 12:47 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode</code> · 16,387 open reviewed · 6,508 actionable · 602 closed since review · <a href="outcomes.html">2,615 close proposals to date</a> · <a href="fix-skill.html" title="Getting started with the sweeper-fix skill — what the Agent fix buttons feed">sweeper-fix skill</a> · generated 2026-08-02 13:24 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">2356</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">1818</span><span class="l">needs-info</span></button><button class="card" data-action="route-to-area"><span class="n">629</span><span class="l">route-to-area</span></button><button class="card" data-action="keep-open"><span class="n">11584</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">1615</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">602</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
@@ -279,7 +279,7 @@ function afCell(r){
   // no-existing-PR gate (don't start a second fix for the same issue).
   if (r.implementPr) return '<a href="'+esc(r.implementPr)+'" target="_blank" rel="noopener" title="Experimental draft PR on microsoft/vscode (head on the fork)">draft PR ▸</a>';
   if (r.fixPr) return '<a href="'+esc(r.fixPr)+'" target="_blank" rel="noopener" title="Draft fix PR in the fork (fork-only)">draft PR ▸</a>';
-  if (r.autoFixable !== "true") return r.autoFixable === "false" ? '<span class="muted">no</span>' : '<span class="muted">—</span>';
+  if (r.autoFixable !== "true") return '<span class="muted">—</span>';
   if (isClosed(r)) return '<span class="pill af-yes">yes</span>';
   // Keep the copied line in sync with fixPromptLine() in skill-publish.ts.
   return '<button class="copy fixprompt" data-n="'+esc(r.number)+'" title="Copy the skill invocation for your agent — the sweeper-fix skill implements the reviewed fix spec from your vscode checkout and opens a draft PR you own. First time? See the sweeper-fix skill link in the header." aria-label="Copy prompt for issue '+esc(r.number)+'">Copy prompt</button>'
