@@ -1,6 +1,6 @@
 # Top issues — bhavyaus
 
-Value ranking of reviewed open issues assigned to `bhavyaus` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 13:05 UTC. Also available [grouped by theme](bhavyaus-themes.md).
+Value ranking of reviewed open issues assigned to `bhavyaus` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:25 UTC. Also available [grouped by theme](bhavyaus-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -128,7 +128,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 29 | [#283720](https://github.com/microsoft/vscode/issues/283720) | Show icon instead of talking about the icon | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/283720.md) |
 | 30 | [#284506](https://github.com/microsoft/vscode/issues/284506) | Agent could suggest to preview the site I am creating using simple browser | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/284506.md) |
 | 31 | [#284551](https://github.com/microsoft/vscode/issues/284551) | Support unified Chat Input Notification Widget | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/284551.md) |
-| 32 | [#292677](https://github.com/microsoft/vscode/issues/292677) | Extend upgrade status widget to paid skus | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292677.md) |
+| 32 | [#292677](https://github.com/microsoft/vscode/issues/292677) | Extend upgrade status widget to paid skus | 0 | 0 | 0 | dormant · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292677.md) |
 | 33 | [#296370](https://github.com/microsoft/vscode/issues/296370) | Session memory should persist when forking or sending to new chat | 0 | 0 | 0 | backlog-candidate · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296370.md) |
 | 34 | [#296846](https://github.com/microsoft/vscode/issues/296846) | Adding support for deleting individual or multiple memory files at a time | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296846.md) |
 | 35 | [#298981](https://github.com/microsoft/vscode/issues/298981) | New Chat Shows Agent Prompts of Custom Agent | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/298981.md) |

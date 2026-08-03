@@ -47,4 +47,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 16 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-08-03 10:33 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md)._
+_Generated 2026-08-03 17:07 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md)._

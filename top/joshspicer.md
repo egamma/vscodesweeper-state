@@ -1,6 +1,6 @@
 # Top issues — joshspicer
 
-Value ranking of reviewed open issues assigned to `joshspicer` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 13:24 UTC. Also available [grouped by theme](joshspicer-themes.md).
+Value ranking of reviewed open issues assigned to `joshspicer` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:35 UTC. Also available [grouped by theme](joshspicer-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -435,7 +435,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 73 | [#281370](https://github.com/microsoft/vscode/issues/281370) | No Apply Changes button in multi diff editor for cloud sessions | 0 | 2 | 0 | backlog-candidate · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/281370.md) |
 | 74 | [#282667](https://github.com/microsoft/vscode/issues/282667) | Add an 'open in codespace' button to coding agent sessions | 0 | 3 | 0 | dormant · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/282667.md) |
 | 75 | [#287968](https://github.com/microsoft/vscode/issues/287968) | Add Multiplier to Model Selection When Session Target is Set to Background | 0 | 1 | 0 | dormant · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/287968.md) |
-| 76 | [#292407](https://github.com/microsoft/vscode/issues/292407) | Add Delegate action on todos in editor | 0 | 1 | 0 | active · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292407.md) |
+| 76 | [#292407](https://github.com/microsoft/vscode/issues/292407) | Add Delegate action on todos in editor | 0 | 1 | 0 | dormant · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/292407.md) |
 | 77 | [#304175](https://github.com/microsoft/vscode/issues/304175) | Apply/try action from the customization | 0 | 1 | 0 | active · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/304175.md) |
 | 78 | [#304847](https://github.com/microsoft/vscode/issues/304847) | Add ability to hide extension contributed agents / customizations from Customizations window | 0 | 1 | 0 | active · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/304847.md) |
 | 79 | [#314103](https://github.com/microsoft/vscode/issues/314103) | Disabled model by organization still appears the in model list | 0 | 2 | 0 | active · vision-aligned | 1 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314103.md) |

@@ -1,10 +1,10 @@
 # Top issues by theme — vijayupadya
 
-Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned by the review engine. Rank/score are the lane-wide values. Generated 2026-08-02 14:01 UTC.
+Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned by the review engine. Rank/score are the lane-wide values. Generated 2026-08-03 17:06 UTC.
 
 ## Bugs
 
-### Model providers and picker (15)
+### Model providers (14)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -13,18 +13,17 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 6 | [#326554](https://github.com/microsoft/vscode/issues/326554) | Auto Mode Router overrides an explicitly selected BYOK model with a Copilot model | 2 | correctness | 3/6 Plausible | 18 | — | — |
 | 10 | [#296999](https://github.com/microsoft/vscode/issues/296999) | VS Code displaying unexpected context window size for Gemini models | 0 | correctness | 3/6 Plausible | 16 | — | — |
 | 13 | [#312908](https://github.com/microsoft/vscode/issues/312908) | Chat model picker hides BYOK models when their `metadata.id` collides with another vendor's model | 0 | correctness | 5/6 Source-confirmed | 13 | — | — |
-| 21 | [#317104](https://github.com/microsoft/vscode/issues/317104) | Testing with responses API leads to ZDP error | 0 | correctness | 4/6 Traced | 8 | — | — |
-| 22 | [#296713](https://github.com/microsoft/vscode/issues/296713) | [BYOK Agent Mode] Gemini 3.1 Pro returns 400 "Function call is missing a thought_signature" — OpenAI-compatible client strips required field | 2 | correctness | 5/6 Source-confirmed | 7 | yes | — |
 | 28 | [#326385](https://github.com/microsoft/vscode/issues/326385) | Google AI Studio API key models not working / missing "Google AI Studio" suffix after latest update | 1 | correctness | 3/6 Plausible | 5 | — | — |
 | 60 | [#317503](https://github.com/microsoft/vscode/issues/317503) | BYOK to GHCP throws an error (GPT 5.3 Codex model) | 0 | correctness | 6/6 Confirmed | 1 | — | — |
 | 111 | [#316970](https://github.com/microsoft/vscode/issues/316970) | The custom model is under empty category name | 0 | visual | 4/6 Traced | 0 | — | — |
 | 112 | [#316974](https://github.com/microsoft/vscode/issues/316974) | API Key is not recognized | 0 | correctness | 3/6 Plausible | 0 | — | — |
+| 113 | [#317178](https://github.com/microsoft/vscode/issues/317178) | Session Sync: Use the current Copilot account for API requests | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 115 | [#318101](https://github.com/microsoft/vscode/issues/318101) | Improve Azure OpenAI URL Handling in the BYOK Provider | 0 | correctness | 5/6 Source-confirmed | 0 | — | — |
 | 118 | [#324755](https://github.com/microsoft/vscode/issues/324755) | Anthropic Provider not showing in Linux | 0 | none | 3/6 Plausible | 0 | — | — |
 | 121 | [#326602](https://github.com/microsoft/vscode/issues/326602) | Clicking migrate on Ollama deprectaed setting leads to an error | 0 | papercut | 4/6 Traced | 0 | — | — |
 | 123 | [#327644](https://github.com/microsoft/vscode/issues/327644) | [Chat Model Picker] Duplicate 'copilot' group in the model list | 0 | visual | 5/6 Source-confirmed | 0 | — | — |
 
-### Gemini model reliability (14)
+### Gemini failures (14)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -32,7 +31,7 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 4 | [#286650](https://github.com/microsoft/vscode/issues/286650) | gemini 3 pro constantly crashing | 3 | correctness | 3/6 Plausible | 29 | — | — |
 | 8 | [#279353](https://github.com/microsoft/vscode/issues/279353) | Gemini 3 model mostly not working in GHE - invalid_request body | 1 | correctness | — | 16 | — | — |
 | 16 | [#278444](https://github.com/microsoft/vscode/issues/278444) | O novo modelo Gemini 3 Pro está MUITO LENTO | 0 | perf | 3/6 Plausible | 10 | — | — |
-| 29 | [#288898](https://github.com/microsoft/vscode/issues/288898) | error api gemini linking | 0 | none | 3/6 Plausible | 5 | — | — |
+| 22 | [#296713](https://github.com/microsoft/vscode/issues/296713) | [BYOK Agent Mode] Gemini 3.1 Pro returns 400 "Function call is missing a thought_signature" — OpenAI-compatible client strips required field | 2 | correctness | 5/6 Source-confirmed | 7 | yes | — |
 | 30 | [#315099](https://github.com/microsoft/vscode/issues/315099) | Copilot + Gemini 3.1 Pro keeps stopping | 0 | correctness | 3/6 Plausible | 5 | — | — |
 | 32 | [#278212](https://github.com/microsoft/vscode/issues/278212) | Gemini 3 Pro not working | 1 | correctness | 3/6 Plausible | 4 | — | — |
 | 35 | [#301444](https://github.com/microsoft/vscode/issues/301444) | Gemini Error | 0 | none | 3/6 Plausible | 4 | — | — |
@@ -43,22 +42,23 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 74 | [#284295](https://github.com/microsoft/vscode/issues/284295) | Gemini 3 Pro (preview) infinite loop | 0 | none | 3/6 Plausible | 0 | — | — |
 | 91 | [#300497](https://github.com/microsoft/vscode/issues/300497) | Unexpected Gemini Pro 3.1 response: chain-of-thought leakage and repeated dot output | 0 | correctness | 3/6 Plausible | 0 | — | — |
 
-### Chat rendering (10)
+### Chat rendering (11)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 5 | [#286647](https://github.com/microsoft/vscode/issues/286647) | Copilot Chat always rendering malformed, duplicated code blocks | 0 | correctness | 6/6 Confirmed | 29 | — | — |
 | 19 | [#284650](https://github.com/microsoft/vscode/issues/284650) | SQL code blocks "leak" in "Ask" mode for Gemini Pro 3 (Preview) | 0 | visual | 3/6 Plausible | 8 | — | — |
-| 24 | [#286762](https://github.com/microsoft/vscode/issues/286762) | GitHub Copilot link shimmering during output generation. | 0 | visual | 3/6 Plausible | 7 | — | — |
-| 25 | [#280399](https://github.com/microsoft/vscode/issues/280399) | Folder name flickering in agent mode output | 0 | visual | 3/6 Plausible | 6 | — | — |
 | 33 | [#279231](https://github.com/microsoft/vscode/issues/279231) | Bad formatting | 0 | visual | 3/6 Plausible | 4 | — | — |
 | 48 | [#295972](https://github.com/microsoft/vscode/issues/295972) | Answer is not showing | 0 | none | 3/6 Plausible | 1 | — | — |
 | 66 | [#272828](https://github.com/microsoft/vscode/issues/272828) | Chat response: consistently render code as Code | 0 | visual | 3/6 Plausible | 0 | — | — |
 | 68 | [#273080](https://github.com/microsoft/vscode/issues/273080) | Chat response: inconsistent rendering of file labels | 0 | visual | 3/6 Plausible | 0 | — | — |
 | 69 | [#275149](https://github.com/microsoft/vscode/issues/275149) | Ugly rendering of quota exceeded option | 0 | visual | 2/6 Unverified | 0 | — | — |
+| 75 | [#285999](https://github.com/microsoft/vscode/issues/285999) | When paragraphs start with a link they're added on their own line | 0 | visual | 3/6 Plausible | 0 | — | — |
+| 76 | [#286478](https://github.com/microsoft/vscode/issues/286478) | Copilot sending backtick followed by a number is always seen as vscodecontentref | 0 | visual | 3/6 Plausible | 0 | — | — |
+| 88 | [#299858](https://github.com/microsoft/vscode/issues/299858) | stale checklist | 0 | none | 3/6 Plausible | 0 | — | — |
 | 99 | [#309941](https://github.com/microsoft/vscode/issues/309941) | Bad chat loading rendering | 0 | visual | 4/6 Traced | 0 | yes | — |
 
-### Chat linkification (39)
+### Chat linkification (36)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -66,17 +66,16 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 11 | [#297792](https://github.com/microsoft/vscode/issues/297792) | GitHub Copilot adds incorrect links in the in-chat conversation. | 0 | correctness | 4/6 Traced | 14 | — | — |
 | 14 | [#280686](https://github.com/microsoft/vscode/issues/280686) | Unable to open file resource from chat output | 0 | correctness | 3/6 Plausible | 11 | — | — |
 | 15 | [#293492](https://github.com/microsoft/vscode/issues/293492) | Copilot chat links do not load successfully | 0 | correctness | 3/6 Plausible | 11 | — | — |
+| 24 | [#286762](https://github.com/microsoft/vscode/issues/286762) | GitHub Copilot link shimmering during output generation. | 0 | visual | 3/6 Plausible | 7 | — | — |
 | 26 | [#280523](https://github.com/microsoft/vscode/issues/280523) | Ranges reported as by the model do not match the file | 0 | papercut | 3/6 Plausible | 6 | — | — |
 | 27 | [#280547](https://github.com/microsoft/vscode/issues/280547) | File path and line number linkification - markdown links not rendered in the plan | 0 | visual | 3/6 Plausible | 6 | — | — |
-| 36 | [#283156](https://github.com/microsoft/vscode/issues/283156) | Discussing file protocol triggers odd non-functional explorer buttons to show up | 1 | visual | 5/6 Source-confirmed | 3 | yes | — |
+| 29 | [#288898](https://github.com/microsoft/vscode/issues/288898) | error api gemini linking | 0 | none | 3/6 Plausible | 5 | — | — |
 | 38 | [#275716](https://github.com/microsoft/vscode/issues/275716) | InlineCodeSymbolLinkifier hangs | 0 | perf | 3/6 Plausible | 3 | — | — |
 | 39 | [#291291](https://github.com/microsoft/vscode/issues/291291) | Clear links aren't getting linkified in agent response | 0 | papercut | 5/6 Source-confirmed | 3 | yes | — |
 | 41 | [#272848](https://github.com/microsoft/vscode/issues/272848) | Chat response: render files and symbols consistently | 1 | papercut | 3/6 Plausible | 2 | — | — |
 | 44 | [#268745](https://github.com/microsoft/vscode/issues/268745) | Wrapped chat symbol links don't look great | 0 | visual | 4/6 Traced | 1 | yes | — |
 | 45 | [#280552](https://github.com/microsoft/vscode/issues/280552) | File path and line number linkification - clicking on a selection link should open the editor with a selection | 0 | papercut | 5/6 Source-confirmed | 1 | — | — |
 | 46 | [#287022](https://github.com/microsoft/vscode/issues/287022) | Broken link in chat | 0 | visual | 3/6 Plausible | 1 | — | — |
-| 47 | [#291301](https://github.com/microsoft/vscode/issues/291301) | Chat links to files can't be opened | 0 | correctness | 2/6 Unverified | 1 | — | — |
-| 50 | [#296810](https://github.com/microsoft/vscode/issues/296810) | Agents ignore fileLinkification instructions — produce absolute Windows paths that break on click | 0 | correctness | 4/6 Traced | 1 | — | — |
 | 53 | [#302518](https://github.com/microsoft/vscode/issues/302518) | terminal command was linkified | 0 | papercut | 3/6 Plausible | 1 | — | — |
 | 63 | [#229572](https://github.com/microsoft/vscode/issues/229572) | disambiguate links in chat with the same name | 0 | papercut | 3/6 Plausible | 0 | — | — |
 | 65 | [#260307](https://github.com/microsoft/vscode/issues/260307) | Only some tests are getting linkified in chat response | 0 | visual | 3/6 Plausible | 0 | — | — |
@@ -85,8 +84,6 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 71 | [#277125](https://github.com/microsoft/vscode/issues/277125) | Unrelated symbol linked to in list | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 72 | [#277596](https://github.com/microsoft/vscode/issues/277596) | Chat: Make linkification for URLs found in subagents | 0 | correctness | 5/6 Source-confirmed | 0 | — | — |
 | 73 | [#283612](https://github.com/microsoft/vscode/issues/283612) | Do not link-ify `\r` and `\r\n` in chat | 0 | visual | 3/6 Plausible | 0 | — | — |
-| 75 | [#285999](https://github.com/microsoft/vscode/issues/285999) | When paragraphs start with a link they're added on their own line | 0 | visual | 3/6 Plausible | 0 | — | — |
-| 76 | [#286478](https://github.com/microsoft/vscode/issues/286478) | Copilot sending backtick followed by a number is always seen as vscodecontentref | 0 | visual | 3/6 Plausible | 0 | — | — |
 | 77 | [#286980](https://github.com/microsoft/vscode/issues/286980) | Thinking block summary should linkify appropriately | 0 | visual | 5/6 Source-confirmed | 0 | yes | — |
 | 78 | [#287016](https://github.com/microsoft/vscode/issues/287016) | Broken link in chat | 0 | correctness | 2/6 Unverified | 0 | — | — |
 | 79 | [#289921](https://github.com/microsoft/vscode/issues/289921) | Bad links in chat | 0 | correctness | 2/6 Unverified | 0 | — | — |
@@ -102,25 +99,24 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 97 | [#309195](https://github.com/microsoft/vscode/issues/309195) | Absolute paths to file links are wrong in chat panel | 0 | correctness | 2/6 Unverified | 0 | — | — |
 | 108 | [#314740](https://github.com/microsoft/vscode/issues/314740) | chat links navigate to lib.dom file | 0 | papercut | 3/6 Plausible | 0 | — | — |
 
-### Agent tools and execution (13)
+### Agent tools (12)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 9 | [#291761](https://github.com/microsoft/vscode/issues/291761) | Copilot Chat gets stuck in an infinite loop in Plan mode | 1 | correctness | 3/6 Plausible | 16 | — | — |
 | 20 | [#314010](https://github.com/microsoft/vscode/issues/314010) | Bug: Tools that work in custom agents (local) and in Copilot CLI (default agent), break when both are combined | 0 | correctness | 3/6 Plausible | 8 | — | — |
+| 21 | [#317104](https://github.com/microsoft/vscode/issues/317104) | Testing with responses API leads to ZDP error | 0 | correctness | 4/6 Traced | 8 | — | — |
 | 23 | [#284615](https://github.com/microsoft/vscode/issues/284615) | SubAgents that are created with Gemini 3 Pro model are not getting any tools | 0 | correctness | 3/6 Plausible | 7 | — | — |
+| 25 | [#280399](https://github.com/microsoft/vscode/issues/280399) | Folder name flickering in agent mode output | 0 | visual | 3/6 Plausible | 6 | — | — |
 | 34 | [#292560](https://github.com/microsoft/vscode/issues/292560) | Agent do some task always discontinue | 0 | none | 3/6 Plausible | 4 | — | — |
 | 37 | [#321277](https://github.com/microsoft/vscode/issues/321277) | Coding agent wasting credits when waiting on command completion | 1 | papercut | 3/6 Plausible | 3 | — | — |
-| 51 | [#298891](https://github.com/microsoft/vscode/issues/298891) | Sorry, your request failed. Please try again. | 0 | correctness | 3/6 Plausible | 1 | — | — |
-| 82 | [#294728](https://github.com/microsoft/vscode/issues/294728) | Copilot stuck in a loop and constantly sending messages | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 86 | [#297187](https://github.com/microsoft/vscode/issues/297187) | [Severe Bug] Tool execution completely broken: Workspace access blocked & models output raw JSON instead of running tools | 0 | none | 3/6 Plausible | 0 | — | — |
-| 88 | [#299858](https://github.com/microsoft/vscode/issues/299858) | stale checklist | 0 | none | 3/6 Plausible | 0 | — | — |
 | 95 | [#306291](https://github.com/microsoft/vscode/issues/306291) | Prompted to approve reading external directory when doing troubleshooting | 0 | papercut | 3/6 Plausible | 0 | — | — |
 | 107 | [#313520](https://github.com/microsoft/vscode/issues/313520) | Bug: `todo` tool not available to subAgents even when explicitly provided via frontmatter | 0 | correctness | 5/6 Source-confirmed | 0 | — | — |
 | 110 | [#315950](https://github.com/microsoft/vscode/issues/315950) | Gemini 3.1 Pro (Preview) bypassed VS Code tools and used the terminal | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 119 | [#325210](https://github.com/microsoft/vscode/issues/325210) | Todos in Copilot Chat | 0 | none | 3/6 Plausible | 0 | — | — |
 
-### Chronicle analytics (10)
+### Chronicle telemetry (10)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -153,29 +149,39 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 120 | [#325556](https://github.com/microsoft/vscode/issues/325556) | Switching back to Log Panel does not restore it | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 124 | [#327865](https://github.com/microsoft/vscode/issues/327865) | Chat agent debug logging settings (`github.copilot.chat.agentDebugLog.*`) are undiscoverable in Settings search | 0 | correctness | 5/6 Source-confirmed | 0 | — | — |
 
-### Other (10)
+### Terminal sessions (2)
+
+| # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 114 | [#317671](https://github.com/microsoft/vscode/issues/317671) | Terminal session in separate window always opens as blank vs code window when relaunching vs code | 0 | correctness | 3/6 Plausible | 0 | — | — |
+| 116 | [#319634](https://github.com/microsoft/vscode/issues/319634) | Update to 1.122.1 Breaks Terminal / pty-host connection | 0 | correctness | 3/6 Plausible | 0 | — | — |
+
+### Other (12)
 
 | # | Issue | Title | 👍 | Severity | Rating | Score | Agent-fixable | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 18 | [#318346](https://github.com/microsoft/vscode/issues/318346) | Copilot autocomplete suppresses/breaks TypeScript IntelliSense and auto-import suggestions until Copilot suggestions are snoozed | 1 | correctness | 6/6 Confirmed | 8 | — | — |
 | 31 | [#321248](https://github.com/microsoft/vscode/issues/321248) | Breadcrumb shows unwanted bottom border in light themes | 0 | visual | 5/6 Source-confirmed | 5 | yes | — |
+| 36 | [#283156](https://github.com/microsoft/vscode/issues/283156) | Discussing file protocol triggers odd non-functional explorer buttons to show up | 1 | visual | 5/6 Source-confirmed | 3 | yes | — |
+| 47 | [#291301](https://github.com/microsoft/vscode/issues/291301) | Chat links to files can't be opened | 0 | correctness | 2/6 Unverified | 1 | — | — |
+| 50 | [#296810](https://github.com/microsoft/vscode/issues/296810) | Agents ignore fileLinkification instructions — produce absolute Windows paths that break on click | 0 | correctness | 4/6 Traced | 1 | — | — |
+| 51 | [#298891](https://github.com/microsoft/vscode/issues/298891) | Sorry, your request failed. Please try again. | 0 | correctness | 3/6 Plausible | 1 | — | — |
 | 62 | [#325595](https://github.com/microsoft/vscode/issues/325595) | Markdown language server unresponsive with large file | 0 | perf | 3/6 Plausible | 1 | — | — |
+| 82 | [#294728](https://github.com/microsoft/vscode/issues/294728) | Copilot stuck in a loop and constantly sending messages | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 96 | [#308213](https://github.com/microsoft/vscode/issues/308213) | Export Chat truncates file to 0 bytes when disk is full instead of failing gracefully | 0 | data-loss | 5/6 Source-confirmed | 0 | yes | — |
 | 98 | [#309554](https://github.com/microsoft/vscode/issues/309554) | Ordering is wrong from active session to other tab | 0 | visual | 3/6 Plausible | 0 | — | — |
 | 102 | [#311630](https://github.com/microsoft/vscode/issues/311630) | Sessions should be sorted by date | 0 | correctness | 5/6 Source-confirmed | 0 | yes | — |
-| 113 | [#317178](https://github.com/microsoft/vscode/issues/317178) | Session Sync: Use the current Copilot account for API requests | 0 | correctness | 3/6 Plausible | 0 | — | — |
-| 114 | [#317671](https://github.com/microsoft/vscode/issues/317671) | Terminal session in separate window always opens as blank vs code window when relaunching vs code | 0 | correctness | 3/6 Plausible | 0 | — | — |
-| 116 | [#319634](https://github.com/microsoft/vscode/issues/319634) | Update to 1.122.1 Breaks Terminal / pty-host connection | 0 | correctness | 3/6 Plausible | 0 | — | — |
 | 122 | [#327461](https://github.com/microsoft/vscode/issues/327461) | "Try Again" for Github Copilot | 0 | correctness | 3/6 Plausible | 0 | — | — |
 
 ## Feature requests
 
-### Model provider support (8)
+### Model provider support (9)
 
 | # | Issue | Title | 👍 | Signal | Score | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | [#325738](https://github.com/microsoft/vscode/issues/325738) | Agents Window over SSH: BYOK unsupported + agent-host version mismatch blocks usage | 7 | active | 100 | — |
 | 2 | [#283948](https://github.com/microsoft/vscode/issues/283948) | Support for Gemini Multimodal Capabilities in VS Code Copilot | 17 | backlog-candidate | 82 | — |
+| 3 | [#317187](https://github.com/microsoft/vscode/issues/317187) | Token usage always shows 0 for models added via LanguageModelChatProvider extension API | 7 | active | 53 | — |
 | 6 | [#315741](https://github.com/microsoft/vscode/issues/315741) | Add ability to specify reasoning effort for Gemini BYOK models | 0 | backlog-candidate | 15 | — |
 | 7 | [#303360](https://github.com/microsoft/vscode/issues/303360) | Thinking configuration support for Gemini | 1 | backlog-candidate | 14 | — |
 | 11 | [#320260](https://github.com/microsoft/vscode/issues/320260) | BYOK "selectedCompletionModel" Bug | 1 | active | 10 | — |
@@ -183,35 +189,24 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 28 | [#316972](https://github.com/microsoft/vscode/issues/316972) | Shortcut to open the model json file from the language models view | 0 | active | 0 | — |
 | 31 | [#325455](https://github.com/microsoft/vscode/issues/325455) | vscode.lm — Add model visibility (hide/show) APIs | 0 | active | 0 | — |
 
-### Telemetry and usage (5)
-
-| # | Issue | Title | 👍 | Signal | Score | Draft PR |
-| --- | --- | --- | --- | --- | --- | --- |
-| 3 | [#317187](https://github.com/microsoft/vscode/issues/317187) | Token usage always shows 0 for models added via LanguageModelChatProvider extension API | 7 | active | 53 | — |
-| 15 | [#299637](https://github.com/microsoft/vscode/issues/299637) | Add skills invocation in OTel instrumentation | 0 | active | 5 | — |
-| 18 | [#287573](https://github.com/microsoft/vscode/issues/287573) | Expand coverage of conversation.repetition.detected to cancelled requests | 0 | backlog-candidate | 2 | — |
-| 23 | [#311186](https://github.com/microsoft/vscode/issues/311186) | Include `USAGE_CACHE_READ_INPUT_TOKENS` in log file output | 0 | active | 0 | — |
-| 24 | [#312276](https://github.com/microsoft/vscode/issues/312276) | Chronicle: session_refs table is always empty — ref tracking only fires for MCP tools and Copilot terminal spans | 0 | backlog-candidate | 0 | — |
-
-### Code link navigation (5)
+### Code location linking (5)
 
 | # | Issue | Title | 👍 | Signal | Score | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- |
 | 4 | [#283273](https://github.com/microsoft/vscode/issues/283273) | VS Code does not open file paths with line numbers in plain text (.log) files | 0 | dormant | 20 | — |
 | 20 | [#276768](https://github.com/microsoft/vscode/issues/276768) | Model based symbol and line linkification | 0 | backlog-candidate | 0 | — |
-| 21 | [#292598](https://github.com/microsoft/vscode/issues/292598) | Code snippets in chat should have go to location | 0 | active | 0 | — |
+| 21 | [#292598](https://github.com/microsoft/vscode/issues/292598) | Code snippets in chat should have go to location | 0 | dormant | 0 | — |
 | 22 | [#295917](https://github.com/microsoft/vscode/issues/295917) | chat references never lead to exact code locations that chat intended to reference, but lead to definitions instead | 0 | active | 0 | — |
 | 25 | [#313533](https://github.com/microsoft/vscode/issues/313533) | Support explicit `[\`symbolName\`](path/to/file.py)` symbol links and deprecate optimistic backtick matching | 0 | backlog-candidate | 0 | — |
 
-### Chat session management (3)
+### Chat session portability (2)
 
 | # | Issue | Title | 👍 | Signal | Score | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- |
 | 5 | [#326268](https://github.com/microsoft/vscode/issues/326268) | Support import, export, and backup of Chat sessions across workspaces in VSCode Copilot | 1 | active | 16 | — |
 | 8 | [#308964](https://github.com/microsoft/vscode/issues/308964) | Copilot Chat should support cross-device cloud conversation memory for repository workflows | 1 | active | 14 | — |
-| 30 | [#323539](https://github.com/microsoft/vscode/issues/323539) | Discoverability of #session | 0 | backlog-candidate | 0 | — |
 
-### Agent debugging tools (8)
+### Agent debugging logs (11)
 
 | # | Issue | Title | 👍 | Signal | Score | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -219,17 +214,22 @@ Experimental themed view of [the flat ranking](vijayupadya.md); themes assigned 
 | 10 | [#294590](https://github.com/microsoft/vscode/issues/294590) | Add Flowchart Visualization for GitHub Copilot Agent Session Flows | 1 | active | 10 | — |
 | 13 | [#302218](https://github.com/microsoft/vscode/issues/302218) | Chat agent debug log view: Exported logs are very verbose and not for human consumption | 1 | backlog-candidate | 9 | — |
 | 14 | [#301862](https://github.com/microsoft/vscode/issues/301862) | `Chat agent debug logs viewer` not helpful when finding out why a request did not work | 0 | active | 9 | — |
+| 15 | [#299637](https://github.com/microsoft/vscode/issues/299637) | Add skills invocation in OTel instrumentation | 0 | active | 5 | — |
 | 16 | [#304809](https://github.com/microsoft/vscode/issues/304809) | Agent Debug: Troubleshooting scenarios | 0 | active | 5 | — |
+| 18 | [#287573](https://github.com/microsoft/vscode/issues/287573) | Expand coverage of conversation.repetition.detected to cancelled requests | 0 | backlog-candidate | 2 | — |
 | 19 | [#306675](https://github.com/microsoft/vscode/issues/306675) | Session debug should contain the raw request sent to the LLM | 0 | active | 2 | — |
+| 23 | [#311186](https://github.com/microsoft/vscode/issues/311186) | Include `USAGE_CACHE_READ_INPUT_TOKENS` in log file output | 0 | active | 0 | — |
 | 32 | [#325562](https://github.com/microsoft/vscode/issues/325562) | Log Panel: Allow clicking `error` in AHP log to filter to errors | 0 | backlog-candidate | 0 | — |
 | 33 | [#325572](https://github.com/microsoft/vscode/issues/325572) | Log Panel: Allow filtering AHP Log for content | 0 | backlog-candidate | 0 | — |
 
-### Chronicle workflows (2)
+### Chronicle session workflows (4)
 
 | # | Issue | Title | 👍 | Signal | Score | Draft PR |
 | --- | --- | --- | --- | --- | --- | --- |
+| 24 | [#312276](https://github.com/microsoft/vscode/issues/312276) | Chronicle: session_refs table is always empty — ref tracking only fires for MCP tools and Copilot terminal spans | 0 | backlog-candidate | 0 | — |
 | 26 | [#314086](https://github.com/microsoft/vscode/issues/314086) | /chronicle:standup empty on Monday | 0 | backlog-candidate | 0 | — |
 | 29 | [#320640](https://github.com/microsoft/vscode/issues/320640) | Add /chronicle command set to Agent Host | 0 | active | 0 | — |
+| 30 | [#323539](https://github.com/microsoft/vscode/issues/323539) | Discoverability of #session | 0 | backlog-candidate | 0 | — |
 
 ### Other (2)
 

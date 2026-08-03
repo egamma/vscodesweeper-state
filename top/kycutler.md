@@ -1,6 +1,6 @@
 # Top issues — kycutler
 
-Value ranking of reviewed open issues assigned to `kycutler` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-02 13:31 UTC. Also available [grouped by theme](kycutler-themes.md).
+Value ranking of reviewed open issues assigned to `kycutler` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:39 UTC. Also available [grouped by theme](kycutler-themes.md).
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -41,7 +41,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 25 | [#317151](https://github.com/microsoft/vscode/issues/317151) | When pointer events are disabled, add element to chat doesn't work | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317151.md) |
 | 26 | [#326060](https://github.com/microsoft/vscode/issues/326060) | Browser confusion | 0 | 0 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326060.md) |
 | 27 | [#327004](https://github.com/microsoft/vscode/issues/327004) | Browser tool calls just turn into a raw tool name after restart | 0 | 0 | 0 | visual | niche | 0 | — | — | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327004.md) |
-| 28 | [#327036](https://github.com/microsoft/vscode/issues/327036) | Modern UI - Double border for the integrated browser | 0 | 0 | 0 | visual | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327036.md) |
+| 28 | [#327036](https://github.com/microsoft/vscode/issues/327036) | Modern UI - Double border for the integrated browser | 0 | 0 | 0 | visual | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327036.md) |
 | 29 | [#327041](https://github.com/microsoft/vscode/issues/327041) | [agents window] Browsers get hidden in workspace-less chats | 0 | 0 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327041.md) |
 
 </details>
