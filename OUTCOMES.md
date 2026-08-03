@@ -1,6 +1,6 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17180 issues reviewed · generated 2026-08-03 15:03 UTC
+[← Home](index.html) · 17180 issues reviewed · generated 2026-08-03 19:24 UTC
 
 ## Funnel
 
@@ -10,7 +10,7 @@
 - **Closed with the sweeper's comment:** 174 (67% of acted-on) — 145 verbatim, 17 inside a longer comment, 12 edited
 - **Still awaiting action:** 2366 open close proposals
 
-_Close proposals count the whole corpus (605 of the 17180 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2366 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (612 of the 17180 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2366 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -18,7 +18,7 @@ _Close proposals count the whole corpus (605 of the 17180 reviewed issues have s
 | --- | --- | --- |
 | alexdima | 87 | 85 (98%) |
 | justschen | 48 | 27 (56%) |
-| hediet | 22 | 21 (95%) |
+| hediet | 21 | 21 (100%) |
 | sbatten | 16 | 16 (100%) |
 | vs-code-engineering | 15 | 0 (0%) |
 | aeschli | 12 | 11 (92%) |
@@ -36,6 +36,7 @@ _Close proposals count the whole corpus (605 of the 17180 reviewed issues have s
 | bryanchen-d | 1 | 0 (0%) |
 | danwilhelm | 1 | 0 (0%) |
 | DavidLangworthy | 1 | 0 (0%) |
+| dileepyavan | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
 | karthiknadig | 1 | 1 (100%) |
 | kycutler | 1 | 0 (0%) |
@@ -47,14 +48,14 @@ _Close proposals count the whole corpus (605 of the 17180 reviewed issues have s
 | Review verdict | Closed |
 | --- | --- |
 | propose-close | 260 |
-| keep-open | 179 |
-| needs-info | 159 |
+| keep-open | 181 |
+| needs-info | 164 |
 | route-to-area | 7 |
 
 | Close reason | Closed |
 | --- | --- |
-| not_planned | 277 |
-| completed | 255 |
+| not_planned | 281 |
+| completed | 258 |
 | duplicate | 72 |
 | not_found | 1 |
 
@@ -75,5 +76,3 @@ _Close proposals count the whole corpus (605 of the 17180 reviewed issues have s
 | upstream | 1 | 0 | 0% | 0 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
-
-_1 closed proposal(s) not yet classified — run `npm run reconcile -- --push`._
