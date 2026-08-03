@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 36 swept users · 17180 issues reviewed · generated 2026-08-03 09:16 UTC
+[← Home](index.html) · 36 swept users · 17180 issues reviewed · generated 2026-08-03 10:33 UTC
 
 ## Closure outcome per swept user
 
@@ -92,7 +92,44 @@ High-value = value score above the agent-fix pool's median — the same demand �
 
 Skill PRs discovered by `reconcile`'s seeded-by-marker search, per user, against the agent-fixable pool. As current as the last reconcile run.
 
-_No sweeper-fix skill PRs discovered yet — the funnel fills in as maintainers use the skill._
+| User | Agent-fixable pool | Skill PRs | Open | Merged |
+| --- | --- | --- | --- | --- |
+| lszomoru | 139 | — | — | — |
+| hediet | 178 | — | — | — |
+| justschen | 89 | — | — | — |
+| deepak1556 | 11 | — | — | — |
+| roblourens | 66 | — | — | — |
+| lramos15 | 74 | — | — | — |
+| sandy081 | 77 | — | — | — |
+| connor4312 | 67 | — | — | — |
+| anthonykim1 | 84 | — | — | — |
+| TylerLeonhardt | 73 | — | — | — |
+| aeschli | 46 | — | — | — |
+| meganrogge | 87 | — | — | — |
+| mjbvz | 82 | — | — | — |
+| alexdima | 62 | 1 | 1 | — |
+| joshspicer | 45 | — | — | — |
+| osortega | 71 | — | — | — |
+| chrmarti | 24 | — | — | — |
+| benibenj | 34 | — | — | — |
+| ulugbekna | 31 | — | — | — |
+| Yoyokrazy | 60 | — | — | — |
+| DonJayamanne | 31 | — | — | — |
+| rzhao271 | 51 | — | — | — |
+| aiday-mar | 42 | — | — | — |
+| Copilot | 42 | — | — | — |
+| dmitrivMS | 20 | — | — | — |
+| mrleemurray | 3 | — | — | — |
+| vijayupadya | 13 | — | — | — |
+| pwang347 | 10 | — | — | — |
+| alexr00 | 9 | — | — | — |
+| amunger | 31 | — | — | — |
+| vritant24 | 14 | — | — | — |
+| bhavyaus | 15 | — | — | — |
+| jo-oikawa | 7 | — | — | — |
+| sbatten | 20 | — | — | — |
+| jrieken | 30 | — | — | — |
+| kycutler | 10 | — | — | — |
 
 ## Close-proposal reasons
 
@@ -101,7 +138,7 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
 | implemented on main | 738 | 28% | 96 (13%) | 73 (10%) |
-| `*duplicate` | 868 | 33% | 65 (7%) | 34 (4%) |
+| `*duplicate` | 868 | 33% | 66 (8%) | 34 (4%) |
 | `*caused-by-extension` | 250 | 10% | 23 (9%) | 14 (6%) |
 | `*as-designed` | 242 | 9% | 39 (16%) | 34 (14%) |
 | `*question` | 241 | 9% | 12 (5%) | 8 (3%) |
@@ -110,7 +147,7 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 | `*off-topic` | 64 | 2% | 6 (9%) | 2 (3%) |
 | `*extension-candidate` | 30 | 1% | 4 (13%) | 1 (3%) |
 | other | 4 | 0% | — | — |
-| all reasons | 2626 | 100% | 259 (10%) | 174 (7%) |
+| all reasons | 2626 | 100% | 260 (10%) | 174 (7%) |
 
 ## Close reasons per swept user
 

@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17180 issues reviewed · generated 2026-08-03 09:16 UTC
+[← Home](index.html) · 17180 issues reviewed · generated 2026-08-03 10:33 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 17180
 - **Close proposals:** 2626 (15% of reviewed)
-- **Acted on (closed):** 259 (10% of proposals)
+- **Acted on (closed):** 260 (10% of proposals)
 - **Closed with the sweeper's comment:** 174 (67% of acted-on) — 145 verbatim, 17 inside a longer comment, 12 edited
-- **Still awaiting action:** 2367 open close proposals
+- **Still awaiting action:** 2366 open close proposals
 
-_Close proposals count the whole corpus (596 of the 17180 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2367 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (605 of the 17180 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2366 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -33,6 +33,7 @@ _Close proposals count the whole corpus (596 of the 17180 reviewed issues have s
 | (unattributed) | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
 | babakzarrinbal | 1 | 0 (0%) |
+| bryanchen-d | 1 | 0 (0%) |
 | danwilhelm | 1 | 0 (0%) |
 | DavidLangworthy | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
@@ -45,15 +46,15 @@ _Close proposals count the whole corpus (596 of the 17180 reviewed issues have s
 
 | Review verdict | Closed |
 | --- | --- |
-| propose-close | 259 |
-| keep-open | 178 |
-| needs-info | 152 |
+| propose-close | 260 |
+| keep-open | 179 |
+| needs-info | 159 |
 | route-to-area | 7 |
 
 | Close reason | Closed |
 | --- | --- |
-| not_planned | 271 |
-| completed | 252 |
+| not_planned | 277 |
+| completed | 255 |
 | duplicate | 72 |
 | not_found | 1 |
 
@@ -61,7 +62,7 @@ _Close proposals count the whole corpus (596 of the 17180 reviewed issues have s
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 868 | 65 | 7% | 34 |
+| *duplicate | 868 | 66 | 8% | 34 |
 | implemented-on-main | 738 | 96 | 13% | 73 |
 | *caused-by-extension | 250 | 23 | 9% | 14 |
 | *as-designed | 242 | 39 | 16% | 34 |
