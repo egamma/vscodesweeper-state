@@ -1,6 +1,6 @@
 # Top issues — benvillalobos
 
-Value ranking of reviewed open issues assigned to `benvillalobos` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:24 UTC. Also available [grouped by theme](benvillalobos-themes.md).
+Value ranking of reviewed open issues assigned to `benvillalobos` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-04 15:26 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -50,7 +50,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 5 | [#276970](https://github.com/microsoft/vscode/issues/276970) | Copilot code review is not discoverable | 1 | 3 | 2 | active · vision-aligned | 29 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276970.md) |
 | 6 | [#151763](https://github.com/microsoft/vscode/issues/151763) | when hovers are not sticky, alt/opt key should make them temporarily sticky | 7 | 7 | 1 | backlog-candidate | 23 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/151763.md) |
 | 7 | [#271603](https://github.com/microsoft/vscode/issues/271603) | Allow hiding of welcome prompts | 0 | 0 | 2 | dormant · vision-aligned | 20 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/271603.md) |
-| 8 | [#276977](https://github.com/microsoft/vscode/issues/276977) | Add a `Chat: Perform Code Review` command | 1 | 1 | 1 | active · vision-aligned | 17 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276977.md) |
+| 8 | [#276977](https://github.com/microsoft/vscode/issues/276977) | Add a `Chat: Perform Code Review` command | 1 | 1 | 1 | dormant · vision-aligned | 17 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/276977.md) |
 | 9 | [#277902](https://github.com/microsoft/vscode/issues/277902) | Consider: Add setting for "Start agent review on commit" | 0 | 0 | 1 | active · vision-aligned | 10 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/277902.md) |
 | 10 | [#273983](https://github.com/microsoft/vscode/issues/273983) | Add setting to gradually hide or show copy button on different types of hovers | 0 | 0 | 1 | dormant | 8 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/273983.md) |
 

@@ -1,6 +1,6 @@
 # Top issues — jrieken
 
-Value ranking of reviewed open issues assigned to `jrieken` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:36 UTC. Also available [grouped by theme](jrieken-themes.md).
+Value ranking of reviewed open issues assigned to `jrieken` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-04 15:26 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -102,7 +102,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | 11 | [#111669](https://github.com/microsoft/vscode/issues/111669) | Extension bisect unable to find 2 bad extensions | 0 | 5 | 1 | dormant | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/111669.md) |
-| 12 | [#265980](https://github.com/microsoft/vscode/issues/265980) | The number of Inlay hints is limited | 0 | 4 | 1 | active | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/265980.md) |
+| 12 | [#265980](https://github.com/microsoft/vscode/issues/265980) | The number of Inlay hints is limited | 0 | 4 | 1 | dormant | 6 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/265980.md) |
 | 13 | [#315085](https://github.com/microsoft/vscode/issues/315085) | Ctrl+I shortcut (Inline Chat) defaults to Sidebar Chat after first use of Chat View | 1 | 1 | 0 | active | 5 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/315085.md) |
 | 14 | [#193416](https://github.com/microsoft/vscode/issues/193416) | Various providers (and LSP messages) that are passed a position should be passed a range instead. | 2 | 4 | 0 | dormant | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/193416.md) |
 | 15 | [#143435](https://github.com/microsoft/vscode/issues/143435) | Line numbers in the Problems windows not easy to read when it comes to cells | 2 | 3 | 0 | dormant | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/143435.md) |

@@ -37,9 +37,14 @@
 
   <h2>Using it</h2>
   <p><strong>One-time setup (interim):</strong> the skill is headed for the vscode repo's <code>.github/skills/</code> (once that PR lands, your checkout has it with no install at all). Until then, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md">the generated SKILL.md</a> into your agent's personal skills dir — <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/sweeper-fix/SKILL.md</code> (Claude Code).</p>
-  <p>Then, in your agent, from your vscode checkout, just ask:</p>
-  <pre>Fix microsoft/vscode issue #262104 using the sweeper-fix skill.</pre>
-  <p>The <em>Copy fix prompt</em> button on the dashboard and top pages copies exactly this line for the row's issue — an optional shortcut, nothing more.</p>
+  <p>Then paste the prompt the <em>Copy prompt</em> button put on your clipboard — the skill invocation plus the reviewed spec, so you can read (and edit) what the agent is asked to implement before sending:</p>
+  <pre>Fix microsoft/vscode issue #262104 using the sweeper-fix skill.
+
+Reviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):
+&lt;the record's fix brief — pasted for you to read and adjust&gt;
+Likely files: …
+Validation: …</pre>
+  <p>Editing the spec is fine — the skill implements your version and still runs every gate. A bare first line alone works too (the skill then reads the record's spec itself).</p>
 
   <h2>What to expect</h2>
   <ul>
@@ -57,6 +62,6 @@
     <li><strong>Skill still not found?</strong> Check the SKILL.md landed at exactly <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (or the Claude equivalent) — the folder name must match the skill name.</li>
   </ul>
 
-  <footer>sweeper-fix skill v2 · generated 2026-08-03 17:07 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
+  <footer>sweeper-fix skill v4 · generated 2026-08-04 15:26 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
 </body>
 </html>

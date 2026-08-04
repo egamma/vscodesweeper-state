@@ -1,10 +1,10 @@
 # Top issues — DonJayamanne
 
-Value ranking of reviewed open issues assigned to `DonJayamanne` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:04 UTC. Also available [grouped by theme](DonJayamanne-themes.md).
+Value ranking of reviewed open issues assigned to `DonJayamanne` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-04 15:26 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 25 of 211)
+## Bugs (top 25 of 210)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 25 | [#296186](https://github.com/microsoft/vscode/issues/296186) | Clicking continue in background to start implementation of copilot agent plan causes session to disappear | 1 | 6 | 0 | correctness | common | 27 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296186.md) |
 
 <details>
-<summary>186 more bugs (score ≤ 27)</summary>
+<summary>185 more bugs (score ≤ 27)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -222,9 +222,8 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 206 | [#326947](https://github.com/microsoft/vscode/issues/326947) | Agents window: chat response not rendered even though the data was returned (UI stops updating mid-stream; a window resize recovers it) | 0 | 0 | 0 | correctness | common | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/326947.md) |
 | 207 | [#327293](https://github.com/microsoft/vscode/issues/327293) | Notebook editor shows stale cell source during Copilot notebook edits | 0 | 0 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327293.md) |
 | 208 | [#327338](https://github.com/microsoft/vscode/issues/327338) | Delays starting Copilot Agent Host sessions in VS Code and Copilot CLI sessions in terminal | 0 | 0 | 0 | perf | common | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327338.md) |
-| 209 | [#327804](https://github.com/microsoft/vscode/issues/327804) | Provisional agent-host chat does not refresh customizations after changing the primary folder (same-URI recreate leaves stale subscription) | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/327804.md) |
-| 210 | [#328021](https://github.com/microsoft/vscode/issues/328021) | Agent Host session customizations are not scoped to the session's working directory in multi-root workspaces | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328021.md) |
-| 211 | [#328159](https://github.com/microsoft/vscode/issues/328159) | Built-in skills are not returned by the sessionless commands.list API (skills unavailable in sessionless chat input completions) | 0 | 0 | 0 | correctness | common | 0 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328159.md) |
+| 209 | [#328021](https://github.com/microsoft/vscode/issues/328021) | Agent Host session customizations are not scoped to the session's working directory in multi-root workspaces | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328021.md) |
+| 210 | [#328159](https://github.com/microsoft/vscode/issues/328159) | Built-in skills are not returned by the sessionless commands.list API (skills unavailable in sessionless chat input completions) | 0 | 0 | 0 | correctness | common | 0 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328159.md) |
 
 </details>
 

@@ -1,6 +1,6 @@
 # Top issues — alexr00
 
-Value ranking of reviewed open issues assigned to `alexr00` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 15:17 UTC. Also available [grouped by theme](alexr00-themes.md).
+Value ranking of reviewed open issues assigned to `alexr00` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-04 15:26 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -65,7 +65,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-## Feature requests (top 17 of 100)
+## Feature requests (top 16 of 100)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -85,13 +85,13 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 14 | [#202367](https://github.com/microsoft/vscode/issues/202367) | Fuzzy Search in Open File/Open Folder simple dialogs | 33 | 4 | 0 | backlog-candidate | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/202367.md) |
 | 15 | [#188259](https://github.com/microsoft/vscode/issues/188259) | Allow contributing to the context menu in the TreeView's empty space | 27 | 3 | 0 | backlog-candidate · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/188259.md) |
 | 16 | [#170248](https://github.com/microsoft/vscode/issues/170248) | TreeView.selection does not contain focused but not highlighted items | 25 | 7 | 3 | backlog-candidate · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/170248.md) |
-| 17 | [#310930](https://github.com/microsoft/vscode/issues/310930) | Stabilize `vscode.proposed.tunnels` API: enabling named portless tunnel aliases for AI-assisted devcontainer workflows | 24 | 3 | 1 | backlog-candidate · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/310930.md) |
 
 <details>
-<summary>83 more feature requests (score ≤ 4)</summary>
+<summary>84 more feature requests (score ≤ 4)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 17 | [#310930](https://github.com/microsoft/vscode/issues/310930) | Stabilize `vscode.proposed.tunnels` API: enabling named portless tunnel aliases for AI-assisted devcontainer workflows | 24 | 3 | 1 | backlog-candidate · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/310930.md) |
 | 18 | [#286332](https://github.com/microsoft/vscode/issues/286332) | VS Code Feature Request: Extension API: Control Tree Item Expansion During Drag Operations | 23 | 6 | 2 | backlog-candidate · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/286332.md) |
 | 19 | [#271104](https://github.com/microsoft/vscode/issues/271104) | Chat: Support contributable chat context resources | 3 | 31 | 4 | active · vision-aligned | 4 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/271104.md) |
 | 20 | [#151950](https://github.com/microsoft/vscode/issues/151950) | Workbench decorations for files with comments | 37 | 6 | 0 | backlog-candidate | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/151950.md) |
@@ -99,10 +99,10 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 22 | [#254411](https://github.com/microsoft/vscode/issues/254411) | Add setting to show tree view item icons without hover effect in Activity Bar | 22 | 2 | 0 | backlog-candidate | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/254411.md) |
 | 23 | [#314845](https://github.com/microsoft/vscode/issues/314845) | [Proposal] Contextual guidance assistant & API proposal template | 22 | 2 | 0 | backlog-candidate | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314845.md) |
 | 24 | [#48754](https://github.com/microsoft/vscode/issues/48754) | Allow programatically un-selecting an item in a contributed tree | 21 | 40 | 0 | active · vision-aligned | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/48754.md) |
-| 25 | [#210991](https://github.com/microsoft/vscode/issues/210991) | Add a setting for changing the default path for "Open Folder" to be current open folder, not parent dir | 20 | 11 | 0 | active | 3 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/210991.md) |
-| 26 | [#84982](https://github.com/microsoft/vscode/issues/84982) | Allow detail option on task input pickString | 24 | 3 | 0 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/84982.md) |
-| 27 | [#180830](https://github.com/microsoft/vscode/issues/180830) | [Feature Request] Add predefined variable with separator for environment variable PATH (also PYTHONPATH, CLASSPATH etc.) | 24 | 4 | 0 | backlog-candidate | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/180830.md) |
-| 28 | [#157408](https://github.com/microsoft/vscode/issues/157408) | Add `selectionGroup` to TreeItem to allow for multiselect restrictions | 20 | 2 | 0 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/157408.md) |
+| 25 | [#84982](https://github.com/microsoft/vscode/issues/84982) | Allow detail option on task input pickString | 24 | 3 | 0 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/84982.md) |
+| 26 | [#180830](https://github.com/microsoft/vscode/issues/180830) | [Feature Request] Add predefined variable with separator for environment variable PATH (also PYTHONPATH, CLASSPATH etc.) | 24 | 4 | 0 | backlog-candidate | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/180830.md) |
+| 27 | [#157408](https://github.com/microsoft/vscode/issues/157408) | Add `selectionGroup` to TreeItem to allow for multiselect restrictions | 20 | 2 | 0 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/157408.md) |
+| 28 | [#210991](https://github.com/microsoft/vscode/issues/210991) | Add a setting for changing the default path for "Open Folder" to be current open folder, not parent dir | 20 | 11 | 0 | active | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/210991.md) |
 | 29 | [#92176](https://github.com/microsoft/vscode/issues/92176) | API to collapse custom tree items | 14 | 9 | 3 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/92176.md) |
 | 30 | [#107183](https://github.com/microsoft/vscode/issues/107183) | Add a new right-aligned "description" property to TreeItems | 13 | 14 | 0 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/107183.md) |
 | 31 | [#182098](https://github.com/microsoft/vscode/issues/182098) | Support setting a badge-only color in file decorations | 13 | 10 | 1 | backlog-candidate · vision-aligned | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/182098.md) |

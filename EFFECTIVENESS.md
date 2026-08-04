@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 36 swept users · 17180 issues reviewed · generated 2026-08-03 15:03 UTC
+[← Home](index.html) · 36 swept users · 17180 issues reviewed · generated 2026-08-04 15:26 UTC
 
 ## Closure outcome per swept user
 
@@ -107,7 +107,7 @@ Skill PRs discovered by `reconcile`'s seeded-by-marker search, per user, against
 | aeschli | 46 | — | — | — |
 | meganrogge | 87 | — | — | — |
 | mjbvz | 82 | — | — | — |
-| alexdima | 62 | 1 | 1 | — |
+| alexdima | 62 | 2 | 2 | — |
 | joshspicer | 45 | — | — | — |
 | osortega | 71 | — | — | — |
 | chrmarti | 24 | — | — | — |

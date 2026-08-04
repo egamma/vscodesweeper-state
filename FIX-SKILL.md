@@ -8,13 +8,18 @@ The sweeper reviewed the open `microsoft/vscode` backlog with a source checkout 
 
 ## Using it
 
-**One-time setup (interim):** until the skill lands in the vscode repo's `.github/skills/` (PR pending; then no install at all), copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/SKILL.md` or `~/.claude/skills/sweeper-fix/SKILL.md`. Then, from your vscode checkout, ask your agent:
+**One-time setup (interim):** until the skill lands in the vscode repo's `.github/skills/` (PR pending; then no install at all), copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/SKILL.md` or `~/.claude/skills/sweeper-fix/SKILL.md`. Then, from your vscode checkout, paste the prompt the *Copy prompt* button put on your clipboard — the skill invocation plus the reviewed spec, readable and editable before you send it:
 
 ```
 Fix microsoft/vscode issue #262104 using the sweeper-fix skill.
+
+Reviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):
+<the record's fix brief>
+Likely files: …
+Validation: …
 ```
 
-The *Copy fix prompt* button on the dashboard/top pages copies exactly this line for the row's issue.
+Editing the spec is fine — the skill implements your version and still runs every gate; the bare first line alone also works.
 
 ## What to expect
 
@@ -29,4 +34,4 @@ The *Copy fix prompt* button on the dashboard/top pages copies exactly this line
 - "Not agent-fixable" refusal → the review found no safe fix spec; check the record for what it concluded instead.
 - Pre-merge testing → copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/` or `~/.claude/skills/sweeper-fix/`.
 
-_sweeper-fix skill v2 · generated 2026-08-03 17:07 UTC._
+_sweeper-fix skill v4 · generated 2026-08-04 15:26 UTC._

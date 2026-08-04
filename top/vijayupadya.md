@@ -1,6 +1,6 @@
 # Top issues — vijayupadya
 
-Value ranking of reviewed open issues assigned to `vijayupadya` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-03 17:06 UTC. Also available [grouped by theme](vijayupadya-themes.md).
+Value ranking of reviewed open issues assigned to `vijayupadya` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-04 15:26 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
