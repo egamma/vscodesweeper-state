@@ -36,7 +36,7 @@
   <p>The sweeper reviewed the open <code>microsoft/vscode</code> backlog with a source checkout and marked the issues an agent can fix — each with a <strong>fix spec</strong> written while tracing the defect: the observable problem, the fix boundary (what must <em>not</em> change), the likely files, and a validation that becomes the regression test. Your ranked list is on <a href="https://egamma.github.io/vscodesweeper-state/index.html">your top-issues page</a> (filter: <em>agent-fixable</em>), and every spec is inspectable there before you run anything.</p>
 
   <h2>Using it</h2>
-  <p><strong>One-time setup (interim):</strong> the skill is headed for the vscode repo's <code>.github/skills/</code> (once that PR lands, your checkout has it with no install at all). Until then, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md">the generated SKILL.md</a> into your agent's personal skills dir — <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/sweeper-fix/SKILL.md</code> (Claude Code).</p>
+  <p><strong>No setup.</strong> The skill ships in the vscode repo itself (<code>.github/skills/sweeper-fix/</code>), so an up-to-date checkout already has it — just pull a recent <code>main</code>.</p>
   <p>Then paste the prompt the <em>Copy prompt</em> button put on your clipboard — the skill invocation plus the reviewed spec, so you can read (and edit) what the agent is asked to implement before sending:</p>
   <pre>Fix microsoft/vscode issue #262104 using the sweeper-fix skill.
 
@@ -59,9 +59,9 @@ Validation: …</pre>
   <ul>
     <li><strong>Skill doesn't trigger?</strong> Say "sweeper-fix skill" explicitly (agents match on the skill description). Copilot CLI loads skills at session start — restart it after pulling a checkout that just gained the skill.</li>
     <li><strong>"Not agent-fixable" refusal?</strong> The review found no safe fix spec for that issue — the skill only implements reviewed specs. Check the record linked from the dashboard for what the review concluded instead.</li>
-    <li><strong>Skill still not found?</strong> Check the SKILL.md landed at exactly <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (or the Claude equivalent) — the folder name must match the skill name.</li>
+    <li><strong>Skill still not found?</strong> Check your checkout has <code>.github/skills/sweeper-fix/SKILL.md</code> — pull a recent <code>main</code> if not. On an older checkout you can't update, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md">the generated SKILL.md</a> into <code>~/.copilot/skills/sweeper-fix/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/sweeper-fix/SKILL.md</code> (Claude Code).</li>
   </ul>
 
-  <footer>sweeper-fix skill v4 · generated 2026-08-04 15:26 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
+  <footer>sweeper-fix skill v4 · generated 2026-08-06 10:09 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
 </body>
 </html>

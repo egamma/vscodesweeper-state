@@ -8,7 +8,7 @@ The sweeper reviewed the open `microsoft/vscode` backlog with a source checkout 
 
 ## Using it
 
-**One-time setup (interim):** until the skill lands in the vscode repo's `.github/skills/` (PR pending; then no install at all), copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/SKILL.md` or `~/.claude/skills/sweeper-fix/SKILL.md`. Then, from your vscode checkout, paste the prompt the *Copy prompt* button put on your clipboard — the skill invocation plus the reviewed spec, readable and editable before you send it:
+**No setup:** the skill ships in the vscode repo itself (`.github/skills/sweeper-fix/`), so an up-to-date checkout already has it — just pull a recent `main`. Then, from your vscode checkout, paste the prompt the *Copy prompt* button put on your clipboard — the skill invocation plus the reviewed spec, readable and editable before you send it:
 
 ```
 Fix microsoft/vscode issue #262104 using the sweeper-fix skill.
@@ -32,6 +32,6 @@ Editing the spec is fine — the skill implements your version and still runs ev
 
 - Skill doesn't trigger → say "sweeper-fix skill" explicitly; restart Copilot CLI after the checkout gains the skill (skills load at session start).
 - "Not agent-fixable" refusal → the review found no safe fix spec; check the record for what it concluded instead.
-- Pre-merge testing → copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/` or `~/.claude/skills/sweeper-fix/`.
+- Skill not found → check the checkout has `.github/skills/sweeper-fix/SKILL.md` (pull a recent `main`); on an older checkout, copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/` or `~/.claude/skills/sweeper-fix/`.
 
-_sweeper-fix skill v4 · generated 2026-08-04 15:26 UTC._
+_sweeper-fix skill v4 · generated 2026-08-06 10:09 UTC._
