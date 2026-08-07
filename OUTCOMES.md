@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17526 issues reviewed · generated 2026-08-07 12:58 UTC
+[← Home](index.html) · 17567 issues reviewed · generated 2026-08-07 14:08 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 17526
-- **Close proposals:** 2663 (15% of reviewed)
-- **Acted on (closed):** 342 (13% of proposals)
+- **Issues reviewed:** 17567
+- **Close proposals:** 2667 (15% of reviewed)
+- **Acted on (closed):** 343 (13% of proposals)
 - **Closed with the sweeper's comment:** 195 (57% of acted-on) — 164 verbatim, 19 inside a longer comment, 12 edited
-- **Still awaiting action:** 2321 open close proposals
+- **Still awaiting action:** 2324 open close proposals
 
-_Close proposals count the whole corpus (794 of the 17526 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2321 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (796 of the 17567 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2324 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -45,6 +45,7 @@ _Close proposals count the whole corpus (794 of the 17526 reviewed issues have s
 | dileepyavan | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
 | karthiknadig | 1 | 1 (100%) |
+| Mapalmeira | 1 | 0 (0%) |
 | meganrogge | 1 | 0 (0%) |
 | Prasanna-2005 | 1 | 0 (0%) |
 | sanket-bhalerao | 1 | 0 (0%) |
@@ -56,15 +57,15 @@ _Close proposals count the whole corpus (794 of the 17526 reviewed issues have s
 
 | Review verdict | Closed |
 | --- | --- |
-| propose-close | 342 |
+| propose-close | 343 |
 | keep-open | 236 |
-| needs-info | 204 |
+| needs-info | 205 |
 | route-to-area | 12 |
 
 | Close reason | Closed |
 | --- | --- |
 | not_planned | 349 |
-| completed | 334 |
+| completed | 336 |
 | duplicate | 109 |
 | not_found | 2 |
 
@@ -72,13 +73,13 @@ _Close proposals count the whole corpus (794 of the 17526 reviewed issues have s
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 878 | 88 | 10% | 40 |
-| implemented-on-main | 743 | 121 | 16% | 86 |
-| *caused-by-extension | 255 | 29 | 11% | 15 |
-| *as-designed | 249 | 43 | 17% | 35 |
+| *duplicate | 876 | 89 | 10% | 40 |
+| implemented-on-main | 747 | 121 | 16% | 86 |
+| *caused-by-extension | 253 | 29 | 11% | 15 |
+| *as-designed | 250 | 43 | 17% | 35 |
 | *question | 243 | 22 | 9% | 8 |
-| *not-reproducible | 117 | 13 | 11% | 5 |
-| *out-of-scope | 76 | 9 | 12% | 3 |
+| *not-reproducible | 121 | 13 | 11% | 5 |
+| *out-of-scope | 75 | 9 | 12% | 3 |
 | *off-topic | 65 | 13 | 20% | 2 |
 | *extension-candidate | 31 | 4 | 13% | 1 |
 | invalid | 5 | 0 | 0% | 0 |
