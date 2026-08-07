@@ -47,4 +47,19 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 16 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-08-07 14:08 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md)._
+## Nightly sweeps
+
+| Run (UTC) | Reviewed | Failed | Verdicts |
+| --- | --- | --- | --- |
+| 2026-08-07 14:17 | 47/51 | 4 (323825, 323796, 323866, 323771) | keep-open 24 · route-to-area 9 · needs-info 8 · propose-close 6 |
+| 2026-08-07 13:12 | 199/200 | 1 (325830) | keep-open 89 · needs-info 44 · route-to-area 40 · propose-close 26 |
+| 2026-08-07 12:41 | 2/2 | 0 | needs-info 1 · propose-close 1 |
+| 2026-08-07 08:05 | 180/180 | 0 | needs-info 58 · keep-open 54 · propose-close 37 · route-to-area 31 |
+| 2026-08-07 06:08 | 249/250 | 1 (328877) | keep-open 103 · needs-info 64 · route-to-area 59 · propose-close 23 |
+| 2026-08-06 17:25 | 1/1 | 0 | keep-open 1 |
+| 2026-08-06 17:14 | 1/1 | 0 |  |
+| 2026-08-06 16:54 | 1/1 | 0 |  |
+
+_Last 8 run(s) · [full log](https://github.com/egamma/vscodesweeper-state/blob/state/meta/sweep-log.jsonl)_
+
+_Generated 2026-08-07 14:31 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md)._
