@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17180 issues reviewed · generated 2026-08-04 15:26 UTC
+[← Home](index.html) · 17526 issues reviewed · generated 2026-08-07 12:58 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 17180
-- **Close proposals:** 2626 (15% of reviewed)
-- **Acted on (closed):** 260 (10% of proposals)
-- **Closed with the sweeper's comment:** 174 (67% of acted-on) — 145 verbatim, 17 inside a longer comment, 12 edited
-- **Still awaiting action:** 2366 open close proposals
+- **Issues reviewed:** 17526
+- **Close proposals:** 2663 (15% of reviewed)
+- **Acted on (closed):** 342 (13% of proposals)
+- **Closed with the sweeper's comment:** 195 (57% of acted-on) — 164 verbatim, 19 inside a longer comment, 12 edited
+- **Still awaiting action:** 2321 open close proposals
 
-_Close proposals count the whole corpus (612 of the 17180 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2366 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (794 of the 17526 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2321 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -18,61 +18,70 @@ _Close proposals count the whole corpus (612 of the 17180 reviewed issues have s
 | --- | --- | --- |
 | alexdima | 87 | 85 (98%) |
 | justschen | 48 | 27 (56%) |
+| roblourens | 38 | 17 (45%) |
+| lramos15 | 29 | 0 (0%) |
 | hediet | 21 | 21 (100%) |
+| vs-code-engineering | 20 | 0 (0%) |
 | sbatten | 16 | 16 (100%) |
-| vs-code-engineering | 15 | 0 (0%) |
 | aeschli | 12 | 11 (92%) |
-| lramos15 | 12 | 0 (0%) |
-| dmitrivMS | 10 | 0 (0%) |
+| dmitrivMS | 11 | 0 (0%) |
+| sandy081 | 8 | 0 (0%) |
 | deepak1556 | 7 | 0 (0%) |
-| vritant24 | 6 | 3 (50%) |
+| vritant24 | 7 | 3 (43%) |
+| TylerLeonhardt | 6 | 6 (100%) |
 | bhavyaus | 4 | 4 (100%) |
 | pwang347 | 4 | 3 (75%) |
-| roblourens | 4 | 3 (75%) |
-| sandy081 | 2 | 0 (0%) |
+| joshspicer | 3 | 0 (0%) |
+| kycutler | 3 | 0 (0%) |
 | (unattributed) | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
+| alexr00 | 1 | 0 (0%) |
+| AndrewStopchenko-SO | 1 | 0 (0%) |
 | babakzarrinbal | 1 | 0 (0%) |
+| benibenj | 1 | 1 (100%) |
 | bryanchen-d | 1 | 0 (0%) |
 | danwilhelm | 1 | 0 (0%) |
 | DavidLangworthy | 1 | 0 (0%) |
 | dileepyavan | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
 | karthiknadig | 1 | 1 (100%) |
-| kycutler | 1 | 0 (0%) |
 | meganrogge | 1 | 0 (0%) |
+| Prasanna-2005 | 1 | 0 (0%) |
 | sanket-bhalerao | 1 | 0 (0%) |
+| steven8274 | 1 | 0 (0%) |
+| trent-abc | 1 | 0 (0%) |
+| xgtxdzh | 1 | 0 (0%) |
 
 ## All closures since review — context
 
 | Review verdict | Closed |
 | --- | --- |
-| propose-close | 260 |
-| keep-open | 181 |
-| needs-info | 164 |
-| route-to-area | 7 |
+| propose-close | 342 |
+| keep-open | 236 |
+| needs-info | 204 |
+| route-to-area | 12 |
 
 | Close reason | Closed |
 | --- | --- |
-| not_planned | 281 |
-| completed | 258 |
-| duplicate | 72 |
-| not_found | 1 |
+| not_planned | 349 |
+| completed | 334 |
+| duplicate | 109 |
+| not_found | 2 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 868 | 66 | 8% | 34 |
-| implemented-on-main | 738 | 96 | 13% | 73 |
-| *caused-by-extension | 250 | 23 | 9% | 14 |
-| *as-designed | 242 | 39 | 16% | 34 |
-| *question | 241 | 12 | 5% | 8 |
-| *not-reproducible | 114 | 8 | 7% | 5 |
-| *out-of-scope | 75 | 6 | 8% | 3 |
-| *off-topic | 64 | 6 | 9% | 2 |
-| *extension-candidate | 30 | 4 | 13% | 1 |
-| invalid | 3 | 0 | 0% | 0 |
+| *duplicate | 878 | 88 | 10% | 40 |
+| implemented-on-main | 743 | 121 | 16% | 86 |
+| *caused-by-extension | 255 | 29 | 11% | 15 |
+| *as-designed | 249 | 43 | 17% | 35 |
+| *question | 243 | 22 | 9% | 8 |
+| *not-reproducible | 117 | 13 | 11% | 5 |
+| *out-of-scope | 76 | 9 | 12% | 3 |
+| *off-topic | 65 | 13 | 20% | 2 |
+| *extension-candidate | 31 | 4 | 13% | 1 |
+| invalid | 5 | 0 | 0% | 0 |
 | upstream | 1 | 0 | 0% | 0 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
