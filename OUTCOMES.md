@@ -1,16 +1,16 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17567 issues reviewed · generated 2026-08-07 14:31 UTC
+[← Home](index.html) · 17579 issues reviewed · generated 2026-08-08 06:11 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 17567
-- **Close proposals:** 2667 (15% of reviewed)
+- **Issues reviewed:** 17579
+- **Close proposals:** 2646 (15% of reviewed)
 - **Acted on (closed):** 343 (13% of proposals)
 - **Closed with the sweeper's comment:** 195 (57% of acted-on) — 164 verbatim, 19 inside a longer comment, 12 edited
-- **Still awaiting action:** 2324 open close proposals
+- **Still awaiting action:** 2303 open close proposals
 
-_Close proposals count the whole corpus (796 of the 17567 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2324 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (796 of the 17579 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2303 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -73,15 +73,16 @@ _Close proposals count the whole corpus (796 of the 17567 reviewed issues have s
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 876 | 89 | 10% | 40 |
-| implemented-on-main | 747 | 121 | 16% | 86 |
-| *caused-by-extension | 253 | 29 | 11% | 15 |
-| *as-designed | 250 | 43 | 17% | 35 |
-| *question | 243 | 22 | 9% | 8 |
-| *not-reproducible | 121 | 13 | 11% | 5 |
-| *out-of-scope | 75 | 9 | 12% | 3 |
-| *off-topic | 65 | 13 | 20% | 2 |
+| *duplicate | 888 | 89 | 10% | 40 |
+| implemented-on-main | 754 | 121 | 16% | 86 |
+| *as-designed | 253 | 43 | 17% | 35 |
+| *question | 230 | 22 | 10% | 8 |
+| *caused-by-extension | 218 | 29 | 13% | 15 |
+| *not-reproducible | 120 | 13 | 11% | 5 |
+| *out-of-scope | 74 | 9 | 12% | 3 |
+| *off-topic | 58 | 13 | 22% | 2 |
 | *extension-candidate | 31 | 4 | 13% | 1 |
+| chat-billing | 14 | 0 | 0% | 0 |
 | invalid | 5 | 0 | 0% | 0 |
 | upstream | 1 | 0 | 0% | 0 |
 

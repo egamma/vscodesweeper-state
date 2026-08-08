@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nightly sweep runs · VS Code Sweeper</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --accent: #0969da; --row: #f6f8fa; --bad: #d1242f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; --bad:#f85149; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0 auto; font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 900px; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 32px 0 12px; }
+  .lede { color: var(--muted); margin: 0 0 8px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .dashcard { display: block; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px;
+    margin-top: 8px; color: inherit; }
+  .dashcard:hover { border-color: var(--accent); text-decoration: none; }
+  .dashcard .t { font-size: 16px; font-weight: 600; }
+  .dashcard .d { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+  .mcard { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; }
+  .mhead { font-size: 16px; font-weight: 600; }
+  .stats { color: var(--muted); font-size: 13px; margin: 2px 0 8px; }
+  .top { font-size: 13px; margin-bottom: 10px; line-height: 1.4; }
+  .links { font-size: 14px; }
+  .muted { color: var(--muted); }
+  .bad { color: var(--bad); font-weight: 600; }
+  .runs { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .runs th, .runs td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
+  .runs th { color: var(--muted); font-weight: 600; }
+  .runs tbody tr:nth-child(odd) { background: var(--row); }
+  .logmeta { font-size: 12px; margin-top: 6px; }
+  footer { margin-top: 36px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+  <h1>Nightly sweep runs</h1>
+  <p class="lede">Operational history of the automated sweep — one row per run, from <code>meta/sweep-log.jsonl</code> on the state branch. <a href="index.html">← Back to the hub</a></p>
+  <h2>Nightly sweeps</h2>
+  <table class="runs">
+    <thead><tr><th>Run (UTC)</th><th>Reviewed</th><th>Failed</th><th>Verdicts</th></tr></thead>
+    <tbody>
+<tr><td>2026-08-07 20:27</td><td>34/34</td><td><span class="muted">0</span></td><td>propose-close 25 · needs-info 8 · route-to-area 1</td></tr>
+<tr><td>2026-08-07 20:12</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 2</td></tr>
+<tr><td>2026-08-07 15:40</td><td>38/38</td><td><span class="muted">0</span></td><td>propose-close 19 · needs-info 15 · keep-open 2 · route-to-area 2</td></tr>
+<tr><td>2026-08-07 15:30</td><td>0/38</td><td><span class="bad">38</span> <a href="https://github.com/microsoft/vscode/issues/281762" target="_blank" rel="noopener">#281762</a> <a href="https://github.com/microsoft/vscode/issues/292575" target="_blank" rel="noopener">#292575</a> <a href="https://github.com/microsoft/vscode/issues/281733" target="_blank" rel="noopener">#281733</a> <a href="https://github.com/microsoft/vscode/issues/281898" target="_blank" rel="noopener">#281898</a> <a href="https://github.com/microsoft/vscode/issues/293695" target="_blank" rel="noopener">#293695</a> <a href="https://github.com/microsoft/vscode/issues/286920" target="_blank" rel="noopener">#286920</a> <a href="https://github.com/microsoft/vscode/issues/289052" target="_blank" rel="noopener">#289052</a> <a href="https://github.com/microsoft/vscode/issues/288125" target="_blank" rel="noopener">#288125</a> <a href="https://github.com/microsoft/vscode/issues/287353" target="_blank" rel="noopener">#287353</a> <a href="https://github.com/microsoft/vscode/issues/294599" target="_blank" rel="noopener">#294599</a> <a href="https://github.com/microsoft/vscode/issues/297248" target="_blank" rel="noopener">#297248</a> <a href="https://github.com/microsoft/vscode/issues/301311" target="_blank" rel="noopener">#301311</a> <a href="https://github.com/microsoft/vscode/issues/300407" target="_blank" rel="noopener">#300407</a> <a href="https://github.com/microsoft/vscode/issues/301575" target="_blank" rel="noopener">#301575</a> <a href="https://github.com/microsoft/vscode/issues/296754" target="_blank" rel="noopener">#296754</a> <a href="https://github.com/microsoft/vscode/issues/304673" target="_blank" rel="noopener">#304673</a> <a href="https://github.com/microsoft/vscode/issues/304438" target="_blank" rel="noopener">#304438</a> <a href="https://github.com/microsoft/vscode/issues/304665" target="_blank" rel="noopener">#304665</a> <a href="https://github.com/microsoft/vscode/issues/303390" target="_blank" rel="noopener">#303390</a> <a href="https://github.com/microsoft/vscode/issues/302441" target="_blank" rel="noopener">#302441</a> <a href="https://github.com/microsoft/vscode/issues/307416" target="_blank" rel="noopener">#307416</a> <a href="https://github.com/microsoft/vscode/issues/307442" target="_blank" rel="noopener">#307442</a> <a href="https://github.com/microsoft/vscode/issues/307493" target="_blank" rel="noopener">#307493</a> <a href="https://github.com/microsoft/vscode/issues/307686" target="_blank" rel="noopener">#307686</a> <a href="https://github.com/microsoft/vscode/issues/308393" target="_blank" rel="noopener">#308393</a> <a href="https://github.com/microsoft/vscode/issues/317130" target="_blank" rel="noopener">#317130</a> <a href="https://github.com/microsoft/vscode/issues/313974" target="_blank" rel="noopener">#313974</a> <a href="https://github.com/microsoft/vscode/issues/317105" target="_blank" rel="noopener">#317105</a> <a href="https://github.com/microsoft/vscode/issues/317240" target="_blank" rel="noopener">#317240</a> <a href="https://github.com/microsoft/vscode/issues/313003" target="_blank" rel="noopener">#313003</a> <a href="https://github.com/microsoft/vscode/issues/308420" target="_blank" rel="noopener">#308420</a> <a href="https://github.com/microsoft/vscode/issues/316176" target="_blank" rel="noopener">#316176</a> <a href="https://github.com/microsoft/vscode/issues/309127" target="_blank" rel="noopener">#309127</a> <a href="https://github.com/microsoft/vscode/issues/308476" target="_blank" rel="noopener">#308476</a> <a href="https://github.com/microsoft/vscode/issues/309823" target="_blank" rel="noopener">#309823</a> <a href="https://github.com/microsoft/vscode/issues/320607" target="_blank" rel="noopener">#320607</a> <a href="https://github.com/microsoft/vscode/issues/317250" target="_blank" rel="noopener">#317250</a> <a href="https://github.com/microsoft/vscode/issues/320110" target="_blank" rel="noopener">#320110</a></td><td></td></tr>
+<tr><td>2026-08-07 14:17</td><td>47/51</td><td><span class="bad">4</span> <a href="https://github.com/microsoft/vscode/issues/323825" target="_blank" rel="noopener">#323825</a> <a href="https://github.com/microsoft/vscode/issues/323796" target="_blank" rel="noopener">#323796</a> <a href="https://github.com/microsoft/vscode/issues/323866" target="_blank" rel="noopener">#323866</a> <a href="https://github.com/microsoft/vscode/issues/323771" target="_blank" rel="noopener">#323771</a></td><td>keep-open 24 · route-to-area 9 · needs-info 8 · propose-close 6</td></tr>
+<tr><td>2026-08-07 13:12</td><td>199/200</td><td><span class="bad">1</span> <a href="https://github.com/microsoft/vscode/issues/325830" target="_blank" rel="noopener">#325830</a></td><td>keep-open 89 · needs-info 44 · route-to-area 40 · propose-close 26</td></tr>
+<tr><td>2026-08-07 12:41</td><td>2/2</td><td><span class="muted">0</span></td><td>needs-info 1 · propose-close 1</td></tr>
+<tr><td>2026-08-07 08:05</td><td>180/180</td><td><span class="muted">0</span></td><td>needs-info 58 · keep-open 54 · propose-close 37 · route-to-area 31</td></tr>
+<tr><td>2026-08-07 06:08</td><td>249/250</td><td><span class="bad">1</span> <a href="https://github.com/microsoft/vscode/issues/328877" target="_blank" rel="noopener">#328877</a></td><td>keep-open 103 · needs-info 64 · route-to-area 59 · propose-close 23</td></tr>
+<tr><td>2026-08-06 17:25</td><td>1/1</td><td><span class="muted">0</span></td><td>keep-open 1</td></tr>
+<tr><td>2026-08-06 17:14</td><td>1/1</td><td><span class="muted">0</span></td><td></td></tr>
+<tr><td>2026-08-06 16:54</td><td>1/1</td><td><span class="muted">0</span></td><td></td></tr>
+    </tbody>
+  </table>
+  <p class="muted logmeta">Last 12 run(s) · <a href="https://github.com/egamma/vscodesweeper-state/blob/state/meta/sweep-log.jsonl" target="_blank" rel="noopener">full log</a></p>
+
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> · 2026-08-08 06:11 UTC.</footer>
+</body>
+</html>
