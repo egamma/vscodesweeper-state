@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code Sweeper — Proposal Outcomes</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
+    --accent: #0969da; --row: #f6f8fa;
+    --wc: #1a7f37; --wc-mid: #4ac26b; --wc-lite: #aceebb;
+    --own: #afb8c1; --uncl: #d4a72c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
+      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 900px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  h2 { font-size: 16px; margin: 28px 0 4px; }
+  .sub, .desc { color: var(--muted); }
+  .sub { margin-bottom: 8px; }
+  .desc { margin: 0 0 12px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin: 16px 0; }
+  .tile { background: var(--row); border-radius: 8px; padding: 12px 14px; }
+  .tlabel { color: var(--muted); font-size: 12px; }
+  .tvalue { font-size: 24px; font-weight: 600; }
+  .tile.accent .tvalue, .tile.accent .tlabel { color: var(--wc); }
+  .tsub { color: var(--muted); font-size: 12px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; color: var(--muted); font-size: 12px; margin-bottom: 10px; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+  .sw.wc { background: var(--wc); } .sw.wcm { background: var(--wc-mid); } .sw.wcl { background: var(--wc-lite); }
+  .sw.own { background: var(--own); } .sw.uncl { background: var(--uncl); }
+  .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .crow { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 10px; margin: 6px 0; }
+  .wk { text-align: right; color: var(--muted); font-size: 12px; white-space: nowrap; }
+  .bar, .strip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; }
+  .strip { height: 22px; margin-bottom: 8px; }
+  .seg { display: block; height: 100%; }
+  .seg + .seg { margin-left: 2px; }
+  .seg.wc { background: var(--wc); } .seg.wcm { background: var(--wc-mid); } .seg.wcl { background: var(--wc-lite); }
+  .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); }
+  .seg.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
+  table { border-collapse: collapse; width: 100%; margin: 8px 0 4px; }
+  th, td { text-align: left; padding: 5px 10px 5px 0; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-size: 12px; font-weight: 600; }
+  td.num, th.num { text-align: right; }
+  .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  footer { margin-top: 28px; color: var(--muted); font-size: 12px; }
+  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <h1>VS Code Sweeper — Proposal Outcomes</h1>
+  <div class="sub"><a href="index.html">← home</a> · 30 issues reviewed · generated 2026-08-08 15:24 UTC</div>
+
+  <div class="tiles">
+    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">30</div><div class="tsub">30 still open · 0 closed since review</div></div>
+    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">3</div><div class="tsub">10% of reviewed · 3 still open</div></div>
+    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">0</div><div class="tsub">0% of proposals</div></div>
+    <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
+  </div>
+
+  <h2>Proposed-close issues closed per week</h2>
+  <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>closed with sweeper comment</span>
+    <span><i class="sw own"></i>closed with own wording</span>
+    
+  </div>
+  <div class="chart">
+<p class="desc">No closures yet.</p>
+  </div>
+
+  <h2>Acceptance by close reason</h2>
+  <p class="desc">Each bar is one close reason (the proposed label; the label-free close is
+  implemented-on-main). Right label: acted-on / proposals. "Closed otherwise" counts closures
+  without the sweeper's comment — correlation, not proven adoption. Newer proposals have had
+  less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>closed with sweeper comment</span>
+    <span><i class="sw own"></i>closed otherwise</span>
+    <span><i class="sw pend"></i>still open</span>
+  </div>
+  <div class="chart">
+<div class="crow"><span class="wk">*duplicate</span><div class="bar"><i class="seg pend" style="width:100.00%" title="still open: 3"></i></div><span class="rlabel">0/3 (0%)</span></div>
+  </div>
+
+  <h2>Comment adoption on the 0 acted-on proposals</h2>
+  <div class="strip">
+    
+    
+    
+    
+    
+  </div>
+  <div class="legend">
+    <span><i class="sw wc"></i>verbatim 0</span>
+    <span><i class="sw wcm"></i>inside a longer comment 0</span>
+    <span><i class="sw wcl"></i>edited 0</span>
+    <span><i class="sw own"></i>own wording 0</span>
+    
+  </div>
+  
+
+  <h2>Who acted on proposals</h2>
+  <p class="desc">Attribution: poster of the matched comment, else who closed the issue.</p>
+  <table>
+    <tr><th>User</th><th class="num">Closures</th><th class="num">With sweeper comment</th></tr>
+<tr><td colspan="3" class="desc">None yet.</td></tr>
+  </table>
+
+  <h2>All closures since review — context</h2>
+  <p class="desc">Every reviewed issue that closed, by what the review had concluded. Only the propose-close row is claimed by the funnel above; needs-info issues auto-close on their own cadence, and keep-open closures happened for unrelated reasons (worth eyeballing as a precision check).</p>
+  <div class="cols">
+    <table>
+      <tr><th>Review verdict</th><th class="num">Closed</th></tr>
+
+    </table>
+    <table>
+      <tr><th>Close reason</th><th class="num">Closed</th></tr>
+
+    </table>
+  </div>
+
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.
+  Close proposals here count the whole corpus; the <a href="dashboard.html">dashboard</a>'s
+  <code>propose-close</code> card counts only the 3 still open
+  (closed records move to its ✔ closed view), so it reads lower by the 0
+  acted-on proposals. Something off? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener">Send feedback</a>.</footer>
+  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
+</body>
+</html>

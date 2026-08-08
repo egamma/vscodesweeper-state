@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code Sweeper — Review Dashboard</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
+    --accent: #0969da; --row: #f6f8fa;
+    --close: #cf222e; --keep: #1a7f37; --info: #9a6700; --route: #0969da;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 24px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin-bottom: 20px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .card { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg); border-radius: 8px;
+    padding: 10px 14px; min-width: 120px; font: inherit; }
+  .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .card .n { font-size: 22px; font-weight: 600; }
+  .card .l { color: var(--muted); font-size: 12px; }
+  /* Auto-fixable is a separate axis: divider before it + green (not blue) active. */
+  .af-card { margin-left: 12px; position: relative; }
+  .af-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .af-card.active { border-color: var(--keep); box-shadow: 0 0 0 1px var(--keep) inset; }
+  .af-card.active .l, .af-card.active .n { color: var(--keep); }
+  /* Closed is an exclusive view swap (not a stacking filter): divider + muted active. */
+  .closed-card { margin-left: 12px; position: relative; }
+  .closed-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .closed-card.active { border-color: var(--muted); box-shadow: 0 0 0 1px var(--muted) inset; }
+  .closed-ok { color: var(--keep); border-color: var(--keep); }
+  .closed-ext { color: var(--muted); border-color: var(--muted); }
+  .controls { margin-bottom: 12px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  input[type=search] { width: 100%; max-width: 360px; padding: 8px 10px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--bg); color: var(--fg); font: inherit; }
+  .toggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px;
+    cursor: pointer; user-select: none; white-space: nowrap; }
+  .toggle input { accent-color: var(--accent); }
+  .result-count { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  /* Fixed-height single-line rows — the precondition for windowed rendering (every
+     data row must be the same height so the spacer math holds). Long cells clamp
+     with an ellipsis; the full text lives in the title attribute. */
+  tbody td { padding-top: 0; padding-bottom: 0; height: 38px; vertical-align: middle; white-space: nowrap; }
+  td.clamp { max-width: 420px; overflow: hidden; text-overflow: ellipsis; }
+  td.owner { max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+  tr.spacer td { height: auto; padding: 0; border: 0; }
+  th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted); font-weight: 600; }
+  th:not([data-k]) { cursor: default; }
+  th[data-k]:hover { color: var(--fg); }
+  tbody tr:hover { background: var(--row); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid transparent; white-space: nowrap; }
+  .a-propose-close { color: var(--close); border-color: var(--close); }
+  .a-keep-open { color: var(--keep); border-color: var(--keep); }
+  .a-needs-info { color: var(--info); border-color: var(--info); }
+  .a-route-to-area { color: var(--route); border-color: var(--route); }
+  .af-yes { color: var(--keep); border-color: var(--keep); }
+  .conf { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: var(--border); position: relative; vertical-align: middle; }
+  .conf > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+  .muted { color: var(--muted); }
+  a.flag { color: var(--muted); }
+  a.flag:hover { color: var(--accent); text-decoration: none; }
+  .vtier { cursor: help; border-bottom: 1px dotted var(--muted); }
+  code { background: var(--row); padding: 1px 5px; border-radius: 4px; }
+  footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  button.copy { font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    border-radius: 6px; padding: 3px 8px; }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+  button.copy.warn { color: var(--info); border-color: var(--info); }
+  button.copy.warn:hover { color: var(--info); border-color: var(--info); }
+  button.peek { font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
+    border: none; background: none; padding: 0 2px; opacity: .55; }
+  button.peek:hover { opacity: 1; }
+  #cpanel { position: fixed; z-index: 20; max-width: 560px; max-height: 50vh; overflow-y: auto;
+    background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 12px 14px; font-size: 13px; line-height: 1.5; white-space: pre-wrap;
+    box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+  #cpanel .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border); white-space: normal; }
+  #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px;
+    font-size: 13px; opacity: 0; transition: opacity .15s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <h1>VS Code Sweeper — Review Dashboard</h1>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 0 open reviewed · 0 actionable · 0 closed since review · <a href="outcomes-vscode-python-environments.html">0 close proposals to date</a> · generated 2026-08-08 15:24 UTC</div>
+  <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">0</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">0</span><span class="l">needs-info</span></button><button class="card" data-action="route-to-area"><span class="n">0</span><span class="l">route-to-area</span></button><button class="card" data-action="keep-open"><span class="n">0</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">0</span><span class="l">✔ closed</span></button></div>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
+    <label class="toggle" id="actionableLabel" title="Hide keep-open / no-action rows. Uncheck to show every reviewed issue."><input type="checkbox" id="actionableOnly" checked> <span id="actionableText">Actionable only (0 of 0)</span></label>
+    <span class="result-count" id="resultCount" aria-live="polite"></span>
+  </div>
+  <table>
+    <thead><tr>
+      <th data-k="owner">Owner</th><th data-k="number">Issue</th><th data-k="title">Title</th><th data-k="itemType">Type</th>
+      <th data-k="triageAction">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …).">Label / reason</th>
+      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th>Review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>. Records live on the <code>state</code> branch.
+  <strong>Apply</strong> copies the suggested comment for you to paste on the issue and close it yourself — vscodesweeper never edits microsoft/vscode issues.
+  The agent-fix lane is not enabled for this repository — reviews here are proposal-only.
+  Spotted a wrong verdict? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener">Send feedback</a> — the ⚑ next to a row's record link prefills the item.</footer>
+  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
+  <div id="toast" role="status" aria-live="polite"></div>
+<script>
+const DATA = [];
+const ACTIONS = ["propose-close","needs-info","route-to-area","keep-open"];
+const VDESC = {"Confirmed":"Reproduced against current main — the failing behavior was observed directly, or a commenter supplied a confirmed reproduction.","Source-confirmed":"Traced conclusively in the current source via a checkout — the buggy code path is identified, though not executed.","Traced":"A likely defect path was found in the source, but with some uncertainty that it's the true cause.","Plausible":"The report reads as coherent and credible, but it wasn't reproduced or traced in the code — not yet verified.","Unverified":"A genuine reproduction attempt failed, or the report is too thin to verify.","Inconclusive":"Signals conflict — a reproduction was claimed but confidence is low; treat the rating with caution."};
+const TARGET = "microsoft/vscode-python-environments", STATE_REPO = "egamma/vscodesweeper-state", STATE_BRANCH = "state";
+const VTIERS = ["Confirmed","Source-confirmed","Traced","Plausible","Unverified","Inconclusive"]; // best → worst; rank = index, unknown/blank ranks last
+const IMPLEMENTED = "implemented on main";
+// The blob ships a slim projection (toShipped in dashboard.ts): empty/default keys are
+// omitted, urls/rating/rank are derived here from the constants above, and freshness
+// arrives as a ship-only-when-stale flag. Hydrate every record back to the full shape
+// so the rendering code below reads plain fields throughout.
+for (const r of DATA) {
+  r.owner = r.owner || ""; r.itemType = r.itemType || ""; r.labels = r.labels || "";
+  r.proposedLabel = r.proposedLabel || "none"; r.triageAction = r.triageAction || "keep-open";
+  r.verification = r.verification || ""; r.autoFixable = r.autoFixable || "";
+  r.fixPr = r.fixPr || ""; r.implementPr = r.implementPr || ""; r.skillPr = r.skillPr || "";
+  r.currentState = r.currentState || "open"; r.closedAt = r.closedAt || ""; r.stateReason = r.stateReason || "";
+  r.proposedComment = r.proposedComment || ""; r.verifiedUpdatedAt = r.verifiedUpdatedAt || "";
+  r.contentFresh = !r.contentStale;
+  r.url = r.url || "https://github.com/" + TARGET + "/issues/" + r.number;
+  r.reviewUrl = r.reviewUrl || "https://github.com/" + STATE_REPO + "/blob/" + STATE_BRANCH + "/records/" + TARGET + "/items/" + r.number + ".md";
+  const rank = VTIERS.indexOf(r.verification);
+  r.verificationRank = rank === -1 ? VTIERS.length : rank;
+  r.rating = !r.verification ? "" : rank === -1 ? r.verification : (VTIERS.length - rank) + "/" + VTIERS.length + " " + r.verification;
+  // The proposed label IS the close reason (closeReason in record-parse.ts); a
+  // label-free propose-close means implemented-on-main. Mapping it here — not in
+  // rowHtml — makes search and column sort see the reason for free, and lets the
+  // cell stay one code path (it reads like any other value, because it is one).
+  if (r.triageAction === "propose-close" && r.proposedLabel === "none") r.proposedLabel = IMPLEMENTED;
+}
+let actionFilter = null, sortK = "owner", sortDir = 1; // open on the actionable set; click a card to filter
+let autoFixOnly = false, actionableOnly = true;
+let closedOnly = false; // exclusive view: closed-since-review records, most recent first
+const rowsEl = document.getElementById("rows"), qEl = document.getElementById("q");
+const actionableEl = document.getElementById("actionableOnly");
+const actionableLabelEl = document.getElementById("actionableLabel");
+const actionableTextEl = document.getElementById("actionableText");
+const resultCountEl = document.getElementById("resultCount");
+function esc(s){const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+function attr(s){return esc(s).replace(/"/g,"&quot;");} // esc leaves quotes alone — needed inside title="…"
+// Keep in sync with feedbackUrl() in feedback.ts — plain item number only, never
+// owner/repo#N or an upstream issue URL (a submitted reference would ping the issue).
+function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: item " + n, item: n, page: "dashboard" }); }
+// Keep in sync with isActionable() in dashboard.ts.
+function isActionable(r){ return r.triageAction !== "keep-open" || !!r.proposedComment || !!r.fixPr || !!r.implementPr || !!r.skillPr || r.autoFixable === "true"; }
+function matchesText(r, q){ return !q || (String(r.number)+" "+r.title+" "+r.proposedLabel+" "+r.itemType+" "+(r.rating||"")+" "+(r.owner||"")).toLowerCase().includes(q); }
+// Recompute the card numbers over the current view so they track the search box / actionable
+// toggle instead of staying at the server-baked totals. Faceted: each card reflects every OTHER
+// active filter but NOT its own selection, so the counts stay meaningful while one card is active.
+function isClosed(r){ return r.currentState === "closed"; }
+function updateCounts(q){
+  const base = DATA.filter(r => !isClosed(r) && (!actionableOnly || isActionable(r)) && matchesText(r, q));
+  for (const a of ACTIONS){
+    const n = base.filter(r => (!autoFixOnly || r.autoFixable === "true") && r.triageAction === a).length;
+    const el = document.querySelector('#cards .card[data-action="'+a+'"] .n');
+    if (el) el.textContent = n;
+  }
+  const afEl = document.querySelector('#afCard .n');
+  if (afEl) afEl.textContent = base.filter(r => (!actionFilter || r.triageAction === actionFilter) && r.autoFixable === "true").length;
+  const clEl = document.querySelector('#closedCard .n');
+  if (clEl) clEl.textContent = DATA.filter(r => isClosed(r) && matchesText(r, q)).length;
+  const actionableBase = DATA.filter(r =>
+    !isClosed(r) &&
+    matchesText(r, q) &&
+    (!actionFilter || r.triageAction === actionFilter) &&
+    (!autoFixOnly || r.autoFixable === "true")
+  );
+  const actionableMatches = actionableBase.filter(isActionable).length;
+  actionableTextEl.textContent = "Actionable only (" + actionableMatches.toLocaleString("en-US") + " of " + actionableBase.length.toLocaleString("en-US") + ")";
+  actionableEl.disabled = closedOnly;
+  actionableLabelEl.title = closedOnly
+    ? "Actionable only does not apply to the closed archive."
+    : "Hide keep-open / no-action rows. Uncheck to show every reviewed issue.";
+}
+let view = []; // the current filtered+sorted rows; vrender paints a window of it
+function render(){
+  const raw = qEl.value.trim().toLowerCase();
+  const q = raw.length >= 2 ? raw : ""; // 1-char queries match nearly every row — treat as no filter
+
+  updateCounts(q);
+  view = DATA.filter(r => {
+    // Closed mode swaps the whole view; the action/auto-fix/actionable filters
+    // describe active triage work and don't apply to the archive.
+    if (closedOnly) return isClosed(r) && matchesText(r, q);
+    if (isClosed(r)) return false;
+    if (actionableOnly && !isActionable(r)) return false;
+    if (actionFilter && r.triageAction !== actionFilter) return false;
+    if (autoFixOnly && r.autoFixable !== "true") return false;
+    if (!matchesText(r, q)) return false;
+    return true;
+  });
+  if (closedOnly && sortK === "owner" && sortDir === 1) {
+    view.sort((a,b)=> b.closedAt.localeCompare(a.closedAt) || a.number-b.number); // default: most recently closed first
+  } else {
+    view.sort((a,b)=>{ let x=a[sortK], y=b[sortK]; if(x<y)return -sortDir; if(x>y)return sortDir; return a.number-b.number; });
+  }
+  resultCountEl.textContent = "Showing " + view.length.toLocaleString("en-US") + (view.length === 1 ? " issue" : " issues");
+  window.scrollTo({ top: 0 }); // filter/sort changed what's shown — start at the top of it
+  vrender(true);
+}
+function rowHtml(r){
+  const pct = Math.round(r.confidence*100);
+  return "<tr>"
+    + '<td class="owner" title="'+attr(r.owner)+'">'+esc(r.owner||"—")+"</td>"
+    + '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">#'+esc(r.number)+'</a></td>'
+    + '<td class="clamp" title="'+attr(r.title)+'">'+esc(r.title)+"</td>"
+    + "<td>"+esc(r.itemType)+"</td>"
+    + '<td><span class="pill a-'+esc(r.triageAction)+'">'+esc(r.triageAction)+"</span>"+closedPill(r)+"</td>"
+    + "<td><code>"+esc(r.proposedLabel)+"</code></td>"
+    + '<td><span class="conf"><i style="width:'+pct+'%"></i></span> <span class="muted">'+pct+"%</span></td>"
+    + "<td>"+(r.rating?'<span class="vtier" title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>":'<span class="muted">—</span>')+"</td>"
+    + '<td><a href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener">view</a> <a class="flag" href="'+feedbackHref(r.number)+'" target="_blank" rel="noopener" title="Report feedback on this verdict — opens a prefilled issue on the state repo (plain item number, so the vscode issue is never pinged)">⚑</a></td>'
+    + "<td>"+applyCell(r)+"</td>"
+    + "<td>"+afCell(r)+"</td>"
+    + '<td class="muted">'+esc((r.reviewedAt||"").slice(0,10))+"</td>"
+    + "</tr>";
+}
+// Windowed rendering: only the viewport ± OVERSCAN rows exist in the DOM; spacer
+// rows above/below keep the scrollbar honest. Rows are fixed-height (see the CSS
+// clamp), so the spacer math is exact and cost stays flat at any corpus size —
+// the previous full-table innerHTML froze for seconds beyond ~10k rows.
+const OVERSCAN = 20;
+let rowH = 39, winFirst = -1, winLast = -1;
+function vrender(force){
+  if (!view.length) {
+    winFirst = winLast = -1;
+    rowsEl.innerHTML = '<tr><td colspan="12" class="muted">No matching records.</td></tr>';
+    return;
+  }
+  // Table-top offset from the document: unaffected by the spacers below it, since
+  // the tbody's total height is constant for a given view.
+  const top = rowsEl.getBoundingClientRect().top + window.scrollY;
+  const first = Math.max(0, Math.floor((window.scrollY - top) / rowH) - OVERSCAN);
+  const last = Math.min(view.length, first + Math.ceil(window.innerHeight / rowH) + 2 * OVERSCAN);
+  if (!force && first === winFirst && last === winLast) return;
+  winFirst = first; winLast = last;
+  const spacer = h => '<tr class="spacer"><td colspan="12" style="height:' + h + 'px"></td></tr>';
+  rowsEl.innerHTML = (first > 0 ? spacer(first * rowH) : "")
+    + view.slice(first, last).map(rowHtml).join("")
+    + (last < view.length ? spacer((view.length - last) * rowH) : "");
+  // Self-correcting row height: rows are uniform, so slice height ÷ row count is
+  // exact. One re-render when the estimate drifts (fonts/zoom/theme).
+  const rendered = rowsEl.querySelectorAll("tr:not(.spacer)");
+  if (rendered.length > 1) {
+    const h = (rendered[rendered.length-1].getBoundingClientRect().bottom - rendered[0].getBoundingClientRect().top) / rendered.length;
+    if (h > 0 && Math.abs(h - rowH) > 0.1) { rowH = h; vrender(true); }
+  }
+}
+let scrollTick = false;
+addEventListener("scroll", () => {
+  if (scrollTick) return;
+  scrollTick = true;
+  requestAnimationFrame(() => { scrollTick = false; vrender(false); });
+}, { passive: true });
+addEventListener("resize", () => vrender(true));
+// Outcome pill for a closed row: green check when the review proposed the close
+// (the sweeper's hit-rate signal), muted when it was resolved externally.
+function closedPill(r){
+  if (!isClosed(r)) return "";
+  const confirmed = r.triageAction === "propose-close";
+  const title = (confirmed
+    ? "Closed after a propose-close verdict — the proposal was confirmed."
+    : "Closed externally after review.")
+    + (r.stateReason ? " Reason: " + r.stateReason + "." : "")
+    + (r.closedAt ? " Closed " + r.closedAt.slice(0,10) + "." : "");
+  return ' <span class="pill ' + (confirmed ? "closed-ok" : "closed-ext") + '" title="' + esc(title) + '">'
+    + (confirmed ? "closed ✓" : "closed") + "</span>";
+}
+function afCell(r){
+  // An existing sweeper draft PR trumps the copy button — mirrors the skill's own
+  // no-existing-PR gate (don't start a second fix for the same issue).
+  if (r.implementPr) return '<a href="'+esc(r.implementPr)+'" target="_blank" rel="noopener" title="Experimental draft PR on microsoft/vscode (head on the fork)">draft PR ▸</a>';
+  if (r.fixPr) return '<a href="'+esc(r.fixPr)+'" target="_blank" rel="noopener" title="Draft fix PR in the fork (fork-only)">draft PR ▸</a>';
+  if (r.skillPr) return '<a href="'+esc(r.skillPr)+'" target="_blank" rel="noopener" title="Draft PR created with the sweeper-fix skill">draft PR ▸</a>';
+  if (r.autoFixable !== "true") return '<span class="muted">—</span>';
+  if (isClosed(r)) return '<span class="pill af-yes">yes</span>';
+  // Keep the copied line in sync with fixPromptLine() in skill-publish.ts.
+  return '<button class="copy fixprompt" data-n="'+esc(r.number)+'" title="Copy the prompt for your agent — the skill invocation plus the reviewed fix spec, ready to read, edit, and paste. The sweeper-fix skill implements it from your vscode checkout and opens a draft PR you own. First time? See the sweeper-fix skill link in the header." aria-label="Copy prompt for issue '+esc(r.number)+'">Copy prompt</button>'
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="spec" title="Preview the reviewed fix spec the skill implements (fix brief, likely files, validation)" aria-label="Preview fix spec for issue '+esc(r.number)+'">👁</button>';
+}
+function applyCell(r){
+  if (isClosed(r) || !r.proposedComment) return '<span class="muted">—</span>'; // nothing to apply on a closed issue
+  const stale = !r.contentFresh; // the ISSUE changed — policy drift is our detail, not the maintainer's
+  const cls = stale ? "copy warn" : "copy";
+  const title = stale ? "Heads up: the issue changed since this review (click for details) — the comment may still be useful."
+    : "Copy the suggested comment to paste on the issue";
+  return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+esc(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Preview the suggested comment before copying" aria-label="Preview suggested comment for issue '+esc(r.number)+'">👁</button>';
+}
+// Comment preview: a single fixed-position popover, NOT an inline row — the virtual
+// scroller's spacer math assumes uniform row heights, so rows must never grow.
+const cpanel = document.createElement("div");
+cpanel.id = "cpanel";
+cpanel.hidden = true;
+document.body.appendChild(cpanel);
+let cpanelFor = null;
+function closePanel(){ cpanel.hidden = true; cpanelFor = null; }
+function openPanel(btn, key, text, caption){
+  cpanelFor = key;
+  cpanel.textContent = ""; // rebuild; textContent throughout: issue-derived text stays text
+  if (caption) {
+    const cap = document.createElement("div");
+    cap.className = "cap";
+    cap.textContent = caption;
+    cpanel.appendChild(cap);
+  }
+  const body = document.createElement("div");
+  body.textContent = text;
+  cpanel.appendChild(body);
+  cpanel.hidden = false;
+  const r = btn.getBoundingClientRect();
+  cpanel.style.top = Math.max(12, Math.min(window.innerHeight - cpanel.offsetHeight - 12, r.bottom + 6)) + "px";
+  cpanel.style.left = Math.max(12, Math.min(r.left - cpanel.offsetWidth + r.width, window.innerWidth - cpanel.offsetWidth - 12)) + "px";
+}
+// The fix spec is NOT in the shipped payload (the 15k-row payload diet) — the spec
+// eye lazy-fetches the record from the public state branch on first click and shows
+// its Auto-fix candidate section. Cached per row; raw.githubusercontent serves CORS.
+async function fetchSpec(rec){
+  if (rec._spec) return rec._spec;
+  const raw = rec.reviewUrl.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+  const res = await fetch(raw);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const md = await res.text();
+  const m = /^## Auto-fix candidates*$/m.exec(md);
+  if (!m) throw new Error("no Auto-fix section");
+  const rest = md.slice(m.index + m[0].length);
+  const end = /^## /m.exec(rest);
+  rec._spec = (end ? rest.slice(0, end.index) : rest).replace(/^s*> ?/gm, "").trim();
+  return rec._spec;
+}
+addEventListener("scroll", closePanel, { passive: true }); // anchor rows move/recycle under the panel
+addEventListener("keydown", (e) => { if (e.key === "Escape") closePanel(); });
+document.addEventListener("click", (e) => {
+  if (!cpanel.hidden && !e.target.closest("#cpanel") && !e.target.closest("button.peek")) closePanel();
+});
+function exitClosedMode(){
+  if (!closedOnly) return;
+  closedOnly = false;
+  document.getElementById("closedCard").classList.remove("active");
+}
+document.querySelectorAll("#cards .card[data-action]").forEach(c => c.addEventListener("click", () => {
+  exitClosedMode(); // action facets describe the open set
+  const a = c.dataset.action;
+  actionFilter = actionFilter === a ? null : a;
+  // Explicitly drilling into keep-open means the user wants the full set, not just the
+  // few actionable keep-open rows — drop the actionable-only filter so the card's count matches.
+  if (actionFilter === "keep-open" && actionableOnly) { actionableOnly = false; actionableEl.checked = false; }
+  document.querySelectorAll("#cards .card[data-action]").forEach(x => x.classList.toggle("active", x.dataset.action === actionFilter));
+  render();
+}));
+document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
+  const k = th.dataset.k;
+  if (!k) return;
+  if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = 1; }
+  render();
+}));
+// Debounce typing only — clearing (incl. the × on type=search) renders immediately,
+// and card/sort/toggle handlers call render() directly so they stay instant.
+let qTimer;
+qEl.addEventListener("input", () => {
+  clearTimeout(qTimer);
+  if (qEl.value === "") { render(); return; }
+  qTimer = setTimeout(render, 200);
+});
+actionableEl.addEventListener("change", () => { actionableOnly = actionableEl.checked; render(); });
+const afCard = document.getElementById("afCard");
+afCard.addEventListener("click", () => { exitClosedMode(); autoFixOnly = !autoFixOnly; afCard.classList.toggle("active", autoFixOnly); render(); });
+const closedCard = document.getElementById("closedCard");
+closedCard.addEventListener("click", () => {
+  closedOnly = !closedOnly;
+  closedCard.classList.toggle("active", closedOnly);
+  render();
+});
+
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+// Copy the suggested comment. Freshness is advisory, never a hard block — the human
+// is the final authority. Only ISSUE drift warns: generation-time content staleness
+// and, for otherwise-fresh rows, a click-time check for drift since the page was built.
+async function doCopy(rec){
+  const warnings = [];
+  const when = (rec.reviewedAt||"").slice(0,10);
+  if (!rec.contentFresh) warnings.push("The issue appears to have changed since it was reviewed (" + when + "), so the verdict may no longer fully apply.");
+
+  let note = warnings.length ? " (issue changed since review)" : "";
+  if (!warnings.length) {
+    // Otherwise fresh — re-verify no drift since the dashboard was generated.
+    try {
+      const api = rec.url.replace("https://github.com/", "https://api.github.com/repos/");
+      const res = await fetch(api, { headers: { "Accept": "application/vnd.github+json" } });
+      if (res.ok) {
+        const j = await res.json();
+        if (rec.verifiedUpdatedAt && j.updated_at && j.updated_at !== rec.verifiedUpdatedAt) {
+          warnings.push("The issue changed since this dashboard was generated, so the verdict may no longer apply.");
+          note = " (issue changed since review)";
+        } else {
+          note = " (verified current)";
+        }
+      } else { note = " (couldn't re-verify)"; }
+    } catch { note = " (couldn't re-verify)"; }
+  }
+
+  if (warnings.length && !confirm(warnings.join("\n\n") + "\n\nThe comment may still be useful — copy it anyway?")) return;
+
+  try {
+    await navigator.clipboard.writeText(rec.proposedComment);
+    toast("Copied comment" + note);
+  } catch {
+    toast("Copy failed — open the record and copy manually");
+  }
+}
+
+rowsEl.addEventListener("click", (e) => {
+  const peekBtn = e.target.closest("button.peek");
+  if (peekBtn) {
+    const kind = peekBtn.dataset.kind || "comment";
+    const key = kind + ":" + peekBtn.dataset.n;
+    if (!cpanel.hidden && cpanelFor === key) { closePanel(); return; }
+    const rec = DATA.find(r => String(r.number) === peekBtn.dataset.n);
+    if (!rec) return;
+    if (kind === "comment") {
+      if (rec.proposedComment) openPanel(peekBtn, key, rec.proposedComment, "Suggested closing comment — the button copies it for you to paste on the issue.");
+      return;
+    }
+    const specCap = "The reviewed spec the sweeper-fix skill implements — the button copies the skill invocation.";
+    openPanel(peekBtn, key, "Loading the fix spec…", specCap);
+    fetchSpec(rec).then(
+      (spec) => { if (cpanelFor === key) openPanel(peekBtn, key, spec, specCap); },
+      () => { if (cpanelFor === key) openPanel(peekBtn, key, "Couldn't load the spec — use the record link in the Review column.", specCap); }
+    );
+    return;
+  }
+  const fixBtn = e.target.closest("button.copy.fixprompt");
+  if (fixBtn) {
+    // Copy the skill invocation PLUS the reviewed spec (team feedback 2026-08-04:
+    // "Copy prompt" should paste a prompt the developer can read and edit; the
+    // skill treats the inline spec as the maintainer's intent and still runs every
+    // gate). Keep in sync with fixPromptPayload()/SPEC_PASTE_HEADER in skill-publish.ts.
+    const rec = DATA.find(r => String(r.number) === fixBtn.dataset.n);
+    const line = "Fix " + TARGET + " issue #" + fixBtn.dataset.n + " using the sweeper-fix skill.";
+    // The spec is not in the payload diet — lazy-fetched like the eye (cached after
+    // either use). Fetch failure degrades to the bare invocation: the skill then
+    // reads the record's spec itself.
+    const payload = fetchSpec(rec).then(
+      (spec) => ({ text: line + "\n\nReviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):\n" + spec, withSpec: true }),
+      () => ({ text: line, withSpec: false })
+    );
+    const done = (p) => toast(p.withSpec ? "Copied prompt + spec — read, edit, paste into your agent" : "Copied the invocation (spec fetch failed — the skill reads the record itself)");
+    const fallback = () => payload.then((p) => navigator.clipboard.writeText(p.text).then(() => done(p), () => toast("Copy failed")));
+    if (typeof ClipboardItem !== "undefined" && navigator.clipboard.write) {
+      // Promise-valued ClipboardItem keeps the user-gesture context alive across
+      // the spec fetch (Safari rejects a plain writeText after an await).
+      navigator.clipboard.write([new ClipboardItem({ "text/plain": payload.then((p) => new Blob([p.text], { type: "text/plain" })) })])
+        .then(() => payload.then(done), fallback);
+    } else { fallback(); }
+    return;
+  }
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const rec = DATA.find(r => String(r.number) === btn.dataset.n);
+  if (rec) doCopy(rec);
+});
+
+render();
+</script>
+</body>
+</html>
