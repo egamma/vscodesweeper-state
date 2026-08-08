@@ -13,6 +13,14 @@ body:
         link (either would post a reference event on the upstream issue).
       placeholder: "123456"
   - type: input
+    id: repo
+    attributes:
+      label: Repository
+      description: >-
+        The reviewed repository's slug, e.g. microsoft/vscode-python. Leave
+        empty for microsoft/vscode. Plain slug only — never owner/repo#N.
+      placeholder: "microsoft/vscode"
+  - type: input
     id: page
     attributes:
       label: Page
@@ -23,7 +31,7 @@ body:
       label: What's wrong (or missing)?
       description: >-
         What should the sweeper have done differently? A record link
-        (records/microsoft/vscode/items/<n>.md on the state branch) is welcome —
+        (records/<owner>/<repo>/items/<n>.md on the state branch) is welcome —
         but please keep upstream issue references as plain numbers, never links.
     validations:
       required: true

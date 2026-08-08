@@ -100,7 +100,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 30 open reviewed · 7 actionable · 0 closed since review · <a href="outcomes-vscode-python-environments.html">1 close proposals to date</a> · generated 2026-08-08 15:56 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 30 open reviewed · 7 actionable · 0 closed since review · <a href="outcomes-vscode-python-environments.html">1 close proposals to date</a> · generated 2026-08-08 16:05 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">1</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">1</span><span class="l">needs-info</span></button><button class="card" data-action="route-to-area"><span class="n">3</span><span class="l">route-to-area</span></button><button class="card" data-action="keep-open"><span class="n">25</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">0</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
@@ -163,7 +163,7 @@ function esc(s){const d=document.createElement("div");d.textContent=s==null?"":S
 function attr(s){return esc(s).replace(/"/g,"&quot;");} // esc leaves quotes alone — needed inside title="…"
 // Keep in sync with feedbackUrl() in feedback.ts — plain item number only, never
 // owner/repo#N or an upstream issue URL (a submitted reference would ping the issue).
-function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: item " + n, item: n, page: "dashboard" }); }
+function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: " + TARGET + " item " + n, item: n, repo: TARGET, page: "dashboard" }); }
 // Keep in sync with isActionable() in dashboard.ts.
 function isActionable(r){ return r.triageAction !== "keep-open" || !!r.proposedComment || !!r.fixPr || !!r.implementPr || !!r.skillPr || r.autoFixable === "true"; }
 function matchesText(r, q){ return !q || (String(r.number)+" "+r.title+" "+r.proposedLabel+" "+r.itemType+" "+(r.rating||"")+" "+(r.owner||"")).toLowerCase().includes(q); }
