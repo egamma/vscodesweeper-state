@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 36 swept users · 17669 issues reviewed · generated 2026-08-09 13:46 UTC
+[← Home](index.html) · 36 swept users · 17669 issues reviewed · generated 2026-08-09 15:08 UTC
 
 ## Closure outcome per swept user
 
