@@ -74,7 +74,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Sweep Effectiveness</h1>
-  <div class="sub"><a href="index.html">← home</a> · 36 swept users · 17669 issues reviewed · generated 2026-08-09 15:08 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 36 swept users · 17669 issues reviewed · generated 2026-08-09 15:19 UTC</div>
 
   <h2>Closure outcome per swept user</h2>
   <p class="desc">What the review concluded about each issue's fate. Route-to-area counts as keep-open — it improves triage but the issue stays open.</p>
@@ -253,7 +253,11 @@
   reflects what lands in each inbox — issue composition, not reviewer or sweeper quality
   (e.g. platform churn produces duplicate families; a proxy-owned inbox collects
   extension-caused noise). Implemented-on-main leads every bar so it can be compared
-  across users off the shared left edge; globally-rare reasons fold into "other".</p>
+  across users off the shared left edge; globally-rare reasons fold into "other".
+  Since 2026-08-09 reasons come from the verdict's structured <code>closeReason</code>
+  field (label-independent — an as-designed close now shows as as-designed even in a
+  repo with no such label); records predating the field derive their reason from the
+  proposed label and fix provenance, so historical mixes may shift slightly.</p>
   <div class="legendbar">
     <div class="legend">
       <span><i class="sw rs1"></i>implemented on main</span>
