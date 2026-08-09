@@ -1,10 +1,22 @@
 # VS Code Sweeper
 
-Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the repo.
+Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing here is applied to the repos.
+
+## VS Code
 
 - **[Full review dashboard](dashboard.html)** — 17669 issues reviewed across all maintainers.
 - **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
 - **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
+
+## vscode-python
+
+- **[Review dashboard](dashboard-vscode-python.html)** — proposal-only reviews for `microsoft/vscode-python`.
+- **[Proposal outcomes](outcomes-vscode-python.html)** — close-proposal funnel and comment adoption.
+
+## vscode-python-environments
+
+- **[Review dashboard](dashboard-vscode-python-environments.html)** — proposal-only reviews for `microsoft/vscode-python-environments`.
+- **[Proposal outcomes](outcomes-vscode-python-environments.html)** — close-proposal funnel and comment adoption.
 
 ## Per-maintainer rankings
 
@@ -48,4 +60,4 @@ Proposal-only AI triage for `microsoft/vscode`. Nothing here is applied to the r
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 - **[index](top/index.md)** — 0 bugs · 0 feature requests.
 
-_Generated 2026-08-09 09:09 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-08-09 13:36 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
