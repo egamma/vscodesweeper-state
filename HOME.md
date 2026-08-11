@@ -23,6 +23,11 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[Review dashboard](dashboard-vscode-remote-release.html)** — proposal-only reviews for `microsoft/vscode-remote-release`.
 - **[Proposal outcomes](outcomes-vscode-remote-release.html)** — close-proposal funnel and comment adoption.
 
+## monaco-editor
+
+- **[Review dashboard](dashboard-monaco-editor.html)** — proposal-only reviews for `microsoft/monaco-editor`.
+- **[Proposal outcomes](outcomes-monaco-editor.html)** — close-proposal funnel and comment adoption.
+
 ## Per-maintainer rankings
 
 - **[lszomoru](top/lszomoru.md)** · [by theme](top/lszomoru-themes.md) — 740 bugs · 461 feature requests.
@@ -64,4 +69,4 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 16 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-08-11 11:50 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-08-11 21:04 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
