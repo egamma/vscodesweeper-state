@@ -1,6 +1,6 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17819 issues reviewed · generated 2026-08-11 10:09 UTC
+[← Home](index.html) · 17819 issues reviewed · generated 2026-08-11 11:14 UTC
 
 ## Funnel
 
@@ -9,6 +9,7 @@
 - **Acted on (closed):** 392 (15% of proposals)
 - **Closed with the sweeper's comment:** 210 (54% of acted-on) — 177 verbatim, 19 inside a longer comment, 14 edited
 - **Still awaiting action:** 2268 open close proposals
+- **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
 _Close proposals count the whole corpus (993 of the 17819 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2268 still open — closed records move to its ✔ closed view._
 
@@ -54,6 +55,13 @@ _Close proposals count the whole corpus (993 of the 17819 reviewed issues have s
 | steven8274 | 1 | 0 (0%) |
 | trent-abc | 1 | 0 (0%) |
 | xgtxdzh | 1 | 0 (0%) |
+
+## Reversals — reopened after a close
+
+| Issue | Reopened | Reversed close used | Who had acted |
+| --- | --- | --- | --- |
+| [#203857](https://github.com/microsoft/vscode/issues/203857) Colored indent guides | 2026-08-03 | none | hediet |
+| [#255890](https://github.com/microsoft/vscode/issues/255890) When you activate a source code chunk it scrolls to the top. | 2026-07-28 | none | justschen |
 
 ## All closures since review — context
 
