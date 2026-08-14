@@ -1,17 +1,17 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 17957 issues reviewed · generated 2026-08-13 10:02 UTC
+[← Home](index.html) · 18014 issues reviewed · generated 2026-08-14 09:50 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 17957
-- **Close proposals:** 2677 (15% of reviewed)
-- **Acted on (closed):** 406 (15% of proposals)
-- **Closed with the sweeper's comment:** 213 (52% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
-- **Still awaiting action:** 2271 open close proposals
+- **Issues reviewed:** 18014
+- **Close proposals:** 2680 (15% of reviewed)
+- **Acted on (closed):** 420 (16% of proposals)
+- **Closed with the sweeper's comment:** 213 (51% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
+- **Still awaiting action:** 2260 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1095 of the 17957 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2271 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1153 of the 18014 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2260 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,9 +21,9 @@ _Close proposals count the whole corpus (1095 of the 17957 reviewed issues have 
 | justschen | 67 | 29 (43%) |
 | roblourens | 38 | 17 (45%) |
 | hediet | 35 | 35 (100%) |
-| lramos15 | 29 | 0 (0%) |
-| vs-code-engineering | 29 | 0 (0%) |
-| dmitrivMS | 16 | 0 (0%) |
+| vs-code-engineering | 32 | 0 (0%) |
+| lramos15 | 31 | 0 (0%) |
+| dmitrivMS | 17 | 0 (0%) |
 | sbatten | 16 | 16 (100%) |
 | aeschli | 12 | 11 (92%) |
 | sandy081 | 11 | 0 (0%) |
@@ -31,15 +31,15 @@ _Close proposals count the whole corpus (1095 of the 17957 reviewed issues have 
 | vritant24 | 7 | 3 (43%) |
 | TylerLeonhardt | 6 | 6 (100%) |
 | kycutler | 5 | 0 (0%) |
+| (unattributed) | 4 | 0 (0%) |
 | bhavyaus | 4 | 4 (100%) |
+| joshspicer | 4 | 0 (0%) |
+| karthiknadig | 4 | 1 (25%) |
 | pwang347 | 4 | 3 (75%) |
 | benibenj | 3 | 1 (33%) |
-| joshspicer | 3 | 0 (0%) |
 | alexr00 | 2 | 0 (0%) |
 | dbaeumer | 2 | 1 (50%) |
-| karthiknadig | 2 | 1 (50%) |
 | meganrogge | 2 | 0 (0%) |
-| (unattributed) | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
 | AndrewStopchenko-SO | 1 | 0 (0%) |
 | babakzarrinbal | 1 | 0 (0%) |
@@ -52,9 +52,11 @@ _Close proposals count the whole corpus (1095 of the 17957 reviewed issues have 
 | DonJayamanne | 1 | 0 (0%) |
 | dustintran333 | 1 | 0 (0%) |
 | Mapalmeira | 1 | 0 (0%) |
+| mrleemurray | 1 | 0 (0%) |
 | Prasanna-2005 | 1 | 0 (0%) |
 | sanket-bhalerao | 1 | 0 (0%) |
 | steven8274 | 1 | 0 (0%) |
+| Tanishq-JM | 1 | 0 (0%) |
 | trent-abc | 1 | 0 (0%) |
 | xgtxdzh | 1 | 0 (0%) |
 
@@ -69,28 +71,28 @@ _Close proposals count the whole corpus (1095 of the 17957 reviewed issues have 
 
 | Review verdict | Closed |
 | --- | --- |
-| propose-close | 406 |
-| keep-open | 390 |
-| needs-info | 267 |
-| route-to-area | 32 |
+| propose-close | 420 |
+| keep-open | 408 |
+| needs-info | 283 |
+| route-to-area | 42 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 509 |
-| not_planned | 453 |
-| duplicate | 131 |
-| not_found | 2 |
+| completed | 541 |
+| not_planned | 475 |
+| duplicate | 132 |
+| not_found | 5 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 884 | 104 | 12% | 44 |
-| implemented-on-main | 760 | 149 | 20% | 96 |
-| *as-designed | 265 | 46 | 17% | 36 |
-| *caused-by-extension | 228 | 34 | 15% | 16 |
-| *question | 227 | 23 | 10% | 8 |
-| *not-reproducible | 122 | 17 | 14% | 5 |
+| *duplicate | 886 | 106 | 12% | 44 |
+| implemented-on-main | 763 | 150 | 20% | 96 |
+| *as-designed | 262 | 47 | 18% | 36 |
+| *caused-by-extension | 229 | 42 | 18% | 16 |
+| *question | 227 | 24 | 11% | 8 |
+| *not-reproducible | 122 | 18 | 15% | 5 |
 | *out-of-scope | 77 | 10 | 13% | 4 |
 | *off-topic | 59 | 14 | 24% | 2 |
 | *extension-candidate | 31 | 7 | 23% | 2 |
