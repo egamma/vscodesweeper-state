@@ -65,6 +65,13 @@
   .a-needs-info { color: var(--info); border-color: var(--info); }
   .area-chip { color: var(--muted); border-color: var(--border); font-weight: 400; cursor: help; }
   .af-yes { color: var(--keep); border-color: var(--keep); }
+  /* 2nd-review badges: clickable pills (the evidence opens in the popover). Refuted
+     stays visible but reads as a warning — it is the QA queue, never hidden. */
+  button.vbadge { cursor: pointer; background: none; font: inherit; font-size: 12px; }
+  .v-confirmed { color: var(--keep); border-color: var(--keep); }
+  .v-refuted { color: var(--close); border-color: var(--close); opacity: .75; }
+  .v-stale { color: var(--info); border-color: var(--info); }
+  .v-unver { color: var(--muted); border-color: var(--border); }
   .conf { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: var(--border); position: relative; vertical-align: middle; }
   .conf > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
   .muted { color: var(--muted); }
@@ -100,7 +107,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-14 09:52 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-15 07:06 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">41</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">11</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">180</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">1</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
@@ -111,7 +118,7 @@
     <thead><tr>
       <th data-k="owner">Owner</th><th data-k="number">Issue</th><th data-k="title">Title</th><th data-k="itemType">Type</th>
       <th data-k="triageAction">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …).">Label / reason</th>
-      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th>Review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
+      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a duplicate close proposal: a second model judged whether the issue and its cited canonical describe the same underlying problem, from titles/dates/bodies only. ✓ = confirmed (click for the evidence), ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification). Blank: not in the verify lane's scope yet.">2nd review</th><th>Review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
@@ -141,6 +148,13 @@ for (const r of DATA) {
   r.currentState = r.currentState || "open"; r.closedAt = r.closedAt || ""; r.stateReason = r.stateReason || "";
   r.proposedComment = r.proposedComment || ""; r.verifiedUpdatedAt = r.verifiedUpdatedAt || "";
   r.contentFresh = !r.contentStale;
+  r.verifyVerdict = r.verifyVerdict || ""; r.verifyEvidence = r.verifyEvidence || "";
+  r.verifyKind = r.verifyKind || ""; r.verifyCanonical = r.verifyCanonical || "";
+  r.verifyStale = !!r.verifyStale || (!!r.verifyVerdict && !r.contentFresh); // record OR live drift decays the badge
+  // Sort rank for the 2nd-review column: verified first, refuted last, unverified after everything stamped.
+  r.verifyRank = r.verifyVerdict === "confirmed" ? (r.verifyStale ? 1 : 0)
+    : r.verifyVerdict === "unverifiable" ? 2
+    : r.verifyVerdict === "refuted" ? 3 : 4;
   r.url = r.url || "https://github.com/" + TARGET + "/issues/" + r.number;
   r.reviewUrl = r.reviewUrl || "https://github.com/" + STATE_REPO + "/blob/" + STATE_BRANCH + "/records/" + TARGET + "/items/" + r.number + ".md";
   const rank = VTIERS.indexOf(r.verification);
@@ -170,7 +184,7 @@ function attr(s){return esc(s).replace(/"/g,"&quot;");} // esc leaves quotes alo
 function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: " + TARGET + " item " + n, item: n, repo: TARGET, page: "dashboard" }); }
 // Keep in sync with isActionable() in dashboard.ts.
 function isActionable(r){ return r.triageAction !== "keep-open" || !!r.proposedComment || !!r.fixPr || !!r.implementPr || !!r.skillPr || r.autoFixable === "true"; }
-function matchesText(r, q){ return !q || (String(r.number)+" "+r.title+" "+r.proposedLabel+" "+r.areaLabels+" "+r.itemType+" "+(r.rating||"")+" "+(r.owner||"")).toLowerCase().includes(q); }
+function matchesText(r, q){ return !q || (String(r.number)+" "+r.title+" "+r.proposedLabel+" "+r.areaLabels+" "+r.itemType+" "+(r.rating||"")+" "+(r.owner||"")+" "+(r.verifyVerdict||"")).toLowerCase().includes(q); }
 // Recompute the card numbers over the current view so they track the search box / actionable
 // toggle instead of staying at the server-baked totals. Faceted: each card reflects every OTHER
 // active filter but NOT its own selection, so the counts stay meaningful while one card is active.
@@ -236,6 +250,7 @@ function rowHtml(r){
     + "<td><code>"+esc(r.proposedLabel)+"</code></td>"
     + '<td><span class="conf"><i style="width:'+pct+'%"></i></span> <span class="muted">'+pct+"%</span></td>"
     + "<td>"+(r.rating?'<span class="vtier" title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>":'<span class="muted">—</span>')+"</td>"
+    + "<td>"+verifyCell(r)+"</td>"
     + '<td><a href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener">view</a> <a class="flag" href="'+feedbackHref(r.number)+'" target="_blank" rel="noopener" title="Report feedback on this verdict — opens a prefilled issue on the state repo (plain item number, so the vscode issue is never pinged)">⚑</a></td>'
     + "<td>"+applyCell(r)+"</td>"
     + "<td>"+afCell(r)+"</td>"
@@ -251,7 +266,7 @@ let rowH = 39, winFirst = -1, winLast = -1;
 function vrender(force){
   if (!view.length) {
     winFirst = winLast = -1;
-    rowsEl.innerHTML = '<tr><td colspan="12" class="muted">No matching records.</td></tr>';
+    rowsEl.innerHTML = '<tr><td colspan="13" class="muted">No matching records.</td></tr>';
     return;
   }
   // Table-top offset from the document: unaffected by the spacers below it, since
@@ -261,7 +276,7 @@ function vrender(force){
   const last = Math.min(view.length, first + Math.ceil(window.innerHeight / rowH) + 2 * OVERSCAN);
   if (!force && first === winFirst && last === winLast) return;
   winFirst = first; winLast = last;
-  const spacer = h => '<tr class="spacer"><td colspan="12" style="height:' + h + 'px"></td></tr>';
+  const spacer = h => '<tr class="spacer"><td colspan="13" style="height:' + h + 'px"></td></tr>';
   rowsEl.innerHTML = (first > 0 ? spacer(first * rowH) : "")
     + view.slice(first, last).map(rowHtml).join("")
     + (last < view.length ? spacer((view.length - last) * rowH) : "");
@@ -280,6 +295,18 @@ addEventListener("scroll", () => {
   requestAnimationFrame(() => { scrollTick = false; vrender(false); });
 }, { passive: true });
 addEventListener("resize", () => vrender(true));
+// 2nd-review badge: the verify lane's blinded verdict on a duplicate close proposal.
+// The whole badge is a peek button — the evidence line IS the product (trial feedback
+// 2026-08-14), so one click opens it in the popover; the tooltip carries it too.
+function verifyCell(r){
+  if (!r.verifyVerdict) return '<span class="muted">—</span>';
+  const stale = r.verifyStale;
+  const cls = r.verifyVerdict === "confirmed" ? (stale ? "v-stale" : "v-confirmed")
+    : r.verifyVerdict === "refuted" ? "v-refuted" : "v-unver";
+  const label = r.verifyVerdict === "confirmed" ? (stale ? "⌛ verified" : "✓ verified")
+    : r.verifyVerdict === "refuted" ? "✗ refuted" : "? unverifiable";
+  return '<button class="pill vbadge '+cls+'" data-n="'+esc(r.number)+'" data-kind="verify" title="'+attr(r.verifyEvidence)+'">'+label+"</button>";
+}
 // Suggested-area chip on open keep-open rows (incl. folded route-to-area records):
 // the review's routing hint, kept as context — the page applies no labels.
 function areaChip(r){
@@ -448,6 +475,20 @@ async function doCopy(rec){
 }
 
 rowsEl.addEventListener("click", (e) => {
+  const vBtn = e.target.closest("button.vbadge");
+  if (vBtn) {
+    const key = "verify:" + vBtn.dataset.n;
+    if (!cpanel.hidden && cpanelFor === key) { closePanel(); return; }
+    const rec = DATA.find(r => String(r.number) === vBtn.dataset.n);
+    if (!rec || !rec.verifyVerdict) return;
+    const cap = "2nd review — blinded verification of the duplicate claim"
+      + (rec.verifyCanonical ? " against #" + rec.verifyCanonical : "")
+      + (rec.verifyKind ? " (canonical kind: " + rec.verifyKind + ")" : "")
+      + (rec.verifyStale ? ". STALE: the issue or record changed since this verification." : "")
+      + ".";
+    openPanel(vBtn, key, rec.verifyVerdict.toUpperCase() + " — " + rec.verifyEvidence, cap);
+    return;
+  }
   const peekBtn = e.target.closest("button.peek");
   if (peekBtn) {
     const kind = peekBtn.dataset.kind || "comment";

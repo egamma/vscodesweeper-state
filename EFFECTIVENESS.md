@@ -1,6 +1,6 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 37 swept users · 18014 issues reviewed · generated 2026-08-14 09:50 UTC
+[← Home](index.html) · 37 swept users · 18016 issues reviewed · generated 2026-08-15 07:04 UTC
 
 ## Closure outcome per swept user
 
@@ -10,7 +10,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | --- | --- | --- | --- | --- | --- |
 | lszomoru | 1346 | 199 (15%) | 166 (12%) | 981 (73%) | **27%** |
 | hediet | 1309 | 134 (10%) | 177 (14%) | 998 (76%) | **24%** |
-| justschen | 1118 | 183 (16%) | 136 (12%) | 799 (71%) | **29%** |
+| justschen | 1119 | 183 (16%) | 137 (12%) | 799 (71%) | **29%** |
 | deepak1556 | 1049 | 215 (20%) | 347 (33%) | 487 (46%) | **54%** |
 | roblourens | 831 | 123 (15%) | 174 (21%) | 534 (64%) | **36%** |
 | lramos15 | 782 | 169 (22%) | 144 (18%) | 469 (60%) | **40%** |
@@ -20,7 +20,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | TylerLeonhardt | 692 | 87 (13%) | 59 (9%) | 546 (79%) | **21%** |
 | aeschli | 671 | 61 (9%) | 31 (5%) | 579 (86%) | **14%** |
 | meganrogge | 654 | 67 (10%) | 24 (4%) | 563 (86%) | **14%** |
-| joshspicer | 599 | 112 (19%) | 61 (10%) | 426 (71%) | **29%** |
+| joshspicer | 600 | 112 (19%) | 61 (10%) | 427 (71%) | **29%** |
 | mjbvz | 581 | 67 (12%) | 28 (5%) | 486 (84%) | **16%** |
 | osortega | 572 | 54 (9%) | 56 (10%) | 462 (81%) | **19%** |
 | alexdima | 569 | 128 (22%) | 81 (14%) | 360 (63%) | **37%** |
@@ -64,7 +64,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | TylerLeonhardt | 546 | 77 | 42 | 14% |
 | aeschli | 579 | 49 | 34 | 8% |
 | meganrogge | 563 | 91 | 51 | 16% |
-| joshspicer | 426 | 47 | 17 | 11% |
+| joshspicer | 427 | 47 | 17 | 11% |
 | mjbvz | 486 | 82 | 40 | 17% |
 | osortega | 462 | 75 | 37 | 16% |
 | alexdima | 360 | 62 | 31 | 17% |
@@ -140,9 +140,9 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 
 | Reason | Proposals | Share | Acted on | With the sweeper's comment |
 | --- | --- | --- | --- | --- |
-| implemented on main | 763 | 28% | 150 (20%) | 96 (13%) |
+| implemented on main | 763 | 28% | 151 (20%) | 96 (13%) |
 | `*duplicate` | 859 | 32% | 106 (12%) | 44 (5%) |
-| `*as-designed` | 252 | 9% | 46 (18%) | 36 (14%) |
+| `*as-designed` | 252 | 9% | 48 (19%) | 36 (14%) |
 | `*question` | 223 | 8% | 23 (10%) | 8 (4%) |
 | `*caused-by-extension` | 216 | 8% | 39 (18%) | 16 (7%) |
 | `*not-reproducible` | 121 | 5% | 17 (14%) | 5 (4%) |
@@ -156,7 +156,7 @@ Acted on = closed since review; "with the sweeper's comment" = the close carried
 | question | 5 | 0% | 1 (20%) | — |
 | invalid | 2 | 0% | — | — |
 | not-reproducible | 2 | 0% | 2 (100%) | — |
-| all reasons | 2680 | 100% | 420 (16%) | 213 (8%) |
+| all reasons | 2680 | 100% | 423 (16%) | 213 (8%) |
 
 ## Close reasons per swept user
 
