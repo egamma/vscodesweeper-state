@@ -96,6 +96,15 @@
     box-shadow: 0 4px 16px rgba(0,0,0,.18); }
   #cpanel .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
     border-bottom: 1px solid var(--border); white-space: normal; }
+  /* Structured fix-spec view (renderSpecInto): labeled fields + quoted fix prompt. */
+  #cpanel .spec { white-space: normal; }
+  #cpanel .spec .f { margin: 0 0 10px; }
+  #cpanel .spec .f:last-child { margin-bottom: 0; }
+  #cpanel .spec .k { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); margin-bottom: 2px; }
+  #cpanel .spec code { font-size: 12px; word-break: break-all; }
+  #cpanel .spec .prompt { border-left: 3px solid var(--border); padding: 2px 0 2px 10px;
+    white-space: pre-wrap; }
   #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
     background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px;
     font-size: 13px; opacity: 0; transition: opacity .15s; pointer-events: none; }
@@ -108,7 +117,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/monaco-editor</code> · 770 open reviewed · 452 actionable · 0 closed since review · <a href="outcomes-monaco-editor.html">308 close proposals to date</a> · generated 2026-08-15 14:34 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/monaco-editor</code> · 770 open reviewed · 452 actionable · 0 closed since review · <a href="outcomes-monaco-editor.html">308 close proposals to date</a> · generated 2026-08-15 21:12 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">308</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">85</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">377</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">0</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
@@ -117,9 +126,9 @@
   </div>
   <table>
     <thead><tr>
-      <th data-k="owner">Owner</th><th data-k="number">Issue</th><th data-k="title">Title</th><th data-k="itemType">Type</th>
-      <th data-k="triageAction">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …). On a duplicate, → #N links the canonical issue the review cites.">Label / reason</th>
-      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th>Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
+      <th data-k="owner" title="The issue's assignee — who this proposal is queued for. Unassigned issues show —.">Owner</th><th data-k="number" title="The reviewed issue's number — links to the issue on GitHub.">Issue</th><th data-k="title" title="The issue's title at review time — long titles clamp; hover a row for the full text.">Title</th><th data-k="itemType" title="The review's classification of the issue: bug or feature-request.">Type</th>
+      <th data-k="triageAction" title="What the review proposes: propose-close (with a reason under Label / reason), needs-info, route-to-area, or keep-open. Nothing is applied automatically — a human acts on every proposal.">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …). On a duplicate, → #N links the canonical issue the review cites.">Label / reason</th>
+      <th data-k="confidence" title="The review's confidence in its own verdict, 0–100%. Close proposals are only made at high confidence; treat low-confidence rows as leads, not conclusions.">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th title="The full review record on the state repo — evidence, reasoning, and the proposed comment. The ⚑ files feedback on this verdict (prefilled state-repo issue; the vscode issue is never pinged).">Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th title="Copies the review's suggested closing comment for you to paste on the issue and close it yourself — vscodesweeper never edits the reviewed repo's issues.">Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt" title="When this review ran. A record is re-reviewed automatically when the issue's content or the review policy changes since then.">Reviewed</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
@@ -399,7 +408,51 @@ function linkifyInto(el, text){
   }
   el.appendChild(document.createTextNode(text.slice(last)));
 }
-function openPanel(btn, key, text, caption, linkify){
+// Inline markdown for the spec popover: `code` and **bold** spans become elements,
+// everything else stays text nodes — same no-innerHTML rule as linkifyInto.
+function renderInlineInto(el, text){
+  const re = /\*\*([^*]+)\*\*|`([^`]+)`/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    el.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const node = document.createElement(m[1] !== undefined ? "strong" : "code");
+    node.textContent = m[1] !== undefined ? m[1] : m[2];
+    el.appendChild(node);
+    last = m.index + m[0].length;
+  }
+  el.appendChild(document.createTextNode(text.slice(last)));
+}
+// Structured rendering for the fix-spec popover: the record's "- **Label:** value"
+// bullets become labeled fields, the fix prompt becomes a quoted block. Built with
+// DOM nodes only (record text stays text); falls back to raw text on any
+// unrecognized shape so a hand-edited record still previews.
+function renderSpecInto(el, text){
+  el.className = "spec";
+  const fields = [];
+  let field = null;
+  for (const line of text.split("\n")) {
+    const m = /^-\s+\*\*(.+?):\*\*\s*(.*)$/.exec(line);
+    if (m) { field = { label: m[1], parts: m[2] ? [m[2]] : [] }; fields.push(field); }
+    else if (field) field.parts.push(line);
+    else if (line.trim()) { el.className = ""; el.textContent = text; return; }
+  }
+  if (!fields.length) { el.className = ""; el.textContent = text; return; }
+  for (const f of fields) {
+    if (/^auto-?fixable$/i.test(f.label)) continue; // every previewed row is agent-fixable — redundant
+    const div = document.createElement("div");
+    div.className = "f";
+    const k = document.createElement("span");
+    k.className = "k";
+    k.textContent = f.label;
+    div.appendChild(k);
+    const body = document.createElement("div");
+    body.className = /prompt/i.test(f.label) ? "prompt" : "v";
+    renderInlineInto(body, f.parts.join("\n").trim());
+    div.appendChild(body);
+    el.appendChild(div);
+  }
+}
+function openPanel(btn, key, text, caption, render){
   cpanelFor = key;
   cpanel.textContent = ""; // rebuild; textContent throughout: issue-derived text stays text
   if (caption) {
@@ -409,7 +462,9 @@ function openPanel(btn, key, text, caption, linkify){
     cpanel.appendChild(cap);
   }
   const body = document.createElement("div");
-  if (linkify) linkifyInto(body, text); else body.textContent = text;
+  if (render === true) linkifyInto(body, text);
+  else if (typeof render === "function") render(body, text);
+  else body.textContent = text;
   cpanel.appendChild(body);
   cpanel.hidden = false;
   const r = btn.getBoundingClientRect();
@@ -590,7 +645,7 @@ rowsEl.addEventListener("click", (e) => {
     const specCap = "The reviewed spec the sweeper-fix skill implements — the button copies the skill invocation.";
     openPanel(peekBtn, key, "Loading the fix spec…", specCap);
     fetchSpec(rec).then(
-      (spec) => { if (cpanelFor === key) openPanel(peekBtn, key, spec, specCap); },
+      (spec) => { if (cpanelFor === key) openPanel(peekBtn, key, spec, specCap, renderSpecInto); },
       () => { if (cpanelFor === key) openPanel(peekBtn, key, "Couldn't load the spec — use the record link in the Review column.", specCap); }
     );
     return;

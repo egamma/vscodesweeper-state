@@ -1,17 +1,17 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 18016 issues reviewed · generated 2026-08-15 14:32 UTC
+[← Home](index.html) · 18016 issues reviewed · generated 2026-08-15 21:09 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 18016
-- **Close proposals:** 2580 (14% of reviewed)
-- **Acted on (closed):** 423 (16% of proposals)
+- **Close proposals:** 2537 (14% of reviewed)
+- **Acted on (closed):** 425 (17% of proposals)
 - **Closed with the sweeper's comment:** 213 (50% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
-- **Still awaiting action:** 2157 open close proposals
-- **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
+- **Still awaiting action:** 2112 open close proposals
+- **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1191 of the 18016 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2157 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1199 of the 18016 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2112 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,8 +21,8 @@ _Close proposals count the whole corpus (1191 of the 18016 reviewed issues have 
 | justschen | 67 | 29 (43%) |
 | roblourens | 38 | 17 (45%) |
 | hediet | 35 | 35 (100%) |
+| vs-code-engineering | 34 | 0 (0%) |
 | lramos15 | 32 | 0 (0%) |
-| vs-code-engineering | 32 | 0 (0%) |
 | dmitrivMS | 17 | 0 (0%) |
 | sbatten | 16 | 16 (100%) |
 | aeschli | 12 | 11 (92%) |
@@ -64,38 +64,37 @@ _Close proposals count the whole corpus (1191 of the 18016 reviewed issues have 
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 559 of 679 open proposals verified · 106 closed unverified
-- **implemented-on-main:** 533 of 546 open proposals verified · 97 closed unverified
-- **Verdict mix:** 795 confirmed (24 with the fix unreleased) · 264 disputed · 33 unverifiable
+- **duplicate:** 669 of 669 open proposals verified · 106 closed unverified
+- **implemented-on-main:** 576 of 576 open proposals verified · 97 closed unverified
+- **Verdict mix:** 866 confirmed (25 with the fix unreleased) · 342 disputed · 37 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 794 | 0 | 1 |
-| disputed | 264 | 0 | 0 |
-| unverifiable | 33 | 0 | 0 |
+| confirmed | 865 | 0 | 1 |
+| disputed | 342 | 0 | 0 |
+| unverifiable | 37 | 0 | 0 |
 
-_The 264 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
+_The 342 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
 | Issue | Reopened | Reversed close used | Who had acted |
 | --- | --- | --- | --- |
-| [#203857](https://github.com/microsoft/vscode/issues/203857) Colored indent guides | 2026-08-03 | none | hediet |
 | [#255890](https://github.com/microsoft/vscode/issues/255890) When you activate a source code chunk it scrolls to the top. | 2026-07-28 | none | justschen |
 
 ## All closures since review — context
 
 | Review verdict | Closed |
 | --- | --- |
+| propose-close | 425 |
 | keep-open | 423 |
-| propose-close | 423 |
-| needs-info | 293 |
+| needs-info | 299 |
 | route-to-area | 52 |
 
 | Close reason | Closed |
 | --- | --- |
 | completed | 569 |
-| not_planned | 483 |
+| not_planned | 491 |
 | duplicate | 134 |
 | not_found | 5 |
 
@@ -103,17 +102,17 @@ _The 264 disputed proposals are listed on the [dashboard](dashboard.html) — so
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 785 | 106 | 14% | 44 |
-| implemented-on-main | 759 | 151 | 20% | 96 |
+| *duplicate | 775 | 106 | 14% | 44 |
+| implemented-on-main | 724 | 151 | 21% | 96 |
 | *as-designed | 265 | 49 | 18% | 36 |
-| *caused-by-extension | 229 | 42 | 18% | 16 |
+| *caused-by-extension | 229 | 43 | 19% | 16 |
 | *question | 227 | 24 | 11% | 8 |
-| *not-reproducible | 122 | 18 | 15% | 5 |
+| *not-reproducible | 123 | 18 | 15% | 5 |
 | *out-of-scope | 78 | 10 | 13% | 4 |
 | *off-topic | 59 | 14 | 24% | 2 |
-| *extension-candidate | 32 | 7 | 22% | 2 |
+| *extension-candidate | 33 | 7 | 21% | 2 |
 | chat-billing | 15 | 1 | 7% | 0 |
-| invalid | 8 | 1 | 13% | 0 |
+| invalid | 8 | 2 | 25% | 0 |
 | upstream | 1 | 0 | 0% | 0 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
