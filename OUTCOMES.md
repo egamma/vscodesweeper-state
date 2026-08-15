@@ -1,17 +1,17 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 18016 issues reviewed · generated 2026-08-15 14:27 UTC
+[← Home](index.html) · 18016 issues reviewed · generated 2026-08-15 14:32 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 18016
-- **Close proposals:** 2585 (14% of reviewed)
+- **Close proposals:** 2580 (14% of reviewed)
 - **Acted on (closed):** 423 (16% of proposals)
 - **Closed with the sweeper's comment:** 213 (50% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
-- **Still awaiting action:** 2162 open close proposals
+- **Still awaiting action:** 2157 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1191 of the 18016 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2162 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1191 of the 18016 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2157 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -64,17 +64,17 @@ _Close proposals count the whole corpus (1191 of the 18016 reviewed issues have 
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 584 of 688 open proposals verified · 106 closed unverified
-- **implemented-on-main:** 533 of 542 open proposals verified · 97 closed unverified
-- **Verdict mix:** 795 confirmed (24 with the fix unreleased) · 289 disputed · 33 unverifiable
+- **duplicate:** 559 of 679 open proposals verified · 106 closed unverified
+- **implemented-on-main:** 533 of 546 open proposals verified · 97 closed unverified
+- **Verdict mix:** 795 confirmed (24 with the fix unreleased) · 264 disputed · 33 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
 | confirmed | 794 | 0 | 1 |
-| disputed | 289 | 0 | 0 |
+| disputed | 264 | 0 | 0 |
 | unverifiable | 33 | 0 | 0 |
 
-_The 289 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
+_The 264 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -103,8 +103,8 @@ _The 289 disputed proposals are listed on the [dashboard](dashboard.html) — so
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 794 | 106 | 13% | 44 |
-| implemented-on-main | 755 | 151 | 20% | 96 |
+| *duplicate | 785 | 106 | 14% | 44 |
+| implemented-on-main | 759 | 151 | 20% | 96 |
 | *as-designed | 265 | 49 | 18% | 36 |
 | *caused-by-extension | 229 | 42 | 18% | 16 |
 | *question | 227 | 24 | 11% | 8 |
