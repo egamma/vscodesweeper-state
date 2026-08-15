@@ -71,6 +71,7 @@
   .v-confirmed { color: var(--keep); border-color: var(--keep); }
   .v-refuted { color: var(--close); border-color: var(--close); opacity: .75; }
   .v-stale { color: var(--info); border-color: var(--info); }
+  .v-unreleased { color: var(--info); border-color: var(--info); }
   .v-unver { color: var(--muted); border-color: var(--border); }
   .conf { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: var(--border); position: relative; vertical-align: middle; }
   .conf > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
@@ -107,7 +108,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-15 12:35 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-15 14:03 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">41</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">11</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">180</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">1</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
@@ -118,12 +119,12 @@
     <thead><tr>
       <th data-k="owner">Owner</th><th data-k="number">Issue</th><th data-k="title">Title</th><th data-k="itemType">Type</th>
       <th data-k="triageAction">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …). On a duplicate, → #N links the canonical issue the review cites.">Label / reason</th>
-      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th>Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a duplicate close proposal: a second model judged whether the issue and its cited canonical describe the same underlying problem, from titles/dates/bodies only. ✓ = confirmed (click for the evidence), ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lane's scope yet.">2nd review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
+      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th>Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>. Records live on the <code>state</code> branch.
-  <strong>2nd review</strong> is a skeptical second opinion on a duplicate close proposal: an independent model re-judged the duplicate claim blind — titles, dates, and bodies only, never the first verdict, labels, state, or comments — with refuted as the default unless the evidence clearly shows the same underlying issue; ✓ means the claim survived. The badge's hover/click shows the evidence, the eye the full stamp.
+  <strong>2nd review</strong> is a skeptical second opinion on a close proposal (duplicate or implemented-on-main): an independent model re-judged the claim blind — the duplicate pair's titles/dates/bodies, or the issue against the cited fix commit's diff; never the first verdict, labels, state, or comments — with refuted as the default unless the evidence clearly supports the claim; ✓ means it survived, ⏳ means the fix is merged but unreleased. The badge's hover/click shows the evidence, the eye the full stamp.
   <strong>Apply</strong> copies the suggested comment for you to paste on the issue and close it yourself — vscodesweeper never edits microsoft/vscode issues.
   The agent-fix lane is not enabled for this repository — reviews here are proposal-only.
   Spotted a wrong verdict? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener">Send feedback</a> — the ⚑ next to a row's record link prefills the item.</footer>
@@ -153,10 +154,12 @@ for (const r of DATA) {
   r.verifyVerdict = r.verifyVerdict || ""; r.verifyEvidence = r.verifyEvidence || "";
   r.verifyKind = r.verifyKind || ""; r.verifyCanonical = r.verifyCanonical || "";
   r.verifyStale = !!r.verifyStale || (!!r.verifyVerdict && !r.contentFresh); // record OR live drift decays the badge
-  // Sort rank for the 2nd-review column: verified first, refuted last, unverified after everything stamped.
-  r.verifyRank = r.verifyVerdict === "confirmed" ? (r.verifyStale ? 1 : 0)
-    : r.verifyVerdict === "unverifiable" ? 2
-    : r.verifyVerdict === "refuted" ? 3 : 4;
+  r.verifyUnreleased = !!r.verifyUnreleased;
+  // Sort rank for the 2nd-review column: verified first, then unreleased/stale, refuted last,
+  // unverified after everything stamped.
+  r.verifyRank = r.verifyVerdict === "confirmed" ? (r.verifyStale ? 2 : r.verifyUnreleased ? 1 : 0)
+    : r.verifyVerdict === "unverifiable" ? 3
+    : r.verifyVerdict === "refuted" ? 4 : 5;
   r.url = r.url || "https://github.com/" + TARGET + "/issues/" + r.number;
   r.reviewUrl = r.reviewUrl || "https://github.com/" + STATE_REPO + "/blob/" + STATE_BRANCH + "/records/" + TARGET + "/items/" + r.number + ".md";
   const rank = VTIERS.indexOf(r.verification);
@@ -297,17 +300,20 @@ addEventListener("scroll", () => {
   requestAnimationFrame(() => { scrollTick = false; vrender(false); });
 }, { passive: true });
 addEventListener("resize", () => vrender(true));
-// 2nd-review badge: the verify lane's blinded verdict on a duplicate close proposal.
-// The whole badge is a peek button — the evidence line IS the product (trial feedback
-// 2026-08-14), so one click opens it in the popover; the tooltip carries it too.
+// 2nd-review badge: the verify lane's blinded verdict on a duplicate or
+// implemented-on-main close proposal. The whole badge is a peek button — the
+// evidence line IS the product (trial feedback 2026-08-14), so one click opens it
+// in the popover; the tooltip carries it too. A confirmed-but-unreleased fix
+// (decision 13) reads "fixed, unreleased" — merged, but the reporter can't get it yet.
 function verifyCell(r){
   if (!r.verifyVerdict) return '<span class="muted">—</span>';
   const stale = r.verifyStale;
-  const cls = r.verifyVerdict === "confirmed" ? (stale ? "v-stale" : "v-confirmed")
+  const unreleased = r.verifyVerdict === "confirmed" && r.verifyUnreleased;
+  const cls = r.verifyVerdict === "confirmed" ? (stale ? "v-stale" : unreleased ? "v-unreleased" : "v-confirmed")
     : r.verifyVerdict === "refuted" ? "v-refuted" : "v-unver";
-  const label = r.verifyVerdict === "confirmed" ? (stale ? "⌛ verified" : "✓ verified")
+  const label = r.verifyVerdict === "confirmed" ? (stale ? "⌛ verified" : unreleased ? "⏳ fixed, unreleased" : "✓ verified")
     : r.verifyVerdict === "refuted" ? "✗ refuted" : "? unverifiable";
-  const explain = "2nd review — an independent model re-judged the duplicate claim blind (titles/dates/bodies only; it never saw the first verdict, labels, or issue state) and skeptically: refuted is the default unless the evidence clearly shows the same underlying issue.";
+  const explain = "2nd review — an independent model re-judged the close claim blind (the duplicate pair's titles/dates/bodies, or the issue vs the cited fix commit's diff; it never saw the first verdict, labels, or issue state) and skeptically: refuted is the default unless the evidence clearly supports the claim.";
   return '<button class="pill vbadge '+cls+'" data-n="'+esc(r.number)+'" data-kind="verify" title="'+attr(explain + "\n\n" + r.verifyEvidence)+'">'+label+"</button>"
     + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="verify" title="Show the full verification stamp from the record (evidence, gate checks, when and which engine)" aria-label="Show verification details for issue '+esc(r.number)+'">👁</button>';
 }
@@ -550,9 +556,12 @@ rowsEl.addEventListener("click", (e) => {
     if (!cpanel.hidden && cpanelFor === key) { closePanel(); return; }
     const rec = DATA.find(r => String(r.number) === vBtn.dataset.n);
     if (!rec || !rec.verifyVerdict) return;
-    const cap = "2nd review — blinded verification of the duplicate claim"
-      + (rec.verifyCanonical ? " against #" + rec.verifyCanonical : "")
-      + (rec.verifyKind ? " (canonical kind: " + rec.verifyKind + ")" : "")
+    const cap = (rec.verifyCanonical
+        ? "2nd review — blinded verification of the duplicate claim against #" + rec.verifyCanonical
+          + (rec.verifyKind ? " (canonical kind: " + rec.verifyKind + ")" : "")
+        : "2nd review — blinded verification of the implemented-on-main claim against the cited commit's diff"
+          + (rec.verifyKind ? " (claim kind: " + rec.verifyKind + ")" : ""))
+      + (rec.verifyUnreleased ? ". Merged but in no stable release yet — the reporter cannot get the fix." : "")
       + (rec.verifyStale ? ". STALE: the issue or record changed since this verification." : "")
       + ".";
     openPanel(vBtn, key, rec.verifyVerdict.toUpperCase() + " — " + rec.verifyEvidence, cap, true);

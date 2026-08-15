@@ -9,17 +9,18 @@
     --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
     --accent: #0969da; --row: #f6f8fa;
     --wc: #1a7f37; --wc-mid: #4ac26b; --wc-lite: #aceebb;
-    --own: #afb8c1; --uncl: #d4a72c;
+    --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
-      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; }
+      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 900px; }
   h1 { font-size: 20px; margin: 0 0 4px; }
   h2 { font-size: 16px; margin: 28px 0 4px; }
+  h3 { font-size: 14px; margin: 20px 0 4px; }
   .sub, .desc { color: var(--muted); }
   .sub { margin-bottom: 8px; }
   .desc { margin: 0 0 12px; }
@@ -35,7 +36,7 @@
   .legend span { display: inline-flex; align-items: center; gap: 5px; }
   .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
   .sw.wc { background: var(--wc); } .sw.wcm { background: var(--wc-mid); } .sw.wcl { background: var(--wc-lite); }
-  .sw.own { background: var(--own); } .sw.uncl { background: var(--uncl); }
+  .sw.own { background: var(--own); } .sw.uncl { background: var(--uncl); } .sw.disp { background: var(--disp); }
   .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
   .crow { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 10px; margin: 6px 0; }
   .wk { text-align: right; color: var(--muted); font-size: 12px; white-space: nowrap; }
@@ -44,7 +45,7 @@
   .seg { display: block; height: 100%; }
   .seg + .seg { margin-left: 2px; }
   .seg.wc { background: var(--wc); } .seg.wcm { background: var(--wc-mid); } .seg.wcl { background: var(--wc-lite); }
-  .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); }
+  .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); } .seg.disp { background: var(--disp); }
   .seg.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
   table { border-collapse: collapse; width: 100%; margin: 8px 0 4px; }
@@ -61,7 +62,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Proposal Outcomes</h1>
-  <div class="sub"><a href="index.html">← home</a> · 346 issues reviewed · generated 2026-08-15 07:04 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 346 issues reviewed · generated 2026-08-15 13:59 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">346</div><div class="tsub">346 still open · 0 closed since review</div></div>
