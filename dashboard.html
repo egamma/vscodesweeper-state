@@ -107,7 +107,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode</code> · 16,825 open reviewed · 6,229 actionable · 1,191 closed since review · <a href="outcomes.html">2,679 close proposals to date</a> · <a href="fix-skill.html" title="Getting started with the sweeper-fix skill — what the Agent fix buttons feed">sweeper-fix skill</a> · generated 2026-08-15 07:52 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode</code> · 16,825 open reviewed · 6,229 actionable · 1,191 closed since review · <a href="outcomes.html">2,679 close proposals to date</a> · <a href="fix-skill.html" title="Getting started with the sweeper-fix skill — what the Agent fix buttons feed">sweeper-fix skill</a> · generated 2026-08-15 08:22 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">2256</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">1927</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">12642</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">1648</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">1191</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… (min 2 chars)">
@@ -118,7 +118,7 @@
     <thead><tr>
       <th data-k="owner">Owner</th><th data-k="number">Issue</th><th data-k="title">Title</th><th data-k="itemType">Type</th>
       <th data-k="triageAction">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …).">Label / reason</th>
-      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a duplicate close proposal: a second model judged whether the issue and its cited canonical describe the same underlying problem, from titles/dates/bodies only. ✓ = confirmed (click for the evidence), ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification). Blank: not in the verify lane's scope yet.">2nd review</th><th>Review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
+      <th data-k="confidence">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th>Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a duplicate close proposal: a second model judged whether the issue and its cited canonical describe the same underlying problem, from titles/dates/bodies only. ✓ = confirmed (click for the evidence), ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lane's scope yet.">2nd review</th><th>Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt">Reviewed</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
@@ -250,8 +250,8 @@ function rowHtml(r){
     + "<td><code>"+esc(r.proposedLabel)+"</code></td>"
     + '<td><span class="conf"><i style="width:'+pct+'%"></i></span> <span class="muted">'+pct+"%</span></td>"
     + "<td>"+(r.rating?'<span class="vtier" title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>":'<span class="muted">—</span>')+"</td>"
-    + "<td>"+verifyCell(r)+"</td>"
     + '<td><a href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener">view</a> <a class="flag" href="'+feedbackHref(r.number)+'" target="_blank" rel="noopener" title="Report feedback on this verdict — opens a prefilled issue on the state repo (plain item number, so the vscode issue is never pinged)">⚑</a></td>'
+    + "<td>"+verifyCell(r)+"</td>"
     + "<td>"+applyCell(r)+"</td>"
     + "<td>"+afCell(r)+"</td>"
     + '<td class="muted">'+esc((r.reviewedAt||"").slice(0,10))+"</td>"
@@ -305,7 +305,8 @@ function verifyCell(r){
     : r.verifyVerdict === "refuted" ? "v-refuted" : "v-unver";
   const label = r.verifyVerdict === "confirmed" ? (stale ? "⌛ verified" : "✓ verified")
     : r.verifyVerdict === "refuted" ? "✗ refuted" : "? unverifiable";
-  return '<button class="pill vbadge '+cls+'" data-n="'+esc(r.number)+'" data-kind="verify" title="'+attr(r.verifyEvidence)+'">'+label+"</button>";
+  return '<button class="pill vbadge '+cls+'" data-n="'+esc(r.number)+'" data-kind="verify" title="'+attr(r.verifyEvidence)+'">'+label+"</button>"
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="verify" title="Show the full verification stamp from the record (evidence, gate checks, when and which engine)" aria-label="Show verification details for issue '+esc(r.number)+'">👁</button>';
 }
 // Suggested-area chip on open keep-open rows (incl. folded route-to-area records):
 // the review's routing hint, kept as context — the page applies no labels.
@@ -387,6 +388,34 @@ async function fetchSpec(rec){
   const end = /^## /m.exec(rest);
   rec._spec = (end ? rest.slice(0, end.index) : rest).replace(/^s*> ?/gm, "").trim();
   return rec._spec;
+}
+// The full verification stamp is NOT in the shipped payload (only verdict +
+// evidence are) — the 2nd-review eye lazy-fetches the record like the spec eye
+// and formats the verify frontmatter: evidence, gate checks, when, engine.
+async function fetchVerify(rec){
+  if (rec._verify) return rec._verify;
+  const raw = rec.reviewUrl.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+  const res = await fetch(raw);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const md = await res.text();
+  const fmEnd = md.indexOf("\n---", 3);
+  const fm = fmEnd > 0 ? md.slice(0, fmEnd) : md;
+  const take = (k) => {
+    const m = new RegExp("^" + k + ':[ \\t]*"?(.*?)"?[ \\t]*$', "m").exec(fm);
+    return m ? m[1] : "";
+  };
+  const verdict = take("verifyVerdict");
+  if (!verdict) throw new Error("no verify stamp");
+  const lines = [verdict.toUpperCase()
+    + (take("verifyCanonical") ? " — canonical #" + take("verifyCanonical") : "")
+    + (take("verifyCanonicalKind") ? " (" + take("verifyCanonicalKind") + ")" : "")];
+  if (take("verifyEvidence")) lines.push("", take("verifyEvidence"));
+  const checks = take("verifyChecks");
+  if (checks) lines.push("", "Checks:", ...checks.split(" ").map(c => "  " + c.replace("=", " — ").replace(/_/g, " ")));
+  const when = take("verifiedAt").slice(0, 10);
+  if (when) lines.push("", "Verified " + when + (take("verifyEngine") ? " by " + take("verifyEngine") : "") + ".");
+  rec._verify = lines.join("\n");
+  return rec._verify;
 }
 addEventListener("scroll", closePanel, { passive: true }); // anchor rows move/recycle under the panel
 addEventListener("keydown", (e) => { if (e.key === "Escape") closePanel(); });
@@ -498,6 +527,15 @@ rowsEl.addEventListener("click", (e) => {
     if (!rec) return;
     if (kind === "comment") {
       if (rec.proposedComment) openPanel(peekBtn, key, rec.proposedComment, "Suggested closing comment — the button copies it for you to paste on the issue.");
+      return;
+    }
+    if (kind === "verify") {
+      const vCap = "2nd review — the verifier's full stamp, fetched from the record.";
+      openPanel(peekBtn, key, "Loading the verification stamp…", vCap);
+      fetchVerify(rec).then(
+        (v) => { if (cpanelFor === key) openPanel(peekBtn, key, v, vCap); },
+        () => { if (cpanelFor === key) openPanel(peekBtn, key, "Couldn't load the stamp — use the record link in the Review column.", vCap); }
+      );
       return;
     }
     const specCap = "The reviewed spec the sweeper-fix skill implements — the button copies the skill invocation.";
