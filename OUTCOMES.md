@@ -1,24 +1,24 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 18016 issues reviewed · generated 2026-08-16 06:48 UTC
+[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 09:18 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 18016
-- **Close proposals:** 2537 (14% of reviewed)
-- **Acted on (closed):** 425 (17% of proposals)
+- **Issues reviewed:** 18118
+- **Close proposals:** 2554 (14% of reviewed)
+- **Acted on (closed):** 426 (17% of proposals)
 - **Closed with the sweeper's comment:** 213 (50% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
-- **Still awaiting action:** 2112 open close proposals
+- **Still awaiting action:** 2128 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1199 of the 18016 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2112 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1208 of the 18118 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2128 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
 | User | Closures | With sweeper comment |
 | --- | --- | --- |
 | alexdima | 88 | 86 (98%) |
-| justschen | 67 | 29 (43%) |
+| justschen | 68 | 29 (43%) |
 | roblourens | 38 | 17 (45%) |
 | hediet | 35 | 35 (100%) |
 | vs-code-engineering | 34 | 0 (0%) |
@@ -64,17 +64,17 @@ _Close proposals count the whole corpus (1199 of the 18016 reviewed issues have 
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 669 of 669 open proposals verified · 106 closed unverified
+- **duplicate:** 672 of 672 open proposals verified · 107 closed unverified
 - **implemented-on-main:** 576 of 576 open proposals verified · 97 closed unverified
-- **Verdict mix:** 866 confirmed (25 with the fix unreleased) · 342 disputed · 37 unverifiable
+- **Verdict mix:** 867 confirmed (26 with the fix unreleased) · 344 disputed · 37 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 865 | 0 | 1 |
-| disputed | 342 | 0 | 0 |
+| confirmed | 866 | 0 | 1 |
+| disputed | 344 | 0 | 0 |
 | unverifiable | 37 | 0 | 0 |
 
-_The 342 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
+_The 344 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -86,15 +86,15 @@ _The 342 disputed proposals are listed on the [dashboard](dashboard.html) — so
 
 | Review verdict | Closed |
 | --- | --- |
-| propose-close | 425 |
-| keep-open | 423 |
-| needs-info | 299 |
+| keep-open | 427 |
+| propose-close | 426 |
+| needs-info | 303 |
 | route-to-area | 52 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 569 |
-| not_planned | 491 |
+| completed | 575 |
+| not_planned | 494 |
 | duplicate | 134 |
 | not_found | 5 |
 
@@ -102,16 +102,16 @@ _The 342 disputed proposals are listed on the [dashboard](dashboard.html) — so
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 775 | 106 | 14% | 44 |
+| *duplicate | 779 | 107 | 14% | 44 |
 | implemented-on-main | 724 | 151 | 21% | 96 |
-| *as-designed | 265 | 49 | 18% | 36 |
-| *caused-by-extension | 229 | 43 | 19% | 16 |
-| *question | 227 | 24 | 11% | 8 |
-| *not-reproducible | 123 | 18 | 15% | 5 |
+| *as-designed | 270 | 49 | 18% | 36 |
+| *caused-by-extension | 233 | 43 | 18% | 16 |
+| *question | 228 | 24 | 11% | 8 |
+| *not-reproducible | 124 | 18 | 15% | 5 |
 | *out-of-scope | 78 | 10 | 13% | 4 |
-| *off-topic | 59 | 14 | 24% | 2 |
+| *off-topic | 60 | 14 | 23% | 2 |
 | *extension-candidate | 33 | 7 | 21% | 2 |
-| chat-billing | 15 | 1 | 7% | 0 |
+| chat-billing | 16 | 1 | 6% | 0 |
 | invalid | 8 | 2 | 25% | 0 |
 | upstream | 1 | 0 | 0% | 0 |
 
