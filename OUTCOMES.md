@@ -1,6 +1,6 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 09:28 UTC
+[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 14:18 UTC
 
 ## Funnel
 
@@ -102,17 +102,16 @@ _The 344 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| *duplicate | 779 | 107 | 14% | 44 |
-| implemented-on-main | 724 | 151 | 21% | 96 |
-| *as-designed | 270 | 49 | 18% | 36 |
-| *caused-by-extension | 233 | 43 | 18% | 16 |
-| *question | 228 | 24 | 11% | 8 |
-| *not-reproducible | 124 | 18 | 15% | 5 |
-| *out-of-scope | 78 | 10 | 13% | 4 |
-| *off-topic | 60 | 14 | 23% | 2 |
-| *extension-candidate | 33 | 7 | 21% | 2 |
-| chat-billing | 16 | 1 | 6% | 0 |
-| invalid | 8 | 2 | 25% | 0 |
-| upstream | 1 | 0 | 0% | 0 |
+| duplicate | 779 | 107 | 14% | 44 |
+| implemented on main | 724 | 151 | 21% | 96 |
+| as-designed | 270 | 49 | 18% | 36 |
+| question | 230 | 24 | 10% | 8 |
+| caused-by-extension | 216 | 39 | 18% | 16 |
+| not-reproducible | 125 | 19 | 15% | 5 |
+| out-of-scope | 100 | 14 | 14% | 4 |
+| off-topic | 57 | 14 | 25% | 2 |
+| extension-candidate | 30 | 6 | 20% | 2 |
+| other | 21 | 2 | 10% | 0 |
+| invalid | 2 | 1 | 50% | 0 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
