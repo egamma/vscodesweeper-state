@@ -1,6 +1,6 @@
 # Top issues — aiday-mar
 
-Value ranking of reviewed open issues assigned to `aiday-mar` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 06:48 UTC.
+Value ranking of reviewed open issues assigned to `aiday-mar` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 16:21 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -195,7 +195,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 1 | [#66468](https://github.com/microsoft/vscode/issues/66468) | Shrink empty lines | 72 | 11 | 0 | backlog-candidate | 100 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/66468.md) |
 | 2 | [#140899](https://github.com/microsoft/vscode/issues/140899) | Add support for palettes/named colors in the color picker | 62 | 2 | 0 | backlog-candidate | 100 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/140899.md) |
 | 3 | [#66235](https://github.com/microsoft/vscode/issues/66235) | Allow more powerful onEnterRules for cursor alignment | 48 | 16 | 2 | backlog-candidate · vision-aligned | 97 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/66235.md) |
-| 4 | [#65648](https://github.com/microsoft/vscode/issues/65648) | Bidi text edit support | 43 | 25 | 3 | backlog-candidate · vision-aligned | 95 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/65648.md) |
+| 4 | [#65648](https://github.com/microsoft/vscode/issues/65648) | Bidi text edit support | 43 | 25 | 3 | backlog-candidate · vision-aligned | 96 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/65648.md) |
 | 5 | [#238568](https://github.com/microsoft/vscode/issues/238568) | Allow multiple lines per StickyScroll entry | 37 | 6 | 0 | backlog-candidate | 91 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/238568.md) |
 | 6 | [#106502](https://github.com/microsoft/vscode/issues/106502) | Multiple Cursors - Preserve Case | 56 | 8 | 2 | backlog-candidate | 90 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/106502.md) |
 | 7 | [#168428](https://github.com/microsoft/vscode/issues/168428) | Consider a sticky scroll provider API | 48 | 14 | 0 | backlog-candidate | 89 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/168428.md) |

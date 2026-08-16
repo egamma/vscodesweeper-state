@@ -1,10 +1,10 @@
 # Top issues — hediet
 
-Value ranking of reviewed open issues assigned to `hediet` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 06:48 UTC.
+Value ranking of reviewed open issues assigned to `hediet` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 16:21 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 25 of 630)
+## Bugs (top 25 of 631)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 25 | [#244225](https://github.com/microsoft/vscode/issues/244225) | Investigate asyncTokenization issues | 1 | 1 | 3 | correctness | common | 17 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/244225.md) |
 
 <details>
-<summary>605 more bugs (score ≤ 16)</summary>
+<summary>606 more bugs (score ≤ 16)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -644,10 +644,11 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 628 | [#330433](https://github.com/microsoft/vscode/issues/330433) | Markdown Editor: Mermaid rendering doesn't use dark theme | 0 | 0 | 0 | visual | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330433.md) |
 | 629 | [#330488](https://github.com/microsoft/vscode/issues/330488) | Predictive text for my variables not working | 0 | 0 | 0 | papercut | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330488.md) |
 | 630 | [#330690](https://github.com/microsoft/vscode/issues/330690) | Unnecessary scroll that causes limited vision | 0 | 0 | 0 | papercut | niche | 0 | — | 2/6 Unverified | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330690.md) |
+| 631 | [#331018](https://github.com/microsoft/vscode/issues/331018) | AI edit diff becomes unreadable for single-line long content (Markdown/Word Wrap) | 0 | 0 | 0 | visual | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/331018.md) |
 
 </details>
 
-## Feature requests (top 18 of 407)
+## Feature requests (top 18 of 408)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -671,7 +672,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 18 | [#154529](https://github.com/microsoft/vscode/issues/154529) | Add option to display Selection Highlights across Split Editor panes | 59 | 13 | 0 | backlog-candidate | 2 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/154529.md) |
 
 <details>
-<summary>389 more feature requests (score ≤ 2)</summary>
+<summary>390 more feature requests (score ≤ 2)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -1064,6 +1065,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 405 | [#330201](https://github.com/microsoft/vscode/issues/330201) | Add setting to disable code block copy buttons in Markdown preview | 0 | 2 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330201.md) |
 | 406 | [#330562](https://github.com/microsoft/vscode/issues/330562) | Add native "Swap Sides" button in Diff Editor and optimize "Compare with Clipboard" UX | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330562.md) |
 | 407 | [#330613](https://github.com/microsoft/vscode/issues/330613) | Support case-insensitive comparison in the diff editor (diffEditor.ignoreCase) | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330613.md) |
+| 408 | [#330954](https://github.com/microsoft/vscode/issues/330954) | Mermaid Preview: Add support for image link's in Markdown | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330954.md) |
 
 </details>
 

@@ -1,6 +1,6 @@
 # Top issues — bhavyaus
 
-Value ranking of reviewed open issues assigned to `bhavyaus` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 06:48 UTC.
+Value ranking of reviewed open issues assigned to `bhavyaus` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 16:21 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -84,7 +84,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-## Feature requests (top 12 of 40)
+## Feature requests (top 12 of 41)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -102,7 +102,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 12 | [#282687](https://github.com/microsoft/vscode/issues/282687) | Maintain /Plan mode todo list after adding a new message to the chat | 2 | 2 | 0 | dormant · vision-aligned | 10 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/282687.md) |
 
 <details>
-<summary>28 more feature requests (score ≤ 10)</summary>
+<summary>29 more feature requests (score ≤ 10)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -134,6 +134,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 38 | [#322782](https://github.com/microsoft/vscode/issues/322782) | [AHP/CLI] Claude Opus 4.7 / 4.8 Alt Prompt | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/322782.md) |
 | 39 | [#323191](https://github.com/microsoft/vscode/issues/323191) | Optimized tool selection breaks Deepseek cache | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/323191.md) |
 | 40 | [#328870](https://github.com/microsoft/vscode/issues/328870) | Gate skill metadata by prompt relevance (as tools already do via virtualTools) so irrelevant installed skills cost zero tokens | 0 | 0 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/328870.md) |
+| 41 | [#330934](https://github.com/microsoft/vscode/issues/330934) | Setting to fully disable copilot advertisements | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330934.md) |
 
 </details>
 

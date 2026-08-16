@@ -1,10 +1,10 @@
 # Top issues — DonJayamanne
 
-Value ranking of reviewed open issues assigned to `DonJayamanne` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 06:48 UTC.
+Value ranking of reviewed open issues assigned to `DonJayamanne` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 16:21 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
-## Bugs (top 25 of 221)
+## Bugs (top 25 of 222)
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -35,7 +35,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 25 | [#296186](https://github.com/microsoft/vscode/issues/296186) | Clicking continue in background to start implementation of copilot agent plan causes session to disappear | 1 | 6 | 0 | correctness | common | 27 | — | 5/6 Source-confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296186.md) |
 
 <details>
-<summary>196 more bugs (score ≤ 27)</summary>
+<summary>197 more bugs (score ≤ 27)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Severity | Breadth | Score | Priority | Rating | Agent-fixable | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -235,6 +235,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 219 | [#329119](https://github.com/microsoft/vscode/issues/329119) | Agents window becomes sluggish from responsive toolbar layout storm | 0 | 0 | 0 | perf | niche | 0 | — | 6/6 Confirmed | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/329119.md) |
 | 220 | [#329893](https://github.com/microsoft/vscode/issues/329893) | Agent host: set GIT_OPTIONAL_LOCKS=0 on read-only git probes to avoid worktree-removal races | 0 | 0 | 0 | correctness | niche | 0 | — | 5/6 Source-confirmed | yes | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/329893.md) |
 | 221 | [#330251](https://github.com/microsoft/vscode/issues/330251) | restart kernael | 0 | 0 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330251.md) |
+| 222 | [#330951](https://github.com/microsoft/vscode/issues/330951) | Notebook edits by Copilot agent spawn multiple untitled notebook duplicates | 0 | 0 | 0 | correctness | niche | 0 | — | 3/6 Plausible | — | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/330951.md) |
 
 </details>
 

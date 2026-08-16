@@ -1,6 +1,6 @@
 # Top issues — rzhao271
 
-Value ranking of reviewed open issues assigned to `rzhao271` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 06:48 UTC.
+Value ranking of reviewed open issues assigned to `rzhao271` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 16:21 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -199,7 +199,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 
 </details>
 
-## Feature requests (top 19 of 90)
+## Feature requests (top 19 of 91)
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -224,7 +224,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 19 | [#110766](https://github.com/microsoft/vscode/issues/110766) | Allow an output to go into full-screen mode | 2 | 11 | 3 | backlog-candidate | 5 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/110766.md) |
 
 <details>
-<summary>71 more feature requests (score ≤ 4)</summary>
+<summary>72 more feature requests (score ≤ 4)</summary>
 
 | # | Issue | Title | 👍 | Comments | Refs | Signal | Score | Draft PR | Review |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -299,6 +299,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 88 | [#317420](https://github.com/microsoft/vscode/issues/317420) | Add search/filter functionality to utility model settings | 0 | 1 | 0 | active · vision-aligned | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/317420.md) |
 | 89 | [#325046](https://github.com/microsoft/vscode/issues/325046) | Feature Request: Official remote MCP server for core VS Code documentation (code.visualstudio.com) | 0 | 1 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/325046.md) |
 | 90 | [#329822](https://github.com/microsoft/vscode/issues/329822) | Feature: Enhance parameter validation and whitespace sanitization in azure-pipeline.ts skill | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/329822.md) |
+| 91 | [#331042](https://github.com/microsoft/vscode/issues/331042) | Support negation syntax in Settings filter | 0 | 0 | 0 | active | 0 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/331042.md) |
 
 </details>
 

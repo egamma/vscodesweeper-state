@@ -1,6 +1,6 @@
 # Top issues — pwang347
 
-Value ranking of reviewed open issues assigned to `pwang347` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 06:48 UTC.
+Value ranking of reviewed open issues assigned to `pwang347` in `microsoft/vscode`. Proposal-only; scores use the demand snapshot taken at review time. Generated 2026-08-16 16:21 UTC.
 
 Bugs are ranked by **value when fixed** (demand × severity × breadth); feature requests by **demand**, boosted for **vision-aligned** work and damped for **off-vision** requests. Rating is the evidence strength behind the review's verdict (6/6 best, 1/6 worst — same scale as the dashboard), not issue value; agent-fixable means the review wrote a fix spec the [sweeper-fix skill](../FIX-SKILL.md) can implement. Neither is part of the score.
 
@@ -110,7 +110,7 @@ Bugs are ranked by **value when fixed** (demand × severity × breadth); feature
 | 3 | [#296414](https://github.com/microsoft/vscode/issues/296414) | Sync ~/.copilot/skills via Settings Sync | 25 | 4 | 1 | active · vision-aligned | 88 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/296414.md) |
 | 4 | [#295755](https://github.com/microsoft/vscode/issues/295755) | Feature Request: Support Branch Selection for Organization‑Level Copilot Agents | 40 | 3 | 1 | backlog-candidate · vision-aligned | 86 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/295755.md) |
 | 5 | [#301181](https://github.com/microsoft/vscode/issues/301181) | Distribute Skills and Instructions from Organization Repositories | 20 | 2 | 0 | active · vision-aligned | 66 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/301181.md) |
-| 6 | [#314414](https://github.com/microsoft/vscode/issues/314414) | Enforce `extensions.allowed` policy from the Remote (Server) side during Remote - SSH sessions | 25 | 5 | 0 | backlog-candidate · vision-aligned | 59 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314414.md) |
+| 6 | [#314414](https://github.com/microsoft/vscode/issues/314414) | Enforce `extensions.allowed` policy from the Remote (Server) side during Remote - SSH sessions | 25 | 5 | 0 | backlog-candidate · vision-aligned | 58 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/314414.md) |
 | 7 | [#318181](https://github.com/microsoft/vscode/issues/318181) | Support for xAI SuperGrok/SuperGrok Heavy OAuth with BYOK. | 22 | 6 | 0 | backlog-candidate · vision-aligned | 54 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/318181.md) |
 | 8 | [#313546](https://github.com/microsoft/vscode/issues/313546) | Support reasoning effort configuration in custom .agent.md files | 14 | 6 | 0 | active · vision-aligned | 53 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/313546.md) |
 | 9 | [#293752](https://github.com/microsoft/vscode/issues/293752) | Allow pre-loading skills for custom agents | 8 | 8 | 3 | active · vision-aligned | 50 | — | [view](https://github.com/egamma/vscodesweeper-state/blob/state/records/microsoft/vscode/items/293752.md) |
