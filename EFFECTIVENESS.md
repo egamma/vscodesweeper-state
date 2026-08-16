@@ -1,10 +1,10 @@
-# VS Code Sweeper — Sweep Effectiveness
+# VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 37 swept users · 18118 issues reviewed · generated 2026-08-16 14:12 UTC
+[← Home](index.html) · 37 swept users · 18118 issues reviewed · generated 2026-08-16 14:46 UTC
 
 ## Verdict distribution
 
-The verdict mix alone, corpus-wide — independent of whether anyone acted on it (that's OUTCOMES.md). The 2nd-review columns are the verify lanes' blinded second reviews of duplicate and implemented-on-main proposals — fresh stamps only; the lanes only review OPEN proposals, so closed-before-review is historical, not missing coverage.
+The verdict mix alone, corpus-wide — independent of whether anyone acted on it (that's the adoption page, OUTCOMES.md). The 2nd-review columns are the verify lanes' blinded second reviews of duplicate and implemented-on-main proposals — fresh stamps only; the lanes only review OPEN proposals, so closed-before-review is historical, not missing coverage.
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -111,50 +111,6 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | jrieken | 114 | 30 | 18 | 26% |
 | hawkticehurst | 94 | 4 | 4 | 4% |
 | kycutler | 97 | 9 | 3 | 9% |
-
-## sweeper-fix skill adoption
-
-Skill PRs discovered by `reconcile`'s seeded-by-marker search, per user, against the agent-fixable pool. As current as the last reconcile run.
-
-| User | Agent-fixable pool | Skill PRs | Open | Merged |
-| --- | --- | --- | --- | --- |
-| lszomoru | 143 | — | — | — |
-| hediet | 180 | — | — | — |
-| justschen | 90 | — | — | — |
-| deepak1556 | 11 | — | — | — |
-| roblourens | 68 | — | — | — |
-| lramos15 | 76 | — | — | — |
-| sandy081 | 77 | — | — | — |
-| connor4312 | 71 | — | — | — |
-| anthonykim1 | 88 | — | — | — |
-| TylerLeonhardt | 78 | — | — | — |
-| aeschli | 51 | — | — | — |
-| meganrogge | 91 | — | — | — |
-| joshspicer | 47 | — | — | — |
-| mjbvz | 82 | — | — | — |
-| osortega | 75 | — | — | — |
-| alexdima | 62 | 2 | 2 | — |
-| chrmarti | 25 | — | — | — |
-| benibenj | 42 | 1 | — | 1 |
-| ulugbekna | 30 | — | — | — |
-| DonJayamanne | 33 | — | — | — |
-| Yoyokrazy | 60 | — | — | — |
-| rzhao271 | 51 | — | — | — |
-| aiday-mar | 44 | — | — | — |
-| Copilot | 42 | — | — | — |
-| mrleemurray | 3 | — | — | — |
-| dmitrivMS | 22 | — | — | — |
-| vijayupadya | 13 | — | — | — |
-| pwang347 | 13 | — | — | — |
-| vritant24 | 17 | — | — | — |
-| alexr00 | 9 | — | — | — |
-| amunger | 31 | — | — | — |
-| bhavyaus | 15 | — | — | — |
-| jo-oikawa | 7 | — | — | — |
-| sbatten | 20 | — | — | — |
-| jrieken | 30 | — | — | — |
-| hawkticehurst | 4 | — | — | — |
-| kycutler | 9 | — | — | — |
 
 ## Close reasons per swept user
 

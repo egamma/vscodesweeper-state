@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VS Code Sweeper — Proposal Outcomes</title>
+<title>VS Code Sweeper — Adoption</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
     --accent: #0969da; --row: #f6f8fa;
     --wc: #1a7f37; --wc-mid: #4ac26b; --wc-lite: #aceebb;
-    --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e;
+    --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e; --track: #d0d7de;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
-      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; }
+      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; --track:#30363d; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -47,6 +47,12 @@
   .seg.wc { background: var(--wc); } .seg.wcm { background: var(--wc-mid); } .seg.wcl { background: var(--wc-lite); }
   .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); } .seg.disp { background: var(--disp); }
   .seg.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .sw.skopen, .seg.skopen { background: var(--accent); }
+  .sw.trk { background: var(--track); }
+  .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
+  .skillchart .crow { grid-template-columns: 110px 1fr 140px; }
+  .wk a.qlink { color: inherit; }
+  .wk a.qlink:hover { color: var(--accent); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
   table { border-collapse: collapse; width: 100%; margin: 8px 0 4px; }
   th, td { text-align: left; padding: 5px 10px 5px 0; border-bottom: 1px solid var(--border); }
@@ -61,8 +67,8 @@
 </style>
 </head>
 <body>
-  <h1>VS Code Sweeper — Proposal Outcomes</h1>
-  <div class="sub"><a href="index.html">← home</a> · 233 issues reviewed · generated 2026-08-16 09:48 UTC</div>
+  <h1>VS Code Sweeper — Adoption</h1>
+  <div class="sub"><a href="index.html">← home</a> · 233 issues reviewed · generated 2026-08-16 14:49 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">233</div><div class="tsub">232 still open · 1 closed since review</div></div>
@@ -83,8 +89,10 @@
   </div>
 
   <h2>Acceptance by close reason</h2>
-  <p class="desc">Each bar is one close reason (the proposed label; the label-free close is
-  implemented-on-main). Right label: acted-on / proposals. "Closed otherwise" counts closures
+  <p class="desc">Each bar is one close reason — the same merged rows as the
+  <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
+  reason first, legacy close labels folded in; the label-free close is implemented on main).
+  Right label: acted-on / proposals. "Closed otherwise" counts closures
   without the sweeper's comment — correlation, not proven adoption. Newer proposals have had
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
@@ -93,11 +101,11 @@
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">*duplicate</span><div class="bar"><i class="seg pend" style="width:100.00%" title="still open: 26"></i></div><span class="rlabel">0/26 (0%)</span></div>
-<div class="crow"><span class="wk">implemented-on-main</span><div class="bar"><i class="seg pend" style="width:42.31%" title="still open: 11"></i></div><span class="rlabel">0/11 (0%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg pend" style="width:100.00%" title="still open: 26"></i></div><span class="rlabel">0/26 (0%)</span></div>
+<div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg pend" style="width:38.46%" title="still open: 10"></i></div><span class="rlabel">0/10 (0%)</span></div>
+<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg pend" style="width:7.69%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
 <div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg pend" style="width:7.69%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
-<div class="crow"><span class="wk">*not-reproducible</span><div class="bar"><i class="seg pend" style="width:3.85%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
-<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg pend" style="width:3.85%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
+<div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg pend" style="width:3.85%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
   </div>
 
   <h2>Comment adoption on the 0 acted-on proposals</h2>
@@ -116,6 +124,7 @@
     
   </div>
   
+
 
   <h2>Reversals — reopened after a close</h2>
   <p class="desc">Close proposals whose closure was later reversed (the issue reopened) —

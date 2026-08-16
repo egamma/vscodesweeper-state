@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VS Code Sweeper — Proposal Outcomes</title>
+<title>VS Code Sweeper — Adoption</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
     --accent: #0969da; --row: #f6f8fa;
     --wc: #1a7f37; --wc-mid: #4ac26b; --wc-lite: #aceebb;
-    --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e;
+    --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e; --track: #d0d7de;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
-      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; }
+      --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; --track:#30363d; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -47,6 +47,12 @@
   .seg.wc { background: var(--wc); } .seg.wcm { background: var(--wc-mid); } .seg.wcl { background: var(--wc-lite); }
   .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); } .seg.disp { background: var(--disp); }
   .seg.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .sw.skopen, .seg.skopen { background: var(--accent); }
+  .sw.trk { background: var(--track); }
+  .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
+  .skillchart .crow { grid-template-columns: 110px 1fr 140px; }
+  .wk a.qlink { color: inherit; }
+  .wk a.qlink:hover { color: var(--accent); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
   table { border-collapse: collapse; width: 100%; margin: 8px 0 4px; }
   th, td { text-align: left; padding: 5px 10px 5px 0; border-bottom: 1px solid var(--border); }
@@ -61,8 +67,8 @@
 </style>
 </head>
 <body>
-  <h1>VS Code Sweeper — Proposal Outcomes</h1>
-  <div class="sub"><a href="index.html">← home</a> · 18,118 issues reviewed · generated 2026-08-16 14:18 UTC</div>
+  <h1>VS Code Sweeper — Adoption</h1>
+  <div class="sub"><a href="index.html">← home</a> · 18,118 issues reviewed · generated 2026-08-16 14:46 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">18,118</div><div class="tsub">16,910 still open · 1,208 closed since review</div></div>
@@ -91,7 +97,7 @@
 
   <h2>Acceptance by close reason</h2>
   <p class="desc">Each bar is one close reason — the same merged rows as the
-  <a href="effectiveness.html">effectiveness page</a>'s verdict distribution (structured
+  <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
   reason first, legacy close labels folded in; the label-free close is implemented on main).
   Right label: acted-on / proposals. "Closed otherwise" counts closures
   without the sweeper's comment — correlation, not proven adoption. Newer proposals have had
@@ -131,6 +137,23 @@
     
   </div>
   
+
+  <h2>sweeper-fix skill adoption</h2>
+<p class="desc">Draft PRs opened with the <a href="fix-skill.html">sweeper-fix skill</a>,
+  discovered by <code>reconcile</code>'s seeded-by-marker search — per user, against their
+  agent-fixable pool (the track). Corpus-wide pool: 1,711 reviewed
+  fix specs. As current as the last reconcile run.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>merged</span>
+    <span><i class="sw skopen"></i>open</span>
+    <span><i class="sw own"></i>closed unmerged</span>
+    <span><i class="sw trk"></i>agent-fixable, no PR yet</span>
+  </div>
+  <div class="chart skillchart">
+<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Aalexdima%20has%3Askillpr" title="Open the dashboard filtered to alexdima's issues with a sweeper-fix skill PR">alexdima</a></span><div class="track" style="width:100.00%" title="agent-fixable pool: 62"><i class="seg wc" style="width:0.00%" title="merged skill PRs: 0"></i><i class="seg skopen" style="width:3.23%" title="open skill PRs: 2"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i></div><span class="rlabel">2 PRs · 0 merged</span></div>
+<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Abenibenj%20has%3Askillpr" title="Open the dashboard filtered to benibenj's issues with a sweeper-fix skill PR">benibenj</a></span><div class="track" style="width:67.74%" title="agent-fixable pool: 42"><i class="seg wc" style="width:2.38%" title="merged skill PRs: 1"></i><i class="seg skopen" style="width:0.00%" title="open skill PRs: 0"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i></div><span class="rlabel">1 PR · 1 merged</span></div>
+  </div>
+
 
   <h2>Independent verification — the 2nd review</h2>
   <p class="desc">A blinded second review re-judges duplicate and implemented-on-main close

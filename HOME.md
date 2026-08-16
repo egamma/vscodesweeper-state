@@ -5,33 +5,33 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 ## VS Code
 
 - **[Full review dashboard](dashboard.html)** — 18118 issues reviewed across all maintainers.
-- **[Sweep effectiveness](effectiveness.html)** — per-user closure outcomes and auto-fix leverage.
-- **[Proposal outcomes](outcomes.html)** — the close-proposal funnel: acted on, comment adoption, weekly trend.
+- **[Verdicts](effectiveness.html)** — what the sweep concluded: verdict distribution, per-user closure mix, agent-fixable leverage.
+- **[Adoption](outcomes.html)** — what humans did with the verdicts: the close-proposal funnel, comment adoption, skill PRs.
 
 ## vscode-python
 
 - **[Review dashboard](dashboard-vscode-python.html)** — proposal-only reviews for `microsoft/vscode-python`.
-- **[Proposal outcomes](outcomes-vscode-python.html)** — close-proposal funnel and comment adoption.
+- **[Adoption](outcomes-vscode-python.html)** — close-proposal funnel and comment adoption.
 
 ## vscode-python-environments
 
 - **[Review dashboard](dashboard-vscode-python-environments.html)** — proposal-only reviews for `microsoft/vscode-python-environments`.
-- **[Proposal outcomes](outcomes-vscode-python-environments.html)** — close-proposal funnel and comment adoption.
+- **[Adoption](outcomes-vscode-python-environments.html)** — close-proposal funnel and comment adoption.
 
 ## vscode-remote-release
 
 - **[Review dashboard](dashboard-vscode-remote-release.html)** — proposal-only reviews for `microsoft/vscode-remote-release`.
-- **[Proposal outcomes](outcomes-vscode-remote-release.html)** — close-proposal funnel and comment adoption.
+- **[Adoption](outcomes-vscode-remote-release.html)** — close-proposal funnel and comment adoption.
 
 ## monaco-editor
 
 - **[Review dashboard](dashboard-monaco-editor.html)** — proposal-only reviews for `microsoft/monaco-editor`.
-- **[Proposal outcomes](outcomes-monaco-editor.html)** — close-proposal funnel and comment adoption.
+- **[Adoption](outcomes-monaco-editor.html)** — close-proposal funnel and comment adoption.
 
 ## vscode-pull-request-github
 
 - **[Review dashboard](dashboard-vscode-pull-request-github.html)** — proposal-only reviews for `microsoft/vscode-pull-request-github`.
-- **[Proposal outcomes](outcomes-vscode-pull-request-github.html)** — close-proposal funnel and comment adoption.
+- **[Adoption](outcomes-vscode-pull-request-github.html)** — close-proposal funnel and comment adoption.
 
 ## Per-maintainer rankings
 
@@ -74,4 +74,4 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 16 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-08-16 09:48 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-08-16 14:49 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._

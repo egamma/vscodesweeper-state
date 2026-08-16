@@ -1,6 +1,6 @@
-# VS Code Sweeper — Proposal Outcomes
+# VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 14:18 UTC
+[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 14:46 UTC
 
 ## Funnel
 
@@ -59,6 +59,15 @@ _Close proposals count the whole corpus (1208 of the 18118 reviewed issues have 
 | Tanishq-JM | 1 | 0 (0%) |
 | trent-abc | 1 | 0 (0%) |
 | xgtxdzh | 1 | 0 (0%) |
+
+## sweeper-fix skill adoption
+
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1711 reviewed fix specs. As current as the last reconcile run.
+
+| User | Agent-fixable pool | Skill PRs | Open | Merged |
+| --- | --- | --- | --- | --- |
+| alexdima | 62 | 2 | 2 | — |
+| benibenj | 42 | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
