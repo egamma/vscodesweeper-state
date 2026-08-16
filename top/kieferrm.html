@@ -69,17 +69,17 @@
 <body>
   <h1>Top issues — kieferrm</h1>
   <div class="sub"><a href="../index.html">← home</a> · value ranking of reviewed open issues assigned to <code>kieferrm</code> ·
-    bugs by demand × severity, features by demand (boosted for vision-aligned work) · demand as of review time · generated 2026-08-04 15:26 UTC</div>
+    bugs by demand × severity, features by demand (boosted for vision-aligned work) · demand as of review time · generated 2026-08-16 06:48 UTC</div>
   <h2>Bugs — top 1 of 1
     <label class="toggle" title="Show only the bugs where the review wrote a fix spec an agent can implement — the whole lane, not just the visible head. The sweeper found and specced these; the sweeper-fix skill turns one into a draft PR."><input type="checkbox" id="afOnly"> ⚡ agent-fixable only (0)</label></h2>
   <table id="bugs">
     <thead><tr>
-      <th class="n" data-k="rank">#</th><th data-k="title">Issue</th>
-      <th class="n" data-k="upvotes" title="👍 reactions at review time">👍</th>
-      <th class="n" data-k="comments">Comments</th>
-      <th class="n" data-k="related" title="Open cross-references (duplicate proxy)">Refs</th>
-      <th data-k="severity">Severity</th><th data-k="breadth">Breadth</th>
-      <th class="n" data-k="score">Score</th><th data-k="priority">Priority</th>
+      <th class="n" data-k="rank" title="Rank within this lane by value score — 1 is the highest-value item.">#</th><th data-k="title" title="The issue (links to GitHub) and its title at review time. record opens the full review on the state repo; the ⚑ files feedback on this verdict.">Issue</th>
+      <th class="n" data-k="upvotes" title="👍 reactions at review time — the primary demand signal in the score.">👍</th>
+      <th class="n" data-k="comments" title="Comment count at review time — a noisy demand signal (arguments inflate it), weighted well below upvotes in the score.">Comments</th>
+      <th class="n" data-k="related" title="Open issues cross-referencing this one at review time — a duplicate-demand proxy, weighted above comments in the score.">Refs</th>
+      <th data-k="severity" title="The review's impact classification — a score input: crash and data-loss weigh highest, then freeze, perf, correctness, visual, papercut.">Severity</th><th data-k="breadth" title="How wide the affected audience is — a score input: broad (most users in a default setup) &gt; common (a mainstream scenario) &gt; niche.">Breadth</th>
+      <th class="n" data-k="score" title="Value when fixed: demand (👍 + refs + comments, age-damped) × severity × breadth, normalized 0–100 within this lane (top item = 100). Relative, not absolute.">Score</th><th data-k="priority" title="⚠ important maps to VS Code's real 'important' label, set conservatively: open bug, crash/data-loss/freeze severity, 0.8+ confidence, concrete impact evidence. Rare by design; — otherwise.">Priority</th>
       <th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Same scale as the dashboard.">Rating</th>
       <th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement. The button copies the skill invocation for your agent; the eye expands the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th>
     </tr></thead>
@@ -89,11 +89,11 @@
   <h2>Feature requests — top 9 of 9</h2>
   <table id="features">
     <thead><tr>
-      <th class="n" data-k="rank">#</th><th data-k="title">Issue</th>
-      <th class="n" data-k="upvotes">👍</th><th class="n" data-k="comments">Comments</th>
-      <th class="n" data-k="related">Refs</th>
-      <th data-k="signal">Signal</th><th class="n" data-k="score">Score</th>
-      <th>Draft PR</th>
+      <th class="n" data-k="rank" title="Rank within this lane by demand score — 1 is the most-demanded request.">#</th><th data-k="title" title="The issue (links to GitHub) and its title at review time. record opens the full review on the state repo; the ⚑ files feedback on this verdict.">Issue</th>
+      <th class="n" data-k="upvotes" title="👍 reactions at review time — the primary demand signal in the score.">👍</th><th class="n" data-k="comments" title="Comment count at review time — a noisy demand signal (arguments inflate it), weighted well below upvotes in the score.">Comments</th>
+      <th class="n" data-k="related" title="Open issues cross-referencing this one at review time — a duplicate-demand proxy, weighted above comments in the score.">Refs</th>
+      <th data-k="signal" title="Where the request sits: backlog-candidate (parked in the Backlog milestone), active (issue activity in the last ~6 months), or dormant. A second tag shows product-direction fit (aligned boosts the score, rejected damps it).">Signal</th><th class="n" data-k="score" title="Demand (👍 + refs + comments, age-damped) × breadth × vision fit, normalized 0–100 within this lane (top item = 100). Relative, not absolute.">Score</th>
+      <th title="An existing sweeper draft PR for this issue, when one exists — fork-only or experimental; nothing is opened on microsoft/vscode.">Draft PR</th>
     </tr></thead>
     <tbody></tbody>
   </table>
