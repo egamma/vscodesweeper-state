@@ -1,6 +1,28 @@
 # VS Code Sweeper — Sweep Effectiveness
 
-[← Home](index.html) · 37 swept users · 18118 issues reviewed · generated 2026-08-16 09:28 UTC
+[← Home](index.html) · 37 swept users · 18118 issues reviewed · generated 2026-08-16 14:12 UTC
+
+## Verdict distribution
+
+The verdict mix alone, corpus-wide — independent of whether anyone acted on it (that's OUTCOMES.md). The 2nd-review columns are the verify lanes' blinded second reviews of duplicate and implemented-on-main proposals — fresh stamps only; the lanes only review OPEN proposals, so closed-before-review is historical, not missing coverage.
+
+| Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| implemented on main | 724 | 4% | 573 (79%) | 367 (64%) | 189 (33%) | 17 (3%) | 151 (21%) | — |
+| duplicate | 779 | 4% | 672 (86%) | 499 (74%) | 153 (23%) | 20 (3%) | 107 (14%) | — |
+| as-designed | 270 | 1% | 2 (1%) | 1 (50%) | 1 (50%) | — | — | — |
+| question | 230 | 1% | — | — | — | — | — | — |
+| caused-by-extension | 216 | 1% | — | — | — | — | — | — |
+| not-reproducible | 125 | 1% | 1 (1%) | — | 1 (100%) | — | — | — |
+| out-of-scope | 100 | 1% | — | — | — | — | — | — |
+| off-topic | 57 | 0% | — | — | — | — | — | — |
+| extension-candidate | 30 | 0% | — | — | — | — | — | — |
+| other | 21 | 0% | — | — | — | — | — | — |
+| invalid | 2 | 0% | — | — | — | — | — | — |
+| **all close proposals** | 2554 | 14% | 1248 (49%) | 867 (69%) | 344 (28%) | 37 (3%) | — | — |
+| needs info | 2262 | 12% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 13302 | 73% | — | — | — | — | — | — |
+| all reviews | 18118 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -134,72 +156,48 @@ Skill PRs discovered by `reconcile`'s seeded-by-marker search, per user, against
 | hawkticehurst | 4 | — | — | — |
 | kycutler | 9 | — | — | — |
 
-## Close-proposal reasons
-
-Acted on = closed since review; "with the sweeper's comment" = the close carried the proposed comment (verbatim/embedded/edited). As current as the last reconcile run. Corpus-wide, including below-threshold and unassigned reviews.
-
-| Reason | Proposals | Share | Acted on | With the sweeper's comment |
-| --- | --- | --- | --- | --- |
-| implemented on main | 724 | 28% | 151 (21%) | 96 (13%) |
-| `*duplicate` | 594 | 23% | 106 (18%) | 44 (7%) |
-| `*as-designed` | 252 | 10% | 48 (19%) | 36 (14%) |
-| `*question` | 223 | 9% | 23 (10%) | 8 (4%) |
-| `*caused-by-extension` | 216 | 8% | 39 (18%) | 16 (7%) |
-| duplicate | 185 | 7% | 1 (1%) | — |
-| `*not-reproducible` | 121 | 5% | 17 (14%) | 5 (4%) |
-| `*out-of-scope` | 73 | 3% | 10 (14%) | 4 (5%) |
-| `*off-topic` | 57 | 2% | 14 (25%) | 2 (4%) |
-| `*extension-candidate` | 30 | 1% | 6 (20%) | 2 (7%) |
-| out-of-scope | 27 | 1% | 4 (15%) | — |
-| other | 21 | 1% | 2 (10%) | — |
-| as-designed | 18 | 1% | 1 (6%) | — |
-| question | 7 | 0% | 1 (14%) | — |
-| not-reproducible | 4 | 0% | 2 (50%) | — |
-| invalid | 2 | 0% | 1 (50%) | — |
-| all reasons | 2554 | 100% | 426 (17%) | 213 (8%) |
-
 ## Close reasons per swept user
 
 Counts and shares of each user's close proposals. The mix reflects inbox composition, not reviewer or sweeper quality. Globally-rare reasons fold into "other".
 
-| User | Close proposals | implemented on main | `*duplicate` | `*as-designed` | `*question` | `*caused-by-extension` | duplicate | `*not-reproducible` | other |
+| User | Close proposals | implemented on main | duplicate | as-designed | question | caused-by-extension | not-reproducible | out-of-scope | other |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| lszomoru | 191 | 47 (25%) | 56 (29%) | 20 (10%) | 17 (9%) | 9 (5%) | 14 (7%) | 6 (3%) | 22 (12%) |
-| hediet | 124 | 35 (28%) | 25 (20%) | 17 (14%) | 9 (7%) | 9 (7%) | 13 (10%) | — | 16 (13%) |
-| justschen | 177 | 76 (43%) | 55 (31%) | 11 (6%) | 5 (3%) | 7 (4%) | 11 (6%) | 4 (2%) | 8 (5%) |
-| deepak1556 | 188 | 28 (15%) | 76 (40%) | 11 (6%) | 13 (7%) | 10 (5%) | 18 (10%) | 18 (10%) | 14 (7%) |
-| roblourens | 124 | 42 (34%) | 28 (23%) | 8 (6%) | 12 (10%) | 8 (6%) | 10 (8%) | 6 (5%) | 10 (8%) |
-| lramos15 | 165 | 39 (24%) | 26 (16%) | 16 (10%) | 35 (21%) | 6 (4%) | 6 (4%) | 8 (5%) | 29 (18%) |
-| sandy081 | 96 | 36 (38%) | 21 (22%) | 2 (2%) | 5 (5%) | 11 (11%) | 2 (2%) | 4 (4%) | 15 (16%) |
-| connor4312 | 72 | 23 (32%) | 17 (24%) | 6 (8%) | 1 (1%) | 7 (10%) | 8 (11%) | 5 (7%) | 5 (7%) |
-| anthonykim1 | 92 | 21 (23%) | 17 (18%) | 9 (10%) | 7 (8%) | 14 (15%) | 9 (10%) | 4 (4%) | 11 (12%) |
-| TylerLeonhardt | 79 | 22 (28%) | 28 (35%) | 4 (5%) | 8 (10%) | 9 (11%) | 2 (3%) | — | 6 (8%) |
-| aeschli | 53 | 22 (42%) | 12 (23%) | 1 (2%) | 5 (9%) | 2 (4%) | 3 (6%) | 1 (2%) | 7 (13%) |
-| meganrogge | 63 | 38 (60%) | 10 (16%) | 7 (11%) | 1 (2%) | 1 (2%) | 1 (2%) | 1 (2%) | 4 (6%) |
-| joshspicer | 111 | 23 (21%) | 11 (10%) | 7 (6%) | 2 (2%) | 46 (41%) | 7 (6%) | 6 (5%) | 9 (8%) |
-| mjbvz | 65 | 30 (46%) | 14 (22%) | 11 (17%) | — | 4 (6%) | 2 (3%) | 4 (6%) | — |
-| osortega | 51 | 17 (33%) | 14 (27%) | 5 (10%) | 2 (4%) | 5 (10%) | 6 (12%) | — | 2 (4%) |
-| alexdima | 120 | 39 (33%) | 22 (18%) | 32 (27%) | 1 (1%) | 11 (9%) | 3 (3%) | 7 (6%) | 5 (4%) |
-| chrmarti | 182 | 25 (14%) | 17 (9%) | 4 (2%) | 65 (36%) | 23 (13%) | 11 (6%) | 28 (15%) | 9 (5%) |
-| benibenj | 35 | 9 (26%) | 5 (14%) | 10 (29%) | — | — | 4 (11%) | 2 (6%) | 5 (14%) |
-| ulugbekna | 67 | 9 (13%) | 15 (22%) | 16 (24%) | 5 (7%) | 4 (6%) | 6 (9%) | 6 (9%) | 6 (9%) |
-| DonJayamanne | 37 | 16 (43%) | 4 (11%) | 2 (5%) | 1 (3%) | 3 (8%) | 5 (14%) | 2 (5%) | 4 (11%) |
-| Yoyokrazy | 30 | 10 (33%) | 7 (23%) | 2 (7%) | 5 (17%) | 1 (3%) | — | 2 (7%) | 3 (10%) |
-| rzhao271 | 28 | 9 (32%) | 6 (21%) | 7 (25%) | 1 (4%) | — | 1 (4%) | 3 (11%) | 1 (4%) |
-| aiday-mar | 22 | 13 (59%) | 3 (14%) | 2 (9%) | — | — | 2 (9%) | 1 (5%) | 1 (5%) |
-| Copilot | 16 | 8 (50%) | 2 (13%) | 4 (25%) | — | 1 (6%) | 1 (6%) | — | — |
-| mrleemurray | 32 | 13 (41%) | 8 (25%) | 4 (13%) | 2 (6%) | 1 (3%) | 2 (6%) | — | 2 (6%) |
-| dmitrivMS | 39 | 10 (26%) | 12 (31%) | 6 (15%) | 2 (5%) | 2 (5%) | 2 (5%) | 2 (5%) | 3 (8%) |
-| vijayupadya | 21 | 7 (33%) | 5 (24%) | 1 (5%) | 2 (10%) | — | 2 (10%) | 2 (10%) | 2 (10%) |
-| pwang347 | 19 | 2 (11%) | 9 (47%) | 3 (16%) | 1 (5%) | 1 (5%) | 2 (11%) | — | 1 (5%) |
-| vritant24 | 22 | 7 (32%) | 10 (45%) | 1 (5%) | 1 (5%) | — | 2 (9%) | — | 1 (5%) |
-| alexr00 | 8 | 1 (13%) | 3 (38%) | 1 (13%) | — | 1 (13%) | — | 1 (13%) | 1 (13%) |
-| amunger | 7 | 2 (29%) | 1 (14%) | — | — | 3 (43%) | 1 (14%) | — | — |
-| bhavyaus | 13 | 2 (15%) | 3 (23%) | 4 (31%) | 2 (15%) | — | — | — | 2 (15%) |
-| jo-oikawa | 7 | 3 (43%) | — | 1 (14%) | 1 (14%) | — | — | 1 (14%) | 1 (14%) |
-| sbatten | 17 | 6 (35%) | 4 (24%) | 3 (18%) | 2 (12%) | — | — | — | 2 (12%) |
-| jrieken | 7 | — | — | 4 (57%) | — | 1 (14%) | 1 (14%) | 1 (14%) | — |
-| hawkticehurst | 13 | 2 (15%) | 1 (8%) | 2 (15%) | 1 (8%) | — | 3 (23%) | — | 4 (31%) |
+| lszomoru | 191 | 47 (25%) | 70 (37%) | 21 (11%) | 17 (9%) | 9 (5%) | 6 (3%) | 2 (1%) | 19 (10%) |
+| hediet | 124 | 35 (28%) | 38 (31%) | 22 (18%) | 10 (8%) | 9 (7%) | 1 (1%) | 3 (2%) | 6 (5%) |
+| justschen | 177 | 76 (43%) | 66 (37%) | 12 (7%) | 7 (4%) | 7 (4%) | 4 (2%) | 3 (2%) | 2 (1%) |
+| deepak1556 | 188 | 28 (15%) | 94 (50%) | 11 (6%) | 14 (7%) | 10 (5%) | 19 (10%) | 9 (5%) | 3 (2%) |
+| roblourens | 124 | 42 (34%) | 38 (31%) | 9 (7%) | 12 (10%) | 8 (6%) | 6 (5%) | 4 (3%) | 5 (4%) |
+| lramos15 | 165 | 39 (24%) | 32 (19%) | 17 (10%) | 36 (22%) | 6 (4%) | 8 (5%) | 10 (6%) | 17 (10%) |
+| sandy081 | 96 | 36 (38%) | 23 (24%) | 3 (3%) | 5 (5%) | 11 (11%) | 4 (4%) | 7 (7%) | 7 (7%) |
+| connor4312 | 72 | 23 (32%) | 25 (35%) | 6 (8%) | 1 (1%) | 7 (10%) | 5 (7%) | 4 (6%) | 1 (1%) |
+| anthonykim1 | 92 | 21 (23%) | 26 (28%) | 9 (10%) | 8 (9%) | 14 (15%) | 5 (5%) | 4 (4%) | 5 (5%) |
+| TylerLeonhardt | 79 | 22 (28%) | 30 (38%) | 5 (6%) | 8 (10%) | 9 (11%) | — | 1 (1%) | 4 (5%) |
+| aeschli | 53 | 22 (42%) | 15 (28%) | 1 (2%) | 5 (9%) | 2 (4%) | 1 (2%) | 2 (4%) | 5 (9%) |
+| meganrogge | 63 | 38 (60%) | 11 (17%) | 7 (11%) | 1 (2%) | 1 (2%) | 1 (2%) | 4 (6%) | — |
+| joshspicer | 111 | 23 (21%) | 18 (16%) | 8 (7%) | 2 (2%) | 46 (41%) | 6 (5%) | 6 (5%) | 2 (2%) |
+| mjbvz | 65 | 30 (46%) | 16 (25%) | 11 (17%) | — | 4 (6%) | 4 (6%) | — | — |
+| osortega | 51 | 17 (33%) | 20 (39%) | 5 (10%) | 2 (4%) | 5 (10%) | — | 2 (4%) | — |
+| alexdima | 120 | 39 (33%) | 25 (21%) | 32 (27%) | 1 (1%) | 11 (9%) | 7 (6%) | 2 (2%) | 3 (3%) |
+| chrmarti | 182 | 25 (14%) | 28 (15%) | 4 (2%) | 65 (36%) | 23 (13%) | 28 (15%) | 3 (2%) | 6 (3%) |
+| benibenj | 35 | 9 (26%) | 9 (26%) | 11 (31%) | 1 (3%) | — | 2 (6%) | 3 (9%) | — |
+| ulugbekna | 67 | 9 (13%) | 21 (31%) | 17 (25%) | 5 (7%) | 4 (6%) | 6 (9%) | 1 (1%) | 4 (6%) |
+| DonJayamanne | 37 | 16 (43%) | 9 (24%) | 2 (5%) | 1 (3%) | 3 (8%) | 2 (5%) | 2 (5%) | 2 (5%) |
+| Yoyokrazy | 30 | 10 (33%) | 7 (23%) | 2 (7%) | 5 (17%) | 1 (3%) | 2 (7%) | 3 (10%) | — |
+| rzhao271 | 28 | 9 (32%) | 7 (25%) | 8 (29%) | 1 (4%) | — | 3 (11%) | — | — |
+| aiday-mar | 22 | 13 (59%) | 5 (23%) | 2 (9%) | — | — | 1 (5%) | — | 1 (5%) |
+| Copilot | 16 | 8 (50%) | 3 (19%) | 4 (25%) | — | 1 (6%) | — | — | — |
+| mrleemurray | 32 | 13 (41%) | 10 (31%) | 5 (16%) | 2 (6%) | 1 (3%) | — | 1 (3%) | — |
+| dmitrivMS | 39 | 10 (26%) | 14 (36%) | 6 (15%) | 3 (8%) | 2 (5%) | 2 (5%) | 1 (3%) | 1 (3%) |
+| vijayupadya | 21 | 7 (33%) | 7 (33%) | 1 (5%) | 2 (10%) | — | 2 (10%) | 1 (5%) | 1 (5%) |
+| pwang347 | 19 | 2 (11%) | 11 (58%) | 3 (16%) | 1 (5%) | 1 (5%) | — | 1 (5%) | — |
+| vritant24 | 22 | 7 (32%) | 12 (55%) | 1 (5%) | 1 (5%) | — | — | — | 1 (5%) |
+| alexr00 | 8 | 1 (13%) | 3 (38%) | 1 (13%) | — | 1 (13%) | 2 (25%) | — | — |
+| amunger | 7 | 2 (29%) | 2 (29%) | — | — | 3 (43%) | — | — | — |
+| bhavyaus | 13 | 2 (15%) | 3 (23%) | 4 (31%) | 2 (15%) | — | — | 2 (15%) | — |
+| jo-oikawa | 7 | 3 (43%) | — | 1 (14%) | 1 (14%) | — | 1 (14%) | 1 (14%) | — |
+| sbatten | 17 | 6 (35%) | 4 (24%) | 3 (18%) | 2 (12%) | — | — | 2 (12%) | — |
+| jrieken | 7 | — | 1 (14%) | 4 (57%) | — | 1 (14%) | 1 (14%) | — | — |
+| hawkticehurst | 13 | 2 (15%) | 4 (31%) | 4 (31%) | 1 (8%) | — | — | 2 (15%) | — |
 | kycutler | 8 | 3 (38%) | 2 (25%) | 1 (13%) | 1 (13%) | 1 (13%) | — | — | — |
 
 _Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (35 users, 649 reviews — mostly co-assignees)._
