@@ -117,7 +117,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 120 open reviewed · 25 actionable · 5 closed since review · <a href="outcomes-vscode-python-environments.html">11 close proposals to date</a> · generated 2026-08-16 09:19 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 120 open reviewed · 25 actionable · 5 closed since review · <a href="outcomes-vscode-python-environments.html">11 close proposals to date</a> · generated 2026-08-16 09:28 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">11</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">7</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">102</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">5</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
@@ -586,6 +586,14 @@ function toast(msg){
   clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2800);
 }
 
+// AI-disclosure prefix on the pasted comment (team feedback 2026-08-16): the literal
+// 🤖 character, NEVER the GitHub colon-shortcode — normalizeComment() strips the emoji
+// so adoption still classifies verbatim, while the shortcode would normalize to the
+// word "robot" and downgrade every adoption to embedded (comment-adoption.test.ts).
+// Applied at copy time, not in the records: covers the whole corpus, and the record
+// stays the canonical prefix-free text the adoption matcher compares against.
+function aiPrefixed(s){ return s.startsWith("🤖") ? s : "🤖 " + s; }
+
 // Copy the suggested comment. Freshness is advisory, never a hard block — the human
 // is the final authority. Only ISSUE drift warns: generation-time content staleness
 // and, for otherwise-fresh rows, a click-time check for drift since the page was built.
@@ -615,7 +623,7 @@ async function doCopy(rec){
   if (warnings.length && !confirm(warnings.join("\n\n") + "\n\nThe comment may still be useful — copy it anyway?")) return;
 
   try {
-    await navigator.clipboard.writeText(rec.proposedComment);
+    await navigator.clipboard.writeText(aiPrefixed(rec.proposedComment));
     toast("Copied comment" + note);
   } catch {
     toast("Copy failed — open the record and copy manually");
@@ -648,7 +656,7 @@ rowsEl.addEventListener("click", (e) => {
     const rec = DATA.find(r => String(r.number) === peekBtn.dataset.n);
     if (!rec) return;
     if (kind === "comment") {
-      if (rec.proposedComment) openPanel(peekBtn, key, rec.proposedComment, "Suggested closing comment — the button copies it for you to paste on the issue.", true);
+      if (rec.proposedComment) openPanel(peekBtn, key, aiPrefixed(rec.proposedComment), "Suggested closing comment — the button copies it for you to paste on the issue. The 🤖 prefix marks it as AI-drafted; keep or edit it.", true);
       return;
     }
     if (kind === "verify") {

@@ -1,6 +1,6 @@
 # VS Code Sweeper — Proposal Outcomes
 
-[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 09:18 UTC
+[← Home](index.html) · 18118 issues reviewed · generated 2026-08-16 09:28 UTC
 
 ## Funnel
 
@@ -74,7 +74,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | disputed | 344 | 0 | 0 |
 | unverifiable | 37 | 0 | 0 |
 
-_The 344 disputed proposals are listed on the [dashboard](dashboard.html) — sort its "2nd review" column; each ✗ badge carries the verifier's evidence._
+_The 344 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
