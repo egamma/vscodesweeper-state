@@ -1,17 +1,17 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18163 issues reviewed · generated 2026-08-17 09:40 UTC
+[← Home](index.html) · 18283 issues reviewed · generated 2026-08-18 09:31 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 18163
-- **Close proposals:** 2557 (14% of reviewed)
+- **Issues reviewed:** 18283
+- **Close proposals:** 2569 (14% of reviewed)
 - **Acted on (closed):** 431 (17% of proposals)
 - **Closed with the sweeper's comment:** 213 (49% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
-- **Still awaiting action:** 2126 open close proposals
+- **Still awaiting action:** 2138 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1236 of the 18163 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2126 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1266 of the 18283 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2138 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -62,7 +62,7 @@ _Close proposals count the whole corpus (1236 of the 18163 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1714 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1718 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
@@ -73,17 +73,17 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 671 of 671 open proposals verified · 107 closed unverified
+- **duplicate:** 678 of 678 open proposals verified · 107 closed unverified
 - **implemented-on-main:** 575 of 575 open proposals verified · 97 closed unverified
-- **Verdict mix:** 867 confirmed (26 with the fix unreleased) · 344 disputed · 37 unverifiable
+- **Verdict mix:** 871 confirmed (26 with the fix unreleased) · 347 disputed · 37 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 865 | 1 | 1 |
-| disputed | 343 | 1 | 0 |
+| confirmed | 869 | 1 | 1 |
+| disputed | 346 | 1 | 0 |
 | unverifiable | 37 | 0 | 0 |
 
-_The 344 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 347 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -95,28 +95,28 @@ _The 344 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 441 |
+| keep-open | 459 |
 | propose-close | 431 |
-| needs-info | 310 |
-| route-to-area | 54 |
+| needs-info | 318 |
+| route-to-area | 58 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 591 |
-| not_planned | 504 |
-| duplicate | 136 |
+| completed | 613 |
+| not_planned | 511 |
+| duplicate | 137 |
 | not_found | 5 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment |
 | --- | --- | --- | --- | --- |
-| duplicate | 779 | 108 | 14% | 44 |
+| duplicate | 786 | 108 | 14% | 44 |
 | implemented on main | 724 | 152 | 21% | 96 |
-| as-designed | 272 | 49 | 18% | 36 |
-| question | 230 | 25 | 11% | 8 |
+| as-designed | 275 | 49 | 18% | 36 |
+| question | 231 | 25 | 11% | 8 |
 | caused-by-extension | 216 | 39 | 18% | 16 |
-| not-reproducible | 125 | 19 | 15% | 5 |
+| not-reproducible | 126 | 19 | 15% | 5 |
 | out-of-scope | 101 | 16 | 16% | 4 |
 | off-topic | 57 | 14 | 25% | 2 |
 | extension-candidate | 30 | 6 | 20% | 2 |
