@@ -68,7 +68,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 18,283 issues reviewed · generated 2026-08-18 09:31 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 18,283 issues reviewed · generated 2026-08-18 15:57 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">18,283</div><div class="tsub">17,017 still open · 1,266 closed since review</div></div>
@@ -76,6 +76,9 @@
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">431</div><div class="tsub">17% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">213</div><div class="tsub">49% of acted-on</div></div>
   </div>
+  <p class="desc">2nd-reviewed before the close: <strong>1 confirmed</strong> ·
+  <strong>1 disputed</strong> ·
+  429 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here. Details in <a href="#verification">Independent verification</a>.</p>
 
   <h2>Proposed-close issues closed per week</h2>
   <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
@@ -156,7 +159,7 @@
   </div>
 
 
-  <h2>Independent verification — the 2nd review</h2>
+  <h2 id="verification">Independent verification — the 2nd review</h2>
   <p class="desc">A blinded second review re-judges duplicate and implemented-on-main close
   proposals before anyone acts (the dashboard's "2nd review" badge). "Disputed" is a dispute
   to read, not a proven error — the blinded judge sees less context than the original review.
@@ -209,6 +212,15 @@
 <tr><td>confirmed</td><td class="num">869</td><td class="num">1</td><td class="num">1</td></tr>
 <tr><td>disputed</td><td class="num">346</td><td class="num">1</td><td class="num">0</td></tr>
 <tr><td>unverifiable</td><td class="num">37</td><td class="num">0</td><td class="num">0</td></tr>
+  </table>
+
+  <h3>Closed despite a dispute</h3>
+  <p class="desc">Closes that went ahead after the 2nd review refuted the proposal — either the
+  human knew better (the dispute is advisory) or a false positive slipped past the warning;
+  both readings are on record. The before-the-fact twin of the reversals queue below.</p>
+  <table>
+    <tr><th>Issue</th><th>Closed</th><th>Who acted</th><th>2nd-review evidence</th></tr>
+<tr><td><a href="https://github.com/microsoft/vscode/issues/330728" target="_blank" rel="noopener">#330728</a> fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607)</td><td>2026-08-16</td><td>sandy081</td><td>Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered.</td></tr>
   </table>
 
   <h2>Reversals — reopened after a close</h2>

@@ -1,12 +1,13 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18283 issues reviewed · generated 2026-08-18 09:31 UTC
+[← Home](index.html) · 18283 issues reviewed · generated 2026-08-18 15:57 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 18283
 - **Close proposals:** 2569 (14% of reviewed)
 - **Acted on (closed):** 431 (17% of proposals)
+- **2nd-reviewed before the close:** 1 confirmed · 1 disputed · 429 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 213 (49% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
 - **Still awaiting action:** 2138 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
@@ -82,6 +83,12 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | confirmed | 869 | 1 | 1 |
 | disputed | 346 | 1 | 0 |
 | unverifiable | 37 | 0 | 0 |
+
+### Closed despite a dispute
+
+| Issue | Closed | Who acted | 2nd-review evidence |
+| --- | --- | --- | --- |
+| [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
 _The 347 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
