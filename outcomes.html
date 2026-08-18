@@ -38,6 +38,7 @@
   .sw.wc { background: var(--wc); } .sw.wcm { background: var(--wc-mid); } .sw.wcl { background: var(--wc-lite); }
   .sw.own { background: var(--own); } .sw.uncl { background: var(--uncl); } .sw.disp { background: var(--disp); }
   .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .seg.fixedin, .sw.fixedin { background: var(--accent); }
   .crow { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 10px; margin: 6px 0; }
   .wk { text-align: right; color: var(--muted); font-size: 12px; white-space: nowrap; }
   .bar, .strip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; }
@@ -68,7 +69,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 18,283 issues reviewed · generated 2026-08-18 15:57 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 18,283 issues reviewed · generated 2026-08-18 16:11 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">18,283</div><div class="tsub">17,017 still open · 1,266 closed since review</div></div>
@@ -76,6 +77,10 @@
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">431</div><div class="tsub">17% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">213</div><div class="tsub">49% of acted-on</div></div>
   </div>
+  <p class="desc">Of the 431 acted-on closes, <strong>52 were likely fixed
+  instead</strong> — closed as <code>completed</code> without the sweeper's comment on a proposal other
+  than implemented-on-main. Most plausibly the team fixed the issue in the meantime; these are
+  not claimed as adoption (blue in the acceptance chart below).</p>
   <p class="desc">2nd-reviewed before the close: <strong>1 confirmed</strong> ·
   <strong>1 disputed</strong> ·
   429 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here. Details in <a href="#verification">Independent verification</a>.</p>
@@ -104,22 +109,24 @@
   <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
   reason first, legacy close labels folded in; the label-free close is implemented on main).
   Right label: acted-on / proposals. "Closed otherwise" counts closures
-  without the sweeper's comment — correlation, not proven adoption. Newer proposals have had
+  without the sweeper's comment — correlation, not proven adoption; blue splits out the
+  likely-fixed-instead closes, which the sweeper doesn't claim at all. Newer proposals have had
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment</span>
     <span><i class="sw own"></i>closed otherwise</span>
+    <span title="Closed as completed without the sweeper's comment, on a proposal other than implemented-on-main — most plausibly the team fixed the issue in the meantime"><i class="sw fixedin"></i>likely fixed instead</span>
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg wc" style="width:5.60%" title="closed with sweeper comment: 44"></i><i class="seg own" style="width:8.14%" title="closed otherwise: 64"></i><i class="seg pend" style="width:86.26%" title="still open: 678"></i></div><span class="rlabel">108/786 (14%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg wc" style="width:5.60%" title="closed with sweeper comment: 44"></i><i class="seg own" style="width:6.49%" title="closed otherwise: 51"></i><i class="seg fixedin" style="width:1.65%" title="likely fixed instead (closed as completed, no sweeper comment): 13"></i><i class="seg pend" style="width:86.26%" title="still open: 678"></i></div><span class="rlabel">108/786 (14%)</span></div>
 <div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg wc" style="width:12.21%" title="closed with sweeper comment: 96"></i><i class="seg own" style="width:7.12%" title="closed otherwise: 56"></i><i class="seg pend" style="width:72.77%" title="still open: 572"></i></div><span class="rlabel">152/724 (21%)</span></div>
-<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg wc" style="width:4.58%" title="closed with sweeper comment: 36"></i><i class="seg own" style="width:1.65%" title="closed otherwise: 13"></i><i class="seg pend" style="width:28.75%" title="still open: 226"></i></div><span class="rlabel">49/275 (18%)</span></div>
-<div class="crow"><span class="wk">question</span><div class="bar"><i class="seg wc" style="width:1.02%" title="closed with sweeper comment: 8"></i><i class="seg own" style="width:2.16%" title="closed otherwise: 17"></i><i class="seg pend" style="width:26.21%" title="still open: 206"></i></div><span class="rlabel">25/231 (11%)</span></div>
-<div class="crow"><span class="wk">caused-by-extension</span><div class="bar"><i class="seg wc" style="width:2.04%" title="closed with sweeper comment: 16"></i><i class="seg own" style="width:2.93%" title="closed otherwise: 23"></i><i class="seg pend" style="width:22.52%" title="still open: 177"></i></div><span class="rlabel">39/216 (18%)</span></div>
-<div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg wc" style="width:0.64%" title="closed with sweeper comment: 5"></i><i class="seg own" style="width:1.78%" title="closed otherwise: 14"></i><i class="seg pend" style="width:13.61%" title="still open: 107"></i></div><span class="rlabel">19/126 (15%)</span></div>
-<div class="crow"><span class="wk">out-of-scope</span><div class="bar"><i class="seg wc" style="width:0.51%" title="closed with sweeper comment: 4"></i><i class="seg own" style="width:1.53%" title="closed otherwise: 12"></i><i class="seg pend" style="width:10.81%" title="still open: 85"></i></div><span class="rlabel">16/101 (16%)</span></div>
-<div class="crow"><span class="wk">off-topic</span><div class="bar"><i class="seg wc" style="width:0.25%" title="closed with sweeper comment: 2"></i><i class="seg own" style="width:1.53%" title="closed otherwise: 12"></i><i class="seg pend" style="width:5.47%" title="still open: 43"></i></div><span class="rlabel">14/57 (25%)</span></div>
+<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg wc" style="width:4.58%" title="closed with sweeper comment: 36"></i><i class="seg own" style="width:0.76%" title="closed otherwise: 6"></i><i class="seg fixedin" style="width:0.89%" title="likely fixed instead (closed as completed, no sweeper comment): 7"></i><i class="seg pend" style="width:28.75%" title="still open: 226"></i></div><span class="rlabel">49/275 (18%)</span></div>
+<div class="crow"><span class="wk">question</span><div class="bar"><i class="seg wc" style="width:1.02%" title="closed with sweeper comment: 8"></i><i class="seg own" style="width:1.02%" title="closed otherwise: 8"></i><i class="seg fixedin" style="width:1.15%" title="likely fixed instead (closed as completed, no sweeper comment): 9"></i><i class="seg pend" style="width:26.21%" title="still open: 206"></i></div><span class="rlabel">25/231 (11%)</span></div>
+<div class="crow"><span class="wk">caused-by-extension</span><div class="bar"><i class="seg wc" style="width:2.04%" title="closed with sweeper comment: 16"></i><i class="seg own" style="width:1.78%" title="closed otherwise: 14"></i><i class="seg fixedin" style="width:1.15%" title="likely fixed instead (closed as completed, no sweeper comment): 9"></i><i class="seg pend" style="width:22.52%" title="still open: 177"></i></div><span class="rlabel">39/216 (18%)</span></div>
+<div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg wc" style="width:0.64%" title="closed with sweeper comment: 5"></i><i class="seg own" style="width:1.02%" title="closed otherwise: 8"></i><i class="seg fixedin" style="width:0.76%" title="likely fixed instead (closed as completed, no sweeper comment): 6"></i><i class="seg pend" style="width:13.61%" title="still open: 107"></i></div><span class="rlabel">19/126 (15%)</span></div>
+<div class="crow"><span class="wk">out-of-scope</span><div class="bar"><i class="seg wc" style="width:0.51%" title="closed with sweeper comment: 4"></i><i class="seg own" style="width:1.15%" title="closed otherwise: 9"></i><i class="seg fixedin" style="width:0.38%" title="likely fixed instead (closed as completed, no sweeper comment): 3"></i><i class="seg pend" style="width:10.81%" title="still open: 85"></i></div><span class="rlabel">16/101 (16%)</span></div>
+<div class="crow"><span class="wk">off-topic</span><div class="bar"><i class="seg wc" style="width:0.25%" title="closed with sweeper comment: 2"></i><i class="seg own" style="width:0.89%" title="closed otherwise: 7"></i><i class="seg fixedin" style="width:0.64%" title="likely fixed instead (closed as completed, no sweeper comment): 5"></i><i class="seg pend" style="width:5.47%" title="still open: 43"></i></div><span class="rlabel">14/57 (25%)</span></div>
 <div class="crow"><span class="wk">extension-candidate</span><div class="bar"><i class="seg wc" style="width:0.25%" title="closed with sweeper comment: 2"></i><i class="seg own" style="width:0.51%" title="closed otherwise: 4"></i><i class="seg pend" style="width:3.05%" title="still open: 24"></i></div><span class="rlabel">6/30 (20%)</span></div>
 <div class="crow"><span class="wk">other</span><div class="bar"><i class="seg own" style="width:0.25%" title="closed otherwise: 2"></i><i class="seg pend" style="width:2.42%" title="still open: 19"></i></div><span class="rlabel">2/21 (10%)</span></div>
 <div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg own" style="width:0.13%" title="closed otherwise: 1"></i><i class="seg pend" style="width:0.13%" title="still open: 1"></i></div><span class="rlabel">1/2 (50%)</span></div>
@@ -140,6 +147,9 @@
     <span><i class="sw own"></i>own wording 217</span>
     
   </div>
+  <p class="desc">51 of the 217 own-wording closes were likely
+  fixed instead (closed as completed) — those proposed comments weren't passed over for a
+  better one; the close had a different cause entirely.</p>
   
 
   <h2>sweeper-fix skill adoption</h2>

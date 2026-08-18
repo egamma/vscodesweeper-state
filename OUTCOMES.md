@@ -1,6 +1,6 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18283 issues reviewed · generated 2026-08-18 15:57 UTC
+[← Home](index.html) · 18283 issues reviewed · generated 2026-08-18 16:11 UTC
 
 ## Funnel
 
@@ -9,6 +9,7 @@
 - **Acted on (closed):** 431 (17% of proposals)
 - **2nd-reviewed before the close:** 1 confirmed · 1 disputed · 429 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 213 (49% of acted-on) — 180 verbatim, 19 inside a longer comment, 14 edited
+- **Likely fixed instead:** 52 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (51 of the 217 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
 - **Still awaiting action:** 2138 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
@@ -116,18 +117,18 @@ _The 347 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 ## Acceptance by close reason
 
-| Reason | Proposals | Acted on | Acceptance | With sweeper comment |
-| --- | --- | --- | --- | --- |
-| duplicate | 786 | 108 | 14% | 44 |
-| implemented on main | 724 | 152 | 21% | 96 |
-| as-designed | 275 | 49 | 18% | 36 |
-| question | 231 | 25 | 11% | 8 |
-| caused-by-extension | 216 | 39 | 18% | 16 |
-| not-reproducible | 126 | 19 | 15% | 5 |
-| out-of-scope | 101 | 16 | 16% | 4 |
-| off-topic | 57 | 14 | 25% | 2 |
-| extension-candidate | 30 | 6 | 20% | 2 |
-| other | 21 | 2 | 10% | 0 |
-| invalid | 2 | 1 | 50% | 0 |
+| Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
+| --- | --- | --- | --- | --- | --- |
+| duplicate | 786 | 108 | 14% | 44 | 13 |
+| implemented on main | 724 | 152 | 21% | 96 | — |
+| as-designed | 275 | 49 | 18% | 36 | 7 |
+| question | 231 | 25 | 11% | 8 | 9 |
+| caused-by-extension | 216 | 39 | 18% | 16 | 9 |
+| not-reproducible | 126 | 19 | 15% | 5 | 6 |
+| out-of-scope | 101 | 16 | 16% | 4 | 3 |
+| off-topic | 57 | 14 | 25% | 2 | 5 |
+| extension-candidate | 30 | 6 | 20% | 2 | — |
+| other | 21 | 2 | 10% | 0 | — |
+| invalid | 2 | 1 | 50% | 0 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
