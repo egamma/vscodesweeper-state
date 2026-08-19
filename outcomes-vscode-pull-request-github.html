@@ -38,6 +38,7 @@
   .sw.wc { background: var(--wc); } .sw.wcm { background: var(--wc-mid); } .sw.wcl { background: var(--wc-lite); }
   .sw.own { background: var(--own); } .sw.uncl { background: var(--uncl); } .sw.disp { background: var(--disp); }
   .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .seg.fixedin, .sw.fixedin { background: var(--accent); }
   .crow { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 10px; margin: 6px 0; }
   .wk { text-align: right; color: var(--muted); font-size: 12px; white-space: nowrap; }
   .bar, .strip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; }
@@ -68,7 +69,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 233 issues reviewed · generated 2026-08-18 09:33 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 233 issues reviewed · generated 2026-08-19 09:35 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">233</div><div class="tsub">232 still open · 1 closed since review</div></div>
@@ -76,6 +77,8 @@
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">0</div><div class="tsub">0% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
   </div>
+
+
 
   <h2>Proposed-close issues closed per week</h2>
   <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
@@ -93,11 +96,13 @@
   <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
   reason first, legacy close labels folded in; the label-free close is implemented on main).
   Right label: acted-on / proposals. "Closed otherwise" counts closures
-  without the sweeper's comment — correlation, not proven adoption. Newer proposals have had
+  without the sweeper's comment — correlation, not proven adoption; blue splits out the
+  likely-fixed-instead closes, which the sweeper doesn't claim at all. Newer proposals have had
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment</span>
     <span><i class="sw own"></i>closed otherwise</span>
+    <span title="Closed as completed without the sweeper's comment, on a proposal other than implemented-on-main — most plausibly the team fixed the issue in the meantime"><i class="sw fixedin"></i>likely fixed instead</span>
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
@@ -123,6 +128,7 @@
     <span><i class="sw own"></i>own wording 0</span>
     
   </div>
+  
   
 
 

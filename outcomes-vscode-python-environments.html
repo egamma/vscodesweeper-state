@@ -38,6 +38,7 @@
   .sw.wc { background: var(--wc); } .sw.wcm { background: var(--wc-mid); } .sw.wcl { background: var(--wc-lite); }
   .sw.own { background: var(--own); } .sw.uncl { background: var(--uncl); } .sw.disp { background: var(--disp); }
   .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .seg.fixedin, .sw.fixedin { background: var(--accent); }
   .crow { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 10px; margin: 6px 0; }
   .wk { text-align: right; color: var(--muted); font-size: 12px; white-space: nowrap; }
   .bar, .strip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; }
@@ -68,7 +69,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 125 issues reviewed · generated 2026-08-18 09:32 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 125 issues reviewed · generated 2026-08-19 09:33 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">125</div><div class="tsub">118 still open · 7 closed since review</div></div>
@@ -76,6 +77,11 @@
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">1</div><div class="tsub">9% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
   </div>
+  <p class="desc">Of the 1 acted-on closes, <strong>1 were likely fixed
+  instead</strong> — closed as <code>completed</code> without the sweeper's comment on a proposal other
+  than implemented-on-main. Most plausibly the team fixed the issue in the meantime; these are
+  not claimed as adoption (blue in the acceptance chart below).</p>
+
 
   <h2>Proposed-close issues closed per week</h2>
   <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
@@ -93,15 +99,17 @@
   <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
   reason first, legacy close labels folded in; the label-free close is implemented on main).
   Right label: acted-on / proposals. "Closed otherwise" counts closures
-  without the sweeper's comment — correlation, not proven adoption. Newer proposals have had
+  without the sweeper's comment — correlation, not proven adoption; blue splits out the
+  likely-fixed-instead closes, which the sweeper doesn't claim at all. Newer proposals have had
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment</span>
     <span><i class="sw own"></i>closed otherwise</span>
+    <span title="Closed as completed without the sweeper's comment, on a proposal other than implemented-on-main — most plausibly the team fixed the issue in the meantime"><i class="sw fixedin"></i>likely fixed instead</span>
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg own" style="width:14.29%" title="closed otherwise: 1"></i><i class="seg pend" style="width:85.71%" title="still open: 6"></i></div><span class="rlabel">1/7 (14%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg fixedin" style="width:14.29%" title="likely fixed instead (closed as completed, no sweeper comment): 1"></i><i class="seg pend" style="width:85.71%" title="still open: 6"></i></div><span class="rlabel">1/7 (14%)</span></div>
 <div class="crow"><span class="wk">question</span><div class="bar"><i class="seg pend" style="width:28.57%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
 <div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg pend" style="width:14.29%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
 <div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg pend" style="width:14.29%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
@@ -122,6 +130,9 @@
     <span><i class="sw own"></i>own wording 1</span>
     
   </div>
+  <p class="desc">1 of the 1 own-wording closes were likely
+  fixed instead (closed as completed) — those proposed comments weren't passed over for a
+  better one; the close had a different cause entirely.</p>
   
 
 
