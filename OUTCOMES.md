@@ -1,10 +1,10 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18414 issues reviewed · generated 2026-08-20 20:17 UTC
+[← Home](index.html) · 18416 issues reviewed · generated 2026-08-20 20:30 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 18414
+- **Issues reviewed:** 18416
 - **Close proposals:** 2579 (14% of reviewed)
 - **Acted on (closed):** 468 (18% of proposals)
 - **2nd-reviewed before the close:** 30 confirmed · 2 disputed · 1 unverifiable · 435 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
@@ -13,7 +13,7 @@
 - **Still awaiting action:** 2111 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1421 of the 18414 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2111 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1421 of the 18416 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2111 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 

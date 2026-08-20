@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 37 swept users · 18414 issues reviewed · generated 2026-08-20 20:17 UTC
+[← Home](index.html) · 37 swept users · 18416 issues reviewed · generated 2026-08-20 20:30 UTC
 
 ## Verdict distribution
 
@@ -20,9 +20,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | other | 21 | 0% | — | — | — | — | — | — |
 | invalid | 2 | 0% | — | — | — | — | — | — |
 | **all close proposals** | 2579 | 14% | 1258 (49%) | 869 (69%) | 352 (28%) | 37 (3%) | — | — |
-| needs info | 2314 | 13% | — | — | — | — | — | — |
+| needs info | 2316 | 13% | — | — | — | — | — | — |
 | keep open (incl. route to area) | 13521 | 73% | — | — | — | — | — | — |
-| all reviews | 18414 | 100% | | | | | | |
+| all reviews | 18416 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -31,14 +31,14 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | User | Reviewed | Propose close | Needs info | Keep open | Closure path |
 | --- | --- | --- | --- | --- | --- |
 | lszomoru | 1359 | 193 (14%) | 174 (13%) | 992 (73%) | **27%** |
-| hediet | 1324 | 126 (10%) | 180 (14%) | 1018 (77%) | **23%** |
+| hediet | 1325 | 126 (10%) | 181 (14%) | 1018 (77%) | **23%** |
 | justschen | 1143 | 179 (16%) | 143 (13%) | 821 (72%) | **28%** |
 | deepak1556 | 1067 | 189 (18%) | 357 (33%) | 521 (49%) | **51%** |
 | roblourens | 862 | 126 (15%) | 180 (21%) | 556 (65%) | **35%** |
 | lramos15 | 800 | 165 (21%) | 146 (18%) | 489 (61%) | **39%** |
 | sandy081 | 798 | 94 (12%) | 74 (9%) | 630 (79%) | **21%** |
 | connor4312 | 735 | 72 (10%) | 47 (6%) | 616 (84%) | **16%** |
-| anthonykim1 | 712 | 93 (13%) | 92 (13%) | 527 (74%) | **26%** |
+| anthonykim1 | 713 | 93 (13%) | 93 (13%) | 527 (74%) | **26%** |
 | TylerLeonhardt | 709 | 80 (11%) | 63 (9%) | 566 (80%) | **20%** |
 | aeschli | 687 | 50 (7%) | 36 (5%) | 601 (87%) | **13%** |
 | meganrogge | 681 | 62 (9%) | 28 (4%) | 591 (87%) | **13%** |
