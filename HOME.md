@@ -4,7 +4,7 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 
 ## VS Code
 
-- **[Full review dashboard](dashboard.html)** — 18412 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 18414 issues reviewed across all maintainers.
 - **[Verdicts](effectiveness.html)** — what the sweep concluded: verdict distribution, per-user closure mix, agent-fixable leverage.
 - **[Adoption](outcomes.html)** — what humans did with the verdicts: the close-proposal funnel, comment adoption, skill PRs.
 
@@ -35,7 +35,7 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 
 ## Per-maintainer rankings
 
-- **[lszomoru](top/lszomoru.md)** · [by theme](top/lszomoru-themes.md) — 752 bugs · 465 feature requests.
+- **[lszomoru](top/lszomoru.md)** · [by theme](top/lszomoru-themes.md) — 753 bugs · 465 feature requests.
 - **[hediet](top/hediet.md)** · [by theme](top/hediet-themes.md) — 731 bugs · 424 feature requests.
 - **[justschen](top/justschen.md)** · [by theme](top/justschen-themes.md) — 698 bugs · 235 feature requests.
 - **[roblourens](top/roblourens.md)** · [by theme](top/roblourens-themes.md) — 500 bugs · 253 feature requests.
@@ -59,7 +59,7 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[rzhao271](top/rzhao271.md)** · [by theme](top/rzhao271-themes.md) — 186 bugs · 91 feature requests.
 - **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 187 bugs · 85 feature requests.
 - **[dmitrivMS](top/dmitrivMS.md)** · [by theme](top/dmitrivMS-themes.md) — 208 bugs · 63 feature requests.
-- **[vritant24](top/vritant24.md)** · [by theme](top/vritant24-themes.md) — 110 bugs · 65 feature requests.
+- **[vritant24](top/vritant24.md)** · [by theme](top/vritant24-themes.md) — 111 bugs · 65 feature requests.
 - **[pwang347](top/pwang347.md)** · [by theme](top/pwang347-themes.md) — 102 bugs · 72 feature requests.
 - **[vijayupadya](top/vijayupadya.md)** · [by theme](top/vijayupadya-themes.md) — 140 bugs · 34 feature requests.
 - **[alexr00](top/alexr00.md)** · [by theme](top/alexr00-themes.md) — 56 bugs · 103 feature requests.
@@ -74,4 +74,4 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 16 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-08-20 09:35 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-08-20 20:17 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._

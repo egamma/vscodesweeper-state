@@ -1,10 +1,10 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18412 issues reviewed · generated 2026-08-20 09:33 UTC
+[← Home](index.html) · 18414 issues reviewed · generated 2026-08-20 20:17 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 18412
+- **Issues reviewed:** 18414
 - **Close proposals:** 2579 (14% of reviewed)
 - **Acted on (closed):** 468 (18% of proposals)
 - **2nd-reviewed before the close:** 30 confirmed · 2 disputed · 1 unverifiable · 435 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
@@ -13,7 +13,7 @@
 - **Still awaiting action:** 2111 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1402 of the 18412 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2111 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1421 of the 18414 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2111 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -108,16 +108,16 @@ _The 352 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 520 |
+| keep-open | 527 |
 | propose-close | 468 |
-| needs-info | 342 |
-| route-to-area | 72 |
+| needs-info | 350 |
+| route-to-area | 76 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 697 |
-| not_planned | 545 |
-| duplicate | 155 |
+| completed | 705 |
+| not_planned | 553 |
+| duplicate | 158 |
 | not_found | 5 |
 
 ## Acceptance by close reason

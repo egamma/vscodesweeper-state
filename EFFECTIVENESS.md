@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 37 swept users · 18412 issues reviewed · generated 2026-08-20 09:33 UTC
+[← Home](index.html) · 37 swept users · 18414 issues reviewed · generated 2026-08-20 20:17 UTC
 
 ## Verdict distribution
 
@@ -20,9 +20,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | other | 21 | 0% | — | — | — | — | — | — |
 | invalid | 2 | 0% | — | — | — | — | — | — |
 | **all close proposals** | 2579 | 14% | 1258 (49%) | 869 (69%) | 352 (28%) | 37 (3%) | — | — |
-| needs info | 2313 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 13520 | 73% | — | — | — | — | — | — |
-| all reviews | 18412 | 100% | | | | | | |
+| needs info | 2314 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 13521 | 73% | — | — | — | — | — | — |
+| all reviews | 18414 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -30,7 +30,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 
 | User | Reviewed | Propose close | Needs info | Keep open | Closure path |
 | --- | --- | --- | --- | --- | --- |
-| lszomoru | 1358 | 193 (14%) | 173 (13%) | 992 (73%) | **27%** |
+| lszomoru | 1359 | 193 (14%) | 174 (13%) | 992 (73%) | **27%** |
 | hediet | 1324 | 126 (10%) | 180 (14%) | 1018 (77%) | **23%** |
 | justschen | 1143 | 179 (16%) | 143 (13%) | 821 (72%) | **28%** |
 | deepak1556 | 1067 | 189 (18%) | 357 (33%) | 521 (49%) | **51%** |
@@ -58,7 +58,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | dmitrivMS | 295 | 39 (13%) | 38 (13%) | 218 (74%) | **26%** |
 | vijayupadya | 208 | 21 (10%) | 34 (16%) | 153 (74%) | **26%** |
 | pwang347 | 202 | 20 (10%) | 29 (14%) | 153 (76%) | **24%** |
-| vritant24 | 186 | 25 (13%) | 21 (11%) | 140 (75%) | **25%** |
+| vritant24 | 187 | 25 (13%) | 21 (11%) | 141 (75%) | **25%** |
 | alexr00 | 175 | 9 (5%) | 5 (3%) | 161 (92%) | **8%** |
 | amunger | 161 | 7 (4%) | 8 (5%) | 146 (91%) | **9%** |
 | bhavyaus | 160 | 13 (8%) | 13 (8%) | 134 (84%) | **16%** |
@@ -102,7 +102,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | dmitrivMS | 218 | 21 | 9 | 10% |
 | vijayupadya | 153 | 13 | 4 | 8% |
 | pwang347 | 153 | 13 | 7 | 8% |
-| vritant24 | 140 | 16 | 9 | 11% |
+| vritant24 | 141 | 16 | 9 | 11% |
 | alexr00 | 161 | 9 | 5 | 6% |
 | amunger | 146 | 32 | 12 | 22% |
 | bhavyaus | 134 | 15 | 6 | 11% |

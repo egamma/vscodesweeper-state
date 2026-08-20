@@ -117,8 +117,8 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-20 09:35 UTC</div>
-  <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">41</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">11</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">180</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">1</span><span class="l">✔ closed</span></button></div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-20 20:17 UTC</div>
+  <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">41</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">11</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">180</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">1</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
     <button class="copy" id="qhelp" type="button" title="Filter syntax — bare text works as before; key:value tokens (owner:, action:, close:, confidence:, has:…) filter a field. Click for the full list." aria-label="Filter syntax help">?</button>
@@ -175,6 +175,17 @@ for (const r of DATA) {
   const rank = VTIERS.indexOf(r.verification);
   r.verificationRank = rank === -1 ? VTIERS.length : rank;
   r.rating = !r.verification ? "" : rank === -1 ? r.verification : (VTIERS.length - rank) + "/" + VTIERS.length + " " + r.verification;
+  // closeReason backfill for legacy (pre-2026-08-09) records, mirroring the
+  // server-side derivation in record-parse.ts closeReason(): label-free close =
+  // implemented on main, star labels carry the reason, anything else buckets as
+  // "other". Without this, close: filters (and the verdicts page's close:
+  // deep links, whose counts include legacy records) silently miss every
+  // record that predates the structured field.
+  if (r.triageAction === "propose-close" && !r.closeReason) {
+    const lbl = r.proposedLabel || "";
+    r.closeReason = !lbl || lbl === "none" ? "implemented-on-main"
+      : lbl.charAt(0) === "*" ? lbl.slice(1) : "other";
+  }
   // Label/reason column: the structured closeReason (2026-08-09+) is
   // authoritative — a label-free close may be as-designed, not just implemented
   // on main. Legacy records without the field keep the historic heuristic.
@@ -204,7 +215,7 @@ function isActionable(r){ return r.triageAction !== "keep-open" || !!r.proposedC
 // the page runs exactly the code the unit tests exercise.
 function parseFilterQuery(raw){const KEYS=["owner","action","close","type","label","confidence","verify","has","no","is"];const q=String(raw||"").trim().toLowerCase();if(q.length<2)return null;const clauses=[];for(const tok of q.split(/\s+/)){let t=tok;let neg=false;if(t.charAt(0)==="-"&&t.length>1){neg=true;t=t.slice(1)}const i=t.indexOf(":");const key=i>0?t.slice(0,i):"";if(key&&KEYS.indexOf(key)!==-1){const values=t.slice(i+1).split(",").filter(Boolean);if(values.length)clauses.push({neg,key,values})}else if(t.length>=2){clauses.push({neg,key:"",values:[t]})}}return clauses.length?clauses:null}
 function matchesFilter(r,clauses){for(const c of clauses){let hit=false;for(const v of c.values){let m=false;if(c.key==="owner")m=(r.owner||"").toLowerCase().indexOf(v)!==-1;else if(c.key==="action")m=(r.triageAction||"").indexOf(v)!==-1;else if(c.key==="close")m=(r.closeReason||"").toLowerCase().indexOf(v)!==-1;else if(c.key==="type")m=(r.itemType||"").indexOf(v)!==-1;else if(c.key==="label"){m=((r.proposedLabel||"")+" "+(r.areaLabels||"")+" "+(r.labels||"")).toLowerCase().indexOf(v)!==-1}else if(c.key==="confidence"){const conf=r.confidence||0;if(v==="high")m=conf>=.9;else if(v==="medium"||v==="med")m=conf>=.7&&conf<.9;else if(v==="low")m=conf<.7}else if(c.key==="verify"){if(v==="stale")m=!!r.verifyStale;else if(v==="unreleased")m=!!r.verifyUnreleased;else m=!!r.verifyVerdict&&r.verifyVerdict.indexOf(v)!==-1}else if(c.key==="has"||c.key==="no"){let p=false;if(v==="fixpr")p=!!r.fixPr;else if(v==="skillpr")p=!!r.skillPr;else if(v==="implementpr")p=!!r.implementPr;else if(v==="pr")p=!!(r.fixPr||r.skillPr||r.implementPr);else if(v==="owner")p=!!r.owner&&r.owner!=="unassigned";else if(v==="comment")p=!!r.proposedComment;else if(v==="canonical")p=!!r.canonical;else if(v==="verify")p=!!r.verifyVerdict;m=c.key==="no"?!p:p}else if(c.key==="is"){if(v==="stale")m=!r.contentFresh;else if(v==="fixable"||v==="agent-fixable")m=r.autoFixable==="true"}else{m=(String(r.number)+" "+r.title+" "+(r.proposedLabel||"")+" "+(r.areaLabels||"")+" "+(r.itemType||"")+" "+(r.rating||"")+" "+(r.owner||"")+" "+(r.verifyVerdict||"")).toLowerCase().indexOf(v)!==-1}if(m){hit=true;break}}if(c.neg?hit:!hit)return false}return true}
-const QHELP = "Bare words filter as before — substring over issue #, title, label, owner, type, rating, 2nd-review verdict. key:value tokens filter one field. Tokens AND together; prefix - negates a token; commas OR values within a key (owner:a,b).\n\nowner:alexdima — assignee contains\naction:propose-close | needs-info | keep-open | route-to-area\nclose:duplicate | as-designed | implemented-on-main | … — close reason\ntype:bug | feature-request\nlabel:editor — proposed / area / issue labels\nconfidence:high | medium | low — ≥90% / 70–89% / <70%\nverify:confirmed | refuted | unverifiable | stale | unreleased — 2nd review\nhas: / no: fixpr | skillpr | implementpr | pr | owner | comment | canonical | verify\nis:stale | agent-fixable\n\nExamples:\nowner:alexdima action:propose-close confidence:high — my strongest close proposals\nclose:duplicate verify:confirmed — duplicate closes that survived the 2nd review (safest to apply)\nverify:refuted — the disputed queue: read before acting\nclose:duplicate -has:verify — duplicate closes the verify lane hasn't covered yet\nis:agent-fixable no:pr — fix specs nobody has picked up\nno:owner action:propose-close — unassigned close proposals\nlabel:terminal type:bug action:needs-info — an area's bugs stuck waiting on the reporter\n\nAnything with an unrecognized key stays plain text — pasting a title like \"Terminal: split pane\" works unchanged. The query lives in the URL (#q=…): share the link to share the view.";
+const QHELP = "Bare words filter as before — substring over issue #, title, label, owner, type, rating, 2nd-review verdict. key:value tokens filter one field. Tokens AND together; prefix - negates a token; commas OR values within a key (owner:a,b).\n\nowner:alexdima — assignee contains\naction:propose-close | needs-info | keep-open\nclose:duplicate | as-designed | implemented-on-main | … — close reason\ntype:bug | feature-request\nlabel:editor — proposed / area / issue labels\nconfidence:high | medium | low — ≥90% / 70–89% / <70%\nverify:confirmed | refuted | unverifiable | stale | unreleased — 2nd review\nhas: / no: fixpr | skillpr | implementpr | pr | owner | comment | canonical | verify\nis:stale | agent-fixable\n\nExamples:\nowner:alexdima action:propose-close confidence:high — my strongest close proposals\nclose:duplicate verify:confirmed — duplicate closes that survived the 2nd review (safest to apply)\nverify:refuted — the disputed queue: read before acting\nclose:duplicate -has:verify — duplicate closes the verify lane hasn't covered yet\nis:agent-fixable no:pr — fix specs nobody has picked up\nno:owner action:propose-close — unassigned close proposals\nlabel:terminal type:bug action:needs-info — an area's bugs stuck waiting on the reporter\n\nAnything with an unrecognized key stays plain text — pasting a title like \"Terminal: split pane\" works unchanged. The query lives in the URL (#q=…): share the link to share the view.";
 // q is a compiled query (parseFilterQuery result) or null for no filter.
 function matchesText(r, q){ return !q || matchesFilter(r, q); }
 // Recompute the card numbers over the current view so they track the search box / actionable
@@ -371,7 +382,7 @@ function closedPill(r){
     : "Closed externally after review.")
     + (r.stateReason ? " Reason: " + r.stateReason + "." : "")
     + (r.closedAt ? " Closed " + r.closedAt.slice(0,10) + "." : "");
-  return ' <span class="pill ' + (confirmed ? "closed-ok" : "closed-ext") + '" title="' + esc(title) + '">'
+  return ' <span class="pill ' + (confirmed ? "closed-ok" : "closed-ext") + '" title="' + attr(title) + '">'
     + (confirmed ? "closed ✓" : "closed") + "</span>";
 }
 function afCell(r){
@@ -392,7 +403,7 @@ function applyCell(r){
   const cls = stale ? "copy warn" : "copy";
   const title = stale ? "Heads up: the issue changed since this review (click for details) — the comment may still be useful."
     : "Copy the suggested comment to paste on the issue";
-  return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+esc(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
+  return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+attr(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
     + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Preview the suggested comment before copying" aria-label="Preview suggested comment for issue '+esc(r.number)+'">👁</button>';
 }
 // Comment preview: a single fixed-position popover, NOT an inline row — the virtual
