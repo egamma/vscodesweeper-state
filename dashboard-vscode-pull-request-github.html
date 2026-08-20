@@ -117,7 +117,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-19 09:34 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-20 09:35 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">41</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">11</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">180</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review — the proposal was confirmed or the issue was resolved externally"><span class="n">1</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
@@ -377,8 +377,8 @@ function closedPill(r){
 function afCell(r){
   // An existing sweeper draft PR trumps the copy button — mirrors the skill's own
   // no-existing-PR gate (don't start a second fix for the same issue).
-  if (r.implementPr) return '<a href="'+esc(r.implementPr)+'" target="_blank" rel="noopener" title="Experimental draft PR on microsoft/vscode (head on the fork)">draft PR ▸</a>';
-  if (r.fixPr) return '<a href="'+esc(r.fixPr)+'" target="_blank" rel="noopener" title="Draft fix PR in the fork (fork-only)">draft PR ▸</a>';
+  if (r.implementPr) return '<a href="'+esc(r.implementPr)+'" target="_blank" rel="noopener" title="Draft PR from the retired implement lane (historical)">draft PR ▸</a>';
+  if (r.fixPr) return '<a href="'+esc(r.fixPr)+'" target="_blank" rel="noopener" title="Draft fix PR from the retired fork fix lane (historical)">draft PR ▸</a>';
   if (r.skillPr) return '<a href="'+esc(r.skillPr)+'" target="_blank" rel="noopener" title="Draft PR created with the sweeper-fix skill">draft PR ▸</a>';
   if (r.autoFixable !== "true") return '<span class="muted">—</span>';
   if (isClosed(r)) return '<span class="pill af-yes">yes</span>';
