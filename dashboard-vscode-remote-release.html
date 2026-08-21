@@ -117,7 +117,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-remote-release</code> · 1,307 open reviewed · 689 actionable · 1 closed since review · <a href="outcomes-vscode-remote-release.html">358 close proposals to date</a> · generated 2026-08-21 09:08 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-remote-release</code> · 1,307 open reviewed · 689 actionable · 1 closed since review · <a href="outcomes-vscode-remote-release.html">358 close proposals to date</a> · generated 2026-08-21 14:19 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">358</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">306</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">643</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">1</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
@@ -163,6 +163,7 @@ for (const r of DATA) {
   r.contentFresh = !r.contentStale;
   r.verifyVerdict = r.verifyVerdict || ""; r.verifyEvidence = r.verifyEvidence || "";
   r.verifyKind = r.verifyKind || ""; r.verifyCanonical = r.verifyCanonical || "";
+  r.verifyCanonicalRepo = r.verifyCanonicalRepo || "";
   r.verifyStale = !!r.verifyStale || (!!r.verifyVerdict && !r.contentFresh); // record OR live drift decays the badge
   r.verifyUnreleased = !!r.verifyUnreleased;
   // Sort rank for the 2nd-review column: verified first, then unreleased/stale, refuted last,
@@ -419,12 +420,17 @@ function closePanel(){ cpanel.hidden = true; cpanelFor = null; }
 // elements. Bare #N resolves to the target repo (the /duplicate of #N convention).
 // Used for comment/verify popovers only — the fix spec may contain #hex colors.
 function linkifyInto(el, text){
-  const re = /https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/(?:issues|pull)\/\d+|#\d+/g;
+  // owner/repo#N is the cross-repo canonical form (verify popovers, gate
+  // evidence) — a bare #N always means TARGET, but the slugged form must link
+  // to the CITED repo, never fall through to the bare-#N branch.
+  const re = /https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/(?:issues|pull)\/\d+|[\w.-]+\/[\w.-]+#\d+|#\d+/g;
   let last = 0, m;
   while ((m = re.exec(text))) {
     el.appendChild(document.createTextNode(text.slice(last, m.index)));
     const a = document.createElement("a");
-    a.href = m[0].startsWith("#") ? "https://github.com/" + TARGET + "/issues/" + m[0].slice(1) : m[0];
+    a.href = m[0].startsWith("https:") ? m[0]
+      : m[0].startsWith("#") ? "https://github.com/" + TARGET + "/issues/" + m[0].slice(1)
+      : "https://github.com/" + m[0].replace("#", "/issues/");
     a.target = "_blank"; a.rel = "noopener";
     a.textContent = m[0];
     el.appendChild(a);
@@ -529,7 +535,7 @@ async function fetchVerify(rec){
   const verdict = take("verifyVerdict");
   if (!verdict) throw new Error("no verify stamp");
   const lines = [verdict.toUpperCase()
-    + (take("verifyCanonical") ? " — canonical #" + take("verifyCanonical") : "")
+    + (take("verifyCanonical") ? " — canonical " + take("verifyCanonicalRepo") + "#" + take("verifyCanonical") : "")
     + (take("verifyCanonicalKind") ? " (" + take("verifyCanonicalKind") + ")" : "")];
   if (take("verifyEvidence")) lines.push("", take("verifyEvidence"));
   const checks = take("verifyChecks");
@@ -649,7 +655,7 @@ rowsEl.addEventListener("click", (e) => {
     const rec = DATA.find(r => String(r.number) === vBtn.dataset.n);
     if (!rec || !rec.verifyVerdict) return;
     const cap = (rec.verifyCanonical
-        ? "2nd review — blinded verification of the duplicate claim against #" + rec.verifyCanonical
+        ? "2nd review — blinded verification of the duplicate claim against " + rec.verifyCanonicalRepo + "#" + rec.verifyCanonical
           + (rec.verifyKind ? " (canonical kind: " + rec.verifyKind + ")" : "")
         : "2nd review — blinded verification of the implemented-on-main claim against the cited commit's diff"
           + (rec.verifyKind ? " (claim kind: " + rec.verifyKind + ")" : ""))

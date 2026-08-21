@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode-python`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `a347a0cd9073ac3d` — every verdict record carries the hash of the
+> Policy hash `c8fd50e8dcc251a8` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-08-21 09:08 UTC.
+> exactly this text. Published 2026-08-21 14:19 UTC.
 
 ---
 
@@ -313,7 +313,19 @@ Translate the underlying judgment into this repository's vocabulary:
   *broader* scope than the item under review. An issue that covers only a
   slice of this report is a subset, not a canonical — if anything, the
   narrower report is the duplicate; never propose folding a broader issue
-  into a narrower one. A closed issue can never be the canonical of a
+  into a narrower one. **A canonical must be a concrete report or request,
+  not a tracking artifact**: umbrella/roadmap/workstream trackers,
+  investigations and explorations ("Investigate …", "Explore …",
+  "[Tracking]"), and near-empty placeholder issues do NOT own a specific
+  report's work — a maintainer who closes this issue in favor of one loses
+  the report the moment the tracking item is resolved differently or split.
+  A tracker that lists this issue as one of its child work items is the
+  clearest case: it already says they are separate issues. Propose a
+  `*duplicate` close against such an item ONLY when resolving it
+  **necessarily** delivers this issue's specific ask; otherwise keep the
+  issue open and name the tracking item as related work in `bestSolution`.
+  "Would be absorbed by" is a relation, not a duplicate. A closed issue can
+  never be the canonical of a
   duplicate close — that strands the report. When the would-be canonical is
   closed because its fix landed, this issue is fixed too: use the
   implemented-on-main close (cite the fix commit, `fixedSha` rules apply),
