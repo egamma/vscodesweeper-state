@@ -69,7 +69,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-08-21 16:01 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-08-22 09:03 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">1,308</div><div class="tsub">1,307 still open · 1 closed since review</div></div>
@@ -78,7 +78,9 @@
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
   </div>
 
-
+  <p class="desc">2nd-reviewed before the close: <strong>0 confirmed</strong> ·
+  <strong>0 disputed</strong> ·
+  0 never 2nd-reviewed. Details in <a href="#verification">Independent verification</a>.</p>
 
   <h2>Proposed-close issues closed per week</h2>
   <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
@@ -133,6 +135,63 @@
   
   
 
+
+  <h2 id="verification">Independent verification — the 2nd review</h2>
+  <p class="desc">A blinded second review re-judges duplicate and implemented-on-main close
+  proposals before anyone acts (the dashboard's "2nd review" badge). "Disputed" is a dispute
+  to read, not a proven error — the blinded judge sees less context than the original review.
+  Coverage counts open proposals (the verify sweep's selection universe); stale stamps (the
+  record was re-reviewed since verification) are excluded from the mix, and live issue drift
+  is re-checked by the nightly verify sweep, not this page. Scope is these two close reasons
+  only.</p>
+  <p class="desc"><strong>duplicate</strong>: 218 of 218 open proposals verified — <strong>implemented-on-main</strong>: 24 of 24 open proposals verified</p>
+  <div class="strip">
+    <i class="seg wc" style="width:52.48%" title="confirmed: 127 (52%)"></i>
+    <i class="seg wcm" style="width:0.83%" title="confirmed, fix unreleased: 2 (1%)"></i>
+    <i class="seg disp" style="width:43.80%" title="disputed: 106 (44%)"></i>
+    <i class="seg own" style="width:2.89%" title="unverifiable: 7 (3%)"></i>
+    
+  </div>
+  <div class="legend">
+    <span><i class="sw wc"></i>confirmed 127</span>
+    <span><i class="sw wcm"></i>confirmed, fix unreleased 2</span>
+    <span><i class="sw disp"></i>disputed 106</span>
+    <span><i class="sw own"></i>unverifiable 7</span>
+    
+  </div>
+
+  <h3>Verdict mix by kind</h3>
+  <p class="desc">Duplicates by the canonical's kind, implemented-on-main by claim kind
+  (hover a row label for the lane). Right label: disputed / verified — a kind disputing
+  well above its peers is a calibration signal for the review prompt.</p>
+  <div class="chart">
+<div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg wc" style="width:54.07%" title="confirmed: 113"></i><i class="seg disp" style="width:43.54%" title="disputed: 91"></i><i class="seg own" style="width:2.39%" title="unverifiable: 5"></i></div><span class="rlabel">91/209</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:3.83%" title="confirmed: 8"></i><i class="seg wcm" style="width:0.96%" title="confirmed, fix unreleased: 2"></i><i class="seg disp" style="width:4.78%" title="disputed: 10"></i></div><span class="rlabel">10/20</span></div>
+<div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg wc" style="width:1.44%" title="confirmed: 3"></i><i class="seg disp" style="width:1.91%" title="disputed: 4"></i><i class="seg own" style="width:0.96%" title="unverifiable: 2"></i></div><span class="rlabel">4/9</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:1.44%" title="confirmed: 3"></i><i class="seg disp" style="width:0.48%" title="disputed: 1"></i></div><span class="rlabel">1/4</span></div>
+  </div>
+  <p class="desc">The 106 disputed proposals are
+  <a href="dashboard.html#q=verify%3Arefuted">listed on the dashboard</a> (the link
+  lands pre-filtered); each ✗ badge carries the verifier's evidence. A dispute is worth a
+  manual look before acting: either the review or the verifier is wrong, and both readings
+  are on record.</p>
+
+  <h3>Verified proposals by eventual outcome</h3>
+  <p class="desc">Counts, not rates — closed-after-verification volume is still small, so
+  percentages would mislead. A disputed proposal closed anyway and later reopened is a false
+  positive the verify lane flagged in advance.</p>
+  <table>
+    <tr><th>2nd-review verdict</th><th class="num">Still open</th><th class="num">Closed since</th><th class="num">Reopened after a close</th></tr>
+<tr><td>confirmed</td><td class="num">129</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>disputed</td><td class="num">106</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>unverifiable</td><td class="num">7</td><td class="num">0</td><td class="num">0</td></tr>
+  </table>
+
+  <h3>Closed despite a dispute</h3>
+  <p class="desc">Closes that went ahead after the 2nd review refuted the proposal — either the
+  human knew better (the dispute is advisory) or a false positive slipped past the warning;
+  both readings are on record. The before-the-fact twin of the reversals queue below.</p>
+  <p class="desc">None yet.</p>
 
   <h2>Reversals — reopened after a close</h2>
   <p class="desc">Close proposals whose closure was later reversed (the issue reopened) —
