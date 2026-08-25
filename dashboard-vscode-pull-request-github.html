@@ -87,6 +87,25 @@
   button.copy:hover { border-color: var(--accent); color: var(--accent); }
   button.copy.warn { color: var(--info); border-color: var(--info); }
   button.copy.warn:hover { color: var(--info); border-color: var(--info); }
+  /* Apply & close (vscode-tools host only — see the capability probe): accent-
+     colored to read as the primary action next to the neutral Copy comment. */
+  button.copy.apply { color: var(--accent); border-color: var(--accent); }
+  button.copy.apply:hover { background: var(--accent); color: var(--bg); }
+  #adlg { border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--fg);
+    padding: 14px 16px; max-width: 640px; width: calc(100vw - 48px); font: inherit; }
+  #adlg::backdrop { background: rgba(0,0,0,.35); }
+  #adlg .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border); }
+  #adlg .stale { color: var(--info); font-size: 13px; margin-bottom: 8px; }
+  #adlg textarea { width: 100%; min-height: 160px; font: inherit; font-size: 13px; line-height: 1.5;
+    border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--fg);
+    padding: 8px 10px; resize: vertical; }
+  #adlg .err { color: var(--close); font-size: 13px; margin-top: 8px; white-space: pre-wrap; }
+  #adlg .btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 10px; }
+  #adlg .btns button { font: inherit; font-size: 13px; cursor: pointer; border-radius: 6px; padding: 5px 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg); }
+  #adlg .btns button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  #adlg .btns button:disabled { opacity: .5; cursor: default; }
   button.peek { font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
     border: none; background: none; padding: 0 2px; opacity: .55; }
   button.peek:hover { opacity: 1; }
@@ -117,7 +136,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-24 09:23 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-pull-request-github</code> · 232 open reviewed · 53 actionable · 1 closed since review · <a href="outcomes-vscode-pull-request-github.html">41 close proposals to date</a> · generated 2026-08-25 09:26 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">41</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">11</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">180</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">1</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
@@ -129,13 +148,13 @@
     <thead><tr>
       <th data-k="owner" title="The issue's assignee — who this proposal is queued for. Unassigned issues show —.">Owner</th><th data-k="number" title="The reviewed issue's number — links to the issue on GitHub.">Issue</th><th data-k="title" title="The issue's title at review time — long titles clamp; hover a row for the full text.">Title</th><th data-k="itemType" title="The review's classification of the issue: bug or feature-request.">Type</th>
       <th data-k="triageAction" title="What the review proposes: propose-close (with a reason under Label / reason), needs-info, route-to-area, or keep-open. Nothing is applied automatically — a human acts on every proposal.">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …). On a duplicate, → #N links the canonical issue the review cites.">Label / reason</th>
-      <th data-k="confidence" title="The review's confidence in its own verdict, 0–100%. Close proposals are only made at high confidence; treat low-confidence rows as leads, not conclusions.">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th title="The full review record on the state repo — evidence, reasoning, and the proposed comment. The ⚑ files feedback on this verdict (prefilled state-repo issue; the vscode issue is never pinged).">Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th title="Copies the review's suggested closing comment for you to paste on the issue and close it yourself — vscodesweeper never edits the reviewed repo's issues.">Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt" title="When this review ran. A record is re-reviewed automatically when the issue's content or the review policy changes since then.">Reviewed</th>
+      <th data-k="confidence" title="The review's confidence in its own verdict, 0–100%. Close proposals are only made at high confidence; treat low-confidence rows as leads, not conclusions.">Conf</th><th data-k="verificationRank" title="Rating — how strong the evidence behind this review's verdict is (derived from reproduction status × confidence), NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs.">Rating</th><th title="The full review record on the state repo — evidence, reasoning, and the proposed comment. The ⚑ files feedback on this verdict (prefilled state-repo issue; the vscode issue is never pinged).">Review</th><th data-k="verifyRank" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th title="Copies the review's suggested closing comment for you to paste on the issue and close it yourself — vscodesweeper never edits the reviewed repo's issues. Inside vscode-tools, close proposals show Apply &amp; close instead: it posts the comment (shown editable first) and closes the issue as you.">Apply</th><th data-k="autoFixable" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt" title="When this review ran. A record is re-reviewed automatically when the issue's content or the review policy changes since then.">Reviewed</th>
     </tr></thead>
     <tbody id="rows"></tbody>
   </table>
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>. Records live on the <code>state</code> branch.
   <strong>2nd review</strong> is a skeptical second opinion on a close proposal (duplicate or implemented-on-main): an independent model re-judged the claim blind — the duplicate pair's titles/dates/bodies, or the issue against the cited fix commit's diff; never the first verdict, labels, state, or comments — with refuted as the default unless the evidence clearly supports the claim; ✓ means it survived, ⏳ means the fix is merged but unreleased. The badge's hover/click shows the evidence, the eye the full stamp.
-  <strong>Apply</strong> copies the suggested comment for you to paste on the issue and close it yourself — vscodesweeper never edits microsoft/vscode issues.
+  <strong>Apply</strong> copies the suggested comment for you to paste on the issue and close it yourself — vscodesweeper never edits microsoft/vscode issues. When this page runs inside vscode-tools, close proposals show an <strong>Apply &amp; close</strong> button instead: it posts the comment (shown editable first) and closes the issue under your own GitHub identity — still a human action per issue, never automatic. Needs-info comments stay copy-only everywhere (they must be posted without closing).
   The agent-fix lane is not enabled for this repository — reviews here are proposal-only.
   Spotted a wrong verdict? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener">Send feedback</a> — the ⚑ next to a row's record link prefills the item.</footer>
   <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
@@ -147,6 +166,9 @@ const VDESC = {"Confirmed":"Reproduced against current main — the failing beha
 const TARGET = "microsoft/vscode-pull-request-github", STATE_REPO = "egamma/vscodesweeper-state", STATE_BRANCH = "state";
 const VTIERS = ["Confirmed","Source-confirmed","Traced","Plausible","Unverified","Inconclusive"]; // best → worst; rank = index, unknown/blank ranks last
 const IMPLEMENTED = "implemented on main";
+// Host-capability contract (docs/tools-integration.md): probed once at load, below.
+const APPLY_CAPS = "/api/sweeper/capabilities", APPLY_URL = "/api/sweeper/apply", APPLY_HDR = "X-Sweeper-Apply";
+let applyEnabled = false; // flips when the vscode-tools host answers the probe
 // The blob ships a slim projection (toShipped in dashboard.ts): empty/default keys are
 // omitted, urls/rating/rank are derived here from the constants above, and freshness
 // arrives as a ship-only-when-stale flag. Hydrate every record back to the full shape
@@ -404,6 +426,15 @@ function applyCell(r){
   const cls = stale ? "copy warn" : "copy";
   const title = stale ? "Heads up: the issue changed since this review (click for details) — the comment may still be useful."
     : "Copy the suggested comment to paste on the issue";
+  // Apply & close REPLACES Copy comment when the vscode-tools host enables it
+  // (capability probe) — one primary action per row; the peek still shows the
+  // text for a manual paste. Close proposals ONLY: a needs-info comment must be
+  // posted WITHOUT closing, so those rows keep Copy comment even in the tools
+  // host (a post-without-close action is a later capability, not v1).
+  if (applyEnabled && r.triageAction === "propose-close") {
+    return '<button class="copy apply" data-n="'+esc(r.number)+'" title="Post this comment on the issue and close it ('+attr(r.closeReason || r.proposedLabel)+') — as you, under your own GitHub identity. The comment opens editable for review first; the live issue state is re-checked before anything is posted." aria-label="Apply comment and close issue '+esc(r.number)+'">Apply &amp; close'+(stale?' ⚠':'')+'</button>'
+      + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Preview the suggested comment" aria-label="Preview suggested comment for issue '+esc(r.number)+'">👁</button>';
+  }
   return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+attr(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
     + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Preview the suggested comment before copying" aria-label="Preview suggested comment for issue '+esc(r.number)+'">👁</button>';
 }
@@ -647,6 +678,69 @@ async function doCopy(rec){
   }
 }
 
+// Apply & close (vscode-tools host only): a modal shows the comment EDITABLE
+// before anything is posted — the productization plan's speed bump; one confirm =
+// one host call that posts the comment and closes the issue under the signed-in
+// maintainer's own GitHub identity. This page never talks to GitHub for writes;
+// the host re-checks the live issue (still open, no drift since review) and
+// answers 409 with a reason when the check fails. DOM built with textContent /
+// value throughout — record text stays text (the injection guard).
+const adlg = document.createElement("dialog");
+adlg.id = "adlg";
+document.body.appendChild(adlg);
+function ael(tag, cls, text){ const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
+function openApply(rec){
+  adlg.textContent = "";
+  adlg.appendChild(ael("div", "cap", "Apply & close #" + rec.number + " (" + (rec.closeReason || rec.triageAction) + ") — posts this comment and closes the issue, as you. Edit freely; the 🤖 prefix marks it as AI-drafted."));
+  if (!rec.contentFresh) adlg.appendChild(ael("div", "stale", "⚠ The issue changed since this review (" + (rec.reviewedAt||"").slice(0,10) + ") — re-read it before applying. The verdict may no longer fully apply."));
+  const ta = document.createElement("textarea");
+  ta.value = aiPrefixed(rec.proposedComment);
+  adlg.appendChild(ta);
+  const err = ael("div", "err", "");
+  adlg.appendChild(err);
+  const btns = ael("div", "btns", "");
+  const cancel = ael("button", "", "Cancel");
+  cancel.type = "button";
+  cancel.addEventListener("click", () => adlg.close());
+  const ok = ael("button", "primary", "Comment & close");
+  ok.type = "button";
+  ok.addEventListener("click", async () => {
+    if (!ta.value.trim()) { err.textContent = "The comment is empty."; return; }
+    ok.disabled = cancel.disabled = ta.disabled = true;
+    err.textContent = "";
+    try {
+      const res = await fetch(APPLY_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", [APPLY_HDR]: "1" },
+        body: JSON.stringify({ repo: TARGET, issue: rec.number, comment: ta.value, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt }),
+      });
+      if (res.ok) {
+        // Flip the row to the closed archive state locally — reconcile stamps the
+        // record (closedBy, comment adoption) on its next run.
+        let j = null; try { j = await res.json(); } catch {}
+        rec.currentState = "closed";
+        rec.closedAt = (j && j.closedAt) || new Date().toISOString();
+        rec.stateReason = (j && j.stateReason) || "";
+        adlg.close();
+        render();
+        toast("Closed #" + rec.number + " with your comment");
+        return;
+      }
+      let reason = "HTTP " + res.status;
+      try { const j = await res.json(); if (j && j.reason) reason = j.reason; } catch {}
+      err.textContent = res.status === 409
+        ? reason + " — nothing was posted."
+        : "Apply failed (" + reason + ") — nothing may have been posted; check the issue before retrying.";
+    } catch {
+      err.textContent = "Apply failed (network) — nothing may have been posted; check the issue before retrying.";
+    }
+    ok.disabled = cancel.disabled = ta.disabled = false;
+  });
+  btns.appendChild(cancel);
+  btns.appendChild(ok);
+  adlg.appendChild(btns);
+  adlg.showModal();
+}
 rowsEl.addEventListener("click", (e) => {
   const vBtn = e.target.closest("button.vbadge");
   if (vBtn) {
@@ -718,6 +812,12 @@ rowsEl.addEventListener("click", (e) => {
     } else { fallback(); }
     return;
   }
+  const applyBtn = e.target.closest("button.copy.apply");
+  if (applyBtn) {
+    const rec = DATA.find(r => String(r.number) === applyBtn.dataset.n);
+    if (rec) openApply(rec);
+    return;
+  }
   const btn = e.target.closest("button.copy");
   if (!btn) return;
   const rec = DATA.find(r => String(r.number) === btn.dataset.n);
@@ -728,6 +828,13 @@ rowsEl.addEventListener("click", (e) => {
 const qm = /[#&]q=([^&]*)/.exec(location.hash);
 if (qm) { try { qEl.value = decodeURIComponent(qm[1]); } catch {} }
 render();
+// Host-capability probe (docs/tools-integration.md): inside vscode-tools this
+// answers with the apply allowlist and the Apply column gains the Apply & close
+// action; on GitHub Pages the fetch 404s/fails → copy-only. Silent on every
+// failure — the probe must never degrade the public page.
+fetch(APPLY_CAPS).then(r => r.ok ? r.json() : null).then(j => {
+  if (j && Array.isArray(j.applyTargets) && j.applyTargets.includes(TARGET)) { applyEnabled = true; vrender(true); }
+}).catch(() => {});
 </script>
 </body>
 </html>

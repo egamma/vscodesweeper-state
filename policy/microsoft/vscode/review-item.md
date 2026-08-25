@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `4721e56ad78fdd17` — every verdict record carries the hash of the
+> Policy hash `3d6943c3a15c721c` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-08-24 09:23 UTC.
+> exactly this text. Published 2026-08-25 09:26 UTC.
 
 ---
 
@@ -219,7 +219,14 @@ Translate the underlying judgment into VS Code's vocabulary:
   may have shipped long ago; the pipeline verifies the shipping release against
   the repo's release tags after your review and reconciles the comment. A
   vague "this seems fixed" is not enough: without a specific commit, keep the
-  issue open — no `fixedSha`, no implemented-on-main close. Do **not** attach a
+  issue open — no `fixedSha`, no implemented-on-main close. **Reopened issues
+  raise the bar**: when the issue state shows it was reopened, a fix commit from
+  before the reopen — above all the commit whose merge closed it — is exactly
+  the fix the project already tested and found insufficient. Never cite such a
+  commit, no matter how directly it references the issue or what release labels
+  it carries; propose an implemented-on-main close for a reopened issue only
+  with evidence of a fix that landed **after** the reopen, else keep it open.
+  Do **not** attach a
   `*`-label (a completed fix is a normal close, not a triage-reason close); set
   `proposedLabel: "none"`.
 - **Cannot reproduce** -> `*not-reproducible` with `reproductionStatus:
