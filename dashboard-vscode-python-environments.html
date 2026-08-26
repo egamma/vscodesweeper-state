@@ -136,7 +136,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 116 open reviewed · 21 actionable · 9 closed since review · <a href="outcomes-vscode-python-environments.html">8 close proposals to date</a> · generated 2026-08-25 09:26 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python-environments</code> · 116 open reviewed · 21 actionable · 9 closed since review · <a href="outcomes-vscode-python-environments.html">8 close proposals to date</a> · generated 2026-08-26 09:20 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">7</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">7</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">102</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">9</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
@@ -166,9 +166,15 @@ const VDESC = {"Confirmed":"Reproduced against current main — the failing beha
 const TARGET = "microsoft/vscode-python-environments", STATE_REPO = "egamma/vscodesweeper-state", STATE_BRANCH = "state";
 const VTIERS = ["Confirmed","Source-confirmed","Traced","Plausible","Unverified","Inconclusive"]; // best → worst; rank = index, unknown/blank ranks last
 const IMPLEMENTED = "implemented on main";
-// Host-capability contract (docs/tools-integration.md): probed once at load, below.
-const APPLY_CAPS = "/api/sweeper/capabilities", APPLY_URL = "/api/sweeper/apply", APPLY_HDR = "X-Sweeper-Apply";
-let applyEnabled = false; // flips when the vscode-tools host answers the probe
+// Host-capability contract (docs/tools-integration.md), spoken over postMessage
+// to the embedding vscode-tools host — the page has no host-origin access. Wired
+// up at the bottom of the script.
+const HUB_READY = "sweeper-hub-ready", HUB_CAPS = "sweeper-hub-capabilities";
+const HUB_APPLY_REQ = "sweeper-apply-request", HUB_APPLY_RES = "sweeper-apply-result";
+const embedded = window.parent !== window; // true inside the vscode-tools iframe
+let applyEnabled = false; // flips when the host answers HUB_READY with our target
+const applyPending = {}; // apply request id → resolver, awaiting HUB_APPLY_RES
+let applyReqSeq = 0;
 // The blob ships a slim projection (toShipped in dashboard.ts): empty/default keys are
 // omitted, urls/rating/rank are derived here from the constants above, and freshness
 // arrives as a ship-only-when-stale flag. Hydrate every record back to the full shape
@@ -247,8 +253,13 @@ function matchesText(r, q){ return !q || matchesFilter(r, q); }
 function isClosed(r){ return r.currentState === "closed"; }
 function updateCounts(q){
   const base = DATA.filter(r => !isClosed(r) && (!actionableOnly || isActionable(r)) && matchesText(r, q));
+  // Actionable-only is essentially "hide keep-open rows", so it IS the keep-open card's
+  // own selection in faceting terms — that card's count must ignore it, or it reads a
+  // fraction of the real keep-open set on load (clicking the card drops the toggle, and
+  // the number the click reveals should be the number the card promised).
+  const keepOpenBase = actionableOnly ? DATA.filter(r => !isClosed(r) && matchesText(r, q)) : base;
   for (const a of ACTIONS){
-    const n = base.filter(r => (!autoFixOnly || r.autoFixable === "true") && r.triageAction === a).length;
+    const n = (a === "keep-open" ? keepOpenBase : base).filter(r => (!autoFixOnly || r.autoFixable === "true") && r.triageAction === a).length;
     const el = document.querySelector('#cards .card[data-action="'+a+'"] .n');
     if (el) el.textContent = n;
   }
@@ -678,13 +689,27 @@ async function doCopy(rec){
   }
 }
 
+// Ask the host to apply-and-close, over postMessage (we run in a sandboxed
+// cross-origin iframe with no host-origin access). Resolves with the host's result
+// {ok, status?, reason?, closedAt?, stateReason?} — same shape the endpoint used to
+// return. A missing/late host answer resolves as a failure so the dialog re-enables.
+function requestApply(rec, comment){
+  return new Promise((resolve) => {
+    const id = "a" + (++applyReqSeq);
+    let done = false;
+    const finish = (r) => { if (done) return; done = true; delete applyPending[id]; resolve(r); };
+    applyPending[id] = finish;
+    setTimeout(() => finish({ ok: false, reason: "the host did not respond" }), 30000);
+    window.parent.postMessage({ type: HUB_APPLY_REQ, id: id, repo: TARGET, issue: rec.number, comment: comment, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt }, "*");
+  });
+}
 // Apply & close (vscode-tools host only): a modal shows the comment EDITABLE
 // before anything is posted — the productization plan's speed bump; one confirm =
-// one host call that posts the comment and closes the issue under the signed-in
-// maintainer's own GitHub identity. This page never talks to GitHub for writes;
-// the host re-checks the live issue (still open, no drift since review) and
-// answers 409 with a reason when the check fails. DOM built with textContent /
-// value throughout — record text stays text (the injection guard).
+// one host round-trip that posts the comment and closes the issue under the
+// signed-in maintainer's own GitHub identity. This page never talks to GitHub or
+// the host origin directly; the host re-checks the live issue (still open, no
+// drift since review) and answers 409 with a reason when the check fails. DOM built
+// with textContent / value throughout — record text stays text (the injection guard).
 const adlg = document.createElement("dialog");
 adlg.id = "adlg";
 document.body.appendChild(adlg);
@@ -708,32 +733,24 @@ function openApply(rec){
     if (!ta.value.trim()) { err.textContent = "The comment is empty."; return; }
     ok.disabled = cancel.disabled = ta.disabled = true;
     err.textContent = "";
-    try {
-      const res = await fetch(APPLY_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", [APPLY_HDR]: "1" },
-        body: JSON.stringify({ repo: TARGET, issue: rec.number, comment: ta.value, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt }),
-      });
-      if (res.ok) {
-        // Flip the row to the closed archive state locally — reconcile stamps the
-        // record (closedBy, comment adoption) on its next run.
-        let j = null; try { j = await res.json(); } catch {}
-        rec.currentState = "closed";
-        rec.closedAt = (j && j.closedAt) || new Date().toISOString();
-        rec.stateReason = (j && j.stateReason) || "";
-        adlg.close();
-        render();
-        toast("Closed #" + rec.number + " with your comment");
-        return;
-      }
-      let reason = "HTTP " + res.status;
-      try { const j = await res.json(); if (j && j.reason) reason = j.reason; } catch {}
-      err.textContent = res.status === 409
-        ? reason + " — nothing was posted."
-        : "Apply failed (" + reason + ") — nothing may have been posted; check the issue before retrying.";
-    } catch {
-      err.textContent = "Apply failed (network) — nothing may have been posted; check the issue before retrying.";
+    // The host performs the GitHub write (we have no host-origin access); it replies
+    // with the same result shape the endpoint used to return.
+    const res = await requestApply(rec, ta.value);
+    if (res.ok) {
+      // Flip the row to the closed archive state locally — reconcile stamps the
+      // record (closedBy, comment adoption) on its next run.
+      rec.currentState = "closed";
+      rec.closedAt = res.closedAt || new Date().toISOString();
+      rec.stateReason = res.stateReason || "";
+      adlg.close();
+      render();
+      toast("Closed #" + rec.number + " with your comment");
+      return;
     }
+    const reason = res.reason || ("HTTP " + (res.status || "error"));
+    err.textContent = res.status === 409
+      ? reason + " — nothing was posted."
+      : "Apply failed (" + reason + ") — nothing may have been posted; check the issue before retrying.";
     ok.disabled = cancel.disabled = ta.disabled = false;
   });
   btns.appendChild(cancel);
@@ -828,13 +845,25 @@ rowsEl.addEventListener("click", (e) => {
 const qm = /[#&]q=([^&]*)/.exec(location.hash);
 if (qm) { try { qEl.value = decodeURIComponent(qm[1]); } catch {} }
 render();
-// Host-capability probe (docs/tools-integration.md): inside vscode-tools this
-// answers with the apply allowlist and the Apply column gains the Apply & close
-// action; on GitHub Pages the fetch 404s/fails → copy-only. Silent on every
-// failure — the probe must never degrade the public page.
-fetch(APPLY_CAPS).then(r => r.ok ? r.json() : null).then(j => {
-  if (j && Array.isArray(j.applyTargets) && j.applyTargets.includes(TARGET)) { applyEnabled = true; vrender(true); }
-}).catch(() => {});
+// Host handshake (docs/tools-integration.md). Inside the vscode-tools iframe the
+// host answers HUB_READY with the apply allowlist and relays apply results; on
+// GitHub Pages there is no parent, so nothing arrives and the page stays copy-only.
+// Every message is validated to come from our parent — the only window we ever talk
+// to — and dispatched by an allow-list of known types; anything else is ignored.
+if (embedded) {
+  window.addEventListener("message", (e) => {
+    if (e.source !== window.parent) return;
+    const m = e.data;
+    if (!m || typeof m !== "object") return;
+    if (m.type === HUB_CAPS) {
+      const enabled = Array.isArray(m.applyTargets) && m.applyTargets.includes(TARGET);
+      if (enabled !== applyEnabled) { applyEnabled = enabled; vrender(true); }
+    } else if (m.type === HUB_APPLY_RES && typeof m.id === "string" && applyPending[m.id]) {
+      applyPending[m.id]({ ok: !!m.ok, status: m.status, reason: m.reason, closedAt: m.closedAt, stateReason: m.stateReason });
+    }
+  });
+  window.parent.postMessage({ type: HUB_READY }, "*");
+}
 </script>
 </body>
 </html>
