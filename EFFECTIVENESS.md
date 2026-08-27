@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 37 swept users · 18797 issues reviewed · generated 2026-08-27 11:17 UTC
+[← Home](index.html) · 37 swept users · 18799 issues reviewed · generated 2026-08-27 11:30 UTC
 
 ## Verdict distribution
 
@@ -20,9 +20,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | other | 21 | 0% | — | — | — | — | — | — |
 | invalid | 2 | 0% | — | — | — | — | — | — |
 | **all close proposals** | 2617 | 14% | 1265 (48%) | 846 (67%) | 385 (30%) | 34 (3%) | — | — |
-| needs info | 2377 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 13803 | 73% | — | — | — | — | — | — |
-| all reviews | 18797 | 100% | | | | | | |
+| needs info | 2378 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 13804 | 73% | — | — | — | — | — | — |
+| all reviews | 18799 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 

@@ -34,4 +34,4 @@ Editing the spec is fine — the skill implements your version and still runs ev
 - "Not agent-fixable" refusal → the review found no safe fix spec; check the record for what it concluded instead.
 - Skill not found → check the checkout has `.github/skills/sweeper-fix/SKILL.md` (pull a recent `main`); on an older checkout, copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-fix/SKILL.md) into `~/.copilot/skills/sweeper-fix/` or `~/.claude/skills/sweeper-fix/`.
 
-_sweeper-fix skill v4 · generated 2026-08-27 11:17 UTC._
+_sweeper-fix skill v4 · generated 2026-08-27 11:31 UTC._
