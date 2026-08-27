@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18799 issues reviewed · generated 2026-08-27 11:30 UTC
+[← Home](index.html) · 18921 issues reviewed · generated 2026-08-27 19:32 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 18799
-- **Close proposals:** 2617 (14% of reviewed)
-- **Acted on (closed):** 560 (21% of proposals)
-- **2nd-reviewed before the close:** 67 confirmed · 20 disputed · 2 unverifiable · 471 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 282 (50% of acted-on) — 246 verbatim, 20 inside a longer comment, 16 edited
-- **Likely fixed instead:** 64 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (63 of the 277 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2057 open close proposals
+- **Issues reviewed:** 18921
+- **Close proposals:** 2632 (14% of reviewed)
+- **Acted on (closed):** 581 (22% of proposals)
+- **2nd-reviewed before the close:** 83 confirmed · 22 disputed · 2 unverifiable · 474 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 299 (51% of acted-on) — 263 verbatim, 20 inside a longer comment, 16 edited
+- **Likely fixed instead:** 65 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (64 of the 281 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 2051 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1677 of the 18799 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2057 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1722 of the 18921 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2051 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,20 +21,21 @@ _Close proposals count the whole corpus (1677 of the 18799 reviewed issues have 
 | --- | --- | --- |
 | alexdima | 114 | 107 (94%) |
 | justschen | 106 | 54 (51%) |
-| vs-code-engineering | 47 | 0 (0%) |
+| vs-code-engineering | 50 | 0 (0%) |
 | roblourens | 39 | 17 (44%) |
 | hediet | 35 | 35 (100%) |
-| lramos15 | 32 | 0 (0%) |
+| lramos15 | 33 | 0 (0%) |
 | kycutler | 30 | 14 (47%) |
 | dmitrivMS | 17 | 0 (0%) |
 | sbatten | 16 | 16 (100%) |
+| benibenj | 14 | 10 (71%) |
 | deepak1556 | 13 | 0 (0%) |
 | aeschli | 12 | 11 (92%) |
 | sandy081 | 12 | 0 (0%) |
 | (unattributed) | 7 | 0 (0%) |
+| mrleemurray | 7 | 5 (71%) |
 | vritant24 | 7 | 3 (43%) |
 | TylerLeonhardt | 6 | 6 (100%) |
-| benibenj | 5 | 1 (20%) |
 | joshspicer | 5 | 0 (0%) |
 | karthiknadig | 5 | 2 (40%) |
 | pwang347 | 5 | 3 (60%) |
@@ -42,9 +43,9 @@ _Close proposals count the whole corpus (1677 of the 18799 reviewed issues have 
 | egamma | 4 | 4 (100%) |
 | lszomoru | 4 | 4 (100%) |
 | alexr00 | 3 | 0 (0%) |
+| chrmarti | 3 | 3 (100%) |
 | dbaeumer | 3 | 1 (33%) |
 | meganrogge | 2 | 0 (0%) |
-| mrleemurray | 2 | 0 (0%) |
 | AbhaySanthani-tekframeworks | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
 | AndrewStopchenko-SO | 1 | 0 (0%) |
@@ -73,31 +74,33 @@ _Close proposals count the whole corpus (1677 of the 18799 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1748 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1753 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
-| alexdima | 62 | 2 | 2 | — |
+| alexdima | 63 | 2 | 2 | — |
 | benibenj | 41 | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 637 of 637 open proposals verified · 107 closed unverified
-- **implemented-on-main:** 539 of 539 open proposals verified · 97 closed unverified
-- **Verdict mix:** 846 confirmed (28 with the fix unreleased) · 385 disputed · 34 unverifiable
+- **duplicate:** 633 of 633 open proposals verified · 107 closed unverified
+- **implemented-on-main:** 532 of 532 open proposals verified · 97 closed unverified
+- **Verdict mix:** 853 confirmed (29 with the fix unreleased) · 385 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 779 | 66 | 1 |
-| disputed | 365 | 20 | 0 |
+| confirmed | 770 | 82 | 1 |
+| disputed | 363 | 22 | 0 |
 | unverifiable | 32 | 2 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#312110](https://github.com/microsoft/vscode/issues/312110) PendingMigrationError: navigator is now a global in nodejs thrown during module load on remote VS Code server,   causing repeated renderer crashes and Remote SSH disconnections | 2026-08-27 | chrmarti | Same PendingMigrationError signature, but different offending code: A is the bundled Copilot extension touching navigator at top-level module load on the remote server; B is the Remote-SSH extension's own bundle locally — separate fixes. |
+| [#331641](https://github.com/microsoft/vscode/issues/331641) J0t.clearMarks is not a function | 2026-08-27 | vs-code-engineering | Only a shared minified symptom string; neither report gives a trigger or stack, and they run different extension/VS Code builds (0.35.3/1.107.1 vs 0.48.1/1.111.0), so identical minified 'J0t' does not establish one root cause. |
 | [#326199](https://github.com/microsoft/vscode/issues/326199) VS Code does not connect to tunnel after updating | 2026-08-27 | alexdima | A fails with an explicit 'Client refused: version mismatch' handshake rejection after a client-only update, whereas B updated the tunnel service first and fails with an unexplained WebSocket 1006 close — different failure mechanisms. |
 | [#231128](https://github.com/microsoft/vscode/issues/231128) font ligatures that span several textmate scopes assume the font settings of last character (last component of the composite symbol) | 2026-08-27 | alexdima | B asks for a setting to suppress ligatures inside constructs like strings for readability; A reports miscolored glyphs when a ligature straddles two scopes — implementing B's opt-out wouldn't fix A's tokenization/coloring defect. |
 | [#329741](https://github.com/microsoft/vscode/issues/329741) Black Screen after 10 minutes | 2026-08-27 | deepak1556 | gate: the cited canonical #261660 is closed — a duplicate close would strand the report (re-review, not close) |
@@ -131,31 +134,31 @@ _The 385 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 624 |
-| propose-close | 560 |
-| needs-info | 394 |
-| route-to-area | 99 |
+| keep-open | 633 |
+| propose-close | 581 |
+| needs-info | 406 |
+| route-to-area | 102 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 845 |
-| not_planned | 621 |
-| duplicate | 201 |
+| completed | 866 |
+| not_planned | 635 |
+| duplicate | 211 |
 | not_found | 10 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 794 | 157 | 20% | 72 | 16 |
-| implemented on main | 726 | 190 | 26% | 120 | — |
-| as-designed | 284 | 67 | 24% | 45 | 11 |
-| question | 240 | 27 | 11% | 9 | 9 |
+| duplicate | 800 | 167 | 21% | 81 | 16 |
+| implemented on main | 727 | 198 | 27% | 128 | — |
+| as-designed | 287 | 67 | 23% | 45 | 11 |
+| question | 242 | 29 | 12% | 9 | 10 |
 | caused-by-extension | 214 | 40 | 19% | 16 | 9 |
-| not-reproducible | 133 | 25 | 19% | 8 | 8 |
-| out-of-scope | 116 | 28 | 24% | 5 | 6 |
+| not-reproducible | 134 | 25 | 19% | 8 | 8 |
+| out-of-scope | 119 | 29 | 24% | 5 | 6 |
 | off-topic | 57 | 14 | 25% | 2 | 5 |
-| extension-candidate | 30 | 6 | 20% | 2 | — |
+| extension-candidate | 29 | 6 | 21% | 2 | — |
 | other | 21 | 5 | 24% | 3 | — |
 | invalid | 2 | 1 | 50% | 0 | — |
 
