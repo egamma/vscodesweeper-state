@@ -65,7 +65,7 @@
   .a-needs-info { color: var(--info); border-color: var(--info); }
   .area-chip { color: var(--muted); border-color: var(--border); font-weight: 400; cursor: help; }
   .af-yes { color: var(--keep); border-color: var(--keep); }
-  /* 2nd-review badges: clickable pills (the evidence opens in the popover). Refuted
+  /* 2nd-review badges: clickable pills (the evidence opens in the preview dialog). Refuted
      stays visible but reads as a warning — it is the QA queue, never hidden. */
   button.vbadge { cursor: pointer; background: none; font: inherit; font-size: 12px; }
   .v-confirmed { color: var(--keep); border-color: var(--keep); }
@@ -91,30 +91,22 @@
      colored to read as the primary action next to the neutral Copy comment. */
   button.copy.apply { color: var(--accent); border-color: var(--accent); }
   button.copy.apply:hover { background: var(--accent); color: var(--bg); }
-  #adlg { border: 1px solid var(--border); border-radius: 8px; background: var(--bg); color: var(--fg);
-    padding: 14px 16px; max-width: 640px; width: calc(100vw - 48px); font: inherit; }
-  #adlg::backdrop { background: rgba(0,0,0,.35); }
-  #adlg .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
-    border-bottom: 1px solid var(--border); }
-  #adlg .stale { color: var(--info); font-size: 13px; margin-bottom: 8px; }
-  #adlg textarea { width: 100%; min-height: 160px; font: inherit; font-size: 13px; line-height: 1.5;
-    border: 1px solid var(--border); border-radius: 6px; background: var(--bg); color: var(--fg);
-    padding: 8px 10px; resize: vertical; }
-  #adlg .err { color: var(--close); font-size: 13px; margin-top: 8px; white-space: pre-wrap; }
-  #adlg .btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 10px; }
-  #adlg .btns button { font: inherit; font-size: 13px; cursor: pointer; border-radius: 6px; padding: 5px 12px;
-    border: 1px solid var(--border); background: var(--bg); color: var(--fg); }
-  #adlg .btns button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-  #adlg .btns button:disabled { opacity: .5; cursor: default; }
   button.peek { font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
     border: none; background: none; padding: 0 2px; opacity: .55; }
   button.peek:hover { opacity: 1; }
-  #cpanel { position: fixed; z-index: 20; max-width: 560px; max-height: 50vh; overflow-y: auto;
+  /* Preview dialog: a centered modal (never anchored to a row — anchored popovers
+     clip against the vscode-tools iframe edge). The careful path: full text with a
+     copy action inside; the row buttons stay the one-click fast path. */
+  #cpanel { position: fixed; inset: 0; margin: auto; z-index: 20;
+    width: min(640px, calc(100vw - 48px)); max-height: 70vh; overflow-y: auto;
     background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 8px;
-    padding: 12px 14px; font-size: 13px; line-height: 1.5; white-space: pre-wrap;
-    box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+    padding: 14px 16px; font-size: 13px; line-height: 1.5; white-space: pre-wrap;
+    box-shadow: 0 8px 32px rgba(0,0,0,.25); }
+  #cpanel::backdrop { background: rgba(0,0,0,.35); }
   #cpanel .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
     border-bottom: 1px solid var(--border); white-space: normal; }
+  #cpanel .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;
+    padding-top: 10px; border-top: 1px solid var(--border); white-space: normal; }
   /* Structured fix-spec view (renderSpecInto): labeled fields + quoted fix prompt. */
   #cpanel .spec { white-space: normal; }
   #cpanel .spec .f { margin: 0 0 10px; }
@@ -136,7 +128,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Review Dashboard</h1>
-  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python</code> · 342 open reviewed · 86 actionable · 4 closed since review · <a href="outcomes-vscode-python.html">60 close proposals to date</a> · generated 2026-08-26 09:20 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-python</code> · 342 open reviewed · 86 actionable · 4 closed since review · <a href="outcomes-vscode-python.html">60 close proposals to date</a> · generated 2026-08-27 11:17 UTC</div>
   <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">59</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">12</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">271</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">4</span><span class="l">✔ closed</span></button></div>
   <div class="controls">
     <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
@@ -370,7 +362,7 @@ addEventListener("resize", () => vrender(true));
 // 2nd-review badge: the verify lane's blinded verdict on a duplicate or
 // implemented-on-main close proposal. The whole badge is a peek button — the
 // evidence line IS the product (trial feedback 2026-08-14), so one click opens it
-// in the popover; the tooltip carries it too. A confirmed-but-unreleased fix
+// in the preview dialog; the tooltip carries it too. A confirmed-but-unreleased fix
 // (decision 13) reads "fixed, unreleased" — merged, but the reporter can't get it yet.
 function verifyCell(r){
   if (!r.verifyVerdict) return '<span class="muted">—</span>';
@@ -429,7 +421,7 @@ function afCell(r){
   if (isClosed(r)) return '<span class="pill af-yes">yes</span>';
   // Keep the copied line in sync with fixPromptLine() in skill-publish.ts.
   return '<button class="copy fixprompt" data-n="'+esc(r.number)+'" title="Copy the prompt for your agent — the skill invocation plus the reviewed fix spec, ready to read, edit, and paste. The sweeper-fix skill implements it from your vscode checkout and opens a draft PR you own. First time? See the sweeper-fix skill link in the header." aria-label="Copy prompt for issue '+esc(r.number)+'">Copy prompt</button>'
-    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="spec" title="Preview the reviewed fix spec the skill implements (fix brief, likely files, validation)" aria-label="Preview fix spec for issue '+esc(r.number)+'">👁</button>';
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="spec" title="Read the reviewed fix spec the skill implements (fix brief, likely files, validation) — opens a dialog with a copy action" aria-label="Show fix spec for issue '+esc(r.number)+'">👁</button>';
 }
 function applyCell(r){
   if (isClosed(r) || !r.proposedComment) return '<span class="muted">—</span>'; // nothing to apply on a closed issue
@@ -444,25 +436,34 @@ function applyCell(r){
   // host (a post-without-close action is a later capability, not v1).
   if (applyEnabled && r.triageAction === "propose-close") {
     return '<button class="copy apply" data-n="'+esc(r.number)+'" title="Post this comment on the issue and close it ('+attr(r.closeReason || r.proposedLabel)+') — as you, under your own GitHub identity. The comment opens editable for review first; the live issue state is re-checked before anything is posted." aria-label="Apply comment and close issue '+esc(r.number)+'">Apply &amp; close'+(stale?' ⚠':'')+'</button>'
-      + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Preview the suggested comment" aria-label="Preview suggested comment for issue '+esc(r.number)+'">👁</button>';
+      + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Read the suggested comment — opens a dialog with a copy action for a manual paste" aria-label="Show suggested comment for issue '+esc(r.number)+'">👁</button>';
   }
   return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+attr(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
-    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Preview the suggested comment before copying" aria-label="Preview suggested comment for issue '+esc(r.number)+'">👁</button>';
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Read the suggested comment before copying — opens a dialog with the copy action inside" aria-label="Show suggested comment for issue '+esc(r.number)+'">👁</button>';
 }
-// Comment preview: a single fixed-position popover, NOT an inline row — the virtual
-// scroller's spacer math assumes uniform row heights, so rows must never grow.
-const cpanel = document.createElement("div");
+// Preview dialog: a single centered modal <dialog>, NOT an inline row — the virtual
+// scroller's spacer math assumes uniform row heights, so rows must never grow. A
+// modal (vs the old anchored popover) gives the full text room, can't clip against
+// the vscode-tools iframe edge, and carries the copy action for the careful path.
+const cpanel = document.createElement("dialog");
 cpanel.id = "cpanel";
-cpanel.hidden = true;
 document.body.appendChild(cpanel);
 let cpanelFor = null;
-function closePanel(){ cpanel.hidden = true; cpanelFor = null; }
-// Linkify issue references in popover text WITHOUT innerHTML — issue-derived text
+function closePanel(){ if (cpanel.open) cpanel.close(); }
+cpanel.addEventListener("close", () => { cpanelFor = null; });
+// Backdrop click dismisses: a click outside the dialog's box targets the dialog
+// element itself (the ::backdrop is part of it), so test the coordinates.
+cpanel.addEventListener("click", (e) => {
+  if (e.target !== cpanel) return;
+  const r = cpanel.getBoundingClientRect();
+  if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closePanel();
+});
+// Linkify issue references in dialog text WITHOUT innerHTML — issue-derived text
 // stays text (the injection guard below); only the matched refs become anchor
 // elements. Bare #N resolves to the target repo (the /duplicate of #N convention).
-// Used for comment/verify popovers only — the fix spec may contain #hex colors.
+// Used for comment/verify dialogs only — the fix spec may contain #hex colors.
 function linkifyInto(el, text){
-  // owner/repo#N is the cross-repo canonical form (verify popovers, gate
+  // owner/repo#N is the cross-repo canonical form (verify dialogs, gate
   // evidence) — a bare #N always means TARGET, but the slugged form must link
   // to the CITED repo, never fall through to the bare-#N branch.
   const re = /https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/(?:issues|pull)\/\d+|[\w.-]+\/[\w.-]+#\d+|#\d+/g;
@@ -480,7 +481,7 @@ function linkifyInto(el, text){
   }
   el.appendChild(document.createTextNode(text.slice(last)));
 }
-// Inline markdown for the spec popover: `code` and **bold** spans become elements,
+// Inline markdown for the spec dialog: `code` and **bold** spans become elements,
 // everything else stays text nodes — same no-innerHTML rule as linkifyInto.
 function renderInlineInto(el, text){
   const re = /\*\*([^*]+)\*\*|`([^`]+)`/g;
@@ -494,7 +495,7 @@ function renderInlineInto(el, text){
   }
   el.appendChild(document.createTextNode(text.slice(last)));
 }
-// Structured rendering for the fix-spec popover: the record's "- **Label:** value"
+// Structured rendering for the fix-spec dialog: the record's "- **Label:** value"
 // bullets become labeled fields, the fix prompt becomes a quoted block. Built with
 // DOM nodes only (record text stays text); falls back to raw text on any
 // unrecognized shape so a hand-edited record still previews.
@@ -524,7 +525,10 @@ function renderSpecInto(el, text){
     el.appendChild(div);
   }
 }
-function openPanel(btn, key, text, caption, render){
+// action = { label, run } renders a primary copy button in the dialog footer — the
+// same copy the row button performs, for people who read before copying. Re-calling
+// with the panel open (a lazy fetch resolving) rebuilds the content in place.
+function openPanel(key, text, caption, render, action){
   cpanelFor = key;
   cpanel.textContent = ""; // rebuild; textContent throughout: issue-derived text stays text
   if (caption) {
@@ -538,10 +542,22 @@ function openPanel(btn, key, text, caption, render){
   else if (typeof render === "function") render(body, text);
   else body.textContent = text;
   cpanel.appendChild(body);
-  cpanel.hidden = false;
-  const r = btn.getBoundingClientRect();
-  cpanel.style.top = Math.max(12, Math.min(window.innerHeight - cpanel.offsetHeight - 12, r.bottom + 6)) + "px";
-  cpanel.style.left = Math.max(12, Math.min(r.left - cpanel.offsetWidth + r.width, window.innerWidth - cpanel.offsetWidth - 12)) + "px";
+  const actions = document.createElement("div");
+  actions.className = "actions";
+  if (action) {
+    const act = document.createElement("button");
+    act.className = "copy apply";
+    act.textContent = action.label;
+    act.addEventListener("click", () => { closePanel(); action.run(); });
+    actions.appendChild(act);
+  }
+  const close = document.createElement("button");
+  close.className = "copy";
+  close.textContent = "Close";
+  close.addEventListener("click", closePanel);
+  actions.appendChild(close);
+  cpanel.appendChild(actions);
+  if (!cpanel.open) cpanel.showModal(); // Escape closes natively (the cancel event)
 }
 // The fix spec is NOT in the shipped payload (the 15k-row payload diet) — the spec
 // eye lazy-fetches the record from the public state branch on first click and shows
@@ -587,14 +603,9 @@ async function fetchVerify(rec){
   rec._verify = lines.join("\n");
   return rec._verify;
 }
-addEventListener("scroll", closePanel, { passive: true }); // anchor rows move/recycle under the panel
-addEventListener("keydown", (e) => { if (e.key === "Escape") closePanel(); });
-document.addEventListener("click", (e) => {
-  // Every popover-opening control must be excluded here, or its own click
-  // bubbles to this handler and instantly re-closes the panel it just opened
-  // (the vbadge shipped without the exclusion — "nothing happens on click").
-  if (!cpanel.hidden && !e.target.closest("#cpanel") && !e.target.closest("button.peek") && !e.target.closest("button.vbadge") && !e.target.closest("#qhelp")) closePanel();
-});
+// No scroll/click-outside dismiss handlers: showModal makes the page behind inert
+// (openers can't re-fire, the scroller can't move under the panel), Escape fires the
+// native cancel event, and the backdrop-click handler above covers click-outside.
 function exitClosedMode(){
   if (!closedOnly) return;
   closedOnly = false;
@@ -635,8 +646,7 @@ closedCard.addEventListener("click", () => {
 });
 const qhelpBtn = document.getElementById("qhelp");
 qhelpBtn.addEventListener("click", () => {
-  if (!cpanel.hidden && cpanelFor === "help") { closePanel(); return; }
-  openPanel(qhelpBtn, "help", QHELP, "Filter syntax — bare words match as before; key:value tokens filter a field.");
+  openPanel("help", QHELP, "Filter syntax — bare words match as before; key:value tokens filter a field.");
 });
 
 function toast(msg){
@@ -689,80 +699,82 @@ async function doCopy(rec){
   }
 }
 
+// Copy the skill invocation PLUS the reviewed spec (team feedback 2026-08-04:
+// "Copy prompt" should paste a prompt the developer can read and edit; the
+// skill treats the inline spec as the maintainer's intent and still runs every
+// gate). Keep in sync with fixPromptPayload()/SPEC_PASTE_HEADER in skill-publish.ts.
+// Shared by the row button (fast path) and the spec dialog's action (careful path).
+function copyFixPrompt(rec){
+  const line = "Fix " + TARGET + " issue #" + rec.number + " using the sweeper-fix skill.";
+  // The spec is not in the payload diet — lazy-fetched like the eye (cached after
+  // either use). Fetch failure degrades to the bare invocation: the skill then
+  // reads the record's spec itself.
+  const payload = fetchSpec(rec).then(
+    (spec) => ({ text: line + "\n\nReviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):\n" + spec, withSpec: true }),
+    () => ({ text: line, withSpec: false })
+  );
+  const done = (p) => toast(p.withSpec ? "Copied prompt + spec — read, edit, paste into your agent" : "Copied the invocation (spec fetch failed — the skill reads the record itself)");
+  const fallback = () => payload.then((p) => navigator.clipboard.writeText(p.text).then(() => done(p), () => toast("Copy failed")));
+  if (typeof ClipboardItem !== "undefined" && navigator.clipboard.write) {
+    // Promise-valued ClipboardItem keeps the user-gesture context alive across
+    // the spec fetch (Safari rejects a plain writeText after an await).
+    navigator.clipboard.write([new ClipboardItem({ "text/plain": payload.then((p) => new Blob([p.text], { type: "text/plain" })) })])
+      .then(() => payload.then(done), fallback);
+  } else { fallback(); }
+}
+
 // Ask the host to apply-and-close, over postMessage (we run in a sandboxed
-// cross-origin iframe with no host-origin access). Resolves with the host's result
-// {ok, status?, reason?, closedAt?, stateReason?} — same shape the endpoint used to
-// return. A missing/late host answer resolves as a failure so the dialog re-enables.
+// cross-origin iframe with no host-origin access). This only PROPOSES the write: the
+// trusted host renders its OWN editable confirmation and performs the GitHub write on
+// the maintainer's explicit click there — the human gate, and the editing, live in the
+// host so what they approve is exactly what is posted. The comment arg is the initial
+// value; stale is the advisory drift hint the host surfaces (the server's live check is
+// the authority). Resolves with the host's terminal result {ok, closedAt?, stateReason?,
+// reason?}: the host answers on success or cancel, handling failed writes in its own
+// dialog. The long timeout is only a safety net for a crashed/absent host.
 function requestApply(rec, comment){
   return new Promise((resolve) => {
     const id = "a" + (++applyReqSeq);
     let done = false;
     const finish = (r) => { if (done) return; done = true; delete applyPending[id]; resolve(r); };
     applyPending[id] = finish;
-    setTimeout(() => finish({ ok: false, reason: "the host did not respond" }), 30000);
-    window.parent.postMessage({ type: HUB_APPLY_REQ, id: id, repo: TARGET, issue: rec.number, comment: comment, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt }, "*");
+    setTimeout(() => finish({ ok: false, reason: "the host did not respond" }), 300000);
+    window.parent.postMessage({ type: HUB_APPLY_REQ, id: id, repo: TARGET, issue: rec.number, comment: comment, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt, stale: !rec.contentFresh }, "*");
   });
 }
-// Apply & close (vscode-tools host only): a modal shows the comment EDITABLE
-// before anything is posted — the productization plan's speed bump; one confirm =
-// one host round-trip that posts the comment and closes the issue under the
-// signed-in maintainer's own GitHub identity. This page never talks to GitHub or
-// the host origin directly; the host re-checks the live issue (still open, no
-// drift since review) and answers 409 with a reason when the check fails. DOM built
-// with textContent / value throughout — record text stays text (the injection guard).
-const adlg = document.createElement("dialog");
-adlg.id = "adlg";
-document.body.appendChild(adlg);
-function ael(tag, cls, text){ const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; }
-function openApply(rec){
-  adlg.textContent = "";
-  adlg.appendChild(ael("div", "cap", "Apply & close #" + rec.number + " (" + (rec.closeReason || rec.triageAction) + ") — posts this comment and closes the issue, as you. Edit freely; the 🤖 prefix marks it as AI-drafted."));
-  if (!rec.contentFresh) adlg.appendChild(ael("div", "stale", "⚠ The issue changed since this review (" + (rec.reviewedAt||"").slice(0,10) + ") — re-read it before applying. The verdict may no longer fully apply."));
-  const ta = document.createElement("textarea");
-  ta.value = aiPrefixed(rec.proposedComment);
-  adlg.appendChild(ta);
-  const err = ael("div", "err", "");
-  adlg.appendChild(err);
-  const btns = ael("div", "btns", "");
-  const cancel = ael("button", "", "Cancel");
-  cancel.type = "button";
-  cancel.addEventListener("click", () => adlg.close());
-  const ok = ael("button", "primary", "Comment & close");
-  ok.type = "button";
-  ok.addEventListener("click", async () => {
-    if (!ta.value.trim()) { err.textContent = "The comment is empty."; return; }
-    ok.disabled = cancel.disabled = ta.disabled = true;
-    err.textContent = "";
-    // The host performs the GitHub write (we have no host-origin access); it replies
-    // with the same result shape the endpoint used to return.
-    const res = await requestApply(rec, ta.value);
-    if (res.ok) {
-      // Flip the row to the closed archive state locally — reconcile stamps the
-      // record (closedBy, comment adoption) on its next run.
-      rec.currentState = "closed";
-      rec.closedAt = res.closedAt || new Date().toISOString();
-      rec.stateReason = res.stateReason || "";
-      adlg.close();
-      render();
-      toast("Closed #" + rec.number + " with your comment");
-      return;
-    }
-    const reason = res.reason || ("HTTP " + (res.status || "error"));
-    err.textContent = res.status === 409
-      ? reason + " — nothing was posted."
-      : "Apply failed (" + reason + ") — nothing may have been posted; check the issue before retrying.";
-    ok.disabled = cancel.disabled = ta.disabled = false;
-  });
-  btns.appendChild(cancel);
-  btns.appendChild(ok);
-  adlg.appendChild(btns);
-  adlg.showModal();
+// Apply & close (vscode-tools host only): clicking the row button PROPOSES the close.
+// There is deliberately no dialog here — the editable confirmation lives in the trusted
+// host window (the productization plan's speed bump), so the maintainer edits and
+// approves the exact bytes that get posted, in a surface this untrusted page cannot
+// reach. We only post the proposal and react to the host's terminal answer; the host
+// performs the GitHub write under the maintainer's own identity and handles any failed
+// write (re-check, retry) inside its own dialog, replying only on success or cancel.
+async function doApply(rec, btn){
+  if (btn.dataset.pending) return;              // ignore repeat clicks while a proposal is live
+  btn.dataset.pending = "1";
+  btn.disabled = true;
+  const res = await requestApply(rec, aiPrefixed(rec.proposedComment));
+  if (res.ok) {
+    // Flip the row to the closed archive state locally — reconcile stamps the record
+    // (closedBy, comment adoption) on its next run. The re-render drops the button.
+    rec.currentState = "closed";
+    rec.closedAt = res.closedAt || new Date().toISOString();
+    rec.stateReason = res.stateReason || "";
+    render();
+    toast("Closed #" + rec.number + " with your comment");
+    return;
+  }
+  delete btn.dataset.pending;
+  btn.disabled = false;
+  // A cancel is a deliberate no-op (nothing was sent) — no toast. Anything else here is
+  // the host failing to answer within the timeout; real write failures are surfaced in
+  // the host dialog, not here.
+  if (res.reason !== "cancelled") toast("Apply not completed" + (res.reason ? " — " + res.reason : "") + ".");
 }
 rowsEl.addEventListener("click", (e) => {
   const vBtn = e.target.closest("button.vbadge");
   if (vBtn) {
     const key = "verify:" + vBtn.dataset.n;
-    if (!cpanel.hidden && cpanelFor === key) { closePanel(); return; }
     const rec = DATA.find(r => String(r.number) === vBtn.dataset.n);
     if (!rec || !rec.verifyVerdict) return;
     const cap = (rec.verifyCanonical
@@ -773,66 +785,49 @@ rowsEl.addEventListener("click", (e) => {
       + (rec.verifyUnreleased ? ". Merged but in no stable release yet — the reporter cannot get the fix." : "")
       + (rec.verifyStale ? ". STALE: the issue or record changed since this verification." : "")
       + ".";
-    openPanel(vBtn, key, rec.verifyVerdict.toUpperCase() + " — " + rec.verifyEvidence, cap, true);
+    openPanel(key, rec.verifyVerdict.toUpperCase() + " — " + rec.verifyEvidence, cap, true);
     return;
   }
   const peekBtn = e.target.closest("button.peek");
   if (peekBtn) {
     const kind = peekBtn.dataset.kind || "comment";
     const key = kind + ":" + peekBtn.dataset.n;
-    if (!cpanel.hidden && cpanelFor === key) { closePanel(); return; }
     const rec = DATA.find(r => String(r.number) === peekBtn.dataset.n);
     if (!rec) return;
     if (kind === "comment") {
-      if (rec.proposedComment) openPanel(peekBtn, key, aiPrefixed(rec.proposedComment), "Suggested closing comment — the button copies it for you to paste on the issue. The 🤖 prefix marks it as AI-drafted; keep or edit it.", true);
+      // The dialog's copy action is the same doCopy the row button runs (incl. the
+      // click-time drift check) — read first, copy from here.
+      if (rec.proposedComment) openPanel(key, aiPrefixed(rec.proposedComment), "Suggested closing comment — the 🤖 prefix marks it as AI-drafted; keep or edit it after pasting.", true, { label: "Copy comment", run: () => doCopy(rec) });
       return;
     }
     if (kind === "verify") {
       const vCap = "2nd review — the verifier's full stamp, fetched from the record.";
-      openPanel(peekBtn, key, "Loading the verification stamp…", vCap);
+      openPanel(key, "Loading the verification stamp…", vCap);
       fetchVerify(rec).then(
-        (v) => { if (cpanelFor === key) openPanel(peekBtn, key, v, vCap, true); },
-        () => { if (cpanelFor === key) openPanel(peekBtn, key, "Couldn't load the stamp — use the record link in the Review column.", vCap); }
+        (v) => { if (cpanelFor === key) openPanel(key, v, vCap, true); },
+        () => { if (cpanelFor === key) openPanel(key, "Couldn't load the stamp — use the record link in the Review column.", vCap); }
       );
       return;
     }
-    const specCap = "The reviewed spec the sweeper-fix skill implements — the button copies the skill invocation.";
-    openPanel(peekBtn, key, "Loading the fix spec…", specCap);
+    const specCap = "The reviewed spec the sweeper-fix skill implements.";
+    const specAction = { label: "Copy prompt", run: () => copyFixPrompt(rec) };
+    openPanel(key, "Loading the fix spec…", specCap, undefined, specAction);
     fetchSpec(rec).then(
-      (spec) => { if (cpanelFor === key) openPanel(peekBtn, key, spec, specCap, renderSpecInto); },
-      () => { if (cpanelFor === key) openPanel(peekBtn, key, "Couldn't load the spec — use the record link in the Review column.", specCap); }
+      (spec) => { if (cpanelFor === key) openPanel(key, spec, specCap, renderSpecInto, specAction); },
+      () => { if (cpanelFor === key) openPanel(key, "Couldn't load the spec — use the record link in the Review column.", specCap, undefined, specAction); }
     );
     return;
   }
   const fixBtn = e.target.closest("button.copy.fixprompt");
   if (fixBtn) {
-    // Copy the skill invocation PLUS the reviewed spec (team feedback 2026-08-04:
-    // "Copy prompt" should paste a prompt the developer can read and edit; the
-    // skill treats the inline spec as the maintainer's intent and still runs every
-    // gate). Keep in sync with fixPromptPayload()/SPEC_PASTE_HEADER in skill-publish.ts.
     const rec = DATA.find(r => String(r.number) === fixBtn.dataset.n);
-    const line = "Fix " + TARGET + " issue #" + fixBtn.dataset.n + " using the sweeper-fix skill.";
-    // The spec is not in the payload diet — lazy-fetched like the eye (cached after
-    // either use). Fetch failure degrades to the bare invocation: the skill then
-    // reads the record's spec itself.
-    const payload = fetchSpec(rec).then(
-      (spec) => ({ text: line + "\n\nReviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):\n" + spec, withSpec: true }),
-      () => ({ text: line, withSpec: false })
-    );
-    const done = (p) => toast(p.withSpec ? "Copied prompt + spec — read, edit, paste into your agent" : "Copied the invocation (spec fetch failed — the skill reads the record itself)");
-    const fallback = () => payload.then((p) => navigator.clipboard.writeText(p.text).then(() => done(p), () => toast("Copy failed")));
-    if (typeof ClipboardItem !== "undefined" && navigator.clipboard.write) {
-      // Promise-valued ClipboardItem keeps the user-gesture context alive across
-      // the spec fetch (Safari rejects a plain writeText after an await).
-      navigator.clipboard.write([new ClipboardItem({ "text/plain": payload.then((p) => new Blob([p.text], { type: "text/plain" })) })])
-        .then(() => payload.then(done), fallback);
-    } else { fallback(); }
+    if (rec) copyFixPrompt(rec);
     return;
   }
   const applyBtn = e.target.closest("button.copy.apply");
   if (applyBtn) {
     const rec = DATA.find(r => String(r.number) === applyBtn.dataset.n);
-    if (rec) openApply(rec);
+    if (rec) doApply(rec, applyBtn);
     return;
   }
   const btn = e.target.closest("button.copy");
