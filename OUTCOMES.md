@@ -1,6 +1,6 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 18921 issues reviewed · generated 2026-08-27 19:32 UTC
+[← Home](index.html) · 18921 issues reviewed · generated 2026-08-28 18:48 UTC
 
 ## Funnel
 
