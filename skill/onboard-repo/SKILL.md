@@ -33,7 +33,16 @@ validation loop — do not stop at file creation:
 3. One dry-run review: `npm run review -- --target <owner>/<name>
    --issue <any-open-issue> --dry-run` (add the target to `config.json`
    `repos` first — `{ "experimental": true }` unless the user says this is a
-   full enrollment).
+   full enrollment). While the label evidence from step 1 is still on
+   screen, also record the repo's canonical waiting-on-reporter label in the
+   same entry: `"needsInfoLabel": "<label>"` — omit it entirely when the repo
+   has no such convention (no waiting-on-reporter label in its triage; a
+   label that is applied but retired manually still counts). The vscode-tools apply
+   capability (Apply & close / Request info under the clicking maintainer's
+   own identity) defaults ON for published repos — record `"apply": false`
+   only when the repo's owners decline it. Both fields publish to
+   `targets.json` as advisory intent for hosts; the host write allowlist
+   stays a separate reviewed change there.
 4. Produce the introspection evidence summary (per mechanic: the live probe
    that proved it) for the PR description, and remind the user of the gates a
    PR does NOT clear by itself: maintainer calibration and — for family
