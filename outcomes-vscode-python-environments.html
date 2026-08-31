@@ -69,12 +69,12 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 125 issues reviewed · generated 2026-08-30 13:52 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 144 issues reviewed · generated 2026-08-31 16:43 UTC</div>
 
   <div class="tiles">
-    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">125</div><div class="tsub">114 still open · 11 closed since review</div></div>
-    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">8</div><div class="tsub">6% of reviewed · 7 still open</div></div>
-    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">1</div><div class="tsub">13% of proposals</div></div>
+    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">144</div><div class="tsub">133 still open · 11 closed since review</div></div>
+    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">16</div><div class="tsub">11% of reviewed · 15 still open</div></div>
+    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">1</div><div class="tsub">6% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
   </div>
   <p class="desc">Of the 1 acted-on closes, <strong>1 were likely fixed
@@ -111,10 +111,11 @@
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg fixedin" style="width:33.33%" title="likely fixed instead (closed as completed, no sweeper comment): 1"></i><i class="seg pend" style="width:66.67%" title="still open: 2"></i></div><span class="rlabel">1/3 (33%)</span></div>
-<div class="crow"><span class="wk">question</span><div class="bar"><i class="seg pend" style="width:66.67%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
-<div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg pend" style="width:66.67%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
-<div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg pend" style="width:33.33%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg fixedin" style="width:20.00%" title="likely fixed instead (closed as completed, no sweeper comment): 1"></i><i class="seg pend" style="width:80.00%" title="still open: 4"></i></div><span class="rlabel">1/5 (20%)</span></div>
+<div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg pend" style="width:100.00%" title="still open: 5"></i></div><span class="rlabel">0/5 (0%)</span></div>
+<div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg pend" style="width:60.00%" title="still open: 3"></i></div><span class="rlabel">0/3 (0%)</span></div>
+<div class="crow"><span class="wk">question</span><div class="bar"><i class="seg pend" style="width:40.00%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
+<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg pend" style="width:20.00%" title="still open: 1"></i></div><span class="rlabel">0/1 (0%)</span></div>
   </div>
 
   <h2>Comment adoption on the 1 acted-on proposals</h2>
@@ -137,6 +138,13 @@
   better one; the close had a different cause entirely.</p>
   
 
+  <h2>sweeper-fix skill adoption</h2>
+<p class="desc">Draft PRs opened with the <a href="fix-skill.html">sweeper-fix skill</a>,
+  discovered by <code>reconcile</code>'s seeded-by-marker search — per user, against their
+  agent-fixable pool (the track). Corpus-wide pool: 6 reviewed
+  fix specs. As current as the last reconcile run.</p>
+  <p class="desc">No sweeper-fix skill PRs discovered yet — the funnel fills in as maintainers use the <a href="fix-skill.html">skill</a> (stamps land on each reconcile run).</p>
+
 
   <h2 id="verification">Independent verification — the 2nd review</h2>
   <p class="desc">A blinded second review re-judges duplicate and implemented-on-main close
@@ -146,18 +154,18 @@
   record was re-reviewed since verification) are excluded from the mix, and live issue drift
   is re-checked by the nightly verify sweep, not this page. Scope is these two close reasons
   only.</p>
-  <p class="desc"><strong>duplicate</strong>: 2 of 2 open proposals verified · 1 closed unverified — <strong>implemented-on-main</strong>: 2 of 2 open proposals verified</p>
+  <p class="desc"><strong>duplicate</strong>: 4 of 4 open proposals verified · 1 closed unverified — <strong>implemented-on-main</strong>: 3 of 3 open proposals verified</p>
   <div class="strip">
-    <i class="seg wc" style="width:25.00%" title="confirmed: 1 (25%)"></i>
-    
-    <i class="seg disp" style="width:75.00%" title="disputed: 3 (75%)"></i>
+    <i class="seg wc" style="width:28.57%" title="confirmed: 2 (29%)"></i>
+    <i class="seg wcm" style="width:14.29%" title="confirmed, fix unreleased: 1 (14%)"></i>
+    <i class="seg disp" style="width:57.14%" title="disputed: 4 (57%)"></i>
     
     
   </div>
   <div class="legend">
-    <span><i class="sw wc"></i>confirmed 1</span>
-    
-    <span><i class="sw disp"></i>disputed 3</span>
+    <span><i class="sw wc"></i>confirmed 2</span>
+    <span><i class="sw wcm"></i>confirmed, fix unreleased 1</span>
+    <span><i class="sw disp"></i>disputed 4</span>
     <span><i class="sw own"></i>unverifiable 0</span>
     
   </div>
@@ -167,11 +175,12 @@
   (hover a row label for the lane). Right label: disputed / verified — a kind disputing
   well above its peers is a calibration signal for the review prompt.</p>
   <div class="chart">
-<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:50.00%" title="confirmed: 1"></i><i class="seg disp" style="width:50.00%" title="disputed: 1"></i></div><span class="rlabel">1/2</span></div>
-<div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg disp" style="width:50.00%" title="disputed: 1"></i></div><span class="rlabel">1/1</span></div>
-<div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg disp" style="width:50.00%" title="disputed: 1"></i></div><span class="rlabel">1/1</span></div>
+<div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg disp" style="width:100.00%" title="disputed: 3"></i></div><span class="rlabel">3/3</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:33.33%" title="confirmed: 1"></i><i class="seg wcm" style="width:33.33%" title="confirmed, fix unreleased: 1"></i></div><span class="rlabel">0/2</span></div>
+<div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg disp" style="width:33.33%" title="disputed: 1"></i></div><span class="rlabel">1/1</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:33.33%" title="confirmed: 1"></i></div><span class="rlabel">0/1</span></div>
   </div>
-  <p class="desc">The 3 disputed proposals are
+  <p class="desc">The 4 disputed proposals are
   <a href="dashboard.html#q=verify%3Arefuted">listed on the dashboard</a> (the link
   lands pre-filtered); each ✗ badge carries the verifier's evidence. A dispute is worth a
   manual look before acting: either the review or the verifier is wrong, and both readings
@@ -183,8 +192,8 @@
   positive the verify lane flagged in advance.</p>
   <table>
     <tr><th>2nd-review verdict</th><th class="num">Still open</th><th class="num">Closed since</th><th class="num">Reopened after a close</th></tr>
-<tr><td>confirmed</td><td class="num">1</td><td class="num">0</td><td class="num">0</td></tr>
-<tr><td>disputed</td><td class="num">3</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>confirmed</td><td class="num">3</td><td class="num">0</td><td class="num">0</td></tr>
+<tr><td>disputed</td><td class="num">4</td><td class="num">0</td><td class="num">0</td></tr>
 <tr><td>unverifiable</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
   </table>
 
@@ -227,7 +236,7 @@
 
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.
   Close proposals here count the whole corpus; the <a href="dashboard.html">dashboard</a>'s
-  <code>propose-close</code> card counts only the 7 still open
+  <code>propose-close</code> card counts only the 15 still open
   (closed records move to its ✔ closed view), so it reads lower by the 1
   acted-on proposals. Something off? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener">Send feedback</a>.</footer>
   <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>

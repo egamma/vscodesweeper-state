@@ -87,7 +87,11 @@ probes are read-only — you never mutate any repository.
    to the vscode prompt's (`npm run lint-prompts` and test/prompts.test.ts
    enforce this), and the shared invariant lines must survive (never invent
    labels, keep-open default, the fixedSha rule, conservative closing).
-   autoFixable is ALWAYS false for a repo without an enrolled fix lane.
+   The fix lane defaults ON (config `fixLane`): keep the vscode prompt's full
+   "Auto-fix candidate" section in the fork (adapted, generic examples) —
+   OR, when the repo starts review-lane-only, replace it with the always-false
+   pin AND record `"fixLane": false` in the repo's config entry. The fork and
+   the flag must agree; `npm run lint-prompts` fails any mismatch.
    Rewrite every worked example repo-flavored. Open the file with a
    provenance comment: base, sources, verification date.
 

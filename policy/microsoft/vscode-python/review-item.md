@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode-python`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `2c96adc8ee6e780f` — every verdict record carries the hash of the
+> Policy hash `4a83cc8193201a0c` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-08-30 13:52 UTC.
+> exactly this text. Published 2026-08-31 16:44 UTC.
 
 ---
 
@@ -665,14 +665,44 @@ is `propose-close`; do not soften it into `keep-open`. (The hard keep-open
 rules always win.) Caution belongs in the verification, not in reporting what
 you verified.
 
-## Auto-fix candidate (`autoFixable`) — not enabled for this repository
+## Auto-fix candidate (`autoFixable`)
 
-The automatic-fix lane is **not enabled** for `microsoft/vscode-python`.
-Always set `autoFixable: false`, `likelyFiles: []`, `validation: ""`, and
-`fixPrompt: ""`, with `autoFixRationale: "fix lane not enabled for this
-repository"`. Do this even for a small, perfectly localized, reproducible
-defect — the localization insight belongs in `bestSolution` and `evidence`
-instead, where the area owner will see it. (This is also enforced in code.)
+A recommendation on whether this issue is a candidate for an **automatic fix** — a
+proposal only; you never fix anything. Default `autoFixable: false`. Set it `true`
+**only when ALL of these hold**:
+
+- `triageAction` is `keep-open` or `route-to-area` (the issue is real and still
+  needs a code change — not a close, not needs-info, not mid-verification);
+- `itemType` is **`bug`** (a defined-correct-behavior defect). **Never** a
+  `feature-request`, `under-discussion`, `upstream`, `debt`, `polish`, or `question`
+  — those need product/maintainer judgment, not an automatic fix;
+- you can **confirm the defect** (reproduce it, or trace it conclusively in the
+  current source via the checkout) AND name a **concrete executable validation** —
+  a specific failing test to make pass, or a runnable check that flips fail→pass.
+  *"Re-read the source" is NOT a validation.* No validation ⇒ `false`;
+- the fix is **small and localized** with **identified likely files** (not broad,
+  cross-cutting, or architectural);
+- you have **high confidence** in all of the above;
+- it is **not** security-sensitive or protected;
+- **no open PR already references the issue** — an open linked PR is an
+  implementation candidate a human owns, and the fix lane must not compete with
+  it; and
+- a **repository checkout is available** (you cannot judge localization from issue
+  text alone — without a checkout, `autoFixable` is `false`).
+
+When `autoFixable` is `true`: fill `likelyFiles` (repo-relative paths the fix would
+touch), `validation` (the concrete executable check), and `fixPrompt` — the
+**engine-ready fix brief**. You have just traced this defect; `fixPrompt` is where
+that understanding is handed to the fix engine, which has NOT seen your review.
+Write 3–8 sentences, self-contained: the observable defect and how you confirmed it
+(the exact code path, with file paths and symbol names), the expected fix boundary
+(what to change — and what must NOT change), the validation to implement as a real
+test, and any related refs (full URLs). Do not just restate `bestSolution`; include
+the tracing detail that would otherwise be lost. When `false`: set
+`likelyFiles: []`, `validation: ""`, and `fixPrompt: ""`. Always fill
+`autoFixRationale` with one line on why (e.g. "small localized null-guard,
+validated by an existing failing test" or "feature request — needs product
+decision").
 
 ## OUTPUT CONTRACT
 
@@ -738,7 +768,9 @@ Rules for the contract:
 - An implemented-on-main `propose-close` MUST carry a non-null `fixedSha` (with
   `fixedAt`); every other verdict sets `fixedSha`/`fixedAt`/`fixedRelease` to
   `null`. No commit, no completed close.
-- `autoFixable` is ALWAYS `false` in this repository (fix lane not enabled).
+- `autoFixable`: default `false`; `true` only per the "Auto-fix candidate" section
+  (bug · keep-open/route-to-area · checkout · confirmed defect · concrete
+  executable validation).
 - Default to `keep-open` / `none` unless evidence is strong.
 
 ### Worked example
@@ -771,7 +803,7 @@ correct, and the fix is in a released build. A valid verdict:
   ],
   "proposedComment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode-python/commit/a1b2c3d and shipped in 2025.12.0 — conda environments on mapped network drives are discovered again, so I believe this is resolved. Please open a new issue if you still see it on the latest release.",
   "autoFixable": false,
-  "autoFixRationale": "fix lane not enabled for this repository",
+  "autoFixRationale": "Already fixed and shipped — nothing to auto-fix.",
   "likelyFiles": [],
   "validation": "",
   "fixPrompt": "",
@@ -810,7 +842,7 @@ owner instead:
   ],
   "proposedComment": "",
   "autoFixable": false,
-  "autoFixRationale": "fix lane not enabled for this repository",
+  "autoFixRationale": "Confirmed in source but not judged small/localized — the area owner should scope the fix.",
   "likelyFiles": [],
   "validation": "",
   "fixPrompt": "",
@@ -847,7 +879,7 @@ settled by the tools-migration precedent (a documented close lane):
   ],
   "proposedComment": "Thanks for the request. Built-in linting support was removed from this extension as part of the migration to dedicated tools extensions — pylint support now lives in the Pylint extension (https://github.com/microsoft/vscode-pylint), which ships the tool and no longer requires it in your environment. Feedback on pylint behavior is best filed on that repository.",
   "autoFixable": false,
-  "autoFixRationale": "fix lane not enabled for this repository",
+  "autoFixRationale": "Feature request — needs product decision, not an automatic fix.",
   "likelyFiles": [],
   "validation": "",
   "fixPrompt": "",
@@ -888,7 +920,7 @@ stands alone (the maintainer closes manually):
   ],
   "proposedComment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode-python/issues/1234, which tracks shell-specific activation failures including fish — consolidating the discussion there. Your note about the venv living on a case-sensitive volume is worth adding to that issue so the fix accounts for it.",
   "autoFixable": false,
-  "autoFixRationale": "fix lane not enabled for this repository",
+  "autoFixRationale": "Duplicate — consolidate in the canonical; nothing to auto-fix.",
   "likelyFiles": [],
   "validation": "",
   "fixPrompt": "",

@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 19080 issues reviewed · generated 2026-08-30 13:51 UTC
+[← Home](index.html) · 19184 issues reviewed · generated 2026-08-31 16:43 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 19080
-- **Close proposals:** 2650 (14% of reviewed)
-- **Acted on (closed):** 605 (23% of proposals)
-- **2nd-reviewed before the close:** 94 confirmed · 26 disputed · 3 unverifiable · 482 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 305 (50% of acted-on) — 269 verbatim, 20 inside a longer comment, 16 edited
-- **Likely fixed instead:** 69 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (68 of the 299 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2045 open close proposals
+- **Issues reviewed:** 19184
+- **Close proposals:** 2592 (14% of reviewed)
+- **Acted on (closed):** 623 (24% of proposals)
+- **2nd-reviewed before the close:** 100 confirmed · 33 disputed · 4 unverifiable · 486 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 319 (51% of acted-on) — 283 verbatim, 20 inside a longer comment, 16 edited
+- **Likely fixed instead:** 71 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (70 of the 303 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1969 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1825 of the 19080 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2045 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1859 of the 19184 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1969 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -27,13 +27,14 @@ _Close proposals count the whole corpus (1825 of the 19080 reviewed issues have 
 | lramos15 | 33 | 0 (0%) |
 | kycutler | 30 | 14 (47%) |
 | dmitrivMS | 26 | 0 (0%) |
+| chrmarti | 18 | 17 (94%) |
 | sbatten | 16 | 16 (100%) |
 | benibenj | 15 | 10 (67%) |
 | deepak1556 | 13 | 0 (0%) |
 | aeschli | 12 | 11 (92%) |
 | sandy081 | 12 | 0 (0%) |
 | lszomoru | 9 | 8 (89%) |
-| (unattributed) | 7 | 0 (0%) |
+| (unattributed) | 8 | 0 (0%) |
 | mrleemurray | 7 | 5 (71%) |
 | vritant24 | 7 | 3 (43%) |
 | egamma | 6 | 6 (100%) |
@@ -42,10 +43,9 @@ _Close proposals count the whole corpus (1825 of the 19080 reviewed issues have 
 | karthiknadig | 5 | 2 (40%) |
 | pwang347 | 5 | 3 (60%) |
 | bhavyaus | 4 | 4 (100%) |
+| meganrogge | 4 | 0 (0%) |
 | alexr00 | 3 | 0 (0%) |
-| chrmarti | 3 | 3 (100%) |
 | dbaeumer | 3 | 1 (33%) |
-| meganrogge | 3 | 0 (0%) |
 | benvillalobos | 2 | 0 (0%) |
 | AbhaySanthani-tekframeworks | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
@@ -61,6 +61,7 @@ _Close proposals count the whole corpus (1825 of the 19080 reviewed issues have 
 | dileepyavan | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
 | dustintran333 | 1 | 0 (0%) |
+| JMS-1 | 1 | 0 (0%) |
 | jruales | 1 | 0 (0%) |
 | Mapalmeira | 1 | 0 (0%) |
 | monolithed | 1 | 0 (0%) |
@@ -77,7 +78,7 @@ _Close proposals count the whole corpus (1825 of the 19080 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1764 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1771 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
@@ -88,20 +89,27 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 628 of 628 open proposals verified · 107 closed unverified
-- **implemented-on-main:** 528 of 528 open proposals verified · 97 closed unverified
-- **Verdict mix:** 858 confirmed (29 with the fix unreleased) · 387 disputed · 34 unverifiable
+- **duplicate:** 620 of 620 open proposals verified · 107 closed unverified
+- **implemented-on-main:** 526 of 526 open proposals verified · 97 closed unverified
+- **Verdict mix:** 860 confirmed (28 with the fix unreleased) · 389 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 764 | 93 | 1 |
-| disputed | 361 | 26 | 0 |
-| unverifiable | 31 | 3 | 0 |
+| confirmed | 760 | 99 | 1 |
+| disputed | 356 | 33 | 0 |
+| unverifiable | 30 | 4 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#277300](https://github.com/microsoft/vscode/issues/277300) Google Authentication stopped working in 1.106 | 2026-08-31 | chrmarti | A is a concrete 1.106 regression breaking Google OAuth token refresh with 'unable to get issuer certificate'; B only tracks rollout/telemetry of the experimental http.systemCertificatesNode setting, and completing it needn't fix A. |
+| [#130172](https://github.com/microsoft/vscode/issues/130172) Proxy Credentials Popup not showing | 2026-08-31 | chrmarti | Commit adds proxy basic-auth lookup for extension-host requests via proxy-agent, but node and browser RequestService — the path settings sync uses — explicitly return undefined, so the reported missing sync credentials prompt persists. |
+| [#292795](https://github.com/microsoft/vscode/issues/292795) "Invalid String Length" in Copilot Chat | 2026-08-31 | chrmarti | A reports 'Invalid String Length' with no images, attachments, or tool output involved and says model/mode is irrelevant; B's root cause is base64 image/binary payloads inlined into session JSONL — shared symptom, unestablished shared trigger. |
+| [#299324](https://github.com/microsoft/vscode/issues/299324) Sorry, there was a network error. Please try again later. Request id: 836774d3-2064-4706-8d01-947d2a4d2cd0  Reason: Please check your firewall rules and network connection then try again. Error Code: net::ERR_HTTP2_PROTOCOL_ERROR: [object Object]. | 2026-08-31 | chrmarti | Both are symptom-only auto-reports of a generic ERR_HTTP2_PROTOCOL_ERROR on different OSes (Linux vs Windows) and extension versions; an environment-dependent network/proxy failure string alone establishes no shared root cause. |
+| [#300513](https://github.com/microsoft/vscode/issues/300513) CoPilot Chat 0.39.0 is incompatible with latest VSCode 1.111.0 | 2026-08-31 | chrmarti | Different release pairings a cycle apart — B is Copilot Chat 0.38.0 against VS Code 1.110, A is 0.39.0 against 1.111 — so resolving B's version-gate mismatch would not cover A's later recurrence. |
+| [#301098](https://github.com/microsoft/vscode/issues/301098) When reopening VS Code, recent chat sessions can’t be opened. | 2026-08-31 | chrmarti | Both share the symptom of a chat session not opening, but A's is transient after restarting a remote SSH window and self-heals in days, while B's persists for one specific local session across reinstall/re-auth. |
+| [#303402](https://github.com/microsoft/vscode/issues/303402) Remote SSH workspace paths are handled locally in Copilot Chat UI mode, causing repeated tool failures and renderer overload | 2026-08-31 | chrmarti | B is Windows-host backslash mangling of the workspace path causing 'outside of workspace' errors and false-success writes; A is macOS-host ENOENT on correct POSIX paths plus a retry loop overloading the renderer. |
 | [#328438](https://github.com/microsoft/vscode/issues/328438) Generate Commit Message not working | 2026-08-29 | dmitrivMS | Both are bare 'commit message generation produces nothing' reports on different builds (1.131.0 vs 1.130.0) with no logs, errors, or Copilot state, so no shared root cause is established beyond an identical symptom. |
 | [#329339](https://github.com/microsoft/vscode/issues/329339) Commit generation personalized instruction doesn't work | 2026-08-29 | dmitrivMS | B fails with promptFiltered specifically on Japanese-language instruction text; A fails with an unprocessable-entity error on a plain ASCII English instruction — different failure signatures and triggers, not one shared root cause. |
 | [#330831](https://github.com/microsoft/vscode/issues/330831) Modern UI: Some panel parts use Sidebar colors instead of Panel colors | 2026-08-28 | na2co3-ftw | The commit adds a chat customization migration hint (settings, command, storage key); it touches no paneHeader.css or modern-UI theming code, so it cannot address panel parts using sideBar color tokens. |
@@ -129,7 +137,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 387 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 389 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -141,29 +149,29 @@ _The 387 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 686 |
-| propose-close | 605 |
-| needs-info | 420 |
-| route-to-area | 114 |
+| keep-open | 697 |
+| propose-close | 623 |
+| needs-info | 422 |
+| route-to-area | 117 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 925 |
-| not_planned | 655 |
-| duplicate | 235 |
-| not_found | 10 |
+| completed | 942 |
+| not_planned | 659 |
+| duplicate | 247 |
+| not_found | 11 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 807 | 179 | 22% | 82 | 18 |
-| implemented on main | 727 | 202 | 28% | 130 | — |
-| as-designed | 290 | 69 | 24% | 45 | 13 |
-| question | 244 | 29 | 12% | 9 | 10 |
-| caused-by-extension | 214 | 41 | 19% | 17 | 9 |
+| duplicate | 811 | 191 | 24% | 94 | 18 |
+| implemented on main | 727 | 204 | 28% | 132 | — |
+| as-designed | 292 | 70 | 24% | 45 | 14 |
+| question | 246 | 29 | 12% | 9 | 10 |
+| out-of-scope | 157 | 34 | 22% | 5 | 7 |
 | not-reproducible | 133 | 25 | 19% | 8 | 8 |
-| out-of-scope | 126 | 31 | 25% | 5 | 6 |
+| caused-by-extension | 117 | 41 | 35% | 17 | 9 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | extension-candidate | 29 | 7 | 24% | 2 | — |
 | other | 21 | 5 | 24% | 3 | — |
