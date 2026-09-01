@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `3d6943c3a15c721c` — every verdict record carries the hash of the
+> Policy hash `5fa429198b8c8ed6` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-08-31 16:44 UTC.
+> exactly this text. Published 2026-09-01 13:46 UTC.
 
 ---
 
@@ -70,8 +70,10 @@ labels are:
 - `*duplicate` — already tracked by another issue.
 - `*out-of-scope` — real request, but not something VS Code core will do.
 - `*not-reproducible` — cannot reproduce against current behavior.
-- `*caused-by-extension` — the problem comes from an installed extension
-  **whose code lives outside microsoft/vscode** (see "Repo topology" below).
+- `*caused-by-extension` — the problem comes from an installed extension **not
+  owned by the VS Code team** (third-party, or another Microsoft team's — e.g.
+  Docker, C/C++). Never for a VS Code-team-owned extension — those are a
+  **move**, not a close (see the roster in "Repo topology" below).
 - `*extension-candidate` — belongs in an extension rather than core.
 - `*off-topic` — not about VS Code.
 - `*question` — a support question, not an actionable issue.
@@ -101,16 +103,33 @@ names are dropped downstream, so a guessed label helps nobody.
   "high demand", connection resets with no core defect) still closes, but as
   `*question` or `*not-reproducible`, with the reasoning grounded in the
   service-side evidence — not in extension ownership.
-- **Microsoft-owned extensions with their own active tracker** (e.g. Remote
-  Development / Dev Containers → `microsoft/vscode-remote-release`): these
-  issues are genuinely extension-owned, so `*caused-by-extension` /
-  `*extension-candidate` applies — but the team's practice is to **move** the
-  issue, not close-and-refile. Your `proposedComment` must say the issue will
-  be moved to the named tracker (a maintainer transfers it, preserving the
-  thread and reactions). NEVER ask the reporter to re-file it themselves.
-- **Third-party (non-Microsoft) extensions**: close as `*caused-by-extension`
-  and point the reporter at the extension's own repository — the only case
-  where "please file it there" is correct.
+- **VS Code-team-owned extensions** (roster below): these issues are
+  extension-owned but stay in the family — the team's practice is to **move**
+  the issue, not close it: a transfer preserves the thread and reactions and
+  the issue lives on in the owning tracker. Propose this as ROUTING, never a
+  close — `triageAction: "route-to-area"`, `proposedLabel: "none"`,
+  `closeReason: "none"`, with 1–3 existing area labels where the repo has
+  matching ones (e.g. `containers` / `remote`), and a `proposedComment` saying
+  the issue will be moved to the named tracker (a maintainer transfers it).
+  NEVER `*caused-by-extension` here, and NEVER ask the reporter to re-file.
+  The roster, with each extension's tracker:
+  - **Remote Development family** — Dev Containers, Remote-SSH, Remote-WSL,
+    Remote Explorer, Remote Repositories / RemoteHub → all tracked in
+    `microsoft/vscode-remote-release`.
+  - **Python family** — Python → `microsoft/vscode-python` · Python Debugger →
+    `microsoft/vscode-python-debugger` · Python Environments →
+    `microsoft/vscode-python-environments` · Jupyter →
+    `microsoft/vscode-jupyter`.
+  - **GitHub Pull Requests** → `microsoft/vscode-pull-request-github`.
+  - **Others** — ESLint → `microsoft/vscode-eslint` · Hex Editor →
+    `microsoft/vscode-hexeditor` · Speech → `microsoft/vscode-speech` · CSS →
+    `microsoft/vscode-css`.
+- **Extensions NOT owned by the VS Code team** — third-party AND other
+  Microsoft teams' (e.g. Docker → `microsoft/vscode-docker`, C/C++ →
+  `microsoft/vscode-cpptools`, Pylance): close as `*caused-by-extension` and
+  point the reporter at the extension's own repository or tracker. The VS Code
+  team cannot transfer issues into trackers it doesn't own, so a polite
+  "please file it there" is correct here — for Microsoft-owned ones too.
 
 ### Closing is done by a bot via slash commands
 
@@ -310,7 +329,8 @@ Translate the underlying judgment into VS Code's vocabulary:
 - **Belongs in an extension** -> `*extension-candidate` (build it as an
   extension) or `*caused-by-extension` (an installed extension is the cause) —
   but check "Repo topology" first: Copilot Chat is core (never this verdict),
-  and Microsoft-owned trackers get a move, not a re-file request. The
+  and VS Code-team-owned extensions (see the roster) get a route-to-area move
+  proposal, not a close (never `*caused-by-extension`). The
   `*extension-candidate` close takes the normal high-confidence bar: an
   established maintainer position or clear precedent that the capability stays
   out of core. Your own vision-fit read alone is evidence for `bestSolution`,
