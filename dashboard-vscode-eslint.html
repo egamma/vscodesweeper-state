@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code Sweeper — Review Dashboard</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
+    --accent: #0969da; --row: #f6f8fa;
+    --close: #cf222e; --keep: #1a7f37; --info: #9a6700;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 24px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin-bottom: 20px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .card { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg); border-radius: 8px;
+    padding: 10px 14px; min-width: 120px; font: inherit; }
+  .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .card .n { font-size: 22px; font-weight: 600; }
+  .card .l { color: var(--muted); font-size: 12px; }
+  /* Auto-fixable is a separate axis: divider before it + green (not blue) active. */
+  .af-card { margin-left: 12px; position: relative; }
+  .af-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .af-card.active { border-color: var(--keep); box-shadow: 0 0 0 1px var(--keep) inset; }
+  .af-card.active .l, .af-card.active .n { color: var(--keep); }
+  /* Closed is an exclusive view swap (not a stacking filter): divider + muted active. */
+  .closed-card { margin-left: 12px; position: relative; }
+  .closed-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .closed-card.active { border-color: var(--muted); box-shadow: 0 0 0 1px var(--muted) inset; }
+  .closed-ok { color: var(--keep); border-color: var(--keep); }
+  .closed-ext { color: var(--muted); border-color: var(--muted); }
+  .controls { margin-bottom: 12px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  input[type=search] { width: 100%; max-width: 360px; padding: 8px 10px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--bg); color: var(--fg); font: inherit; }
+  .toggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px;
+    cursor: pointer; user-select: none; white-space: nowrap; }
+  .toggle input { accent-color: var(--accent); }
+  .result-count { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  /* Fixed-height single-line rows — the precondition for windowed rendering (every
+     data row must be the same height so the spacer math holds). Long cells clamp
+     with an ellipsis; the full text lives in the title attribute. */
+  tbody td { padding-top: 0; padding-bottom: 0; height: 38px; vertical-align: middle; white-space: nowrap; }
+  td.clamp { max-width: 420px; overflow: hidden; text-overflow: ellipsis; }
+  td.owner { max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+  tr.spacer td { height: auto; padding: 0; border: 0; }
+  /* Per-view columns (see hiddenColumns): render() toggles hide-* classes on the
+     table, so a column's header and cells vanish together. */
+  table.hide-rating .col-rating, table.hide-verify .col-verify,
+  table.hide-apply .col-apply, table.hide-agentfix .col-agentfix { display: none; }
+  th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted); font-weight: 600; }
+  th:not([data-k]) { cursor: default; }
+  th[data-k]:hover { color: var(--fg); }
+  tbody tr:hover { background: var(--row); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid transparent; white-space: nowrap; }
+  .a-propose-close { color: var(--close); border-color: var(--close); }
+  .a-keep-open { color: var(--keep); border-color: var(--keep); }
+  .a-needs-info { color: var(--info); border-color: var(--info); }
+  .area-chip { color: var(--muted); border-color: var(--border); font-weight: 400; cursor: help; }
+  .af-yes { color: var(--keep); border-color: var(--keep); }
+  /* 2nd-review badges: clickable pills (the evidence opens in the preview dialog). Refuted
+     stays visible but reads as a warning — it is the QA queue, never hidden. */
+  button.vbadge { cursor: pointer; background: none; font: inherit; font-size: 12px; }
+  .v-confirmed { color: var(--keep); border-color: var(--keep); }
+  .v-refuted { color: var(--close); border-color: var(--close); opacity: .75; }
+  .v-stale { color: var(--info); border-color: var(--info); }
+  .v-unreleased { color: var(--info); border-color: var(--info); }
+  .v-unver { color: var(--muted); border-color: var(--border); }
+  .conf { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: var(--border); position: relative; vertical-align: middle; }
+  .conf > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+  .muted { color: var(--muted); }
+  a.flag { color: var(--muted); }
+  a.flag:hover { color: var(--accent); text-decoration: none; }
+  .vtier { cursor: help; border-bottom: 1px dotted var(--muted); }
+  code { background: var(--row); padding: 1px 5px; border-radius: 4px; }
+  footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  button.copy { font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    border-radius: 6px; padding: 3px 8px; }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+  button.copy.warn { color: var(--info); border-color: var(--info); }
+  button.copy.warn:hover { color: var(--info); border-color: var(--info); }
+  /* Apply & close (vscode-tools host only — see the capability probe): accent-
+     colored to read as the primary action next to the neutral Copy comment. */
+  button.copy.apply { color: var(--accent); border-color: var(--accent); }
+  button.copy.apply:hover { background: var(--accent); color: var(--bg); }
+  button.peek { font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
+    border: none; background: none; padding: 0 2px; opacity: .55; }
+  button.peek:hover { opacity: 1; }
+  /* Preview dialog: a centered modal (never anchored to a row — anchored popovers
+     clip against the vscode-tools iframe edge). The careful path: full text with a
+     copy action inside; the row buttons stay the one-click fast path. */
+  #cpanel { position: fixed; inset: 0; margin: auto; z-index: 20;
+    width: min(640px, calc(100vw - 48px)); max-height: 70vh; overflow-y: auto;
+    background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 16px; font-size: 13px; line-height: 1.5; white-space: pre-wrap;
+    box-shadow: 0 8px 32px rgba(0,0,0,.25); }
+  #cpanel::backdrop { background: rgba(0,0,0,.35); }
+  #cpanel .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border); white-space: normal; }
+  #cpanel .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;
+    padding-top: 10px; border-top: 1px solid var(--border); white-space: normal; }
+  /* Structured fix-spec view (renderSpecInto): labeled fields + quoted fix prompt. */
+  #cpanel .spec { white-space: normal; }
+  #cpanel .spec .f { margin: 0 0 10px; }
+  #cpanel .spec .f:last-child { margin-bottom: 0; }
+  #cpanel .spec .k { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); margin-bottom: 2px; }
+  #cpanel .spec code { font-size: 12px; word-break: break-all; }
+  #cpanel .spec .prompt { border-left: 3px solid var(--border); padding: 2px 0 2px 10px;
+    white-space: pre-wrap; }
+  #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px;
+    font-size: 13px; opacity: 0; transition: opacity .15s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <h1>VS Code Sweeper — Review Dashboard</h1>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-eslint</code> · 69 open reviewed · 28 actionable · 0 closed since review · <a href="outcomes-vscode-eslint.html">14 close proposals to date</a> · generated 2026-09-01 10:36 UTC</div>
+  <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">14</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">3</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">52</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">0</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">0</span><span class="l">✔ closed</span></button></div>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
+    <button class="copy" id="qhelp" type="button" title="Filter syntax — bare text works as before; key:value tokens (owner:, action:, close:, confidence:, has:…) filter a field. Click for the full list." aria-label="Filter syntax help">?</button>
+    <label class="toggle" id="actionableLabel" title="Hide keep-open / no-action rows. Uncheck to show every reviewed issue."><input type="checkbox" id="actionableOnly" checked> <span id="actionableText">Actionable only (28 of 69)</span></label>
+    <span class="result-count" id="resultCount" aria-live="polite"></span>
+  </div>
+  <table>
+    <thead><tr>
+      <th data-k="owner" title="The issue's assignee — who this proposal is queued for. Unassigned issues show —.">Owner</th><th data-k="number" title="The reviewed issue's number — links to the issue on GitHub.">Issue</th><th data-k="title" title="The issue's title at review time — long titles clamp; hover a row for the full text.">Title</th><th data-k="itemType" title="The review's classification of the issue: bug or feature-request.">Type</th>
+      <th data-k="triageAction" title="What the review proposes: propose-close (with a reason under Label / reason), needs-info, route-to-area, or keep-open. Nothing is applied automatically — a human acts on every proposal.">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …). On a duplicate, → #N links the canonical issue the review cites.">Label / reason</th>
+      <th data-k="confidence" title="The review's confidence in its own verdict, 0–100%. Close proposals are only made at high confidence; treat low-confidence rows as leads, not conclusions.">Conf</th><th data-k="verificationRank" class="col-rating" title="Evidence — how strong the evidence behind this review's verdict is: the reproduction status, graded by the review's confidence (a confident verdict can't outrank a weak repro). NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs. Shown on the agent-fixable, keep-open, and all-open views, where evidence strength drives the decision; triage views lead with Conf and 2nd review instead.">Evidence</th><th title="The full review record on the state repo — evidence, reasoning, and the proposed comment. The ⚑ files feedback on this verdict (prefilled state-repo issue; the vscode issue is never pinged).">Review</th><th data-k="verifyRank" class="col-verify" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th class="col-apply" title="Copies the review's suggested closing comment for you to paste on the issue and close it yourself — vscodesweeper never edits the reviewed repo's issues. Inside vscode-tools, close proposals show Apply &amp; close instead: it posts the comment (shown editable first) and closes the issue as you.">Apply</th><th data-k="autoFixable" class="col-agentfix" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt" title="When this review ran. A record is re-reviewed automatically when the issue's content or the review policy changes since then.">Reviewed</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>. Records live on the <code>state</code> branch.
+  <strong>2nd review</strong> is a skeptical second opinion on a close proposal (duplicate or implemented-on-main): an independent model re-judged the claim blind — the duplicate pair's titles/dates/bodies, or the issue against the cited fix commit's diff; never the first verdict, labels, state, or comments — with refuted as the default unless the evidence clearly supports the claim; ✓ means it survived, ⏳ means the fix is merged but unreleased. The badge's hover/click shows the evidence, the eye the full stamp.
+  <strong>Apply</strong> copies the suggested comment for you to paste on the issue and close it yourself — vscodesweeper never edits microsoft/vscode issues. When this page runs inside vscode-tools, close proposals show an <strong>Apply &amp; close</strong> button instead: it posts the comment (shown editable first) and closes the issue under your own GitHub identity — still a human action per issue, never automatic. Needs-info comments stay copy-only everywhere (they must be posted without closing).
+  The agent-fix lane is not enabled for this repository — reviews here are proposal-only.
+  Spotted a wrong verdict? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener">Send feedback</a> — the ⚑ next to a row's record link prefills the item.</footer>
+  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
+  <div id="toast" role="status" aria-live="polite"></div>
+<script>
+const DATA = [{"number":1074,"title":"doesn't apply right fix comment in jsx/tsx context","confidence":0.94,"reviewedAt":"2026-09-01T10:25:07.933Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted","proposedComment":"Thanks for the report and the investigation in this thread. This remains the canonical request for context-aware disable comments: current main still chooses comment syntax from the document language ID, so it cannot distinguish JSX markup from ordinary JavaScript or TypeScript within the same file. The most promising editor-independent direction remains using the parser from ESLint's resolved configuration to inspect the ESTree at the diagnostic location and emit JSX-safe `{/* ... */}` syntax only when needed.","verifiedUpdatedAt":"2022-08-05T13:39:33Z"},{"number":1101,"title":"More visibility for workingDirectories setting","confidence":0.91,"reviewedAt":"2026-09-01T10:24:56.451Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1113,"title":"jsonschema: source.fixAll.eslint does not seem to exist","confidence":0.88,"reviewedAt":"2026-09-01T10:26:15.854Z","owner":"unassigned","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the context. The extension already provides and handles `source.fixAll.eslint`, but completion for `editor.codeActionsOnSave` is owned by VS Code's settings schema. The generic contribution-point proposal at https://github.com/microsoft/vscode/issues/82718 was later closed as out of scope, while the extension-side schema augmentation suggested here is not present in the current manifest. This remains a useful ESLint-specific discoverability request, with the implementation depending on what augmentation VS Code's settings schema supports.","verifiedUpdatedAt":"2023-12-04T13:42:34Z"},{"number":1204,"title":"Provide a \"basics\" setup documentation for VSCode, ESLint & autoformatting","confidence":0.96,"reviewedAt":"2026-09-01T10:33:39.484Z","owner":"unassigned","closeReason":"implemented-on-main","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted, good first issue","proposedComment":"Thanks for the request and the contribution. This is now covered by https://github.com/microsoft/vscode-eslint/pull/2164: the README includes ESLint installation and config-generation guidance, a global `editor.codeActionsOnSave` example for automatic ESLint fixes, and a workspace `eslint.validate` example. The documentation shipped in the 3.0.33 pre-release and is also included in stable 3.0.34, so this can be closed as completed. The fix shipped in release/3.0.34.","verifiedUpdatedAt":"2026-05-13T06:39:57Z"},{"number":1225,"title":"eslint.nodePath only works with absolute paths in multi module vscode workspaces","confidence":0.93,"reviewedAt":"2026-09-01T10:25:14.932Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1229,"title":"File exists, but `ENOENT: no such file or directory...` reported.","confidence":0.95,"reviewedAt":"2026-09-01T10:25:23.819Z","owner":"unassigned","closeReason":"implemented-on-main","triageAction":"propose-close","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report and the detailed follow-up. This failure path was fixed by https://github.com/microsoft/vscode-eslint/commit/d8214448aa1ba338c84184239bfee66cea24fbaa: errors from `fs.realpathSync.native` are now caught and the server falls back to the original file path, so an ENOENT from realpath no longer silently prevents validation. The fix first shipped in the 2.4.1 pre-release and is also included in stable 2.4.2 and later. The fix shipped in release/2.4.2.","verifiedUpdatedAt":"2023-03-29T05:48:10Z"},{"number":1240,"title":"Reporting errors from node_module and no way to suppress/disable (also ignores .eslintignore)`","confidence":0.94,"reviewedAt":"2026-09-01T10:24:39.133Z","owner":"unassigned","areaLabels":"upstream","itemType":"upstream","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the detailed reproduction. The command-line test confirms that ESLint itself attempts to load the dependency's legacy `eslintConfig` before it determines that the file is ignored. The extension delegates both configuration and ignore resolution to the workspace's ESLint library, and `eslint.onIgnoredFiles` only controls warnings after ESLint has successfully classified a file as ignored. ESLint tracked and confirmed this behavior in https://github.com/eslint/eslint/issues/14686, but decided not to change the frozen legacy eslintrc implementation.","verifiedUpdatedAt":"2021-08-24T07:50:04Z"},{"number":1344,"title":"How to tackle: Getting code actions from ESLint","confidence":0.98,"reviewedAt":"2026-09-01T10:33:50.642Z","owner":"unassigned","itemType":"question","autoFixable":"false","labels":"question"},{"number":1355,"title":"ESLint can't be used as a formatter until the ESLint server is fully initialized.","confidence":0.9,"reviewedAt":"2026-09-01T10:29:33.017Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug"},{"number":1366,"title":"Support for VS Code for Web","confidence":0.97,"reviewedAt":"2026-09-01T10:28:57.073Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1401,"title":"Possible to pass environment variables to eslint server?","confidence":0.9,"reviewedAt":"2026-09-01T10:25:14.943Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1460,"title":"Problems should not dissapear on file close","confidence":0.93,"reviewedAt":"2026-09-01T10:30:09.595Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1501,"title":"Cannot use \"Format Modified Lines\" command or modifications formatOnSaveMode","confidence":0.94,"reviewedAt":"2026-09-01T10:25:11.652Z","owner":"unassigned","areaLabels":"upstream","itemType":"upstream","autoFixable":"false","labels":"feature-request, upstream"},{"number":1517,"title":"Feature: show rule docs if available in an ESLint config file","confidence":0.95,"reviewedAt":"2026-09-01T10:26:36.457Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1597,"title":"Show editor ruler for `max-len` value","confidence":0.97,"reviewedAt":"2026-09-01T10:24:25.789Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","labels":"feature-request, depends-on-vscode","proposedComment":"Thanks for the request. The required editor API is already tracked in https://github.com/microsoft/vscode/issues/111251, which covers the broader capability for extensions to change rulers on a particular editor. This report's ESLint `max-len` use case should be considered there, so I'm proposing that we consolidate this issue as a duplicate.","canonical":"microsoft/vscode#111251","verifiedUpdatedAt":"2023-04-04T09:58:42Z"},{"number":1629,"title":"Improve the \"Error: spawn ...Microsoft VS Code\\Code.exe ENOENT\" error message to provide more information","confidence":0.9,"reviewedAt":"2026-09-01T10:25:45.100Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1632,"title":"[Feature Request] Add long paths support","confidence":0.94,"reviewedAt":"2026-09-01T10:25:21.864Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted","proposedComment":"Thanks for the report. This is already being tracked in https://github.com/microsoft/vscode-eslint/issues/1229, including reports where paths around or above the Windows 256-character boundary are not linted by the extension even though the ESLint CLI succeeds. Your additional evidence is useful: lint-staged can fix the same file, while fix-on-save cannot see it until the path is shortened. Let's consolidate the long-path investigation in that issue.","canonical":"1229","verifiedUpdatedAt":"2023-04-14T06:22:20Z"},{"number":1655,"title":"Customize error/warning message in VSCode","confidence":0.87,"reviewedAt":"2026-09-01T10:26:51.458Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the detailed context. This gap is still present on current main: the server flattens newlines in configuration-error messages before displaying them, and custom errors that do not match one of the recognized configuration-error shapes are logged without opening the same notification. There also isn't an `eslint.*` setting that covers this presentation. Keeping this as a feature request to separate full output-channel detail from a concise, readable notification and to decide how multiline messages and package-manager paths should be handled.","verifiedUpdatedAt":"2023-12-04T12:14:53Z"},{"number":1666,"title":"Use from CLI?","confidence":0.9,"reviewedAt":"2026-09-01T10:26:11.047Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1719,"title":"Support basic formatting in hint popup for `no-restricted-*`","confidence":0.97,"reviewedAt":"2026-09-01T10:25:51.542Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","labels":"feature-request, upstream","proposedComment":"Thanks for the request and examples. VS Code's diagnostic API currently exposes the message as a plain string, so the extension cannot preserve links or inline-code formatting here. The broader platform capability is already tracked in https://github.com/microsoft/vscode/issues/54272, which covers Markdown or other formatted diagnostic content. I'll consolidate this request there.","canonical":"microsoft/vscode#54272","verifiedUpdatedAt":"2023-12-04T14:03:49Z"},{"number":1727,"title":"Prefer to use node from environment","confidence":0.94,"reviewedAt":"2026-09-01T10:35:07.707Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted","proposedComment":"Thanks for continuing to document the impact. This remains a valid feature request, but selecting an environment-provided executable is security-sensitive. The direction under consideration is therefore a runtime-selection setting that can prefer `node` in trusted workspaces and fall back to the runtime shipped with VS Code when it cannot be resolved, while retaining the safe bundled behavior for untrusted workspaces. The related work in https://github.com/microsoft/vscode-eslint/pull/1977 may help with workspace-aware resolution, but it does not by itself implement the default-selection behavior requested here.","verifiedUpdatedAt":"2026-05-18T11:13:21Z"},{"number":1733,"title":"Feature Request: enable the \"eslint.format.enable\" setting by default.","confidence":0.94,"reviewedAt":"2026-09-01T10:26:12.269Z","owner":"unassigned","closeReason":"as-designed","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the context. “Formatting pipelines” here refers to VS Code's formatter infrastructure, not the Azure Pipelines extension. Multiple extensions can provide formatting, and users select the provider they want—often per language—with `editor.defaultFormatter`. Enabling ESLint's formatter unconditionally would make it participate for users who intentionally use TypeScript, Prettier, or another formatter, and changing the existing default would break those configurations. For that reason, `eslint.format.enable` is intentionally opt-in; users who want ESLint formatting can enable it and select `dbaeumer.vscode-eslint` as their default formatter for the relevant languages.","verifiedUpdatedAt":"2023-12-04T14:16:35Z"},{"number":1734,"title":"A change to eslint.debug requires VSCode restart if the ESLint server was already running","confidence":0.94,"reviewedAt":"2026-09-01T10:35:09.853Z","owner":"unassigned","proposedLabel":"bug","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the report and confirmations. Current `main` still explains this behavior: the client computes the server launch options, including the `DEBUG` environment variable from `eslint.debug`, only when the `LanguageClient` is created. The normal restart command calls `client.restart()` on that existing client, so it reuses the stale launch options. Restarting the server should honor the current setting; keeping this open as a bug.","verifiedUpdatedAt":"2026-07-14T22:10:41Z"},{"number":1735,"title":"Feature Request: print *something* when this plug-in is involved in a VS Code \"Format Document\" command","confidence":0.88,"reviewedAt":"2026-09-01T10:26:18.406Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1739,"title":"Improve error message / feedback when a file can't be linted with ESLint when in probing mode","confidence":0.94,"reviewedAt":"2026-09-01T10:27:07.956Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1753,"title":"Localize this extension using the Localization pipeline","confidence":0.94,"reviewedAt":"2026-09-01T10:26:08.425Z","owner":"dbaeumer","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1774,"title":"ESLint does not re-compute cross-file information on file changes","confidence":0.93,"reviewedAt":"2026-09-01T10:30:05.190Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1805,"title":"Do not lint outside current project workspace directory","confidence":0.97,"reviewedAt":"2026-09-01T10:26:27.122Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1811,"title":"Feature request: bring back enable/disable eslint command","confidence":0.94,"reviewedAt":"2026-09-01T10:27:05.555Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1812,"title":"Extension can't find typescript-eslint parser with yarn's pnpm linker installation layout","confidence":0.9,"reviewedAt":"2026-09-01T10:33:58.031Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1843,"title":"Separate options per working directory","confidence":0.92,"reviewedAt":"2026-09-01T10:29:16.162Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1844,"title":"cache files (`.eslintcache`) on save","confidence":0.98,"reviewedAt":"2026-09-01T10:26:52.986Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1845,"title":"Worth using `NODE_COMPILE_CACHE` when detecting node v22+","confidence":0.86,"reviewedAt":"2026-09-01T10:29:04.250Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1887,"title":"Support custom clickable links in eslint error tooltips","confidence":0.97,"reviewedAt":"2026-09-01T10:29:30.802Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","labels":"feature-request, depends-on-vscode","proposedComment":"Thanks for the request and examples. Making URLs or file paths clickable in these messages requires formatted or Markdown content support in VS Code's diagnostics API. That broader capability is already tracked in the open VS Code issue https://github.com/microsoft/vscode/issues/54272, so I’m consolidating this request there as a duplicate. The ESLint-specific use case captured here is custom rule messages containing repository paths or external documentation links.","canonical":"microsoft/vscode#54272","verifiedUpdatedAt":"2024-12-18T11:24:20Z"},{"number":1898,"title":"Restarting an extension when that extension's output is selected in the \"Output\" pane should not change which extension is selected in the \"Output\" pane.","confidence":0.92,"reviewedAt":"2026-09-01T10:33:54.788Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1905,"title":"ESLint server only looks at first entry in `context.only` array sent along with `textDocument/codeAction`","confidence":0.94,"reviewedAt":"2026-09-01T10:29:47.050Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1911,"title":"Support for `typescript-eslint` v8's parser `projectService`","confidence":0.96,"reviewedAt":"2026-09-01T10:30:17.088Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","areaLabels":"TypeScript","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the detailed reproduction and follow-up reports. This is a specific instance of the broader cross-file state invalidation problem tracked in https://github.com/microsoft/vscode-eslint/issues/1774, which covers typescript-eslint project state as well as other parsers and plugins with inter-file dependencies.\n\nThe reload added in typescript-eslint 8.3.0 mitigates the initial “file was not found” case, but the later pnpm/Vue and new-folder reports here show why it is not a complete watcher or invalidation solution. Those details are useful evidence for the broader issue, so they should be carried forward there while the extension-side revalidation and parser API are designed together.","canonical":"1774","verifiedUpdatedAt":"2025-03-27T12:22:16Z"},{"number":1928,"title":"Configuration to use a formatter","confidence":0.9,"reviewedAt":"2026-09-01T10:29:08.285Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1936,"title":"ESLint Configuration Update in VSCode - support custom file names.","confidence":0.93,"reviewedAt":"2026-09-01T10:29:19.644Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1955,"title":"fixTypes requires meta.docs.url?","confidence":0.94,"reviewedAt":"2026-09-01T10:28:37.037Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":1985,"title":"Could not find config file. - at assertConfigurationExists","confidence":0.94,"reviewedAt":"2026-09-01T10:29:57.074Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":1986,"title":"Issues with PNPM module resolution","confidence":0.84,"reviewedAt":"2026-09-01T10:34:05.766Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for continuing to narrow this down. The repository at https://github.com/angryermine/vscode-eslint-pnpm now appears sufficient to exercise the pnpm-specific path, but a Codespace must first have its automatically npm-installed `node_modules` removed and then be installed exclusively with `pnpm install`; https://github.com/microsoft/vscode-eslint/issues/1986#issuecomment-3660905000 confirms that this changes the result. The remaining question is whether the extension can safely reproduce the resolution environment created by `pnpm eslint`, or whether pnpm 10 projects using legacy shareable configs must explicitly restore ESLint hoisting with `public-hoist-pattern[]=*eslint*`.","verifiedUpdatedAt":"2026-02-10T08:18:12Z"},{"number":1997,"title":"respect estlint-suppressions.json","confidence":0.98,"reviewedAt":"2026-09-01T10:35:06.939Z","owner":"unassigned","closeReason":"implemented-on-main","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted","proposedComment":"Thanks for the report and discussion. Bulk-suppression support landed in https://github.com/microsoft/vscode-eslint/commit/9d33f02b2ddaadc55f7f30dfd2338ccca12dc798 and is now available in stable version 3.0.34. With ESLint 10.1 or newer, `eslint.bulkSuppression.enable` enables suppression processing; `eslint.bulkSuppression.severity` controls how suppressed violations appear, and `eslint.bulkSuppression.location` can select a non-default suppression file. The fix shipped in release/3.0.34.","verifiedUpdatedAt":"2026-07-16T15:38:00Z"},{"number":2057,"title":"Measure rule performance through VSCode ESLint","confidence":0.91,"reviewedAt":"2026-09-01T10:30:32.873Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted","proposedComment":"Thanks for the request. `eslint.options` is passed to the workspace ESLint API, so `\"stats\": true` can already enable statistics on ESLint versions that support it. The missing part is that the server currently consumes the lint messages but does not capture or log the returned `stats` data. There is no ESLint-executable override for a wrapper—the extension loads ESLint as a library, while `eslint.runtime` controls the Node runtime. A suitable implementation would handle the returned stats in the server and write a structured summary to the existing ESLint output channel.","verifiedUpdatedAt":"2025-08-14T07:09:28Z"},{"number":2060,"title":"VS Code ESLint@3.0.16 --debug option","confidence":0.96,"reviewedAt":"2026-09-01T10:30:42.823Z","owner":"unassigned","itemType":"bug","verification":"Confirmed","autoFixable":"false","labels":"bug"},{"number":2064,"title":"FEAT: Use ESLint extension without auto run","confidence":0.95,"reviewedAt":"2026-09-01T10:30:37.572Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":2077,"title":"Server side workingDirectory.mode auto detection is incomplete","confidence":0.96,"reviewedAt":"2026-09-01T10:30:09.269Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":2080,"title":"multithreaded/--concurrency support?","confidence":0.87,"reviewedAt":"2026-09-01T10:33:27.825Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":2082,"title":"Extension should report config file errors","confidence":0.88,"reviewedAt":"2026-09-01T10:30:36.325Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":2088,"title":"Request: add quick-fix action for adding same-line disables, i.e. `// eslint-disable-line`","confidence":0.92,"reviewedAt":"2026-09-01T10:33:53.601Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the context. `eslint.codeAction.disableRuleComment.location` does support choosing `\"sameLine\"` globally, which is a useful workaround. The remaining request here is different: expose both same-line and separate-line quick fixes for each diagnostic so the choice can be made contextually without changing the setting. That is also distinct from the automatic JSX/TSX detection tracked in https://github.com/microsoft/vscode-eslint/issues/1074, so this should remain open as a feature request.","verifiedUpdatedAt":"2026-02-12T01:14:56Z"},{"number":2107,"title":"css support","confidence":0.86,"reviewedAt":"2026-09-01T10:30:17.644Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. CSS should be autodetected when using flat config and a current ESLint version, so a minimal GitHub repository that can be cloned and demonstrates the difference from the CLI is needed to investigate this. Please also include the extension and workspace ESLint versions and the contents of the `ESLint` output channel after opening an affected CSS file.","verifiedUpdatedAt":"2025-12-09T10:41:06Z"},{"number":2108,"title":"/* eslint-disable-next-line no-unused-vars */  will disappear when save","confidence":0.96,"reviewedAt":"2026-09-01T10:32:30.111Z","owner":"unassigned","proposedLabel":"*question","closeReason":"question","triageAction":"propose-close","areaLabels":"TypeScript","itemType":"question","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for providing the sample project. Its TypeScript preset enables `@typescript-eslint/no-unused-vars` and disables the core `no-unused-vars` rule, so `/* eslint-disable-next-line no-unused-vars */` does not suppress the diagnostic. ESLint consequently reports that directive as unused, and fix-on-save removes it. Please use `/* eslint-disable-next-line @typescript-eslint/no-unused-vars */` instead; using the extension's disable-rule quick fix will insert the active rule ID automatically.","verifiedUpdatedAt":"2026-01-05T10:43:29Z"},{"number":2117,"title":"When ESLint is set to automatically fix on save in VsCode, it will remove the first letter","confidence":0.94,"reviewedAt":"2026-09-01T10:33:24.633Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the additional settings. A minimal GitHub repository that can be cloned is still needed to determine which save participant produces this edit. Please include the affected source and ESLint configuration, the ESLint extension, VS Code, and workspace ESLint versions, and the contents of the `ESLint` output channel after reproducing it. It would also help to confirm whether the first character is still removed when `editor.codeActionsOnSave` contains only `\"source.fixAll.eslint\": \"explicit\"`, with the TSLint, Stylelint, Prettier, and general `source.fixAll` entries disabled.","verifiedUpdatedAt":"2026-02-03T15:40:26Z"},{"number":2125,"title":"docs: Document for `eslint.lintTask.command` is missing","confidence":0.98,"reviewedAt":"2026-09-01T10:33:18.630Z","owner":"unassigned","proposedLabel":"debt","itemType":"debt","autoFixable":"false","proposedComment":"Thanks for catching this and for opening https://github.com/microsoft/vscode-eslint/pull/2126. That PR adds the missing `eslint.lintTask.command` entry, so this issue should remain open while the documentation change is reviewed.","verifiedUpdatedAt":"2026-02-17T19:10:56Z"},{"number":2129,"title":"ESLint plugin breaks when using `eslint-plugin-react-hooks`","confidence":0.93,"reviewedAt":"2026-09-01T10:35:33.572Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the detailed reproduction. The updated task-specific steps explain why this differs from normal per-file linting: `lint whole folder` shells out to ESLint and VS Code builds Problems entries by parsing its stdout with `$eslint-stylish`, while open-file validation uses the ESLint language server directly. The React Hooks rules emit multiline messages with source excerpts, and the core matcher expects each diagnostic and rule ID on one physical line. The broader matcher limitation is already tracked in https://github.com/microsoft/vscode/issues/9635, so I propose consolidating this there. The useful case to carry over is ESLint 9.39.3 with eslint-plugin-react-hooks 7.0.1 and `yarn eslint .`, where the task output contains all diagnostics but the Problems view retains only a subset.","canonical":"microsoft/vscode#9635","verifiedUpdatedAt":"2026-05-18T09:25:27Z"},{"number":2136,"title":"Eslint client couldn't create connection to server after installing new VS Code version","confidence":0.88,"reviewedAt":"2026-09-01T10:34:44.385Z","owner":"unassigned","proposedLabel":"*not-reproducible","closeReason":"not-reproducible","triageAction":"propose-close","itemType":"bug","verification":"Unverified","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. I haven't been able to reproduce this server-start failure with current versions, and there hasn't been a confirmation that it still occurs, so I'm closing this as not reproducible. If it happens again, please open a new issue with the current ESLint extension and VS Code versions, the latest `ESLint` output-channel content, and whether `eslint.runtime` or `eslint.execArgv` is configured.","verifiedUpdatedAt":"2026-05-18T09:12:25Z"},{"number":2138,"title":"ESLint version 10.0.3 only supports flat configs. Setting is ignored","confidence":0.99,"reviewedAt":"2026-09-01T10:33:44.773Z","owner":"unassigned","closeReason":"implemented-on-main","triageAction":"propose-close","itemType":"bug","verification":"Confirmed","autoFixable":"false","proposedComment":"Thanks for the report and investigation. This was fixed by https://github.com/microsoft/vscode-eslint/pull/2172: the extension no longer forwards the deprecated `eslint.experimental.useFlatConfig` default when the setting was not explicitly enabled, so ESLint 10 no longer produces this spurious notice. The fix first shipped in pre-release 3.0.25 and is included in stable 3.0.34. The fix shipped in release/3.0.34.","verifiedUpdatedAt":"2026-05-18T07:54:24Z"},{"number":2149,"title":"Extension causes high cpu load","confidence":0.96,"reviewedAt":"2026-09-01T10:33:46.919Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. Could you attach the CPU profile referenced in the original report? The link points to a temporary file on your local machine, so its contents are not available here. If that profile is no longer available, please capture a new one on the current extension version and include the `ESLint` output-channel contents and, if possible, a minimal GitHub repository that reproduces the high CPU usage.","verifiedUpdatedAt":"2026-05-18T08:52:16Z"},{"number":2171,"title":"Ignore rule if file is dirty","confidence":0.96,"reviewedAt":"2026-09-01T10:33:58.660Z","owner":"dbaeumer","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":2187,"title":"Make `// eslint-disable-next-line` directives hoverable with a link to the rule","confidence":0.97,"reviewedAt":"2026-09-01T10:34:20.520Z","owner":"dbaeumer, Copilot","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":2205,"title":"Show output channel on manual restart","confidence":0.97,"reviewedAt":"2026-09-01T10:34:44.629Z","owner":"dbaeumer","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":2217,"title":"Add a vsix to the releases assets?","confidence":0.94,"reviewedAt":"2026-09-01T10:34:51.258Z","owner":"dbaeumer","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":2223,"title":"GitHub Copilot Chat interrupting workflow","confidence":0.98,"reviewedAt":"2026-09-01T10:34:35.101Z","owner":"anthonykim1","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","proposedComment":"Thanks for the detailed feedback. This isn't controlled by the ESLint extension: it concerns the terminal-permission UI and policy used by GitHub Copilot Chat in VS Code. The same request for granular one-time, session, workspace, exact-command, and persistent approval rules is already tracked in https://github.com/microsoft/vscode/issues/326766, including the need to avoid repeatedly approving commands. I'll close this as a duplicate so the feedback stays consolidated there.","canonical":"microsoft/vscode#326766","verifiedUpdatedAt":"2026-08-16T21:47:32Z"},{"number":2224,"title":"Disable rule quick fixes insert JS-style comments into Markdown files","confidence":0.97,"reviewedAt":"2026-09-01T10:34:43.112Z","owner":"dbaeumer","proposedLabel":"bug","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the detailed report and contribution. The current server path confirms the problem: Markdown falls back to JavaScript line and block comments in `languageDefaults.ts`, and the disable-rule actions insert those values unchanged. https://github.com/microsoft/vscode-eslint/pull/2225 is the active fix, so this issue should remain open while that PR is reviewed.","verifiedUpdatedAt":"2026-08-28T06:13:06Z"},{"number":446,"title":"Add option to auto-disable if no `.eslintrc`","confidence":0.9,"reviewedAt":"2026-09-01T10:25:35.947Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":633,"title":"Lint whole folder task ignores workingDirectories setting","confidence":0.94,"reviewedAt":"2026-09-01T10:29:12.342Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","labels":"feature-request, help wanted"},{"number":707,"title":"Quick Fix for CRLF to LF does not work","confidence":0.9,"reviewedAt":"2026-09-01T10:30:02.026Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug"},{"number":795,"title":"Support specifying the shell to use for Lint task to avoid problems with bash under Windows.","confidence":0.89,"reviewedAt":"2026-09-01T10:25:11.607Z","owner":"unassigned","areaLabels":"depends-on-vscode","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":91,"title":"How to lint all files in project?","confidence":0.88,"reviewedAt":"2026-09-01T10:28:53.260Z","owner":"dbaeumer","itemType":"feature-request","autoFixable":"false","labels":"feature-request"}];
+const ACTIONS = ["propose-close","needs-info","keep-open"];
+const VDESC = {"Confirmed":"Reproduced against current main — the failing behavior was observed directly, or a commenter supplied a confirmed reproduction.","Source-confirmed":"Traced conclusively in the current source via a checkout — the buggy code path is identified, though not executed.","Traced":"A likely defect path was found in the source, but with some uncertainty that it's the true cause.","Plausible":"The report reads as coherent and credible, but it wasn't reproduced or traced in the code — not yet verified.","Unverified":"A genuine reproduction attempt failed, or the report is too thin to verify.","Inconclusive":"Signals conflict — a reproduction was claimed but confidence is low; treat the rating with caution."};
+const TARGET = "microsoft/vscode-eslint", STATE_REPO = "egamma/vscodesweeper-state", STATE_BRANCH = "state";
+const VTIERS = ["Confirmed","Source-confirmed","Traced","Plausible","Unverified","Inconclusive"]; // best → worst; rank = index, unknown/blank ranks last
+const IMPLEMENTED = "implemented on main";
+// Host-capability contract (docs/tools-integration.md), spoken over postMessage
+// to the embedding vscode-tools host — the page has no host-origin access. Wired
+// up at the bottom of the script.
+const HUB_READY = "sweeper-hub-ready", HUB_CAPS = "sweeper-hub-capabilities";
+const HUB_APPLY_REQ = "sweeper-apply-request", HUB_APPLY_RES = "sweeper-apply-result";
+const embedded = window.parent !== window; // true inside the vscode-tools iframe
+let applyEnabled = false; // flips when the host answers HUB_READY with our target
+const applyPending = {}; // apply request id → resolver, awaiting HUB_APPLY_RES
+let applyReqSeq = 0;
+// The blob ships a slim projection (toShipped in dashboard.ts): empty/default keys are
+// omitted, urls/rating/rank are derived here from the constants above, and freshness
+// arrives as a ship-only-when-stale flag. Hydrate every record back to the full shape
+// so the rendering code below reads plain fields throughout.
+for (const r of DATA) {
+  r.owner = r.owner || ""; r.itemType = r.itemType || ""; r.labels = r.labels || "";
+  r.proposedLabel = r.proposedLabel || "none"; r.triageAction = r.triageAction || "keep-open";
+  r.areaLabels = r.areaLabels || "";
+  r.verification = r.verification || ""; r.autoFixable = r.autoFixable || "";
+  r.fixPr = r.fixPr || ""; r.implementPr = r.implementPr || ""; r.skillPr = r.skillPr || "";
+  r.currentState = r.currentState || "open"; r.closedAt = r.closedAt || ""; r.stateReason = r.stateReason || "";
+  r.proposedComment = r.proposedComment || ""; r.verifiedUpdatedAt = r.verifiedUpdatedAt || "";
+  r.canonical = r.canonical || "";
+  r.contentFresh = !r.contentStale;
+  r.verifyVerdict = r.verifyVerdict || ""; r.verifyEvidence = r.verifyEvidence || "";
+  r.verifyKind = r.verifyKind || ""; r.verifyCanonical = r.verifyCanonical || "";
+  r.verifyCanonicalRepo = r.verifyCanonicalRepo || "";
+  r.verifyStale = !!r.verifyStale || (!!r.verifyVerdict && !r.contentFresh); // record OR live drift decays the badge
+  r.verifyUnreleased = !!r.verifyUnreleased;
+  // Sort rank for the 2nd-review column: verified first, then unreleased/stale, refuted last,
+  // unverified after everything stamped.
+  r.verifyRank = r.verifyVerdict === "confirmed" ? (r.verifyStale ? 2 : r.verifyUnreleased ? 1 : 0)
+    : r.verifyVerdict === "unverifiable" ? 3
+    : r.verifyVerdict === "refuted" ? 4 : 5;
+  r.url = r.url || "https://github.com/" + TARGET + "/issues/" + r.number;
+  r.reviewUrl = r.reviewUrl || "https://github.com/" + STATE_REPO + "/blob/" + STATE_BRANCH + "/records/" + TARGET + "/items/" + r.number + ".md";
+  const rank = VTIERS.indexOf(r.verification);
+  r.verificationRank = rank === -1 ? VTIERS.length : rank;
+  r.rating = !r.verification ? "" : rank === -1 ? r.verification : (VTIERS.length - rank) + "/" + VTIERS.length + " " + r.verification;
+  // closeReason backfill for legacy (pre-2026-08-09) records, mirroring the
+  // server-side derivation in record-parse.ts closeReason(): label-free close =
+  // implemented on main, star labels carry the reason, anything else buckets as
+  // "other". Without this, close: filters (and the verdicts page's close:
+  // deep links, whose counts include legacy records) silently miss every
+  // record that predates the structured field.
+  if (r.triageAction === "propose-close" && !r.closeReason) {
+    const lbl = r.proposedLabel || "";
+    r.closeReason = !lbl || lbl === "none" ? "implemented-on-main"
+      : lbl.charAt(0) === "*" ? lbl.slice(1) : "other";
+  }
+  // Label/reason column: the structured closeReason (2026-08-09+) is
+  // authoritative — a label-free close may be as-designed, not just implemented
+  // on main. Legacy records without the field keep the historic heuristic.
+  // Mapping here — not in rowHtml — makes search and column sort see the
+  // reason for free.
+  if (r.triageAction === "propose-close" && r.proposedLabel === "none") {
+    r.proposedLabel = r.closeReason ? (r.closeReason === "implemented-on-main" ? IMPLEMENTED : r.closeReason) : IMPLEMENTED;
+  }
+}
+let actionFilter = null, sortK = "owner", sortDir = 1; // open on the actionable set; click a card to filter
+let autoFixOnly = false, actionableOnly = true;
+let closedOnly = false; // exclusive view: closed-since-review records, most recent first
+const rowsEl = document.getElementById("rows"), qEl = document.getElementById("q");
+const actionableEl = document.getElementById("actionableOnly");
+const actionableLabelEl = document.getElementById("actionableLabel");
+const actionableTextEl = document.getElementById("actionableText");
+const resultCountEl = document.getElementById("resultCount");
+function esc(s){const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+function attr(s){return esc(s).replace(/"/g,"&quot;");} // esc leaves quotes alone — needed inside title="…"
+// Keep in sync with feedbackUrl() in feedback.ts — plain item number only, never
+// owner/repo#N or an upstream issue URL (a submitted reference would ping the issue).
+function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: " + TARGET + " item " + n, item: n, repo: TARGET, page: "dashboard" }); }
+// Keep in sync with isActionable() in dashboard.ts.
+function isActionable(r){ return r.triageAction !== "keep-open" || !!r.proposedComment || !!r.fixPr || !!r.implementPr || !!r.skillPr || r.autoFixable === "true"; }
+// The filter language (GitHub-style qualifiers over the plain-substring filter):
+// parseFilterQuery/matchesFilter are serialized verbatim from filter-query.ts, so
+// the page runs exactly the code the unit tests exercise.
+function parseFilterQuery(raw){const KEYS=["owner","action","close","type","label","confidence","verify","has","no","is"];const q=String(raw||"").trim().toLowerCase();if(q.length<2)return null;const clauses=[];for(const tok of q.split(/\s+/)){let t=tok;let neg=false;if(t.charAt(0)==="-"&&t.length>1){neg=true;t=t.slice(1)}const i=t.indexOf(":");const key=i>0?t.slice(0,i):"";if(key&&KEYS.indexOf(key)!==-1){const values=t.slice(i+1).split(",").filter(Boolean);if(values.length)clauses.push({neg,key,values})}else if(t.length>=2){clauses.push({neg,key:"",values:[t]})}}return clauses.length?clauses:null}
+function matchesFilter(r,clauses){for(const c of clauses){let hit=false;for(const v of c.values){let m=false;if(c.key==="owner")m=(r.owner||"").toLowerCase().indexOf(v)!==-1;else if(c.key==="action")m=(r.triageAction||"").indexOf(v)!==-1;else if(c.key==="close")m=(r.closeReason||"").toLowerCase().indexOf(v)!==-1;else if(c.key==="type")m=(r.itemType||"").indexOf(v)!==-1;else if(c.key==="label"){m=((r.proposedLabel||"")+" "+(r.areaLabels||"")+" "+(r.labels||"")).toLowerCase().indexOf(v)!==-1}else if(c.key==="confidence"){const conf=r.confidence||0;if(v==="high")m=conf>=.9;else if(v==="medium"||v==="med")m=conf>=.7&&conf<.9;else if(v==="low")m=conf<.7}else if(c.key==="verify"){if(v==="stale")m=!!r.verifyStale;else if(v==="unreleased")m=!!r.verifyUnreleased;else m=!!r.verifyVerdict&&r.verifyVerdict.indexOf(v)!==-1}else if(c.key==="has"||c.key==="no"){let p=false;if(v==="fixpr")p=!!r.fixPr;else if(v==="skillpr")p=!!r.skillPr;else if(v==="implementpr")p=!!r.implementPr;else if(v==="pr")p=!!(r.fixPr||r.skillPr||r.implementPr);else if(v==="owner")p=!!r.owner&&r.owner!=="unassigned";else if(v==="comment")p=!!r.proposedComment;else if(v==="canonical")p=!!r.canonical;else if(v==="verify")p=!!r.verifyVerdict;m=c.key==="no"?!p:p}else if(c.key==="is"){if(v==="stale")m=!r.contentFresh;else if(v==="fixable"||v==="agent-fixable")m=r.autoFixable==="true"}else{m=(String(r.number)+" "+r.title+" "+(r.proposedLabel||"")+" "+(r.areaLabels||"")+" "+(r.itemType||"")+" "+(r.rating||"")+" "+(r.owner||"")+" "+(r.verifyVerdict||"")).toLowerCase().indexOf(v)!==-1}if(m){hit=true;break}}if(c.neg?hit:!hit)return false}return true}
+// Per-view column visibility — serialized from dashboard.ts so the page runs
+// exactly the unit-tested rule (see hiddenColumns there for the rationale).
+function hiddenColumns(s){if(s.closedOnly)return{rating:true,verify:false,apply:true,agentFix:true};return{rating:!(s.autoFixOnly||s.actionFilter==="keep-open"||!s.actionFilter&&!s.actionableOnly),verify:s.autoFixOnly||s.actionFilter==="needs-info"||s.actionFilter==="keep-open",apply:false,agentFix:!s.autoFixOnly&&(s.actionFilter==="propose-close"||s.actionFilter==="needs-info")}}
+const QHELP = "Bare words filter as before — substring over issue #, title, label, owner, type, rating, 2nd-review verdict. key:value tokens filter one field. Tokens AND together; prefix - negates a token; commas OR values within a key (owner:a,b).\n\nowner:alexdima — assignee contains\naction:propose-close | needs-info | keep-open\nclose:duplicate | as-designed | implemented-on-main | … — close reason\ntype:bug | feature-request\nlabel:editor — proposed / area / issue labels\nconfidence:high | medium | low — ≥90% / 70–89% / <70%\nverify:confirmed | refuted | unverifiable | stale | unreleased — 2nd review\nhas: / no: fixpr | skillpr | implementpr | pr | owner | comment | canonical | verify\nis:stale | agent-fixable\n\nExamples:\nowner:alexdima action:propose-close confidence:high — my strongest close proposals\nclose:duplicate verify:confirmed — duplicate closes that survived the 2nd review (safest to apply)\nverify:refuted — the disputed queue: read before acting\nclose:duplicate -has:verify — duplicate closes the verify lane hasn't covered yet\nis:agent-fixable no:pr — fix specs nobody has picked up\nno:owner action:propose-close — unassigned close proposals\nlabel:terminal type:bug action:needs-info — an area's bugs stuck waiting on the reporter\n\nAnything with an unrecognized key stays plain text — pasting a title like \"Terminal: split pane\" works unchanged. The query lives in the URL (#q=…): share the link to share the view.";
+// q is a compiled query (parseFilterQuery result) or null for no filter.
+function matchesText(r, q){ return !q || matchesFilter(r, q); }
+// Recompute the card numbers over the current view so they track the search box / actionable
+// toggle instead of staying at the server-baked totals. Faceted: each card reflects every OTHER
+// active filter but NOT its own selection, so the counts stay meaningful while one card is active.
+function isClosed(r){ return r.currentState === "closed"; }
+function updateCounts(q){
+  const base = DATA.filter(r => !isClosed(r) && (!actionableOnly || isActionable(r)) && matchesText(r, q));
+  // Actionable-only is essentially "hide keep-open rows", so it IS the keep-open card's
+  // own selection in faceting terms — that card's count must ignore it, or it reads a
+  // fraction of the real keep-open set on load (clicking the card drops the toggle, and
+  // the number the click reveals should be the number the card promised).
+  const keepOpenBase = actionableOnly ? DATA.filter(r => !isClosed(r) && matchesText(r, q)) : base;
+  for (const a of ACTIONS){
+    const n = (a === "keep-open" ? keepOpenBase : base).filter(r => (!autoFixOnly || r.autoFixable === "true") && r.triageAction === a).length;
+    const el = document.querySelector('#cards .card[data-action="'+a+'"] .n');
+    if (el) el.textContent = n;
+  }
+  const afEl = document.querySelector('#afCard .n');
+  if (afEl) afEl.textContent = base.filter(r => (!actionFilter || r.triageAction === actionFilter) && r.autoFixable === "true").length;
+  const clEl = document.querySelector('#closedCard .n');
+  if (clEl) clEl.textContent = DATA.filter(r => isClosed(r) && matchesText(r, q)).length;
+  const actionableBase = DATA.filter(r =>
+    !isClosed(r) &&
+    matchesText(r, q) &&
+    (!actionFilter || r.triageAction === actionFilter) &&
+    (!autoFixOnly || r.autoFixable === "true")
+  );
+  const actionableMatches = actionableBase.filter(isActionable).length;
+  actionableTextEl.textContent = "Actionable only (" + actionableMatches.toLocaleString("en-US") + " of " + actionableBase.length.toLocaleString("en-US") + ")";
+  actionableEl.disabled = closedOnly;
+  actionableLabelEl.title = closedOnly
+    ? "Actionable only does not apply to the closed archive."
+    : "Hide keep-open / no-action rows. Uncheck to show every reviewed issue.";
+}
+let view = []; // the current filtered+sorted rows; vrender paints a window of it
+// The query round-trips through the URL hash so a filtered view is shareable —
+// other pages can deep-link a slice (e.g. dashboard.html#q=verify:refuted).
+function syncHash(raw){
+  try { history.replaceState(null, "", location.pathname + location.search + (raw ? "#q=" + encodeURIComponent(raw) : "")); } catch {}
+}
+function render(){
+  const raw = qEl.value.trim();
+  const q = parseFilterQuery(raw); // null = no filter (blank or under 2 chars)
+  syncHash(raw);
+  updateCounts(q);
+  // Per-view columns: hide the structurally-empty ones for the active view. When
+  // a hiding column is the active sort key, fall back to the default sort — an
+  // invisible sort order would look like random row placement.
+  const hide = hiddenColumns({ closedOnly, autoFixOnly, actionFilter, actionableOnly });
+  const tbl = document.querySelector("table");
+  tbl.classList.toggle("hide-rating", hide.rating);
+  tbl.classList.toggle("hide-verify", hide.verify);
+  tbl.classList.toggle("hide-apply", hide.apply);
+  tbl.classList.toggle("hide-agentfix", hide.agentFix);
+  if ((hide.rating && sortK === "verificationRank") || (hide.verify && sortK === "verifyRank") || (hide.agentFix && sortK === "autoFixable")) { sortK = "owner"; sortDir = 1; }
+  view = DATA.filter(r => {
+    // Closed mode swaps the whole view; the action/auto-fix/actionable filters
+    // describe active triage work and don't apply to the archive.
+    if (closedOnly) return isClosed(r) && matchesText(r, q);
+    if (isClosed(r)) return false;
+    if (actionableOnly && !isActionable(r)) return false;
+    if (actionFilter && r.triageAction !== actionFilter) return false;
+    if (autoFixOnly && r.autoFixable !== "true") return false;
+    if (!matchesText(r, q)) return false;
+    return true;
+  });
+  if (closedOnly && sortK === "owner" && sortDir === 1) {
+    view.sort((a,b)=> b.closedAt.localeCompare(a.closedAt) || a.number-b.number); // default: most recently closed first
+  } else {
+    view.sort((a,b)=>{ let x=a[sortK], y=b[sortK]; if(x<y)return -sortDir; if(x>y)return sortDir; return a.number-b.number; });
+  }
+  resultCountEl.textContent = "Showing " + view.length.toLocaleString("en-US") + (view.length === 1 ? " issue" : " issues");
+  window.scrollTo({ top: 0 }); // filter/sort changed what's shown — start at the top of it
+  vrender(true);
+}
+function rowHtml(r){
+  const pct = Math.round(r.confidence*100);
+  return "<tr>"
+    + '<td class="owner" title="'+attr(r.owner)+'">'+esc(r.owner||"—")+"</td>"
+    + '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">#'+esc(r.number)+'</a></td>'
+    + '<td class="clamp" title="'+attr(r.title)+'">'+esc(r.title)+"</td>"
+    + "<td>"+esc(r.itemType)+"</td>"
+    + '<td><span class="pill a-'+esc(r.triageAction)+'">'+esc(r.triageAction)+"</span>"+areaChip(r)+closedPill(r)+"</td>"
+    + "<td><code>"+esc(r.proposedLabel)+"</code>"+canonLink(r)+"</td>"
+    + '<td><span class="conf"><i style="width:'+pct+'%"></i></span> <span class="muted">'+pct+"%</span></td>"
+    + '<td class="col-rating">'+(r.rating?'<span class="vtier" title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>":'<span class="muted">—</span>')+"</td>"
+    + '<td><a href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener">view</a> <a class="flag" href="'+feedbackHref(r.number)+'" target="_blank" rel="noopener" title="Report feedback on this verdict — opens a prefilled issue on the state repo (plain item number, so the vscode issue is never pinged)">⚑</a></td>'
+    + '<td class="col-verify">'+verifyCell(r)+"</td>"
+    + '<td class="col-apply">'+applyCell(r)+"</td>"
+    + '<td class="col-agentfix">'+afCell(r)+"</td>"
+    + '<td class="muted">'+esc((r.reviewedAt||"").slice(0,10))+"</td>"
+    + "</tr>";
+}
+// Windowed rendering: only the viewport ± OVERSCAN rows exist in the DOM; spacer
+// rows above/below keep the scrollbar honest. Rows are fixed-height (see the CSS
+// clamp), so the spacer math is exact and cost stays flat at any corpus size —
+// the previous full-table innerHTML froze for seconds beyond ~10k rows.
+const OVERSCAN = 20;
+let rowH = 39, winFirst = -1, winLast = -1;
+function vrender(force){
+  if (!view.length) {
+    winFirst = winLast = -1;
+    rowsEl.innerHTML = '<tr><td colspan="13" class="muted">No matching records.</td></tr>';
+    return;
+  }
+  // Table-top offset from the document: unaffected by the spacers below it, since
+  // the tbody's total height is constant for a given view.
+  const top = rowsEl.getBoundingClientRect().top + window.scrollY;
+  const first = Math.max(0, Math.floor((window.scrollY - top) / rowH) - OVERSCAN);
+  const last = Math.min(view.length, first + Math.ceil(window.innerHeight / rowH) + 2 * OVERSCAN);
+  if (!force && first === winFirst && last === winLast) return;
+  winFirst = first; winLast = last;
+  const spacer = h => '<tr class="spacer"><td colspan="13" style="height:' + h + 'px"></td></tr>';
+  rowsEl.innerHTML = (first > 0 ? spacer(first * rowH) : "")
+    + view.slice(first, last).map(rowHtml).join("")
+    + (last < view.length ? spacer((view.length - last) * rowH) : "");
+  // Self-correcting row height: rows are uniform, so slice height ÷ row count is
+  // exact. One re-render when the estimate drifts (fonts/zoom/theme).
+  const rendered = rowsEl.querySelectorAll("tr:not(.spacer)");
+  if (rendered.length > 1) {
+    const h = (rendered[rendered.length-1].getBoundingClientRect().bottom - rendered[0].getBoundingClientRect().top) / rendered.length;
+    if (h > 0 && Math.abs(h - rowH) > 0.1) { rowH = h; vrender(true); }
+  }
+}
+let scrollTick = false;
+addEventListener("scroll", () => {
+  if (scrollTick) return;
+  scrollTick = true;
+  requestAnimationFrame(() => { scrollTick = false; vrender(false); });
+}, { passive: true });
+addEventListener("resize", () => vrender(true));
+// 2nd-review badge: the verify lane's blinded verdict on a duplicate or
+// implemented-on-main close proposal. The whole badge is a peek button — the
+// evidence line IS the product (trial feedback 2026-08-14), so one click opens it
+// in the preview dialog; the tooltip carries it too. A confirmed-but-unreleased fix
+// (decision 13) reads "fixed, unreleased" — merged, but the reporter can't get it yet.
+function verifyCell(r){
+  if (!r.verifyVerdict) return '<span class="muted">—</span>';
+  const stale = r.verifyStale;
+  const unreleased = r.verifyVerdict === "confirmed" && r.verifyUnreleased;
+  const cls = r.verifyVerdict === "confirmed" ? (stale ? "v-stale" : unreleased ? "v-unreleased" : "v-confirmed")
+    : r.verifyVerdict === "refuted" ? "v-refuted" : "v-unver";
+  const label = r.verifyVerdict === "confirmed" ? (stale ? "⌛ verified" : unreleased ? "⏳ fixed, unreleased" : "✓ verified")
+    : r.verifyVerdict === "refuted" ? "✗ refuted" : "? unverifiable";
+  const explain = "2nd review — an independent model re-judged the close claim blind (the duplicate pair's titles/dates/bodies, or the issue vs the cited fix commit's diff; it never saw the first verdict, labels, or issue state) and skeptically: refuted is the default unless the evidence clearly supports the claim.";
+  return '<button class="pill vbadge '+cls+'" data-n="'+esc(r.number)+'" data-kind="verify" title="'+attr(explain + "\n\n" + r.verifyEvidence)+'">'+label+"</button>"
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="verify" title="Show the full verification stamp from the record (evidence, gate checks, when and which engine)" aria-label="Show verification details for issue '+esc(r.number)+'">👁</button>';
+}
+// Canonical link on a duplicate close proposal: the Label/reason cell reads
+// "*duplicate → #N" with the canonical issue one click away (server-extracted from
+// the proposed comment). Satellites may cite cross-repo; the full owner/repo would
+// blow the column wide, so those render as "#N ↗" with the full reference in the
+// tooltip (the ↗ flags that the link leaves this repo).
+function canonLink(r){
+  if (!r.canonical) return "";
+  const cross = r.canonical.includes("#");
+  const repo = cross ? r.canonical.split("#")[0] : TARGET;
+  const num = cross ? r.canonical.split("#")[1] : r.canonical;
+  const title = "The canonical issue this duplicate would be closed in favor of"
+    + (cross ? ": " + r.canonical + " — in a different repo" : "")
+    + " — from the review\'s proposed comment";
+  return ' → <a href="https://github.com/'+esc(repo)+'/issues/'+esc(num)
+    + '" target="_blank" rel="noopener" title="'+attr(title)+'">#'+esc(num)+(cross?"&#8239;↗":"")+"</a>";
+}
+// Suggested-area chip on open keep-open rows (incl. folded route-to-area records)
+// and needs-info rows — a needs-info verdict can still name the area that should
+// see the issue while info is gathered. The page applies no labels.
+function areaChip(r){
+  if (r.triageAction === "propose-close" || !r.areaLabels || isClosed(r)) return "";
+  return ' <span class="pill area-chip" title="The review suggests these area labels for routing. Informational only — vscodesweeper never applies labels.">→ '+esc(r.areaLabels)+"</span>";
+}
+// Outcome pill for a closed row: green check when the review proposed the close
+// (the sweeper's hit-rate signal), muted when it was resolved externally.
+function closedPill(r){
+  if (!isClosed(r)) return "";
+  const confirmed = r.triageAction === "propose-close";
+  const title = (confirmed
+    ? "Closed after a propose-close verdict — the proposal was confirmed."
+    : "Closed externally after review.")
+    + (r.stateReason ? " Reason: " + r.stateReason + "." : "")
+    + (r.closedAt ? " Closed " + r.closedAt.slice(0,10) + "." : "");
+  return ' <span class="pill ' + (confirmed ? "closed-ok" : "closed-ext") + '" title="' + attr(title) + '">'
+    + (confirmed ? "closed ✓" : "closed") + "</span>";
+}
+function afCell(r){
+  // An existing sweeper draft PR trumps the copy button — mirrors the skill's own
+  // no-existing-PR gate (don't start a second fix for the same issue).
+  if (r.implementPr) return '<a href="'+esc(r.implementPr)+'" target="_blank" rel="noopener" title="Draft PR from the retired implement lane (historical)">draft PR ▸</a>';
+  if (r.fixPr) return '<a href="'+esc(r.fixPr)+'" target="_blank" rel="noopener" title="Draft fix PR from the retired fork fix lane (historical)">draft PR ▸</a>';
+  if (r.skillPr) return '<a href="'+esc(r.skillPr)+'" target="_blank" rel="noopener" title="Draft PR created with the sweeper-fix skill">draft PR ▸</a>';
+  if (r.autoFixable !== "true") return '<span class="muted">—</span>';
+  if (isClosed(r)) return '<span class="pill af-yes">yes</span>';
+  // Keep the copied line in sync with fixPromptLine() in skill-publish.ts.
+  return '<button class="copy fixprompt" data-n="'+esc(r.number)+'" title="Copy the prompt for your agent — the skill invocation plus the reviewed fix spec, ready to read, edit, and paste. The sweeper-fix skill implements it from your vscode checkout and opens a draft PR you own. First time? See the sweeper-fix skill link in the header." aria-label="Copy prompt for issue '+esc(r.number)+'">Copy prompt</button>'
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="spec" title="Read the reviewed fix spec the skill implements (fix brief, likely files, validation) — opens a dialog with a copy action" aria-label="Show fix spec for issue '+esc(r.number)+'">👁</button>';
+}
+function applyCell(r){
+  if (isClosed(r) || !r.proposedComment) return '<span class="muted">—</span>'; // nothing to apply on a closed issue
+  const stale = !r.contentFresh; // the ISSUE changed — policy drift is our detail, not the maintainer's
+  const cls = stale ? "copy warn" : "copy";
+  const title = stale ? "Heads up: the issue changed since this review (click for details) — the comment may still be useful."
+    : "Copy the suggested comment to paste on the issue";
+  // Apply & close REPLACES Copy comment when the vscode-tools host enables it
+  // (capability probe) — one primary action per row; the peek still shows the
+  // text for a manual paste. Close proposals ONLY: a needs-info comment must be
+  // posted WITHOUT closing, so those rows keep Copy comment even in the tools
+  // host (a post-without-close action is a later capability, not v1).
+  if (applyEnabled && r.triageAction === "propose-close") {
+    return '<button class="copy apply" data-n="'+esc(r.number)+'" title="Post this comment on the issue and close it ('+attr(r.closeReason || r.proposedLabel)+') — as you, under your own GitHub identity. The comment opens editable for review first; the live issue state is re-checked before anything is posted." aria-label="Apply comment and close issue '+esc(r.number)+'">Apply &amp; close'+(stale?' ⚠':'')+'</button>'
+      + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Read the suggested comment — opens a dialog with a copy action for a manual paste" aria-label="Show suggested comment for issue '+esc(r.number)+'">👁</button>';
+  }
+  return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+attr(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Read the suggested comment before copying — opens a dialog with the copy action inside" aria-label="Show suggested comment for issue '+esc(r.number)+'">👁</button>';
+}
+// Preview dialog: a single centered modal <dialog>, NOT an inline row — the virtual
+// scroller's spacer math assumes uniform row heights, so rows must never grow. A
+// modal (vs the old anchored popover) gives the full text room, can't clip against
+// the vscode-tools iframe edge, and carries the copy action for the careful path.
+const cpanel = document.createElement("dialog");
+cpanel.id = "cpanel";
+document.body.appendChild(cpanel);
+let cpanelFor = null;
+function closePanel(){ if (cpanel.open) cpanel.close(); }
+cpanel.addEventListener("close", () => { cpanelFor = null; });
+// Backdrop click dismisses: a click outside the dialog's box targets the dialog
+// element itself (the ::backdrop is part of it), so test the coordinates.
+cpanel.addEventListener("click", (e) => {
+  if (e.target !== cpanel) return;
+  const r = cpanel.getBoundingClientRect();
+  if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closePanel();
+});
+// Linkify issue references in dialog text WITHOUT innerHTML — issue-derived text
+// stays text (the injection guard below); only the matched refs become anchor
+// elements. Bare #N resolves to the target repo (the /duplicate of #N convention).
+// Used for comment/verify dialogs only — the fix spec may contain #hex colors.
+function linkifyInto(el, text){
+  // owner/repo#N is the cross-repo canonical form (verify dialogs, gate
+  // evidence) — a bare #N always means TARGET, but the slugged form must link
+  // to the CITED repo, never fall through to the bare-#N branch.
+  const re = /https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/(?:issues|pull)\/\d+|[\w.-]+\/[\w.-]+#\d+|#\d+/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    el.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const a = document.createElement("a");
+    a.href = m[0].startsWith("https:") ? m[0]
+      : m[0].startsWith("#") ? "https://github.com/" + TARGET + "/issues/" + m[0].slice(1)
+      : "https://github.com/" + m[0].replace("#", "/issues/");
+    a.target = "_blank"; a.rel = "noopener";
+    a.textContent = m[0];
+    el.appendChild(a);
+    last = m.index + m[0].length;
+  }
+  el.appendChild(document.createTextNode(text.slice(last)));
+}
+// Inline markdown for the spec dialog: `code` and **bold** spans become elements,
+// everything else stays text nodes — same no-innerHTML rule as linkifyInto.
+function renderInlineInto(el, text){
+  const re = /\*\*([^*]+)\*\*|`([^`]+)`/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    el.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const node = document.createElement(m[1] !== undefined ? "strong" : "code");
+    node.textContent = m[1] !== undefined ? m[1] : m[2];
+    el.appendChild(node);
+    last = m.index + m[0].length;
+  }
+  el.appendChild(document.createTextNode(text.slice(last)));
+}
+// Structured rendering for the fix-spec dialog: the record's "- **Label:** value"
+// bullets become labeled fields, the fix prompt becomes a quoted block. Built with
+// DOM nodes only (record text stays text); falls back to raw text on any
+// unrecognized shape so a hand-edited record still previews.
+function renderSpecInto(el, text){
+  el.className = "spec";
+  const fields = [];
+  let field = null;
+  for (const line of text.split("\n")) {
+    const m = /^-\s+\*\*(.+?):\*\*\s*(.*)$/.exec(line);
+    if (m) { field = { label: m[1], parts: m[2] ? [m[2]] : [] }; fields.push(field); }
+    else if (field) field.parts.push(line);
+    else if (line.trim()) { el.className = ""; el.textContent = text; return; }
+  }
+  if (!fields.length) { el.className = ""; el.textContent = text; return; }
+  for (const f of fields) {
+    if (/^auto-?fixable$/i.test(f.label)) continue; // every previewed row is agent-fixable — redundant
+    const div = document.createElement("div");
+    div.className = "f";
+    const k = document.createElement("span");
+    k.className = "k";
+    k.textContent = f.label;
+    div.appendChild(k);
+    const body = document.createElement("div");
+    body.className = /prompt/i.test(f.label) ? "prompt" : "v";
+    renderInlineInto(body, f.parts.join("\n").trim());
+    div.appendChild(body);
+    el.appendChild(div);
+  }
+}
+// action = { label, run } renders a primary copy button in the dialog footer — the
+// same copy the row button performs, for people who read before copying. Re-calling
+// with the panel open (a lazy fetch resolving) rebuilds the content in place.
+function openPanel(key, text, caption, render, action){
+  cpanelFor = key;
+  cpanel.textContent = ""; // rebuild; textContent throughout: issue-derived text stays text
+  if (caption) {
+    const cap = document.createElement("div");
+    cap.className = "cap";
+    cap.textContent = caption;
+    cpanel.appendChild(cap);
+  }
+  const body = document.createElement("div");
+  if (render === true) linkifyInto(body, text);
+  else if (typeof render === "function") render(body, text);
+  else body.textContent = text;
+  cpanel.appendChild(body);
+  const actions = document.createElement("div");
+  actions.className = "actions";
+  if (action) {
+    const act = document.createElement("button");
+    act.className = "copy apply";
+    act.textContent = action.label;
+    act.addEventListener("click", () => { closePanel(); action.run(); });
+    actions.appendChild(act);
+  }
+  const close = document.createElement("button");
+  close.className = "copy";
+  close.textContent = "Close";
+  close.addEventListener("click", closePanel);
+  actions.appendChild(close);
+  cpanel.appendChild(actions);
+  if (!cpanel.open) cpanel.showModal(); // Escape closes natively (the cancel event)
+}
+// The fix spec is NOT in the shipped payload (the 15k-row payload diet) — the spec
+// eye lazy-fetches the record from the public state branch on first click and shows
+// its Auto-fix candidate section. Cached per row; raw.githubusercontent serves CORS.
+async function fetchSpec(rec){
+  if (rec._spec) return rec._spec;
+  const raw = rec.reviewUrl.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+  const res = await fetch(raw);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const md = await res.text();
+  const m = /^## Auto-fix candidates*$/m.exec(md);
+  if (!m) throw new Error("no Auto-fix section");
+  const rest = md.slice(m.index + m[0].length);
+  const end = /^## /m.exec(rest);
+  rec._spec = (end ? rest.slice(0, end.index) : rest).replace(/^s*> ?/gm, "").trim();
+  return rec._spec;
+}
+// The full verification stamp is NOT in the shipped payload (only verdict +
+// evidence are) — the 2nd-review eye lazy-fetches the record like the spec eye
+// and formats the verify frontmatter: evidence, gate checks, when, engine.
+async function fetchVerify(rec){
+  if (rec._verify) return rec._verify;
+  const raw = rec.reviewUrl.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+  const res = await fetch(raw);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const md = await res.text();
+  const fmEnd = md.indexOf("\n---", 3);
+  const fm = fmEnd > 0 ? md.slice(0, fmEnd) : md;
+  const take = (k) => {
+    const m = new RegExp("^" + k + ':[ \\t]*"?(.*?)"?[ \\t]*$', "m").exec(fm);
+    return m ? m[1] : "";
+  };
+  const verdict = take("verifyVerdict");
+  if (!verdict) throw new Error("no verify stamp");
+  const lines = [verdict.toUpperCase()
+    + (take("verifyCanonical") ? " — canonical " + take("verifyCanonicalRepo") + "#" + take("verifyCanonical") : "")
+    + (take("verifyCanonicalKind") ? " (" + take("verifyCanonicalKind") + ")" : "")];
+  if (take("verifyEvidence")) lines.push("", take("verifyEvidence"));
+  const checks = take("verifyChecks");
+  if (checks) lines.push("", "Checks:", ...checks.split(" ").map(c => "  " + c.replace("=", " — ").replace(/_/g, " ")));
+  const when = take("verifiedAt").slice(0, 10);
+  if (when) lines.push("", "Verified " + when + (take("verifyEngine") ? " by " + take("verifyEngine") : "") + ".");
+  rec._verify = lines.join("\n");
+  return rec._verify;
+}
+// No scroll/click-outside dismiss handlers: showModal makes the page behind inert
+// (openers can't re-fire, the scroller can't move under the panel), Escape fires the
+// native cancel event, and the backdrop-click handler above covers click-outside.
+function exitClosedMode(){
+  if (!closedOnly) return;
+  closedOnly = false;
+  document.getElementById("closedCard").classList.remove("active");
+}
+document.querySelectorAll("#cards .card[data-action]").forEach(c => c.addEventListener("click", () => {
+  exitClosedMode(); // action facets describe the open set
+  const a = c.dataset.action;
+  actionFilter = actionFilter === a ? null : a;
+  // Explicitly drilling into keep-open means the user wants the full set, not just the
+  // few actionable keep-open rows — drop the actionable-only filter so the card's count matches.
+  if (actionFilter === "keep-open" && actionableOnly) { actionableOnly = false; actionableEl.checked = false; }
+  document.querySelectorAll("#cards .card[data-action]").forEach(x => x.classList.toggle("active", x.dataset.action === actionFilter));
+  render();
+}));
+document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
+  const k = th.dataset.k;
+  if (!k) return;
+  if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = 1; }
+  render();
+}));
+// Debounce typing only — clearing (incl. the × on type=search) renders immediately,
+// and card/sort/toggle handlers call render() directly so they stay instant.
+let qTimer;
+qEl.addEventListener("input", () => {
+  clearTimeout(qTimer);
+  if (qEl.value === "") { render(); return; }
+  qTimer = setTimeout(render, 200);
+});
+actionableEl.addEventListener("change", () => { actionableOnly = actionableEl.checked; render(); });
+const afCard = document.getElementById("afCard");
+afCard.addEventListener("click", () => { exitClosedMode(); autoFixOnly = !autoFixOnly; afCard.classList.toggle("active", autoFixOnly); render(); });
+const closedCard = document.getElementById("closedCard");
+closedCard.addEventListener("click", () => {
+  closedOnly = !closedOnly;
+  closedCard.classList.toggle("active", closedOnly);
+  render();
+});
+const qhelpBtn = document.getElementById("qhelp");
+qhelpBtn.addEventListener("click", () => {
+  openPanel("help", QHELP, "Filter syntax — bare words match as before; key:value tokens filter a field.");
+});
+
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+// AI-disclosure prefix on the pasted comment (team feedback 2026-08-16): the literal
+// 🤖 character, NEVER the GitHub colon-shortcode — normalizeComment() strips the emoji
+// so adoption still classifies verbatim, while the shortcode would normalize to the
+// word "robot" and downgrade every adoption to embedded (comment-adoption.test.ts).
+// Applied at copy time, not in the records: covers the whole corpus, and the record
+// stays the canonical prefix-free text the adoption matcher compares against.
+function aiPrefixed(s){ return s.startsWith("🤖") ? s : "🤖 " + s; }
+
+// Copy the suggested comment. Freshness is advisory, never a hard block — the human
+// is the final authority. Only ISSUE drift warns: generation-time content staleness
+// and, for otherwise-fresh rows, a click-time check for drift since the page was built.
+async function doCopy(rec){
+  const warnings = [];
+  const when = (rec.reviewedAt||"").slice(0,10);
+  if (!rec.contentFresh) warnings.push("The issue appears to have changed since it was reviewed (" + when + "), so the verdict may no longer fully apply.");
+
+  let note = warnings.length ? " (issue changed since review)" : "";
+  if (!warnings.length) {
+    // Otherwise fresh — re-verify no drift since the dashboard was generated.
+    try {
+      const api = rec.url.replace("https://github.com/", "https://api.github.com/repos/");
+      const res = await fetch(api, { headers: { "Accept": "application/vnd.github+json" } });
+      if (res.ok) {
+        const j = await res.json();
+        if (rec.verifiedUpdatedAt && j.updated_at && j.updated_at !== rec.verifiedUpdatedAt) {
+          warnings.push("The issue changed since this dashboard was generated, so the verdict may no longer apply.");
+          note = " (issue changed since review)";
+        } else {
+          note = " (verified current)";
+        }
+      } else { note = " (couldn't re-verify)"; }
+    } catch { note = " (couldn't re-verify)"; }
+  }
+
+  if (warnings.length && !confirm(warnings.join("\n\n") + "\n\nThe comment may still be useful — copy it anyway?")) return;
+
+  try {
+    await navigator.clipboard.writeText(aiPrefixed(rec.proposedComment));
+    toast("Copied comment" + note);
+  } catch {
+    toast("Copy failed — open the record and copy manually");
+  }
+}
+
+// Copy the skill invocation PLUS the reviewed spec (team feedback 2026-08-04:
+// "Copy prompt" should paste a prompt the developer can read and edit; the
+// skill treats the inline spec as the maintainer's intent and still runs every
+// gate). Keep in sync with fixPromptPayload()/SPEC_PASTE_HEADER in skill-publish.ts.
+// Shared by the row button (fast path) and the spec dialog's action (careful path).
+function copyFixPrompt(rec){
+  const line = "Fix " + TARGET + " issue #" + rec.number + " using the sweeper-fix skill.";
+  // The spec is not in the payload diet — lazy-fetched like the eye (cached after
+  // either use). Fetch failure degrades to the bare invocation: the skill then
+  // reads the record's spec itself.
+  const payload = fetchSpec(rec).then(
+    (spec) => ({ text: line + "\n\nReviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):\n" + spec, withSpec: true }),
+    () => ({ text: line, withSpec: false })
+  );
+  const done = (p) => toast(p.withSpec ? "Copied prompt + spec — read, edit, paste into your agent" : "Copied the invocation (spec fetch failed — the skill reads the record itself)");
+  const fallback = () => payload.then((p) => navigator.clipboard.writeText(p.text).then(() => done(p), () => toast("Copy failed")));
+  if (typeof ClipboardItem !== "undefined" && navigator.clipboard.write) {
+    // Promise-valued ClipboardItem keeps the user-gesture context alive across
+    // the spec fetch (Safari rejects a plain writeText after an await).
+    navigator.clipboard.write([new ClipboardItem({ "text/plain": payload.then((p) => new Blob([p.text], { type: "text/plain" })) })])
+      .then(() => payload.then(done), fallback);
+  } else { fallback(); }
+}
+
+// Ask the host to apply-and-close, over postMessage (we run in a sandboxed
+// cross-origin iframe with no host-origin access). This only PROPOSES the write: the
+// trusted host renders its OWN editable confirmation and performs the GitHub write on
+// the maintainer's explicit click there — the human gate, and the editing, live in the
+// host so what they approve is exactly what is posted. The comment arg is the initial
+// value; stale is the advisory drift hint the host surfaces (the server's live check is
+// the authority). Resolves with the host's terminal result {ok, closedAt?, stateReason?,
+// reason?}: the host answers on success or cancel, handling failed writes in its own
+// dialog. The long timeout is only a safety net for a crashed/absent host.
+function requestApply(rec, comment){
+  return new Promise((resolve) => {
+    const id = "a" + (++applyReqSeq);
+    let done = false;
+    const finish = (r) => { if (done) return; done = true; delete applyPending[id]; resolve(r); };
+    applyPending[id] = finish;
+    setTimeout(() => finish({ ok: false, reason: "the host did not respond" }), 300000);
+    window.parent.postMessage({ type: HUB_APPLY_REQ, id: id, repo: TARGET, issue: rec.number, comment: comment, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt, stale: !rec.contentFresh }, "*");
+  });
+}
+// Apply & close (vscode-tools host only): clicking the row button PROPOSES the close.
+// There is deliberately no dialog here — the editable confirmation lives in the trusted
+// host window (the productization plan's speed bump), so the maintainer edits and
+// approves the exact bytes that get posted, in a surface this untrusted page cannot
+// reach. We only post the proposal and react to the host's terminal answer; the host
+// performs the GitHub write under the maintainer's own identity and handles any failed
+// write (re-check, retry) inside its own dialog, replying only on success or cancel.
+async function doApply(rec, btn){
+  if (btn.dataset.pending) return;              // ignore repeat clicks while a proposal is live
+  btn.dataset.pending = "1";
+  btn.disabled = true;
+  const res = await requestApply(rec, aiPrefixed(rec.proposedComment));
+  if (res.ok) {
+    // Flip the row to the closed archive state locally — reconcile stamps the record
+    // (closedBy, comment adoption) on its next run. The re-render drops the button.
+    rec.currentState = "closed";
+    rec.closedAt = res.closedAt || new Date().toISOString();
+    rec.stateReason = res.stateReason || "";
+    render();
+    toast("Closed #" + rec.number + " with your comment");
+    return;
+  }
+  delete btn.dataset.pending;
+  btn.disabled = false;
+  // A cancel is a deliberate no-op (nothing was sent) — no toast. Anything else here is
+  // the host failing to answer within the timeout; real write failures are surfaced in
+  // the host dialog, not here.
+  if (res.reason !== "cancelled") toast("Apply not completed" + (res.reason ? " — " + res.reason : "") + ".");
+}
+rowsEl.addEventListener("click", (e) => {
+  const vBtn = e.target.closest("button.vbadge");
+  if (vBtn) {
+    const key = "verify:" + vBtn.dataset.n;
+    const rec = DATA.find(r => String(r.number) === vBtn.dataset.n);
+    if (!rec || !rec.verifyVerdict) return;
+    const cap = (rec.verifyCanonical
+        ? "2nd review — blinded verification of the duplicate claim against " + rec.verifyCanonicalRepo + "#" + rec.verifyCanonical
+          + (rec.verifyKind ? " (canonical kind: " + rec.verifyKind + ")" : "")
+        : "2nd review — blinded verification of the implemented-on-main claim against the cited commit's diff"
+          + (rec.verifyKind ? " (claim kind: " + rec.verifyKind + ")" : ""))
+      + (rec.verifyUnreleased ? ". Merged but in no stable release yet — the reporter cannot get the fix." : "")
+      + (rec.verifyStale ? ". STALE: the issue or record changed since this verification." : "")
+      + ".";
+    openPanel(key, rec.verifyVerdict.toUpperCase() + " — " + rec.verifyEvidence, cap, true);
+    return;
+  }
+  const peekBtn = e.target.closest("button.peek");
+  if (peekBtn) {
+    const kind = peekBtn.dataset.kind || "comment";
+    const key = kind + ":" + peekBtn.dataset.n;
+    const rec = DATA.find(r => String(r.number) === peekBtn.dataset.n);
+    if (!rec) return;
+    if (kind === "comment") {
+      // The dialog's copy action is the same doCopy the row button runs (incl. the
+      // click-time drift check) — read first, copy from here.
+      if (rec.proposedComment) openPanel(key, aiPrefixed(rec.proposedComment), "Suggested closing comment — the 🤖 prefix marks it as AI-drafted; keep or edit it after pasting.", true, { label: "Copy comment", run: () => doCopy(rec) });
+      return;
+    }
+    if (kind === "verify") {
+      const vCap = "2nd review — the verifier's full stamp, fetched from the record.";
+      openPanel(key, "Loading the verification stamp…", vCap);
+      fetchVerify(rec).then(
+        (v) => { if (cpanelFor === key) openPanel(key, v, vCap, true); },
+        () => { if (cpanelFor === key) openPanel(key, "Couldn't load the stamp — use the record link in the Review column.", vCap); }
+      );
+      return;
+    }
+    const specCap = "The reviewed spec the sweeper-fix skill implements.";
+    const specAction = { label: "Copy prompt", run: () => copyFixPrompt(rec) };
+    openPanel(key, "Loading the fix spec…", specCap, undefined, specAction);
+    fetchSpec(rec).then(
+      (spec) => { if (cpanelFor === key) openPanel(key, spec, specCap, renderSpecInto, specAction); },
+      () => { if (cpanelFor === key) openPanel(key, "Couldn't load the spec — use the record link in the Review column.", specCap, undefined, specAction); }
+    );
+    return;
+  }
+  const fixBtn = e.target.closest("button.copy.fixprompt");
+  if (fixBtn) {
+    const rec = DATA.find(r => String(r.number) === fixBtn.dataset.n);
+    if (rec) copyFixPrompt(rec);
+    return;
+  }
+  const applyBtn = e.target.closest("button.copy.apply");
+  if (applyBtn) {
+    const rec = DATA.find(r => String(r.number) === applyBtn.dataset.n);
+    if (rec) doApply(rec, applyBtn);
+    return;
+  }
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const rec = DATA.find(r => String(r.number) === btn.dataset.n);
+  if (rec) doCopy(rec);
+});
+
+// Deep link: #q=… seeds the filter box before the first render.
+const qm = /[#&]q=([^&]*)/.exec(location.hash);
+if (qm) { try { qEl.value = decodeURIComponent(qm[1]); } catch {} }
+render();
+// Host handshake (docs/tools-integration.md). Inside the vscode-tools iframe the
+// host answers HUB_READY with the apply allowlist and relays apply results; on
+// GitHub Pages there is no parent, so nothing arrives and the page stays copy-only.
+// Every message is validated to come from our parent — the only window we ever talk
+// to — and dispatched by an allow-list of known types; anything else is ignored.
+if (embedded) {
+  window.addEventListener("message", (e) => {
+    if (e.source !== window.parent) return;
+    const m = e.data;
+    if (!m || typeof m !== "object") return;
+    if (m.type === HUB_CAPS) {
+      const enabled = Array.isArray(m.applyTargets) && m.applyTargets.includes(TARGET);
+      if (enabled !== applyEnabled) { applyEnabled = enabled; vrender(true); }
+    } else if (m.type === HUB_APPLY_RES && typeof m.id === "string" && applyPending[m.id]) {
+      applyPending[m.id]({ ok: !!m.ok, status: m.status, reason: m.reason, closedAt: m.closedAt, stateReason: m.stateReason });
+    }
+  });
+  window.parent.postMessage({ type: HUB_READY }, "*");
+}
+</script>
+</body>
+</html>
