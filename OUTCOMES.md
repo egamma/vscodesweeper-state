@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 19328 issues reviewed · generated 2026-09-02 13:06 UTC
+[← Home](index.html) · 19330 issues reviewed · generated 2026-09-02 18:26 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 19328
+- **Issues reviewed:** 19330
 - **Close proposals:** 2553 (13% of reviewed)
-- **Acted on (closed):** 631 (25% of proposals)
-- **2nd-reviewed before the close:** 105 confirmed · 33 disputed · 4 unverifiable · 489 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Acted on (closed):** 632 (25% of proposals)
+- **2nd-reviewed before the close:** 106 confirmed · 33 disputed · 4 unverifiable · 489 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 324 (51% of acted-on) — 288 verbatim, 20 inside a longer comment, 16 edited
-- **Likely fixed instead:** 72 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (71 of the 306 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1922 open close proposals
+- **Likely fixed instead:** 73 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (72 of the 307 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1921 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1946 of the 19328 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1922 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1965 of the 19330 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1921 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -28,8 +28,8 @@ _Close proposals count the whole corpus (1946 of the 19328 reviewed issues have 
 | kycutler | 30 | 14 (47%) |
 | dmitrivMS | 26 | 0 (0%) |
 | chrmarti | 20 | 19 (95%) |
+| benibenj | 16 | 10 (63%) |
 | sbatten | 16 | 16 (100%) |
-| benibenj | 15 | 10 (67%) |
 | deepak1556 | 13 | 0 (0%) |
 | aeschli | 12 | 11 (92%) |
 | sandy081 | 12 | 0 (0%) |
@@ -89,13 +89,13 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 627 of 627 open proposals verified · 107 closed unverified
+- **duplicate:** 626 of 626 open proposals verified · 107 closed unverified
 - **implemented-on-main:** 527 of 527 open proposals verified · 97 closed unverified
 - **Verdict mix:** 869 confirmed (28 with the fix unreleased) · 393 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 764 | 104 | 1 |
+| confirmed | 763 | 105 | 1 |
 | disputed | 360 | 33 | 0 |
 | unverifiable | 30 | 4 | 0 |
 
@@ -149,15 +149,15 @@ _The 393 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 757 |
-| propose-close | 631 |
-| needs-info | 428 |
-| route-to-area | 130 |
+| keep-open | 771 |
+| propose-close | 632 |
+| needs-info | 430 |
+| route-to-area | 132 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1005 |
-| not_planned | 677 |
+| completed | 1023 |
+| not_planned | 678 |
 | duplicate | 252 |
 | not_found | 12 |
 
@@ -165,7 +165,7 @@ _The 393 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 821 | 194 | 24% | 96 | 19 |
+| duplicate | 821 | 195 | 24% | 96 | 20 |
 | implemented on main | 730 | 206 | 28% | 133 | — |
 | as-designed | 295 | 70 | 24% | 45 | 14 |
 | question | 248 | 29 | 12% | 9 | 10 |
