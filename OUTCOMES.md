@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 19330 issues reviewed · generated 2026-09-02 18:26 UTC
+[← Home](index.html) · 19427 issues reviewed · generated 2026-09-03 13:11 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 19330
-- **Close proposals:** 2553 (13% of reviewed)
-- **Acted on (closed):** 632 (25% of proposals)
-- **2nd-reviewed before the close:** 106 confirmed · 33 disputed · 4 unverifiable · 489 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 324 (51% of acted-on) — 288 verbatim, 20 inside a longer comment, 16 edited
-- **Likely fixed instead:** 73 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (72 of the 307 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1921 open close proposals
+- **Issues reviewed:** 19427
+- **Close proposals:** 2560 (13% of reviewed)
+- **Acted on (closed):** 636 (25% of proposals)
+- **2nd-reviewed before the close:** 108 confirmed · 33 disputed · 4 unverifiable · 491 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 325 (51% of acted-on) — 289 verbatim, 20 inside a longer comment, 16 edited
+- **Likely fixed instead:** 74 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (73 of the 310 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1924 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1965 of the 19330 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1921 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (1989 of the 19427 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1924 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,7 +21,7 @@ _Close proposals count the whole corpus (1965 of the 19330 reviewed issues have 
 | --- | --- | --- |
 | alexdima | 114 | 107 (94%) |
 | justschen | 107 | 54 (50%) |
-| vs-code-engineering | 50 | 0 (0%) |
+| vs-code-engineering | 51 | 0 (0%) |
 | roblourens | 40 | 17 (43%) |
 | hediet | 35 | 35 (100%) |
 | lramos15 | 33 | 0 (0%) |
@@ -30,11 +30,11 @@ _Close proposals count the whole corpus (1965 of the 19330 reviewed issues have 
 | chrmarti | 20 | 19 (95%) |
 | benibenj | 16 | 10 (63%) |
 | sbatten | 16 | 16 (100%) |
+| aeschli | 14 | 11 (79%) |
 | deepak1556 | 13 | 0 (0%) |
-| aeschli | 12 | 11 (92%) |
 | sandy081 | 12 | 0 (0%) |
+| egamma | 10 | 10 (100%) |
 | (unattributed) | 9 | 0 (0%) |
-| egamma | 9 | 9 (100%) |
 | lszomoru | 9 | 8 (89%) |
 | mrleemurray | 7 | 5 (71%) |
 | vritant24 | 7 | 3 (43%) |
@@ -78,7 +78,7 @@ _Close proposals count the whole corpus (1965 of the 19330 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1783 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1785 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
@@ -89,13 +89,13 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 626 of 626 open proposals verified · 107 closed unverified
-- **implemented-on-main:** 527 of 527 open proposals verified · 97 closed unverified
-- **Verdict mix:** 869 confirmed (28 with the fix unreleased) · 393 disputed · 34 unverifiable
+- **duplicate:** 624 of 624 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 526 of 526 open proposals verified · 97 closed unverified
+- **Verdict mix:** 868 confirmed (28 with the fix unreleased) · 393 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 763 | 105 | 1 |
+| confirmed | 760 | 107 | 1 |
 | disputed | 360 | 33 | 0 |
 | unverifiable | 30 | 4 | 0 |
 
@@ -149,28 +149,28 @@ _The 393 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 771 |
-| propose-close | 632 |
-| needs-info | 430 |
-| route-to-area | 132 |
+| keep-open | 784 |
+| propose-close | 636 |
+| needs-info | 435 |
+| route-to-area | 134 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1023 |
-| not_planned | 678 |
-| duplicate | 252 |
-| not_found | 12 |
+| completed | 1038 |
+| not_planned | 682 |
+| duplicate | 256 |
+| not_found | 13 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 821 | 195 | 24% | 96 | 20 |
-| implemented on main | 730 | 206 | 28% | 133 | — |
-| as-designed | 295 | 70 | 24% | 45 | 14 |
-| question | 248 | 29 | 12% | 9 | 10 |
-| out-of-scope | 173 | 36 | 21% | 7 | 7 |
-| not-reproducible | 135 | 25 | 19% | 8 | 8 |
+| duplicate | 822 | 198 | 24% | 97 | 20 |
+| implemented on main | 729 | 206 | 28% | 133 | — |
+| as-designed | 294 | 71 | 24% | 45 | 15 |
+| question | 249 | 29 | 12% | 9 | 10 |
+| out-of-scope | 178 | 36 | 20% | 7 | 7 |
+| not-reproducible | 137 | 25 | 18% | 8 | 8 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | extension-candidate | 29 | 8 | 28% | 2 | — |
