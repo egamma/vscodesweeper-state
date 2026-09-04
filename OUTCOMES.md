@@ -1,28 +1,29 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 19427 issues reviewed · generated 2026-09-03 13:11 UTC
+[← Home](index.html) · 19519 issues reviewed · generated 2026-09-04 13:13 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 19427
-- **Close proposals:** 2560 (13% of reviewed)
-- **Acted on (closed):** 636 (25% of proposals)
-- **2nd-reviewed before the close:** 108 confirmed · 33 disputed · 4 unverifiable · 491 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 325 (51% of acted-on) — 289 verbatim, 20 inside a longer comment, 16 edited
-- **Likely fixed instead:** 74 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (73 of the 310 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1924 open close proposals
+- **Issues reviewed:** 19519
+- **Close proposals:** 2574 (13% of reviewed)
+- **Acted on (closed):** 679 (26% of proposals)
+- **2nd-reviewed before the close:** 125 confirmed · 38 disputed · 5 unverifiable · 511 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 346 (51% of acted-on) — 303 verbatim, 20 inside a longer comment, 23 edited
+- **Likely fixed instead:** 77 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (76 of the 332 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1895 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (1989 of the 19427 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1924 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2082 of the 19519 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1895 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
 | User | Closures | With sweeper comment |
 | --- | --- | --- |
+| justschen | 120 | 63 (53%) |
 | alexdima | 114 | 107 (94%) |
-| justschen | 107 | 54 (50%) |
-| vs-code-engineering | 51 | 0 (0%) |
+| vs-code-engineering | 53 | 0 (0%) |
 | roblourens | 40 | 17 (43%) |
+| deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
 | lramos15 | 33 | 0 (0%) |
 | kycutler | 30 | 14 (47%) |
@@ -31,10 +32,9 @@ _Close proposals count the whole corpus (1989 of the 19427 reviewed issues have 
 | benibenj | 16 | 10 (63%) |
 | sbatten | 16 | 16 (100%) |
 | aeschli | 14 | 11 (79%) |
-| deepak1556 | 13 | 0 (0%) |
 | sandy081 | 12 | 0 (0%) |
+| (unattributed) | 10 | 0 (0%) |
 | egamma | 10 | 10 (100%) |
-| (unattributed) | 9 | 0 (0%) |
 | lszomoru | 9 | 8 (89%) |
 | mrleemurray | 7 | 5 (71%) |
 | vritant24 | 7 | 3 (43%) |
@@ -63,6 +63,7 @@ _Close proposals count the whole corpus (1989 of the 19427 reviewed issues have 
 | dustintran333 | 1 | 0 (0%) |
 | JMS-1 | 1 | 0 (0%) |
 | jruales | 1 | 0 (0%) |
+| M2zG0a | 1 | 0 (0%) |
 | Mapalmeira | 1 | 0 (0%) |
 | monolithed | 1 | 0 (0%) |
 | na2co3-ftw | 1 | 0 (0%) |
@@ -78,7 +79,7 @@ _Close proposals count the whole corpus (1989 of the 19427 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1785 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1792 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
@@ -89,20 +90,25 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 624 of 624 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 526 of 526 open proposals verified · 97 closed unverified
-- **Verdict mix:** 868 confirmed (28 with the fix unreleased) · 393 disputed · 34 unverifiable
+- **duplicate:** 623 of 623 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 509 of 509 open proposals verified · 97 closed unverified
+- **Verdict mix:** 871 confirmed (27 with the fix unreleased) · 395 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 760 | 107 | 1 |
-| disputed | 360 | 33 | 0 |
-| unverifiable | 30 | 4 | 0 |
+| confirmed | 746 | 124 | 1 |
+| disputed | 357 | 38 | 0 |
+| unverifiable | 29 | 5 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#282099](https://github.com/microsoft/vscode/issues/282099) Graphical Bug | 2026-09-04 | deepak1556 | Commit disables the Skia Graphite backend, but the report's own GPU status already shows skia_graphite: disabled_off, so that renderer was not in use and cannot explain the reporter's disappearing window elements. |
+| [#317985](https://github.com/microsoft/vscode/issues/317985) [Enhancement] Provide the user with an explanation of why VSC requests display output access upon first invocation. | 2026-09-04 | deepak1556 | gate: the cited sha 8dc07ba0d4 is not reachable from the default branch — the claimed fix was never merged |
+| [#113175](https://github.com/microsoft/vscode/issues/113175) Linux: native context menu runs action under mouse when opened | 2026-09-04 | deepak1556 | Commit only bumps Electron/Node/Chromium versions and build metadata; it contains no code touching Linux native context-menu input handling, so it cannot be shown to address the reported right-click-selects-item mechanism. |
+| [#293060](https://github.com/microsoft/vscode/issues/293060) Enhance GitHub Copilot Chat UI with Native Components for Interactive Operations | 2026-09-03 | justschen | B tracks the custom-renderer API that A criticizes as iframe-based; A asks instead for native reusable selection/input components, so resolving B does not deliver A's non-iframe ask. |
+| [#286381](https://github.com/microsoft/vscode/issues/286381) No clear indication that a thought can be expanded | 2026-09-03 | justschen | Commit adds a chevron with opacity 0 revealed only on hover, so a collapsed thought title still shows no at-rest expando — the persistent, always-visible indicator the report requested is missing. |
 | [#277300](https://github.com/microsoft/vscode/issues/277300) Google Authentication stopped working in 1.106 | 2026-08-31 | chrmarti | A is a concrete 1.106 regression breaking Google OAuth token refresh with 'unable to get issuer certificate'; B only tracks rollout/telemetry of the experimental http.systemCertificatesNode setting, and completing it needn't fix A. |
 | [#130172](https://github.com/microsoft/vscode/issues/130172) Proxy Credentials Popup not showing | 2026-08-31 | chrmarti | Commit adds proxy basic-auth lookup for extension-host requests via proxy-agent, but node and browser RequestService — the path settings sync uses — explicitly return undefined, so the reported missing sync credentials prompt persists. |
 | [#292795](https://github.com/microsoft/vscode/issues/292795) "Invalid String Length" in Copilot Chat | 2026-08-31 | chrmarti | A reports 'Invalid String Length' with no images, attachments, or tool output involved and says model/mode is irrelevant; B's root cause is base64 image/binary payloads inlined into session JSONL — shared symptom, unestablished shared trigger. |
@@ -137,7 +143,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 393 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 395 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -149,32 +155,32 @@ _The 393 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 784 |
-| propose-close | 636 |
-| needs-info | 435 |
-| route-to-area | 134 |
+| keep-open | 808 |
+| propose-close | 679 |
+| needs-info | 457 |
+| route-to-area | 138 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1038 |
-| not_planned | 682 |
-| duplicate | 256 |
-| not_found | 13 |
+| completed | 1085 |
+| not_planned | 715 |
+| duplicate | 268 |
+| not_found | 14 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 822 | 198 | 24% | 97 | 20 |
-| implemented on main | 729 | 206 | 28% | 133 | — |
-| as-designed | 294 | 71 | 24% | 45 | 15 |
-| question | 249 | 29 | 12% | 9 | 10 |
-| out-of-scope | 178 | 36 | 20% | 7 | 7 |
-| not-reproducible | 137 | 25 | 18% | 8 | 8 |
+| duplicate | 826 | 203 | 25% | 101 | 20 |
+| implemented on main | 730 | 224 | 31% | 141 | — |
+| as-designed | 295 | 76 | 26% | 47 | 16 |
+| question | 253 | 31 | 12% | 9 | 11 |
+| out-of-scope | 178 | 47 | 26% | 14 | 8 |
+| not-reproducible | 139 | 27 | 19% | 8 | 8 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | extension-candidate | 29 | 8 | 28% | 2 | — |
 | other | 21 | 5 | 24% | 3 | — |
-| invalid | 3 | 1 | 33% | 0 | — |
+| invalid | 5 | 1 | 20% | 0 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
