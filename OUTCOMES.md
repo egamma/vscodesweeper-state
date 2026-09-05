@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 19519 issues reviewed · generated 2026-09-04 13:13 UTC
+[← Home](index.html) · 19637 issues reviewed · generated 2026-09-05 12:12 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 19519
-- **Close proposals:** 2574 (13% of reviewed)
-- **Acted on (closed):** 679 (26% of proposals)
-- **2nd-reviewed before the close:** 125 confirmed · 38 disputed · 5 unverifiable · 511 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 346 (51% of acted-on) — 303 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 77 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (76 of the 332 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1895 open close proposals
+- **Issues reviewed:** 19637
+- **Close proposals:** 2587 (13% of reviewed)
+- **Acted on (closed):** 693 (27% of proposals)
+- **2nd-reviewed before the close:** 130 confirmed · 39 disputed · 5 unverifiable · 519 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 356 (51% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
+- **Likely fixed instead:** 79 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (78 of the 336 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1894 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2082 of the 19519 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1895 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2111 of the 19637 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1894 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,15 +21,15 @@ _Close proposals count the whole corpus (2082 of the 19519 reviewed issues have 
 | --- | --- | --- |
 | justschen | 120 | 63 (53%) |
 | alexdima | 114 | 107 (94%) |
-| vs-code-engineering | 53 | 0 (0%) |
+| vs-code-engineering | 55 | 0 (0%) |
 | roblourens | 40 | 17 (43%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
 | lramos15 | 33 | 0 (0%) |
+| chrmarti | 31 | 29 (94%) |
 | kycutler | 30 | 14 (47%) |
 | dmitrivMS | 26 | 0 (0%) |
-| chrmarti | 20 | 19 (95%) |
-| benibenj | 16 | 10 (63%) |
+| benibenj | 17 | 10 (59%) |
 | sbatten | 16 | 16 (100%) |
 | aeschli | 14 | 11 (79%) |
 | sandy081 | 12 | 0 (0%) |
@@ -79,7 +79,7 @@ _Close proposals count the whole corpus (2082 of the 19519 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1792 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1798 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
@@ -90,20 +90,21 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 623 of 623 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 509 of 509 open proposals verified · 97 closed unverified
-- **Verdict mix:** 871 confirmed (27 with the fix unreleased) · 395 disputed · 34 unverifiable
+- **duplicate:** 628 of 628 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 504 of 504 open proposals verified · 97 closed unverified
+- **Verdict mix:** 875 confirmed (27 with the fix unreleased) · 397 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 746 | 124 | 1 |
-| disputed | 357 | 38 | 0 |
+| confirmed | 745 | 129 | 1 |
+| disputed | 358 | 39 | 0 |
 | unverifiable | 29 | 5 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#307061](https://github.com/microsoft/vscode/issues/307061) the cmd line you generated just disappear | 2026-09-04 | chrmarti | The commit is a refactor removing CodeBlockModelCollection and async text-model resolution; nothing in it addresses generated command-line content vanishing after rendering, and the report names no mechanism the diff plausibly reaches. |
 | [#282099](https://github.com/microsoft/vscode/issues/282099) Graphical Bug | 2026-09-04 | deepak1556 | Commit disables the Skia Graphite backend, but the report's own GPU status already shows skia_graphite: disabled_off, so that renderer was not in use and cannot explain the reporter's disappearing window elements. |
 | [#317985](https://github.com/microsoft/vscode/issues/317985) [Enhancement] Provide the user with an explanation of why VSC requests display output access upon first invocation. | 2026-09-04 | deepak1556 | gate: the cited sha 8dc07ba0d4 is not reachable from the default branch — the claimed fix was never merged |
 | [#113175](https://github.com/microsoft/vscode/issues/113175) Linux: native context menu runs action under mouse when opened | 2026-09-04 | deepak1556 | Commit only bumps Electron/Node/Chromium versions and build metadata; it contains no code touching Linux native context-menu input handling, so it cannot be shown to address the reported right-click-selects-item mechanism. |
@@ -143,7 +144,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 395 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 397 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -155,31 +156,31 @@ _The 395 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 808 |
-| propose-close | 679 |
-| needs-info | 457 |
-| route-to-area | 138 |
+| keep-open | 814 |
+| propose-close | 693 |
+| needs-info | 465 |
+| route-to-area | 139 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1085 |
-| not_planned | 715 |
-| duplicate | 268 |
+| completed | 1099 |
+| not_planned | 727 |
+| duplicate | 271 |
 | not_found | 14 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 826 | 203 | 25% | 101 | 20 |
-| implemented on main | 730 | 224 | 31% | 141 | — |
-| as-designed | 295 | 76 | 26% | 47 | 16 |
-| question | 253 | 31 | 12% | 9 | 11 |
-| out-of-scope | 178 | 47 | 26% | 14 | 8 |
-| not-reproducible | 139 | 27 | 19% | 8 | 8 |
+| duplicate | 832 | 204 | 25% | 101 | 21 |
+| implemented on main | 730 | 229 | 31% | 146 | — |
+| as-designed | 297 | 76 | 26% | 47 | 16 |
+| question | 253 | 32 | 13% | 9 | 11 |
+| out-of-scope | 183 | 52 | 28% | 18 | 8 |
+| not-reproducible | 139 | 28 | 20% | 9 | 8 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
-| extension-candidate | 29 | 8 | 28% | 2 | — |
+| extension-candidate | 29 | 9 | 31% | 2 | 1 |
 | other | 21 | 5 | 24% | 3 | — |
 | invalid | 5 | 1 | 20% | 0 | — |
 
