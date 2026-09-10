@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 38 swept users · 19862 issues reviewed · generated 2026-09-09 13:14 UTC
+[← Home](index.html) · 38 swept users · 19864 issues reviewed · generated 2026-09-10 20:37 UTC
 
 ## Verdict distribution
 
@@ -21,8 +21,8 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 13 | 0% | — | — | — | — | — | — |
 | **all close proposals** | 2617 | 13% | 1310 (50%) | 876 (67%) | 400 (31%) | 34 (3%) | — | — |
 | needs info | 2599 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 14646 | 74% | — | — | — | — | — | — |
-| all reviews | 19862 | 100% | | | | | | |
+| keep open (incl. route to area) | 14648 | 74% | — | — | — | — | — | — |
+| all reviews | 19864 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -59,7 +59,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | pwang347 | 227 | 24 (11%) | 34 (15%) | 169 (74%) | **26%** |
 | vijayupadya | 222 | 21 (9%) | 37 (17%) | 164 (74%) | **26%** |
 | vritant24 | 211 | 27 (13%) | 23 (11%) | 161 (76%) | **24%** |
-| alexr00 | 197 | 10 (5%) | 8 (4%) | 179 (91%) | **9%** |
+| alexr00 | 198 | 10 (5%) | 8 (4%) | 180 (91%) | **9%** |
 | hawkticehurst | 184 | 21 (11%) | 19 (10%) | 144 (78%) | **22%** |
 | bhavyaus | 174 | 14 (8%) | 16 (9%) | 144 (83%) | **17%** |
 | amunger | 168 | 5 (3%) | 10 (6%) | 153 (91%) | **9%** |
@@ -104,7 +104,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | pwang347 | 169 | 17 | 9 | 10% |
 | vijayupadya | 164 | 15 | 5 | 9% |
 | vritant24 | 161 | 16 | 8 | 10% |
-| alexr00 | 179 | 9 | 5 | 5% |
+| alexr00 | 180 | 9 | 5 | 5% |
 | hawkticehurst | 144 | 12 | 5 | 8% |
 | bhavyaus | 144 | 17 | 6 | 12% |
 | amunger | 153 | 32 | 13 | 21% |
@@ -159,4 +159,4 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | jrieken | 7 | — | 1 (14%) | 4 (57%) | — | 1 (14%) | 1 (14%) | — | — |
 | benvillalobos | 14 | 1 (7%) | 4 (29%) | 2 (14%) | — | 3 (21%) | 1 (7%) | 2 (14%) | 1 (7%) |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 764 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 766 reviews — mostly co-assignees)._

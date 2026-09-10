@@ -1,25 +1,25 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 19862 issues reviewed · generated 2026-09-09 13:14 UTC
+[← Home](index.html) · 19864 issues reviewed · generated 2026-09-10 20:37 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 19862
+- **Issues reviewed:** 19864
 - **Close proposals:** 2617 (13% of reviewed)
-- **Acted on (closed):** 700 (27% of proposals)
-- **2nd-reviewed before the close:** 132 confirmed · 39 disputed · 5 unverifiable · 524 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 356 (51% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 80 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (79 of the 343 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1917 open close proposals
+- **Acted on (closed):** 706 (27% of proposals)
+- **2nd-reviewed before the close:** 133 confirmed · 40 disputed · 5 unverifiable · 528 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 356 (50% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
+- **Likely fixed instead:** 83 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (82 of the 349 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1911 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2228 of the 19862 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1917 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2274 of the 19864 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1911 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
 | User | Closures | With sweeper comment |
 | --- | --- | --- |
-| justschen | 120 | 63 (53%) |
+| justschen | 123 | 63 (51%) |
 | alexdima | 114 | 107 (94%) |
 | vs-code-engineering | 57 | 0 (0%) |
 | roblourens | 40 | 17 (43%) |
@@ -31,9 +31,9 @@ _Close proposals count the whole corpus (2228 of the 19862 reviewed issues have 
 | dmitrivMS | 27 | 0 (0%) |
 | benibenj | 17 | 10 (59%) |
 | sbatten | 16 | 16 (100%) |
-| aeschli | 14 | 11 (79%) |
+| aeschli | 15 | 11 (73%) |
 | sandy081 | 12 | 0 (0%) |
-| (unattributed) | 10 | 0 (0%) |
+| (unattributed) | 11 | 0 (0%) |
 | egamma | 10 | 10 (100%) |
 | lszomoru | 9 | 8 (89%) |
 | mrleemurray | 8 | 5 (63%) |
@@ -61,6 +61,7 @@ _Close proposals count the whole corpus (2228 of the 19862 reviewed issues have 
 | dileepyavan | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
 | dustintran333 | 1 | 0 (0%) |
+| federicobrancasi | 1 | 0 (0%) |
 | JMS-1 | 1 | 0 (0%) |
 | jruales | 1 | 0 (0%) |
 | M2zG0a | 1 | 0 (0%) |
@@ -91,20 +92,21 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 630 of 630 open proposals verified · 108 closed unverified
+- **duplicate:** 628 of 628 open proposals verified · 108 closed unverified
 - **implemented-on-main:** 504 of 504 open proposals verified · 97 closed unverified
 - **Verdict mix:** 876 confirmed (27 with the fix unreleased) · 400 disputed · 34 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 744 | 131 | 1 |
-| disputed | 361 | 39 | 0 |
+| confirmed | 743 | 132 | 1 |
+| disputed | 360 | 40 | 0 |
 | unverifiable | 29 | 5 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#334340](https://github.com/microsoft/vscode/issues/334340) Remote SSH issues with VS Code 1.136.1 | 2026-09-09 | justschen | A reports extensions failing to retrieve document content via URI (e.g. BUILD.bazel) over Remote-SSH; B is a product-icon font (glicons.woff2) resource load failure causing tofu glyphs — different mechanisms. |
 | [#307061](https://github.com/microsoft/vscode/issues/307061) the cmd line you generated just disappear | 2026-09-04 | chrmarti | The commit is a refactor removing CodeBlockModelCollection and async text-model resolution; nothing in it addresses generated command-line content vanishing after rendering, and the report names no mechanism the diff plausibly reaches. |
 | [#282099](https://github.com/microsoft/vscode/issues/282099) Graphical Bug | 2026-09-04 | deepak1556 | Commit disables the Skia Graphite backend, but the report's own GPU status already shows skia_graphite: disabled_off, so that renderer was not in use and cannot explain the reporter's disappearing window elements. |
 | [#317985](https://github.com/microsoft/vscode/issues/317985) [Enhancement] Provide the user with an explanation of why VSC requests display output access upon first invocation. | 2026-09-04 | deepak1556 | gate: the cited sha 8dc07ba0d4 is not reachable from the default branch — the claimed fix was never merged |
@@ -157,32 +159,32 @@ _The 400 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 894 |
-| propose-close | 700 |
-| needs-info | 489 |
-| route-to-area | 145 |
+| keep-open | 926 |
+| propose-close | 706 |
+| needs-info | 493 |
+| route-to-area | 149 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1172 |
-| not_planned | 765 |
-| duplicate | 277 |
-| not_found | 14 |
+| completed | 1211 |
+| not_planned | 769 |
+| duplicate | 278 |
+| not_found | 16 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 835 | 205 | 25% | 101 | 22 |
+| duplicate | 835 | 207 | 25% | 101 | 23 |
 | implemented on main | 731 | 230 | 31% | 146 | — |
 | as-designed | 302 | 77 | 25% | 47 | 16 |
-| question | 258 | 32 | 12% | 9 | 11 |
-| out-of-scope | 190 | 54 | 28% | 18 | 8 |
+| question | 258 | 34 | 13% | 9 | 12 |
+| out-of-scope | 190 | 55 | 29% | 18 | 8 |
 | not-reproducible | 140 | 28 | 20% | 9 | 8 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | extension-candidate | 29 | 9 | 31% | 2 | 1 |
 | other | 21 | 5 | 24% | 3 | — |
-| invalid | 13 | 3 | 23% | 0 | — |
+| invalid | 13 | 4 | 31% | 0 | 1 |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
