@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code Sweeper — Review Dashboard</title>
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de;
+    --accent: #0969da; --row: #f6f8fa;
+    --close: #cf222e; --keep: #1a7f37; --info: #9a6700;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg); color: var(--fg); padding: 24px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); margin-bottom: 20px; }
+  .cards { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+  .card { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; cursor: pointer;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg); border-radius: 8px;
+    padding: 10px 14px; min-width: 120px; font: inherit; }
+  .card.active { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+  .card .n { font-size: 22px; font-weight: 600; }
+  .card .l { color: var(--muted); font-size: 12px; }
+  /* Auto-fixable is a separate axis: divider before it + green (not blue) active. */
+  .af-card { margin-left: 12px; position: relative; }
+  .af-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .af-card.active { border-color: var(--keep); box-shadow: 0 0 0 1px var(--keep) inset; }
+  .af-card.active .l, .af-card.active .n { color: var(--keep); }
+  /* Closed is an exclusive view swap (not a stacking filter): divider + muted active. */
+  .closed-card { margin-left: 12px; position: relative; }
+  .closed-card::before { content: ""; position: absolute; left: -12px; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .closed-card.active { border-color: var(--muted); box-shadow: 0 0 0 1px var(--muted) inset; }
+  .closed-ok { color: var(--keep); border-color: var(--keep); }
+  .closed-ext { color: var(--muted); border-color: var(--muted); }
+  .controls { margin-bottom: 12px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  input[type=search] { width: 100%; max-width: 360px; padding: 8px 10px; border: 1px solid var(--border);
+    border-radius: 6px; background: var(--bg); color: var(--fg); font: inherit; }
+  .toggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px;
+    cursor: pointer; user-select: none; white-space: nowrap; }
+  .toggle input { accent-color: var(--accent); }
+  .result-count { color: var(--muted); font-size: 13px; white-space: nowrap; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  /* Fixed-height single-line rows — the precondition for windowed rendering (every
+     data row must be the same height so the spacer math holds). Long cells clamp
+     with an ellipsis; the full text lives in the title attribute. */
+  tbody td { padding-top: 0; padding-bottom: 0; height: 38px; vertical-align: middle; white-space: nowrap; }
+  td.clamp { max-width: 420px; overflow: hidden; text-overflow: ellipsis; }
+  td.owner { max-width: 140px; overflow: hidden; text-overflow: ellipsis; }
+  tr.spacer td { height: auto; padding: 0; border: 0; }
+  /* Per-view columns (see hiddenColumns): render() toggles hide-* classes on the
+     table, so a column's header and cells vanish together. */
+  table.hide-rating .col-rating, table.hide-verify .col-verify,
+  table.hide-apply .col-apply, table.hide-agentfix .col-agentfix { display: none; }
+  th { cursor: pointer; user-select: none; white-space: nowrap; color: var(--muted); font-weight: 600; }
+  th:not([data-k]) { cursor: default; }
+  th[data-k]:hover { color: var(--fg); }
+  tbody tr:hover { background: var(--row); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    border: 1px solid transparent; white-space: nowrap; }
+  .a-propose-close { color: var(--close); border-color: var(--close); }
+  .a-keep-open { color: var(--keep); border-color: var(--keep); }
+  .a-needs-info { color: var(--info); border-color: var(--info); }
+  .area-chip { color: var(--muted); border-color: var(--border); font-weight: 400; cursor: help; }
+  .af-yes { color: var(--keep); border-color: var(--keep); }
+  /* 2nd-review badges: clickable pills (the evidence opens in the preview dialog). Refuted
+     stays visible but reads as a warning — it is the QA queue, never hidden. */
+  button.vbadge { cursor: pointer; background: none; font: inherit; font-size: 12px; }
+  .v-confirmed { color: var(--keep); border-color: var(--keep); }
+  .v-refuted { color: var(--close); border-color: var(--close); opacity: .75; }
+  .v-stale { color: var(--info); border-color: var(--info); }
+  .v-unreleased { color: var(--info); border-color: var(--info); }
+  .v-unver { color: var(--muted); border-color: var(--border); }
+  .conf { display: inline-block; width: 60px; height: 6px; border-radius: 3px; background: var(--border); position: relative; vertical-align: middle; }
+  .conf > i { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 3px; background: var(--accent); }
+  .muted { color: var(--muted); }
+  a.flag { color: var(--muted); }
+  a.flag:hover { color: var(--accent); text-decoration: none; }
+  .vtier { cursor: help; border-bottom: 1px dotted var(--muted); }
+  code { background: var(--row); padding: 1px 5px; border-radius: 4px; }
+  footer { margin-top: 24px; color: var(--muted); font-size: 12px; }
+  button.copy { font: inherit; font-size: 12px; cursor: pointer; white-space: nowrap;
+    border: 1px solid var(--border); background: var(--bg); color: var(--fg);
+    border-radius: 6px; padding: 3px 8px; }
+  button.copy:hover { border-color: var(--accent); color: var(--accent); }
+  button.copy.warn { color: var(--info); border-color: var(--info); }
+  button.copy.warn:hover { color: var(--info); border-color: var(--info); }
+  /* Apply & close (vscode-tools host only — see the capability probe): accent-
+     colored to read as the primary action next to the neutral Copy comment. */
+  button.copy.apply { color: var(--accent); border-color: var(--accent); }
+  button.copy.apply:hover { background: var(--accent); color: var(--bg); }
+  button.peek { font: inherit; font-size: 14px; line-height: 1; cursor: pointer;
+    border: none; background: none; padding: 0 2px; opacity: .55; }
+  button.peek:hover { opacity: 1; }
+  /* Preview dialog: a centered modal (never anchored to a row — anchored popovers
+     clip against the vscode-tools iframe edge). The careful path: full text with a
+     copy action inside; the row buttons stay the one-click fast path. */
+  #cpanel { position: fixed; inset: 0; margin: auto; z-index: 20;
+    width: min(640px, calc(100vw - 48px)); max-height: 70vh; overflow-y: auto;
+    background: var(--bg); color: var(--fg); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 16px; font-size: 13px; line-height: 1.5; white-space: pre-wrap;
+    box-shadow: 0 8px 32px rgba(0,0,0,.25); }
+  #cpanel::backdrop { background: rgba(0,0,0,.35); }
+  #cpanel .cap { color: var(--muted); font-size: 12px; margin-bottom: 8px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border); white-space: normal; }
+  #cpanel .actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 12px;
+    padding-top: 10px; border-top: 1px solid var(--border); white-space: normal; }
+  /* Structured fix-spec view (renderSpecInto): labeled fields + quoted fix prompt. */
+  #cpanel .spec { white-space: normal; }
+  #cpanel .spec .f { margin: 0 0 10px; }
+  #cpanel .spec .f:last-child { margin-bottom: 0; }
+  #cpanel .spec .k { display: block; font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: .04em; color: var(--muted); margin-bottom: 2px; }
+  #cpanel .spec code { font-size: 12px; word-break: break-all; }
+  #cpanel .spec .prompt { border-left: 3px solid var(--border); padding: 2px 0 2px 10px;
+    white-space: pre-wrap; }
+  #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+    background: var(--fg); color: var(--bg); padding: 8px 14px; border-radius: 8px;
+    font-size: 13px; opacity: 0; transition: opacity .15s; pointer-events: none; }
+  #toast.show { opacity: 1; }
+  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
+    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+  <h1>VS Code Sweeper — Review Dashboard</h1>
+  <div class="sub"><a href="index.html">← home</a> · proposal-only triage findings for <code>microsoft/vscode-livepreview</code> · 112 open reviewed · 76 actionable · 0 closed since review · <a href="outcomes-vscode-livepreview.html">15 close proposals to date</a> · generated 2026-09-11 07:47 UTC</div>
+  <div class="cards" id="cards"><button class="card" data-action="propose-close"><span class="n">15</span><span class="l">propose-close</span></button><button class="card" data-action="needs-info"><span class="n">23</span><span class="l">needs-info</span></button><button class="card" data-action="keep-open"><span class="n">74</span><span class="l">keep-open</span></button><button class="card af-card" id="afCard" type="button" title="Show only agent-fix candidates — issues where the review wrote a fix spec an agent can implement; combines with the action filter"><span class="n">2</span><span class="l">⚡ agent-fixable</span></button><button class="card closed-card" id="closedCard" type="button" title="Issues closed since their review (last 90 days) — the proposal was confirmed or the issue was resolved externally; the header carries the lifetime count"><span class="n">0</span><span class="l">✔ closed</span></button></div>
+  <div class="controls">
+    <input id="q" type="search" placeholder="Filter by owner, issue #, title, label… or key:value (see ?)">
+    <button class="copy" id="qhelp" type="button" title="Filter syntax — bare text works as before; key:value tokens (owner:, action:, close:, confidence:, has:…) filter a field. Click for the full list." aria-label="Filter syntax help">?</button>
+    <label class="toggle" id="actionableLabel" title="Hide keep-open / no-action rows. Uncheck to show every reviewed issue."><input type="checkbox" id="actionableOnly" checked> <span id="actionableText">Actionable only (76 of 112)</span></label>
+    <span class="result-count" id="resultCount" aria-live="polite"></span>
+  </div>
+  <table>
+    <thead><tr>
+      <th data-k="owner" title="The issue's assignee — who this proposal is queued for. Unassigned issues show —.">Owner</th><th data-k="number" title="The reviewed issue's number — links to the issue on GitHub.">Issue</th><th data-k="title" title="The issue's title at review time — long titles clamp; hover a row for the full text.">Title</th><th data-k="itemType" title="The review's classification of the issue: bug or feature-request.">Type</th>
+      <th data-k="triageAction" title="What the review proposes: propose-close (with a reason under Label / reason), needs-info, route-to-area, or keep-open. Nothing is applied automatically — a human acts on every proposal.">Action</th><th data-k="proposedLabel" title="Proposed label — on a close proposal it is also the close reason (*duplicate, *as-designed, implemented on main, …). On a duplicate, → #N links the canonical issue the review cites.">Label / reason</th>
+      <th data-k="confidence" title="The review's confidence in its own verdict, 0–100%. Close proposals are only made at high confidence; treat low-confidence rows as leads, not conclusions.">Conf</th><th data-k="verificationRank" class="col-rating" title="Evidence — how strong the evidence behind this review's verdict is: the reproduction status, graded by the review's confidence (a confident verdict can't outrank a weak repro). NOT how valuable the issue is. 6/6 is best, 1/6 worst; hover a value for what it means. Blank for non-bugs. Shown on the agent-fixable, keep-open, and all-open views, where evidence strength drives the decision; triage views lead with Conf and 2nd review instead.">Evidence</th><th title="The full review record on the state repo — evidence, reasoning, and the proposed comment. The ⚑ files feedback on this verdict (prefilled state-repo issue; the vscode issue is never pinged).">Review</th><th data-k="verifyRank" class="col-verify" title="2nd review — an independent, blinded verification of a close proposal: for duplicates, a second model judged whether the issue and its cited canonical describe the same underlying problem (titles/dates/bodies only); for implemented-on-main, whether the cited commit's diff actually resolves the report. ✓ = confirmed (click for the evidence), ⏳ = fix merged but in no stable release yet, ✗ = refuted (dispute — read before acting), ⌛ = stale (the issue or record changed since verification); the eye shows the full verification stamp from the record. Blank: not in the verify lanes' scope yet.">2nd review</th><th class="col-apply" title="Copies the review's suggested closing comment for you to paste on the issue and close it yourself — vscodesweeper never edits the reviewed repo's issues. Inside vscode-tools, close proposals show Apply &amp; close instead: it posts the comment (shown editable first) and closes the issue as you.">Apply</th><th data-k="autoFixable" class="col-agentfix" title="Agent-fixable: the review traced the defect and wrote a fix spec an agent can implement (the autoFixable verdict). The button copies the skill invocation for your agent; the eye previews the reviewed spec; an existing sweeper draft PR links here instead.">Agent fix</th><th data-k="reviewedAt" title="When this review ran. A record is re-reviewed automatically when the issue's content or the review policy changes since then.">Reviewed</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>. Records live on the <code>state</code> branch.
+  <strong>2nd review</strong> is a skeptical second opinion on a close proposal (duplicate or implemented-on-main): an independent model re-judged the claim blind — the duplicate pair's titles/dates/bodies, or the issue against the cited fix commit's diff; never the first verdict, labels, state, or comments — with refuted as the default unless the evidence clearly supports the claim; ✓ means it survived, ⏳ means the fix is merged but unreleased. The badge's hover/click shows the evidence, the eye the full stamp.
+  <strong>Apply</strong> copies the suggested comment for you to paste on the issue and close it yourself — vscodesweeper never edits microsoft/vscode issues. When this page runs inside vscode-tools, close proposals show an <strong>Apply &amp; close</strong> button instead: it posts the comment (shown editable first) and closes the issue under your own GitHub identity — still a human action per issue, never automatic. Needs-info comments stay copy-only everywhere (they must be posted without closing).
+  The agent-fix lane is not enabled for this repository — reviews here are proposal-only.
+  Spotted a wrong verdict? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener">Send feedback</a> — the ⚑ next to a row's record link prefills the item.</footer>
+  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=dashboard" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
+  <div id="toast" role="status" aria-live="polite"></div>
+<script>
+const DATA = [{"number":111,"title":"Improve experience when using Codespaces","confidence":0.95,"reviewedAt":"2026-09-10T21:25:36.598Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":112,"title":"Allow to view multiple items the history in embedded browser","confidence":0.9,"reviewedAt":"2026-09-10T21:22:23.175Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for capturing this request. Current main still keeps the bundled browser's history internally but only exposes one-step Back and Forward actions; there is no menu for selecting an older entry. Since embedded previews now use VS Code's Integrated Browser by default through `livePreview.useIntegratedBrowser`, the remaining product decision is whether this capability should live there or whether the legacy bundled browser should also gain it.","verifiedUpdatedAt":"2022-12-07T23:28:44Z"},{"number":114,"title":"Address suggestions on using address bar.","confidence":0.9,"reviewedAt":"2026-09-10T21:21:55.555Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":116,"title":"Responsive Layouts - Like Devices (sm, md, lg, xl) & Viewport dimensions","confidence":0.93,"reviewedAt":"2026-09-10T21:22:09.011Z","owner":"andreamah","itemType":"upstream","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the detailed proposal and prototype. On current versions, Live Preview uses VS Code's Integrated Browser for embedded previews by default, so responsive emulation and viewport-dimension UI now belong to that browser surface rather than the Live Preview server. The Integrated Browser has an `Emulate Device...` command, and configurable presets are being tracked at https://github.com/microsoft/vscode/issues/326713, although that request does not clearly include an always-visible viewport-size indicator. This issue should remain open for a maintainer to route or consolidate because that part of the request is still distinct.","verifiedUpdatedAt":"2022-12-07T23:39:40Z"},{"number":139,"title":"Firefox support","confidence":0.92,"reviewedAt":"2026-09-10T21:22:08.745Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":146,"title":"Changing the port breaks reloading","confidence":0.9,"reviewedAt":"2026-09-10T21:22:16.326Z","owner":"andreamah","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report and the detailed reproduction. The configured `livePreview.portNumber` is the HTTP port, while Live Preview intentionally starts its reload WebSocket on the following port, so port 81 is expected when the page is served on port 80. The real issue is that Live Preview does not correctly handle or report that WebSocket port being unavailable; that broader startup defect is tracked in https://github.com/microsoft/vscode-livepreview/issues/262. This example of changing the HTTP port to 80 and then seeing the injected client fail on 81 should be retained there, so this issue can be closed as a duplicate.","canonical":"262","verifiedUpdatedAt":"2022-12-08T00:18:36Z"},{"number":148,"title":"Feature request: Add option to provide a wrapper html page (with additional css or js files included)","confidence":0.82,"reviewedAt":"2026-09-10T21:22:15.139Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":149,"title":"New feature request: select element","confidence":0.88,"reviewedAt":"2026-09-10T21:25:33.912Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the request and the mockup. This remains the canonical issue for selecting or highlighting an element in the preview and revealing its HTML source in the editor; related requests have been directed here, while https://github.com/microsoft/vscode-livepreview/issues/391 describes a narrower preview-to-cursor interaction. The preview architecture has since moved toward VS Code's Integrated Browser, so the important design question is how to support this workflow through that browser rather than only through Live Preview's legacy bundled webview.","verifiedUpdatedAt":"2023-03-17T16:59:51Z"},{"number":164,"title":"Support auto lock groups","confidence":0.99,"reviewedAt":"2026-09-10T21:22:12.868Z","owner":"andreamah","closeReason":"implemented-on-main","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the request. This has been implemented in VS Code core by https://github.com/microsoft/vscode/commit/c2ed45b371d4c0d9363b6c5f4b75ccd3cb3c6e8b: Live Preview is now included in `workbench.editor.autoLockGroups` and is enabled there by default. Since editor-group locking is provided by the VS Code workbench, no Live Preview extension release is associated with the change.","verifiedUpdatedAt":"2022-07-13T17:57:33Z"},{"number":169,"title":"Add some of the capabilities from Brackets","confidence":0.92,"reviewedAt":"2026-09-10T21:25:47.720Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":179,"title":"Live Preview \"Host IP\" setting does not support IPv6 addresses","confidence":0.94,"reviewedAt":"2026-09-10T21:22:14.562Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the detailed proposal and the earlier verification. This remains a real gap on current `main`: `ConnectionManager` still validates `livePreview.hostIP` with `net.isIPv4`, and the connection, preview, and HTTP request-checking paths also construct or compare authorities in an IPv4-oriented form. Supporting IPv6 therefore needs coordinated handling of bracketed HTTP/WebSocket authorities and Host/Origin validation, not only a validator change. Keeping this open as the Backlog feature request for that work.","verifiedUpdatedAt":"2022-07-13T17:57:34Z"},{"number":189,"title":"Video not loading in Safari due to missing byte-range support","confidence":0.96,"reviewedAt":"2026-09-10T21:23:33.727Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report. This remains a server-side gap on current main: Live Preview advertises `Accept-Ranges: bytes`, but the request path does not process the browser's `Range` header and always returns the complete file with status 200. Proper support needs a 206 response with `Content-Range` and a stream limited to the requested bytes, plus a 416 response for invalid ranges, so this issue should remain open.","verifiedUpdatedAt":"2022-12-09T22:35:40Z"},{"number":190,"title":"Make Live Preview work on the web","confidence":0.94,"reviewedAt":"2026-09-10T21:25:59.668Z","owner":"digitarald, andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":204,"title":"Add ignore file for injected script","confidence":0.92,"reviewedAt":"2026-09-10T21:23:44.874Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":213,"title":"Project breaks on unplanned \"update-path\" messages","confidence":0.93,"reviewedAt":"2026-09-10T21:22:36.364Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":214,"title":"Follow along scroll?","confidence":0.94,"reviewedAt":"2026-09-10T21:26:08.511Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the request. There is not currently a `livePreview.*` setting for synchronized scrolling or for mapping a selection in the preview back to the HTML editor. This issue is the canonical request for that behavior: the related reports at https://github.com/microsoft/vscode-livepreview/issues/593, https://github.com/microsoft/vscode-livepreview/issues/629, and https://github.com/microsoft/vscode-livepreview/issues/642 were directed here. With Live Preview now using VS Code's Integrated Browser by default, the next step is to determine what browser-to-extension integration is available so the feature can work on the default preview path rather than only in the legacy bundled browser.","verifiedUpdatedAt":"2023-03-17T17:05:20Z"},{"number":233,"title":"watch files settings","confidence":0.92,"reviewedAt":"2026-09-10T21:33:15.325Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the report and the additional context. This is still a valid request on current `main`: Live Preview watches all workspace files with a `**` pattern, while `livePreview.autoRefreshPreview` only controls when refreshes happen and cannot include or exclude particular paths. https://github.com/microsoft/vscode-livepreview/issues/548 covers the narrower ignore-pattern case; a complete solution here should coordinate with that request and support configurable include/exclude globs without reintroducing the external watch-script timing problem that caused the old setting to be removed.","verifiedUpdatedAt":"2026-04-14T17:01:36Z"},{"number":248,"title":"PDF in iframe tag causes File Explorer pop-up on refresh","confidence":0.76,"reviewedAt":"2026-09-10T21:23:37.370Z","owner":"andreamah","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the detailed reproduction and example project. Live Preview now has two embedded-browser paths, so could you confirm whether this still happens with current VS Code and Live Preview versions, and on which OS? Please try the project once with `livePreview.useIntegratedBrowser` set to `true` and once with it set to `false`, then note which setting produces the File Explorer dialog. It would also help to know whether opening the same served URL in an external browser triggers a download and whether Help > Toggle Developer Tools shows an error when the preview refreshes.","verifiedUpdatedAt":"2022-12-10T00:03:03Z"},{"number":256,"title":"Consider changing default time for server to turn off to be instant","confidence":0.94,"reviewedAt":"2026-09-10T21:23:32.833Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":259,"title":"Command for re-opening live preview editor","confidence":0.86,"reviewedAt":"2026-09-10T21:24:11.787Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report. There is now a `Live Preview: Show Preview` command, but the current implementation still does not retain the last preview target after its tab is closed: it falls back to the active editor or the configured default path. This should remain open for that command to reliably restore the previously previewed page for both the Integrated Browser and the bundled preview.","verifiedUpdatedAt":"2022-12-09T22:48:36Z"},{"number":262,"title":"Not correctly checking if websocket server is occupied before using it","confidence":0.92,"reviewedAt":"2026-09-10T21:27:29.977Z","owner":"andreamah","areaLabels":"polish","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug, polish"},{"number":264,"title":"on changes to saved files setting doesn't work outside of workspace","confidence":0.96,"reviewedAt":"2026-09-10T21:23:28.303Z","owner":"andreamah","itemType":"bug","verification":"Confirmed","autoFixable":"false","labels":"bug, verification-found"},{"number":265,"title":"Switching between single and multi-root will not properly handle panel","confidence":0.93,"reviewedAt":"2026-09-10T21:23:19.422Z","owner":"andreamah","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","itemType":"upstream","autoFixable":"false","labels":"bug","proposedComment":"Thanks for tracking this. The underlying single-folder to multi-root webview lifecycle problem is already tracked in VS Code core at https://github.com/microsoft/vscode/issues/98603. The Live Preview-specific core report at https://github.com/microsoft/vscode/issues/158839 was also consolidated there, and Live Preview's current deactivation path already requests synchronous disposal of its panel. Closing this as a duplicate of the open core issue.","canonical":"microsoft/vscode#98603","verifiedUpdatedAt":"2022-12-09T23:52:33Z"},{"number":276,"title":"Live preview reloads when adding a new workspace root","confidence":0.94,"reviewedAt":"2026-09-10T21:26:26.232Z","owner":"andreamah","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report and for confirming this with the other extensions disabled. The current refresh listener watches every workspace root, and Live Preview cannot reliably determine which files the displayed page depends on. The configurable ignore-path solution for this class of unwanted reloads is now tracked in https://github.com/microsoft/vscode-livepreview/issues/548, including reloads caused by unrelated workspace content. I’m consolidating this report there; the useful detail from this issue is that adding a new multi-root workspace folder can itself trigger the watcher even though the active preview’s root and port are unchanged.","canonical":"548","verifiedUpdatedAt":"2023-09-08T18:27:06Z"},{"number":277,"title":"Live preview task should use the radio tower icon","confidence":0.95,"reviewedAt":"2026-09-10T21:27:14.387Z","owner":"andreamah","itemType":"upstream","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the context. This remains blocked on VS Code exposing icon support for extension-contributed tasks. The earlier attempt was removed in https://github.com/microsoft/vscode-livepreview/pull/583 because the icon metadata was not honored, and the corresponding platform request at https://github.com/microsoft/vscode/issues/201011 was closed without implementing the capability. Once that platform support exists, Live Preview can adopt the radio-tower icon in its task contribution.","verifiedUpdatedAt":"2023-12-15T20:14:38Z"},{"number":325,"title":"Add option to hide the address bar","confidence":0.87,"reviewedAt":"2026-09-10T21:23:34.092Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the suggestion. This is still not configurable in the bundled Live Preview browser: its URL field is always rendered and there is no corresponding `livePreview.*` setting. Current versions use VS Code's Integrated Browser by default, so an extension-side option would apply only when `livePreview.useIntegratedBrowser` is `false`; whether to add more customization to that fallback browser needs a maintainer decision.","verifiedUpdatedAt":"2022-12-10T00:03:29Z"},{"number":333,"title":"Allow setting host IP to 0.0.0.0","confidence":0.9,"reviewedAt":"2026-09-10T21:27:06.908Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"bug"},{"number":354,"title":"Feature request: support viewing of shared Live Share servers in the Live Preview embedded browser","confidence":0.9,"reviewedAt":"2026-09-10T21:23:09.708Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":391,"title":"Place cursor from preview in editor","confidence":0.86,"reviewedAt":"2026-09-10T21:24:58.590Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":402,"title":"Warn users if external browser opens invalid URL","confidence":0.92,"reviewedAt":"2026-09-10T21:23:42.938Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug"},{"number":406,"title":"Server Logging for Non-workspace files","confidence":0.93,"reviewedAt":"2026-09-10T21:23:48.982Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":407,"title":"Resource Scope for Default Preview Path","confidence":0.97,"reviewedAt":"2026-09-10T21:24:36.957Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Current main appears to cover this request: `livePreview.defaultPreviewPath` is resource-scoped, the set-default-file command writes it at workspace-folder scope, and starting Live Preview reads the setting for the active workspace folder. The relevant changes are https://github.com/microsoft/vscode-livepreview/pull/439 and https://github.com/microsoft/vscode-livepreview/pull/482; neither linked #407 directly, so this should remain open until a maintainer confirms those changes fully supersede it.","verifiedUpdatedAt":"2023-01-09T20:21:22Z"},{"number":422,"title":"`Live Preview: Show Debug Preview (External Browser)` doesn't respect `livePreview.customExternalBrowser`","confidence":0.96,"reviewedAt":"2026-09-10T21:27:12.408Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":425,"title":"Consider respecting server root even if the directory doesn't exist","confidence":0.93,"reviewedAt":"2026-09-10T21:28:00.667Z","owner":"andreamah","areaLabels":"polish","itemType":"polish","autoFixable":"false","labels":"bug, polish"},{"number":431,"title":"Show progress while external browser is starting","confidence":0.92,"reviewedAt":"2026-09-10T21:26:58.573Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":448,"title":"Allow query parameters in preview path setting","confidence":0.9,"reviewedAt":"2026-09-10T21:24:29.408Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":454,"title":"Live preview reloads on editor changes even when not visible","confidence":0.94,"reviewedAt":"2026-09-10T21:38:18.953Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report. This still reproduces from the current source for the bundled preview: the webview retains its context while hidden, editor changes lead to a refresh of every server grouping, and the WebSocket server sends `reload` to every connected client without consulting the panel's visibility. https://github.com/microsoft/vscode-livepreview/issues/457 tracks the related prerequisite of identifying whether an injected client belongs to an embedded preview, but it does not replace the visibility-gating behavior requested here. The fix should defer reloads for the hidden bundled panel and refresh once when it becomes visible again, without suppressing external-browser refreshes.","verifiedUpdatedAt":"2023-02-27T23:54:09Z"},{"number":457,"title":"Injected script should be aware of whether it's inside webview or not","confidence":0.94,"reviewedAt":"2026-09-10T21:24:33.167Z","owner":"andreamah","areaLabels":"debt","itemType":"debt","autoFixable":"false","labels":"debt"},{"number":462,"title":"401 when using remote tunnel","confidence":0.92,"reviewedAt":"2026-09-10T21:33:52.240Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the detailed investigation and workarounds. The current server still authorizes requests by comparing their Host and Origin against the single address returned by `vscode.env.asExternalUri`, so a legitimate tunnel hostname that is not reflected there can still receive a 401. This issue is also the canonical tracker that maintainers selected for remote-tunnel/code-server access in https://github.com/microsoft/vscode-livepreview/issues/381 and https://github.com/microsoft/vscode-livepreview/issues/497. A fix should preserve the existing Host/Origin protection while reliably accepting the exact forwarded address supplied by VS Code's tunneling path; a broad hostname pattern or unrestricted user allowlist would need careful security review.","verifiedUpdatedAt":"2026-04-22T07:50:45Z"},{"number":467,"title":"Persistent status bar item to show when server is off also","confidence":0.9,"reviewedAt":"2026-09-10T21:26:43.975Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":476,"title":"[Feature request] Allow setting multiple preferred Server Roots as one string","confidence":0.96,"reviewedAt":"2026-09-10T21:27:19.284Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":489,"title":"Support Remote Repositories","confidence":0.94,"reviewedAt":"2026-09-10T21:27:54.803Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":49,"title":"[ Question ] What about PHP files preview?","confidence":0.94,"reviewedAt":"2026-09-10T21:32:37.007Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the continued interest. Live Preview currently serves files directly and does not execute PHP, so supporting this would require integration with a PHP runtime or an existing application server rather than a change to the preview browser alone. This remains the canonical feature request for that capability; the related reports at https://github.com/microsoft/vscode-livepreview/issues/585 and https://github.com/microsoft/vscode-livepreview/issues/632 were consolidated here.","verifiedUpdatedAt":"2025-10-11T20:47:37Z"},{"number":494,"title":"[Feature Request] Add \"Toggle Device Toolbar\" to the options","confidence":0.93,"reviewedAt":"2026-09-10T21:33:30.385Z","owner":"andreamah","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the request. The responsive-preview work is already tracked in https://github.com/microsoft/vscode-livepreview/issues/116, including a proposed toggle with device-size presets, so I suggest consolidating this there as a duplicate. This report adds a useful implementation preference: expose the functionality through the DevTools device toolbar rather than requiring an external browser.","canonical":"116","verifiedUpdatedAt":"2026-04-20T18:56:05Z"},{"number":499,"title":"command 'livePreview.start.preview.atFile' not found","confidence":0.78,"reviewedAt":"2026-09-10T21:29:37.605Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the reports. The command is present in the extension manifest and registered when Live Preview activates, so this message usually means activation failed earlier. To identify the current cause, please confirm whether this still happens with the latest supported VS Code and Live Preview versions and say whether this is desktop, Remote SSH, a dev container, or Codespaces. Then run `Developer: Set Log Level` and select `Trace`, reproduce the problem, and paste the surrounding entries from the `Extension Host` Output channel, including any error immediately before `livePreview.start.preview.atFile` is reported as missing. Please also include errors from Help > Toggle Developer Tools.","verifiedUpdatedAt":"2024-05-21T15:52:39Z"},{"number":506,"title":"Create a launch.json configuration for live preview","confidence":0.88,"reviewedAt":"2026-09-10T21:27:53.517Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":513,"title":"\"Open Devtools Pane\" does not work in browser-based Codespaces","confidence":0.78,"reviewedAt":"2026-09-10T21:26:01.650Z","owner":"andreamah","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the detailed report and for testing several browsers. The bundled preview still sends its Open Devtools Pane action to VS Code's `workbench.action.webview.openDeveloperTools` command without reporting when that command is unavailable. Current Live Preview versions use VS Code's Integrated Browser by default, which no longer shows this bundled-preview menu, so could you confirm whether the problem still occurs in current browser-based Codespaces after setting `livePreview.useIntegratedBrowser` to `false`? Please include your VS Code and Live Preview versions, browser/device, and whether anything appears in the Developer Tools console after pressing the button.","verifiedUpdatedAt":"2023-07-01T12:30:28Z"},{"number":514,"title":"Add custom field for browser path","confidence":0.96,"reviewedAt":"2026-09-10T21:25:35.444Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":530,"title":"[Feature request] Auto preview active opened file","confidence":0.9,"reviewedAt":"2026-09-10T21:25:49.641Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the request. The active-file synchronization portion is still a real gap: `livePreview.autoRefreshPreview` reloads the current page when content changes, but Live Preview does not currently follow switches between HTML editors or provide a way to open the bundled preview's current local page in the editor. The newer report https://github.com/microsoft/vscode-livepreview/issues/695 describes the same editor-to-preview behavior, so this issue should remain the canonical request. As noted above, configurable non-HTML preview support is outside the scope of this item.","verifiedUpdatedAt":"2023-07-10T16:22:09Z"},{"number":534,"title":"Live preview extension doesn't display window at full height in codespaces","confidence":0.92,"reviewedAt":"2026-09-10T21:30:26.893Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the report and the reproduction project. The bundled preview's iframe currently relies on a percentage height without a reliably sized parent, which matches the Codespaces, Gitpod, and code-server symptoms reported here. The open fix at https://github.com/microsoft/vscode-livepreview/pull/751 directly references this issue, so this should remain open while that implementation is reviewed.","verifiedUpdatedAt":"2025-08-20T08:35:06Z"},{"number":535,"title":"External browser can't be found after renaming browser executable","confidence":0.94,"reviewedAt":"2026-09-10T21:26:17.699Z","owner":"andreamah","itemType":"upstream","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the detailed reproduction. The current source still confirms the suspected cause: Live Preview delegates this launch to `vscode-js-debug-companion`, whose browser discovery cache retains the old executable path and is not cleared when spawning that path fails with ENOENT. The best fix is for the companion's launcher to invalidate the cached entry and re-discover the browser when the executable disappears. I could not find an open canonical issue or a fixing commit for that behavior, so this should remain open for tracking.","verifiedUpdatedAt":"2023-07-31T19:14:36Z"},{"number":537,"title":"Explain possible Internal (Embedded) vs External Browser version (capabilities) mismatch.","confidence":0.92,"reviewedAt":"2026-09-10T21:26:29.533Z","owner":"andreamah","areaLabels":"polish","itemType":"polish","autoFixable":"false","labels":"polish"},{"number":539,"title":"Embedded vs Internal Preview documentation inconsistency","confidence":0.96,"reviewedAt":"2026-09-10T21:26:19.710Z","owner":"andreamah","areaLabels":"polish","itemType":"polish","autoFixable":"false","labels":"polish"},{"number":548,"title":"Create `ignore` setting for livepreview auto-reloading","confidence":0.97,"reviewedAt":"2026-09-10T21:32:13.273Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":560,"title":"Make sure CORP headers are sent","confidence":0.95,"reviewedAt":"2026-09-10T21:29:34.135Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request, verification-needed","proposedComment":"Thanks for the detailed verification attempts. Current `main` still sends `Cross-Origin-Resource-Policy: cross-origin`, while the later `Cross-Origin-Embedder-Policy: require-corp` addition was reverted because it broke iframe, video, and image resources. Since this was reopened after both implementation attempts, it should remain open until the original Codespaces `?vscode-coi=on` flow is retested on a current version. When verifying, please capture the response headers for the preview document and any blocked-resource messages from Developer Tools so the remaining failure can be distinguished from Codespaces port forwarding.","verifiedUpdatedAt":"2024-05-27T19:54:14Z"},{"number":561,"title":"Stuck on \"Opening Server...\"","confidence":0.82,"reviewedAt":"2026-09-10T21:33:21.794Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the reports. The internal preview now has two different implementations, so we need to identify which one still fails on current versions. Please share your exact VS Code and Live Preview versions, then try opening the same HTML file once with `livePreview.useIntegratedBrowser` set to `true` and once with it set to `false`. For each setting, please say whether a tab opens and paste any new errors from **Developer: Toggle Developer Tools**; also confirm that the served URL still opens directly in an external browser. That will distinguish a VS Code Integrated Browser problem from the bundled Live Preview webview path.","verifiedUpdatedAt":"2025-10-14T18:09:09Z"},{"number":576,"title":"Support for SPA","confidence":0.94,"reviewedAt":"2026-09-10T21:32:17.115Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":611,"title":"Live Preview does not resolve file when html extension is not provided.","confidence":0.96,"reviewedAt":"2026-09-10T21:27:41.803Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the request. Current main still resolves exact files and directory index.html files, but it does not fall back from an extensionless path to page.html. There is an open implementation candidate at https://github.com/microsoft/vscode-livepreview/pull/671, so this should remain open while that change is reviewed and completed.","verifiedUpdatedAt":"2024-03-07T17:19:52Z"},{"number":631,"title":"Launch as http://localhost instead of http://127.0.0.1?","confidence":0.95,"reviewedAt":"2026-09-10T21:30:50.084Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":637,"title":"Problem with \"charset=ISO-8859-1\"","confidence":0.96,"reviewedAt":"2026-09-10T21:29:07.673Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the reduced project and the curl verification. The current source still confirms the problem: injectable HTML read from disk is decoded as UTF-8 in `PathUtil.FileRead`, converted back to a UTF-8 buffer after the reload script is inserted, and served with an unconditional `charset=UTF-8` response header. That corrupts ISO-8859-1 input before the page's `\u003cmeta charset>` can help. This should remain open until the server can preserve or deliberately transcode the source encoding and send a matching Content-Type while retaining live reload.","verifiedUpdatedAt":"2024-05-15T20:53:46Z"},{"number":660,"title":"fragment/anchor in Uri is ignored when preview loose file","confidence":0.94,"reviewedAt":"2026-09-10T21:29:34.127Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"true","labels":"bug","proposedComment":"Thanks for the report and the valid-URI example. Current `main` still drops the fragment when it converts the file URI into the served preview path: both workspace and loose-file handling use only `file.fsPath`, and the generated browser URL never restores `file.fragment`. This should remain open as a bug and be fixed for the Integrated Browser, bundled preview, and external-preview paths, with coverage for `vscode.Uri.file(...).with({ fragment: \"duration-prop\" })`.","verifiedUpdatedAt":"2024-10-28T23:39:20Z"},{"number":665,"title":"!doctype is case-sensitive","confidence":0.94,"reviewedAt":"2026-09-10T21:28:59.392Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the report. This still reproduces from the current source: `src/server/serverUtils/contentLoader.ts` searches for `!DOCTYPE` with a case-sensitive regular expression, so a lowercase or mixed-case doctype can be missed and the reload script can be inserted before it. The fix should make insertion-point detection case-insensitive and add regression coverage without introducing the related comment-matching problem tracked at https://github.com/microsoft/vscode-livepreview/issues/711.","verifiedUpdatedAt":"2024-09-23T23:17:49Z"},{"number":673,"title":"Allow previewing from codeblocks in chat","confidence":0.98,"reviewedAt":"2026-09-10T21:28:47.270Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for capturing this scenario. The linked implementation in https://github.com/microsoft/vscode-livepreview/pull/670 is still open and needs review, including resolving the wrong-URL behavior reported on Windows, so this issue should remain open until that work is decided and validated.","verifiedUpdatedAt":"2024-10-22T23:18:05Z"},{"number":688,"title":"Incorrect Content-Type header for XHTML files","confidence":0.97,"reviewedAt":"2026-09-10T21:29:14.144Z","owner":"andreamah","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","labels":"bug","proposedComment":"Thanks for the detailed report and diagnosis. This still reproduces in the current source: `ContentLoader.getFileStream` first infers the MIME type from the `.xhtml` path, but then unconditionally changes it to `text/html` whenever VS Code identifies the open document as HTML. XHTML is also deliberately included in the injectable file endings, so the intended fix is to preserve `application/xhtml+xml` while retaining live refresh. The proposed fix in https://github.com/microsoft/vscode-livepreview/pull/689 was closed without merging, so this issue should remain open.","verifiedUpdatedAt":"2024-09-23T23:13:45Z"},{"number":695,"title":"Enable Auto-Preview on File Switch","confidence":0.96,"reviewedAt":"2026-09-10T21:32:32.867Z","owner":"unassigned","proposedLabel":"*duplicate","closeReason":"duplicate","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","proposedComment":"Thanks for the request and the additional workflow details. This is already tracked in https://github.com/microsoft/vscode-livepreview/issues/530, which covers automatically updating Live Preview to follow the active HTML file. Closing this as a duplicate so the feature discussion stays consolidated there.","canonical":"530","verifiedUpdatedAt":"2026-03-24T04:22:14Z"},{"number":697,"title":"customizable date format","confidence":0.92,"reviewedAt":"2026-09-10T21:29:17.284Z","owner":"unassigned","proposedLabel":"feature-request","areaLabels":"feature-request","itemType":"feature-request","autoFixable":"false"},{"number":698,"title":"it is not downloading having issue","confidence":0.96,"reviewedAt":"2026-09-10T21:33:37.490Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. Could you clarify what is not downloading and where you see the continuous buffering? Please include the steps that trigger it and a screenshot or short recording, along with your Live Preview extension version, VS Code version, operating system, and whether you are using desktop VS Code or a remote/Codespaces environment. If this happens while opening a preview, please also say whether it is the Integrated Browser or the extension's bundled preview and paste any messages from the `Embedded Live Preview Console` Output channel or Help > Toggle Developer Tools.","verifiedUpdatedAt":"2026-04-30T18:41:18Z"},{"number":702,"title":"Javascript injected in non-html/javascript files","confidence":0.97,"reviewedAt":"2026-09-10T21:28:48.775Z","owner":"unassigned","proposedLabel":"bug","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the report. This is still reproducible from the current source: `isFileInjectable` treats every extensionless path as injectable, and the filesystem-serving path then inserts the reload script at the beginning of the response even when its detected content type is `text/plain`. We should preserve support for extensionless HTML while ensuring extensionless JSON and other non-HTML content is served unchanged.","verifiedUpdatedAt":"2024-12-15T21:00:57Z"},{"number":706,"title":"CSS clip path URL to SVG file not working","confidence":0.78,"reviewedAt":"2026-09-10T21:30:28.415Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. Could you share a minimal folder containing the HTML/CSS and `example.svg` needed to reproduce this, along with your Live Preview extension version, VS Code version, and OS? Please also confirm whether `livePreview.useIntegratedBrowser` is enabled and whether the exact URL served by Live Preview works when opened in an external browser. If possible, include any console or Network-panel error for the SVG request, including its response status and `Content-Type`; that will distinguish a server/path problem from behavior in the Integrated Browser or bundled preview.","verifiedUpdatedAt":"2025-04-03T00:14:41Z"},{"number":708,"title":"Live preview extension is not working","confidence":0.94,"reviewedAt":"2026-09-10T21:33:30.774Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. To investigate this, please describe the exact steps you take and what happens afterward: does the server fail to start, does the preview tab show an error or blank page, or does the page open but not refresh? Please also update to a current Live Preview and VS Code version, include a screenshot, and share your `livePreview.hostIP`, `livePreview.serverRoot`, and `livePreview.useIntegratedBrowser` values. Finally, paste any errors from the `Embedded Live Preview Console` Output channel and from `Live Preview: Start Server Logging`; if the preview opens but renders incorrectly, please say whether it is VS Code's Integrated Browser or Live Preview's bundled browser.","verifiedUpdatedAt":"2026-04-30T18:38:19Z"},{"number":711,"title":"Live preview script injected into comment","confidence":0.97,"reviewedAt":"2026-09-10T21:30:10.815Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the report and the detailed follow-up. The current injection logic still searches the entire document for a permissive `\u003chead...>` match, which confirms both the comment case and the `\u003cheader>` false match. https://github.com/microsoft/vscode-livepreview/pull/746 proposes a targeted fix for this issue; this should remain open while that PR is reviewed and regression tests are added for both cases.","verifiedUpdatedAt":"2025-04-16T01:19:51Z"},{"number":712,"title":"problem","confidence":0.97,"reviewedAt":"2026-09-10T21:33:17.139Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. Could you update the issue with the exact steps you take and what happens afterward—a screenshot of the result or error would help—as well as what you expected to see? Please also include your Live Preview extension version, VS Code version, operating system, whether you are using desktop VS Code or a remote/Codespaces session, and whether you launched a command named `Live Preview: Show Preview` or a different extension's `Go Live` action. If this is Live Preview, please paste any messages from the `Embedded Live Preview Console` Output channel and mention any `livePreview.serverRoot`, `livePreview.hostIP`, or `livePreview.useIntegratedBrowser` settings you changed. A small example project would also help if the behavior depends on the website files.","verifiedUpdatedAt":"2026-04-30T18:38:08Z"},{"number":713,"title":"Extension not live reloading - maybe because of arm","confidence":0.84,"reviewedAt":"2026-09-10T21:29:17.183Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report and for including the console output. The HTTP and WebSocket servers appear to start, but I need a few more details to locate where reloading stops. Could you confirm whether this still happens with current Live Preview and VS Code versions, and include those version numbers and your Windows version? Please also share the value of `livePreview.autoRefreshPreview`, whether both editor changes and saved changes fail, and whether the served page reloads when opened in an external browser. On current versions, please test once with `livePreview.useIntegratedBrowser` set to `true` and once with it set to `false`, and include any messages from the `Embedded Live Preview Console` Output channel after editing the file. A small HTML project that reproduces it would also help determine whether this is specific to Windows on ARM.","verifiedUpdatedAt":"2025-02-03T06:24:50Z"},{"number":714,"title":"icon is missing","confidence":0.84,"reviewedAt":"2026-09-10T21:30:39.333Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. Could you share a screenshot showing where the icon is missing and confirm whether you have an `.html` file open? Please also update to the current Live Preview and VS Code versions, then right-click the `...` area at the upper right of the editor and check whether `Show Preview` is enabled. Finally, let us know whether Live Preview commands appear in the Command Palette and whether reinstalling the updated extension resolves it, as another commenter reported.","verifiedUpdatedAt":"2025-06-28T04:55:06Z"},{"number":715,"title":"Doesn't work in virtual enviorment","confidence":0.72,"reviewedAt":"2026-09-10T21:29:21.359Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. Could you clarify what kind of “virtual environment” you are using—github.dev/vscode.dev, Codespaces, Live Share, Remote SSH/WSL/dev container, a Python virtual environment, or something else? Please include your VS Code and Live Preview extension versions, the steps that cause it to become disabled, and a screenshot or the exact disabled-state message from the Extensions view. Also, please confirm that this is the Microsoft Live Preview extension rather than Live Server. Live Preview intentionally cannot run in VS Code virtual workspaces or untrusted workspaces because it needs access to workspace files to start its local server, but those details will show whether that restriction explains what you are seeing.","verifiedUpdatedAt":"2025-02-05T01:03:34Z"},{"number":716,"title":"Not running in Virtual Workspace?","confidence":0.97,"reviewedAt":"2026-09-10T21:29:24.197Z","owner":"unassigned","proposedLabel":"*question","closeReason":"question","triageAction":"propose-close","itemType":"question","autoFixable":"false","proposedComment":"Thanks for asking. A virtual workspace is one whose files are provided through a virtual filesystem rather than as ordinary files available to the VS Code extension host. Live Preview cannot run there because it needs filesystem access to host the project through its server. This does not mean macOS is unsupported: if your project is saved locally, open its folder in the desktop version of VS Code. To debug its browser-side JavaScript, open the Command Palette and run `Live Preview: Show Debug Preview`; this launches the external-browser preview with the built-in JavaScript debugger attached.","verifiedUpdatedAt":"2025-02-05T18:40:18Z"},{"number":720,"title":"LiveServer Serving Old Version of File Despite Changes","confidence":0.74,"reviewedAt":"2026-09-10T21:32:37.586Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the detailed report and for confirming the stale response with `curl`; that points to the server side rather than an individual browser cache. Could you confirm whether this still occurs with the current Live Preview and VS Code versions and share a minimal folder that reproduces it? Please include the exact request URL, your `livePreview.serverRoot` and `livePreview.httpHeaders` settings, and the output from `Live Preview: Start Server Logging`. One especially useful check is whether closing the affected file's editor tab before requesting it changes the response, and whether the file was edited inside VS Code or by another program: Live Preview currently prefers the contents of a matching open VS Code document over reading that path directly from disk.","verifiedUpdatedAt":"2025-11-13T22:13:13Z"},{"number":721,"title":"Mulitple Previews not working Correctly","confidence":0.9,"reviewedAt":"2026-09-10T21:31:11.205Z","owner":"unassigned","proposedLabel":"feature-request","areaLabels":"feature-request","itemType":"feature-request","autoFixable":"false","proposedComment":"Thanks for the clear use case. Multiple pages can share the same Live Preview server and port, so a second port is not required; the limitation is currently the preview UI. Live Preview still reuses one embedded preview: the bundled browser keeps a single panel, and the current Integrated Browser path also asks VS Code to reuse the existing Live Preview tab. The earlier request at https://github.com/microsoft/vscode-livepreview/issues/625 was tracked through https://github.com/microsoft/vscode-livepreview/issues/531, but that tracker has since been closed. I suggest keeping this issue open to track an explicit “open in a new preview tab” option for the Integrated Browser.","verifiedUpdatedAt":"2025-03-04T18:43:07Z"},{"number":725,"title":"Add https server config","confidence":0.86,"reviewedAt":"2026-09-10T21:29:25.090Z","owner":"unassigned","proposedLabel":"feature-request","itemType":"feature-request","autoFixable":"false"},{"number":731,"title":"Live Preview has stopped working on Mac (used to work before)","confidence":0.76,"reviewedAt":"2026-09-10T21:30:46.021Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. To narrow down where the preview action is stopping, please share your Live Preview extension and VS Code versions and the exact action you click or command you run. Please also say which file is active, whether it is inside an open workspace, whether `Live Preview: Show Preview (External Browser)` works, and include any non-default `livePreview.*` settings, especially `portNumber`, `hostIP`, `serverRoot`, `openPreviewTarget`, and `useIntegratedBrowser`. After trying again, please paste any output from the `Embedded Live Preview Console`, `Live Preview: Start Server Logging`, and Help > Toggle Developer Tools; also let us know whether port 3000 is already in use.","verifiedUpdatedAt":"2025-08-09T18:24:42Z"},{"number":733,"title":"images doesn't load when i use live preview in a vite project","confidence":0.94,"reviewedAt":"2026-09-10T21:29:58.081Z","owner":"unassigned","proposedLabel":"*question","closeReason":"question","triageAction":"propose-close","itemType":"question","autoFixable":"false","proposedComment":"Thanks for the report. This happens because Live Preview is a static file server and does not run Vite or apply Vite's asset handling. In particular, `url('/img/png/bg-header.png')` is resolved from Live Preview's server root, while Vite can map that URL from its `public` directory during `npm run dev` or build.\n\nFor this project, run `npm run dev` and open the Vite URL in VS Code's Integrated Browser. Alternatively, build the project first and point `livePreview.serverRoot` at the generated output directory if you want Live Preview to serve those static files.","verifiedUpdatedAt":"2025-05-10T23:55:38Z"},{"number":741,"title":"live preview not working","confidence":0.94,"reviewedAt":"2026-09-10T21:30:48.601Z","owner":"unassigned","proposedLabel":"*question","closeReason":"question","triageAction":"propose-close","itemType":"question","autoFixable":"false","proposedComment":"Thanks for the report. That message means the address configured in `livePreview.hostIP` is not available for this machine to bind; trying other LAN addresses will not help unless one is actually assigned to the machine. Please reset `livePreview.hostIP` in both User and Workspace settings to its default, `127.0.0.1`, then reopen an HTML file. If the editor-title preview button is still hidden, right-click that actions area and enable **Show Preview**, or run **Live Preview: Show Preview (Internal Browser)** from the Command Palette.","verifiedUpdatedAt":"2025-08-11T08:27:37Z"},{"number":743,"title":"Automatically switch between tabs.","confidence":0.94,"reviewedAt":"2026-09-10T21:31:32.204Z","owner":"unassigned","closeReason":"implemented-on-main","triageAction":"propose-close","itemType":"bug","verification":"Unverified","autoFixable":"false","proposedComment":"Thanks for the report and the confirmations. Live Preview now uses VS Code's Integrated Browser by default, which avoids the bundled-preview behavior that was taking focus during automatic refresh. This changed in https://github.com/microsoft/vscode-livepreview/commit/9f09bcde70e815f80409b017a86833ab83fb618f and is available in stable release 0.4.19 and newer. Please ensure `livePreview.useIntegratedBrowser` is enabled; if the preview still takes focus on a current release with that setting enabled, feel free to reopen this issue with your VS Code and extension versions. The fix shipped in v0.4.20.","verifiedUpdatedAt":"2025-09-05T11:19:41Z"},{"number":744,"title":"Live Preview omits initial slash of URL pathname if `livePreview.openPreviewTarget` is \"External Browser\" and `livePreview.serverRoot` ends with a slash.","confidence":0.94,"reviewedAt":"2026-09-10T21:35:24.953Z","owner":"unassigned","proposedLabel":"bug","areaLabels":"bug","itemType":"bug","verification":"Source-confirmed","autoFixable":"true","proposedComment":"Thanks for the detailed reproduction. The current code still allows this: when the configured server root retains its trailing separator, the path calculation returns `index.html` rather than `/index.html`, and the external-browser launcher appends it directly after the port. Removing the trailing slash from `livePreview.serverRoot` is a workaround, but the path should be normalized by the extension. https://github.com/microsoft/vscode-livepreview/issues/840 reports the same path problem alongside a separate absolute-URL issue; this older report has the clearer reproduction for the missing-slash case.","verifiedUpdatedAt":"2026-06-15T16:19:23Z"},{"number":748,"title":"Preview Server Serves Stale Content from Service Worker Cache","confidence":0.76,"reviewedAt":"2026-09-10T21:32:19.987Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report and for identifying the service-worker workaround. Could you share a small project that registers the worker and the exact steps that reproduce the stale file, including whether you switch between two workspace folders on the same Live Preview URL? Please also include your Live Preview and VS Code versions, the values of `livePreview.portNumber`, `livePreview.hostIP`, and `livePreview.useIntegratedBrowser`, and whether the same behavior occurs when the served URL is opened in an external browser. Finally, please paste the `Live Preview` server-logging output for a stale request; that will show whether the request reaches the extension's HTTP server or is answered entirely by the browser's service worker.","verifiedUpdatedAt":"2025-10-12T01:53:03Z"},{"number":749,"title":"/","confidence":0.98,"reviewedAt":"2026-09-10T21:33:13.275Z","owner":"unassigned","proposedLabel":"*out-of-scope","closeReason":"out-of-scope","triageAction":"propose-close","itemType":"question","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for opening this issue. The title and empty description do not identify any Live Preview behavior, question, or requested change, so there is nothing actionable for this repository.","verifiedUpdatedAt":"2026-04-30T18:37:29Z"},{"number":750,"title":"Live preview cannot open pages if the containing folder has a \"#\" in the name","confidence":0.96,"reviewedAt":"2026-09-10T21:31:04.603Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the report and the additional confirmation that file names are affected too. The current path-segment encoding leaves `#` unescaped, so the browser treats the rest of the preview URL as a fragment and does not send it to the server. https://github.com/microsoft/vscode-livepreview/pull/857 contains a targeted fix and regression tests for both leading and embedded `#` characters; this issue should remain open while that PR is reviewed.","verifiedUpdatedAt":"2025-10-07T00:13:30Z"},{"number":753,"title":"college work","confidence":0.98,"reviewedAt":"2026-09-10T21:33:13.926Z","owner":"unassigned","proposedLabel":"*out-of-scope","closeReason":"out-of-scope","triageAction":"propose-close","itemType":"question","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for sharing this. This issue contains an HTML form fragment but does not describe a problem or request involving the Live Preview extension, so there is no actionable change for this repository.","verifiedUpdatedAt":"2026-04-30T18:37:17Z"},{"number":757,"title":"Auto refresh refreshes when any editor in the current window changes","confidence":0.94,"reviewedAt":"2026-09-10T21:31:17.155Z","owner":"unassigned","proposedLabel":"feature-request","itemType":"feature-request","autoFixable":"false","proposedComment":"Thanks for the suggestion. The current `On All Changes in Editor` implementation listens to changes from every file or untitled editor in the window, and there is no source-scoped option today, so this is a feature request rather than an existing setting. We should define whether a new mode would watch only the previewed HTML file or also related CSS and JavaScript dependencies. The configurable ignore-path request at https://github.com/microsoft/vscode-livepreview/issues/548 is related, but it does not fully cover this source-specific behavior.","verifiedUpdatedAt":"2025-10-01T15:19:21Z"},{"number":760,"title":"Browser no showing output","confidence":0.98,"reviewedAt":"2026-09-10T21:33:03.176Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. Could you share the exact steps you take and what appears when the preview opens—a blank page, an error page, or no browser tab at all? Please include a screenshot, your Live Preview extension version, VS Code version and OS, and whether you are using desktop, Remote, or Codespaces. Also let us know whether this is VS Code's Integrated Browser, Live Preview's bundled browser, or an external browser; include your `livePreview.useIntegratedBrowser`, `livePreview.hostIP`, and `livePreview.serverRoot` settings if changed, plus any messages from the `Embedded Live Preview Console` Output channel.","verifiedUpdatedAt":"2026-04-30T18:37:01Z"},{"number":762,"title":"File not found.","confidence":0.97,"reviewedAt":"2026-09-10T21:32:09.476Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the report. The `%5C` path is caused by Live Preview's directory-index code using Windows filesystem separators when constructing URL links. The same root cause is documented in https://github.com/microsoft/vscode-livepreview/issues/855, and https://github.com/microsoft/vscode-livepreview/pull/856 contains a proposed fix and regression test that explicitly cover this report. This should remain open while that PR is reviewed.","verifiedUpdatedAt":"2025-11-15T12:38:35Z"},{"number":766,"title":"Add CORS setting","confidence":0.93,"reviewedAt":"2026-09-10T21:32:42.221Z","owner":"unassigned","itemType":"feature-request","autoFixable":"false","proposedComment":"Thanks for the request. Live Preview can already add CORS response headers through `livePreview.httpHeaders`; for example, `\"livePreview.httpHeaders\": { \"Access-Control-Allow-Origin\": \"*\" }`, or replace `*` with a specific origin such as `https://example.com`. Could you clarify what remains missing from that setting — for example, multiple allowed origins, dynamic origin handling, or CORS preflight behavior? Those would need a more specific design because allowing broader access can expose files served from the workspace.","verifiedUpdatedAt":"2025-12-03T00:25:40Z"},{"number":767,"title":"livepreview doesn't support proxy when vscode is using socks5h:// as proxy","confidence":0.76,"reviewedAt":"2026-09-10T21:31:53.805Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. Could you share a small HTML file that reproduces this and the CDN URL that fails, along with the exact error from the Developer Tools Console or Network panel? Please also include your Live Preview extension version, VS Code version, OS, whether this is local or Remote/SSH/dev-container/Codespaces, and the relevant proxy settings with any credentials removed. Finally, does the request work when you open the Live Preview URL in an external browser, and is `livePreview.useIntegratedBrowser` enabled? Those details will show whether this is the page's CDN request in VS Code's Integrated Browser, the extension's bundled preview, or Live Preview's injected reload connection.","verifiedUpdatedAt":"2025-12-10T05:28:36Z"},{"number":768,"title":"Preview setting : auto refresh on all changes in editor / not Working","confidence":0.74,"reviewedAt":"2026-09-10T21:32:24.327Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. Could you share a few details so we can narrow down where refresh is stopping?\n\n- Your Live Preview extension version, VS Code version, OS, and whether this is local or Remote/Codespaces.\n- The exact steps and file type you edit, including whether unsaved edits fail to refresh but saving the file still works.\n- Whether `livePreview.useIntegratedBrowser` is enabled and whether the preview is VS Code's Integrated Browser or Live Preview's bundled browser.\n- Any errors from the `Embedded Live Preview Console` Output channel or Help > Toggle Developer Tools after making an edit.\n\nA small sample folder that reproduces the problem would also help determine whether it depends on the project.","verifiedUpdatedAt":"2025-12-25T19:49:44Z"},{"number":770,"title":"Moves","confidence":0.72,"reviewedAt":"2026-09-10T21:33:01.642Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the report. Could you clarify what is moving and what you expected instead? Please include the steps that trigger it, a screenshot or short recording, your Live Preview extension and VS Code versions, and whether the preview is VS Code's Integrated Browser or the bundled Live Preview browser.","verifiedUpdatedAt":"2026-04-30T18:31:24Z"},{"number":789,"title":"Support vscode files.associations setting","confidence":0.9,"reviewedAt":"2026-09-10T21:32:51.739Z","owner":"unassigned","closeReason":"as-designed","triageAction":"propose-close","itemType":"feature-request","autoFixable":"false","proposedComment":"Thanks for the suggestion. Live Preview already uses VS Code's resolved language ID for its preview commands and when serving an open document, so this association should enable the HTML preview behavior:\n\n```json\n\"files.associations\": {\n  \"*.phtml\": \"html\"\n}\n```\n\nAfter applying the setting, reopen the `.phtml` file so VS Code recognizes its language mode as HTML.","verifiedUpdatedAt":"2026-02-18T16:38:12Z"},{"number":795,"title":"The folder link is incorrect in Windows 11","confidence":0.98,"reviewedAt":"2026-09-10T21:32:58.894Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false","proposedComment":"Thanks for the report. This is confirmed in the directory-index generator: on Windows it currently uses the native path separator when constructing an `href`, and URL encoding turns those backslashes into `%5C`, causing the 404. https://github.com/microsoft/vscode-livepreview/pull/856 has an open fix that uses POSIX separators for the URL while retaining native separators for filesystem access, along with regression coverage.","verifiedUpdatedAt":"2026-03-21T02:48:17Z"},{"number":815,"title":"Silent failure when default port (3000) is already in use — no error notification or Output channel entry","confidence":0.78,"reviewedAt":"2026-09-10T21:33:42.467Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the detailed report and workaround. Live Preview is intended to treat `livePreview.portNumber` as the first port to try and move to the next available port, so the silent failure is not the expected behavior. Could you retest with the current Live Preview release and, immediately after reproducing it, paste any errors from **Help > Toggle Developer Tools** in the Extension Host console? Please also confirm whether ports 3001 and 3002 are free on the remote host and, if possible, include the listening address shown for the process using port 3000 (`127.0.0.1`, `0.0.0.0`, `::1`, or `::`). That should distinguish the free-port probe, HTTP bind, WebSocket bind, and remote URI-resolution paths.","verifiedUpdatedAt":"2026-04-20T13:56:53Z"},{"number":817,"title":"When used with DevContainers the Forwarded Address should be used","confidence":0.96,"reviewedAt":"2026-09-10T21:33:29.954Z","owner":"unassigned","itemType":"bug","verification":"Source-confirmed","autoFixable":"false"},{"number":821,"title":"issue in live preview site not showing niether the icon","confidence":0.72,"reviewedAt":"2026-09-10T21:34:23.399Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"info-needed","proposedComment":"Thanks for the additional context. Could you share a screenshot showing where the missing icon or option used to appear, and describe the exact option you selected before it disappeared? Please also include your Live Preview extension version, VS Code version, OS, and whether `Live Preview: Show Preview` is still available from the Command Palette. That will help distinguish the Live Preview status-bar item from an editor or VS Code UI setting.","verifiedUpdatedAt":"2026-07-07T09:59:27Z"},{"number":822,"title":"webpack dependency update","confidence":0.91,"reviewedAt":"2026-09-10T21:34:42.015Z","owner":"unassigned","proposedLabel":"debt","areaLabels":"debt","itemType":"debt","autoFixable":"false","proposedComment":"Thanks for raising this. Current `main` still uses `copy-webpack-plugin` 11.0.0 as a build-time dependency, so the version-14 upgrade has not landed. Could you share the advisory identifiers or the relevant scanner output behind the two warnings? That will let the maintainers assess the findings and the compatibility of the upgrade without speculating about their security impact.","verifiedUpdatedAt":"2026-05-08T13:32:52Z"},{"number":826,"title":"Clarify in the README how this relates to the new built-in feature to preview HTML files","confidence":0.93,"reviewedAt":"2026-09-10T21:35:33.623Z","owner":"unassigned","proposedLabel":"under-discussion","areaLabels":"under-discussion","itemType":"under-discussion","autoFixable":"false","proposedComment":"Thanks for raising this. The README now links to the Integrated Browser, but it does not yet make the distinction clear: VS Code's built-in command covers quickly viewing an HTML file, while Live Preview also runs a local server and provides live refresh, server-root and relative-link handling, server logging, external-browser debugging, and workspace-less or multi-root serving. Remote support is also still being developed in VS Code core at https://github.com/microsoft/vscode/issues/321240. A short comparison near the README introduction would help users choose between the two; whether the remaining server functionality should continue as a separate extension is a product decision for the maintainers.","verifiedUpdatedAt":"2026-08-13T19:31:23Z"},{"number":840,"title":"Live Preview can generate malformed URLs for absolute links and workspace paths","confidence":0.84,"reviewedAt":"2026-09-10T21:34:57.573Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the detailed analysis. Before changing these helpers, could you provide the concrete product steps that produced each malformed URL on a current Live Preview release? Please include the exact kind of network/shared workspace path involved, your VS Code and Live Preview versions, and whether `livePreview.useIntegratedBrowser` is enabled. For the absolute-link case, it would also help to know whether you clicked a link in the page, entered it in the bundled preview's address bar, or reached it through another navigation flow, along with the resulting URL or a short recording.","verifiedUpdatedAt":"2026-07-28T21:30:04Z"},{"number":843,"title":"Live Preview 401 on remote tunnel with corporate MITM proxy: cert mismatch when host is 127.0.0.1","confidence":0.82,"reviewedAt":"2026-09-10T21:34:54.297Z","owner":"unassigned","itemType":"upstream","autoFixable":"false","proposedComment":"Thanks for the detailed report and for distinguishing this from https://github.com/microsoft/vscode-livepreview/issues/462. Live Preview starts a plain HTTP server on `127.0.0.1`; VS Code's `asExternalUri` and tunnel implementation provide the external HTTPS endpoint, so the extension does not participate in certificate negotiation and a `livePreview.serverCertificatePolicy` setting would not affect that path. One detail would help identify the layer conclusively: please run `Live Preview: Start Server Logging`, reproduce the request, and share whether that output records a 401 for the forwarded request, along with the relevant browser trace entry showing the certificate or SSL error. If the server log has no matching request or 401, the failure is in the VS Code tunnel/proxy path rather than in Live Preview's Host/Origin validation.","verifiedUpdatedAt":"2026-07-01T05:54:41Z"},{"number":845,"title":"0816 185 0304","confidence":0.99,"reviewedAt":"2026-09-10T21:34:10.959Z","owner":"unassigned","proposedLabel":"*out-of-scope","closeReason":"out-of-scope","triageAction":"propose-close","itemType":"question","autoFixable":"false","labels":"*out-of-scope","proposedComment":"Thanks for reaching out. This issue does not describe any Live Preview behavior or an actionable request, so it is outside the scope of this repository.","verifiedUpdatedAt":"2026-07-06T20:19:38Z"},{"number":846,"title":"1234","confidence":0.96,"reviewedAt":"2026-09-10T21:34:08.886Z","owner":"unassigned","proposedLabel":"*out-of-scope","closeReason":"out-of-scope","triageAction":"propose-close","itemType":"question","autoFixable":"false","proposedComment":"Thanks for reaching out. This issue only contains the title \"1234\" and does not describe any Live Preview behavior or request, so there is nothing actionable for this repository. If you encountered a problem with Live Preview, please open a new issue describing what happened, the steps that trigger it, and what you expected to see.","verifiedUpdatedAt":"2026-07-10T07:41:43Z"},{"number":849,"title":"When I come back to a codespace, the live preview stops working.","confidence":0.84,"reviewedAt":"2026-09-10T21:35:20.874Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","proposedComment":"Thanks for the report. Could you clarify which server and preview are involved here? Since this is a React app and you mention restarting npm, please include the npm command you run, the port it opens, and whether you also start this extension with a `Live Preview: ...` command. Please also share the Live Preview extension version, your `livePreview.useIntegratedBrowser`, `livePreview.serverRoot`, and `livePreview.portNumber` settings, a screenshot of the Codespaces Ports view after the failure, and any output from the `Embedded Live Preview Console` or `Live Preview: Start Server Logging`. If opening the forwarded HTTP and WebSocket ports from the Ports view restores the preview, please note which ports and URLs were involved. That will distinguish a Live Preview endpoint problem from the React development server or Codespaces port forwarding.","verifiedUpdatedAt":"2026-08-05T19:06:58Z"},{"number":855,"title":"Live Preview generates incorrect directory index URLs using encoded backslashes (%5Cfolder%5Cpath)","confidence":0.98,"reviewedAt":"2026-09-10T21:34:37.738Z","owner":"unassigned","proposedLabel":"bug","itemType":"bug","verification":"Source-confirmed","autoFixable":"false"},{"number":858,"title":"its show erorr to download","confidence":0.96,"reviewedAt":"2026-09-10T21:34:31.231Z","owner":"unassigned","proposedLabel":"info-needed","triageAction":"needs-info","itemType":"bug","verification":"Plausible","autoFixable":"false","labels":"~info-needed","proposedComment":"Thanks for the report. Could you clarify what you are trying to download and where the error appears—for example, while installing Live Preview, opening a preview, or downloading something from the page? Please include the exact error message or a screenshot, the steps that trigger it, and your Live Preview extension, VS Code, and operating-system versions. If this happens after starting a preview, please also paste any relevant output from the `Embedded Live Preview Console` channel.","verifiedUpdatedAt":"2026-08-26T23:51:29Z"},{"number":862,"title":"Embedded Live Preview Console Does Not Work","confidence":0.97,"reviewedAt":"2026-09-10T21:34:46.223Z","owner":"unassigned","itemType":"polish","autoFixable":"false","proposedComment":"Thanks for the clarification. The inactive channel is a leftover from the legacy embedded preview, while the current Integrated Browser exposes console messages through Developer Tools. https://github.com/microsoft/vscode-livepreview/pull/867 now tracks making that channel appear only when the legacy preview is actually opened, while retaining it for users with `livePreview.useIntegratedBrowser` disabled.","verifiedUpdatedAt":"2026-09-01T10:49:13Z"},{"number":92,"title":"Remember already opened previews in external browser","confidence":0.87,"reviewedAt":"2026-09-10T21:22:06.945Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request"},{"number":96,"title":"Live Preview from remote container should \"just work\"","confidence":0.95,"reviewedAt":"2026-09-10T21:22:28.761Z","owner":"andreamah","itemType":"feature-request","autoFixable":"false","labels":"feature-request","proposedComment":"Thanks for the context. This remains blocked on the port-attributes API tracked by https://github.com/microsoft/vscode/issues/115616. The earlier implementation in https://github.com/microsoft/vscode-livepreview/pull/104 was closed unmerged because it relied on the proposed API, and current `main` still has no equivalent provider for marking Live Preview's HTTP and WebSocket ports as silently forwarded. This should stay open as the extension-side adoption task once the core API is finalized.","verifiedUpdatedAt":"2022-12-09T20:03:59Z"}];
+const ACTIONS = ["propose-close","needs-info","keep-open"];
+const VDESC = {"Confirmed":"Reproduced against current main — the failing behavior was observed directly, or a commenter supplied a confirmed reproduction.","Source-confirmed":"Traced conclusively in the current source via a checkout — the buggy code path is identified, though not executed.","Traced":"A likely defect path was found in the source, but with some uncertainty that it's the true cause.","Plausible":"The report reads as coherent and credible, but it wasn't reproduced or traced in the code — not yet verified.","Unverified":"A genuine reproduction attempt failed, or the report is too thin to verify.","Inconclusive":"Signals conflict — a reproduction was claimed but confidence is low; treat the rating with caution."};
+const TARGET = "microsoft/vscode-livepreview", STATE_REPO = "egamma/vscodesweeper-state", STATE_BRANCH = "state";
+const VTIERS = ["Confirmed","Source-confirmed","Traced","Plausible","Unverified","Inconclusive"]; // best → worst; rank = index, unknown/blank ranks last
+const IMPLEMENTED = "implemented on main";
+// Host-capability contract (docs/tools-integration.md), spoken over postMessage
+// to the embedding vscode-tools host — the page has no host-origin access. Wired
+// up at the bottom of the script.
+const HUB_READY = "sweeper-hub-ready", HUB_CAPS = "sweeper-hub-capabilities";
+const HUB_APPLY_REQ = "sweeper-apply-request", HUB_APPLY_RES = "sweeper-apply-result";
+const embedded = window.parent !== window; // true inside the vscode-tools iframe
+let applyEnabled = false; // flips when the host answers HUB_READY with our target
+const applyPending = {}; // apply request id → resolver, awaiting HUB_APPLY_RES
+let applyReqSeq = 0;
+// The blob ships a slim projection (toShipped in dashboard.ts): empty/default keys are
+// omitted, urls/rating/rank are derived here from the constants above, and freshness
+// arrives as a ship-only-when-stale flag. Hydrate every record back to the full shape
+// so the rendering code below reads plain fields throughout.
+for (const r of DATA) {
+  r.owner = r.owner || ""; r.itemType = r.itemType || ""; r.labels = r.labels || "";
+  r.proposedLabel = r.proposedLabel || "none"; r.triageAction = r.triageAction || "keep-open";
+  r.areaLabels = r.areaLabels || "";
+  r.verification = r.verification || ""; r.autoFixable = r.autoFixable || "";
+  r.fixPr = r.fixPr || ""; r.implementPr = r.implementPr || ""; r.skillPr = r.skillPr || "";
+  r.currentState = r.currentState || "open"; r.closedAt = r.closedAt || ""; r.stateReason = r.stateReason || "";
+  r.proposedComment = r.proposedComment || ""; r.verifiedUpdatedAt = r.verifiedUpdatedAt || "";
+  r.canonical = r.canonical || "";
+  r.contentFresh = !r.contentStale;
+  r.verifyVerdict = r.verifyVerdict || ""; r.verifyEvidence = r.verifyEvidence || "";
+  r.verifyKind = r.verifyKind || ""; r.verifyCanonical = r.verifyCanonical || "";
+  r.verifyCanonicalRepo = r.verifyCanonicalRepo || "";
+  r.verifyStale = !!r.verifyStale || (!!r.verifyVerdict && !r.contentFresh); // record OR live drift decays the badge
+  r.verifyUnreleased = !!r.verifyUnreleased;
+  // Sort rank for the 2nd-review column: verified first, then unreleased/stale, refuted last,
+  // unverified after everything stamped.
+  r.verifyRank = r.verifyVerdict === "confirmed" ? (r.verifyStale ? 2 : r.verifyUnreleased ? 1 : 0)
+    : r.verifyVerdict === "unverifiable" ? 3
+    : r.verifyVerdict === "refuted" ? 4 : 5;
+  r.url = r.url || "https://github.com/" + TARGET + "/issues/" + r.number;
+  r.reviewUrl = r.reviewUrl || "https://github.com/" + STATE_REPO + "/blob/" + STATE_BRANCH + "/records/" + TARGET + "/items/" + r.number + ".md";
+  const rank = VTIERS.indexOf(r.verification);
+  r.verificationRank = rank === -1 ? VTIERS.length : rank;
+  r.rating = !r.verification ? "" : rank === -1 ? r.verification : (VTIERS.length - rank) + "/" + VTIERS.length + " " + r.verification;
+  // closeReason backfill for legacy (pre-2026-08-09) records, mirroring the
+  // server-side derivation in record-parse.ts closeReason(): label-free close =
+  // implemented on main, star labels carry the reason, anything else buckets as
+  // "other". Without this, close: filters (and the verdicts page's close:
+  // deep links, whose counts include legacy records) silently miss every
+  // record that predates the structured field.
+  if (r.triageAction === "propose-close" && !r.closeReason) {
+    const lbl = r.proposedLabel || "";
+    r.closeReason = !lbl || lbl === "none" ? "implemented-on-main"
+      : lbl.charAt(0) === "*" ? lbl.slice(1) : "other";
+  }
+  // Label/reason column: the structured closeReason (2026-08-09+) is
+  // authoritative — a label-free close may be as-designed, not just implemented
+  // on main. Legacy records without the field keep the historic heuristic.
+  // Mapping here — not in rowHtml — makes search and column sort see the
+  // reason for free.
+  if (r.triageAction === "propose-close" && r.proposedLabel === "none") {
+    r.proposedLabel = r.closeReason ? (r.closeReason === "implemented-on-main" ? IMPLEMENTED : r.closeReason) : IMPLEMENTED;
+  }
+}
+let actionFilter = null, sortK = "owner", sortDir = 1; // open on the actionable set; click a card to filter
+let autoFixOnly = false, actionableOnly = true;
+let closedOnly = false; // exclusive view: closed-since-review records, most recent first
+const rowsEl = document.getElementById("rows"), qEl = document.getElementById("q");
+const actionableEl = document.getElementById("actionableOnly");
+const actionableLabelEl = document.getElementById("actionableLabel");
+const actionableTextEl = document.getElementById("actionableText");
+const resultCountEl = document.getElementById("resultCount");
+function esc(s){const d=document.createElement("div");d.textContent=s==null?"":String(s);return d.innerHTML;}
+function attr(s){return esc(s).replace(/"/g,"&quot;");} // esc leaves quotes alone — needed inside title="…"
+// Keep in sync with feedbackUrl() in feedback.ts — plain item number only, never
+// owner/repo#N or an upstream issue URL (a submitted reference would ping the issue).
+function feedbackHref(n){ return "https://github.com/" + STATE_REPO + "/issues/new?" + new URLSearchParams({ template: "feedback.yml", title: "feedback: " + TARGET + " item " + n, item: n, repo: TARGET, page: "dashboard" }); }
+// Keep in sync with isActionable() in dashboard.ts.
+function isActionable(r){ return r.triageAction !== "keep-open" || !!r.proposedComment || !!r.fixPr || !!r.implementPr || !!r.skillPr || r.autoFixable === "true"; }
+// The filter language (GitHub-style qualifiers over the plain-substring filter):
+// parseFilterQuery/matchesFilter are serialized verbatim from filter-query.ts, so
+// the page runs exactly the code the unit tests exercise.
+function parseFilterQuery(raw){const KEYS=["owner","action","close","type","label","confidence","verify","has","no","is"];const q=String(raw||"").trim().toLowerCase();if(q.length<2)return null;const clauses=[];for(const tok of q.split(/\s+/)){let t=tok;let neg=false;if(t.charAt(0)==="-"&&t.length>1){neg=true;t=t.slice(1)}const i=t.indexOf(":");const key=i>0?t.slice(0,i):"";if(key&&KEYS.indexOf(key)!==-1){const values=t.slice(i+1).split(",").filter(Boolean);if(values.length)clauses.push({neg,key,values})}else if(t.length>=2){clauses.push({neg,key:"",values:[t]})}}return clauses.length?clauses:null}
+function matchesFilter(r,clauses){for(const c of clauses){let hit=false;for(const v of c.values){let m=false;if(c.key==="owner")m=(r.owner||"").toLowerCase().indexOf(v)!==-1;else if(c.key==="action")m=(r.triageAction||"").indexOf(v)!==-1;else if(c.key==="close")m=(r.closeReason||"").toLowerCase().indexOf(v)!==-1;else if(c.key==="type")m=(r.itemType||"").indexOf(v)!==-1;else if(c.key==="label"){m=((r.proposedLabel||"")+" "+(r.areaLabels||"")+" "+(r.labels||"")).toLowerCase().indexOf(v)!==-1}else if(c.key==="confidence"){const conf=r.confidence||0;if(v==="high")m=conf>=.9;else if(v==="medium"||v==="med")m=conf>=.7&&conf<.9;else if(v==="low")m=conf<.7}else if(c.key==="verify"){if(v==="stale")m=!!r.verifyStale;else if(v==="unreleased")m=!!r.verifyUnreleased;else m=!!r.verifyVerdict&&r.verifyVerdict.indexOf(v)!==-1}else if(c.key==="has"||c.key==="no"){let p=false;if(v==="fixpr")p=!!r.fixPr;else if(v==="skillpr")p=!!r.skillPr;else if(v==="implementpr")p=!!r.implementPr;else if(v==="pr")p=!!(r.fixPr||r.skillPr||r.implementPr);else if(v==="owner")p=!!r.owner&&r.owner!=="unassigned";else if(v==="comment")p=!!r.proposedComment;else if(v==="canonical")p=!!r.canonical;else if(v==="verify")p=!!r.verifyVerdict;m=c.key==="no"?!p:p}else if(c.key==="is"){if(v==="stale")m=!r.contentFresh;else if(v==="fixable"||v==="agent-fixable")m=r.autoFixable==="true"}else{m=(String(r.number)+" "+r.title+" "+(r.proposedLabel||"")+" "+(r.areaLabels||"")+" "+(r.itemType||"")+" "+(r.rating||"")+" "+(r.owner||"")+" "+(r.verifyVerdict||"")).toLowerCase().indexOf(v)!==-1}if(m){hit=true;break}}if(c.neg?hit:!hit)return false}return true}
+// Per-view column visibility — serialized from dashboard.ts so the page runs
+// exactly the unit-tested rule (see hiddenColumns there for the rationale).
+function hiddenColumns(s){if(s.closedOnly)return{rating:true,verify:false,apply:true,agentFix:true};return{rating:!(s.autoFixOnly||s.actionFilter==="keep-open"||!s.actionFilter&&!s.actionableOnly),verify:s.autoFixOnly||s.actionFilter==="needs-info"||s.actionFilter==="keep-open",apply:false,agentFix:!s.autoFixOnly&&(s.actionFilter==="propose-close"||s.actionFilter==="needs-info")}}
+const QHELP = "Bare words filter as before — substring over issue #, title, label, owner, type, rating, 2nd-review verdict. key:value tokens filter one field. Tokens AND together; prefix - negates a token; commas OR values within a key (owner:a,b).\n\nowner:alexdima — assignee contains\naction:propose-close | needs-info | keep-open\nclose:duplicate | as-designed | implemented-on-main | … — close reason\ntype:bug | feature-request\nlabel:editor — proposed / area / issue labels\nconfidence:high | medium | low — ≥90% / 70–89% / <70%\nverify:confirmed | refuted | unverifiable | stale | unreleased — 2nd review\nhas: / no: fixpr | skillpr | implementpr | pr | owner | comment | canonical | verify\nis:stale | agent-fixable\n\nExamples:\nowner:alexdima action:propose-close confidence:high — my strongest close proposals\nclose:duplicate verify:confirmed — duplicate closes that survived the 2nd review (safest to apply)\nverify:refuted — the disputed queue: read before acting\nclose:duplicate -has:verify — duplicate closes the verify lane hasn't covered yet\nis:agent-fixable no:pr — fix specs nobody has picked up\nno:owner action:propose-close — unassigned close proposals\nlabel:terminal type:bug action:needs-info — an area's bugs stuck waiting on the reporter\n\nAnything with an unrecognized key stays plain text — pasting a title like \"Terminal: split pane\" works unchanged. The query lives in the URL (#q=…): share the link to share the view.";
+// q is a compiled query (parseFilterQuery result) or null for no filter.
+function matchesText(r, q){ return !q || matchesFilter(r, q); }
+// Recompute the card numbers over the current view so they track the search box / actionable
+// toggle instead of staying at the server-baked totals. Faceted: each card reflects every OTHER
+// active filter but NOT its own selection, so the counts stay meaningful while one card is active.
+function isClosed(r){ return r.currentState === "closed"; }
+function updateCounts(q){
+  const base = DATA.filter(r => !isClosed(r) && (!actionableOnly || isActionable(r)) && matchesText(r, q));
+  // Actionable-only is essentially "hide keep-open rows", so it IS the keep-open card's
+  // own selection in faceting terms — that card's count must ignore it, or it reads a
+  // fraction of the real keep-open set on load (clicking the card drops the toggle, and
+  // the number the click reveals should be the number the card promised).
+  const keepOpenBase = actionableOnly ? DATA.filter(r => !isClosed(r) && matchesText(r, q)) : base;
+  for (const a of ACTIONS){
+    const n = (a === "keep-open" ? keepOpenBase : base).filter(r => (!autoFixOnly || r.autoFixable === "true") && r.triageAction === a).length;
+    const el = document.querySelector('#cards .card[data-action="'+a+'"] .n');
+    if (el) el.textContent = n;
+  }
+  const afEl = document.querySelector('#afCard .n');
+  if (afEl) afEl.textContent = base.filter(r => (!actionFilter || r.triageAction === actionFilter) && r.autoFixable === "true").length;
+  const clEl = document.querySelector('#closedCard .n');
+  if (clEl) clEl.textContent = DATA.filter(r => isClosed(r) && matchesText(r, q)).length;
+  const actionableBase = DATA.filter(r =>
+    !isClosed(r) &&
+    matchesText(r, q) &&
+    (!actionFilter || r.triageAction === actionFilter) &&
+    (!autoFixOnly || r.autoFixable === "true")
+  );
+  const actionableMatches = actionableBase.filter(isActionable).length;
+  actionableTextEl.textContent = "Actionable only (" + actionableMatches.toLocaleString("en-US") + " of " + actionableBase.length.toLocaleString("en-US") + ")";
+  actionableEl.disabled = closedOnly;
+  actionableLabelEl.title = closedOnly
+    ? "Actionable only does not apply to the closed archive."
+    : "Hide keep-open / no-action rows. Uncheck to show every reviewed issue.";
+}
+let view = []; // the current filtered+sorted rows; vrender paints a window of it
+// The query round-trips through the URL hash so a filtered view is shareable —
+// other pages can deep-link a slice (e.g. dashboard.html#q=verify:refuted).
+function syncHash(raw){
+  try { history.replaceState(null, "", location.pathname + location.search + (raw ? "#q=" + encodeURIComponent(raw) : "")); } catch {}
+}
+function render(){
+  const raw = qEl.value.trim();
+  const q = parseFilterQuery(raw); // null = no filter (blank or under 2 chars)
+  syncHash(raw);
+  updateCounts(q);
+  // Per-view columns: hide the structurally-empty ones for the active view. When
+  // a hiding column is the active sort key, fall back to the default sort — an
+  // invisible sort order would look like random row placement.
+  const hide = hiddenColumns({ closedOnly, autoFixOnly, actionFilter, actionableOnly });
+  const tbl = document.querySelector("table");
+  tbl.classList.toggle("hide-rating", hide.rating);
+  tbl.classList.toggle("hide-verify", hide.verify);
+  tbl.classList.toggle("hide-apply", hide.apply);
+  tbl.classList.toggle("hide-agentfix", hide.agentFix);
+  if ((hide.rating && sortK === "verificationRank") || (hide.verify && sortK === "verifyRank") || (hide.agentFix && sortK === "autoFixable")) { sortK = "owner"; sortDir = 1; }
+  view = DATA.filter(r => {
+    // Closed mode swaps the whole view; the action/auto-fix/actionable filters
+    // describe active triage work and don't apply to the archive.
+    if (closedOnly) return isClosed(r) && matchesText(r, q);
+    if (isClosed(r)) return false;
+    if (actionableOnly && !isActionable(r)) return false;
+    if (actionFilter && r.triageAction !== actionFilter) return false;
+    if (autoFixOnly && r.autoFixable !== "true") return false;
+    if (!matchesText(r, q)) return false;
+    return true;
+  });
+  if (closedOnly && sortK === "owner" && sortDir === 1) {
+    view.sort((a,b)=> b.closedAt.localeCompare(a.closedAt) || a.number-b.number); // default: most recently closed first
+  } else {
+    view.sort((a,b)=>{ let x=a[sortK], y=b[sortK]; if(x<y)return -sortDir; if(x>y)return sortDir; return a.number-b.number; });
+  }
+  resultCountEl.textContent = "Showing " + view.length.toLocaleString("en-US") + (view.length === 1 ? " issue" : " issues");
+  window.scrollTo({ top: 0 }); // filter/sort changed what's shown — start at the top of it
+  vrender(true);
+}
+function rowHtml(r){
+  const pct = Math.round(r.confidence*100);
+  return "<tr>"
+    + '<td class="owner" title="'+attr(r.owner)+'">'+esc(r.owner||"—")+"</td>"
+    + '<td><a href="'+esc(r.url)+'" target="_blank" rel="noopener">#'+esc(r.number)+'</a></td>'
+    + '<td class="clamp" title="'+attr(r.title)+'">'+esc(r.title)+"</td>"
+    + "<td>"+esc(r.itemType)+"</td>"
+    + '<td><span class="pill a-'+esc(r.triageAction)+'">'+esc(r.triageAction)+"</span>"+areaChip(r)+closedPill(r)+"</td>"
+    + "<td><code>"+esc(r.proposedLabel)+"</code>"+canonLink(r)+"</td>"
+    + '<td><span class="conf"><i style="width:'+pct+'%"></i></span> <span class="muted">'+pct+"%</span></td>"
+    + '<td class="col-rating">'+(r.rating?'<span class="vtier" title="'+esc(VDESC[r.verification]||"")+'">'+esc(r.rating)+"</span>":'<span class="muted">—</span>')+"</td>"
+    + '<td><a href="'+esc(r.reviewUrl)+'" target="_blank" rel="noopener">view</a> <a class="flag" href="'+feedbackHref(r.number)+'" target="_blank" rel="noopener" title="Report feedback on this verdict — opens a prefilled issue on the state repo (plain item number, so the vscode issue is never pinged)">⚑</a></td>'
+    + '<td class="col-verify">'+verifyCell(r)+"</td>"
+    + '<td class="col-apply">'+applyCell(r)+"</td>"
+    + '<td class="col-agentfix">'+afCell(r)+"</td>"
+    + '<td class="muted">'+esc((r.reviewedAt||"").slice(0,10))+"</td>"
+    + "</tr>";
+}
+// Windowed rendering: only the viewport ± OVERSCAN rows exist in the DOM; spacer
+// rows above/below keep the scrollbar honest. Rows are fixed-height (see the CSS
+// clamp), so the spacer math is exact and cost stays flat at any corpus size —
+// the previous full-table innerHTML froze for seconds beyond ~10k rows.
+const OVERSCAN = 20;
+let rowH = 39, winFirst = -1, winLast = -1;
+function vrender(force){
+  if (!view.length) {
+    winFirst = winLast = -1;
+    rowsEl.innerHTML = '<tr><td colspan="13" class="muted">No matching records.</td></tr>';
+    return;
+  }
+  // Table-top offset from the document: unaffected by the spacers below it, since
+  // the tbody's total height is constant for a given view.
+  const top = rowsEl.getBoundingClientRect().top + window.scrollY;
+  const first = Math.max(0, Math.floor((window.scrollY - top) / rowH) - OVERSCAN);
+  const last = Math.min(view.length, first + Math.ceil(window.innerHeight / rowH) + 2 * OVERSCAN);
+  if (!force && first === winFirst && last === winLast) return;
+  winFirst = first; winLast = last;
+  const spacer = h => '<tr class="spacer"><td colspan="13" style="height:' + h + 'px"></td></tr>';
+  rowsEl.innerHTML = (first > 0 ? spacer(first * rowH) : "")
+    + view.slice(first, last).map(rowHtml).join("")
+    + (last < view.length ? spacer((view.length - last) * rowH) : "");
+  // Self-correcting row height: rows are uniform, so slice height ÷ row count is
+  // exact. One re-render when the estimate drifts (fonts/zoom/theme).
+  const rendered = rowsEl.querySelectorAll("tr:not(.spacer)");
+  if (rendered.length > 1) {
+    const h = (rendered[rendered.length-1].getBoundingClientRect().bottom - rendered[0].getBoundingClientRect().top) / rendered.length;
+    if (h > 0 && Math.abs(h - rowH) > 0.1) { rowH = h; vrender(true); }
+  }
+}
+let scrollTick = false;
+addEventListener("scroll", () => {
+  if (scrollTick) return;
+  scrollTick = true;
+  requestAnimationFrame(() => { scrollTick = false; vrender(false); });
+}, { passive: true });
+addEventListener("resize", () => vrender(true));
+// 2nd-review badge: the verify lane's blinded verdict on a duplicate or
+// implemented-on-main close proposal. The whole badge is a peek button — the
+// evidence line IS the product (trial feedback 2026-08-14), so one click opens it
+// in the preview dialog; the tooltip carries it too. A confirmed-but-unreleased fix
+// (decision 13) reads "fixed, unreleased" — merged, but the reporter can't get it yet.
+function verifyCell(r){
+  if (!r.verifyVerdict) return '<span class="muted">—</span>';
+  const stale = r.verifyStale;
+  const unreleased = r.verifyVerdict === "confirmed" && r.verifyUnreleased;
+  const cls = r.verifyVerdict === "confirmed" ? (stale ? "v-stale" : unreleased ? "v-unreleased" : "v-confirmed")
+    : r.verifyVerdict === "refuted" ? "v-refuted" : "v-unver";
+  const label = r.verifyVerdict === "confirmed" ? (stale ? "⌛ verified" : unreleased ? "⏳ fixed, unreleased" : "✓ verified")
+    : r.verifyVerdict === "refuted" ? "✗ refuted" : "? unverifiable";
+  const explain = "2nd review — an independent model re-judged the close claim blind (the duplicate pair's titles/dates/bodies, or the issue vs the cited fix commit's diff; it never saw the first verdict, labels, or issue state) and skeptically: refuted is the default unless the evidence clearly supports the claim.";
+  return '<button class="pill vbadge '+cls+'" data-n="'+esc(r.number)+'" data-kind="verify" title="'+attr(explain + "\n\n" + r.verifyEvidence)+'">'+label+"</button>"
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="verify" title="Show the full verification stamp from the record (evidence, gate checks, when and which engine)" aria-label="Show verification details for issue '+esc(r.number)+'">👁</button>';
+}
+// Canonical link on a duplicate close proposal: the Label/reason cell reads
+// "*duplicate → #N" with the canonical issue one click away (server-extracted from
+// the proposed comment). Satellites may cite cross-repo; the full owner/repo would
+// blow the column wide, so those render as "#N ↗" with the full reference in the
+// tooltip (the ↗ flags that the link leaves this repo).
+function canonLink(r){
+  if (!r.canonical) return "";
+  const cross = r.canonical.includes("#");
+  const repo = cross ? r.canonical.split("#")[0] : TARGET;
+  const num = cross ? r.canonical.split("#")[1] : r.canonical;
+  const title = "The canonical issue this duplicate would be closed in favor of"
+    + (cross ? ": " + r.canonical + " — in a different repo" : "")
+    + " — from the review\'s proposed comment";
+  return ' → <a href="https://github.com/'+esc(repo)+'/issues/'+esc(num)
+    + '" target="_blank" rel="noopener" title="'+attr(title)+'">#'+esc(num)+(cross?"&#8239;↗":"")+"</a>";
+}
+// Suggested-area chip on open keep-open rows (incl. folded route-to-area records)
+// and needs-info rows — a needs-info verdict can still name the area that should
+// see the issue while info is gathered. The page applies no labels.
+function areaChip(r){
+  if (r.triageAction === "propose-close" || !r.areaLabels || isClosed(r)) return "";
+  return ' <span class="pill area-chip" title="The review suggests these area labels for routing. Informational only — vscodesweeper never applies labels.">→ '+esc(r.areaLabels)+"</span>";
+}
+// Outcome pill for a closed row: green check when the review proposed the close
+// (the sweeper's hit-rate signal), muted when it was resolved externally.
+function closedPill(r){
+  if (!isClosed(r)) return "";
+  const confirmed = r.triageAction === "propose-close";
+  const title = (confirmed
+    ? "Closed after a propose-close verdict — the proposal was confirmed."
+    : "Closed externally after review.")
+    + (r.stateReason ? " Reason: " + r.stateReason + "." : "")
+    + (r.closedAt ? " Closed " + r.closedAt.slice(0,10) + "." : "");
+  return ' <span class="pill ' + (confirmed ? "closed-ok" : "closed-ext") + '" title="' + attr(title) + '">'
+    + (confirmed ? "closed ✓" : "closed") + "</span>";
+}
+function afCell(r){
+  // An existing sweeper draft PR trumps the copy button — mirrors the skill's own
+  // no-existing-PR gate (don't start a second fix for the same issue).
+  if (r.implementPr) return '<a href="'+esc(r.implementPr)+'" target="_blank" rel="noopener" title="Draft PR from the retired implement lane (historical)">draft PR ▸</a>';
+  if (r.fixPr) return '<a href="'+esc(r.fixPr)+'" target="_blank" rel="noopener" title="Draft fix PR from the retired fork fix lane (historical)">draft PR ▸</a>';
+  if (r.skillPr) return '<a href="'+esc(r.skillPr)+'" target="_blank" rel="noopener" title="Draft PR created with the sweeper-fix skill">draft PR ▸</a>';
+  if (r.autoFixable !== "true") return '<span class="muted">—</span>';
+  if (isClosed(r)) return '<span class="pill af-yes">yes</span>';
+  // Keep the copied line in sync with fixPromptLine() in skill-publish.ts.
+  return '<button class="copy fixprompt" data-n="'+esc(r.number)+'" title="Copy the prompt for your agent — the skill invocation plus the reviewed fix spec, ready to read, edit, and paste. The sweeper-fix skill implements it from your vscode checkout and opens a draft PR you own. First time? See the sweeper-fix skill link in the header." aria-label="Copy prompt for issue '+esc(r.number)+'">Copy prompt</button>'
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" data-kind="spec" title="Read the reviewed fix spec the skill implements (fix brief, likely files, validation) — opens a dialog with a copy action" aria-label="Show fix spec for issue '+esc(r.number)+'">👁</button>';
+}
+function applyCell(r){
+  if (isClosed(r) || !r.proposedComment) return '<span class="muted">—</span>'; // nothing to apply on a closed issue
+  const stale = !r.contentFresh; // the ISSUE changed — policy drift is our detail, not the maintainer's
+  const cls = stale ? "copy warn" : "copy";
+  const title = stale ? "Heads up: the issue changed since this review (click for details) — the comment may still be useful."
+    : "Copy the suggested comment to paste on the issue";
+  // Apply & close REPLACES Copy comment when the vscode-tools host enables it
+  // (capability probe) — one primary action per row; the peek still shows the
+  // text for a manual paste. Close proposals ONLY: a needs-info comment must be
+  // posted WITHOUT closing, so those rows keep Copy comment even in the tools
+  // host (a post-without-close action is a later capability, not v1).
+  if (applyEnabled && r.triageAction === "propose-close") {
+    return '<button class="copy apply" data-n="'+esc(r.number)+'" title="Post this comment on the issue and close it ('+attr(r.closeReason || r.proposedLabel)+') — as you, under your own GitHub identity. The comment opens editable for review first; the live issue state is re-checked before anything is posted." aria-label="Apply comment and close issue '+esc(r.number)+'">Apply &amp; close'+(stale?' ⚠':'')+'</button>'
+      + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Read the suggested comment — opens a dialog with a copy action for a manual paste" aria-label="Show suggested comment for issue '+esc(r.number)+'">👁</button>';
+  }
+  return '<button class="'+cls+'" data-n="'+esc(r.number)+'" title="'+attr(title)+'" aria-label="Copy suggested comment for issue '+esc(r.number)+'">Copy comment'+(stale?' ⚠':'')+'</button>'
+    + '&nbsp;<button class="peek" data-n="'+esc(r.number)+'" title="Read the suggested comment before copying — opens a dialog with the copy action inside" aria-label="Show suggested comment for issue '+esc(r.number)+'">👁</button>';
+}
+// Preview dialog: a single centered modal <dialog>, NOT an inline row — the virtual
+// scroller's spacer math assumes uniform row heights, so rows must never grow. A
+// modal (vs the old anchored popover) gives the full text room, can't clip against
+// the vscode-tools iframe edge, and carries the copy action for the careful path.
+const cpanel = document.createElement("dialog");
+cpanel.id = "cpanel";
+document.body.appendChild(cpanel);
+let cpanelFor = null;
+function closePanel(){ if (cpanel.open) cpanel.close(); }
+cpanel.addEventListener("close", () => { cpanelFor = null; });
+// Backdrop click dismisses: a click outside the dialog's box targets the dialog
+// element itself (the ::backdrop is part of it), so test the coordinates.
+cpanel.addEventListener("click", (e) => {
+  if (e.target !== cpanel) return;
+  const r = cpanel.getBoundingClientRect();
+  if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closePanel();
+});
+// Linkify issue references in dialog text WITHOUT innerHTML — issue-derived text
+// stays text (the injection guard below); only the matched refs become anchor
+// elements. Bare #N resolves to the target repo (the /duplicate of #N convention).
+// Used for comment/verify dialogs only — the fix spec may contain #hex colors.
+function linkifyInto(el, text){
+  // owner/repo#N is the cross-repo canonical form (verify dialogs, gate
+  // evidence) — a bare #N always means TARGET, but the slugged form must link
+  // to the CITED repo, never fall through to the bare-#N branch.
+  const re = /https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/(?:issues|pull)\/\d+|[\w.-]+\/[\w.-]+#\d+|#\d+/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    el.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const a = document.createElement("a");
+    a.href = m[0].startsWith("https:") ? m[0]
+      : m[0].startsWith("#") ? "https://github.com/" + TARGET + "/issues/" + m[0].slice(1)
+      : "https://github.com/" + m[0].replace("#", "/issues/");
+    a.target = "_blank"; a.rel = "noopener";
+    a.textContent = m[0];
+    el.appendChild(a);
+    last = m.index + m[0].length;
+  }
+  el.appendChild(document.createTextNode(text.slice(last)));
+}
+// Inline markdown for the spec dialog: `code` and **bold** spans become elements,
+// everything else stays text nodes — same no-innerHTML rule as linkifyInto.
+function renderInlineInto(el, text){
+  const re = /\*\*([^*]+)\*\*|`([^`]+)`/g;
+  let last = 0, m;
+  while ((m = re.exec(text))) {
+    el.appendChild(document.createTextNode(text.slice(last, m.index)));
+    const node = document.createElement(m[1] !== undefined ? "strong" : "code");
+    node.textContent = m[1] !== undefined ? m[1] : m[2];
+    el.appendChild(node);
+    last = m.index + m[0].length;
+  }
+  el.appendChild(document.createTextNode(text.slice(last)));
+}
+// Structured rendering for the fix-spec dialog: the record's "- **Label:** value"
+// bullets become labeled fields, the fix prompt becomes a quoted block. Built with
+// DOM nodes only (record text stays text); falls back to raw text on any
+// unrecognized shape so a hand-edited record still previews.
+function renderSpecInto(el, text){
+  el.className = "spec";
+  const fields = [];
+  let field = null;
+  for (const line of text.split("\n")) {
+    const m = /^-\s+\*\*(.+?):\*\*\s*(.*)$/.exec(line);
+    if (m) { field = { label: m[1], parts: m[2] ? [m[2]] : [] }; fields.push(field); }
+    else if (field) field.parts.push(line);
+    else if (line.trim()) { el.className = ""; el.textContent = text; return; }
+  }
+  if (!fields.length) { el.className = ""; el.textContent = text; return; }
+  for (const f of fields) {
+    if (/^auto-?fixable$/i.test(f.label)) continue; // every previewed row is agent-fixable — redundant
+    const div = document.createElement("div");
+    div.className = "f";
+    const k = document.createElement("span");
+    k.className = "k";
+    k.textContent = f.label;
+    div.appendChild(k);
+    const body = document.createElement("div");
+    body.className = /prompt/i.test(f.label) ? "prompt" : "v";
+    renderInlineInto(body, f.parts.join("\n").trim());
+    div.appendChild(body);
+    el.appendChild(div);
+  }
+}
+// action = { label, run } renders a primary copy button in the dialog footer — the
+// same copy the row button performs, for people who read before copying. Re-calling
+// with the panel open (a lazy fetch resolving) rebuilds the content in place.
+function openPanel(key, text, caption, render, action){
+  cpanelFor = key;
+  cpanel.textContent = ""; // rebuild; textContent throughout: issue-derived text stays text
+  if (caption) {
+    const cap = document.createElement("div");
+    cap.className = "cap";
+    cap.textContent = caption;
+    cpanel.appendChild(cap);
+  }
+  const body = document.createElement("div");
+  if (render === true) linkifyInto(body, text);
+  else if (typeof render === "function") render(body, text);
+  else body.textContent = text;
+  cpanel.appendChild(body);
+  const actions = document.createElement("div");
+  actions.className = "actions";
+  if (action) {
+    const act = document.createElement("button");
+    act.className = "copy apply";
+    act.textContent = action.label;
+    act.addEventListener("click", () => { closePanel(); action.run(); });
+    actions.appendChild(act);
+  }
+  const close = document.createElement("button");
+  close.className = "copy";
+  close.textContent = "Close";
+  close.addEventListener("click", closePanel);
+  actions.appendChild(close);
+  cpanel.appendChild(actions);
+  if (!cpanel.open) cpanel.showModal(); // Escape closes natively (the cancel event)
+}
+// The fix spec is NOT in the shipped payload (the 15k-row payload diet) — the spec
+// eye lazy-fetches the record from the public state branch on first click and shows
+// its Auto-fix candidate section. Cached per row; raw.githubusercontent serves CORS.
+async function fetchSpec(rec){
+  if (rec._spec) return rec._spec;
+  const raw = rec.reviewUrl.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+  const res = await fetch(raw);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const md = await res.text();
+  const m = /^## Auto-fix candidates*$/m.exec(md);
+  if (!m) throw new Error("no Auto-fix section");
+  const rest = md.slice(m.index + m[0].length);
+  const end = /^## /m.exec(rest);
+  rec._spec = (end ? rest.slice(0, end.index) : rest).replace(/^s*> ?/gm, "").trim();
+  return rec._spec;
+}
+// The full verification stamp is NOT in the shipped payload (only verdict +
+// evidence are) — the 2nd-review eye lazy-fetches the record like the spec eye
+// and formats the verify frontmatter: evidence, gate checks, when, engine.
+async function fetchVerify(rec){
+  if (rec._verify) return rec._verify;
+  const raw = rec.reviewUrl.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("/blob/", "/");
+  const res = await fetch(raw);
+  if (!res.ok) throw new Error("HTTP " + res.status);
+  const md = await res.text();
+  const fmEnd = md.indexOf("\n---", 3);
+  const fm = fmEnd > 0 ? md.slice(0, fmEnd) : md;
+  const take = (k) => {
+    const m = new RegExp("^" + k + ':[ \\t]*"?(.*?)"?[ \\t]*$', "m").exec(fm);
+    return m ? m[1] : "";
+  };
+  const verdict = take("verifyVerdict");
+  if (!verdict) throw new Error("no verify stamp");
+  const lines = [verdict.toUpperCase()
+    + (take("verifyCanonical") ? " — canonical " + take("verifyCanonicalRepo") + "#" + take("verifyCanonical") : "")
+    + (take("verifyCanonicalKind") ? " (" + take("verifyCanonicalKind") + ")" : "")];
+  if (take("verifyEvidence")) lines.push("", take("verifyEvidence"));
+  const checks = take("verifyChecks");
+  if (checks) lines.push("", "Checks:", ...checks.split(" ").map(c => "  " + c.replace("=", " — ").replace(/_/g, " ")));
+  const when = take("verifiedAt").slice(0, 10);
+  if (when) lines.push("", "Verified " + when + (take("verifyEngine") ? " by " + take("verifyEngine") : "") + ".");
+  rec._verify = lines.join("\n");
+  return rec._verify;
+}
+// No scroll/click-outside dismiss handlers: showModal makes the page behind inert
+// (openers can't re-fire, the scroller can't move under the panel), Escape fires the
+// native cancel event, and the backdrop-click handler above covers click-outside.
+function exitClosedMode(){
+  if (!closedOnly) return;
+  closedOnly = false;
+  document.getElementById("closedCard").classList.remove("active");
+}
+document.querySelectorAll("#cards .card[data-action]").forEach(c => c.addEventListener("click", () => {
+  exitClosedMode(); // action facets describe the open set
+  const a = c.dataset.action;
+  actionFilter = actionFilter === a ? null : a;
+  // Explicitly drilling into keep-open means the user wants the full set, not just the
+  // few actionable keep-open rows — drop the actionable-only filter so the card's count matches.
+  if (actionFilter === "keep-open" && actionableOnly) { actionableOnly = false; actionableEl.checked = false; }
+  document.querySelectorAll("#cards .card[data-action]").forEach(x => x.classList.toggle("active", x.dataset.action === actionFilter));
+  render();
+}));
+document.querySelectorAll("th").forEach(th => th.addEventListener("click", () => {
+  const k = th.dataset.k;
+  if (!k) return;
+  if (sortK === k) sortDir = -sortDir; else { sortK = k; sortDir = 1; }
+  render();
+}));
+// Debounce typing only — clearing (incl. the × on type=search) renders immediately,
+// and card/sort/toggle handlers call render() directly so they stay instant.
+let qTimer;
+qEl.addEventListener("input", () => {
+  clearTimeout(qTimer);
+  if (qEl.value === "") { render(); return; }
+  qTimer = setTimeout(render, 200);
+});
+actionableEl.addEventListener("change", () => { actionableOnly = actionableEl.checked; render(); });
+const afCard = document.getElementById("afCard");
+afCard.addEventListener("click", () => { exitClosedMode(); autoFixOnly = !autoFixOnly; afCard.classList.toggle("active", autoFixOnly); render(); });
+const closedCard = document.getElementById("closedCard");
+closedCard.addEventListener("click", () => {
+  closedOnly = !closedOnly;
+  closedCard.classList.toggle("active", closedOnly);
+  render();
+});
+const qhelpBtn = document.getElementById("qhelp");
+qhelpBtn.addEventListener("click", () => {
+  openPanel("help", QHELP, "Filter syntax — bare words match as before; key:value tokens filter a field.");
+});
+
+function toast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove("show"), 2800);
+}
+
+// AI-disclosure prefix on the pasted comment (team feedback 2026-08-16): the literal
+// 🤖 character, NEVER the GitHub colon-shortcode — normalizeComment() strips the emoji
+// so adoption still classifies verbatim, while the shortcode would normalize to the
+// word "robot" and downgrade every adoption to embedded (comment-adoption.test.ts).
+// Applied at copy time, not in the records: covers the whole corpus, and the record
+// stays the canonical prefix-free text the adoption matcher compares against.
+function aiPrefixed(s){ return s.startsWith("🤖") ? s : "🤖 " + s; }
+
+// Copy the suggested comment. Freshness is advisory, never a hard block — the human
+// is the final authority. Only ISSUE drift warns: generation-time content staleness
+// and, for otherwise-fresh rows, a click-time check for drift since the page was built.
+async function doCopy(rec){
+  const warnings = [];
+  const when = (rec.reviewedAt||"").slice(0,10);
+  if (!rec.contentFresh) warnings.push("The issue appears to have changed since it was reviewed (" + when + "), so the verdict may no longer fully apply.");
+
+  let note = warnings.length ? " (issue changed since review)" : "";
+  if (!warnings.length) {
+    // Otherwise fresh — re-verify no drift since the dashboard was generated.
+    try {
+      const api = rec.url.replace("https://github.com/", "https://api.github.com/repos/");
+      const res = await fetch(api, { headers: { "Accept": "application/vnd.github+json" } });
+      if (res.ok) {
+        const j = await res.json();
+        if (rec.verifiedUpdatedAt && j.updated_at && j.updated_at !== rec.verifiedUpdatedAt) {
+          warnings.push("The issue changed since this dashboard was generated, so the verdict may no longer apply.");
+          note = " (issue changed since review)";
+        } else {
+          note = " (verified current)";
+        }
+      } else { note = " (couldn't re-verify)"; }
+    } catch { note = " (couldn't re-verify)"; }
+  }
+
+  if (warnings.length && !confirm(warnings.join("\n\n") + "\n\nThe comment may still be useful — copy it anyway?")) return;
+
+  try {
+    await navigator.clipboard.writeText(aiPrefixed(rec.proposedComment));
+    toast("Copied comment" + note);
+  } catch {
+    toast("Copy failed — open the record and copy manually");
+  }
+}
+
+// Copy the skill invocation PLUS the reviewed spec (team feedback 2026-08-04:
+// "Copy prompt" should paste a prompt the developer can read and edit; the
+// skill treats the inline spec as the maintainer's intent and still runs every
+// gate). Keep in sync with fixPromptPayload()/SPEC_PASTE_HEADER in skill-publish.ts.
+// Shared by the row button (fast path) and the spec dialog's action (careful path).
+function copyFixPrompt(rec){
+  const line = "Fix " + TARGET + " issue #" + rec.number + " using the sweeper-fix skill.";
+  // The spec is not in the payload diet — lazy-fetched like the eye (cached after
+  // either use). Fetch failure degrades to the bare invocation: the skill then
+  // reads the record's spec itself.
+  const payload = fetchSpec(rec).then(
+    (spec) => ({ text: line + "\n\nReviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):\n" + spec, withSpec: true }),
+    () => ({ text: line, withSpec: false })
+  );
+  const done = (p) => toast(p.withSpec ? "Copied prompt + spec — read, edit, paste into your agent" : "Copied the invocation (spec fetch failed — the skill reads the record itself)");
+  const fallback = () => payload.then((p) => navigator.clipboard.writeText(p.text).then(() => done(p), () => toast("Copy failed")));
+  if (typeof ClipboardItem !== "undefined" && navigator.clipboard.write) {
+    // Promise-valued ClipboardItem keeps the user-gesture context alive across
+    // the spec fetch (Safari rejects a plain writeText after an await).
+    navigator.clipboard.write([new ClipboardItem({ "text/plain": payload.then((p) => new Blob([p.text], { type: "text/plain" })) })])
+      .then(() => payload.then(done), fallback);
+  } else { fallback(); }
+}
+
+// Ask the host to apply-and-close, over postMessage (we run in a sandboxed
+// cross-origin iframe with no host-origin access). This only PROPOSES the write: the
+// trusted host renders its OWN editable confirmation and performs the GitHub write on
+// the maintainer's explicit click there — the human gate, and the editing, live in the
+// host so what they approve is exactly what is posted. The comment arg is the initial
+// value; stale is the advisory drift hint the host surfaces (the server's live check is
+// the authority). Resolves with the host's terminal result {ok, closedAt?, stateReason?,
+// reason?}: the host answers on success or cancel, handling failed writes in its own
+// dialog. The long timeout is only a safety net for a crashed/absent host.
+function requestApply(rec, comment){
+  return new Promise((resolve) => {
+    const id = "a" + (++applyReqSeq);
+    let done = false;
+    const finish = (r) => { if (done) return; done = true; delete applyPending[id]; resolve(r); };
+    applyPending[id] = finish;
+    setTimeout(() => finish({ ok: false, reason: "the host did not respond" }), 300000);
+    window.parent.postMessage({ type: HUB_APPLY_REQ, id: id, repo: TARGET, issue: rec.number, comment: comment, closeReason: rec.closeReason || "", reviewedAt: rec.reviewedAt, stale: !rec.contentFresh }, "*");
+  });
+}
+// Apply & close (vscode-tools host only): clicking the row button PROPOSES the close.
+// There is deliberately no dialog here — the editable confirmation lives in the trusted
+// host window (the productization plan's speed bump), so the maintainer edits and
+// approves the exact bytes that get posted, in a surface this untrusted page cannot
+// reach. We only post the proposal and react to the host's terminal answer; the host
+// performs the GitHub write under the maintainer's own identity and handles any failed
+// write (re-check, retry) inside its own dialog, replying only on success or cancel.
+async function doApply(rec, btn){
+  if (btn.dataset.pending) return;              // ignore repeat clicks while a proposal is live
+  btn.dataset.pending = "1";
+  btn.disabled = true;
+  const res = await requestApply(rec, aiPrefixed(rec.proposedComment));
+  if (res.ok) {
+    // Flip the row to the closed archive state locally — reconcile stamps the record
+    // (closedBy, comment adoption) on its next run. The re-render drops the button.
+    rec.currentState = "closed";
+    rec.closedAt = res.closedAt || new Date().toISOString();
+    rec.stateReason = res.stateReason || "";
+    render();
+    toast("Closed #" + rec.number + " with your comment");
+    return;
+  }
+  delete btn.dataset.pending;
+  btn.disabled = false;
+  // A cancel is a deliberate no-op (nothing was sent) — no toast. Anything else here is
+  // the host failing to answer within the timeout; real write failures are surfaced in
+  // the host dialog, not here.
+  if (res.reason !== "cancelled") toast("Apply not completed" + (res.reason ? " — " + res.reason : "") + ".");
+}
+rowsEl.addEventListener("click", (e) => {
+  const vBtn = e.target.closest("button.vbadge");
+  if (vBtn) {
+    const key = "verify:" + vBtn.dataset.n;
+    const rec = DATA.find(r => String(r.number) === vBtn.dataset.n);
+    if (!rec || !rec.verifyVerdict) return;
+    const cap = (rec.verifyCanonical
+        ? "2nd review — blinded verification of the duplicate claim against " + rec.verifyCanonicalRepo + "#" + rec.verifyCanonical
+          + (rec.verifyKind ? " (canonical kind: " + rec.verifyKind + ")" : "")
+        : "2nd review — blinded verification of the implemented-on-main claim against the cited commit's diff"
+          + (rec.verifyKind ? " (claim kind: " + rec.verifyKind + ")" : ""))
+      + (rec.verifyUnreleased ? ". Merged but in no stable release yet — the reporter cannot get the fix." : "")
+      + (rec.verifyStale ? ". STALE: the issue or record changed since this verification." : "")
+      + ".";
+    openPanel(key, rec.verifyVerdict.toUpperCase() + " — " + rec.verifyEvidence, cap, true);
+    return;
+  }
+  const peekBtn = e.target.closest("button.peek");
+  if (peekBtn) {
+    const kind = peekBtn.dataset.kind || "comment";
+    const key = kind + ":" + peekBtn.dataset.n;
+    const rec = DATA.find(r => String(r.number) === peekBtn.dataset.n);
+    if (!rec) return;
+    if (kind === "comment") {
+      // The dialog's copy action is the same doCopy the row button runs (incl. the
+      // click-time drift check) — read first, copy from here.
+      if (rec.proposedComment) openPanel(key, aiPrefixed(rec.proposedComment), "Suggested closing comment — the 🤖 prefix marks it as AI-drafted; keep or edit it after pasting.", true, { label: "Copy comment", run: () => doCopy(rec) });
+      return;
+    }
+    if (kind === "verify") {
+      const vCap = "2nd review — the verifier's full stamp, fetched from the record.";
+      openPanel(key, "Loading the verification stamp…", vCap);
+      fetchVerify(rec).then(
+        (v) => { if (cpanelFor === key) openPanel(key, v, vCap, true); },
+        () => { if (cpanelFor === key) openPanel(key, "Couldn't load the stamp — use the record link in the Review column.", vCap); }
+      );
+      return;
+    }
+    const specCap = "The reviewed spec the sweeper-fix skill implements.";
+    const specAction = { label: "Copy prompt", run: () => copyFixPrompt(rec) };
+    openPanel(key, "Loading the fix spec…", specCap, undefined, specAction);
+    fetchSpec(rec).then(
+      (spec) => { if (cpanelFor === key) openPanel(key, spec, specCap, renderSpecInto, specAction); },
+      () => { if (cpanelFor === key) openPanel(key, "Couldn't load the spec — use the record link in the Review column.", specCap, undefined, specAction); }
+    );
+    return;
+  }
+  const fixBtn = e.target.closest("button.copy.fixprompt");
+  if (fixBtn) {
+    const rec = DATA.find(r => String(r.number) === fixBtn.dataset.n);
+    if (rec) copyFixPrompt(rec);
+    return;
+  }
+  const applyBtn = e.target.closest("button.copy.apply");
+  if (applyBtn) {
+    const rec = DATA.find(r => String(r.number) === applyBtn.dataset.n);
+    if (rec) doApply(rec, applyBtn);
+    return;
+  }
+  const btn = e.target.closest("button.copy");
+  if (!btn) return;
+  const rec = DATA.find(r => String(r.number) === btn.dataset.n);
+  if (rec) doCopy(rec);
+});
+
+// Deep link: #q=… seeds the filter box before the first render.
+const qm = /[#&]q=([^&]*)/.exec(location.hash);
+if (qm) { try { qEl.value = decodeURIComponent(qm[1]); } catch {} }
+render();
+// Host handshake (docs/tools-integration.md). Inside the vscode-tools iframe the
+// host answers HUB_READY with the apply allowlist and relays apply results; on
+// GitHub Pages there is no parent, so nothing arrives and the page stays copy-only.
+// Every message is validated to come from our parent — the only window we ever talk
+// to — and dispatched by an allow-list of known types; anything else is ignored.
+if (embedded) {
+  window.addEventListener("message", (e) => {
+    if (e.source !== window.parent) return;
+    const m = e.data;
+    if (!m || typeof m !== "object") return;
+    if (m.type === HUB_CAPS) {
+      const enabled = Array.isArray(m.applyTargets) && m.applyTargets.includes(TARGET);
+      if (enabled !== applyEnabled) { applyEnabled = enabled; vrender(true); }
+    } else if (m.type === HUB_APPLY_RES && typeof m.id === "string" && applyPending[m.id]) {
+      applyPending[m.id]({ ok: !!m.ok, status: m.status, reason: m.reason, closedAt: m.closedAt, stateReason: m.stateReason });
+    }
+  });
+  window.parent.postMessage({ type: HUB_READY }, "*");
+}
+</script>
+</body>
+</html>
