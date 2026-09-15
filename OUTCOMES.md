@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20257 issues reviewed · generated 2026-09-14 15:14 UTC
+[← Home](index.html) · 20314 issues reviewed · generated 2026-09-15 14:02 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 20257
+- **Issues reviewed:** 20314
 - **Close proposals:** 2661 (13% of reviewed)
-- **Acted on (closed):** 715 (27% of proposals)
-- **2nd-reviewed before the close:** 135 confirmed · 41 disputed · 5 unverifiable · 534 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Acted on (closed):** 719 (27% of proposals)
+- **2nd-reviewed before the close:** 136 confirmed · 44 disputed · 5 unverifiable · 534 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 356 (50% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 85 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (84 of the 358 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1946 open close proposals
+- **Likely fixed instead:** 85 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (84 of the 362 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1942 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2347 of the 20257 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1946 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2370 of the 20314 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1942 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -27,8 +27,8 @@ _Close proposals count the whole corpus (2347 of the 20257 reviewed issues have 
 | hediet | 35 | 35 (100%) |
 | lramos15 | 34 | 0 (0%) |
 | chrmarti | 31 | 29 (94%) |
+| dmitrivMS | 31 | 0 (0%) |
 | kycutler | 30 | 14 (47%) |
-| dmitrivMS | 27 | 0 (0%) |
 | benibenj | 17 | 10 (59%) |
 | sbatten | 16 | 16 (100%) |
 | aeschli | 15 | 11 (73%) |
@@ -81,31 +81,34 @@ _Close proposals count the whole corpus (2347 of the 20257 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1840 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1844 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
 | alexdima | 63 | 2 | 2 | — |
-| benibenj | 42 | 1 | — | 1 |
+| benibenj | 41 | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 636 of 636 open proposals verified · 108 closed unverified
+- **duplicate:** 632 of 632 open proposals verified · 108 closed unverified
 - **implemented-on-main:** 506 of 506 open proposals verified · 97 closed unverified
 - **Verdict mix:** 883 confirmed (27 with the fix unreleased) · 404 disputed · 36 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 748 | 134 | 1 |
-| disputed | 363 | 41 | 0 |
+| confirmed | 747 | 135 | 1 |
+| disputed | 360 | 44 | 0 |
 | unverifiable | 31 | 5 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#329843](https://github.com/microsoft/vscode/issues/329843) Main process leaks all terminal output via Event.buffer on the localPty ProxyChannel — OOM-crashes the whole app silently | 2026-09-14 | dmitrivMS | gate: open PR #323980 references the issue — someone may be fixing it; closing as duplicate is not safe |
+| [#329471](https://github.com/microsoft/vscode/issues/329471) VS Code silently exits after several days of continuous use on macOS — ptyHost heartbeat failure immediately before process death | 2026-09-14 | dmitrivMS | A is an undiagnosed symptom report (ptyHost heartbeat stall, no memory-growth or heap evidence, ~6-day survival on macOS); B is a measured main-process V8 4 GB heap OOM from Event.buffer — mechanism unproven for A. |
+| [#334837](https://github.com/microsoft/vscode/issues/334837) Main process leaks every terminal's pty output: `ProxyChannel.fromService(PtyHostService)` buffers `onProcessData` via `Event.buffer` for a `localPty` listener that never attaches | 2026-09-14 | dmitrivMS | gate: open PRs #334913, #323980 reference the issue — someone may be fixing it; closing as duplicate is not safe |
 | [#165207](https://github.com/microsoft/vscode/issues/165207) [css] Add new CSS color functions | 2026-09-14 | alexdima | Commit is an ESM/module-format migration of the HTML/CSS language servers; the bundled languageservice bump is incidental and the diff shows no lch/oklch/lab/oklab color-decorator support. |
 | [#334340](https://github.com/microsoft/vscode/issues/334340) Remote SSH issues with VS Code 1.136.1 | 2026-09-09 | justschen | A reports extensions failing to retrieve document content via URI (e.g. BUILD.bazel) over Remote-SSH; B is a product-icon font (glicons.woff2) resource load failure causing tofu glyphs — different mechanisms. |
 | [#307061](https://github.com/microsoft/vscode/issues/307061) the cmd line you generated just disappear | 2026-09-04 | chrmarti | The commit is a refactor removing CodeBlockModelCollection and async text-model resolution; nothing in it addresses generated command-line content vanishing after rendering, and the report names no mechanism the diff plausibly reaches. |
@@ -160,27 +163,27 @@ _The 404 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 965 |
-| propose-close | 715 |
-| needs-info | 513 |
-| route-to-area | 154 |
+| keep-open | 980 |
+| propose-close | 719 |
+| needs-info | 515 |
+| route-to-area | 156 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1260 |
-| not_planned | 792 |
-| duplicate | 279 |
+| completed | 1269 |
+| not_planned | 799 |
+| duplicate | 286 |
 | not_found | 16 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 844 | 208 | 25% | 101 | 23 |
+| duplicate | 844 | 212 | 25% | 101 | 23 |
 | implemented on main | 735 | 232 | 32% | 146 | — |
-| as-designed | 309 | 79 | 26% | 47 | 18 |
-| question | 265 | 34 | 13% | 9 | 12 |
-| out-of-scope | 192 | 55 | 29% | 18 | 8 |
+| as-designed | 311 | 79 | 25% | 47 | 18 |
+| question | 261 | 34 | 13% | 9 | 12 |
+| out-of-scope | 194 | 55 | 28% | 18 | 8 |
 | not-reproducible | 142 | 28 | 20% | 9 | 8 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
