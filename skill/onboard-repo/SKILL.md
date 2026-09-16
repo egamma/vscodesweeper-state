@@ -33,7 +33,10 @@ validation loop — do not stop at file creation:
 3. One dry-run review: `npm run review -- --target <owner>/<name>
    --issue <any-open-issue> --dry-run` (add the target to `config.json`
    `repos` first — `{ "experimental": true }` unless the user says this is a
-   full enrollment). While the label evidence from step 1 is still on
+   full enrollment, or `{ "sandbox": true }` when the user says the repo is a
+   sandbox they own for lifecycle testing — see
+   `docs/family-repo-onboarding.md` "The three kinds of target"; the two
+   flags are mutually exclusive). While the label evidence from step 1 is still on
    screen, also record the repo's canonical waiting-on-reporter label in the
    same entry: `"needsInfoLabel": "<label>"` — omit it entirely when the repo
    has no such convention (no waiting-on-reporter label in its triage; a
