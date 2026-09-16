@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20314 issues reviewed · generated 2026-09-15 14:02 UTC
+[← Home](index.html) · 20373 issues reviewed · generated 2026-09-16 13:45 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 20314
-- **Close proposals:** 2661 (13% of reviewed)
-- **Acted on (closed):** 719 (27% of proposals)
-- **2nd-reviewed before the close:** 136 confirmed · 44 disputed · 5 unverifiable · 534 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 356 (50% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 85 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (84 of the 362 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1942 open close proposals
+- **Issues reviewed:** 20373
+- **Close proposals:** 2667 (13% of reviewed)
+- **Acted on (closed):** 722 (27% of proposals)
+- **2nd-reviewed before the close:** 137 confirmed · 45 disputed · 5 unverifiable · 535 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 356 (49% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
+- **Likely fixed instead:** 85 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (84 of the 365 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1945 open close proposals
 - **Reversals (reopened after a close):** 1 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2370 of the 20314 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1942 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2402 of the 20373 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1945 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,13 +21,13 @@ _Close proposals count the whole corpus (2370 of the 20314 reviewed issues have 
 | --- | --- | --- |
 | justschen | 123 | 63 (51%) |
 | alexdima | 115 | 107 (93%) |
-| vs-code-engineering | 63 | 0 (0%) |
+| vs-code-engineering | 64 | 0 (0%) |
 | roblourens | 40 | 17 (43%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
 | lramos15 | 34 | 0 (0%) |
+| dmitrivMS | 32 | 0 (0%) |
 | chrmarti | 31 | 29 (94%) |
-| dmitrivMS | 31 | 0 (0%) |
 | kycutler | 30 | 14 (47%) |
 | benibenj | 17 | 10 (59%) |
 | sbatten | 16 | 16 (100%) |
@@ -64,6 +64,7 @@ _Close proposals count the whole corpus (2370 of the 20314 reviewed issues have 
 | federicobrancasi | 1 | 0 (0%) |
 | JMS-1 | 1 | 0 (0%) |
 | jruales | 1 | 0 (0%) |
+| kerberjg | 1 | 0 (0%) |
 | M2zG0a | 1 | 0 (0%) |
 | Mapalmeira | 1 | 0 (0%) |
 | monolithed | 1 | 0 (0%) |
@@ -81,7 +82,7 @@ _Close proposals count the whole corpus (2370 of the 20314 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1844 reviewed fix specs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-fixable pool of 1843 reviewed fix specs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
@@ -93,19 +94,20 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
 - **duplicate:** 632 of 632 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 506 of 506 open proposals verified · 97 closed unverified
-- **Verdict mix:** 883 confirmed (27 with the fix unreleased) · 404 disputed · 36 unverifiable
+- **implemented-on-main:** 505 of 505 open proposals verified · 97 closed unverified
+- **Verdict mix:** 883 confirmed (27 with the fix unreleased) · 405 disputed · 36 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 747 | 135 | 1 |
-| disputed | 360 | 44 | 0 |
+| confirmed | 746 | 136 | 1 |
+| disputed | 360 | 45 | 0 |
 | unverifiable | 31 | 5 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#110291](https://github.com/microsoft/vscode/issues/110291) Adopt Linux Repo publishing v3 | 2026-09-15 | dmitrivMS | Issue asks to migrate Linux package-repo publishing from the v2 to the v3 publishing API; the commit reworks download-CDN blob upload/asset creation and ESRP signing, showing no Linux repo v3 publishing endpoint adoption. |
 | [#329843](https://github.com/microsoft/vscode/issues/329843) Main process leaks all terminal output via Event.buffer on the localPty ProxyChannel — OOM-crashes the whole app silently | 2026-09-14 | dmitrivMS | gate: open PR #323980 references the issue — someone may be fixing it; closing as duplicate is not safe |
 | [#329471](https://github.com/microsoft/vscode/issues/329471) VS Code silently exits after several days of continuous use on macOS — ptyHost heartbeat failure immediately before process death | 2026-09-14 | dmitrivMS | A is an undiagnosed symptom report (ptyHost heartbeat stall, no memory-growth or heap evidence, ~6-day survival on macOS); B is a measured main-process V8 4 GB heap OOM from Event.buffer — mechanism unproven for A. |
 | [#334837](https://github.com/microsoft/vscode/issues/334837) Main process leaks every terminal's pty output: `ProxyChannel.fromService(PtyHostService)` buffers `onProcessData` via `Event.buffer` for a `localPty` listener that never attaches | 2026-09-14 | dmitrivMS | gate: open PRs #334913, #323980 reference the issue — someone may be fixing it; closing as duplicate is not safe |
@@ -151,7 +153,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 404 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 405 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -163,16 +165,16 @@ _The 404 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 980 |
-| propose-close | 719 |
-| needs-info | 515 |
-| route-to-area | 156 |
+| keep-open | 1003 |
+| propose-close | 722 |
+| needs-info | 519 |
+| route-to-area | 158 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1269 |
-| not_planned | 799 |
-| duplicate | 286 |
+| completed | 1291 |
+| not_planned | 808 |
+| duplicate | 287 |
 | not_found | 16 |
 
 ## Acceptance by close reason
@@ -180,15 +182,15 @@ _The 404 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
 | duplicate | 844 | 212 | 25% | 101 | 23 |
-| implemented on main | 735 | 232 | 32% | 146 | — |
-| as-designed | 311 | 79 | 25% | 47 | 18 |
+| implemented on main | 736 | 234 | 32% | 146 | — |
+| as-designed | 314 | 79 | 25% | 47 | 18 |
 | question | 261 | 34 | 13% | 9 | 12 |
-| out-of-scope | 194 | 55 | 28% | 18 | 8 |
+| out-of-scope | 195 | 55 | 28% | 18 | 8 |
 | not-reproducible | 142 | 28 | 20% | 9 | 8 |
 | off-topic | 57 | 16 | 28% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | extension-candidate | 29 | 9 | 31% | 2 | 1 |
-| invalid | 26 | 8 | 31% | 0 | 1 |
+| invalid | 27 | 9 | 33% | 0 | 1 |
 | other | 21 | 5 | 24% | 3 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
