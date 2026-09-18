@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `5fa429198b8c8ed6` — every verdict record carries the hash of the
+> Policy hash `f83c7dd550736dc9` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-17 13:38 UTC.
+> exactly this text. Published 2026-09-18 19:35 UTC.
 
 ---
 
@@ -310,7 +310,7 @@ Translate the underlying judgment into VS Code's vocabulary:
   implementation candidate a human owns, not a reason to close the issue before
   it merges. Point `bestSolution` at reviewing/landing (or closing) the linked
   PR, cite it by full URL in `evidence`, and do not propose a completed close
-  until the fix has actually merged. `autoFixable` MUST be `false` in this case
+  until the fix has actually merged. `agentReadiness` MUST be `none` in this case
   — the fix lane must not compete with a human's open PR (re-enforced in code).
 - **Valid but unrouted or mis-routed** -> `triageAction: "route-to-area"` with
   1–3 existing `areaLabels`, so the right area owner sees it. Use plain
@@ -510,9 +510,10 @@ tracker is for and stop there.
   Keep it consistent with the rest of the verdict: `*not-reproducible` needs
   `not_reproduced`; a title-only read with no checkout is `unclear`, never
   `not_reproduced`; a bug left at `unclear` takes `needs-info`, not
-  `keep-open`, unless a hard keep-open rule applies; and `autoFixable: true`
-  requires `reproduced` or `source_reproducible` (you must have confirmed the
-  defect).
+  `keep-open`, unless a hard keep-open rule applies; and `agentReadiness: "implement"`
+  requires `reproduced` or `source_reproducible` for a bug (you must have
+  confirmed the defect) — a bug with clear steps you could not confirm is
+  `plan`, not `implement`.
 - `severity` — the user-impact class of the defect, **for bugs only** (`none`
   for every other `itemType`). Purely descriptive: it never changes
   `triageAction`, and a `papercut` verdict is not a reason to close. Pick
@@ -586,44 +587,93 @@ duplicate, an existing setting or command that covers the request, a clear
 `keep-open`. (The hard keep-open rules always win.) Caution belongs in the
 verification, not in reporting what you verified.
 
-## Auto-fix candidate (`autoFixable`)
+## Agent readiness (`agentReadiness`)
 
-A recommendation on whether this issue is a candidate for an **automatic fix** — a
-proposal only; you never fix anything. Default `autoFixable: false`. Set it `true`
-**only when ALL of these hold**:
+A recommendation on whether an **agent session run by a maintainer** can take this
+issue on now, and how deep it must go first — a proposal only; you never fix
+anything. Default `agentReadiness: "none"`. The tiers:
 
-- `triageAction` is `keep-open` or `route-to-area` (the issue is real and still
-  needs a code change — not a close, not needs-info, not mid-verification);
-- `itemType` is **`bug`** (a defined-correct-behavior defect). **Never** a
-  `feature-request`, `under-discussion`, `upstream`, `debt`, `polish`, or `question`
-  — those need product/maintainer judgment, not an automatic fix;
-- you can **confirm the defect** (reproduce it, or trace it conclusively in the
-  current source via the checkout) AND name a **concrete executable validation** —
-  a specific failing test to make pass, or a runnable check that flips fail→pass.
-  *"Re-read the source" is NOT a validation.* No validation ⇒ `false`;
-- the fix is **small and localized** with **identified likely files** (not broad,
-  cross-cutting, or architectural);
-- you have **high confidence** in all of the above;
-- it is **not** security-sensitive or protected;
-- **no open PR already references the issue** — an open linked PR is an
-  implementation candidate a human owns, and the fix lane must not compete with
-  it (see the intent mapping); and
-- a **repository checkout is available** (you cannot judge localization from issue
-  text alone — without a checkout, `autoFixable` is `false`).
+- **`implement`** — *you did the diagnosis; the agent executes.* ALL of these hold:
+  - `triageAction` is `keep-open` or `route-to-area` (real, still needs a code
+    change — not a close, not needs-info, not mid-verification);
+  - `itemType` is **`bug`**, **`polish`**, or **`debt`**. A `feature-request` is
+    never `implement` (it needs a product decision first — see `plan`);
+    `upstream`, `question`, `under-discussion` are never agent-ready;
+  - for a bug, you **confirmed the defect** (`reproductionStatus` is `reproduced`
+    or `source_reproducible`); for polish/debt, the intended behavior is
+    unambiguous from the issue and the source;
+  - you can name a **concrete executable validation** — a specific failing test to
+    make pass, or a runnable check that flips fail→pass. *"Re-read the source" is
+    NOT a validation.* No validation ⇒ not `implement`;
+  - the change is **bounded** with **identified likely files** — one pass by a
+    competent agent is plausible; nothing cross-cutting or architectural;
+  - **no product or design decision is open** — if you would want a maintainer to
+    choose between approaches, it is `plan`;
+  - it is **not** security-sensitive or protected;
+  - **no open PR already references the issue** — an open linked PR is an
+    implementation candidate a human owns (see the intent mapping); and
+  - a **repository checkout is available** (you cannot judge the boundary from
+    issue text alone — without a checkout, nothing is agent-ready).
 
-When `autoFixable` is `true`: fill `likelyFiles` (repo-relative paths the fix would
-touch), `validation` (the concrete executable check), and `fixPrompt` — the
-**engine-ready fix brief**. You have just traced this defect; `fixPrompt` is where
-that understanding is handed to the fix engine, which has NOT seen your review.
-Write 3–8 sentences, self-contained: the observable defect and how you confirmed it
-(the exact code path, with file paths and symbol names), the expected fix boundary
-(what to change — and what must NOT change), the validation to implement as a real
-test, and any related refs (full URLs). Do not just restate `bestSolution`; include
-the tracing detail that would otherwise be lost. When `false`: set
-`likelyFiles: []`, `validation: ""`, and `fixPrompt: ""`. Always fill
-`autoFixRationale` with one line on why (e.g. "small localized null-guard in
-editorOptions.ts, validated by an existing failing test" or "feature request —
-needs product decision").
+- **`plan`** — *the goal is clear and worthwhile, but the session must diagnose or
+  design WITH the maintainer first.* The same hard conditions apply (open, real,
+  not security, no open PR, checkout used), plus:
+  - the desired outcome is clear enough to start without asking the reporter
+    basic questions (otherwise it is `needs-info`, never `plan`); and
+  - it is **worth a maintainer's session**: for a feature request, `visionFit`
+    is `aligned` (or `not_applicable` with evident demand — upvotes, duplicates,
+    maintainer interest in the thread); for a bug, real user impact; and
+  - at least one of:
+    - **ambiguity** — several valid product or technical approaches with real
+      differences; a human should choose;
+    - **complexity** — spans multiple systems or layers, carries non-trivial
+      risk, or is clearly more than a bounded change;
+    - **unconfirmed reproduction** — a bug with clear steps you could not
+      confirm from source; the plan's first step is to reproduce;
+    - **no executable validation you can name** — the defect is confirmed and
+      bounded, but no test or runnable check exists to pin it (no harness for
+      that surface); the plan decides how the change is verified, and a manual
+      check with explicit steps is acceptable there.
+  A feature request that qualifies is always `plan`, never `implement`. Do not
+  use `plan` merely because an issue is hard to close: a feature nobody asked
+  for beyond the reporter, or one the project direction rejects, stays `none`.
+
+- **`none`** — everything else. Being difficult is not a reason for `plan`; being
+  small is not a reason for `implement` without the confirmed diagnosis.
+
+Whichever tier, `autoFixable` is `true` exactly when `agentReadiness` is
+`implement` (code overwrites it from the tier). These gates are re-enforced in
+code: an unjustified `implement` is demoted to `plan`, an unjustified `plan` to
+`none`.
+
+### The brief (`briefBehavior`, `briefTrace`, `openDecisions`)
+
+For `implement` and `plan`, hand the session what you established — you have just
+traced this issue, and the session has NOT seen your review. Write it in two
+halves, each self-contained, and **never prescribe the change itself**: a
+prescribed patch adds nothing over what an agent writes cold, while the trace,
+the boundary and the validation contract are what catch a plausible-but-wrong
+fix.
+
+- `briefBehavior` — the **product statement** the finished change is validated
+  against, written so it stays true whatever the implementation: the observable
+  defect or the goal, the expected behavior, and the acceptance checks (2–6
+  sentences).
+- `briefTrace` — the **technical statement**: the root cause or the relevant
+  code path with file paths and symbol names, how you confirmed it, the
+  boundary — what must NOT change — and related refs by full URL (2–8 sentences).
+  For `plan`, as far as you got: what you established and exactly where the
+  uncertainty starts.
+- `openDecisions` — `plan` only: the concrete questions a maintainer must answer
+  before implementation, one per entry (which approach, scope boundary,
+  compatibility trade-off). `[]` for `implement` — if you have a question, the
+  tier is `plan`.
+
+Also fill `likelyFiles` (required for `implement`; for `plan`, the files the
+trace names) and `validation` (required for `implement`; for `plan`, the
+acceptance check the plan should end with, if you can name one). For `none`:
+`likelyFiles: []`, `validation: ""`, both brief halves `""`, `openDecisions: []`.
+Always fill `autoFixRationale` with one line on why this tier (e.g. "confirmed from source, bounded guard in editorOptions.ts, failing test named" · "aligned feature with two viable designs — needs a maintainer's choice" · "feature request with no demand beyond the reporter").
 
 ## OUTPUT CONTRACT
 
@@ -652,11 +702,15 @@ match this shape exactly:
   "areaLabels": ["string (existing labels only, 0..3)"],
   "evidence": [{ "label": "string", "detail": "string" }],
   "proposedComment": "string (\"\" if none)",
+  "agentReadiness": "one of: implement | plan | none (can an agent session take this on now, and how deep must it go first; default none; hard-gated in code)",
+  "agentReadiness": "none",
   "autoFixable": false,
-  "autoFixRationale": "string (one line on why / why not)",
-  "likelyFiles": ["string (repo-relative paths; [] unless autoFixable)"],
-  "validation": "string (concrete executable check; \"\" unless autoFixable)",
-  "fixPrompt": "string (engine-ready fix brief for the fix lane; \"\" unless autoFixable)",
+  "autoFixRationale": "string (one line on why this readiness)",
+  "likelyFiles": ["string (repo-relative paths; required for implement, optional for plan, [] for none)"],
+  "validation": "string (concrete executable check; required for implement, the acceptance check for plan if named, \"\" for none)",
+  "briefBehavior": "string (the brief's Behavior half — defect/goal, expected behavior, acceptance checks; \"\" for none)",
+  "briefTrace": "string (the brief's Trace half — root cause/code path with paths and symbols, what must NOT change, refs; never the change itself; \"\" for none)",
+  "openDecisions": ["string (plan only: one question a maintainer must answer first; [] for implement and none)"],
   "fixedSha": "string or null (implemented-on-main closes only: the fixing/proof commit SHA; null otherwise)",
   "fixedAt": "string or null (ISO-8601 commit timestamp for fixedSha; null whenever fixedSha is null)",
   "fixedRelease": "string or null (release that first shipped the fix; null when main-only or unknown)"
@@ -719,19 +773,22 @@ correct, and the fix is in a released build. A valid verdict:
     { "label": "comment", "detail": "Reporter confirmed in a later comment that the insiders build resolved it." }
   ],
   "proposedComment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/a1b2c3d and shipped in 1.92.0 — terminal links are reattached when a pane is split, so I believe this is resolved. Please open a new issue if you still see it on the latest build.",
+  "agentReadiness": "none",
   "autoFixable": false,
-  "autoFixRationale": "Already fixed and shipped — nothing to auto-fix.",
+  "autoFixRationale": "Already fixed and shipped — nothing for an agent to do.",
   "likelyFiles": [],
   "validation": "",
-  "fixPrompt": "",
+  "briefBehavior": "",
+  "briefTrace": "",
+  "openDecisions": [],
   "fixedSha": "a1b2c3d",
   "fixedAt": "2024-06-12T09:30:00Z",
   "fixedRelease": "1.92.0"
 }
 ```
 
-A second example — an open, reproducible bug that is a clean **auto-fix candidate**
-(with a code checkout available):
+A second example — an open, reproducible bug that is a clean **`implement`**
+readiness (with a code checkout available):
 
 ```json
 {
@@ -756,18 +813,64 @@ A second example — an open, reproducible bug that is a clean **auto-fix candid
     { "label": "no fix found", "detail": "git log on that file shows no related change; the empty-string path is unguarded on current main." }
   ],
   "proposedComment": "",
+  "agentReadiness": "implement",
   "autoFixable": true,
-  "autoFixRationale": "Small localized guard for an empty markdown string; reproducible from source with a clear validation.",
+  "autoFixRationale": "Confirmed from source; a bounded guard for an empty markdown string with a clear failing test to name.",
   "likelyFiles": ["src/vs/editor/contrib/hover/browser/contentHoverController.ts"],
-  "validation": "Add a test asserting no hover part is produced for empty `contents`; it should fail before the guard and pass after.",
-  "fixPrompt": "The hover renders an empty tooltip because ContentHoverController builds a hover part even when the markdown `contents` string is empty — traced in src/vs/editor/contrib/hover/browser/contentHoverController.ts (the part-construction path has no empty-string guard; git log shows no related fix on main). Add a narrow guard that skips rendering when the markdown string is empty after trimming; do not restructure the hover pipeline or touch non-empty rendering. Validate with a unit test in the hover contrib test suite asserting no hover part is produced for empty `contents` — it must fail before the guard and pass after.",
+  "validation": "Add a test in the hover contrib suite asserting no hover part is produced for empty `contents`; it must fail before the change and pass after.",
+  "briefBehavior": "Hovering a symbol whose documentation is an empty string shows no tooltip at all — no empty box, no flicker. Hovers with non-empty markdown are unchanged. Acceptance: the hover contrib test asserting no hover part for empty `contents` passes, and the existing hover tests still pass.",
+  "briefTrace": "ContentHoverController in src/vs/editor/contrib/hover/browser/contentHoverController.ts builds a hover part from the markdown `contents` before checking whether the string is empty — traced via rg; git log on that file shows no related fix on main. The boundary is that part-construction path: do not restructure the hover pipeline or touch non-empty rendering.",
+  "openDecisions": [],
   "fixedSha": null,
   "fixedAt": null,
   "fixedRelease": null
 }
 ```
 
-A third example — a **feature request** whose fit against the vision is `rejected`
+A third example — an **aligned feature request** with clear demand that is
+**`plan`** readiness: two viable designs differ in persistence semantics, so a
+maintainer must choose before any implementation. The brief records what the
+review established and where the uncertainty starts; the open decisions are the
+questions the session puts to the maintainer first.
+
+```json
+{
+  "proposedLabel": "none",
+  "triageAction": "keep-open",
+  "closeReason": "none",
+  "itemType": "feature-request",
+  "reproductionStatus": "not_applicable",
+  "severity": "none",
+  "breadth": "common",
+  "priority": "none",
+  "confidence": 0.75,
+  "summary": "Well-supported request (upvotes, several duplicates) aligned with the terminal direction; two viable designs — a per-tab pin state or a profile-level protected setting — differ in persistence, so a maintainer should choose before implementation.",
+  "changeSummary": "Add a way to pin a terminal tab so bulk close actions skip it.",
+  "bestSolution": "A per-tab pinned flag persisted with the terminal layout state, honored by Kill All / Close All.",
+  "visionFit": "aligned",
+  "visionFitReason": "Terminal workflow polish that keeps long-running sessions safe from bulk actions fits the integrated-terminal direction.",
+  "visionFitEvidence": "Durable theme: the integrated terminal as a first-class workspace surface.",
+  "areaLabels": ["terminal"],
+  "evidence": [
+    { "label": "demand", "detail": "40+ upvotes and three duplicates in the thread; a maintainer asked for design input in a comment." },
+    { "label": "code path", "detail": "Bulk close runs through TerminalGroupService (src/vs/workbench/contrib/terminal/browser/terminalGroupService.ts) over every group's instances; per-instance persisted state lives in the layout info TerminalService restores — no pin concept on either path today." }
+  ],
+  "proposedComment": "",
+  "agentReadiness": "plan",
+  "autoFixable": false,
+  "autoFixRationale": "Aligned feature with clear demand; two viable designs differ in persistence — a maintainer must choose, so plan first.",
+  "likelyFiles": ["src/vs/workbench/contrib/terminal/browser/terminalGroupService.ts", "src/vs/workbench/contrib/terminal/browser/terminalService.ts"],
+  "validation": "A terminal service test asserting a pinned instance survives the bulk-close command.",
+  "briefBehavior": "A terminal tab can be marked pinned. 'Kill All Terminals' and 'Close All' skip pinned tabs; unpinning restores normal behavior. The pin survives a window reload when terminal layout is restored. Killing a single pinned tab explicitly still works.",
+  "briefTrace": "Bulk close iterates every group's instances in TerminalGroupService; persisted per-instance state is the layout info TerminalService writes and restores on reload — neither carries a pin today. The scope stays inside the terminal contrib: do not change the profile system or the single-tab kill semantics. Where the uncertainty starts: whether the pin is instance state (layout info) or a profile-level setting, which decides persistence and UI.",
+  "openDecisions": ["Per-tab pin state or a profile-level 'protected' setting?", "Does Kill All silently skip pinned tabs, or prompt when only pinned tabs remain?", "Persist the pin in workspace state or only for the session?"],
+  "fixedSha": null,
+  "fixedAt": null,
+  "fixedRelease": null
+}
+```
+
+A fourth example — a **feature request** whose fit against the vision is `rejected`
 because it belongs in an extension, yet stays **keep-open**. The extension-fit
 judgment here rests only on the reviewer's own vision read at moderate confidence,
 with no maintainer signal — below the `*extension-candidate` close bar — so it
@@ -798,18 +901,21 @@ intent mapping would apply instead.)
     { "label": "existing extensions", "detail": "Several Marketplace extensions already provide Markdown-to-PDF export." }
   ],
   "proposedComment": "",
+  "agentReadiness": "none",
   "autoFixable": false,
-  "autoFixRationale": "Feature request — needs a product decision, not an automatic fix.",
+  "autoFixRationale": "Feature request whose vision fit is rejected — not worth a maintainer's session; stays none.",
   "likelyFiles": [],
   "validation": "",
-  "fixPrompt": "",
+  "briefBehavior": "",
+  "briefTrace": "",
+  "openDecisions": [],
   "fixedSha": null,
   "fixedAt": null,
   "fixedRelease": null
 }
 ```
 
-A fourth example — a **verified duplicate**. The request is a specific case of an
+A fifth example — a **verified duplicate**. The request is a specific case of an
 open canonical issue that would absorb the work. The tempting hedge is "keep both
 open, it's more specific" — but once the canonical issue is verified, the right
 verdict is a decisive `*duplicate` close so the discussion consolidates:
@@ -837,11 +943,14 @@ verdict is a decisive `*duplicate` close so the discussion consolidates:
     { "label": "same work", "detail": "Both require the CSS language service to resolve symbols across imported files; nothing here remains once that lands." }
   ],
   "proposedComment": "Thanks for the request. This is covered by https://github.com/microsoft/vscode/issues/1234, which tracks cross-file SCSS/CSS IntelliSense including variables and mixins — consolidating the discussion there.\n\n/duplicate of #1234",
+  "agentReadiness": "none",
   "autoFixable": false,
   "autoFixRationale": "Duplicate of the canonical cross-file IntelliSense issue — nothing to fix here.",
   "likelyFiles": [],
   "validation": "",
-  "fixPrompt": "",
+  "briefBehavior": "",
+  "briefTrace": "",
+  "openDecisions": [],
   "fixedSha": null,
   "fixedAt": null,
   "fixedRelease": null
