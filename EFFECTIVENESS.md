@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20450 issues reviewed · generated 2026-09-18 19:34 UTC
+[← Home](index.html) · 39 swept users · 20450 issues reviewed · generated 2026-09-19 08:30 UTC
 
 ## Verdict distribution
 
@@ -8,20 +8,20 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 737 | 4% | 586 (80%) | 370 (63%) | 198 (34%) | 18 (3%) | 151 (20%) | — |
-| duplicate | 851 | 4% | 743 (87%) | 517 (70%) | 208 (28%) | 18 (2%) | 108 (13%) | — |
-| as-designed | 318 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
-| question | 263 | 1% | — | — | — | — | — | — |
-| out-of-scope | 198 | 1% | — | — | — | — | — | — |
+| implemented on main | 744 | 4% | 593 (80%) | 372 (63%) | 203 (34%) | 18 (3%) | 151 (20%) | — |
+| duplicate | 873 | 4% | 765 (88%) | 523 (68%) | 223 (29%) | 19 (2%) | 108 (12%) | — |
+| as-designed | 322 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
+| question | 262 | 1% | — | — | — | — | — | — |
+| out-of-scope | 201 | 1% | — | — | — | — | — | — |
 | not-reproducible | 143 | 1% | 1 (1%) | — | 1 (100%) | — | — | — |
 | off-topic | 57 | 0% | — | — | — | — | — | — |
 | caused-by-extension | 41 | 0% | — | — | — | — | — | — |
 | extension-candidate | 29 | 0% | — | — | — | — | — | — |
 | invalid | 27 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2685 | 13% | 1332 (50%) | 887 (67%) | 409 (31%) | 36 (3%) | — | — |
-| needs info | 2702 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15063 | 74% | — | — | — | — | — | — |
+| **all close proposals** | 2720 | 13% | 1361 (50%) | 895 (66%) | 429 (32%) | 37 (3%) | — | — |
+| needs info | 2713 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15017 | 73% | — | — | — | — | — | — |
 | all reviews | 20450 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -31,7 +31,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | User | Reviewed | Propose close | Needs info | Keep open | Closure path |
 | --- | --- | --- | --- | --- | --- |
 | lszomoru | 1478 | 198 (13%) | 207 (14%) | 1073 (73%) | **27%** |
-| hediet | 1454 | 143 (10%) | 209 (14%) | 1102 (76%) | **24%** |
+| hediet | 1454 | 145 (10%) | 209 (14%) | 1100 (76%) | **24%** |
 | justschen | 1276 | 190 (15%) | 159 (12%) | 927 (73%) | **27%** |
 | deepak1556 | 1124 | 191 (17%) | 385 (34%) | 548 (49%) | **51%** |
 | roblourens | 1006 | 139 (14%) | 208 (21%) | 659 (66%) | **34%** |
@@ -42,21 +42,21 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | meganrogge | 800 | 71 (9%) | 42 (5%) | 687 (86%) | **14%** |
 | anthonykim1 | 781 | 96 (12%) | 113 (14%) | 572 (73%) | **27%** |
 | aeschli | 756 | 60 (8%) | 44 (6%) | 652 (86%) | **14%** |
-| joshspicer | 636 | 81 (13%) | 67 (11%) | 488 (77%) | **23%** |
+| joshspicer | 634 | 80 (13%) | 67 (11%) | 487 (77%) | **23%** |
 | osortega | 629 | 55 (9%) | 68 (11%) | 506 (80%) | **20%** |
 | benibenj | 597 | 43 (7%) | 40 (7%) | 514 (86%) | **14%** |
-| mjbvz | 581 | 62 (11%) | 29 (5%) | 490 (84%) | **16%** |
-| alexdima | 579 | 122 (21%) | 85 (15%) | 372 (64%) | **36%** |
+| alexdima | 581 | 158 (27%) | 96 (17%) | 327 (56%) | **44%** |
+| mjbvz | 581 | 62 (11%) | 30 (5%) | 489 (84%) | **16%** |
 | chrmarti | 512 | 170 (33%) | 154 (30%) | 188 (37%) | **63%** |
-| ulugbekna | 478 | 70 (15%) | 86 (18%) | 322 (67%) | **33%** |
+| ulugbekna | 478 | 72 (15%) | 86 (18%) | 320 (67%) | **33%** |
 | DonJayamanne | 407 | 37 (9%) | 41 (10%) | 329 (81%) | **19%** |
 | mrleemurray | 371 | 40 (11%) | 42 (11%) | 289 (78%) | **22%** |
 | Yoyokrazy | 363 | 33 (9%) | 36 (10%) | 294 (81%) | **19%** |
-| rzhao271 | 359 | 32 (9%) | 37 (10%) | 290 (81%) | **19%** |
+| rzhao271 | 359 | 32 (9%) | 38 (11%) | 289 (81%) | **19%** |
 | Copilot | 340 | 16 (5%) | 5 (1%) | 319 (94%) | **6%** |
-| aiday-mar | 337 | 24 (7%) | 11 (3%) | 302 (90%) | **10%** |
-| dmitrivMS | 333 | 41 (12%) | 46 (14%) | 246 (74%) | **26%** |
-| pwang347 | 233 | 25 (11%) | 33 (14%) | 175 (75%) | **25%** |
+| aiday-mar | 337 | 23 (7%) | 11 (3%) | 303 (90%) | **10%** |
+| dmitrivMS | 333 | 41 (12%) | 47 (14%) | 245 (74%) | **26%** |
+| pwang347 | 232 | 25 (11%) | 33 (14%) | 174 (75%) | **25%** |
 | vritant24 | 232 | 28 (12%) | 27 (12%) | 177 (76%) | **24%** |
 | vijayupadya | 228 | 21 (9%) | 40 (18%) | 167 (73%) | **27%** |
 | alexr00 | 212 | 13 (6%) | 11 (5%) | 188 (89%) | **11%** |
@@ -77,39 +77,39 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | User | Stays open | Agent-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | lszomoru | 1073 | 154 | 74 | 14% |
-| hediet | 1102 | 190 | 99 | 17% |
+| hediet | 1100 | 187 | 98 | 17% |
 | justschen | 927 | 106 | 45 | 11% |
 | deepak1556 | 548 | 13 | 10 | 2% |
 | roblourens | 659 | 80 | 41 | 12% |
 | sandy081 | 702 | 79 | 37 | 11% |
 | lramos15 | 540 | 82 | 42 | 15% |
-| TylerLeonhardt | 662 | 86 | 47 | 13% |
+| TylerLeonhardt | 662 | 86 | 46 | 13% |
 | connor4312 | 682 | 78 | 47 | 11% |
 | meganrogge | 687 | 100 | 54 | 15% |
 | anthonykim1 | 572 | 92 | 58 | 16% |
 | aeschli | 652 | 56 | 37 | 9% |
-| joshspicer | 488 | 50 | 19 | 10% |
+| joshspicer | 487 | 50 | 19 | 10% |
 | osortega | 506 | 80 | 37 | 16% |
 | benibenj | 514 | 41 | 15 | 8% |
-| mjbvz | 490 | 82 | 42 | 17% |
-| alexdima | 372 | 62 | 32 | 17% |
+| alexdima | 327 | 28 | 17 | 9% |
+| mjbvz | 489 | 81 | 41 | 17% |
 | chrmarti | 188 | 26 | 14 | 14% |
-| ulugbekna | 322 | 36 | 18 | 11% |
+| ulugbekna | 320 | 36 | 18 | 11% |
 | DonJayamanne | 329 | 34 | 22 | 10% |
 | mrleemurray | 289 | 6 | 1 | 2% |
 | Yoyokrazy | 294 | 60 | 27 | 20% |
-| rzhao271 | 290 | 53 | 22 | 18% |
-| Copilot | 319 | 43 | 27 | 13% |
-| aiday-mar | 302 | 42 | 28 | 14% |
-| dmitrivMS | 246 | 24 | 10 | 10% |
-| pwang347 | 175 | 18 | 9 | 10% |
+| rzhao271 | 289 | 53 | 22 | 18% |
+| Copilot | 319 | 42 | 27 | 13% |
+| aiday-mar | 303 | 41 | 28 | 14% |
+| dmitrivMS | 245 | 24 | 10 | 10% |
+| pwang347 | 174 | 18 | 9 | 10% |
 | vritant24 | 177 | 16 | 8 | 9% |
 | vijayupadya | 167 | 15 | 5 | 9% |
-| alexr00 | 188 | 12 | 7 | 6% |
+| alexr00 | 188 | 12 | 6 | 6% |
 | hawkticehurst | 166 | 11 | 5 | 7% |
 | bhavyaus | 149 | 17 | 6 | 11% |
 | amunger | 156 | 32 | 13 | 21% |
-| sbatten | 114 | 23 | 8 | 20% |
+| sbatten | 114 | 23 | 7 | 20% |
 | kycutler | 120 | 10 | 3 | 8% |
 | jo-oikawa | 127 | 7 | 6 | 6% |
 | jrieken | 114 | 30 | 19 | 26% |
@@ -123,7 +123,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | User | Close proposals | implemented on main | duplicate | as-designed | question | out-of-scope | not-reproducible | off-topic | other |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | lszomoru | 198 | 49 (25%) | 74 (37%) | 21 (11%) | 19 (10%) | 5 (3%) | 8 (4%) | 8 (4%) | 14 (7%) |
-| hediet | 143 | 36 (25%) | 45 (31%) | 30 (21%) | 13 (9%) | 4 (3%) | 3 (2%) | 3 (2%) | 9 (6%) |
+| hediet | 145 | 37 (26%) | 46 (32%) | 30 (21%) | 13 (9%) | 4 (3%) | 3 (2%) | 3 (2%) | 9 (6%) |
 | justschen | 190 | 77 (41%) | 69 (36%) | 15 (8%) | 9 (5%) | 8 (4%) | 6 (3%) | 2 (1%) | 4 (2%) |
 | deepak1556 | 191 | 28 (15%) | 95 (50%) | 11 (6%) | 14 (7%) | 21 (11%) | 19 (10%) | 2 (1%) | 1 (1%) |
 | roblourens | 139 | 43 (31%) | 43 (31%) | 11 (8%) | 15 (11%) | 10 (7%) | 7 (5%) | 4 (3%) | 6 (4%) |
@@ -134,19 +134,19 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | meganrogge | 71 | 38 (54%) | 13 (18%) | 8 (11%) | 1 (1%) | 9 (13%) | 1 (1%) | — | 1 (1%) |
 | anthonykim1 | 96 | 21 (22%) | 28 (29%) | 15 (16%) | 9 (9%) | 13 (14%) | 5 (5%) | 5 (5%) | — |
 | aeschli | 60 | 23 (38%) | 16 (27%) | 2 (3%) | 6 (10%) | 5 (8%) | 1 (2%) | — | 7 (12%) |
-| joshspicer | 81 | 24 (30%) | 22 (27%) | 8 (10%) | 3 (4%) | 14 (17%) | 6 (7%) | 2 (2%) | 2 (2%) |
+| joshspicer | 80 | 24 (30%) | 22 (28%) | 8 (10%) | 2 (3%) | 14 (18%) | 6 (8%) | 2 (3%) | 2 (3%) |
 | osortega | 55 | 18 (33%) | 22 (40%) | 7 (13%) | 2 (4%) | 4 (7%) | 1 (2%) | — | 1 (2%) |
 | benibenj | 43 | 9 (21%) | 12 (28%) | 13 (30%) | 3 (7%) | 3 (7%) | 3 (7%) | — | — |
+| alexdima | 158 | 46 (29%) | 49 (31%) | 37 (23%) | 1 (1%) | 6 (4%) | 7 (4%) | 2 (1%) | 10 (6%) |
 | mjbvz | 62 | 29 (47%) | 16 (26%) | 11 (18%) | — | 1 (2%) | 5 (8%) | — | — |
-| alexdima | 122 | 39 (32%) | 27 (22%) | 33 (27%) | 1 (1%) | 3 (2%) | 7 (6%) | 2 (2%) | 10 (8%) |
 | chrmarti | 170 | 25 (15%) | 29 (17%) | 5 (3%) | 66 (39%) | 10 (6%) | 28 (16%) | 5 (3%) | 2 (1%) |
-| ulugbekna | 70 | 10 (14%) | 23 (33%) | 17 (24%) | 6 (9%) | 3 (4%) | 7 (10%) | 3 (4%) | 1 (1%) |
+| ulugbekna | 72 | 10 (14%) | 25 (35%) | 17 (24%) | 6 (8%) | 3 (4%) | 7 (10%) | 3 (4%) | 1 (1%) |
 | DonJayamanne | 37 | 16 (43%) | 9 (24%) | 3 (8%) | 1 (3%) | 2 (5%) | 2 (5%) | — | 4 (11%) |
 | mrleemurray | 40 | 15 (38%) | 16 (40%) | 6 (15%) | 2 (5%) | 1 (3%) | — | — | — |
 | Yoyokrazy | 33 | 11 (33%) | 9 (27%) | 2 (6%) | 5 (15%) | 4 (12%) | 2 (6%) | — | — |
 | rzhao271 | 32 | 9 (28%) | 9 (28%) | 8 (25%) | 1 (3%) | — | 4 (13%) | — | 1 (3%) |
 | Copilot | 16 | 8 (50%) | 4 (25%) | 4 (25%) | — | — | — | — | — |
-| aiday-mar | 24 | 13 (54%) | 5 (21%) | 4 (17%) | — | — | 1 (4%) | — | 1 (4%) |
+| aiday-mar | 23 | 13 (57%) | 5 (22%) | 3 (13%) | — | — | 1 (4%) | — | 1 (4%) |
 | dmitrivMS | 41 | 10 (24%) | 14 (34%) | 7 (17%) | 5 (12%) | 1 (2%) | 2 (5%) | — | 2 (5%) |
 | pwang347 | 25 | 2 (8%) | 11 (44%) | 5 (20%) | 2 (8%) | 1 (4%) | 1 (4%) | — | 3 (12%) |
 | vritant24 | 28 | 6 (21%) | 15 (54%) | 3 (11%) | 1 (4%) | — | — | — | 3 (11%) |
@@ -162,4 +162,4 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | benvillalobos | 14 | 1 (7%) | 4 (29%) | 2 (14%) | — | 3 (21%) | 1 (7%) | 2 (14%) | 1 (7%) |
 | jruales | 6 | 2 (33%) | 2 (33%) | 2 (33%) | — | — | — | — | — |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 727 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 726 reviews — mostly co-assignees)._
