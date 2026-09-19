@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20574 issues reviewed · generated 2026-09-19 19:50 UTC
+[← Home](index.html) · 39 swept users · 20574 issues reviewed · generated 2026-09-19 20:10 UTC
 
 ## Verdict distribution
 
@@ -8,20 +8,20 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 768 | 4% | 617 (80%) | 388 (63%) | 211 (34%) | 18 (3%) | 151 (20%) | — |
-| duplicate | 912 | 4% | 804 (88%) | 552 (69%) | 232 (29%) | 20 (2%) | 108 (12%) | — |
+| implemented on main | 769 | 4% | 618 (80%) | 388 (63%) | 212 (34%) | 18 (3%) | 151 (20%) | — |
+| duplicate | 914 | 4% | 806 (88%) | 553 (69%) | 233 (29%) | 20 (2%) | 108 (12%) | — |
 | as-designed | 332 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
-| question | 255 | 1% | — | — | — | — | — | — |
-| out-of-scope | 210 | 1% | — | — | — | — | — | — |
+| question | 253 | 1% | — | — | — | — | — | — |
+| out-of-scope | 212 | 1% | — | — | — | — | — | — |
 | not-reproducible | 139 | 1% | — | — | — | — | — | — |
 | off-topic | 54 | 0% | — | — | — | — | — | — |
 | caused-by-extension | 41 | 0% | — | — | — | — | — | — |
 | extension-candidate | 29 | 0% | — | — | — | — | — | — |
 | invalid | 28 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2789 | 14% | 1423 (51%) | 940 (66%) | 445 (31%) | 38 (3%) | — | — |
-| needs info | 2715 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15070 | 73% | — | — | — | — | — | — |
+| **all close proposals** | 2792 | 14% | 1426 (51%) | 941 (66%) | 447 (31%) | 38 (3%) | — | — |
+| needs info | 2714 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15068 | 73% | — | — | — | — | — | — |
 | all reviews | 20574 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -34,11 +34,11 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | hediet | 1465 | 145 (10%) | 213 (15%) | 1107 (76%) | **24%** |
 | justschen | 1286 | 193 (15%) | 160 (12%) | 933 (73%) | **27%** |
 | deepak1556 | 1128 | 192 (17%) | 387 (34%) | 549 (49%) | **51%** |
-| roblourens | 1029 | 200 (19%) | 189 (18%) | 640 (62%) | **38%** |
+| roblourens | 1032 | 203 (20%) | 191 (19%) | 638 (62%) | **38%** |
 | sandy081 | 917 | 107 (12%) | 95 (10%) | 715 (78%) | **22%** |
 | lramos15 | 876 | 171 (20%) | 162 (18%) | 543 (62%) | **38%** |
 | TylerLeonhardt | 845 | 90 (11%) | 89 (11%) | 666 (79%) | **21%** |
-| connor4312 | 811 | 75 (9%) | 51 (6%) | 685 (84%) | **16%** |
+| connor4312 | 814 | 76 (9%) | 54 (7%) | 684 (84%) | **16%** |
 | meganrogge | 805 | 75 (9%) | 42 (5%) | 688 (85%) | **15%** |
 | anthonykim1 | 784 | 96 (12%) | 112 (14%) | 576 (73%) | **27%** |
 | aeschli | 761 | 62 (8%) | 43 (6%) | 656 (86%) | **14%** |
@@ -47,7 +47,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | benibenj | 602 | 44 (7%) | 43 (7%) | 515 (86%) | **14%** |
 | alexdima | 581 | 151 (26%) | 102 (18%) | 328 (56%) | **44%** |
 | mjbvz | 581 | 62 (11%) | 30 (5%) | 489 (84%) | **16%** |
-| chrmarti | 512 | 170 (33%) | 154 (30%) | 188 (37%) | **63%** |
+| chrmarti | 511 | 170 (33%) | 153 (30%) | 188 (37%) | **63%** |
 | ulugbekna | 478 | 71 (15%) | 87 (18%) | 320 (67%) | **33%** |
 | DonJayamanne | 407 | 38 (9%) | 41 (10%) | 328 (81%) | **19%** |
 | mrleemurray | 374 | 40 (11%) | 42 (11%) | 292 (78%) | **22%** |
@@ -57,7 +57,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | aiday-mar | 337 | 23 (7%) | 11 (3%) | 303 (90%) | **10%** |
 | dmitrivMS | 333 | 41 (12%) | 47 (14%) | 245 (74%) | **26%** |
 | vritant24 | 241 | 29 (12%) | 30 (12%) | 182 (76%) | **24%** |
-| pwang347 | 234 | 24 (10%) | 34 (15%) | 176 (75%) | **25%** |
+| pwang347 | 232 | 24 (10%) | 32 (14%) | 176 (76%) | **24%** |
 | vijayupadya | 228 | 21 (9%) | 40 (18%) | 167 (73%) | **27%** |
 | alexr00 | 214 | 14 (7%) | 11 (5%) | 189 (88%) | **12%** |
 | hawkticehurst | 210 | 22 (10%) | 21 (10%) | 167 (80%) | **20%** |
@@ -80,11 +80,11 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | hediet | 1107 | 187 | 97 | 17% |
 | justschen | 933 | 110 | 46 | 12% |
 | deepak1556 | 549 | 13 | 10 | 2% |
-| roblourens | 640 | 83 | 46 | 13% |
+| roblourens | 638 | 89 | 48 | 14% |
 | sandy081 | 715 | 82 | 40 | 11% |
 | lramos15 | 543 | 83 | 43 | 15% |
 | TylerLeonhardt | 666 | 86 | 46 | 13% |
-| connor4312 | 685 | 83 | 48 | 12% |
+| connor4312 | 684 | 83 | 49 | 12% |
 | meganrogge | 688 | 101 | 55 | 15% |
 | anthonykim1 | 576 | 92 | 58 | 16% |
 | aeschli | 656 | 57 | 37 | 9% |
@@ -126,11 +126,11 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | hediet | 145 | 37 (26%) | 46 (32%) | 30 (21%) | 13 (9%) | 4 (3%) | 3 (2%) | 3 (2%) | 9 (6%) |
 | justschen | 193 | 77 (40%) | 69 (36%) | 17 (9%) | 9 (5%) | 9 (5%) | 6 (3%) | 2 (1%) | 4 (2%) |
 | deepak1556 | 192 | 28 (15%) | 96 (50%) | 11 (6%) | 14 (7%) | 21 (11%) | 19 (10%) | 2 (1%) | 1 (1%) |
-| roblourens | 200 | 67 (34%) | 84 (42%) | 17 (9%) | 8 (4%) | 14 (7%) | 3 (2%) | 1 (1%) | 6 (3%) |
+| roblourens | 203 | 68 (33%) | 86 (42%) | 17 (8%) | 6 (3%) | 16 (8%) | 3 (1%) | 1 (0%) | 6 (3%) |
 | sandy081 | 107 | 38 (36%) | 28 (26%) | 6 (6%) | 9 (8%) | 11 (10%) | 4 (4%) | 5 (5%) | 6 (6%) |
 | lramos15 | 171 | 40 (23%) | 35 (20%) | 18 (11%) | 37 (22%) | 12 (7%) | 8 (5%) | 11 (6%) | 10 (6%) |
 | TylerLeonhardt | 90 | 22 (24%) | 34 (38%) | 6 (7%) | 10 (11%) | 9 (10%) | 2 (2%) | — | 7 (8%) |
-| connor4312 | 75 | 23 (31%) | 28 (37%) | 8 (11%) | 1 (1%) | 9 (12%) | 5 (7%) | 1 (1%) | — |
+| connor4312 | 76 | 23 (30%) | 29 (38%) | 8 (11%) | 1 (1%) | 9 (12%) | 5 (7%) | 1 (1%) | — |
 | meganrogge | 75 | 41 (55%) | 13 (17%) | 9 (12%) | 1 (1%) | 9 (12%) | 1 (1%) | — | 1 (1%) |
 | anthonykim1 | 96 | 21 (22%) | 28 (29%) | 15 (16%) | 9 (9%) | 13 (14%) | 5 (5%) | 5 (5%) | — |
 | aeschli | 62 | 23 (37%) | 17 (27%) | 3 (5%) | 6 (10%) | 5 (8%) | 1 (2%) | — | 7 (11%) |
