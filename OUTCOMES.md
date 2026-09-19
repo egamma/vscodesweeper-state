@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20450 issues reviewed · generated 2026-09-19 08:47 UTC
+[← Home](index.html) · 20573 issues reviewed · generated 2026-09-19 13:01 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 20450
-- **Close proposals:** 2707 (13% of reviewed)
-- **Acted on (closed):** 741 (27% of proposals)
-- **2nd-reviewed before the close:** 143 confirmed · 48 disputed · 6 unverifiable · 544 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Issues reviewed:** 20573
+- **Close proposals:** 2727 (13% of reviewed)
+- **Acted on (closed):** 743 (27% of proposals)
+- **2nd-reviewed before the close:** 143 confirmed · 48 disputed · 6 unverifiable · 546 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 356 (48% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 91 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (90 of the 384 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1966 open close proposals
+- **Likely fixed instead:** 91 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (90 of the 386 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1984 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2562 of the 20450 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1966 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2586 of the 20573 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1984 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,9 +21,9 @@ _Close proposals count the whole corpus (2562 of the 20450 reviewed issues have 
 | --- | --- | --- |
 | justschen | 123 | 63 (51%) |
 | alexdima | 115 | 107 (93%) |
-| vs-code-engineering | 65 | 0 (0%) |
+| vs-code-engineering | 66 | 0 (0%) |
 | lramos15 | 43 | 0 (0%) |
-| roblourens | 40 | 17 (43%) |
+| roblourens | 41 | 17 (41%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
 | dmitrivMS | 32 | 0 (0%) |
@@ -85,25 +85,25 @@ _Close proposals count the whole corpus (2562 of the 20450 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 1809 reviewed briefs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 1815 reviewed briefs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
-| alexdima | 28 | 1 | 1 | — |
-| benibenj | 41 | 1 | — | 1 |
+| alexdima | 28 | 2 | 2 | — |
+| benibenj | 42 | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 642 of 642 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 509 of 509 open proposals verified · 97 closed unverified
-- **Verdict mix:** 897 confirmed (27 with the fix unreleased) · 414 disputed · 37 unverifiable
+- **duplicate:** 653 of 653 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 510 of 510 open proposals verified · 97 closed unverified
+- **Verdict mix:** 907 confirmed (27 with the fix unreleased) · 416 disputed · 37 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 754 | 142 | 1 |
-| disputed | 366 | 48 | 0 |
+| confirmed | 764 | 142 | 1 |
+| disputed | 368 | 48 | 0 |
 | unverifiable | 31 | 6 | 0 |
 
 ### Closed despite a dispute
@@ -159,7 +159,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 414 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 416 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -172,32 +172,32 @@ _The 414 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1101 |
-| propose-close | 741 |
-| needs-info | 553 |
-| route-to-area | 167 |
+| keep-open | 1112 |
+| propose-close | 743 |
+| needs-info | 559 |
+| route-to-area | 172 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1359 |
-| not_planned | 894 |
-| duplicate | 293 |
+| completed | 1366 |
+| not_planned | 908 |
+| duplicate | 296 |
 | not_found | 16 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 862 | 220 | 26% | 101 | 25 |
-| implemented on main | 742 | 236 | 32% | 146 | — |
-| as-designed | 322 | 81 | 25% | 47 | 19 |
-| question | 262 | 39 | 15% | 9 | 15 |
-| out-of-scope | 201 | 55 | 27% | 18 | 8 |
+| duplicate | 873 | 220 | 25% | 101 | 25 |
+| implemented on main | 743 | 236 | 32% | 146 | — |
+| as-designed | 325 | 81 | 25% | 47 | 19 |
+| question | 262 | 40 | 15% | 9 | 15 |
+| out-of-scope | 205 | 56 | 27% | 18 | 8 |
 | not-reproducible | 143 | 28 | 20% | 9 | 8 |
 | off-topic | 57 | 17 | 30% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | extension-candidate | 29 | 8 | 28% | 2 | 1 |
-| invalid | 27 | 10 | 37% | 0 | 1 |
+| invalid | 28 | 10 | 36% | 0 | 1 |
 | other | 21 | 6 | 29% | 3 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
