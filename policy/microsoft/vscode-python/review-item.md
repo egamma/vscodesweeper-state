@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode-python`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `82a1b43dfd1d3566` — every verdict record carries the hash of the
+> Policy hash `d11f7921ee6339a6` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-19 14:57 UTC.
+> exactly this text. Published 2026-09-19 15:27 UTC.
 
 ---
 
@@ -463,6 +463,20 @@ so the reporter can adopt it. Keep the request open only when the existing
 surface genuinely does not cover the central ask — a partial or awkward
 workaround is not coverage; say in `evidence` what the existing surface does
 and does not do.
+
+**Re-reviewed items — the stronger duplicate bar.** When the context carries a
+`PRIOR REVIEW` block (this item was reviewed before and stayed open), a
+duplicate close needs more than the cluster rule. BOTH must hold: the canonical
+is **older** than this item — a younger issue cannot own an older report; if
+they are the same problem, the newer one is the duplicate, so keep this one open
+and name the pair in `evidence` (code enforces this half) — AND it reports the
+**same reporter-observable symptom**: the same thing going wrong in the same
+place, not merely a shared root cause, the same area, or "the discussion belongs
+there". A canonical you would pick only because it is better-diagnosed or more
+discussed does not clear this bar for a re-reviewed item: cite it as related and
+keep the item open. Re-reviewed rows are where a fresh duplicate close is most
+often a false close (the verify lane refutes ~70% of them against ~30% on first
+reviews) — when in doubt, it stays open.
 
 **Canonical-search pass — required before keeping an older item open.** Before
 you settle on `keep-open` for an item that has been open a long time, search for
