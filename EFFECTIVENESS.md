@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20450 issues reviewed · generated 2026-09-19 08:30 UTC
+[← Home](index.html) · 39 swept users · 20450 issues reviewed · generated 2026-09-19 08:47 UTC
 
 ## Verdict distribution
 
@@ -8,8 +8,8 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 744 | 4% | 593 (80%) | 372 (63%) | 203 (34%) | 18 (3%) | 151 (20%) | — |
-| duplicate | 873 | 4% | 765 (88%) | 523 (68%) | 223 (29%) | 19 (2%) | 108 (12%) | — |
+| implemented on main | 742 | 4% | 591 (80%) | 373 (63%) | 200 (34%) | 18 (3%) | 151 (20%) | — |
+| duplicate | 862 | 4% | 754 (87%) | 524 (69%) | 211 (28%) | 19 (3%) | 108 (13%) | — |
 | as-designed | 322 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
 | question | 262 | 1% | — | — | — | — | — | — |
 | out-of-scope | 201 | 1% | — | — | — | — | — | — |
@@ -19,9 +19,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | extension-candidate | 29 | 0% | — | — | — | — | — | — |
 | invalid | 27 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2720 | 13% | 1361 (50%) | 895 (66%) | 429 (32%) | 37 (3%) | — | — |
-| needs info | 2713 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15017 | 73% | — | — | — | — | — | — |
+| **all close proposals** | 2707 | 13% | 1348 (50%) | 897 (67%) | 414 (31%) | 37 (3%) | — | — |
+| needs info | 2714 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15029 | 73% | — | — | — | — | — | — |
 | all reviews | 20450 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -31,7 +31,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | User | Reviewed | Propose close | Needs info | Keep open | Closure path |
 | --- | --- | --- | --- | --- | --- |
 | lszomoru | 1478 | 198 (13%) | 207 (14%) | 1073 (73%) | **27%** |
-| hediet | 1454 | 145 (10%) | 209 (14%) | 1100 (76%) | **24%** |
+| hediet | 1454 | 143 (10%) | 210 (14%) | 1101 (76%) | **24%** |
 | justschen | 1276 | 190 (15%) | 159 (12%) | 927 (73%) | **27%** |
 | deepak1556 | 1124 | 191 (17%) | 385 (34%) | 548 (49%) | **51%** |
 | roblourens | 1006 | 139 (14%) | 208 (21%) | 659 (66%) | **34%** |
@@ -45,10 +45,10 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | joshspicer | 634 | 80 (13%) | 67 (11%) | 487 (77%) | **23%** |
 | osortega | 629 | 55 (9%) | 68 (11%) | 506 (80%) | **20%** |
 | benibenj | 597 | 43 (7%) | 40 (7%) | 514 (86%) | **14%** |
-| alexdima | 581 | 158 (27%) | 96 (17%) | 327 (56%) | **44%** |
+| alexdima | 581 | 145 (25%) | 97 (17%) | 339 (58%) | **42%** |
 | mjbvz | 581 | 62 (11%) | 30 (5%) | 489 (84%) | **16%** |
 | chrmarti | 512 | 170 (33%) | 154 (30%) | 188 (37%) | **63%** |
-| ulugbekna | 478 | 72 (15%) | 86 (18%) | 320 (67%) | **33%** |
+| ulugbekna | 478 | 70 (15%) | 86 (18%) | 322 (67%) | **33%** |
 | DonJayamanne | 407 | 37 (9%) | 41 (10%) | 329 (81%) | **19%** |
 | mrleemurray | 371 | 40 (11%) | 42 (11%) | 289 (78%) | **22%** |
 | Yoyokrazy | 363 | 33 (9%) | 36 (10%) | 294 (81%) | **19%** |
@@ -77,7 +77,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | User | Stays open | Agent-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
 | lszomoru | 1073 | 154 | 74 | 14% |
-| hediet | 1100 | 187 | 98 | 17% |
+| hediet | 1101 | 187 | 98 | 17% |
 | justschen | 927 | 106 | 45 | 11% |
 | deepak1556 | 548 | 13 | 10 | 2% |
 | roblourens | 659 | 80 | 41 | 12% |
@@ -91,10 +91,10 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | joshspicer | 487 | 50 | 19 | 10% |
 | osortega | 506 | 80 | 37 | 16% |
 | benibenj | 514 | 41 | 15 | 8% |
-| alexdima | 327 | 28 | 17 | 9% |
+| alexdima | 339 | 28 | 17 | 8% |
 | mjbvz | 489 | 81 | 41 | 17% |
 | chrmarti | 188 | 26 | 14 | 14% |
-| ulugbekna | 320 | 36 | 18 | 11% |
+| ulugbekna | 322 | 36 | 18 | 11% |
 | DonJayamanne | 329 | 34 | 22 | 10% |
 | mrleemurray | 289 | 6 | 1 | 2% |
 | Yoyokrazy | 294 | 60 | 27 | 20% |
@@ -123,7 +123,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | User | Close proposals | implemented on main | duplicate | as-designed | question | out-of-scope | not-reproducible | off-topic | other |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | lszomoru | 198 | 49 (25%) | 74 (37%) | 21 (11%) | 19 (10%) | 5 (3%) | 8 (4%) | 8 (4%) | 14 (7%) |
-| hediet | 145 | 37 (26%) | 46 (32%) | 30 (21%) | 13 (9%) | 4 (3%) | 3 (2%) | 3 (2%) | 9 (6%) |
+| hediet | 143 | 36 (25%) | 45 (31%) | 30 (21%) | 13 (9%) | 4 (3%) | 3 (2%) | 3 (2%) | 9 (6%) |
 | justschen | 190 | 77 (41%) | 69 (36%) | 15 (8%) | 9 (5%) | 8 (4%) | 6 (3%) | 2 (1%) | 4 (2%) |
 | deepak1556 | 191 | 28 (15%) | 95 (50%) | 11 (6%) | 14 (7%) | 21 (11%) | 19 (10%) | 2 (1%) | 1 (1%) |
 | roblourens | 139 | 43 (31%) | 43 (31%) | 11 (8%) | 15 (11%) | 10 (7%) | 7 (5%) | 4 (3%) | 6 (4%) |
@@ -137,10 +137,10 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | joshspicer | 80 | 24 (30%) | 22 (28%) | 8 (10%) | 2 (3%) | 14 (18%) | 6 (8%) | 2 (3%) | 2 (3%) |
 | osortega | 55 | 18 (33%) | 22 (40%) | 7 (13%) | 2 (4%) | 4 (7%) | 1 (2%) | — | 1 (2%) |
 | benibenj | 43 | 9 (21%) | 12 (28%) | 13 (30%) | 3 (7%) | 3 (7%) | 3 (7%) | — | — |
-| alexdima | 158 | 46 (29%) | 49 (31%) | 37 (23%) | 1 (1%) | 6 (4%) | 7 (4%) | 2 (1%) | 10 (6%) |
+| alexdima | 145 | 44 (30%) | 38 (26%) | 37 (26%) | 1 (1%) | 6 (4%) | 7 (5%) | 2 (1%) | 10 (7%) |
 | mjbvz | 62 | 29 (47%) | 16 (26%) | 11 (18%) | — | 1 (2%) | 5 (8%) | — | — |
 | chrmarti | 170 | 25 (15%) | 29 (17%) | 5 (3%) | 66 (39%) | 10 (6%) | 28 (16%) | 5 (3%) | 2 (1%) |
-| ulugbekna | 72 | 10 (14%) | 25 (35%) | 17 (24%) | 6 (8%) | 3 (4%) | 7 (10%) | 3 (4%) | 1 (1%) |
+| ulugbekna | 70 | 10 (14%) | 23 (33%) | 17 (24%) | 6 (9%) | 3 (4%) | 7 (10%) | 3 (4%) | 1 (1%) |
 | DonJayamanne | 37 | 16 (43%) | 9 (24%) | 3 (8%) | 1 (3%) | 2 (5%) | 2 (5%) | — | 4 (11%) |
 | mrleemurray | 40 | 15 (38%) | 16 (40%) | 6 (15%) | 2 (5%) | 1 (3%) | — | — | — |
 | Yoyokrazy | 33 | 11 (33%) | 9 (27%) | 2 (6%) | 5 (15%) | 4 (12%) | 2 (6%) | — | — |

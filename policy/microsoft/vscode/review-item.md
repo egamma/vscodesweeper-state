@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `f83c7dd550736dc9` — every verdict record carries the hash of the
+> Policy hash `fd90e4d8a068f279` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-19 08:30 UTC.
+> exactly this text. Published 2026-09-19 08:47 UTC.
 
 ---
 
@@ -640,6 +640,16 @@ anything. Default `agentReadiness: "none"`. The tiers:
 
 - **`none`** — everything else. Being difficult is not a reason for `plan`; being
   small is not a reason for `implement` without the confirmed diagnosis.
+
+**Readiness comes AFTER the verdict and never changes it.** Decide `triageAction`
+first, by the close and needs-info rules above, and only then assess readiness
+for an issue that stays open. In particular, an open broader, umbrella, or
+tracking issue where this work "should be planned", "consolidated", "tracked",
+or "resolved" is NOT a duplicate canonical: the duplicate rules decide closes on
+*the same underlying problem*, and "the design belongs over there" is a
+plan-tier observation — cite that issue in `briefTrace` and keep this one open.
+If you find yourself justifying a close with where the work should happen, the
+verdict is `keep-open`, not `propose-close`.
 
 Whichever tier, `autoFixable` is `true` exactly when `agentReadiness` is
 `implement` (code overwrites it from the tier). These gates are re-enforced in

@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20450 issues reviewed · generated 2026-09-19 08:30 UTC
+[← Home](index.html) · 20450 issues reviewed · generated 2026-09-19 08:47 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 20450
-- **Close proposals:** 2720 (13% of reviewed)
+- **Close proposals:** 2707 (13% of reviewed)
 - **Acted on (closed):** 741 (27% of proposals)
 - **2nd-reviewed before the close:** 143 confirmed · 48 disputed · 6 unverifiable · 544 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 356 (48% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
 - **Likely fixed instead:** 91 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (90 of the 384 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1979 open close proposals
+- **Still awaiting action:** 1966 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2562 of the 20450 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1979 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2562 of the 20450 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1966 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -96,14 +96,14 @@ Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 653 of 653 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 511 of 511 open proposals verified · 97 closed unverified
-- **Verdict mix:** 895 confirmed (27 with the fix unreleased) · 429 disputed · 37 unverifiable
+- **duplicate:** 642 of 642 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 509 of 509 open proposals verified · 97 closed unverified
+- **Verdict mix:** 897 confirmed (27 with the fix unreleased) · 414 disputed · 37 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 752 | 142 | 1 |
-| disputed | 381 | 48 | 0 |
+| confirmed | 754 | 142 | 1 |
+| disputed | 366 | 48 | 0 |
 | unverifiable | 31 | 6 | 0 |
 
 ### Closed despite a dispute
@@ -159,7 +159,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 429 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 414 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -188,8 +188,8 @@ _The 429 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 873 | 220 | 25% | 101 | 25 |
-| implemented on main | 744 | 236 | 32% | 146 | — |
+| duplicate | 862 | 220 | 26% | 101 | 25 |
+| implemented on main | 742 | 236 | 32% | 146 | — |
 | as-designed | 322 | 81 | 25% | 47 | 19 |
 | question | 262 | 39 | 15% | 9 | 15 |
 | out-of-scope | 201 | 55 | 27% | 18 | 8 |
