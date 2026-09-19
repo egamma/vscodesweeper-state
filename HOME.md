@@ -60,7 +60,7 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[osortega](top/osortega.md)** · [by theme](top/osortega-themes.md) — 423 bugs · 135 feature requests.
 - **[joshspicer](top/joshspicer.md)** · [by theme](top/joshspicer-themes.md) — 387 bugs · 146 feature requests.
 - **[mjbvz](top/mjbvz.md)** · [by theme](top/mjbvz-themes.md) — 365 bugs · 154 feature requests.
-- **[alexdima](top/alexdima.md)** · [by theme](top/alexdima-themes.md) — 359 bugs · 146 feature requests.
+- **[alexdima](top/alexdima.md)** · [by theme](top/alexdima-themes.md) — 355 bugs · 148 feature requests.
 - **[benibenj](top/benibenj.md)** · [by theme](top/benibenj-themes.md) — 319 bugs · 172 feature requests.
 - **[chrmarti](top/chrmarti.md)** · [by theme](top/chrmarti-themes.md) — 327 bugs · 77 feature requests.
 - **[ulugbekna](top/ulugbekna.md)** · [by theme](top/ulugbekna-themes.md) — 311 bugs · 77 feature requests.
@@ -84,4 +84,4 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 17 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-09-19 13:01 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-09-19 14:57 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._

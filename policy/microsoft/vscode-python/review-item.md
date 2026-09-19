@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode-python`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `fea74d61219367e4` — every verdict record carries the hash of the
+> Policy hash `82a1b43dfd1d3566` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-19 13:01 UTC.
+> exactly this text. Published 2026-09-19 14:57 UTC.
 
 ---
 
@@ -686,8 +686,8 @@ anything. Default `agentReadiness: "none"`. The tiers:
     NOT a validation.* No validation ⇒ not `implement`;
   - the change is **bounded** with **identified likely files** — one pass by a
     competent agent is plausible; nothing cross-cutting or architectural;
-  - **no product or design decision is open** — if you would want a maintainer to
-    choose between approaches, it is `plan`;
+  - **no open decision** in the narrow sense defined below — a choice among
+    implementation approaches is the agent's to make, never a reason for `plan`;
   - it is **not** security-sensitive or protected;
   - **no open PR already references the issue** — an open linked PR is an
     implementation candidate a human owns; and
@@ -703,10 +703,13 @@ anything. Default `agentReadiness: "none"`. The tiers:
     is `aligned` (or `not_applicable` with evident demand — upvotes, duplicates,
     maintainer interest in the thread); for a bug, real user impact; and
   - at least one of:
-    - **ambiguity** — several valid product or technical approaches with real
-      differences; a human should choose;
-    - **complexity** — spans multiple systems or layers, carries non-trivial
-      risk, or is clearly more than a bounded change;
+    - **ambiguity** — an open decision in the narrow sense below: the choices
+      differ in user-observable behavior or a public contract, and nothing on
+      the record settles it;
+    - **complexity** — not bounded: a design the trace could not finish, a
+      change across layers with no identified file list, or shared
+      infrastructure whose other consumers you cannot enumerate — "touches
+      two files in two directories" is bounded;
     - **unconfirmed reproduction** — a bug with clear steps you could not
       confirm from source; the plan's first step is to reproduce;
     - **no executable validation you can name** — the defect is confirmed and
@@ -719,6 +722,33 @@ anything. Default `agentReadiness: "none"`. The tiers:
 
 - **`none`** — everything else. Being difficult is not a reason for `plan`; being
   small is not a reason for `implement` without the confirmed diagnosis.
+
+**What counts as an open decision.** A question is an open decision — a reason
+for `plan` and an `openDecisions` entry — only when ALL three hold:
+
+1. the answers differ in **user-observable behavior or a public contract**: what
+   the user sees, an API surface, a setting, a keybinding, a default, a
+   serialization format, a deprecation — not in how the code gets there;
+2. **nothing on the record settles it** — the issue, the thread, a maintainer's
+   statement, an existing setting or convention, or the neighboring code's
+   behavior. When the report says "X happens, Y is expected" and the source
+   confirms the defect, Y IS the decision; and
+3. a maintainer would **care which way it goes** — the choices are not
+   equivalent for the user.
+
+Everything else is an **implementation choice, and the agent makes it**: which
+of two helpers to call, whether to fix in the caller or the callee, where in a
+bounded path a guard belongs, whether to add a deprecation annotation before a
+removal, how to structure the test, how to name things. Do not list those under
+`openDecisions`; where a conservative default is obvious, state it in
+`briefTrace` ("keep the existing X; do not touch Y") and let the tier be
+`implement`. Likewise the **fringe cases of a confirmed defect** — edge inputs,
+whether cleanup should also cover a neighboring path, what a later refactor
+might want — are not open decisions for the reported case; note them in the
+trace as out of scope. The test: if `briefBehavior` can state the expected
+behavior unambiguously, the remaining questions are the agent's. A `plan` whose
+open decisions are all implementation choices is wrong — the tier is
+`implement`.
 
 **Readiness comes AFTER the verdict and never changes it.** Decide `triageAction`
 first, by the close and needs-info rules above, and only then assess readiness
@@ -753,16 +783,17 @@ fix.
   boundary — what must NOT change — and related refs by full URL (2–8 sentences).
   For `plan`, as far as you got: what you established and exactly where the
   uncertainty starts.
-- `openDecisions` — `plan` only: the concrete questions a maintainer must answer
-  before implementation, one per entry (which approach, scope boundary,
-  compatibility trade-off). `[]` for `implement` — if you have a question, the
-  tier is `plan`.
+- `openDecisions` — `plan` only: the open decisions in the narrow sense above,
+  one per entry — which observable behavior, which contract, which scope
+  boundary — each phrased so the maintainer's answer is a product or contract
+  choice, never a code-structure choice. `[]` for `implement` — if a real one
+  remains, the tier is `plan`.
 
 Also fill `likelyFiles` (required for `implement`; for `plan`, the files the
 trace names) and `validation` (required for `implement`; for `plan`, the
 acceptance check the plan should end with, if you can name one). For `none`:
 `likelyFiles: []`, `validation: ""`, both brief halves `""`, `openDecisions: []`.
-Always fill `autoFixRationale` with one line on why this tier (e.g. "confirmed from source, bounded guard, failing test named" · "aligned feature with two viable designs — needs a maintainer's choice" · "feature request with no demand beyond the reporter").
+Always fill `autoFixRationale` with one line on why this tier (e.g. "confirmed from source, bounded guard, failing test named" · "confirmed from source; caller-vs-callee placement is an implementation choice, default noted in the trace" · "aligned feature with two viable designs — needs a maintainer's choice" · "feature request with no demand beyond the reporter").
 
 ## OUTPUT CONTRACT
 

@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20573 issues reviewed · generated 2026-09-19 13:01 UTC
+[← Home](index.html) · 39 swept users · 20573 issues reviewed · generated 2026-09-19 14:57 UTC
 
 ## Verdict distribution
 
@@ -8,9 +8,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 743 | 4% | 592 (80%) | 373 (63%) | 201 (34%) | 18 (3%) | 151 (20%) | — |
-| duplicate | 873 | 4% | 765 (88%) | 534 (70%) | 212 (28%) | 19 (2%) | 108 (12%) | — |
-| as-designed | 325 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
+| implemented on main | 745 | 4% | 594 (80%) | 374 (63%) | 202 (34%) | 18 (3%) | 151 (20%) | — |
+| duplicate | 881 | 4% | 773 (88%) | 536 (69%) | 218 (28%) | 19 (2%) | 108 (12%) | — |
+| as-designed | 328 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
 | question | 262 | 1% | — | — | — | — | — | — |
 | out-of-scope | 205 | 1% | — | — | — | — | — | — |
 | not-reproducible | 143 | 1% | 1 (1%) | — | 1 (100%) | — | — | — |
@@ -19,9 +19,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | extension-candidate | 29 | 0% | — | — | — | — | — | — |
 | invalid | 28 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2727 | 13% | 1360 (50%) | 907 (67%) | 416 (31%) | 37 (3%) | — | — |
-| needs info | 2735 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15111 | 73% | — | — | — | — | — | — |
+| **all close proposals** | 2740 | 13% | 1370 (50%) | 910 (66%) | 423 (31%) | 37 (3%) | — | — |
+| needs info | 2739 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15094 | 73% | — | — | — | — | — | — |
 | all reviews | 20573 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -45,7 +45,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | osortega | 639 | 57 (9%) | 69 (11%) | 513 (80%) | **20%** |
 | joshspicer | 634 | 80 (13%) | 67 (11%) | 487 (77%) | **23%** |
 | benibenj | 602 | 43 (7%) | 43 (7%) | 516 (86%) | **14%** |
-| alexdima | 581 | 145 (25%) | 97 (17%) | 339 (58%) | **42%** |
+| alexdima | 581 | 158 (27%) | 101 (17%) | 322 (55%) | **45%** |
 | mjbvz | 581 | 62 (11%) | 30 (5%) | 489 (84%) | **16%** |
 | chrmarti | 512 | 170 (33%) | 154 (30%) | 188 (37%) | **63%** |
 | ulugbekna | 478 | 71 (15%) | 87 (18%) | 320 (67%) | **33%** |
@@ -76,7 +76,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 
 | User | Stays open | Agent-fixable | High-value | Share |
 | --- | --- | --- | --- | --- |
-| lszomoru | 1076 | 154 | 73 | 14% |
+| lszomoru | 1076 | 154 | 72 | 14% |
 | hediet | 1108 | 187 | 98 | 17% |
 | justschen | 933 | 108 | 46 | 12% |
 | deepak1556 | 549 | 13 | 10 | 2% |
@@ -91,7 +91,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | osortega | 513 | 80 | 37 | 16% |
 | joshspicer | 487 | 50 | 19 | 10% |
 | benibenj | 516 | 42 | 16 | 8% |
-| alexdima | 339 | 28 | 17 | 8% |
+| alexdima | 322 | 44 | 26 | 14% |
 | mjbvz | 489 | 81 | 41 | 17% |
 | chrmarti | 188 | 26 | 14 | 14% |
 | ulugbekna | 320 | 36 | 18 | 11% |
@@ -137,7 +137,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | osortega | 57 | 18 (32%) | 23 (40%) | 7 (12%) | 2 (4%) | 5 (9%) | 1 (2%) | — | 1 (2%) |
 | joshspicer | 80 | 24 (30%) | 22 (28%) | 8 (10%) | 2 (3%) | 14 (18%) | 6 (8%) | 2 (3%) | 2 (3%) |
 | benibenj | 43 | 9 (21%) | 12 (28%) | 13 (30%) | 3 (7%) | 3 (7%) | 3 (7%) | — | — |
-| alexdima | 145 | 44 (30%) | 38 (26%) | 37 (26%) | 1 (1%) | 6 (4%) | 7 (5%) | 2 (1%) | 10 (7%) |
+| alexdima | 158 | 46 (29%) | 46 (29%) | 40 (25%) | 1 (1%) | 6 (4%) | 7 (4%) | 2 (1%) | 10 (6%) |
 | mjbvz | 62 | 29 (47%) | 16 (26%) | 11 (18%) | — | 1 (2%) | 5 (8%) | — | — |
 | chrmarti | 170 | 25 (15%) | 29 (17%) | 5 (3%) | 66 (39%) | 10 (6%) | 28 (16%) | 5 (3%) | 2 (1%) |
 | ulugbekna | 71 | 10 (14%) | 23 (32%) | 18 (25%) | 6 (8%) | 3 (4%) | 7 (10%) | 3 (4%) | 1 (1%) |
