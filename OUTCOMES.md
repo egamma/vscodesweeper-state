@@ -1,27 +1,27 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20593 issues reviewed · generated 2026-09-20 13:11 UTC
+[← Home](index.html) · 20593 issues reviewed · generated 2026-09-20 13:12 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 20593
 - **Close proposals:** 2838 (14% of reviewed)
-- **Acted on (closed):** 743 (26% of proposals)
-- **2nd-reviewed before the close:** 143 confirmed · 48 disputed · 6 unverifiable · 546 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 356 (48% of acted-on) — 313 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 91 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (90 of the 386 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2095 open close proposals
+- **Acted on (closed):** 749 (26% of proposals)
+- **2nd-reviewed before the close:** 143 confirmed · 48 disputed · 6 unverifiable · 552 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 358 (48% of acted-on) — 315 verbatim, 20 inside a longer comment, 23 edited
+- **Likely fixed instead:** 92 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (91 of the 390 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 2089 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2586 of the 20593 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2095 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2605 of the 20593 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2089 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
 | User | Closures | With sweeper comment |
 | --- | --- | --- |
-| justschen | 123 | 63 (51%) |
+| justschen | 127 | 65 (51%) |
 | alexdima | 115 | 107 (93%) |
-| vs-code-engineering | 66 | 0 (0%) |
+| vs-code-engineering | 68 | 0 (0%) |
 | lramos15 | 43 | 0 (0%) |
 | roblourens | 41 | 17 (41%) |
 | deepak1556 | 39 | 12 (31%) |
@@ -172,15 +172,15 @@ _The 460 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1112 |
-| propose-close | 743 |
-| needs-info | 559 |
-| route-to-area | 172 |
+| keep-open | 1117 |
+| propose-close | 749 |
+| needs-info | 565 |
+| route-to-area | 174 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1366 |
-| not_planned | 908 |
+| completed | 1375 |
+| not_planned | 918 |
 | duplicate | 296 |
 | not_found | 16 |
 
@@ -190,13 +190,13 @@ _The 460 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | --- | --- | --- | --- | --- | --- |
 | duplicate | 934 | 220 | 24% | 101 | 25 |
 | implemented on main | 782 | 236 | 30% | 146 | — |
-| as-designed | 344 | 81 | 24% | 47 | 19 |
-| question | 246 | 40 | 16% | 9 | 15 |
-| out-of-scope | 222 | 56 | 25% | 18 | 8 |
-| not-reproducible | 140 | 28 | 20% | 9 | 8 |
+| as-designed | 344 | 82 | 24% | 48 | 19 |
+| question | 246 | 42 | 17% | 9 | 16 |
+| out-of-scope | 222 | 57 | 26% | 18 | 8 |
+| not-reproducible | 140 | 29 | 21% | 10 | 8 |
 | off-topic | 54 | 17 | 31% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
-| invalid | 28 | 10 | 36% | 0 | 1 |
+| invalid | 28 | 11 | 39% | 0 | 1 |
 | extension-candidate | 26 | 8 | 31% | 2 | 1 |
 | other | 21 | 6 | 29% | 3 | — |
 

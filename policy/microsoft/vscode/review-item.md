@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `d13126680f5ee38a` — every verdict record carries the hash of the
+> Policy hash `e8f657b9f60e3480` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-20 13:12 UTC.
+> exactly this text. Published 2026-09-20 13:13 UTC.
 
 ---
 
@@ -245,21 +245,7 @@ Translate the underlying judgment into VS Code's vocabulary:
   commit, no matter how directly it references the issue or what release labels
   it carries; propose an implemented-on-main close for a reopened issue only
   with evidence of a fix that landed **after** the reopen, else keep it open.
-  **The cited commit must contain the fix, not merely deliver it.** A commit
-  that only bumps a dependency version (`package.json`, lockfiles, a
-  language-service or extension version, `cgmanifest.json`) is NOT a fix
-  commit — the fix lives upstream in that dependency's repository. Find the
-  upstream commit that changed the behavior and cite THAT as the fix (full
-  commit URL in `evidence` and `proposedComment`; cross-repo citations are
-  allowed, the pipeline resolves them in the cited repo), with the bump as the
-  shipping evidence. If you cannot identify the upstream commit, the status is
-  "likely resolved upstream", not implemented: keep the issue open and put the
-  lead in `evidence` (which dependency, which version range) — never
-  `needs-info` for this case, the upstream source is readable. Likewise a
-  commit that touches the reported area but not the reported behavior is not a
-  fix: if its diff would not have changed what the reporter saw, do not cite
-  it. (Code re-enforces the first half: a bump-only cited commit downgrades the
-  close.) Do **not** attach a
+  Do **not** attach a
   `*`-label (a completed fix is a normal close, not a triage-reason close); set
   `proposedLabel: "none"`.
 - **Cannot reproduce** -> `*not-reproducible` with `reproductionStatus:
