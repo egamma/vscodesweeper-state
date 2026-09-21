@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20593 issues reviewed · generated 2026-09-20 13:12 UTC
+[← Home](index.html) · 39 swept users · 20593 issues reviewed · generated 2026-09-21 08:07 UTC
 
 ## Verdict distribution
 
@@ -80,10 +80,10 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | hediet | 1110 | 188 | 98 | 17% |
 | justschen | 934 | 110 | 45 | 12% |
 | deepak1556 | 549 | 13 | 10 | 2% |
-| roblourens | 638 | 88 | 51 | 14% |
+| roblourens | 638 | 88 | 50 | 14% |
 | sandy081 | 716 | 83 | 40 | 12% |
 | lramos15 | 543 | 84 | 44 | 15% |
-| TylerLeonhardt | 669 | 86 | 46 | 13% |
+| TylerLeonhardt | 669 | 86 | 47 | 13% |
 | connor4312 | 685 | 86 | 52 | 13% |
 | meganrogge | 688 | 101 | 55 | 15% |
 | anthonykim1 | 576 | 92 | 58 | 16% |
@@ -110,7 +110,7 @@ High-value = value score above the agent-fix pool's median — the same demand �
 | bhavyaus | 150 | 19 | 7 | 13% |
 | amunger | 156 | 32 | 13 | 21% |
 | kycutler | 121 | 10 | 3 | 8% |
-| sbatten | 113 | 23 | 7 | 20% |
+| sbatten | 113 | 23 | 8 | 20% |
 | jo-oikawa | 127 | 7 | 6 | 6% |
 | jrieken | 114 | 30 | 19 | 26% |
 | benvillalobos | 96 | 11 | 2 | 11% |
