@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20671 issues reviewed · generated 2026-09-21 15:37 UTC
+[← Home](index.html) · 20737 issues reviewed · generated 2026-09-22 13:50 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 20671
-- **Close proposals:** 2842 (14% of reviewed)
-- **Acted on (closed):** 752 (26% of proposals)
-- **2nd-reviewed before the close:** 144 confirmed · 48 disputed · 6 unverifiable · 554 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 358 (48% of acted-on) — 315 verbatim, 20 inside a longer comment, 23 edited
-- **Likely fixed instead:** 92 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (91 of the 393 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2090 open close proposals
+- **Issues reviewed:** 20737
+- **Close proposals:** 2839 (14% of reviewed)
+- **Acted on (closed):** 759 (27% of proposals)
+- **2nd-reviewed before the close:** 147 confirmed · 49 disputed · 6 unverifiable · 557 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 358 (47% of acted-on) — 315 verbatim, 20 inside a longer comment, 23 edited
+- **Likely fixed instead:** 96 (13% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (95 of the 400 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 2080 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2623 of the 20671 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2090 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2682 of the 20737 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2080 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,12 +21,12 @@ _Close proposals count the whole corpus (2623 of the 20671 reviewed issues have 
 | --- | --- | --- |
 | justschen | 127 | 65 (51%) |
 | alexdima | 115 | 107 (93%) |
-| vs-code-engineering | 70 | 0 (0%) |
-| lramos15 | 43 | 0 (0%) |
+| vs-code-engineering | 71 | 0 (0%) |
+| lramos15 | 45 | 0 (0%) |
 | roblourens | 41 | 17 (41%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
-| dmitrivMS | 32 | 0 (0%) |
+| dmitrivMS | 33 | 0 (0%) |
 | chrmarti | 31 | 29 (94%) |
 | kycutler | 30 | 14 (47%) |
 | benibenj | 17 | 10 (59%) |
@@ -37,16 +37,16 @@ _Close proposals count the whole corpus (2623 of the 20671 reviewed issues have 
 | (unattributed) | 10 | 0 (0%) |
 | egamma | 10 | 10 (100%) |
 | lszomoru | 9 | 8 (89%) |
+| vritant24 | 9 | 3 (33%) |
 | mrleemurray | 8 | 5 (63%) |
-| vritant24 | 8 | 3 (38%) |
+| meganrogge | 7 | 0 (0%) |
 | TylerLeonhardt | 7 | 6 (86%) |
 | joshspicer | 6 | 0 (0%) |
-| meganrogge | 6 | 0 (0%) |
 | karthiknadig | 5 | 2 (40%) |
 | bhavyaus | 4 | 4 (100%) |
 | alexr00 | 3 | 0 (0%) |
+| benvillalobos | 3 | 0 (0%) |
 | dbaeumer | 3 | 1 (33%) |
-| benvillalobos | 2 | 0 (0%) |
 | connor4312 | 2 | 0 (0%) |
 | dileepyavan | 2 | 0 (0%) |
 | AbhaySanthani-tekframeworks | 1 | 0 (0%) |
@@ -85,31 +85,32 @@ _Close proposals count the whole corpus (2623 of the 20671 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 1850 reviewed briefs. As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 1848 reviewed briefs. As current as the last reconcile run.
 
 | User | Agent-fixable pool | Skill PRs | Open | Merged |
 | --- | --- | --- | --- | --- |
 | alexdima | 44 | 2 | 2 | — |
-| benibenj | 42 | 1 | — | 1 |
+| benibenj | 43 | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 712 of 712 open proposals verified · 108 closed unverified
+- **duplicate:** 709 of 709 open proposals verified · 108 closed unverified
 - **implemented-on-main:** 548 of 548 open proposals verified · 97 closed unverified
-- **Verdict mix:** 959 confirmed (32 with the fix unreleased) · 459 disputed · 40 unverifiable
+- **Verdict mix:** 960 confirmed (33 with the fix unreleased) · 459 disputed · 40 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 815 | 143 | 1 |
-| disputed | 411 | 48 | 0 |
+| confirmed | 813 | 146 | 1 |
+| disputed | 410 | 49 | 0 |
 | unverifiable | 34 | 6 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#336832](https://github.com/microsoft/vscode/issues/336832) fix: accept already-selected session type when picker declines to open (build fix for vscode-engineering#3899) | 2026-09-21 | meganrogge | The commit only compacts the session archive/mark-as-done nudge UI; it never touches test/automation's selectSessionType or sessionTypePicker, so the empty single-option picker failure remains unaddressed. |
 | [#336460](https://github.com/microsoft/vscode/issues/336460) ChatGPT models not showing on version 1.138.0 | 2026-09-18 | KukoCL | B's models do appear but gated by an Upgrade blocker, unlocked per-session via the agent-host codex command after enabling two opt-in settings; A's models are absent entirely with no such settings or gating reported. |
 | [#279353](https://github.com/microsoft/vscode/issues/279353) Gemini 3 model mostly not working in GHE - invalid_request body | 2026-09-17 | pwang347 | A fails only on GHE accounts through Copilot's proxy with a generic 400 invalid_request_body, while B is an OpenRouter BYOK path failing on missing Gemini thought_signature — different providers and error signatures. |
 | [#334323](https://github.com/microsoft/vscode/issues/334323) Version 1.136 broke Status Symbol display of Schwartzkers CVS Extesnion | 2026-09-17 | lramos15 | Commit fixes vscode-managed-remote-resource protocol referrer rejection for remote workbench resource loading; the report describes a local extension's status symbols disappearing, a trigger this remote-resource protocol path cannot plausibly reach. |
@@ -172,31 +173,31 @@ _The 459 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1129 |
-| propose-close | 752 |
-| needs-info | 566 |
-| route-to-area | 176 |
+| keep-open | 1172 |
+| propose-close | 759 |
+| needs-info | 572 |
+| route-to-area | 179 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1386 |
-| not_planned | 922 |
-| duplicate | 299 |
+| completed | 1430 |
+| not_planned | 936 |
+| duplicate | 300 |
 | not_found | 16 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 932 | 220 | 24% | 101 | 25 |
-| implemented on main | 783 | 237 | 30% | 146 | — |
-| as-designed | 345 | 82 | 24% | 48 | 19 |
-| question | 247 | 42 | 17% | 9 | 16 |
-| out-of-scope | 223 | 58 | 26% | 18 | 8 |
-| not-reproducible | 142 | 30 | 21% | 10 | 8 |
+| duplicate | 932 | 223 | 24% | 101 | 28 |
+| implemented on main | 784 | 238 | 30% | 146 | — |
+| as-designed | 343 | 83 | 24% | 48 | 19 |
+| question | 245 | 42 | 17% | 9 | 16 |
+| out-of-scope | 225 | 59 | 26% | 18 | 8 |
+| not-reproducible | 141 | 31 | 22% | 10 | 9 |
 | off-topic | 54 | 17 | 31% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
-| invalid | 28 | 11 | 39% | 0 | 1 |
+| invalid | 27 | 11 | 41% | 0 | 1 |
 | extension-candidate | 26 | 8 | 31% | 2 | 1 |
 | other | 21 | 6 | 29% | 3 | — |
 
