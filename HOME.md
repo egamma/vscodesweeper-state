@@ -4,7 +4,7 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 
 ## VS Code
 
-- **[Full review dashboard](dashboard.html)** — 20737 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 20816 issues reviewed across all maintainers.
 - **[Verdicts](effectiveness.html)** — what the sweep concluded: verdict distribution, per-user closure mix, agent-fixable leverage.
 - **[Adoption](outcomes.html)** — what humans did with the verdicts: the close-proposal funnel, comment adoption, skill PRs.
 
@@ -45,43 +45,43 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 
 ## Per-maintainer rankings
 
-- **[lszomoru](top/lszomoru.md)** · [by theme](top/lszomoru-themes.md) — 834 bugs · 487 feature requests.
-- **[hediet](top/hediet.md)** · [by theme](top/hediet-themes.md) — 829 bugs · 455 feature requests.
-- **[justschen](top/justschen.md)** · [by theme](top/justschen-themes.md) — 803 bugs · 261 feature requests.
-- **[roblourens](top/roblourens.md)** · [by theme](top/roblourens-themes.md) — 635 bugs · 275 feature requests.
-- **[sandy081](top/sandy081.md)** · [by theme](top/sandy081-themes.md) — 581 bugs · 235 feature requests.
-- **[meganrogge](top/meganrogge.md)** · [by theme](top/meganrogge-themes.md) — 458 bugs · 280 feature requests.
+- **[lszomoru](top/lszomoru.md)** · [by theme](top/lszomoru-themes.md) — 837 bugs · 488 feature requests.
+- **[hediet](top/hediet.md)** · [by theme](top/hediet-themes.md) — 831 bugs · 455 feature requests.
+- **[justschen](top/justschen.md)** · [by theme](top/justschen-themes.md) — 807 bugs · 261 feature requests.
+- **[roblourens](top/roblourens.md)** · [by theme](top/roblourens-themes.md) — 637 bugs · 275 feature requests.
+- **[sandy081](top/sandy081.md)** · [by theme](top/sandy081-themes.md) — 585 bugs · 237 feature requests.
+- **[meganrogge](top/meganrogge.md)** · [by theme](top/meganrogge-themes.md) — 461 bugs · 283 feature requests.
 - **[lramos15](top/lramos15.md)** · [by theme](top/lramos15-themes.md) — 496 bugs · 233 feature requests.
-- **[TylerLeonhardt](top/TylerLeonhardt.md)** · [by theme](top/TylerLeonhardt-themes.md) — 440 bugs · 287 feature requests.
-- **[deepak1556](top/deepak1556.md)** · [by theme](top/deepak1556-themes.md) — 665 bugs · 51 feature requests.
-- **[connor4312](top/connor4312.md)** · [by theme](top/connor4312-themes.md) — 435 bugs · 264 feature requests.
+- **[TylerLeonhardt](top/TylerLeonhardt.md)** · [by theme](top/TylerLeonhardt-themes.md) — 440 bugs · 288 feature requests.
+- **[deepak1556](top/deepak1556.md)** · [by theme](top/deepak1556-themes.md) — 667 bugs · 51 feature requests.
+- **[connor4312](top/connor4312.md)** · [by theme](top/connor4312-themes.md) — 440 bugs · 265 feature requests.
+- **[anthonykim1](top/anthonykim1.md)** · [by theme](top/anthonykim1-themes.md) — 559 bugs · 113 feature requests.
 - **[aeschli](top/aeschli.md)** · [by theme](top/aeschli-themes.md) — 291 bugs · 375 feature requests.
-- **[anthonykim1](top/anthonykim1.md)** · [by theme](top/anthonykim1-themes.md) — 556 bugs · 109 feature requests.
-- **[osortega](top/osortega.md)** · [by theme](top/osortega-themes.md) — 425 bugs · 137 feature requests.
+- **[osortega](top/osortega.md)** · [by theme](top/osortega-themes.md) — 428 bugs · 137 feature requests.
 - **[joshspicer](top/joshspicer.md)** · [by theme](top/joshspicer-themes.md) — 377 bugs · 144 feature requests.
 - **[mjbvz](top/mjbvz.md)** · [by theme](top/mjbvz-themes.md) — 365 bugs · 154 feature requests.
 - **[alexdima](top/alexdima.md)** · [by theme](top/alexdima-themes.md) — 356 bugs · 148 feature requests.
 - **[benibenj](top/benibenj.md)** · [by theme](top/benibenj-themes.md) — 321 bugs · 172 feature requests.
-- **[chrmarti](top/chrmarti.md)** · [by theme](top/chrmarti-themes.md) — 334 bugs · 77 feature requests.
-- **[ulugbekna](top/ulugbekna.md)** · [by theme](top/ulugbekna-themes.md) — 315 bugs · 77 feature requests.
-- **[DonJayamanne](top/DonJayamanne.md)** · [by theme](top/DonJayamanne-themes.md) — 260 bugs · 70 feature requests.
+- **[chrmarti](top/chrmarti.md)** · [by theme](top/chrmarti-themes.md) — 335 bugs · 77 feature requests.
+- **[ulugbekna](top/ulugbekna.md)** · [by theme](top/ulugbekna-themes.md) — 316 bugs · 79 feature requests.
+- **[DonJayamanne](top/DonJayamanne.md)** · [by theme](top/DonJayamanne-themes.md) — 261 bugs · 70 feature requests.
+- **[Yoyokrazy](top/Yoyokrazy.md)** · [by theme](top/Yoyokrazy-themes.md) — 213 bugs · 96 feature requests.
 - **[dmitrivMS](top/dmitrivMS.md)** · [by theme](top/dmitrivMS-themes.md) — 235 bugs · 69 feature requests.
-- **[Yoyokrazy](top/Yoyokrazy.md)** · [by theme](top/Yoyokrazy-themes.md) — 207 bugs · 95 feature requests.
 - **[rzhao271](top/rzhao271.md)** · [by theme](top/rzhao271-themes.md) — 196 bugs · 95 feature requests.
-- **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 201 bugs · 88 feature requests.
-- **[vritant24](top/vritant24.md)** · [by theme](top/vritant24-themes.md) — 145 bugs · 80 feature requests.
-- **[pwang347](top/pwang347.md)** · [by theme](top/pwang347-themes.md) — 122 bugs · 79 feature requests.
+- **[aiday-mar](top/aiday-mar.md)** · [by theme](top/aiday-mar-themes.md) — 202 bugs · 88 feature requests.
+- **[vritant24](top/vritant24.md)** · [by theme](top/vritant24-themes.md) — 145 bugs · 86 feature requests.
+- **[pwang347](top/pwang347.md)** · [by theme](top/pwang347-themes.md) — 123 bugs · 79 feature requests.
 - **[alexr00](top/alexr00.md)** · [by theme](top/alexr00-themes.md) — 83 bugs · 113 feature requests.
 - **[vijayupadya](top/vijayupadya.md)** · [by theme](top/vijayupadya-themes.md) — 149 bugs · 39 feature requests.
 - **[bhavyaus](top/bhavyaus.md)** · [by theme](top/bhavyaus-themes.md) — 96 bugs · 47 feature requests.
-- **[amunger](top/amunger.md)** · [by theme](top/amunger-themes.md) — 101 bugs · 38 feature requests.
-- **[kycutler](top/kycutler.md)** · [by theme](top/kycutler-themes.md) — 54 bugs · 68 feature requests.
+- **[amunger](top/amunger.md)** · [by theme](top/amunger-themes.md) — 102 bugs · 38 feature requests.
+- **[kycutler](top/kycutler.md)** · [by theme](top/kycutler-themes.md) — 55 bugs · 69 feature requests.
 - **[sbatten](top/sbatten.md)** · [by theme](top/sbatten-themes.md) — 77 bugs · 34 feature requests.
-- **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 61 bugs · 45 feature requests.
+- **[benvillalobos](top/benvillalobos.md)** · [by theme](top/benvillalobos-themes.md) — 62 bugs · 47 feature requests.
 - **[jrieken](top/jrieken.md)** · [by theme](top/jrieken-themes.md) — 63 bugs · 25 feature requests.
 - **[jo-oikawa](top/jo-oikawa.md)** · [by theme](top/jo-oikawa-themes.md) — 34 bugs · 38 feature requests.
-- **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 20 bugs · 12 feature requests.
+- **[dbaeumer](top/dbaeumer.md)** · [by theme](top/dbaeumer-themes.md) — 21 bugs · 12 feature requests.
 - **[karthiknadig](top/karthiknadig.md)** · [by theme](top/karthiknadig-themes.md) — 17 bugs · 7 feature requests.
 - **[kieferrm](top/kieferrm.md)** · [by theme](top/kieferrm-themes.md) — 1 bugs · 9 feature requests.
 
-_Generated 2026-09-22 13:50 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-09-23 14:15 UTC. Agent-fixable rows route through the [sweeper-fix skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
