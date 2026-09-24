@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20914 issues reviewed · generated 2026-09-24 14:00 UTC
+[← Home](index.html) · 39 swept users · 20914 issues reviewed · generated 2026-09-24 18:29 UTC
 
 ## Verdict distribution
 
@@ -70,51 +70,51 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | jrieken | 123 | 7 (6%) | 2 (2%) | 114 (93%) | **7%** |
 | jruales | 113 | 7 (6%) | 2 (2%) | 104 (92%) | **8%** |
 
-## Agent-fixable share of issues that stay open
+## Agent-ready share of issues that stay open
 
-High-value = value score above the agent-fix pool's median — the same demand × severity score that ranks the top pages.
+Ready to implement = the review did the diagnosis; ready to plan = the goal is clear but a design or diagnosis is open (the skill plans with you first).
 
-| User | Stays open | Agent-fixable | High-value | Share |
+| User | Stays open | Ready to implement | Ready to plan | Share |
 | --- | --- | --- | --- | --- |
-| lszomoru | 1084 | 156 | 76 | 14% |
-| hediet | 1114 | 189 | 100 | 17% |
-| justschen | 949 | 111 | 47 | 12% |
-| deepak1556 | 555 | 13 | 10 | 2% |
-| roblourens | 653 | 89 | 52 | 14% |
-| sandy081 | 734 | 86 | 40 | 12% |
-| lramos15 | 548 | 83 | 43 | 15% |
-| TylerLeonhardt | 677 | 87 | 47 | 13% |
-| connor4312 | 699 | 85 | 51 | 12% |
-| meganrogge | 708 | 103 | 57 | 15% |
-| anthonykim1 | 586 | 93 | 58 | 16% |
-| aeschli | 610 | 61 | 32 | 10% |
-| osortega | 519 | 81 | 37 | 16% |
-| joshspicer | 475 | 48 | 18 | 10% |
-| benibenj | 519 | 43 | 16 | 8% |
-| alexdima | 328 | 44 | 26 | 13% |
-| mjbvz | 490 | 83 | 43 | 17% |
-| chrmarti | 200 | 25 | 13 | 13% |
-| ulugbekna | 330 | 36 | 18 | 11% |
-| DonJayamanne | 331 | 36 | 24 | 11% |
-| mrleemurray | 301 | 6 | 1 | 2% |
-| Yoyokrazy | 299 | 61 | 27 | 20% |
-| rzhao271 | 289 | 55 | 23 | 19% |
-| Copilot | 321 | 40 | 26 | 12% |
-| dmitrivMS | 250 | 23 | 10 | 9% |
-| aiday-mar | 305 | 41 | 28 | 13% |
-| vritant24 | 200 | 19 | 10 | 10% |
-| pwang347 | 179 | 19 | 10 | 11% |
-| hawkticehurst | 180 | 11 | 5 | 6% |
-| vijayupadya | 169 | 16 | 5 | 9% |
-| alexr00 | 189 | 11 | 6 | 6% |
-| bhavyaus | 151 | 19 | 7 | 13% |
-| amunger | 160 | 33 | 13 | 21% |
-| kycutler | 124 | 10 | 3 | 8% |
-| sbatten | 113 | 23 | 8 | 20% |
-| jo-oikawa | 127 | 7 | 6 | 6% |
-| benvillalobos | 109 | 11 | 2 | 10% |
-| jrieken | 114 | 30 | 19 | 26% |
-| jruales | 104 | 8 | 2 | 8% |
+| lszomoru | 1084 | 156 | 13 | 16% |
+| hediet | 1114 | 189 | 26 | 19% |
+| justschen | 949 | 111 | 31 | 15% |
+| deepak1556 | 555 | 13 | 1 | 3% |
+| roblourens | 653 | 89 | 334 | 65% |
+| sandy081 | 734 | 86 | 25 | 15% |
+| lramos15 | 548 | 83 | 6 | 16% |
+| TylerLeonhardt | 677 | 87 | 13 | 15% |
+| connor4312 | 699 | 85 | 61 | 21% |
+| meganrogge | 708 | 103 | 25 | 18% |
+| anthonykim1 | 586 | 93 | 7 | 17% |
+| aeschli | 610 | 61 | 264 | 53% |
+| osortega | 519 | 81 | 10 | 18% |
+| joshspicer | 475 | 48 | 0 | 10% |
+| benibenj | 519 | 43 | 6 | 9% |
+| alexdima | 328 | 44 | 124 | 51% |
+| mjbvz | 490 | 83 | 13 | 20% |
+| chrmarti | 200 | 25 | 14 | 20% |
+| ulugbekna | 330 | 36 | 22 | 18% |
+| DonJayamanne | 331 | 36 | 7 | 13% |
+| mrleemurray | 301 | 6 | 8 | 5% |
+| Yoyokrazy | 299 | 61 | 2 | 21% |
+| rzhao271 | 289 | 55 | 2 | 20% |
+| Copilot | 321 | 40 | 10 | 16% |
+| dmitrivMS | 250 | 23 | 2 | 10% |
+| aiday-mar | 305 | 41 | 7 | 16% |
+| vritant24 | 200 | 19 | 22 | 21% |
+| pwang347 | 179 | 19 | 14 | 18% |
+| hawkticehurst | 180 | 11 | 11 | 12% |
+| vijayupadya | 169 | 16 | 2 | 11% |
+| alexr00 | 189 | 11 | 3 | 7% |
+| bhavyaus | 151 | 19 | 3 | 15% |
+| amunger | 160 | 33 | 0 | 21% |
+| kycutler | 124 | 10 | 3 | 10% |
+| sbatten | 113 | 23 | 2 | 22% |
+| jo-oikawa | 127 | 7 | 0 | 6% |
+| benvillalobos | 109 | 11 | 15 | 24% |
+| jrieken | 114 | 30 | 0 | 26% |
+| jruales | 104 | 8 | 5 | 13% |
 
 ## Close reasons per swept user
 

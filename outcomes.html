@@ -49,6 +49,7 @@
   .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); } .seg.disp { background: var(--disp); }
   .seg.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
   .sw.skopen, .seg.skopen { background: var(--accent); }
+  .sw.cpr, .seg.cpr { background: var(--uncl); }
   .sw.trk { background: var(--track); }
   .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
   .skillchart .crow { grid-template-columns: 110px 1fr 140px; }
@@ -69,7 +70,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 20,914 issues reviewed · generated 2026-09-24 14:00 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 20,914 issues reviewed · generated 2026-09-24 18:29 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">20,914</div><div class="tsub">17,996 still open · 2,918 closed since review</div></div>
@@ -160,17 +161,18 @@
   <h2>sweeper-fix skill adoption</h2>
 <p class="desc">Draft PRs opened with the <a href="fix-skill.html">sweeper-fix skill</a>,
   discovered by <code>reconcile</code>'s seeded-by-marker search — per user, against their
-  agent-ready pool (the track). Corpus-wide pool: 1,859 reviewed
-  briefs. As current as the last reconcile run.</p>
+  agent-ready pool (the track: ready to implement + ready to plan). Corpus-wide pool: 2,807 reviewed
+  briefs (1,859 ready to implement · 948 ready to plan). As current as the last reconcile run.</p>
   <div class="legend">
     <span><i class="sw wc"></i>merged</span>
     <span><i class="sw skopen"></i>open</span>
     <span><i class="sw own"></i>closed unmerged</span>
-    <span><i class="sw trk"></i>agent-fixable, no PR yet</span>
+    <span title="An open contributor PR references the issue — taken, but not by the skill"><i class="sw cpr"></i>taken by a contributor PR</span>
+    <span><i class="sw trk"></i>agent-ready, no PR yet</span>
   </div>
   <div class="chart skillchart">
-<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Aalexdima%20has%3Askillpr" title="Open the dashboard filtered to alexdima's issues with a sweeper-fix skill PR">alexdima</a></span><div class="track" style="width:100.00%" title="agent-fixable pool: 44"><i class="seg wc" style="width:0.00%" title="merged skill PRs: 0"></i><i class="seg skopen" style="width:4.55%" title="open skill PRs: 2"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i></div><span class="rlabel">2 PRs · 0 merged</span></div>
-<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Abenibenj%20has%3Askillpr" title="Open the dashboard filtered to benibenj's issues with a sweeper-fix skill PR">benibenj</a></span><div class="track" style="width:97.73%" title="agent-fixable pool: 43"><i class="seg wc" style="width:2.33%" title="merged skill PRs: 1"></i><i class="seg skopen" style="width:0.00%" title="open skill PRs: 0"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i></div><span class="rlabel">1 PR · 1 merged</span></div>
+<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Aalexdima%20has%3Askillpr" title="Open the dashboard filtered to alexdima's issues with a sweeper-fix skill PR">alexdima</a></span><div class="track" style="width:100.00%" title="agent-ready pool: 168 (44 ready to implement · 124 ready to plan)"><i class="seg wc" style="width:0.00%" title="merged skill PRs: 0"></i><i class="seg skopen" style="width:1.19%" title="open skill PRs: 2"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i><i class="seg cpr" style="width:0.00%" title="taken by a contributor PR: 0 — an open PR the review could not see references the issue"></i></div><span class="rlabel">2 PRs · 0 merged</span></div>
+<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Abenibenj%20has%3Askillpr" title="Open the dashboard filtered to benibenj's issues with a sweeper-fix skill PR">benibenj</a></span><div class="track" style="width:29.17%" title="agent-ready pool: 49 (43 ready to implement · 6 ready to plan)"><i class="seg wc" style="width:2.04%" title="merged skill PRs: 1"></i><i class="seg skopen" style="width:0.00%" title="open skill PRs: 0"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i><i class="seg cpr" style="width:0.00%" title="taken by a contributor PR: 0 — an open PR the review could not see references the issue"></i></div><span class="rlabel">1 PR · 1 merged</span></div>
   </div>
 
 
