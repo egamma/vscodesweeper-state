@@ -35,4 +35,4 @@ Editing the spec is fine — the skill implements your version and still runs ev
 - "Not agent-ready" refusal → the review found no brief to work from; check the record for what it concluded instead.
 - Skill not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` (pull a recent `main`); on an older checkout, copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md) into `~/.copilot/skills/sweeper-implement/` or `~/.claude/skills/sweeper-implement/`.
 
-_sweeper-implement skill v7 · generated 2026-09-25 12:45 UTC._
+_sweeper-implement skill v7 · generated 2026-09-25 13:20 UTC._
