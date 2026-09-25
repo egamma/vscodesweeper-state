@@ -1,6 +1,6 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20928 issues reviewed · generated 2026-09-25 12:40 UTC
+[← Home](index.html) · 20928 issues reviewed · generated 2026-09-25 12:44 UTC
 
 ## Funnel
 
@@ -102,14 +102,14 @@ Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s s
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 688 of 695 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 550 of 551 open proposals verified · 97 closed unverified
-- **Verdict mix:** 978 confirmed (32 with the fix unreleased) · 477 disputed · 42 unverifiable
+- **duplicate:** 695 of 695 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 551 of 551 open proposals verified · 97 closed unverified
+- **Verdict mix:** 983 confirmed (33 with the fix unreleased) · 480 disputed · 42 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 786 | 191 | 1 |
-| disputed | 417 | 60 | 0 |
+| confirmed | 791 | 191 | 1 |
+| disputed | 420 | 60 | 0 |
 | unverifiable | 35 | 7 | 0 |
 
 ### Closed despite a dispute
@@ -177,7 +177,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 477 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 480 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 

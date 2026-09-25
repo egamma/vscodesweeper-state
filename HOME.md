@@ -43,4 +43,4 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[Review dashboard](dashboard-vscode-livepreview.html)** — proposal-only reviews for `microsoft/vscode-livepreview`.
 - **[Adoption](outcomes-vscode-livepreview.html)** — close-proposal funnel and comment adoption.
 
-_Generated 2026-09-25 12:40 UTC. Agent-fixable rows route through the [sweeper-implement skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-09-25 12:45 UTC. Agent-fixable rows route through the [sweeper-implement skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
