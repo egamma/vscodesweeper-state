@@ -17,7 +17,7 @@ Your issues are on the [dashboard](https://egamma.github.io/vscodesweeper-state/
 
 ### Ready to implement → `/sweeper-implement <n>`
 
-The *Implement* button in vscode-tools opens VS Code with the prompt prefilled; *Copy prompt* puts the invocation plus the reviewed brief on your clipboard, readable and editable before you send it:
+The *Implement* button in vscode-tools copies the skill call (`/sweeper-implement <n>`) — paste it into Copilot Chat, the Agents window or Copilot CLI, from your vscode checkout; its *Copy full prompt* puts the call plus the reviewed brief on your clipboard, readable and editable before you send it:
 
 ```
 Implement microsoft/vscode issue #262104 using the sweeper-implement skill.
@@ -32,7 +32,7 @@ Editing the brief is fine — the skill implements your version and still runs e
 
 ### Ready to plan → `/sweeper-plan <n>`, then `/sweeper-implement <n>`
 
-The *Plan* button (or its *Copy prompt*) starts with the plan skill:
+The *Plan* button copies `/sweeper-plan <n>` (its *Copy full prompt* adds the brief):
 
 ```
 Plan microsoft/vscode issue #262105 using the sweeper-plan skill.
@@ -56,4 +56,4 @@ Plan microsoft/vscode issue #262105 using the sweeper-plan skill.
 - "Needs a plan first" refusal → a *plan* record reached `sweeper-implement` without a plan file in this checkout; run `/sweeper-plan <n>` first, in the same session.
 - Skills not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` and `.github/skills/sweeper-plan/SKILL.md` (pull a recent `main`); on an older checkout, copy the generated [sweeper-implement](https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md) and [sweeper-plan](https://egamma.github.io/vscodesweeper-state/skill/sweeper-plan/SKILL.md) SKILL.md files into `~/.copilot/skills/<name>/` or `~/.claude/skills/<name>/`.
 
-_sweeper agent skills v7 · generated 2026-09-25 13:39 UTC._
+_sweeper agent skills v7 · generated 2026-09-25 13:50 UTC._

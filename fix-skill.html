@@ -45,7 +45,7 @@
   <p><strong>No setup.</strong> Both skills ship in the vscode repo itself (<code>.github/skills/sweeper-implement/</code> and <code>.github/skills/sweeper-plan/</code>), so an up-to-date checkout already has them — just pull a recent <code>main</code>. Run them from your vscode checkout, in Copilot Chat (agent mode), the Agents window, or Copilot CLI.</p>
 
   <h3>Ready to implement → <code>/sweeper-implement &lt;n&gt;</code></h3>
-  <p>The <em>Implement</em> button in vscode-tools opens VS Code with the prompt prefilled; the <em>Copy prompt</em> button puts the invocation plus the reviewed brief on your clipboard, so you can read (and edit) what the agent is asked to implement before sending:</p>
+  <p>The <em>Implement</em> button in vscode-tools copies the skill call (<code>/sweeper-implement &lt;n&gt;</code>) — paste it into Copilot Chat, the Agents window or Copilot CLI, from your vscode checkout; its <em>Copy full prompt</em> puts the call plus the reviewed brief on your clipboard, so you can read (and edit) what the agent is asked to implement before sending:</p>
   <pre>Implement microsoft/vscode issue #262104 using the sweeper-implement skill.
 
 Reviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):
@@ -55,7 +55,7 @@ Validation: …</pre>
   <p>Editing the brief is fine — the skill implements your version and still runs every gate. A bare first line alone works too (the skill then reads the record's brief itself).</p>
 
   <h3>Ready to plan → <code>/sweeper-plan &lt;n&gt;</code>, then <code>/sweeper-implement &lt;n&gt;</code></h3>
-  <p>The <em>Plan</em> button (or its <em>Copy prompt</em>) starts with the plan skill:</p>
+  <p>The <em>Plan</em> button copies <code>/sweeper-plan &lt;n&gt;</code> (its <em>Copy full prompt</em> adds the brief):</p>
   <pre>Plan microsoft/vscode issue #262105 using the sweeper-plan skill.</pre>
   <ol>
     <li><code>sweeper-plan</code> re-checks the live gates, asks you the review's open decisions in chat, writes <code>.sweeper/plans/issue-&lt;n&gt;.md</code> (git-excluded, never committed) and <strong>stops</strong>. It writes no code.</li>
@@ -80,6 +80,6 @@ Validation: …</pre>
     <li><strong>Skills still not found?</strong> Check your checkout has <code>.github/skills/sweeper-implement/SKILL.md</code> and <code>.github/skills/sweeper-plan/SKILL.md</code> — pull a recent <code>main</code> if not. On an older checkout you can't update, copy the generated <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md">sweeper-implement</a> and <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-plan/SKILL.md">sweeper-plan</a> SKILL.md files into <code>~/.copilot/skills/&lt;name&gt;/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code> (Claude Code).</li>
   </ul>
 
-  <footer>sweeper agent skills v7 · generated 2026-09-25 13:39 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
+  <footer>sweeper agent skills v7 · generated 2026-09-25 13:50 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
 </body>
 </html>

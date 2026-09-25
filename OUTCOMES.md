@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20978 issues reviewed · generated 2026-09-25 13:38 UTC
+[← Home](index.html) · 21009 issues reviewed · generated 2026-09-25 13:49 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 20978
-- **Close proposals:** 2894 (14% of reviewed)
+- **Issues reviewed:** 21009
+- **Close proposals:** 2900 (14% of reviewed)
 - **Acted on (closed):** 834 (29% of proposals)
 - **2nd-reviewed before the close:** 192 confirmed · 60 disputed · 7 unverifiable · 575 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 366 (44% of acted-on) — 322 verbatim, 21 inside a longer comment, 23 edited
 - **Likely fixed instead:** 102 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (101 of the 467 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2060 open close proposals
+- **Still awaiting action:** 2066 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2995 of the 20978 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2060 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2995 of the 21009 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2066 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -91,7 +91,7 @@ _Close proposals count the whole corpus (2995 of the 20978 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3029 reviewed briefs (1882 ready to implement · 1147 ready to plan); 7 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3048 reviewed briefs (1885 ready to implement · 1163 ready to plan); 7 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -102,13 +102,13 @@ Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s s
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 695 of 696 open proposals verified · 108 closed unverified
+- **duplicate:** 694 of 698 open proposals verified · 108 closed unverified
 - **implemented-on-main:** 551 of 552 open proposals verified · 97 closed unverified
-- **Verdict mix:** 983 confirmed (33 with the fix unreleased) · 480 disputed · 42 unverifiable
+- **Verdict mix:** 982 confirmed (33 with the fix unreleased) · 480 disputed · 42 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 791 | 191 | 1 |
+| confirmed | 790 | 191 | 1 |
 | disputed | 420 | 60 | 0 |
 | unverifiable | 35 | 7 | 0 |
 
@@ -206,12 +206,12 @@ _The 480 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 961 | 265 | 28% | 104 | 32 |
+| duplicate | 963 | 265 | 28% | 104 | 32 |
 | implemented on main | 803 | 253 | 32% | 150 | — |
-| as-designed | 348 | 85 | 24% | 48 | 19 |
+| as-designed | 349 | 85 | 24% | 48 | 19 |
 | question | 248 | 46 | 19% | 9 | 17 |
-| out-of-scope | 225 | 64 | 28% | 19 | 8 |
-| not-reproducible | 140 | 34 | 24% | 10 | 10 |
+| out-of-scope | 227 | 64 | 28% | 19 | 8 |
+| not-reproducible | 141 | 34 | 24% | 10 | 10 |
 | off-topic | 54 | 18 | 33% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | invalid | 27 | 13 | 48% | 0 | 1 |
