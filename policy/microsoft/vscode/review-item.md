@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `d13126680f5ee38a` — every verdict record carries the hash of the
+> Policy hash `278656bf1e7c0255` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-25 17:27 UTC.
+> exactly this text. Published 2026-09-25 17:41 UTC.
 
 ---
 
@@ -102,7 +102,17 @@ names are dropped downstream, so a guessed label helps nobody.
   them in a comment is an error. Transient Copilot service noise (outages,
   "high demand", connection resets with no core defect) still closes, but as
   `*question` or `*not-reproducible`, with the reasoning grounded in the
-  service-side evidence — not in extension ownership.
+  service-side evidence — not in extension ownership. The same in-scope fact
+  rules the COMMENT: never tell a Copilot reporter that their issue "is not a
+  VS Code issue" or belongs to "the Copilot team"/"the Copilot extension
+  team", and never point them at GitHub Community Discussions, GitHub Support,
+  or the Copilot troubleshooting docs as the place for it — those are the
+  deprecated trackers in another form. A Copilot feature request or product
+  feedback is a `feature-request` for THIS repo (keep open, no external
+  venue), never `*out-of-scope`/`*off-topic`; a Copilot how-to is a
+  `*question` answered here. The only sanctioned external redirect is the
+  billing/account lane below (GitHub Support, two sentences) — anything else
+  that mentions an outside venue for a Copilot issue is an error.
 - **VS Code-team-owned extensions** (roster below): these issues are
   extension-owned but stay in the family — the team's practice is to **move**
   the issue, not close it: a transfer preserves the thread and reactions and
