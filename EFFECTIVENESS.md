@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20927 issues reviewed · generated 2026-09-25 12:23 UTC
+[← Home](index.html) · 39 swept users · 20928 issues reviewed · generated 2026-09-25 12:40 UTC
 
 ## Verdict distribution
 
@@ -8,8 +8,8 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 802 | 4% | 638 (80%) | 400 (63%) | 217 (34%) | 21 (3%) | 151 (19%) | 13 (2%) |
-| duplicate | 959 | 5% | 833 (87%) | 569 (68%) | 245 (29%) | 19 (2%) | 108 (11%) | 18 (2%) |
+| implemented on main | 802 | 4% | 650 (81%) | 404 (62%) | 223 (34%) | 23 (4%) | 151 (19%) | 1 (0%) |
+| duplicate | 960 | 5% | 845 (88%) | 574 (68%) | 252 (30%) | 19 (2%) | 108 (11%) | 7 (1%) |
 | as-designed | 347 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
 | question | 248 | 1% | — | — | — | — | — | — |
 | out-of-scope | 224 | 1% | — | — | — | — | — | — |
@@ -19,10 +19,10 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 27 | 0% | — | — | — | — | — | — |
 | extension-candidate | 26 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2889 | 14% | 1473 (51%) | 969 (66%) | 464 (32%) | 40 (3%) | — | — |
+| **all close proposals** | 2890 | 14% | 1497 (52%) | 978 (65%) | 477 (32%) | 42 (3%) | — | — |
 | needs info | 2801 | 13% | — | — | — | — | — | — |
 | keep open (incl. route to area) | 15237 | 73% | — | — | — | — | — | — |
-| all reviews | 20927 | 100% | | | | | | |
+| all reviews | 20928 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -44,7 +44,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | aeschli | 773 | 107 (14%) | 56 (7%) | 610 (79%) | **21%** |
 | osortega | 647 | 56 (9%) | 72 (11%) | 519 (80%) | **20%** |
 | joshspicer | 620 | 80 (13%) | 66 (11%) | 474 (76%) | **24%** |
-| benibenj | 606 | 70 (12%) | 39 (6%) | 497 (82%) | **18%** |
+| benibenj | 607 | 71 (12%) | 39 (6%) | 497 (82%) | **18%** |
 | alexdima | 582 | 151 (26%) | 103 (18%) | 328 (56%) | **44%** |
 | mjbvz | 581 | 60 (10%) | 30 (5%) | 491 (85%) | **15%** |
 | chrmarti | 523 | 170 (33%) | 153 (29%) | 200 (38%) | **62%** |
@@ -90,7 +90,7 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | aeschli | 610 | 61 | 264 | 53% |
 | osortega | 519 | 81 | 10 | 18% |
 | joshspicer | 474 | 47 | 0 | 10% |
-| benibenj | 497 | 55 | 176 | 46% |
+| benibenj | 497 | 55 | 177 | 47% |
 | alexdima | 328 | 44 | 124 | 51% |
 | mjbvz | 491 | 82 | 15 | 20% |
 | chrmarti | 200 | 25 | 14 | 20% |
@@ -136,7 +136,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | aeschli | 107 | 36 (34%) | 38 (36%) | 15 (14%) | 1 (1%) | 13 (12%) | 1 (1%) | — | 3 (3%) |
 | osortega | 56 | 17 (30%) | 22 (39%) | 7 (13%) | 2 (4%) | 6 (11%) | 1 (2%) | — | 1 (2%) |
 | joshspicer | 80 | 24 (30%) | 22 (28%) | 8 (10%) | 2 (3%) | 14 (18%) | 6 (8%) | 2 (3%) | 2 (3%) |
-| benibenj | 70 | 20 (29%) | 28 (40%) | 14 (20%) | 4 (6%) | 2 (3%) | 2 (3%) | — | — |
+| benibenj | 71 | 20 (28%) | 29 (41%) | 14 (20%) | 4 (6%) | 2 (3%) | 2 (3%) | — | — |
 | alexdima | 151 | 45 (30%) | 39 (26%) | 40 (26%) | 1 (1%) | 7 (5%) | 7 (5%) | 2 (1%) | 10 (7%) |
 | mjbvz | 60 | 28 (47%) | 16 (27%) | 10 (17%) | — | 1 (2%) | 5 (8%) | — | — |
 | chrmarti | 170 | 25 (15%) | 29 (17%) | 5 (3%) | 66 (39%) | 10 (6%) | 28 (16%) | 5 (3%) | 2 (1%) |

@@ -4,7 +4,7 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 
 ## VS Code
 
-- **[Full review dashboard](dashboard.html)** — 20927 issues reviewed across all maintainers.
+- **[Full review dashboard](dashboard.html)** — 20928 issues reviewed across all maintainers.
 - **[Verdicts](effectiveness.html)** — what the sweep concluded: verdict distribution, per-user closure mix, agent-fixable leverage.
 - **[Adoption](outcomes.html)** — what humans did with the verdicts: the close-proposal funnel, comment adoption, skill PRs.
 
@@ -43,4 +43,4 @@ Proposal-only AI triage for `microsoft/vscode` and its family repos. Nothing her
 - **[Review dashboard](dashboard-vscode-livepreview.html)** — proposal-only reviews for `microsoft/vscode-livepreview`.
 - **[Adoption](outcomes-vscode-livepreview.html)** — close-proposal funnel and comment adoption.
 
-_Generated 2026-09-25 12:24 UTC. Agent-fixable rows route through the [sweeper-implement skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
+_Generated 2026-09-25 12:40 UTC. Agent-fixable rows route through the [sweeper-implement skill](FIX-SKILL.md). [Nightly sweep runs](runs.html)._
