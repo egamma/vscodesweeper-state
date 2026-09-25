@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 21009 issues reviewed · generated 2026-09-25 17:41 UTC
+[← Home](index.html) · 39 swept users · 21009 issues reviewed · generated 2026-09-25 18:28 UTC
 
 ## Verdict distribution
 
@@ -8,20 +8,20 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 802 | 4% | 647 (81%) | 404 (62%) | 220 (34%) | 23 (4%) | 151 (19%) | 4 (0%) |
-| duplicate | 966 | 5% | 855 (89%) | 579 (68%) | 256 (30%) | 20 (2%) | 108 (11%) | 3 (0%) |
-| as-designed | 345 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
-| question | 246 | 1% | — | — | — | — | — | — |
-| out-of-scope | 224 | 1% | — | — | — | — | — | — |
-| not-reproducible | 140 | 1% | — | — | — | — | — | — |
-| off-topic | 54 | 0% | — | — | — | — | — | — |
+| implemented on main | 809 | 4% | 638 (79%) | 399 (63%) | 216 (34%) | 23 (4%) | 151 (19%) | 20 (2%) |
+| duplicate | 966 | 5% | 838 (87%) | 563 (67%) | 256 (31%) | 19 (2%) | 108 (11%) | 20 (2%) |
+| as-designed | 342 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
+| question | 234 | 1% | — | — | — | — | — | — |
+| out-of-scope | 221 | 1% | — | — | — | — | — | — |
+| not-reproducible | 139 | 1% | — | — | — | — | — | — |
+| off-topic | 52 | 0% | — | — | — | — | — | — |
 | caused-by-extension | 41 | 0% | — | — | — | — | — | — |
 | invalid | 27 | 0% | — | — | — | — | — | — |
 | extension-candidate | 26 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2892 | 14% | 1504 (52%) | 983 (65%) | 478 (32%) | 43 (3%) | — | — |
-| needs info | 2816 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15301 | 73% | — | — | — | — | — | — |
+| **all close proposals** | 2878 | 14% | 1478 (51%) | 962 (65%) | 474 (32%) | 42 (3%) | — | — |
+| needs info | 2821 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15310 | 73% | — | — | — | — | — | — |
 | all reviews | 21009 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -30,16 +30,16 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 
 | User | Reviewed | Propose close | Needs info | Keep open | Closure path |
 | --- | --- | --- | --- | --- | --- |
-| lszomoru | 1494 | 200 (13%) | 209 (14%) | 1085 (73%) | **27%** |
-| hediet | 1484 | 144 (10%) | 223 (15%) | 1117 (75%) | **25%** |
-| justschen | 1319 | 197 (15%) | 168 (13%) | 954 (72%) | **28%** |
+| lszomoru | 1494 | 198 (13%) | 210 (14%) | 1086 (73%) | **27%** |
+| hediet | 1484 | 142 (10%) | 223 (15%) | 1119 (75%) | **25%** |
+| justschen | 1319 | 193 (15%) | 169 (13%) | 957 (73%) | **27%** |
 | deepak1556 | 1151 | 193 (17%) | 397 (34%) | 561 (49%) | **51%** |
-| roblourens | 1066 | 204 (19%) | 199 (19%) | 663 (62%) | **38%** |
+| roblourens | 1065 | 203 (19%) | 199 (19%) | 663 (62%) | **38%** |
 | sandy081 | 955 | 109 (11%) | 106 (11%) | 740 (77%) | **23%** |
-| lramos15 | 888 | 171 (19%) | 164 (18%) | 553 (62%) | **38%** |
-| TylerLeonhardt | 863 | 92 (11%) | 93 (11%) | 678 (79%) | **21%** |
-| connor4312 | 832 | 73 (9%) | 55 (7%) | 704 (85%) | **15%** |
-| meganrogge | 829 | 74 (9%) | 43 (5%) | 712 (86%) | **14%** |
+| lramos15 | 888 | 169 (19%) | 166 (19%) | 553 (62%) | **38%** |
+| TylerLeonhardt | 863 | 91 (11%) | 94 (11%) | 678 (79%) | **21%** |
+| connor4312 | 833 | 74 (9%) | 55 (7%) | 704 (85%) | **15%** |
+| meganrogge | 829 | 72 (9%) | 43 (5%) | 714 (86%) | **14%** |
 | anthonykim1 | 802 | 96 (12%) | 119 (15%) | 587 (73%) | **27%** |
 | aeschli | 777 | 108 (14%) | 56 (7%) | 613 (79%) | **21%** |
 | osortega | 650 | 56 (9%) | 73 (11%) | 521 (80%) | **20%** |
@@ -66,7 +66,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | kycutler | 150 | 11 (7%) | 15 (10%) | 124 (83%) | **17%** |
 | sbatten | 144 | 18 (13%) | 13 (9%) | 113 (78%) | **22%** |
 | jo-oikawa | 141 | 7 (5%) | 7 (5%) | 127 (90%) | **10%** |
-| benvillalobos | 134 | 15 (11%) | 9 (7%) | 110 (82%) | **18%** |
+| benvillalobos | 134 | 14 (10%) | 9 (7%) | 111 (83%) | **17%** |
 | jrieken | 123 | 7 (6%) | 2 (2%) | 114 (93%) | **7%** |
 | jruales | 113 | 7 (6%) | 2 (2%) | 104 (92%) | **8%** |
 
@@ -76,16 +76,16 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 
 | User | Stays open | Ready to implement | Ready to plan | Share |
 | --- | --- | --- | --- | --- |
-| lszomoru | 1085 | 156 | 16 | 16% |
-| hediet | 1117 | 193 | 41 | 21% |
-| justschen | 954 | 110 | 33 | 15% |
+| lszomoru | 1086 | 156 | 16 | 16% |
+| hediet | 1119 | 193 | 42 | 21% |
+| justschen | 957 | 110 | 35 | 15% |
 | deepak1556 | 561 | 14 | 2 | 3% |
 | roblourens | 663 | 89 | 341 | 65% |
 | sandy081 | 740 | 87 | 35 | 16% |
 | lramos15 | 553 | 83 | 11 | 17% |
 | TylerLeonhardt | 678 | 86 | 17 | 15% |
 | connor4312 | 704 | 87 | 65 | 22% |
-| meganrogge | 712 | 105 | 31 | 19% |
+| meganrogge | 714 | 105 | 31 | 19% |
 | anthonykim1 | 587 | 93 | 8 | 17% |
 | aeschli | 613 | 63 | 265 | 54% |
 | osortega | 521 | 82 | 11 | 18% |
@@ -112,7 +112,7 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | kycutler | 124 | 10 | 3 | 10% |
 | sbatten | 113 | 23 | 4 | 24% |
 | jo-oikawa | 127 | 7 | 0 | 6% |
-| benvillalobos | 110 | 11 | 17 | 25% |
+| benvillalobos | 111 | 11 | 17 | 25% |
 | jrieken | 114 | 30 | 0 | 26% |
 | jruales | 104 | 8 | 5 | 13% |
 
@@ -122,16 +122,16 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 
 | User | Close proposals | implemented on main | duplicate | as-designed | question | out-of-scope | not-reproducible | off-topic | other |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| lszomoru | 200 | 52 (26%) | 74 (37%) | 20 (10%) | 19 (10%) | 5 (3%) | 8 (4%) | 8 (4%) | 14 (7%) |
-| hediet | 144 | 36 (25%) | 48 (33%) | 28 (19%) | 12 (8%) | 5 (3%) | 3 (2%) | 3 (2%) | 9 (6%) |
-| justschen | 197 | 78 (40%) | 69 (35%) | 20 (10%) | 9 (5%) | 9 (5%) | 6 (3%) | 2 (1%) | 4 (2%) |
+| lszomoru | 198 | 52 (26%) | 74 (37%) | 21 (11%) | 17 (9%) | 5 (3%) | 8 (4%) | 7 (4%) | 14 (7%) |
+| hediet | 142 | 36 (25%) | 50 (35%) | 25 (18%) | 12 (8%) | 5 (4%) | 3 (2%) | 2 (1%) | 9 (6%) |
+| justschen | 193 | 80 (41%) | 64 (33%) | 20 (10%) | 8 (4%) | 9 (5%) | 6 (3%) | 2 (1%) | 4 (2%) |
 | deepak1556 | 193 | 28 (15%) | 96 (50%) | 12 (6%) | 14 (7%) | 21 (11%) | 19 (10%) | 2 (1%) | 1 (1%) |
-| roblourens | 204 | 69 (34%) | 86 (42%) | 17 (8%) | 5 (2%) | 17 (8%) | 3 (1%) | 1 (0%) | 6 (3%) |
-| sandy081 | 109 | 37 (34%) | 30 (28%) | 5 (5%) | 9 (8%) | 11 (10%) | 6 (6%) | 5 (5%) | 6 (6%) |
-| lramos15 | 171 | 40 (23%) | 40 (23%) | 16 (9%) | 36 (21%) | 10 (6%) | 8 (5%) | 11 (6%) | 10 (6%) |
-| TylerLeonhardt | 92 | 23 (25%) | 35 (38%) | 7 (8%) | 10 (11%) | 9 (10%) | 2 (2%) | — | 6 (7%) |
-| connor4312 | 73 | 22 (30%) | 27 (37%) | 8 (11%) | 1 (1%) | 9 (12%) | 5 (7%) | 1 (1%) | — |
-| meganrogge | 74 | 41 (55%) | 13 (18%) | 8 (11%) | 1 (1%) | 9 (12%) | 1 (1%) | — | 1 (1%) |
+| roblourens | 203 | 69 (34%) | 86 (42%) | 16 (8%) | 5 (2%) | 17 (8%) | 3 (1%) | 1 (0%) | 6 (3%) |
+| sandy081 | 109 | 40 (37%) | 28 (26%) | 6 (6%) | 7 (6%) | 11 (10%) | 6 (6%) | 5 (5%) | 6 (6%) |
+| lramos15 | 169 | 41 (24%) | 44 (26%) | 16 (9%) | 31 (18%) | 9 (5%) | 7 (4%) | 11 (7%) | 10 (6%) |
+| TylerLeonhardt | 91 | 24 (26%) | 36 (40%) | 6 (7%) | 8 (9%) | 9 (10%) | 2 (2%) | — | 6 (7%) |
+| connor4312 | 74 | 23 (31%) | 27 (36%) | 8 (11%) | 1 (1%) | 9 (12%) | 5 (7%) | 1 (1%) | — |
+| meganrogge | 72 | 40 (56%) | 13 (18%) | 8 (11%) | 1 (1%) | 8 (11%) | 1 (1%) | — | 1 (1%) |
 | anthonykim1 | 96 | 21 (22%) | 28 (29%) | 15 (16%) | 9 (9%) | 13 (14%) | 5 (5%) | 5 (5%) | — |
 | aeschli | 108 | 36 (33%) | 38 (35%) | 16 (15%) | 1 (1%) | 13 (12%) | 1 (1%) | — | 3 (3%) |
 | osortega | 56 | 17 (30%) | 22 (39%) | 7 (13%) | 2 (4%) | 6 (11%) | 1 (2%) | — | 1 (2%) |
@@ -158,7 +158,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | kycutler | 11 | 3 (27%) | 4 (36%) | 2 (18%) | 1 (9%) | 1 (9%) | — | — | — |
 | sbatten | 18 | 6 (33%) | 4 (22%) | 4 (22%) | 2 (11%) | 2 (11%) | — | — | — |
 | jo-oikawa | 7 | 3 (43%) | — | 1 (14%) | 1 (14%) | 1 (14%) | 1 (14%) | — | — |
-| benvillalobos | 15 | 1 (7%) | 4 (27%) | 3 (20%) | — | 3 (20%) | 1 (7%) | 2 (13%) | 1 (7%) |
+| benvillalobos | 14 | 1 (7%) | 4 (29%) | 3 (21%) | — | 2 (14%) | 1 (7%) | 2 (14%) | 1 (7%) |
 | jrieken | 7 | — | 1 (14%) | 4 (57%) | — | 1 (14%) | 1 (14%) | — | — |
 | jruales | 7 | 2 (29%) | 3 (43%) | 2 (29%) | — | — | — | — | — |
 
