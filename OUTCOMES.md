@@ -1,30 +1,30 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 20914 issues reviewed · generated 2026-09-24 18:29 UTC
+[← Home](index.html) · 20916 issues reviewed · generated 2026-09-25 08:46 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 20914
+- **Issues reviewed:** 20916
 - **Close proposals:** 2856 (14% of reviewed)
-- **Acted on (closed):** 806 (28% of proposals)
-- **2nd-reviewed before the close:** 175 confirmed · 57 disputed · 7 unverifiable · 567 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 361 (45% of acted-on) — 317 verbatim, 21 inside a longer comment, 23 edited
-- **Likely fixed instead:** 99 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (98 of the 444 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2050 open close proposals
+- **Acted on (closed):** 834 (29% of proposals)
+- **2nd-reviewed before the close:** 192 confirmed · 60 disputed · 7 unverifiable · 575 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 366 (44% of acted-on) — 322 verbatim, 21 inside a longer comment, 23 edited
+- **Likely fixed instead:** 102 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (101 of the 467 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 2022 open close proposals
 - **Reversals (reopened after a close):** 2 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (2918 of the 20914 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2050 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (2995 of the 20916 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2022 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
 | User | Closures | With sweeper comment |
 | --- | --- | --- |
-| justschen | 127 | 65 (51%) |
+| justschen | 133 | 70 (53%) |
 | alexdima | 115 | 107 (93%) |
-| dmitrivMS | 73 | 0 (0%) |
-| vs-code-engineering | 71 | 0 (0%) |
+| dmitrivMS | 86 | 0 (0%) |
+| vs-code-engineering | 72 | 0 (0%) |
 | lramos15 | 45 | 0 (0%) |
-| roblourens | 41 | 17 (41%) |
+| roblourens | 43 | 17 (40%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
 | chrmarti | 31 | 29 (94%) |
@@ -32,9 +32,9 @@ _Close proposals count the whole corpus (2918 of the 20914 reviewed issues have 
 | benibenj | 18 | 10 (56%) |
 | sbatten | 16 | 16 (100%) |
 | aeschli | 15 | 11 (73%) |
+| pwang347 | 13 | 3 (23%) |
 | sandy081 | 12 | 0 (0%) |
-| pwang347 | 11 | 3 (27%) |
-| (unattributed) | 10 | 0 (0%) |
+| (unattributed) | 11 | 0 (0%) |
 | egamma | 10 | 10 (100%) |
 | lszomoru | 9 | 8 (89%) |
 | vritant24 | 9 | 3 (33%) |
@@ -50,6 +50,7 @@ _Close proposals count the whole corpus (2918 of the 20914 reviewed issues have 
 | eleanorjboyd | 3 | 3 (100%) |
 | connor4312 | 2 | 0 (0%) |
 | dileepyavan | 2 | 0 (0%) |
+| Giuspepe | 2 | 0 (0%) |
 | AbhaySanthani-tekframeworks | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
 | AndrewStopchenko-SO | 1 | 0 (0%) |
@@ -64,8 +65,9 @@ _Close proposals count the whole corpus (2918 of the 20914 reviewed issues have 
 | DonJayamanne | 1 | 0 (0%) |
 | dustintran333 | 1 | 0 (0%) |
 | federicobrancasi | 1 | 0 (0%) |
-| Giuspepe | 1 | 0 (0%) |
+| garretwilson | 1 | 0 (0%) |
 | Goldenlion5648 | 1 | 0 (0%) |
+| houghj16 | 1 | 0 (0%) |
 | JMS-1 | 1 | 0 (0%) |
 | jruales | 1 | 0 (0%) |
 | kerberjg | 1 | 0 (0%) |
@@ -89,31 +91,34 @@ _Close proposals count the whole corpus (2918 of the 20914 reviewed issues have 
 
 ## sweeper-fix skill adoption
 
-Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 2807 reviewed briefs (1859 ready to implement · 948 ready to plan). As current as the last reconcile run.
+Draft PRs opened with the sweeper-fix skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 2808 reviewed briefs (1860 ready to implement · 948 ready to plan); 7 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
 | alexdima | 168 | 2 | 2 | — | — | — |
-| benibenj | 49 | 1 | — | 1 | — | — |
+| benibenj | 49 | 1 | — | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 691 of 691 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 542 of 542 open proposals verified · 97 closed unverified
+- **duplicate:** 677 of 677 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 536 of 536 open proposals verified · 97 closed unverified
 - **Verdict mix:** 966 confirmed (32 with the fix unreleased) · 466 disputed · 40 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 791 | 174 | 1 |
-| disputed | 409 | 57 | 0 |
+| confirmed | 774 | 191 | 1 |
+| disputed | 406 | 60 | 0 |
 | unverifiable | 33 | 7 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#328617](https://github.com/microsoft/vscode/issues/328617) Mobile version | 2026-09-25 | dmitrivMS | A asks for a mobile (Android-style, acode-like) VS Code build or embeddable API, while B asks specifically for iPad support; shipping iPadOS would not deliver A's Android/mobile ask. |
+| [#333757](https://github.com/microsoft/vscode/issues/333757) Customization hard to find if I don't know where it is | 2026-09-24 | houghj16 | gate: the cited sha bff2c4a174 is not reachable from the default branch — the claimed fix was never merged |
+| [#291303](https://github.com/microsoft/vscode/issues/291303) Allow showing all edits outside thinking | 2026-09-24 | justschen | The request asks for a generic tool-id setting extending chat.agent.thinking.terminalTools so edits render outside thinking; the diff only adds chat.progressDetails.enabled, a boolean toggling elapsed-time/token progress display, delivering no edit-placement or tool-id capability. |
 | [#324450](https://github.com/microsoft/vscode/issues/324450) MAI Code 1 returns:  CAPIError: 400 The file type you uploaded is not supported. Please try again with a pdf | 2026-09-23 | eleanorjboyd | Report is a bare 'Hello' with no attachments, while the diff only keeps display-kind simple attachments (workspace/paste blobs) on the inline-text path — it cannot reach an attachment-free request. |
 | [#331742](https://github.com/microsoft/vscode/issues/331742) Experimental Modern UI Feedback | 2026-09-23 | dmitrivMS | A asks for a permanent opt-out to keep the legacy UI, objecting to padding/border space loss; B never requests an opt-out, instead cataloging specific visual-discontinuity defects (tab selection coloring, sidebar padding, divider/status-bar weight). |
 | [#332155](https://github.com/microsoft/vscode/issues/332155) chat | 2026-09-23 | dmitrivMS | A is a bare issue-reporter crash with no stack, repro, or agent-mode/Remote-SSH context on VS Code 1.116 local; only the generic 'bind' error string matches B's 0.48.1 tool-instantiation regression, which B itself says recurs from distinct triggers. |
@@ -185,32 +190,32 @@ _The 466 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1302 |
-| propose-close | 806 |
-| needs-info | 597 |
-| route-to-area | 213 |
+| keep-open | 1343 |
+| propose-close | 834 |
+| needs-info | 601 |
+| route-to-area | 217 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1518 |
-| not_planned | 950 |
-| duplicate | 433 |
-| not_found | 17 |
+| completed | 1555 |
+| not_planned | 965 |
+| duplicate | 454 |
+| not_found | 21 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 942 | 251 | 27% | 102 | 30 |
-| implemented on main | 787 | 247 | 31% | 148 | — |
-| as-designed | 345 | 84 | 24% | 48 | 19 |
-| question | 247 | 44 | 18% | 9 | 16 |
-| out-of-scope | 225 | 62 | 28% | 18 | 8 |
-| not-reproducible | 141 | 33 | 23% | 10 | 10 |
-| off-topic | 54 | 17 | 31% | 4 | 5 |
+| duplicate | 942 | 265 | 28% | 104 | 32 |
+| implemented on main | 787 | 253 | 32% | 150 | — |
+| as-designed | 345 | 85 | 25% | 48 | 19 |
+| question | 247 | 46 | 19% | 9 | 17 |
+| out-of-scope | 225 | 64 | 28% | 19 | 8 |
+| not-reproducible | 141 | 34 | 24% | 10 | 10 |
+| off-topic | 54 | 18 | 33% | 4 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | invalid | 27 | 13 | 48% | 0 | 1 |
 | extension-candidate | 26 | 8 | 31% | 2 | 1 |
-| other | 21 | 6 | 29% | 3 | — |
+| other | 21 | 7 | 33% | 3 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
