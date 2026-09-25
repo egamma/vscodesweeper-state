@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 20916 issues reviewed · generated 2026-09-25 09:49 UTC
+[← Home](index.html) · 39 swept users · 20926 issues reviewed · generated 2026-09-25 10:31 UTC
 
 ## Verdict distribution
 
@@ -8,9 +8,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 787 | 4% | 636 (81%) | 397 (62%) | 218 (34%) | 21 (3%) | 151 (19%) | — |
-| duplicate | 942 | 5% | 834 (89%) | 569 (68%) | 246 (29%) | 19 (2%) | 108 (11%) | — |
-| as-designed | 345 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
+| implemented on main | 793 | 4% | 642 (81%) | 401 (62%) | 220 (34%) | 21 (3%) | 151 (19%) | — |
+| duplicate | 943 | 5% | 835 (89%) | 569 (68%) | 247 (30%) | 19 (2%) | 108 (11%) | — |
+| as-designed | 346 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
 | question | 247 | 1% | — | — | — | — | — | — |
 | out-of-scope | 225 | 1% | — | — | — | — | — | — |
 | not-reproducible | 141 | 1% | — | — | — | — | — | — |
@@ -19,10 +19,10 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 27 | 0% | — | — | — | — | — | — |
 | extension-candidate | 26 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2856 | 14% | 1472 (52%) | 966 (66%) | 466 (32%) | 40 (3%) | — | — |
-| needs info | 2808 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15252 | 73% | — | — | — | — | — | — |
-| all reviews | 20916 | 100% | | | | | | |
+| **all close proposals** | 2864 | 14% | 1479 (52%) | 970 (66%) | 469 (32%) | 40 (3%) | — | — |
+| needs info | 2804 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15258 | 73% | — | — | — | — | — | — |
+| all reviews | 20926 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -34,10 +34,10 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | hediet | 1481 | 143 (10%) | 224 (15%) | 1114 (75%) | **25%** |
 | justschen | 1309 | 196 (15%) | 164 (13%) | 949 (72%) | **28%** |
 | deepak1556 | 1146 | 194 (17%) | 397 (35%) | 555 (48%) | **52%** |
-| roblourens | 1056 | 205 (19%) | 198 (19%) | 653 (62%) | **38%** |
+| roblourens | 1055 | 205 (19%) | 198 (19%) | 652 (62%) | **38%** |
 | sandy081 | 946 | 109 (12%) | 103 (11%) | 734 (78%) | **22%** |
-| lramos15 | 886 | 174 (20%) | 164 (19%) | 548 (62%) | **38%** |
-| TylerLeonhardt | 859 | 90 (10%) | 92 (11%) | 677 (79%) | **21%** |
+| lramos15 | 885 | 174 (20%) | 164 (19%) | 547 (62%) | **38%** |
+| TylerLeonhardt | 860 | 91 (11%) | 92 (11%) | 677 (79%) | **21%** |
 | connor4312 | 828 | 75 (9%) | 54 (7%) | 699 (84%) | **16%** |
 | meganrogge | 826 | 74 (9%) | 44 (5%) | 708 (86%) | **14%** |
 | anthonykim1 | 800 | 96 (12%) | 118 (15%) | 586 (73%) | **27%** |
@@ -51,7 +51,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | ulugbekna | 489 | 70 (14%) | 89 (18%) | 330 (67%) | **33%** |
 | DonJayamanne | 409 | 37 (9%) | 41 (10%) | 331 (81%) | **19%** |
 | mrleemurray | 389 | 41 (11%) | 47 (12%) | 301 (77%) | **23%** |
-| Yoyokrazy | 367 | 33 (9%) | 35 (10%) | 299 (81%) | **19%** |
+| Yoyokrazy | 365 | 32 (9%) | 34 (9%) | 299 (82%) | **18%** |
 | rzhao271 | 361 | 32 (9%) | 40 (11%) | 289 (80%) | **20%** |
 | Copilot | 343 | 17 (5%) | 5 (1%) | 321 (94%) | **6%** |
 | dmitrivMS | 342 | 40 (12%) | 52 (15%) | 250 (73%) | **27%** |
@@ -80,13 +80,13 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | hediet | 1114 | 189 | 26 | 19% |
 | justschen | 949 | 111 | 31 | 15% |
 | deepak1556 | 555 | 13 | 1 | 3% |
-| roblourens | 653 | 89 | 334 | 65% |
+| roblourens | 652 | 89 | 334 | 65% |
 | sandy081 | 734 | 86 | 25 | 15% |
-| lramos15 | 548 | 83 | 6 | 16% |
+| lramos15 | 547 | 83 | 6 | 16% |
 | TylerLeonhardt | 677 | 87 | 13 | 15% |
 | connor4312 | 699 | 85 | 61 | 21% |
 | meganrogge | 708 | 103 | 25 | 18% |
-| anthonykim1 | 586 | 93 | 7 | 17% |
+| anthonykim1 | 586 | 93 | 8 | 17% |
 | aeschli | 610 | 61 | 264 | 53% |
 | osortega | 519 | 81 | 10 | 18% |
 | joshspicer | 475 | 48 | 0 | 10% |
@@ -94,7 +94,7 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | alexdima | 328 | 44 | 124 | 51% |
 | mjbvz | 490 | 83 | 13 | 20% |
 | chrmarti | 200 | 25 | 14 | 20% |
-| ulugbekna | 330 | 36 | 22 | 18% |
+| ulugbekna | 330 | 36 | 23 | 18% |
 | DonJayamanne | 331 | 36 | 7 | 13% |
 | mrleemurray | 301 | 6 | 8 | 5% |
 | Yoyokrazy | 299 | 61 | 2 | 21% |
@@ -129,7 +129,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | roblourens | 205 | 70 (34%) | 86 (42%) | 17 (8%) | 5 (2%) | 17 (8%) | 3 (1%) | 1 (0%) | 6 (3%) |
 | sandy081 | 109 | 38 (35%) | 29 (27%) | 6 (6%) | 9 (8%) | 11 (10%) | 5 (5%) | 5 (5%) | 6 (6%) |
 | lramos15 | 174 | 40 (23%) | 37 (21%) | 18 (10%) | 38 (22%) | 12 (7%) | 8 (5%) | 11 (6%) | 10 (6%) |
-| TylerLeonhardt | 90 | 22 (24%) | 34 (38%) | 7 (8%) | 10 (11%) | 9 (10%) | 2 (2%) | — | 6 (7%) |
+| TylerLeonhardt | 91 | 23 (25%) | 34 (37%) | 7 (8%) | 10 (11%) | 9 (10%) | 2 (2%) | — | 6 (7%) |
 | connor4312 | 75 | 23 (31%) | 27 (36%) | 8 (11%) | 1 (1%) | 9 (12%) | 6 (8%) | 1 (1%) | — |
 | meganrogge | 74 | 41 (55%) | 13 (18%) | 8 (11%) | 1 (1%) | 9 (12%) | 1 (1%) | — | 1 (1%) |
 | anthonykim1 | 96 | 21 (22%) | 28 (29%) | 15 (16%) | 9 (9%) | 13 (14%) | 5 (5%) | 5 (5%) | — |
@@ -143,7 +143,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | ulugbekna | 70 | 10 (14%) | 23 (33%) | 18 (26%) | 6 (9%) | 3 (4%) | 6 (9%) | 3 (4%) | 1 (1%) |
 | DonJayamanne | 37 | 16 (43%) | 10 (27%) | 3 (8%) | 1 (3%) | 2 (5%) | 2 (5%) | — | 3 (8%) |
 | mrleemurray | 41 | 15 (37%) | 17 (41%) | 6 (15%) | 2 (5%) | 1 (2%) | — | — | — |
-| Yoyokrazy | 33 | 11 (33%) | 9 (27%) | 1 (3%) | 5 (15%) | 5 (15%) | 2 (6%) | — | — |
+| Yoyokrazy | 32 | 11 (34%) | 8 (25%) | 1 (3%) | 5 (16%) | 5 (16%) | 2 (6%) | — | — |
 | rzhao271 | 32 | 9 (28%) | 9 (28%) | 8 (25%) | 1 (3%) | — | 4 (13%) | — | 1 (3%) |
 | Copilot | 17 | 8 (47%) | 5 (29%) | 4 (24%) | — | — | — | — | — |
 | dmitrivMS | 40 | 10 (25%) | 14 (35%) | 7 (18%) | 3 (8%) | 1 (3%) | 2 (5%) | — | 3 (8%) |
@@ -162,4 +162,4 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | jrieken | 7 | — | 1 (14%) | 4 (57%) | — | 1 (14%) | 1 (14%) | — | — |
 | jruales | 7 | 2 (29%) | 3 (43%) | 2 (29%) | — | — | — | — | — |
 
-_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 776 reviews — mostly co-assignees)._
+_Every review counts, including issues closed since. Multi-assignee issues count once per assignee. Users with fewer than 100 reviews are not shown (38 users, 790 reviews — mostly co-assignees)._
