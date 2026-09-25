@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>sweeper-implement skill — VS Code Sweeper</title>
+<title>sweeper agent skills — VS Code Sweeper</title>
 <style>
   :root {
     --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --accent: #0969da; --row: #f6f8fa;
@@ -16,12 +16,13 @@
     background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 780px; }
   h1 { font-size: 22px; margin: 0 0 6px; }
   h2 { font-size: 16px; margin: 28px 0 8px; }
+  h3 { font-size: 14px; margin: 18px 0 6px; }
   .lede { color: var(--muted); margin: 0 0 16px; }
   a { color: var(--accent); text-decoration: none; }
   a:hover { text-decoration: underline; }
   code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; }
   pre { background: var(--row); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; overflow-x: auto; }
-  ul { padding-left: 22px; }
+  ul, ol { padding-left: 22px; }
   li { margin: 4px 0; }
   .callout { border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 6px;
     padding: 10px 14px; background: var(--row); margin: 12px 0; }
@@ -29,40 +30,56 @@
 </style>
 </head>
 <body>
-  <h1>The sweeper-implement skill</h1>
-  <p class="lede">Let an agent implement a sweeper-reviewed fix for one of your <code>microsoft/vscode</code> issues — from your own checkout, under your own identity, as a draft PR you own.</p>
+  <h1>The sweeper agent skills</h1>
+  <p class="lede">Two skills, <code>sweeper-plan</code> and <code>sweeper-implement</code>, let an agent take on a sweeper-reviewed <code>microsoft/vscode</code> issue — from your own checkout, under your own identity, ending in a draft PR you own.</p>
 
   <h2>What the sweeper did for you</h2>
-  <p>The sweeper reviewed the open <code>microsoft/vscode</code> backlog with a source checkout and marked the issues an agent can take on — <strong>agent-ready</strong> — each with a <strong>brief</strong> written while tracing the issue: the Behavior the finished change is validated against, the Trace (root cause, code path, what must <em>not</em> change), the likely files, and a validation that becomes the regression test. Two tiers: <em>implement</em> (the review did the diagnosis; the skill goes straight to the change) and <em>plan first</em> (the goal is clear but a design or diagnosis is open; the companion sweeper-plan skill writes the plan with you first, and nothing is implemented until you approve it). Your issues are on the <a href="https://egamma.github.io/vscodesweeper-state/dashboard.html">dashboard</a>’s <em>Agent-ready</em> tab, ranked by value, and every brief is inspectable there before you run anything.</p>
+  <p>The sweeper reviewed the open <code>microsoft/vscode</code> backlog with a source checkout and marked the issues an agent can take on — <strong>agent-ready</strong> — each with a <strong>brief</strong> written while tracing the issue: the Behavior the finished change is validated against, the Trace (root cause, code path, what must <em>not</em> change), the likely files, and a validation that becomes the regression test. The review also sets the tier, and the tier picks the skill:</p>
+  <ul>
+    <li><strong>Ready to implement</strong> — the review did the diagnosis (confirmed defect, bounded change, a named validation). <code>sweeper-implement</code> goes straight from the brief to the change.</li>
+    <li><strong>Ready to plan</strong> — the goal is clear but a design or diagnosis is open (the brief lists the open decisions). <code>sweeper-plan</code> writes the plan with you first; nothing is implemented until you hand the plan to <code>sweeper-implement</code>.</li>
+  </ul>
+  <p>Your issues are on the <a href="https://egamma.github.io/vscodesweeper-state/dashboard.html">dashboard</a>’s <em>Agent-ready</em> tab, ranked by value, and every brief is inspectable there before you run anything.</p>
 
-  <h2>Using it</h2>
-  <p><strong>No setup.</strong> The skills ship in the vscode repo itself (<code>.github/skills/sweeper-implement/</code> and <code>.github/skills/sweeper-plan/</code>), so an up-to-date checkout already has it — just pull a recent <code>main</code>.</p>
-  <p>Then paste the prompt the <em>Copy prompt</em> button put on your clipboard — the skill invocation plus the reviewed spec, so you can read (and edit) what the agent is asked to implement before sending:</p>
+  <h2>Using them</h2>
+  <p><strong>No setup.</strong> Both skills ship in the vscode repo itself (<code>.github/skills/sweeper-implement/</code> and <code>.github/skills/sweeper-plan/</code>), so an up-to-date checkout already has them — just pull a recent <code>main</code>. Run them from your vscode checkout, in Copilot Chat (agent mode), the Agents window, or Copilot CLI.</p>
+
+  <h3>Ready to implement → <code>/sweeper-implement &lt;n&gt;</code></h3>
+  <p>The <em>Implement</em> button in vscode-tools opens VS Code with the prompt prefilled; the <em>Copy prompt</em> button puts the invocation plus the reviewed brief on your clipboard, so you can read (and edit) what the agent is asked to implement before sending:</p>
   <pre>Implement microsoft/vscode issue #262104 using the sweeper-implement skill.
 
 Reviewed fix spec (edit freely — the skill re-checks the live gates and treats this as your intent):
 &lt;the record's fix brief — pasted for you to read and adjust&gt;
 Likely files: …
 Validation: …</pre>
-  <p>Editing the spec is fine — the skill implements your version and still runs every gate. A bare first line alone works too (the skill then reads the record's spec itself).</p>
+  <p>Editing the brief is fine — the skill implements your version and still runs every gate. A bare first line alone works too (the skill then reads the record's brief itself).</p>
 
-  <h2>What to expect</h2>
+  <h3>Ready to plan → <code>/sweeper-plan &lt;n&gt;</code>, then <code>/sweeper-implement &lt;n&gt;</code></h3>
+  <p>The <em>Plan</em> button (or its <em>Copy prompt</em>) starts with the plan skill:</p>
+  <pre>Plan microsoft/vscode issue #262105 using the sweeper-plan skill.</pre>
+  <ol>
+    <li><code>sweeper-plan</code> re-checks the live gates, asks you the review's open decisions in chat, writes <code>.sweeper/plans/issue-&lt;n&gt;.md</code> (git-excluded, never committed) and <strong>stops</strong>. It writes no code.</li>
+    <li>Open the plan in your editor and edit it freely — its Behavior statements are what the change will be validated against.</li>
+    <li>Run <code>/sweeper-implement &lt;n&gt;</code> <strong>in the same session</strong>: running it is your approval. The skill reads the plan as you left it (a plan from another session or worktree isn't visible), asks only if an edit contradicts an answered decision, and implements.</li>
+  </ol>
+
+  <h2>What to expect from <code>sweeper-implement</code></h2>
   <ul>
-    <li><strong>Live gates first.</strong> The skill refuses if the issue is closed, security-labeled, not reviewed as agent-ready, or already has an open PR — and warns if the issue changed since its review.</li>
-    <li><strong>The brief, or a plan you approve.</strong> On a <em>ready to implement</em> record the skill works straight from the review's brief. A <em>plan first</em> record starts with <code>/sweeper-plan &lt;n&gt;</code>: it puts the open decisions to you, writes the plan to <code>.sweeper/plans/issue-&lt;n&gt;.md</code> (git-excluded) and stops — open it in your editor, edit freely, then run <code>/sweeper-implement &lt;n&gt;</code> in the same session to implement it.</li>
+    <li><strong>Live gates first.</strong> It refuses if the issue is closed, security-labeled, not reviewed as agent-ready, or already has an open PR — and warns if the issue changed since its review. On a <em>plan</em> record without a plan file it refuses and points you at <code>/sweeper-plan</code>.</li>
     <li><strong>The change + tests, validated against the brief or plan.</strong> Every Behavior statement maps to a test that fails before the change and passes after, and the diff is checked against its boundary before you see it.</li>
-    <li><strong>You approve the changes.</strong> Nothing is pushed until you've reviewed the changes in your editor and said go.</li>
-    <li><strong>A draft PR you own.</strong> Branch <code>&lt;you&gt;/fix-&lt;n&gt;</code>, base <code>main</code>, body carries <code>Fixes #n</code> and a "seeded by" link to the review record. You review, flip to ready, and merge — or close it. The sweeper never touches the PR again.</li>
+    <li><strong>You approve the changes.</strong> The review happens in your editor's diff view (Source Control, or the Agents window's Changes pane) — nothing is pasted into chat, and nothing is pushed until you say go.</li>
+    <li><strong>A draft PR you own.</strong> The skill opens it (don't use the editor's own Create PR button — that PR would miss the sweeper's markers): branch <code>&lt;you&gt;/fix-&lt;n&gt;</code>, base <code>main</code>, body carries <code>Fixes #n</code>, a "seeded by" link to the review record, and the plan or brief in a collapsed block. You review, flip to ready, and merge — or close it. The sweeper never touches the PR again.</li>
   </ul>
-  <div class="callout">The PR is a <strong>draft</strong> on purpose: the diff derives from a spec written over issue text. Flipping it to ready is your "I've read this diff" signal.</div>
+  <div class="callout">The PR is a <strong>draft</strong> on purpose: the diff derives from a brief written over issue text. Flipping it to ready is your "I've read this diff" signal.</div>
 
   <h2>Troubleshooting</h2>
   <ul>
-    <li><strong>Skill doesn't trigger?</strong> Say "sweeper-implement skill" explicitly (agents match on the skill description). Copilot CLI loads skills at session start — restart it after pulling a checkout that just gained the skill.</li>
-    <li><strong>"Not agent-ready" refusal?</strong> The review found no brief to work from for that issue — the skill only works from reviewed briefs. Check the record linked from the dashboard for what the review concluded instead.</li>
-    <li><strong>Skill still not found?</strong> Check your checkout has <code>.github/skills/sweeper-implement/SKILL.md</code> — pull a recent <code>main</code> if not. On an older checkout you can't update, copy <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md">the generated SKILL.md</a> into <code>~/.copilot/skills/sweeper-implement/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/sweeper-implement/SKILL.md</code> (Claude Code).</li>
+    <li><strong>Skill doesn't trigger?</strong> Name it explicitly — "sweeper-implement skill" or "sweeper-plan skill" (agents match on the skill description). Copilot CLI loads skills at session start — restart it after pulling a checkout that just gained them.</li>
+    <li><strong>"Not agent-ready" refusal?</strong> The review found no brief to work from for that issue — the skills only work from reviewed briefs. Check the record linked from the dashboard for what the review concluded instead.</li>
+    <li><strong>"Needs a plan first" refusal?</strong> A <em>plan</em> record was handed to <code>sweeper-implement</code> without a plan file in this checkout — run <code>/sweeper-plan &lt;n&gt;</code> first, in the same session.</li>
+    <li><strong>Skills still not found?</strong> Check your checkout has <code>.github/skills/sweeper-implement/SKILL.md</code> and <code>.github/skills/sweeper-plan/SKILL.md</code> — pull a recent <code>main</code> if not. On an older checkout you can't update, copy the generated <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md">sweeper-implement</a> and <a href="https://egamma.github.io/vscodesweeper-state/skill/sweeper-plan/SKILL.md">sweeper-plan</a> SKILL.md files into <code>~/.copilot/skills/&lt;name&gt;/SKILL.md</code> (Copilot CLI) or <code>~/.claude/skills/&lt;name&gt;/SKILL.md</code> (Claude Code).</li>
   </ul>
 
-  <footer>sweeper-implement skill v7 · generated 2026-09-25 13:20 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
+  <footer>sweeper agent skills v7 · generated 2026-09-25 13:39 UTC by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.</footer>
 </body>
 </html>

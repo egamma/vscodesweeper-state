@@ -1,14 +1,23 @@
-# The sweeper-implement skill
+# The sweeper agent skills
 
-Let an agent implement a sweeper-reviewed fix for one of your `microsoft/vscode` issues — from your own checkout, under your own identity, as a draft PR you own.
+Two skills, `sweeper-plan` and `sweeper-implement`, let an agent take on a sweeper-reviewed `microsoft/vscode` issue — from your own checkout, under your own identity, ending in a draft PR you own.
 
 ## What the sweeper did for you
 
-The sweeper reviewed the open `microsoft/vscode` backlog with a source checkout and marked the issues an agent can take on — **agent-ready** — each with a **brief** written while tracing the issue. Two tiers: *implement* (the review did the diagnosis; the skill goes straight to the change) and *plan first* (the goal is clear but a design or diagnosis is open; the companion sweeper-plan skill writes the plan with you first, and nothing is implemented until you approve it). Your issues are on the [dashboard](https://egamma.github.io/vscodesweeper-state/dashboard.html)’s *Agent-ready* tab, ranked by value, and every brief is inspectable there before you run anything.
+The sweeper reviewed the open `microsoft/vscode` backlog with a source checkout and marked the issues an agent can take on — **agent-ready** — each with a **brief** written while tracing the issue. The review also sets the tier, and the tier picks the skill:
 
-## Using it
+- **Ready to implement** — the review did the diagnosis (confirmed defect, bounded change, a named validation). `sweeper-implement` goes straight from the brief to the change.
+- **Ready to plan** — the goal is clear but a design or diagnosis is open (the brief lists the open decisions). `sweeper-plan` writes the plan with you first; nothing is implemented until you hand the plan to `sweeper-implement`.
 
-**No setup:** the skills ship in the vscode repo itself (`.github/skills/sweeper-implement/` and `.github/skills/sweeper-plan/`), so an up-to-date checkout already has it — just pull a recent `main`. Then, from your vscode checkout, paste the prompt the *Copy prompt* button put on your clipboard — the skill invocation plus the reviewed spec, readable and editable before you send it:
+Your issues are on the [dashboard](https://egamma.github.io/vscodesweeper-state/dashboard.html)’s *Agent-ready* tab, ranked by value, and every brief is inspectable there before you run anything.
+
+## Using them
+
+**No setup:** both skills ship in the vscode repo itself (`.github/skills/sweeper-implement/` and `.github/skills/sweeper-plan/`), so an up-to-date checkout already has them — just pull a recent `main`. Run them from your vscode checkout, in Copilot Chat (agent mode), the Agents window, or Copilot CLI.
+
+### Ready to implement → `/sweeper-implement <n>`
+
+The *Implement* button in vscode-tools opens VS Code with the prompt prefilled; *Copy prompt* puts the invocation plus the reviewed brief on your clipboard, readable and editable before you send it:
 
 ```
 Implement microsoft/vscode issue #262104 using the sweeper-implement skill.
@@ -19,20 +28,32 @@ Likely files: …
 Validation: …
 ```
 
-Editing the spec is fine — the skill implements your version and still runs every gate; the bare first line alone also works.
+Editing the brief is fine — the skill implements your version and still runs every gate; the bare first line alone also works.
 
-## What to expect
+### Ready to plan → `/sweeper-plan <n>`, then `/sweeper-implement <n>`
 
-- **Live gates first** — refuses closed / security-labeled / not-agent-ready issues and issues that already have an open PR; warns when the issue changed since its review.
-- **The brief, or a plan you approve** — a *ready to implement* record works straight from the review's brief; a *plan first* record starts with `/sweeper-plan <n>`: it puts the open decisions to you, writes the plan to `.sweeper/plans/issue-<n>.md` (git-excluded) and stops — open it in your editor, edit freely, then run `/sweeper-implement <n>` in the same session to implement it.
+The *Plan* button (or its *Copy prompt*) starts with the plan skill:
+
+```
+Plan microsoft/vscode issue #262105 using the sweeper-plan skill.
+```
+
+1. `sweeper-plan` re-checks the live gates, asks you the review's open decisions in chat, writes `.sweeper/plans/issue-<n>.md` (git-excluded, never committed) and **stops**. It writes no code.
+2. Open the plan in your editor and edit it freely — its Behavior statements are what the change will be validated against.
+3. Run `/sweeper-implement <n>` **in the same session**: running it is your approval. The skill reads the plan as you left it (a plan from another session or worktree isn't visible), asks only if an edit contradicts an answered decision, and implements.
+
+## What to expect from `sweeper-implement`
+
+- **Live gates first** — refuses closed / security-labeled / not-agent-ready issues and issues that already have an open PR; warns when the issue changed since its review; on a *plan* record without a plan file it refuses and points you at `/sweeper-plan`.
 - **The change + tests, validated against the brief or plan** — every Behavior statement maps to a test (fails before, passes after) and the diff is checked against its boundary before you see it.
-- **You approve the changes** — review them in your editor; nothing is pushed until you say go.
-- **A draft PR you own** — `<you>/fix-<n>`, `Fixes #n`, a "seeded by" link to the record, the plan (or the brief) in a collapsed block. You flip it to ready — or close it.
+- **You approve the changes** — in your editor's diff view (Source Control, or the Agents window's Changes pane); nothing is pasted into chat, nothing is pushed until you say go.
+- **A draft PR you own** — opened by the skill (not the editor's Create PR button, which would miss the sweeper's markers): `<you>/fix-<n>`, `Fixes #n`, a "seeded by" link to the record, the plan or brief in a collapsed block. You flip it to ready — or close it.
 
 ## Troubleshooting
 
-- Skill doesn't trigger → say "sweeper-implement skill" explicitly; restart Copilot CLI after the checkout gains the skill (skills load at session start).
+- Skill doesn't trigger → name it explicitly ("sweeper-implement skill" / "sweeper-plan skill"); restart Copilot CLI after the checkout gains them (skills load at session start).
 - "Not agent-ready" refusal → the review found no brief to work from; check the record for what it concluded instead.
-- Skill not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` (pull a recent `main`); on an older checkout, copy [the generated SKILL.md](https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md) into `~/.copilot/skills/sweeper-implement/` or `~/.claude/skills/sweeper-implement/`.
+- "Needs a plan first" refusal → a *plan* record reached `sweeper-implement` without a plan file in this checkout; run `/sweeper-plan <n>` first, in the same session.
+- Skills not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` and `.github/skills/sweeper-plan/SKILL.md` (pull a recent `main`); on an older checkout, copy the generated [sweeper-implement](https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md) and [sweeper-plan](https://egamma.github.io/vscodesweeper-state/skill/sweeper-plan/SKILL.md) SKILL.md files into `~/.copilot/skills/<name>/` or `~/.claude/skills/<name>/`.
 
-_sweeper-implement skill v7 · generated 2026-09-25 13:20 UTC._
+_sweeper agent skills v7 · generated 2026-09-25 13:39 UTC._
