@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21010 issues reviewed · generated 2026-09-26 07:16 UTC
+[← Home](index.html) · 21071 issues reviewed · generated 2026-09-26 13:18 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21010
-- **Close proposals:** 2899 (14% of reviewed)
-- **Acted on (closed):** 836 (29% of proposals)
-- **2nd-reviewed before the close:** 192 confirmed · 60 disputed · 7 unverifiable · 577 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 366 (44% of acted-on) — 322 verbatim, 21 inside a longer comment, 23 edited
-- **Likely fixed instead:** 102 (12% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (101 of the 469 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 2063 open close proposals
+- **Issues reviewed:** 21071
+- **Close proposals:** 2908 (14% of reviewed)
+- **Acted on (closed):** 904 (31% of proposals)
+- **2nd-reviewed before the close:** 223 confirmed · 71 disputed · 7 unverifiable · 603 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 426 (47% of acted-on) — 374 verbatim, 29 inside a longer comment, 23 edited
+- **Likely fixed instead:** 102 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (101 of the 477 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 2004 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3004 of the 21010 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2063 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3128 of the 21071 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2004 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,25 +21,25 @@ _Close proposals count the whole corpus (3004 of the 21010 reviewed issues have 
 | --- | --- | --- |
 | justschen | 133 | 70 (53%) |
 | alexdima | 115 | 107 (93%) |
-| dmitrivMS | 86 | 0 (0%) |
-| vs-code-engineering | 73 | 0 (0%) |
-| lramos15 | 46 | 0 (0%) |
+| lramos15 | 107 | 60 (56%) |
+| dmitrivMS | 89 | 0 (0%) |
+| vs-code-engineering | 74 | 0 (0%) |
 | roblourens | 43 | 17 (40%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
 | chrmarti | 31 | 29 (94%) |
 | kycutler | 30 | 14 (47%) |
 | benibenj | 18 | 10 (56%) |
+| aeschli | 17 | 11 (65%) |
 | sbatten | 16 | 16 (100%) |
-| aeschli | 15 | 11 (73%) |
 | pwang347 | 13 | 3 (23%) |
 | sandy081 | 12 | 0 (0%) |
 | (unattributed) | 10 | 0 (0%) |
 | egamma | 10 | 10 (100%) |
 | lszomoru | 9 | 8 (89%) |
 | vritant24 | 9 | 3 (33%) |
+| meganrogge | 8 | 0 (0%) |
 | mrleemurray | 8 | 5 (63%) |
-| meganrogge | 7 | 0 (0%) |
 | TylerLeonhardt | 7 | 6 (86%) |
 | joshspicer | 6 | 0 (0%) |
 | karthiknadig | 5 | 2 (40%) |
@@ -92,31 +92,42 @@ _Close proposals count the whole corpus (3004 of the 21010 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3109 reviewed briefs (1878 ready to implement · 1231 ready to plan); 8 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3122 reviewed briefs (1874 ready to implement · 1248 ready to plan); 11 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
 | alexdima | 168 | 2 | 2 | — | — | — |
-| benibenj | 232 | 1 | — | 1 | — | 1 |
+| benibenj | 235 | 1 | — | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 793 of 793 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 573 of 573 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1046 confirmed (36 with the fix unreleased) · 535 disputed · 44 unverifiable
+- **duplicate:** 773 of 773 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 555 of 555 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1048 confirmed (37 with the fix unreleased) · 535 disputed · 46 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 853 | 191 | 2 |
-| disputed | 475 | 60 | 0 |
-| unverifiable | 37 | 7 | 0 |
+| confirmed | 824 | 222 | 2 |
+| disputed | 464 | 71 | 0 |
+| unverifiable | 39 | 7 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#326112](https://github.com/microsoft/vscode/issues/326112) Sometimes can't start 3rd party plugins during VS Code start | 2026-09-25 | dmitrivMS | Shared error string only: B is a deterministic 1.57-update regression under Ubuntu snap packaging, while A is an intermittent startup race on 1.129/Fedora — different trigger chains, not one proven root cause. |
+| [#326522](https://github.com/microsoft/vscode/issues/326522) [Copilot][Claude Code] Closing a linked Git worktree immediately reopens it when Claude session history exists for that worktree | 2026-09-25 | dmitrivMS | Commit deletes the extension-host Claude implementation wholesale; nothing shown removes the session-metadata Git lookup that calls openRepository, and the surviving Agent Host path may reopen the closed sibling worktree identically. |
+| [#312363](https://github.com/microsoft/vscode/issues/312363) RunInTerminalTool hangs forever when trackIdleOnPrompt is stuck in Executing state | 2026-09-25 | meganrogge | The added 60s hard cap only fires when state is Initial or Prompt; the reported hang occurs after C/D advances state to Executing, which the new guard explicitly excludes, so the described dead state persists. |
+| [#134653](https://github.com/microsoft/vscode/issues/134653) Deleting large files with the UI takes very long | 2026-09-25 | lramos15 | The diff only adds an explorer.enableUndo setting gating undo/redo participation and relabels copy/import edits; it touches no delete code path, so reported slow UI deletion of large files is unaddressed. |
+| [#297396](https://github.com/microsoft/vscode/issues/297396) Model picker  key binding for Copilot missing! | 2026-09-25 | lramos15 | Commit adds a cycle-to-next-model keybinding, not a shortcut opening the model picker, and leaves the picker's screen-reader accessibility — the issue's second explicit ask — unaddressed. |
+| [#293239](https://github.com/microsoft/vscode/issues/293239) Add Ollama support to Background Agents | 2026-09-25 | lramos15 | The commit only flips an existing BYOK-bridge setting's default to true; it adds no Ollama provider wiring, so the request to expose chat's Ollama models in background agents is not delivered. |
+| [#295106](https://github.com/microsoft/vscode/issues/295106) For the extended LanguageModelChatProvider, context calculations are never precise. | 2026-09-25 | lramos15 | Different defects: A is estimation bias from frequently-called, fragment-scoped provideTokenCount in VS Code's context/compression accounting; B is Copilot's extChatEndpoint hardcoding usage to zeros, whose usage-mime fix leaves provideTokenCount's fragmented estimation intact. |
+| [#314268](https://github.com/microsoft/vscode/issues/314268) Chat Model Picker: Allow per-vendor setting to hide new models by default | 2026-09-25 | lramos15 | gate: the cited canonical #311999 is closed — a duplicate close would strand the report (re-review, not close) |
+| [#292877](https://github.com/microsoft/vscode/issues/292877) When using right-click -> New File in an unfocused window, the filename text field does not automatically receive focus | 2026-09-25 | lramos15 | gate: the cited canonical #143968 is closed — a duplicate close would strand the report (re-review, not close) |
+| [#285388](https://github.com/microsoft/vscode/issues/285388) New File/Folder input field doesn't receive focus when VS Code regains focus via right-click | 2026-09-25 | lramos15 | gate: the cited canonical #143968 is closed — a duplicate close would strand the report (re-review, not close) |
+| [#212238](https://github.com/microsoft/vscode/issues/212238) vscode.openWith does not respect 'pinned' option in 'columnAndOptions' parameter | 2026-09-25 | lramos15 | Spread reorder restores pinned:false only in the vscode.openWith handler (override: id); the report explicitly also repros with the default editor via vscode.open, whose separate hardcoded call the diff never touches. |
 | [#328617](https://github.com/microsoft/vscode/issues/328617) Mobile version | 2026-09-25 | dmitrivMS | A asks for a mobile (Android-style, acode-like) VS Code build or embeddable API, while B asks specifically for iPad support; shipping iPadOS would not deliver A's Android/mobile ask. |
 | [#333757](https://github.com/microsoft/vscode/issues/333757) Customization hard to find if I don't know where it is | 2026-09-24 | houghj16 | gate: the cited sha bff2c4a174 is not reachable from the default branch — the claimed fix was never merged |
 | [#291303](https://github.com/microsoft/vscode/issues/291303) Allow showing all edits outside thinking | 2026-09-24 | justschen | The request asks for a generic tool-id setting extending chat.agent.thinking.terminalTools so edits render outside thinking; the diff only adds chat.progressDetails.enabled, a boolean toggling elapsed-time/token progress display, delivering no edit-placement or tool-id capability. |
@@ -192,32 +203,32 @@ _The 535 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1345 |
-| propose-close | 836 |
-| needs-info | 605 |
-| route-to-area | 218 |
+| keep-open | 1378 |
+| propose-close | 904 |
+| needs-info | 620 |
+| route-to-area | 226 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1559 |
-| not_planned | 974 |
-| duplicate | 454 |
-| not_found | 17 |
+| completed | 1602 |
+| not_planned | 1025 |
+| duplicate | 482 |
+| not_found | 19 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1058 | 265 | 25% | 104 | 32 |
-| implemented on main | 824 | 253 | 31% | 150 | — |
-| as-designed | 343 | 85 | 25% | 48 | 19 |
-| out-of-scope | 219 | 66 | 30% | 19 | 8 |
-| question | 179 | 46 | 26% | 9 | 17 |
-| not-reproducible | 114 | 34 | 30% | 10 | 10 |
-| off-topic | 45 | 18 | 40% | 4 | 5 |
+| duplicate | 1060 | 287 | 27% | 124 | 32 |
+| implemented on main | 826 | 273 | 33% | 167 | — |
+| as-designed | 344 | 87 | 25% | 50 | 19 |
+| out-of-scope | 221 | 71 | 32% | 22 | 8 |
+| question | 179 | 56 | 31% | 18 | 17 |
+| not-reproducible | 116 | 36 | 31% | 12 | 10 |
+| off-topic | 45 | 21 | 47% | 7 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | invalid | 29 | 13 | 45% | 0 | 1 |
-| extension-candidate | 26 | 8 | 31% | 2 | 1 |
-| other | 21 | 7 | 33% | 3 | — |
+| extension-candidate | 26 | 9 | 35% | 3 | 1 |
+| other | 21 | 10 | 48% | 6 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
