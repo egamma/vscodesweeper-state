@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode-python`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `38dbff17a352bdcf` — every verdict record carries the hash of the
+> Policy hash `b812a617905b516f` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-26 13:19 UTC.
+> exactly this text. Published 2026-09-26 13:48 UTC.
 
 ---
 
@@ -305,7 +305,18 @@ Translate the underlying judgment into this repository's vocabulary:
   commit that touches the reported area but not the reported behavior is not a
   fix: if its diff would not have changed what the reporter saw, do not cite
   it. (Code re-enforces the first half: a bump-only cited commit downgrades the
-  close.) Do **not** attach a `*`-label (a completed fix is a normal close, not a
+  close.) **Two more checks before you cite anything.** (1) *Adoption*, for a fix
+  that lives in another repository: a new upstream capability is not a fix until
+  this repository **uses it on the reporter's code path** — name the call site
+  here that constructs or calls the new behavior. An opt-in agent, option or API
+  that nothing here enables fixes nothing, and a dependency bump alone proves
+  availability, not adoption; without that call site the status is "likely
+  resolved upstream" — keep open with the lead. (2) *Trigger + diff lines*, for
+  every implemented-on-main close: `evidence` names the reporter's trigger (what
+  they did, what they saw) AND the specific lines of the cited diff that change
+  that outcome. A close whose evidence cannot name both is keep-open — a commit
+  that fixes a neighbouring case in the same area is the most common false close
+  in this lane (the second review refutes about 40% of them). Do **not** attach a `*`-label (a completed fix is a normal close, not a
   triage-reason close); set `proposedLabel: "none"`.
 - **Cannot reproduce** → there is **no `*not-reproducible` label here**; the
   wiki still allows closing irreproducible bugs, as a manual close with an
@@ -491,6 +502,13 @@ discussed does not clear this bar for a re-reviewed item: cite it as related and
 keep the item open. Re-reviewed rows are where a fresh duplicate close is most
 often a false close (the verify lane refutes ~70% of them against ~30% on first
 reviews) — when in doubt, it stays open.
+
+**Re-reviewed items — a refuted fix.** When the `PRIOR REVIEW` block names a fix
+commit that an independent second review refuted, that commit is off the table:
+do not cite it again in any form — not its merge commit, not its cherry-pick.
+An implemented-on-main close now needs a **different** fix commit, or new
+evidence, at the bar above; otherwise keep the issue open (code enforces the
+re-citation half).
 
 **Canonical-search pass — required before keeping an older item open.** Before
 you settle on `keep-open` for an item that has been open a long time, search for

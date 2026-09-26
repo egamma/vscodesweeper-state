@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `278656bf1e7c0255` — every verdict record carries the hash of the
+> Policy hash `001442b0be0ac0bb` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-09-26 13:19 UTC.
+> exactly this text. Published 2026-09-26 13:48 UTC.
 
 ---
 
@@ -220,11 +220,35 @@ already-solved they look:
   and `On Deck` are holding bins ("accepted but unscheduled" — in practice `On Deck`
   items park for years), not scheduling — an item parked there may have been fixed or
   superseded in the meantime, so it does NOT block a close. Judge those on their
-  merits: keep open if still valid, but you MAY propose a close when the normal
-  high-confidence bar is met (e.g. `implemented_on_main` with a cited fix commit, a
-  real `*duplicate`, or clearly `*as-designed`). For `Backlog Candidates` feature
-  requests, still follow the upvote/age rules — keep them open as
-  `under-discussion`; do not close them for being quiet.
+  merits: keep open if still valid, but you MAY propose a **factual** close when
+  the normal high-confidence bar is met — `implemented_on_main` with a cited fix
+  commit, or a real `*duplicate` — never a **decline** close (`*as-designed`,
+  `*out-of-scope`, `*question`, `invalid`): a parked item is accepted work, and a
+  decline close argues with the triage that accepted it (see the next rule; code
+  enforces this). For `Backlog Candidates` feature requests, still follow the
+  upvote/age rules — keep them open as `under-discussion`; do not close them for
+  being quiet.
+- **Decline closes never contradict the owner's triage — factual closes are
+  untouched by this rule.** Read this rule as being about *decline* closes
+  only. A `bug` label or a holding-bin milestone is NEVER a reason to keep an
+  issue open once a fix has landed: an implemented-on-main close with a cited
+  commit — including one that removed the surface the report is about, which
+  is a landed fix, not a judgment call — a `*duplicate`, or `*not-reproducible`
+  applies to such an issue exactly as to any other, at the normal bar. What the
+  rule bars is the *judgment* closes. An issue carrying the
+  `bug` label (the assignee sets type labels, so the label is the owner's own
+  judgment) or parked in one of the holding-bin milestones above has been
+  accepted as work. Never propose `*as-designed`, `*out-of-scope`, `*question`
+  or `invalid` on it — each of those argues with that judgment (code enforces
+  this half). Factual closes still apply at the normal bar: `implemented_on_main`,
+  `*duplicate`, and `*not-reproducible` ("we can no longer reproduce" is an
+  outcome the owner accepts on a bug). The one exception: a maintainer comment
+  in the thread, **later** than the label or the milestone, saying the behavior
+  is intended or the request is out of scope — cite it by URL in `evidence`.
+  Likewise, whenever a maintainer in the thread has proposed or accepted a
+  change, a decline close is off the table regardless of labels: the project has
+  already chosen a direction, and the review's job is to keep the item open and
+  name that direction in `bestSolution`.
 
 If one of these rules bars the close — and none of the exceptions it lists
 (factual closes for team-authored items, holding-bin milestones) applies — do
@@ -269,7 +293,18 @@ Translate the underlying judgment into VS Code's vocabulary:
   commit that touches the reported area but not the reported behavior is not a
   fix: if its diff would not have changed what the reporter saw, do not cite
   it. (Code re-enforces the first half: a bump-only cited commit downgrades the
-  close.) Do **not** attach a
+  close.) **Two more checks before you cite anything.** (1) *Adoption*, for a fix
+  that lives in another repository: a new upstream capability is not a fix until
+  this repository **uses it on the reporter's code path** — name the call site
+  here that constructs or calls the new behavior. An opt-in agent, option or API
+  that nothing here enables fixes nothing, and a dependency bump alone proves
+  availability, not adoption; without that call site the status is "likely
+  resolved upstream" — keep open with the lead. (2) *Trigger + diff lines*, for
+  every implemented-on-main close: `evidence` names the reporter's trigger (what
+  they did, what they saw) AND the specific lines of the cited diff that change
+  that outcome. A close whose evidence cannot name both is keep-open — a commit
+  that fixes a neighbouring case in the same area is the most common false close
+  in this lane (the second review refutes about 40% of them). Do **not** attach a
   `*`-label (a completed fix is a normal close, not a triage-reason close); set
   `proposedLabel: "none"`.
 - **Cannot reproduce** -> `*not-reproducible` with `reproductionStatus:
@@ -423,6 +458,13 @@ discussed does not clear this bar for a re-reviewed item: cite it as related and
 keep the item open. Re-reviewed rows are where a fresh duplicate close is most
 often a false close (the verify lane refutes ~70% of them against ~30% on first
 reviews) — when in doubt, it stays open.
+
+**Re-reviewed items — a refuted fix.** When the `PRIOR REVIEW` block names a fix
+commit that an independent second review refuted, that commit is off the table:
+do not cite it again in any form — not its merge commit, not its cherry-pick.
+An implemented-on-main close now needs a **different** fix commit, or new
+evidence, at the bar above; otherwise keep the issue open (code enforces the
+re-citation half).
 
 **Canonical-search pass — required before keeping an older item open.** Before
 you settle on `keep-open` for an item that has been open a long time, search for
