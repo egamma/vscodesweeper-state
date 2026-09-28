@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21109 issues reviewed · generated 2026-09-28 06:26 UTC
+[← Home](index.html) · 21212 issues reviewed · generated 2026-09-28 17:16 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21109
-- **Close proposals:** 2810 (13% of reviewed)
-- **Acted on (closed):** 917 (33% of proposals)
-- **2nd-reviewed before the close:** 227 confirmed · 74 disputed · 9 unverifiable · 607 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 426 (46% of acted-on) — 374 verbatim, 29 inside a longer comment, 23 edited
-- **Likely fixed instead:** 102 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (101 of the 490 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1893 open close proposals
-- **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
+- **Issues reviewed:** 21212
+- **Close proposals:** 2819 (13% of reviewed)
+- **Acted on (closed):** 950 (34% of proposals)
+- **2nd-reviewed before the close:** 250 confirmed · 78 disputed · 10 unverifiable · 612 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 452 (48% of acted-on) — 400 verbatim, 29 inside a longer comment, 23 edited
+- **Likely fixed instead:** 103 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (102 of the 497 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1869 open close proposals
+- **Reversals (reopened after a close):** 4 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3175 of the 21109 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1893 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3252 of the 21212 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1869 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -22,14 +22,14 @@ _Close proposals count the whole corpus (3175 of the 21109 reviewed issues have 
 | justschen | 133 | 70 (53%) |
 | alexdima | 115 | 107 (93%) |
 | lramos15 | 107 | 60 (56%) |
-| dmitrivMS | 95 | 0 (0%) |
-| vs-code-engineering | 76 | 0 (0%) |
-| roblourens | 43 | 17 (40%) |
+| dmitrivMS | 97 | 0 (0%) |
+| vs-code-engineering | 77 | 0 (0%) |
+| roblourens | 58 | 30 (52%) |
 | deepak1556 | 39 | 12 (31%) |
 | hediet | 35 | 35 (100%) |
+| benibenj | 31 | 23 (74%) |
 | chrmarti | 31 | 29 (94%) |
 | kycutler | 30 | 14 (47%) |
-| benibenj | 18 | 10 (56%) |
 | aeschli | 17 | 11 (65%) |
 | sbatten | 16 | 16 (100%) |
 | pwang347 | 13 | 3 (23%) |
@@ -37,14 +37,14 @@ _Close proposals count the whole corpus (3175 of the 21109 reviewed issues have 
 | TylerLeonhardt | 11 | 6 (55%) |
 | (unattributed) | 10 | 0 (0%) |
 | egamma | 10 | 10 (100%) |
+| lszomoru | 10 | 8 (80%) |
 | vritant24 | 10 | 3 (30%) |
-| lszomoru | 9 | 8 (89%) |
 | meganrogge | 8 | 0 (0%) |
 | mrleemurray | 8 | 5 (63%) |
 | joshspicer | 6 | 0 (0%) |
 | karthiknadig | 5 | 2 (40%) |
+| alexr00 | 4 | 0 (0%) |
 | bhavyaus | 4 | 4 (100%) |
-| alexr00 | 3 | 0 (0%) |
 | benvillalobos | 3 | 0 (0%) |
 | dbaeumer | 3 | 1 (33%) |
 | eleanorjboyd | 3 | 3 (100%) |
@@ -92,7 +92,7 @@ _Close proposals count the whole corpus (3175 of the 21109 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3186 reviewed briefs (1882 ready to implement · 1304 ready to plan); 12 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3224 reviewed briefs (1887 ready to implement · 1337 ready to plan); 18 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -103,20 +103,24 @@ Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s s
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 774 of 774 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 488 of 488 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1057 confirmed (37 with the fix unreleased) · 469 disputed · 46 unverifiable
+- **duplicate:** 761 of 761 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 475 of 475 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1055 confirmed (38 with the fix unreleased) · 472 disputed · 47 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 829 | 226 | 2 |
-| disputed | 395 | 74 | 0 |
-| unverifiable | 37 | 9 | 0 |
+| confirmed | 804 | 249 | 2 |
+| disputed | 393 | 78 | 1 |
+| unverifiable | 37 | 10 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#270170](https://github.com/microsoft/vscode/issues/270170) Default model in chat behaviour | 2026-09-27 | roblourens | Commit only makes an explicitly configured `chat.defaultModel` win on empty sessions and is inert when unset; the issue asks about ExP/CAPI-driven defaults overriding sticky last-used models. |
+| [#258342](https://github.com/microsoft/vscode/issues/258342) `Chat: Show Chats` command doesn't respect Chat in Editor | 2026-09-27 | roblourens | Commit only deletes the legacy agent-session picker and its quick access; it shows no change making chat-session selection honor an editor-hosted chat, so the reported sidebar-instead-of-editor behavior of the replacement flow remains unaddressed. |
+| [#233676](https://github.com/microsoft/vscode/issues/233676) Highlight all found text in DEBUG console | 2026-09-27 | roblourens | A asks that the debug console filter highlight matched substrings inside already-listed messages; B requests a separate find-matches capability for console output, blocked on other work, which need not deliver in-filter highlighting. |
+| [#334819](https://github.com/microsoft/vscode/issues/334819) Issue handling problem: bug still in main, fix PR ignored, no one assigned | 2026-09-27 | roblourens | A demands a concrete technical answer on one specific unreviewed bug and fix PR, while B asks generally for documented guidelines on handling stalled issues; closing A answers none of its specific questions. |
 | [#337602](https://github.com/microsoft/vscode/issues/337602) Copilot Chat (1.139.0 / 0.67.0): Prompt prefix cache busted on turns 2+ for third-party prefix-caching models (Grok, DeepSeek) | 2026-09-27 | vritant24 | Diff only gates explicit Responses-API cache breakpoints for BYOK gpt-5.6/gpt-6-family endpoints; the report's xAI Grok models and its cited per-turn prompt re-collection in chatServiceImpl are untouched, so the described trigger remains reachable. |
 | [#325395](https://github.com/microsoft/vscode/issues/325395) [gh-aw] Protected Files: fix: guard MultiDiffEditorWidget.setViewModel against disposed instantiation service (fixes #324551) | 2026-09-26 | dmitrivMS | The report is a blocked-push notice about a patch modifying protected files (package.json, .github workflows/skills); the commit touches only multiDiffEditorWidget.ts and contains none of those protected-file changes. |
 | [#337633](https://github.com/microsoft/vscode/issues/337633) Cannot connect to GHE | 2026-09-26 | TylerLeonhardt | A reports a plain GHE sign-in failure after signing out, with no error detail; B reports an already-signed-in GHE session being re-prompted in the agents window and wrongly used against github.com — different mechanisms. |
@@ -192,12 +196,13 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 469 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 472 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
 | Issue | Reopened | Reversed close used | Who had acted |
 | --- | --- | --- | --- |
+| [#336844](https://github.com/microsoft/vscode/issues/336844) Agent Host: permission mode can race managed-settings resolution | 2026-09-28 | none | dmitrivMS |
 | [#309245](https://github.com/microsoft/vscode/issues/309245) `vscode/memory` tool never provisioned for GPT-5.4 — deterministic absence in both main chat and agent contexts | 2026-09-25 | none | (unattributed) |
 | [#314532](https://github.com/microsoft/vscode/issues/314532) Co-Author: Commits | 2026-09-18 | none | (unattributed) |
 | [#255890](https://github.com/microsoft/vscode/issues/255890) When you activate a source code chunk it scrolls to the top. | 2026-07-28 (closed again since) | none | justschen |
@@ -206,31 +211,31 @@ _The 469 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1401 |
-| propose-close | 917 |
-| needs-info | 624 |
-| route-to-area | 233 |
+| keep-open | 1429 |
+| propose-close | 950 |
+| needs-info | 634 |
+| route-to-area | 239 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1614 |
-| not_planned | 1037 |
-| duplicate | 505 |
+| completed | 1652 |
+| not_planned | 1048 |
+| duplicate | 533 |
 | not_found | 19 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1068 | 294 | 28% | 124 | 32 |
-| implemented on main | 761 | 275 | 36% | 167 | — |
-| as-designed | 321 | 87 | 27% | 50 | 19 |
-| out-of-scope | 201 | 72 | 36% | 22 | 8 |
+| duplicate | 1069 | 308 | 29% | 137 | 32 |
+| implemented on main | 762 | 289 | 38% | 179 | — |
+| as-designed | 321 | 88 | 27% | 50 | 19 |
+| out-of-scope | 203 | 73 | 36% | 23 | 8 |
 | question | 180 | 56 | 31% | 18 | 17 |
-| not-reproducible | 116 | 36 | 31% | 12 | 10 |
+| not-reproducible | 120 | 37 | 31% | 12 | 10 |
 | off-topic | 45 | 23 | 51% | 7 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
-| invalid | 30 | 13 | 43% | 0 | 1 |
+| invalid | 31 | 15 | 48% | 0 | 2 |
 | extension-candidate | 26 | 10 | 38% | 3 | 1 |
 | other | 21 | 10 | 48% | 6 | — |
 
