@@ -3,7 +3,7 @@
 > 2026-08-18 by egamma**: of the 28 refuted/uncertain entries, 20 confirmed
 > (genuine false positives) and 8 overreach (the close was fine). Adjudicated
 > precision: (64 stands + 8 overreach) / 92 judged = **78%**. The refuter was the
-> codex engine, retired 2026-08-21 (`plans/copilot-only-plan.md`) — historical.
+> codex engine, retired 2026-08-21 (`plans/archive/copilot-only-plan.md`) — historical.
 
 # Adjudication checklist — close-proposal calibration (auto-close-plan.md Phase 0)
 

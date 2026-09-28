@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 39 swept users · 21109 issues reviewed · generated 2026-09-27 13:58 UTC
+[← Home](index.html) · 39 swept users · 21109 issues reviewed · generated 2026-09-28 06:26 UTC
 
 ## Verdict distribution
 
@@ -82,18 +82,18 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | deepak1556 | 565 | 14 | 5 | 3% |
 | roblourens | 680 | 90 | 354 | 65% |
 | sandy081 | 748 | 88 | 40 | 17% |
-| lramos15 | 557 | 83 | 14 | 17% |
+| lramos15 | 557 | 83 | 13 | 17% |
 | TylerLeonhardt | 678 | 86 | 17 | 15% |
 | connor4312 | 710 | 87 | 67 | 22% |
 | meganrogge | 719 | 106 | 30 | 19% |
 | anthonykim1 | 594 | 93 | 12 | 18% |
-| aeschli | 623 | 58 | 264 | 52% |
+| aeschli | 623 | 58 | 262 | 51% |
 | osortega | 522 | 82 | 11 | 18% |
 | benibenj | 516 | 56 | 187 | 47% |
 | joshspicer | 474 | 47 | 0 | 10% |
 | alexdima | 339 | 46 | 132 | 53% |
 | mjbvz | 492 | 82 | 16 | 20% |
-| chrmarti | 211 | 19 | 79 | 46% |
+| chrmarti | 211 | 19 | 78 | 46% |
 | ulugbekna | 330 | 35 | 26 | 18% |
 | DonJayamanne | 332 | 36 | 10 | 14% |
 | mrleemurray | 303 | 9 | 12 | 7% |

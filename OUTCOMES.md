@@ -1,6 +1,6 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21109 issues reviewed · generated 2026-09-27 13:58 UTC
+[← Home](index.html) · 21109 issues reviewed · generated 2026-09-28 06:26 UTC
 
 ## Funnel
 
@@ -92,7 +92,7 @@ _Close proposals count the whole corpus (3175 of the 21109 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3189 reviewed briefs (1882 ready to implement · 1307 ready to plan); 12 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3186 reviewed briefs (1882 ready to implement · 1304 ready to plan); 12 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
