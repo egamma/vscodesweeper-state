@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21212 issues reviewed · generated 2026-09-28 17:16 UTC
+[← Home](index.html) · 21239 issues reviewed · generated 2026-09-29 15:51 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21212
-- **Close proposals:** 2819 (13% of reviewed)
-- **Acted on (closed):** 950 (34% of proposals)
-- **2nd-reviewed before the close:** 250 confirmed · 78 disputed · 10 unverifiable · 612 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
-- **Closed with the sweeper's comment:** 452 (48% of acted-on) — 400 verbatim, 29 inside a longer comment, 23 edited
-- **Likely fixed instead:** 103 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (102 of the 497 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1869 open close proposals
+- **Issues reviewed:** 21239
+- **Close proposals:** 2820 (13% of reviewed)
+- **Acted on (closed):** 969 (34% of proposals)
+- **2nd-reviewed before the close:** 258 confirmed · 78 disputed · 10 unverifiable · 623 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Closed with the sweeper's comment:** 456 (47% of acted-on) — 404 verbatim, 29 inside a longer comment, 23 edited
+- **Likely fixed instead:** 107 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (106 of the 512 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1851 open close proposals
 - **Reversals (reopened after a close):** 4 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3252 of the 21212 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1869 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3332 of the 21239 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1851 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -21,13 +21,13 @@ _Close proposals count the whole corpus (3252 of the 21212 reviewed issues have 
 | --- | --- | --- |
 | justschen | 133 | 70 (53%) |
 | alexdima | 115 | 107 (93%) |
-| lramos15 | 107 | 60 (56%) |
-| dmitrivMS | 97 | 0 (0%) |
-| vs-code-engineering | 77 | 0 (0%) |
+| lramos15 | 111 | 60 (54%) |
+| dmitrivMS | 103 | 0 (0%) |
+| vs-code-engineering | 80 | 0 (0%) |
 | roblourens | 58 | 30 (52%) |
 | deepak1556 | 39 | 12 (31%) |
+| benibenj | 35 | 27 (77%) |
 | hediet | 35 | 35 (100%) |
-| benibenj | 31 | 23 (74%) |
 | chrmarti | 31 | 29 (94%) |
 | kycutler | 30 | 14 (47%) |
 | aeschli | 17 | 11 (65%) |
@@ -48,9 +48,9 @@ _Close proposals count the whole corpus (3252 of the 21212 reviewed issues have 
 | benvillalobos | 3 | 0 (0%) |
 | dbaeumer | 3 | 1 (33%) |
 | eleanorjboyd | 3 | 3 (100%) |
+| Giuspepe | 3 | 0 (0%) |
 | connor4312 | 2 | 0 (0%) |
 | dileepyavan | 2 | 0 (0%) |
-| Giuspepe | 2 | 0 (0%) |
 | AbhaySanthani-tekframeworks | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
 | AndrewStopchenko-SO | 1 | 0 (0%) |
@@ -74,6 +74,7 @@ _Close proposals count the whole corpus (3252 of the 21212 reviewed issues have 
 | kerberjg | 1 | 0 (0%) |
 | KukoCL | 1 | 0 (0%) |
 | M2zG0a | 1 | 0 (0%) |
+| magnumquest39-cloud | 1 | 0 (0%) |
 | Mapalmeira | 1 | 0 (0%) |
 | monolithed | 1 | 0 (0%) |
 | na2co3-ftw | 1 | 0 (0%) |
@@ -92,7 +93,7 @@ _Close proposals count the whole corpus (3252 of the 21212 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3224 reviewed briefs (1887 ready to implement · 1337 ready to plan); 18 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3234 reviewed briefs (1890 ready to implement · 1344 ready to plan); 19 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -103,13 +104,13 @@ Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s s
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 761 of 761 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 475 of 475 open proposals verified · 97 closed unverified
+- **duplicate:** 755 of 755 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 473 of 473 open proposals verified · 97 closed unverified
 - **Verdict mix:** 1055 confirmed (38 with the fix unreleased) · 472 disputed · 47 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 804 | 249 | 2 |
+| confirmed | 796 | 257 | 2 |
 | disputed | 393 | 78 | 1 |
 | unverifiable | 37 | 10 | 0 |
 
@@ -211,31 +212,31 @@ _The 472 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1429 |
-| propose-close | 950 |
-| needs-info | 634 |
-| route-to-area | 239 |
+| keep-open | 1472 |
+| propose-close | 969 |
+| needs-info | 651 |
+| route-to-area | 240 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1652 |
-| not_planned | 1048 |
-| duplicate | 533 |
-| not_found | 19 |
+| completed | 1700 |
+| not_planned | 1076 |
+| duplicate | 536 |
+| not_found | 20 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1069 | 308 | 29% | 137 | 32 |
-| implemented on main | 762 | 289 | 38% | 179 | — |
-| as-designed | 321 | 88 | 27% | 50 | 19 |
-| out-of-scope | 203 | 73 | 36% | 23 | 8 |
-| question | 180 | 56 | 31% | 18 | 17 |
+| duplicate | 1069 | 314 | 29% | 138 | 35 |
+| implemented on main | 762 | 291 | 38% | 181 | — |
+| as-designed | 321 | 89 | 28% | 51 | 19 |
+| out-of-scope | 203 | 77 | 38% | 23 | 9 |
+| question | 181 | 56 | 31% | 18 | 17 |
 | not-reproducible | 120 | 37 | 31% | 12 | 10 |
 | off-topic | 45 | 23 | 51% | 7 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
-| invalid | 31 | 15 | 48% | 0 | 2 |
+| invalid | 31 | 21 | 68% | 0 | 2 |
 | extension-candidate | 26 | 10 | 38% | 3 | 1 |
 | other | 21 | 10 | 48% | 6 | — |
 
