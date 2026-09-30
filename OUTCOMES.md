@@ -1,19 +1,19 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21239 issues reviewed · generated 2026-09-29 15:51 UTC
+[← Home](index.html) · 21359 issues reviewed · generated 2026-09-30 15:37 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21239
-- **Close proposals:** 2820 (13% of reviewed)
-- **Acted on (closed):** 969 (34% of proposals)
-- **2nd-reviewed before the close:** 258 confirmed · 78 disputed · 10 unverifiable · 623 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Issues reviewed:** 21359
+- **Close proposals:** 2824 (13% of reviewed)
+- **Acted on (closed):** 974 (34% of proposals)
+- **2nd-reviewed before the close:** 259 confirmed · 78 disputed · 10 unverifiable · 627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 456 (47% of acted-on) — 404 verbatim, 29 inside a longer comment, 23 edited
-- **Likely fixed instead:** 107 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (106 of the 512 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Still awaiting action:** 1851 open close proposals
-- **Reversals (reopened after a close):** 4 — 0 after a close that used the sweeper's comment
+- **Likely fixed instead:** 110 (11% of acted-on) — closed as `completed` without the sweeper's comment on a non-implemented-on-main proposal; not claimed as adoption (109 of the 517 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Still awaiting action:** 1850 open close proposals
+- **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3332 of the 21239 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1851 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3365 of the 21359 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1850 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -23,14 +23,14 @@ _Close proposals count the whole corpus (3332 of the 21239 reviewed issues have 
 | alexdima | 115 | 107 (93%) |
 | lramos15 | 111 | 60 (54%) |
 | dmitrivMS | 103 | 0 (0%) |
-| vs-code-engineering | 80 | 0 (0%) |
+| vs-code-engineering | 82 | 0 (0%) |
 | roblourens | 58 | 30 (52%) |
 | deepak1556 | 39 | 12 (31%) |
 | benibenj | 35 | 27 (77%) |
 | hediet | 35 | 35 (100%) |
 | chrmarti | 31 | 29 (94%) |
 | kycutler | 30 | 14 (47%) |
-| aeschli | 17 | 11 (65%) |
+| aeschli | 18 | 11 (61%) |
 | sbatten | 16 | 16 (100%) |
 | pwang347 | 13 | 3 (23%) |
 | sandy081 | 12 | 0 (0%) |
@@ -46,10 +46,10 @@ _Close proposals count the whole corpus (3332 of the 21239 reviewed issues have 
 | alexr00 | 4 | 0 (0%) |
 | bhavyaus | 4 | 4 (100%) |
 | benvillalobos | 3 | 0 (0%) |
+| connor4312 | 3 | 0 (0%) |
 | dbaeumer | 3 | 1 (33%) |
 | eleanorjboyd | 3 | 3 (100%) |
 | Giuspepe | 3 | 0 (0%) |
-| connor4312 | 2 | 0 (0%) |
 | dileepyavan | 2 | 0 (0%) |
 | AbhaySanthani-tekframeworks | 1 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) |
@@ -60,6 +60,7 @@ _Close proposals count the whole corpus (3332 of the 21239 reviewed issues have 
 | bryanchen-d | 1 | 0 (0%) |
 | Caffeine19 | 1 | 0 (0%) |
 | coder-free | 1 | 0 (0%) |
+| dalisoft | 1 | 0 (0%) |
 | danwilhelm | 1 | 0 (0%) |
 | DavidLangworthy | 1 | 0 (0%) |
 | DonJayamanne | 1 | 0 (0%) |
@@ -93,26 +94,26 @@ _Close proposals count the whole corpus (3332 of the 21239 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3234 reviewed briefs (1890 ready to implement · 1344 ready to plan); 19 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3297 reviewed briefs (1899 ready to implement · 1398 ready to plan); 21 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
-| alexdima | 178 | 2 | 2 | — | — | — |
-| benibenj | 243 | 1 | — | 1 | — | 1 |
+| alexdima | 179 | 2 | 2 | — | — | — |
+| benibenj | 244 | 1 | — | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 755 of 755 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 473 of 473 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1055 confirmed (38 with the fix unreleased) · 472 disputed · 47 unverifiable
+- **duplicate:** 754 of 754 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 477 of 477 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1058 confirmed (39 with the fix unreleased) · 472 disputed · 48 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 796 | 257 | 2 |
-| disputed | 393 | 78 | 1 |
-| unverifiable | 37 | 10 | 0 |
+| confirmed | 798 | 258 | 2 |
+| disputed | 394 | 78 | 0 |
+| unverifiable | 38 | 10 | 0 |
 
 ### Closed despite a dispute
 
@@ -203,7 +204,6 @@ _The 472 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Issue | Reopened | Reversed close used | Who had acted |
 | --- | --- | --- | --- |
-| [#336844](https://github.com/microsoft/vscode/issues/336844) Agent Host: permission mode can race managed-settings resolution | 2026-09-28 | none | dmitrivMS |
 | [#309245](https://github.com/microsoft/vscode/issues/309245) `vscode/memory` tool never provisioned for GPT-5.4 — deterministic absence in both main chat and agent contexts | 2026-09-25 | none | (unattributed) |
 | [#314532](https://github.com/microsoft/vscode/issues/314532) Co-Author: Commits | 2026-09-18 | none | (unattributed) |
 | [#255890](https://github.com/microsoft/vscode/issues/255890) When you activate a source code chunk it scrolls to the top. | 2026-07-28 (closed again since) | none | justschen |
@@ -212,32 +212,32 @@ _The 472 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1472 |
-| propose-close | 969 |
-| needs-info | 651 |
-| route-to-area | 240 |
+| keep-open | 1492 |
+| propose-close | 974 |
+| needs-info | 656 |
+| route-to-area | 243 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1700 |
-| not_planned | 1076 |
-| duplicate | 536 |
-| not_found | 20 |
+| completed | 1724 |
+| not_planned | 1084 |
+| duplicate | 538 |
+| not_found | 19 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1069 | 314 | 29% | 138 | 35 |
-| implemented on main | 762 | 291 | 38% | 181 | — |
-| as-designed | 321 | 89 | 28% | 51 | 19 |
-| out-of-scope | 203 | 77 | 38% | 23 | 9 |
+| duplicate | 1069 | 315 | 29% | 138 | 36 |
+| implemented on main | 766 | 291 | 38% | 181 | — |
+| as-designed | 322 | 91 | 28% | 51 | 20 |
+| out-of-scope | 203 | 78 | 38% | 23 | 10 |
 | question | 181 | 56 | 31% | 18 | 17 |
-| not-reproducible | 120 | 37 | 31% | 12 | 10 |
+| not-reproducible | 119 | 37 | 31% | 12 | 10 |
 | off-topic | 45 | 23 | 51% | 7 | 5 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 9 |
 | invalid | 31 | 21 | 68% | 0 | 2 |
-| extension-candidate | 26 | 10 | 38% | 3 | 1 |
+| extension-candidate | 26 | 11 | 42% | 3 | 1 |
 | other | 21 | 10 | 48% | 6 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
