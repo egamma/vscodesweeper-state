@@ -1,6 +1,6 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21420 issues reviewed · generated 2026-10-01 15:49 UTC
+[← Home](index.html) · 21420 issues reviewed · generated 2026-10-01 19:10 UTC
 
 ## Funnel
 
@@ -111,13 +111,13 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 
 - **duplicate:** 839 of 841 open proposals verified · 108 closed unverified
 - **implemented-on-main:** 574 of 574 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1152 confirmed (38 with the fix unreleased) · 552 disputed · 57 unverifiable
+- **Verdict mix:** 1164 confirmed (38 with the fix unreleased) · 527 disputed · 70 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 891 | 259 | 2 |
-| disputed | 474 | 78 | 0 |
-| unverifiable | 47 | 10 | 0 |
+| confirmed | 903 | 259 | 2 |
+| disputed | 449 | 78 | 0 |
+| unverifiable | 60 | 10 | 0 |
 
 ### Closed despite a dispute
 
@@ -202,7 +202,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 552 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 527 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 

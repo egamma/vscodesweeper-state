@@ -77,7 +77,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 21,420 issues reviewed · generated 2026-10-01 15:49 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 21,420 issues reviewed · generated 2026-10-01 19:10 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">21,420</div><div class="tsub">18,017 still open · 3,403 closed since review</div></div>
@@ -95,8 +95,7 @@
   627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here. Details in <a href="#verification">Independent verification</a>.</p>
 
   <h2>Proposed-close issues closed per week</h2>
-  <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.
-  A close without the sweeper's comment is split by whether it agreed with the proposal.</p>
+  <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment — 456</span>
     <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw own"></i>own wording, agrees — 281</span>
@@ -104,7 +103,7 @@
     <span title="reconcile has not stamped how these were closed yet"><i class="sw uncl"></i>not yet classified — 3</span>
   </div>
   <input type="checkbox" id="nofresh">
-  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal">Hide the 165 fresh-inbox closures (7 with the sweeper's comment)</label>
+  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal. Without them, 55% of the acted-on closes used the sweeper's comment (47% with them).">Hide the 165 fresh-inbox closures (7 with the sweeper's comment)</label>
   <div class="chart withfresh">
 <div class="crow"><span class="wk">w/o 2026-06-22</span><div class="bar"><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">1</span></div>
 <div class="crow"><span class="wk">w/o 2026-06-29</span><div class="bar"><i class="seg wc" style="width:6.04%" title="closed with sweeper comment: 11"></i><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">12</span></div>
@@ -141,8 +140,6 @@
   </div>
 
   <h3>Closes without the sweeper's comment — 519</h3>
-  <p class="desc">How each ended, against what the proposal said. "Differs" is where the verdict was
-  contradicted; the other rows are not misses.</p>
   <table>
     <tr><th>Class</th><th>What happened</th><th class="num">Closes</th></tr>
 <tr><td>agrees</td><td>closed the way the proposal said</td><td class="num">281</td></tr>
@@ -164,9 +161,8 @@
   <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
   reason first, legacy close labels folded in; the label-free close is implemented on main).
   Right label: acted-on / proposals. Closures without the sweeper's comment are split by
-  whether they agreed with the proposal — agreement is correlation, not proven adoption; a
-  reason with a large "differs" share is where the verdicts miss. Blue is the part of
-  "differs" that was fixed instead, which the sweeper doesn't claim at all. Newer proposals have had
+  whether they agreed with the proposal — correlation, not proven adoption; blue is the
+  fixed-instead part of "differs", which the sweeper doesn't claim at all. Newer proposals have had
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment</span>
@@ -178,7 +174,7 @@
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg wc" style="width:11.93%" title="closed with sweeper comment: 138"></i><i class="seg own" style="width:9.42%" title="closed otherwise, agrees with the verdict: 109"></i><i class="seg dif" style="width:3.03%" title="closed otherwise, differs from the verdict: 35"></i><i class="seg fixedin" style="width:0.86%" title="likely fixed instead (fix evidence, no sweeper comment): 10"></i><i class="seg notm" style="width:2.07%" title="not a maintainer action (reporter, bot timeout, transfer): 24"></i><i class="seg pend" style="width:72.69%" title="still open: 841"></i></div><span class="rlabel">316/1157 (27%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg wc" style="width:11.93%" title="closed with sweeper comment: 138"></i><i class="seg own" style="width:9.42%" title="closed otherwise, agrees with the verdict: 109"></i><i class="seg dif" style="width:3.03%" title="closed otherwise, differs from the verdict: 35"></i><i class="seg fixedin" style="width:0.86%" title="likely fixed instead (fix evidence, no sweeper comment): 10"></i><i class="seg notm" style="width:2.07%" title="not a maintainer action (reporter, bot timeout, transfer): 24"></i><i class="seg pend" style="width:72.69%" title="still open: 841"></i></div><span class="rlabel" title="Closed as duplicate (247): 202 against the cited canonical · 16 one hop from it · 12 against a different canonical · 17 with no target recorded. Without the sweeper's comment: 68 · 16 · 12 · 13">316/1157 (27%)</span></div>
 <div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg wc" style="width:15.64%" title="closed with sweeper comment: 181"></i><i class="seg own" style="width:5.62%" title="closed otherwise, agrees with the verdict: 65"></i><i class="seg dif" style="width:2.51%" title="closed otherwise, differs from the verdict: 29"></i><i class="seg notm" style="width:1.30%" title="not a maintainer action (reporter, bot timeout, transfer): 15"></i><i class="seg uncl" style="width:0.09%" title="not yet classified: 1"></i><i class="seg pend" style="width:49.44%" title="still open: 572"></i></div><span class="rlabel">291/863 (34%)</span></div>
 <div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg wc" style="width:4.41%" title="closed with sweeper comment: 51"></i><i class="seg own" style="width:1.38%" title="closed otherwise, agrees with the verdict: 16"></i><i class="seg dif" style="width:0.52%" title="closed otherwise, differs from the verdict: 6"></i><i class="seg fixedin" style="width:0.52%" title="likely fixed instead (fix evidence, no sweeper comment): 6"></i><i class="seg notm" style="width:1.04%" title="not a maintainer action (reporter, bot timeout, transfer): 12"></i><i class="seg pend" style="width:20.92%" title="still open: 242"></i></div><span class="rlabel">91/333 (27%)</span></div>
 <div class="crow"><span class="wk">out-of-scope</span><div class="bar"><i class="seg wc" style="width:1.99%" title="closed with sweeper comment: 23"></i><i class="seg own" style="width:2.25%" title="closed otherwise, agrees with the verdict: 26"></i><i class="seg dif" style="width:1.38%" title="closed otherwise, differs from the verdict: 16"></i><i class="seg fixedin" style="width:0.09%" title="likely fixed instead (fix evidence, no sweeper comment): 1"></i><i class="seg notm" style="width:1.04%" title="not a maintainer action (reporter, bot timeout, transfer): 12"></i><i class="seg pend" style="width:11.41%" title="still open: 132"></i></div><span class="rlabel">78/210 (37%)</span></div>
@@ -190,12 +186,6 @@
 <div class="crow"><span class="wk">extension-candidate</span><div class="bar"><i class="seg wc" style="width:0.26%" title="closed with sweeper comment: 3"></i><i class="seg own" style="width:0.17%" title="closed otherwise, agrees with the verdict: 2"></i><i class="seg notm" style="width:0.43%" title="not a maintainer action (reporter, bot timeout, transfer): 5"></i><i class="seg uncl" style="width:0.09%" title="not yet classified: 1"></i><i class="seg pend" style="width:1.12%" title="still open: 13"></i></div><span class="rlabel">11/24 (46%)</span></div>
 <div class="crow"><span class="wk">other</span><div class="bar"><i class="seg wc" style="width:0.52%" title="closed with sweeper comment: 6"></i><i class="seg own" style="width:0.17%" title="closed otherwise, agrees with the verdict: 2"></i><i class="seg dif" style="width:0.17%" title="closed otherwise, differs from the verdict: 2"></i><i class="seg pend" style="width:0.95%" title="still open: 11"></i></div><span class="rlabel">10/21 (48%)</span></div>
   </div>
-  <p class="desc">Duplicate proposals closed as duplicate (247): <strong>202 against the
-  cited canonical</strong> · 16 one hop from it (one of the two was itself closed as a
-  duplicate of the other) · <strong>12 against a different canonical</strong> ·
-  17 with no target recorded. Among the closes without the sweeper's comment:
-  68 cited canonical · 16 one hop ·
-  12 different · 13 not recorded.</p>
 
   <h2>Comment adoption on the 975 acted-on proposals</h2>
   <div class="strip">
@@ -216,8 +206,6 @@
     <span><i class="sw notm"></i>not a maintainer action 95</span>
     <span><i class="sw uncl"></i>not yet classified 286</span>
   </div>
-  <p class="desc">517 closes did not use the sweeper's comment. Only the 78 with the
-  maintainer's own comment passed it over for different wording; a silent close posted nothing at all.</p>
   <p class="desc">22 of the 517 own-wording closes were likely
   fixed instead (a closing pull request or commit, or a <code>verified</code> /
   <code>insiders-released</code> label) — the close had a different cause entirely.</p>
@@ -251,17 +239,17 @@
   only.</p>
   <p class="desc"><strong>duplicate</strong>: 839 of 841 open proposals verified · <a href="dashboard.html#q=close%3Aduplicate%20has%3Acanonical%20-has%3Averify" title="Open the dashboard filtered to this lane's not-yet-verified open proposals">2 unverified</a> · 108 closed unverified — <strong>implemented-on-main</strong>: 574 of 574 open proposals verified · 97 closed unverified</p>
   <div class="strip">
-    <i class="seg wc" style="width:63.26%" title="confirmed: 1114 (63%)"></i>
+    <i class="seg wc" style="width:63.94%" title="confirmed: 1126 (64%)"></i>
     <i class="seg wcm" style="width:2.16%" title="confirmed, fix unreleased: 38 (2%)"></i>
-    <i class="seg disp" style="width:31.35%" title="disputed: 552 (31%)"></i>
-    <i class="seg own" style="width:3.24%" title="unverifiable: 57 (3%)"></i>
+    <i class="seg disp" style="width:29.93%" title="disputed: 527 (30%)"></i>
+    <i class="seg own" style="width:3.98%" title="unverifiable: 70 (4%)"></i>
     
   </div>
   <div class="legend">
-    <span><i class="sw wc"></i>confirmed 1114</span>
+    <span><i class="sw wc"></i>confirmed 1126</span>
     <span><i class="sw wcm"></i>confirmed, fix unreleased 38</span>
-    <span><i class="sw disp"></i>disputed 552</span>
-    <span><i class="sw own"></i>unverifiable 57</span>
+    <span><i class="sw disp"></i>disputed 527</span>
+    <span><i class="sw own"></i>unverifiable 70</span>
     
   </div>
 
@@ -271,15 +259,15 @@
   well above its peers is a calibration signal for the review prompt.</p>
   <div class="chart">
 <div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg wc" style="width:66.12%" title="confirmed: 564"></i><i class="seg disp" style="width:30.60%" title="disputed: 261"></i><i class="seg own" style="width:3.28%" title="unverifiable: 28"></i></div><span class="rlabel">261/853</span></div>
-<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:37.28%" title="confirmed: 318"></i><i class="seg wcm" style="width:3.87%" title="confirmed, fix unreleased: 33"></i><i class="seg disp" style="width:17.00%" title="disputed: 145"></i><i class="seg own" style="width:2.58%" title="unverifiable: 22"></i></div><span class="rlabel">145/518</span></div>
-<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:13.01%" title="confirmed: 111"></i><i class="seg wcm" style="width:0.59%" title="confirmed, fix unreleased: 5"></i><i class="seg disp" style="width:8.21%" title="disputed: 70"></i><i class="seg own" style="width:0.35%" title="unverifiable: 3"></i></div><span class="rlabel">70/189</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:38.22%" title="confirmed: 326"></i><i class="seg wcm" style="width:3.87%" title="confirmed, fix unreleased: 33"></i><i class="seg disp" style="width:15.36%" title="disputed: 131"></i><i class="seg own" style="width:3.52%" title="unverifiable: 30"></i></div><span class="rlabel">131/520</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:13.48%" title="confirmed: 115"></i><i class="seg wcm" style="width:0.59%" title="confirmed, fix unreleased: 5"></i><i class="seg disp" style="width:6.92%" title="disputed: 59"></i><i class="seg own" style="width:0.94%" title="unverifiable: 8"></i></div><span class="rlabel">59/187</span></div>
 <div class="crow"><span class="wk" title="duplicate">meta</span><div class="bar"><i class="seg wc" style="width:8.68%" title="confirmed: 74"></i><i class="seg disp" style="width:1.76%" title="disputed: 15"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">15/90</span></div>
 <div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg wc" style="width:3.05%" title="confirmed: 26"></i><i class="seg disp" style="width:2.58%" title="disputed: 22"></i></div><span class="rlabel">22/48</span></div>
 <div class="crow"><span class="wk" title="duplicate">(gate-decided)</span><div class="bar"><i class="seg disp" style="width:3.40%" title="disputed: 29"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">29/30</span></div>
 <div class="crow"><span class="wk" title="duplicate">telemetry-aggregate</span><div class="bar"><i class="seg wc" style="width:2.46%" title="confirmed: 21"></i><i class="seg disp" style="width:0.47%" title="disputed: 4"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">4/26</span></div>
 <div class="crow"><span class="wk" title="implemented-on-main">(gate-decided)</span><div class="bar"><i class="seg disp" style="width:0.70%" title="disputed: 6"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">6/7</span></div>
   </div>
-  <p class="desc">The 552 disputed proposals are
+  <p class="desc">The 527 disputed proposals are
   <a href="dashboard.html#q=verify%3Arefuted">listed on the dashboard</a> (the link
   lands pre-filtered); each ✗ badge carries the verifier's evidence. A dispute is worth a
   manual look before acting: either the review or the verifier is wrong, and both readings
@@ -291,9 +279,9 @@
   positive the verify lane flagged in advance.</p>
   <table>
     <tr><th>2nd-review verdict</th><th class="num">Still open</th><th class="num">Closed since</th><th class="num">Reopened after a close</th></tr>
-<tr><td>confirmed</td><td class="num">891</td><td class="num">259</td><td class="num">2</td></tr>
-<tr><td>disputed</td><td class="num">474</td><td class="num">78</td><td class="num">0</td></tr>
-<tr><td>unverifiable</td><td class="num">47</td><td class="num">10</td><td class="num">0</td></tr>
+<tr><td>confirmed</td><td class="num">903</td><td class="num">259</td><td class="num">2</td></tr>
+<tr><td>disputed</td><td class="num">449</td><td class="num">78</td><td class="num">0</td></tr>
+<tr><td>unverifiable</td><td class="num">60</td><td class="num">10</td><td class="num">0</td></tr>
   </table>
 
   <h3>Closed despite a dispute</h3>

@@ -77,7 +77,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 144 issues reviewed · generated 2026-10-01 15:49 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 144 issues reviewed · generated 2026-10-01 19:10 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">144</div><div class="tsub">89 still open · 55 closed since review</div></div>
@@ -95,8 +95,7 @@
   7 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here. Details in <a href="#verification">Independent verification</a>.</p>
 
   <h2>Proposed-close issues closed per week</h2>
-  <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.
-  A close without the sweeper's comment is split by whether it agreed with the proposal.</p>
+  <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment — 3</span>
     <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw own"></i>own wording, agrees — 5</span>
@@ -104,7 +103,7 @@
     
   </div>
   <input type="checkbox" id="nofresh">
-  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal">Hide the 0 fresh-inbox closures (0 with the sweeper's comment)</label>
+  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal. Without them, 30% of the acted-on closes used the sweeper's comment (30% with them).">Hide the 0 fresh-inbox closures (0 with the sweeper's comment)</label>
   <div class="chart withfresh">
 <div class="crow"><span class="wk">w/o 2026-08-17</span><div class="bar"><i class="seg dif" style="width:20.00%" title="own wording, differs: 1 · not a maintainer action: 0"></i></div><span class="rlabel">1</span></div>
 <div class="crow"><span class="wk">w/o 2026-08-24</span><div class="bar"></div><span class="rlabel">0</span></div>
@@ -123,8 +122,6 @@
   </div>
 
   <h3>Closes without the sweeper's comment — 7</h3>
-  <p class="desc">How each ended, against what the proposal said. "Differs" is where the verdict was
-  contradicted; the other rows are not misses.</p>
   <table>
     <tr><th>Class</th><th>What happened</th><th class="num">Closes</th></tr>
 <tr><td>agrees</td><td>closed the way the proposal said</td><td class="num">5</td></tr>
@@ -137,9 +134,8 @@
   <a href="effectiveness.html">verdicts page</a>'s verdict distribution (structured
   reason first, legacy close labels folded in; the label-free close is implemented on main).
   Right label: acted-on / proposals. Closures without the sweeper's comment are split by
-  whether they agreed with the proposal — agreement is correlation, not proven adoption; a
-  reason with a large "differs" share is where the verdicts miss. Blue is the part of
-  "differs" that was fixed instead, which the sweeper doesn't claim at all. Newer proposals have had
+  whether they agreed with the proposal — correlation, not proven adoption; blue is the
+  fixed-instead part of "differs", which the sweeper doesn't claim at all. Newer proposals have had
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment</span>
@@ -157,7 +153,6 @@
 <div class="crow"><span class="wk">question</span><div class="bar"><i class="seg pend" style="width:40.00%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
 <div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg wc" style="width:20.00%" title="closed with sweeper comment: 1"></i></div><span class="rlabel">1/1 (100%)</span></div>
   </div>
-
 
   <h2>Comment adoption on the 10 acted-on proposals</h2>
   <div class="strip">
@@ -178,8 +173,6 @@
     <span><i class="sw notm"></i>not a maintainer action 1</span>
     <span><i class="sw uncl"></i>not yet classified 6</span>
   </div>
-  <p class="desc">7 closes did not use the sweeper's comment. Only the 0 with the
-  maintainer's own comment passed it over for different wording; a silent close posted nothing at all.</p>
   <p class="desc">1 of the 7 own-wording closes were likely
   fixed instead (a closing pull request or commit, or a <code>verified</code> /
   <code>insiders-released</code> label) — the close had a different cause entirely.</p>
