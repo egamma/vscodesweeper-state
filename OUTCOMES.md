@@ -1,22 +1,23 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21365 issues reviewed · generated 2026-10-01 15:14 UTC
+[← Home](index.html) · 21420 issues reviewed · generated 2026-10-01 15:49 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21365
-- **Close proposals:** 3016 (14% of reviewed)
-- **Acted on (closed):** 974 (32% of proposals)
-- **2nd-reviewed before the close:** 259 confirmed · 78 disputed · 10 unverifiable · 627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Issues reviewed:** 21420
+- **Close proposals:** 3018 (14% of reviewed)
+- **Acted on (closed):** 975 (32% of proposals)
+- **2nd-reviewed before the close:** 260 confirmed · 78 disputed · 10 unverifiable · 627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 456 (47% of acted-on) — 404 verbatim, 29 inside a longer comment, 23 edited
-- **Closed without the sweeper's comment:** 518 — 0 agree with the proposal, 0 differ, 10 not a maintainer action (reporter, bot timeout, transfer), 508 not yet classified
-- **Own wording:** 517 — 0 with the maintainer's own comment, 0 closed silently, 10 not a maintainer action, 507 not yet classified
-- **Fresh-inbox closures:** 149 of the acted-on closes (6 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
-- **Duplicate closes, canonical:** 134 against the cited canonical, 0 one hop from it, 0 against a different one, 4 with no target recorded
-- **Still awaiting action:** 2042 open close proposals
+- **Likely fixed instead:** 22 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (22 of the 517 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Closed without the sweeper's comment:** 519 — 281 agree with the proposal, 139 differ, 96 not a maintainer action (reporter, bot timeout, transfer), 3 not yet classified
+- **Own wording:** 517 — 78 with the maintainer's own comment, 59 closed silently, 95 not a maintainer action, 285 not yet classified
+- **Fresh-inbox closures:** 165 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
+- **Duplicate closes, canonical:** 202 against the cited canonical, 16 one hop from it, 12 against a different one, 17 with no target recorded
+- **Still awaiting action:** 2043 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3365 of the 21365 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2042 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3403 of the 21420 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2043 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -26,7 +27,7 @@ _Close proposals count the whole corpus (3365 of the 21365 reviewed issues have 
 | alexdima | 115 | 107 (93%) |
 | lramos15 | 111 | 60 (54%) |
 | dmitrivMS | 103 | 0 (0%) |
-| vs-code-engineering | 82 | 0 (0%) |
+| vs-code-engineering | 83 | 0 (0%) |
 | roblourens | 58 | 30 (52%) |
 | deepak1556 | 39 | 12 (31%) |
 | benibenj | 35 | 27 (77%) |
@@ -97,25 +98,25 @@ _Close proposals count the whole corpus (3365 of the 21365 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3858 reviewed briefs (1975 ready to implement · 1883 ready to plan); 19 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3881 reviewed briefs (1980 ready to implement · 1901 ready to plan); 25 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
 | alexdima | 179 | 2 | 2 | — | — | — |
-| benibenj | 243 | 1 | — | 1 | — | 1 |
+| benibenj | 246 | 1 | — | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 841 of 841 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 575 of 575 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1153 confirmed (38 with the fix unreleased) · 553 disputed · 57 unverifiable
+- **duplicate:** 839 of 841 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 574 of 574 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1152 confirmed (38 with the fix unreleased) · 552 disputed · 57 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 893 | 258 | 2 |
-| disputed | 475 | 78 | 0 |
+| confirmed | 891 | 259 | 2 |
+| disputed | 474 | 78 | 0 |
 | unverifiable | 47 | 10 | 0 |
 
 ### Closed despite a dispute
@@ -201,7 +202,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 553 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 552 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -215,32 +216,34 @@ _The 553 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1492 |
-| propose-close | 974 |
-| needs-info | 656 |
+| keep-open | 1521 |
+| propose-close | 975 |
+| needs-info | 664 |
 | route-to-area | 243 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1724 |
-| not_planned | 1084 |
-| duplicate | 538 |
+| completed | 1753 |
+| not_planned | 1094 |
+| duplicate | 537 |
 | not_found | 19 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1156 | 315 | 27% | 138 | — |
-| implemented on main | 864 | 291 | 34% | 181 | — |
-| as-designed | 332 | 91 | 27% | 51 | — |
-| out-of-scope | 209 | 78 | 37% | 23 | — |
+| duplicate | 1157 | 316 | 27% | 138 | 10 |
+| implemented on main | 863 | 291 | 34% | 181 | — |
+| as-designed | 333 | 91 | 27% | 51 | 6 |
+| out-of-scope | 210 | 78 | 37% | 23 | 1 |
 | question | 182 | 56 | 31% | 18 | — |
-| not-reproducible | 115 | 37 | 32% | 12 | — |
-| caused-by-extension | 41 | 41 | 100% | 17 | — |
+| not-reproducible | 115 | 37 | 32% | 12 | 2 |
+| caused-by-extension | 41 | 41 | 100% | 17 | 3 |
 | off-topic | 39 | 23 | 59% | 7 | — |
 | invalid | 33 | 21 | 64% | 0 | — |
 | extension-candidate | 24 | 11 | 46% | 3 | — |
 | other | 21 | 10 | 48% | 6 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
+
+_1 closed proposal(s) not yet classified — run `npm run reconcile -- --push`._

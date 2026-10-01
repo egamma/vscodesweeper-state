@@ -77,16 +77,20 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 21,365 issues reviewed · generated 2026-10-01 15:14 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 21,420 issues reviewed · generated 2026-10-01 15:49 UTC</div>
 
   <div class="tiles">
-    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">21,365</div><div class="tsub">18,000 still open · 3,365 closed since review</div></div>
-    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">3,016</div><div class="tsub">14% of reviewed · 2,042 still open</div></div>
-    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">974</div><div class="tsub">32% of proposals</div></div>
+    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">21,420</div><div class="tsub">18,017 still open · 3,403 closed since review</div></div>
+    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">3,018</div><div class="tsub">14% of reviewed · 2,043 still open</div></div>
+    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">975</div><div class="tsub">32% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">456</div><div class="tsub">47% of acted-on</div></div>
   </div>
-
-  <p class="desc">2nd-reviewed before the close: <strong>259 confirmed</strong> ·
+  <p class="desc">Of the 975 acted-on closes, <strong>22 were likely fixed
+  instead</strong> — closed without the sweeper's comment and with fix evidence (a closing pull
+  request or commit, or a <code>verified</code> / <code>insiders-released</code> label) on a proposal
+  that claimed no fix. The team fixed the issue; these are not claimed as adoption (blue in the
+  acceptance chart below).</p>
+  <p class="desc">2nd-reviewed before the close: <strong>260 confirmed</strong> ·
   <strong>78 disputed</strong> · 10 unverifiable ·
   627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here. Details in <a href="#verification">Independent verification</a>.</p>
 
@@ -95,54 +99,64 @@
   A close without the sweeper's comment is split by whether it agreed with the proposal.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment — 456</span>
-    <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw own"></i>own wording, agrees — 0</span>
-    <span title="Closed without the sweeper's comment and differently from the proposal (0), or not by a maintainer's decision — the reporter, a bot timeout, a transfer (10)"><i class="sw dif"></i>own wording, differs or not a maintainer action — 10</span>
-    <span title="reconcile has not stamped how these were closed yet"><i class="sw uncl"></i>not yet classified — 508</span>
+    <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw own"></i>own wording, agrees — 281</span>
+    <span title="Closed without the sweeper's comment and differently from the proposal (139), or not by a maintainer's decision — the reporter, a bot timeout, a transfer (96)"><i class="sw dif"></i>own wording, differs or not a maintainer action — 235</span>
+    <span title="reconcile has not stamped how these were closed yet"><i class="sw uncl"></i>not yet classified — 3</span>
   </div>
   <input type="checkbox" id="nofresh">
-  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal">Hide the 149 fresh-inbox closures (6 with the sweeper's comment)</label>
+  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal">Hide the 165 fresh-inbox closures (7 with the sweeper's comment)</label>
   <div class="chart withfresh">
 <div class="crow"><span class="wk">w/o 2026-06-22</span><div class="bar"><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">1</span></div>
 <div class="crow"><span class="wk">w/o 2026-06-29</span><div class="bar"><i class="seg wc" style="width:6.04%" title="closed with sweeper comment: 11"></i><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">12</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-06</span><div class="bar"><i class="seg wc" style="width:24.73%" title="closed with sweeper comment: 45"></i><i class="seg uncl" style="width:1.10%" title="not yet classified: 2"></i></div><span class="rlabel">47</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-13</span><div class="bar"><i class="seg wc" style="width:21.98%" title="closed with sweeper comment: 40"></i><i class="seg uncl" style="width:4.40%" title="not yet classified: 8"></i></div><span class="rlabel">48</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-20</span><div class="bar"><i class="seg wc" style="width:15.93%" title="closed with sweeper comment: 29"></i><i class="seg uncl" style="width:20.88%" title="not yet classified: 38"></i></div><span class="rlabel">67</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-27</span><div class="bar"><i class="seg wc" style="width:26.92%" title="closed with sweeper comment: 49"></i><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i><i class="seg uncl" style="width:18.13%" title="not yet classified: 33"></i></div><span class="rlabel">83</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-03</span><div class="bar"><i class="seg wc" style="width:12.64%" title="closed with sweeper comment: 23"></i><i class="seg uncl" style="width:50.00%" title="not yet classified: 91"></i></div><span class="rlabel">114</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-10</span><div class="bar"><i class="seg wc" style="width:8.79%" title="closed with sweeper comment: 16"></i><i class="seg dif" style="width:1.65%" title="own wording, differs: 0 · not a maintainer action: 3"></i><i class="seg uncl" style="width:21.43%" title="not yet classified: 39"></i></div><span class="rlabel">58</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-17</span><div class="bar"><i class="seg wc" style="width:10.99%" title="closed with sweeper comment: 20"></i><i class="seg uncl" style="width:12.64%" title="not yet classified: 23"></i></div><span class="rlabel">43</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-24</span><div class="bar"><i class="seg wc" style="width:39.56%" title="closed with sweeper comment: 72"></i><i class="seg dif" style="width:1.65%" title="own wording, differs: 0 · not a maintainer action: 3"></i><i class="seg uncl" style="width:31.32%" title="not yet classified: 57"></i></div><span class="rlabel">132</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-31</span><div class="bar"><i class="seg wc" style="width:28.02%" title="closed with sweeper comment: 51"></i><i class="seg dif" style="width:1.10%" title="own wording, differs: 0 · not a maintainer action: 2"></i><i class="seg uncl" style="width:19.23%" title="not yet classified: 35"></i></div><span class="rlabel">88</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-07</span><div class="bar"><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i><i class="seg uncl" style="width:10.44%" title="not yet classified: 19"></i></div><span class="rlabel">20</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-14</span><div class="bar"><i class="seg wc" style="width:1.10%" title="closed with sweeper comment: 2"></i><i class="seg uncl" style="width:18.68%" title="not yet classified: 34"></i></div><span class="rlabel">36</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-21</span><div class="bar"><i class="seg wc" style="width:44.51%" title="closed with sweeper comment: 81"></i><i class="seg uncl" style="width:55.49%" title="not yet classified: 101"></i></div><span class="rlabel">182</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"><i class="seg wc" style="width:9.34%" title="closed with sweeper comment: 17"></i><i class="seg uncl" style="width:14.29%" title="not yet classified: 26"></i></div><span class="rlabel">43</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-06</span><div class="bar"><i class="seg wc" style="width:24.73%" title="closed with sweeper comment: 45"></i><i class="seg own" style="width:0.55%" title="own wording, agrees with the verdict: 1"></i><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">47</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-13</span><div class="bar"><i class="seg wc" style="width:21.98%" title="closed with sweeper comment: 40"></i><i class="seg own" style="width:3.85%" title="own wording, agrees with the verdict: 7"></i><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">48</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-20</span><div class="bar"><i class="seg wc" style="width:15.93%" title="closed with sweeper comment: 29"></i><i class="seg own" style="width:12.09%" title="own wording, agrees with the verdict: 22"></i><i class="seg dif" style="width:8.79%" title="own wording, differs: 7 · not a maintainer action: 9"></i></div><span class="rlabel">67</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-27</span><div class="bar"><i class="seg wc" style="width:26.92%" title="closed with sweeper comment: 49"></i><i class="seg own" style="width:9.89%" title="own wording, agrees with the verdict: 18"></i><i class="seg dif" style="width:8.79%" title="own wording, differs: 8 · not a maintainer action: 8"></i></div><span class="rlabel">83</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-03</span><div class="bar"><i class="seg wc" style="width:12.64%" title="closed with sweeper comment: 23"></i><i class="seg own" style="width:23.08%" title="own wording, agrees with the verdict: 42"></i><i class="seg dif" style="width:26.92%" title="own wording, differs: 39 · not a maintainer action: 10"></i></div><span class="rlabel">114</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-10</span><div class="bar"><i class="seg wc" style="width:8.79%" title="closed with sweeper comment: 16"></i><i class="seg own" style="width:8.24%" title="own wording, agrees with the verdict: 15"></i><i class="seg dif" style="width:14.84%" title="own wording, differs: 12 · not a maintainer action: 15"></i></div><span class="rlabel">58</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-17</span><div class="bar"><i class="seg wc" style="width:10.99%" title="closed with sweeper comment: 20"></i><i class="seg own" style="width:6.59%" title="own wording, agrees with the verdict: 12"></i><i class="seg dif" style="width:6.04%" title="own wording, differs: 3 · not a maintainer action: 8"></i></div><span class="rlabel">43</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-24</span><div class="bar"><i class="seg wc" style="width:39.56%" title="closed with sweeper comment: 72"></i><i class="seg own" style="width:19.78%" title="own wording, agrees with the verdict: 36"></i><i class="seg dif" style="width:13.19%" title="own wording, differs: 12 · not a maintainer action: 12"></i></div><span class="rlabel">132</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-31</span><div class="bar"><i class="seg wc" style="width:28.02%" title="closed with sweeper comment: 51"></i><i class="seg own" style="width:13.19%" title="own wording, agrees with the verdict: 24"></i><i class="seg dif" style="width:7.14%" title="own wording, differs: 7 · not a maintainer action: 6"></i></div><span class="rlabel">88</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-07</span><div class="bar"><i class="seg own" style="width:5.49%" title="own wording, agrees with the verdict: 10"></i><i class="seg dif" style="width:4.95%" title="own wording, differs: 5 · not a maintainer action: 4"></i><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">20</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-14</span><div class="bar"><i class="seg wc" style="width:1.10%" title="closed with sweeper comment: 2"></i><i class="seg own" style="width:9.89%" title="own wording, agrees with the verdict: 18"></i><i class="seg dif" style="width:8.79%" title="own wording, differs: 9 · not a maintainer action: 7"></i></div><span class="rlabel">36</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-21</span><div class="bar"><i class="seg wc" style="width:44.51%" title="closed with sweeper comment: 81"></i><i class="seg own" style="width:36.81%" title="own wording, agrees with the verdict: 67"></i><i class="seg dif" style="width:18.68%" title="own wording, differs: 25 · not a maintainer action: 9"></i></div><span class="rlabel">182</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"><i class="seg wc" style="width:9.34%" title="closed with sweeper comment: 17"></i><i class="seg own" style="width:4.95%" title="own wording, agrees with the verdict: 9"></i><i class="seg dif" style="width:9.89%" title="own wording, differs: 12 · not a maintainer action: 6"></i></div><span class="rlabel">44</span></div>
   </div>
   <div class="chart nofresh">
 <div class="crow"><span class="wk">w/o 2026-06-22</span><div class="bar"><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">1</span></div>
 <div class="crow"><span class="wk">w/o 2026-06-29</span><div class="bar"><i class="seg wc" style="width:6.04%" title="closed with sweeper comment: 11"></i><i class="seg uncl" style="width:0.55%" title="not yet classified: 1"></i></div><span class="rlabel">12</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-06</span><div class="bar"><i class="seg wc" style="width:24.73%" title="closed with sweeper comment: 45"></i><i class="seg uncl" style="width:1.10%" title="not yet classified: 2"></i></div><span class="rlabel">47</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-13</span><div class="bar"><i class="seg wc" style="width:21.43%" title="closed with sweeper comment: 39"></i></div><span class="rlabel">39</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-20</span><div class="bar"><i class="seg wc" style="width:15.93%" title="closed with sweeper comment: 29"></i><i class="seg uncl" style="width:19.78%" title="not yet classified: 36"></i></div><span class="rlabel">65</span></div>
-<div class="crow"><span class="wk">w/o 2026-07-27</span><div class="bar"><i class="seg wc" style="width:26.37%" title="closed with sweeper comment: 48"></i><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i><i class="seg uncl" style="width:17.58%" title="not yet classified: 32"></i></div><span class="rlabel">81</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-03</span><div class="bar"><i class="seg wc" style="width:11.54%" title="closed with sweeper comment: 21"></i><i class="seg uncl" style="width:45.05%" title="not yet classified: 82"></i></div><span class="rlabel">103</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-10</span><div class="bar"><i class="seg wc" style="width:8.79%" title="closed with sweeper comment: 16"></i><i class="seg dif" style="width:1.65%" title="own wording, differs: 0 · not a maintainer action: 3"></i><i class="seg uncl" style="width:14.29%" title="not yet classified: 26"></i></div><span class="rlabel">45</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-17</span><div class="bar"><i class="seg wc" style="width:10.99%" title="closed with sweeper comment: 20"></i><i class="seg uncl" style="width:9.89%" title="not yet classified: 18"></i></div><span class="rlabel">38</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-24</span><div class="bar"><i class="seg wc" style="width:39.01%" title="closed with sweeper comment: 71"></i><i class="seg dif" style="width:1.65%" title="own wording, differs: 0 · not a maintainer action: 3"></i><i class="seg uncl" style="width:17.03%" title="not yet classified: 31"></i></div><span class="rlabel">105</span></div>
-<div class="crow"><span class="wk">w/o 2026-08-31</span><div class="bar"><i class="seg wc" style="width:28.02%" title="closed with sweeper comment: 51"></i><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i><i class="seg uncl" style="width:11.54%" title="not yet classified: 21"></i></div><span class="rlabel">73</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-07</span><div class="bar"><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i><i class="seg uncl" style="width:3.30%" title="not yet classified: 6"></i></div><span class="rlabel">7</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-14</span><div class="bar"><i class="seg wc" style="width:0.55%" title="closed with sweeper comment: 1"></i><i class="seg uncl" style="width:14.84%" title="not yet classified: 27"></i></div><span class="rlabel">28</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-21</span><div class="bar"><i class="seg wc" style="width:44.51%" title="closed with sweeper comment: 81"></i><i class="seg uncl" style="width:35.16%" title="not yet classified: 64"></i></div><span class="rlabel">145</span></div>
-<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"><i class="seg wc" style="width:9.34%" title="closed with sweeper comment: 17"></i><i class="seg uncl" style="width:10.44%" title="not yet classified: 19"></i></div><span class="rlabel">36</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-06</span><div class="bar"><i class="seg wc" style="width:24.73%" title="closed with sweeper comment: 45"></i><i class="seg own" style="width:0.55%" title="own wording, agrees with the verdict: 1"></i><i class="seg dif" style="width:0.55%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">47</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-13</span><div class="bar"><i class="seg wc" style="width:20.88%" title="closed with sweeper comment: 38"></i></div><span class="rlabel">38</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-20</span><div class="bar"><i class="seg wc" style="width:15.93%" title="closed with sweeper comment: 29"></i><i class="seg own" style="width:11.54%" title="own wording, agrees with the verdict: 21"></i><i class="seg dif" style="width:6.59%" title="own wording, differs: 7 · not a maintainer action: 5"></i></div><span class="rlabel">62</span></div>
+<div class="crow"><span class="wk">w/o 2026-07-27</span><div class="bar"><i class="seg wc" style="width:26.37%" title="closed with sweeper comment: 48"></i><i class="seg own" style="width:9.89%" title="own wording, agrees with the verdict: 18"></i><i class="seg dif" style="width:8.24%" title="own wording, differs: 8 · not a maintainer action: 7"></i></div><span class="rlabel">81</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-03</span><div class="bar"><i class="seg wc" style="width:11.54%" title="closed with sweeper comment: 21"></i><i class="seg own" style="width:21.43%" title="own wording, agrees with the verdict: 39"></i><i class="seg dif" style="width:23.08%" title="own wording, differs: 34 · not a maintainer action: 8"></i></div><span class="rlabel">102</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-10</span><div class="bar"><i class="seg wc" style="width:8.79%" title="closed with sweeper comment: 16"></i><i class="seg own" style="width:5.49%" title="own wording, agrees with the verdict: 10"></i><i class="seg dif" style="width:7.14%" title="own wording, differs: 5 · not a maintainer action: 8"></i></div><span class="rlabel">39</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-17</span><div class="bar"><i class="seg wc" style="width:10.99%" title="closed with sweeper comment: 20"></i><i class="seg own" style="width:5.49%" title="own wording, agrees with the verdict: 10"></i><i class="seg dif" style="width:3.85%" title="own wording, differs: 3 · not a maintainer action: 4"></i></div><span class="rlabel">37</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-24</span><div class="bar"><i class="seg wc" style="width:39.01%" title="closed with sweeper comment: 71"></i><i class="seg own" style="width:12.09%" title="own wording, agrees with the verdict: 22"></i><i class="seg dif" style="width:6.04%" title="own wording, differs: 3 · not a maintainer action: 8"></i></div><span class="rlabel">104</span></div>
+<div class="crow"><span class="wk">w/o 2026-08-31</span><div class="bar"><i class="seg wc" style="width:28.02%" title="closed with sweeper comment: 51"></i><i class="seg own" style="width:8.24%" title="own wording, agrees with the verdict: 15"></i><i class="seg dif" style="width:3.30%" title="own wording, differs: 5 · not a maintainer action: 1"></i></div><span class="rlabel">72</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-07</span><div class="bar"><i class="seg own" style="width:0.55%" title="own wording, agrees with the verdict: 1"></i><i class="seg dif" style="width:3.30%" title="own wording, differs: 2 · not a maintainer action: 4"></i></div><span class="rlabel">7</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-14</span><div class="bar"><i class="seg wc" style="width:0.55%" title="closed with sweeper comment: 1"></i><i class="seg own" style="width:7.14%" title="own wording, agrees with the verdict: 13"></i><i class="seg dif" style="width:7.14%" title="own wording, differs: 9 · not a maintainer action: 4"></i></div><span class="rlabel">27</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-21</span><div class="bar"><i class="seg wc" style="width:44.51%" title="closed with sweeper comment: 81"></i><i class="seg own" style="width:23.08%" title="own wording, agrees with the verdict: 42"></i><i class="seg dif" style="width:12.09%" title="own wording, differs: 14 · not a maintainer action: 8"></i></div><span class="rlabel">145</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"><i class="seg wc" style="width:9.34%" title="closed with sweeper comment: 17"></i><i class="seg own" style="width:2.75%" title="own wording, agrees with the verdict: 5"></i><i class="seg dif" style="width:7.69%" title="own wording, differs: 10 · not a maintainer action: 4"></i></div><span class="rlabel">36</span></div>
   </div>
 
-  <h3>Closes without the sweeper's comment — 518</h3>
+  <h3>Closes without the sweeper's comment — 519</h3>
   <p class="desc">How each ended, against what the proposal said. "Differs" is where the verdict was
   contradicted; the other rows are not misses.</p>
   <table>
     <tr><th>Class</th><th>What happened</th><th class="num">Closes</th></tr>
+<tr><td>agrees</td><td>closed the way the proposal said</td><td class="num">281</td></tr>
+<tr><td>differs</td><td>closed as duplicate instead</td><td class="num">39</td></tr>
+<tr><td>differs</td><td>duplicate proposal, closed another way</td><td class="num">35</td></tr>
+<tr><td>differs</td><td>closed after an info request or as stale</td><td class="num">26</td></tr>
+<tr><td>differs</td><td>fixed instead — fix evidence on a proposal that claimed no fix</td><td class="num">22</td></tr>
+<tr><td>differs</td><td>implemented-on-main claim, closed not planned</td><td class="num">12</td></tr>
+<tr><td>differs</td><td>closed under a different close label</td><td class="num">4</td></tr>
+<tr><td>differs</td><td>implemented-on-main claim, closed by a different change</td><td class="num">1</td></tr>
+<tr><td>not a maintainer action</td><td>bot timeout (info-needed, stale, feature-request)</td><td class="num">49</td></tr>
+<tr><td>not a maintainer action</td><td>closed by the reporter</td><td class="num">37</td></tr>
 <tr><td>not a maintainer action</td><td>transferred or deleted</td><td class="num">10</td></tr>
-<tr><td>not yet classified</td><td>close details not stamped yet</td><td class="num">508</td></tr>
+<tr><td>not yet classified</td><td>close details not stamped yet</td><td class="num">3</td></tr>
   </table>
 
   <h2>Acceptance by close reason</h2>
@@ -164,54 +178,56 @@
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg wc" style="width:11.94%" title="closed with sweeper comment: 138"></i><i class="seg uncl" style="width:15.31%" title="not yet classified: 177"></i><i class="seg pend" style="width:72.75%" title="still open: 841"></i></div><span class="rlabel">315/1156 (27%)</span></div>
-<div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg wc" style="width:15.66%" title="closed with sweeper comment: 181"></i><i class="seg uncl" style="width:9.52%" title="not yet classified: 110"></i><i class="seg pend" style="width:49.57%" title="still open: 573"></i></div><span class="rlabel">291/864 (34%)</span></div>
-<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg wc" style="width:4.41%" title="closed with sweeper comment: 51"></i><i class="seg notm" style="width:0.09%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i><i class="seg uncl" style="width:3.37%" title="not yet classified: 39"></i><i class="seg pend" style="width:20.85%" title="still open: 241"></i></div><span class="rlabel">91/332 (27%)</span></div>
-<div class="crow"><span class="wk">out-of-scope</span><div class="bar"><i class="seg wc" style="width:1.99%" title="closed with sweeper comment: 23"></i><i class="seg notm" style="width:0.26%" title="not a maintainer action (reporter, bot timeout, transfer): 3"></i><i class="seg uncl" style="width:4.50%" title="not yet classified: 52"></i><i class="seg pend" style="width:11.33%" title="still open: 131"></i></div><span class="rlabel">78/209 (37%)</span></div>
-<div class="crow"><span class="wk">question</span><div class="bar"><i class="seg wc" style="width:1.56%" title="closed with sweeper comment: 18"></i><i class="seg uncl" style="width:3.29%" title="not yet classified: 38"></i><i class="seg pend" style="width:10.90%" title="still open: 126"></i></div><span class="rlabel">56/182 (31%)</span></div>
-<div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg wc" style="width:1.04%" title="closed with sweeper comment: 12"></i><i class="seg notm" style="width:0.09%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i><i class="seg uncl" style="width:2.08%" title="not yet classified: 24"></i><i class="seg pend" style="width:6.75%" title="still open: 78"></i></div><span class="rlabel">37/115 (32%)</span></div>
-<div class="crow"><span class="wk">caused-by-extension</span><div class="bar"><i class="seg wc" style="width:1.47%" title="closed with sweeper comment: 17"></i><i class="seg notm" style="width:0.43%" title="not a maintainer action (reporter, bot timeout, transfer): 5"></i><i class="seg uncl" style="width:1.64%" title="not yet classified: 19"></i></div><span class="rlabel">41/41 (100%)</span></div>
-<div class="crow"><span class="wk">off-topic</span><div class="bar"><i class="seg wc" style="width:0.61%" title="closed with sweeper comment: 7"></i><i class="seg uncl" style="width:1.38%" title="not yet classified: 16"></i><i class="seg pend" style="width:1.38%" title="still open: 16"></i></div><span class="rlabel">23/39 (59%)</span></div>
-<div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg uncl" style="width:1.82%" title="not yet classified: 21"></i><i class="seg pend" style="width:1.04%" title="still open: 12"></i></div><span class="rlabel">21/33 (64%)</span></div>
-<div class="crow"><span class="wk">extension-candidate</span><div class="bar"><i class="seg wc" style="width:0.26%" title="closed with sweeper comment: 3"></i><i class="seg uncl" style="width:0.69%" title="not yet classified: 8"></i><i class="seg pend" style="width:1.12%" title="still open: 13"></i></div><span class="rlabel">11/24 (46%)</span></div>
-<div class="crow"><span class="wk">other</span><div class="bar"><i class="seg wc" style="width:0.52%" title="closed with sweeper comment: 6"></i><i class="seg uncl" style="width:0.35%" title="not yet classified: 4"></i><i class="seg pend" style="width:0.95%" title="still open: 11"></i></div><span class="rlabel">10/21 (48%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg wc" style="width:11.93%" title="closed with sweeper comment: 138"></i><i class="seg own" style="width:9.42%" title="closed otherwise, agrees with the verdict: 109"></i><i class="seg dif" style="width:3.03%" title="closed otherwise, differs from the verdict: 35"></i><i class="seg fixedin" style="width:0.86%" title="likely fixed instead (fix evidence, no sweeper comment): 10"></i><i class="seg notm" style="width:2.07%" title="not a maintainer action (reporter, bot timeout, transfer): 24"></i><i class="seg pend" style="width:72.69%" title="still open: 841"></i></div><span class="rlabel">316/1157 (27%)</span></div>
+<div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg wc" style="width:15.64%" title="closed with sweeper comment: 181"></i><i class="seg own" style="width:5.62%" title="closed otherwise, agrees with the verdict: 65"></i><i class="seg dif" style="width:2.51%" title="closed otherwise, differs from the verdict: 29"></i><i class="seg notm" style="width:1.30%" title="not a maintainer action (reporter, bot timeout, transfer): 15"></i><i class="seg uncl" style="width:0.09%" title="not yet classified: 1"></i><i class="seg pend" style="width:49.44%" title="still open: 572"></i></div><span class="rlabel">291/863 (34%)</span></div>
+<div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg wc" style="width:4.41%" title="closed with sweeper comment: 51"></i><i class="seg own" style="width:1.38%" title="closed otherwise, agrees with the verdict: 16"></i><i class="seg dif" style="width:0.52%" title="closed otherwise, differs from the verdict: 6"></i><i class="seg fixedin" style="width:0.52%" title="likely fixed instead (fix evidence, no sweeper comment): 6"></i><i class="seg notm" style="width:1.04%" title="not a maintainer action (reporter, bot timeout, transfer): 12"></i><i class="seg pend" style="width:20.92%" title="still open: 242"></i></div><span class="rlabel">91/333 (27%)</span></div>
+<div class="crow"><span class="wk">out-of-scope</span><div class="bar"><i class="seg wc" style="width:1.99%" title="closed with sweeper comment: 23"></i><i class="seg own" style="width:2.25%" title="closed otherwise, agrees with the verdict: 26"></i><i class="seg dif" style="width:1.38%" title="closed otherwise, differs from the verdict: 16"></i><i class="seg fixedin" style="width:0.09%" title="likely fixed instead (fix evidence, no sweeper comment): 1"></i><i class="seg notm" style="width:1.04%" title="not a maintainer action (reporter, bot timeout, transfer): 12"></i><i class="seg pend" style="width:11.41%" title="still open: 132"></i></div><span class="rlabel">78/210 (37%)</span></div>
+<div class="crow"><span class="wk">question</span><div class="bar"><i class="seg wc" style="width:1.56%" title="closed with sweeper comment: 18"></i><i class="seg own" style="width:1.99%" title="closed otherwise, agrees with the verdict: 23"></i><i class="seg dif" style="width:0.61%" title="closed otherwise, differs from the verdict: 7"></i><i class="seg notm" style="width:0.69%" title="not a maintainer action (reporter, bot timeout, transfer): 8"></i><i class="seg pend" style="width:10.89%" title="still open: 126"></i></div><span class="rlabel">56/182 (31%)</span></div>
+<div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg wc" style="width:1.04%" title="closed with sweeper comment: 12"></i><i class="seg own" style="width:0.69%" title="closed otherwise, agrees with the verdict: 8"></i><i class="seg dif" style="width:0.86%" title="closed otherwise, differs from the verdict: 10"></i><i class="seg fixedin" style="width:0.17%" title="likely fixed instead (fix evidence, no sweeper comment): 2"></i><i class="seg notm" style="width:0.43%" title="not a maintainer action (reporter, bot timeout, transfer): 5"></i><i class="seg pend" style="width:6.74%" title="still open: 78"></i></div><span class="rlabel">37/115 (32%)</span></div>
+<div class="crow"><span class="wk">caused-by-extension</span><div class="bar"><i class="seg wc" style="width:1.47%" title="closed with sweeper comment: 17"></i><i class="seg own" style="width:0.69%" title="closed otherwise, agrees with the verdict: 8"></i><i class="seg dif" style="width:0.09%" title="closed otherwise, differs from the verdict: 1"></i><i class="seg fixedin" style="width:0.26%" title="likely fixed instead (fix evidence, no sweeper comment): 3"></i><i class="seg notm" style="width:1.04%" title="not a maintainer action (reporter, bot timeout, transfer): 12"></i></div><span class="rlabel">41/41 (100%)</span></div>
+<div class="crow"><span class="wk">off-topic</span><div class="bar"><i class="seg wc" style="width:0.61%" title="closed with sweeper comment: 7"></i><i class="seg own" style="width:0.95%" title="closed otherwise, agrees with the verdict: 11"></i><i class="seg dif" style="width:0.43%" title="closed otherwise, differs from the verdict: 5"></i><i class="seg pend" style="width:1.38%" title="still open: 16"></i></div><span class="rlabel">23/39 (59%)</span></div>
+<div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg own" style="width:0.95%" title="closed otherwise, agrees with the verdict: 11"></i><i class="seg dif" style="width:0.52%" title="closed otherwise, differs from the verdict: 6"></i><i class="seg notm" style="width:0.26%" title="not a maintainer action (reporter, bot timeout, transfer): 3"></i><i class="seg uncl" style="width:0.09%" title="not yet classified: 1"></i><i class="seg pend" style="width:1.04%" title="still open: 12"></i></div><span class="rlabel">21/33 (64%)</span></div>
+<div class="crow"><span class="wk">extension-candidate</span><div class="bar"><i class="seg wc" style="width:0.26%" title="closed with sweeper comment: 3"></i><i class="seg own" style="width:0.17%" title="closed otherwise, agrees with the verdict: 2"></i><i class="seg notm" style="width:0.43%" title="not a maintainer action (reporter, bot timeout, transfer): 5"></i><i class="seg uncl" style="width:0.09%" title="not yet classified: 1"></i><i class="seg pend" style="width:1.12%" title="still open: 13"></i></div><span class="rlabel">11/24 (46%)</span></div>
+<div class="crow"><span class="wk">other</span><div class="bar"><i class="seg wc" style="width:0.52%" title="closed with sweeper comment: 6"></i><i class="seg own" style="width:0.17%" title="closed otherwise, agrees with the verdict: 2"></i><i class="seg dif" style="width:0.17%" title="closed otherwise, differs from the verdict: 2"></i><i class="seg pend" style="width:0.95%" title="still open: 11"></i></div><span class="rlabel">10/21 (48%)</span></div>
   </div>
-  <p class="desc">Duplicate proposals closed as duplicate (138): <strong>134 against the
-  cited canonical</strong> · 0 one hop from it (one of the two was itself closed as a
-  duplicate of the other) · <strong>0 against a different canonical</strong> ·
-  4 with no target recorded. Among the closes without the sweeper's comment:
-  0 cited canonical · 0 one hop ·
-  0 different · 0 not recorded.</p>
+  <p class="desc">Duplicate proposals closed as duplicate (247): <strong>202 against the
+  cited canonical</strong> · 16 one hop from it (one of the two was itself closed as a
+  duplicate of the other) · <strong>12 against a different canonical</strong> ·
+  17 with no target recorded. Among the closes without the sweeper's comment:
+  68 cited canonical · 16 one hop ·
+  12 different · 13 not recorded.</p>
 
-  <h2>Comment adoption on the 974 acted-on proposals</h2>
+  <h2>Comment adoption on the 975 acted-on proposals</h2>
   <div class="strip">
-    <i class="seg wc" style="width:41.52%" title="verbatim: 404 (42%)"></i>
+    <i class="seg wc" style="width:41.48%" title="verbatim: 404 (41%)"></i>
     <i class="seg wcm" style="width:2.98%" title="inside a longer comment: 29 (3%)"></i>
     <i class="seg wcl" style="width:2.36%" title="edited: 23 (2%)"></i>
-    
-    
-    <i class="seg notm" style="width:1.03%" title="own wording: not a maintainer action (reporter, bot timeout, transfer): 10 (1%)"></i>
-    <i class="seg uncl" style="width:52.11%" title="not yet classified: 507 (52%)"></i>
+    <i class="seg own" style="width:8.01%" title="own wording: the maintainer's own comment: 78 (8%)"></i>
+    <i class="seg sil" style="width:6.06%" title="own wording: closed silently (no team comment after the review): 59 (6%)"></i>
+    <i class="seg notm" style="width:9.75%" title="own wording: not a maintainer action (reporter, bot timeout, transfer): 95 (10%)"></i>
+    <i class="seg uncl" style="width:29.36%" title="not yet classified: 286 (29%)"></i>
   </div>
   <div class="legend">
     <span><i class="sw wc"></i>verbatim 404</span>
     <span><i class="sw wcm"></i>inside a longer comment 29</span>
     <span><i class="sw wcl"></i>edited 23</span>
-    <span><i class="sw own"></i>own comment 0</span>
-    <span><i class="sw sil"></i>closed silently 0</span>
-    <span><i class="sw notm"></i>not a maintainer action 10</span>
-    <span><i class="sw uncl"></i>not yet classified 507</span>
+    <span><i class="sw own"></i>own comment 78</span>
+    <span><i class="sw sil"></i>closed silently 59</span>
+    <span><i class="sw notm"></i>not a maintainer action 95</span>
+    <span><i class="sw uncl"></i>not yet classified 286</span>
   </div>
-  <p class="desc">517 closes did not use the sweeper's comment. Only the 0 with the
+  <p class="desc">517 closes did not use the sweeper's comment. Only the 78 with the
   maintainer's own comment passed it over for different wording; a silent close posted nothing at all.</p>
-  
-  
+  <p class="desc">22 of the 517 own-wording closes were likely
+  fixed instead (a closing pull request or commit, or a <code>verified</code> /
+  <code>insiders-released</code> label) — the close had a different cause entirely.</p>
+  <p class="desc">1 closed proposal(s) are not yet classified — run <code>npm run reconcile -- --push</code> to stamp them.</p>
 
   <h2>sweeper-implement skill adoption</h2>
 <p class="desc">Draft PRs opened with the <a href="fix-skill.html">sweeper-implement skill</a>,
   discovered by <code>reconcile</code>'s seeded-by-marker search — per user, against their
-  agent-ready pool (the track: ready to implement + ready to plan). Corpus-wide pool: 3,858 reviewed
-  briefs (1,975 ready to implement · 1,883 ready to plan); 19 taken by a contributor PR the review could not see. As current as the last reconcile run.</p>
+  agent-ready pool (the track: ready to implement + ready to plan). Corpus-wide pool: 3,881 reviewed
+  briefs (1,980 ready to implement · 1,901 ready to plan); 25 taken by a contributor PR the review could not see. As current as the last reconcile run.</p>
   <div class="legend">
     <span><i class="sw wc"></i>merged</span>
     <span><i class="sw skopen"></i>open</span>
@@ -220,8 +236,8 @@
     <span><i class="sw trk"></i>agent-ready, no PR yet</span>
   </div>
   <div class="chart skillchart">
-<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Aalexdima%20has%3Askillpr" title="Open the dashboard filtered to alexdima's issues with a sweeper-implement skill PR">alexdima</a></span><div class="track" style="width:73.66%" title="agent-ready pool: 179 (46 ready to implement · 133 ready to plan)"><i class="seg wc" style="width:0.00%" title="merged skill PRs: 0"></i><i class="seg skopen" style="width:1.12%" title="open skill PRs: 2"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i><i class="seg cpr" style="width:0.00%" title="taken by a contributor PR: 0 — an open PR the review could not see references the issue"></i></div><span class="rlabel">2 PRs · 0 merged</span></div>
-<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Abenibenj%20has%3Askillpr" title="Open the dashboard filtered to benibenj's issues with a sweeper-implement skill PR">benibenj</a></span><div class="track" style="width:100.00%" title="agent-ready pool: 243 (55 ready to implement · 188 ready to plan)"><i class="seg wc" style="width:0.41%" title="merged skill PRs: 1"></i><i class="seg skopen" style="width:0.00%" title="open skill PRs: 0"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i><i class="seg cpr" style="width:0.41%" title="taken by a contributor PR: 1 — an open PR the review could not see references the issue"></i></div><span class="rlabel">1 PR · 1 merged</span></div>
+<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Aalexdima%20has%3Askillpr" title="Open the dashboard filtered to alexdima's issues with a sweeper-implement skill PR">alexdima</a></span><div class="track" style="width:72.76%" title="agent-ready pool: 179 (46 ready to implement · 133 ready to plan)"><i class="seg wc" style="width:0.00%" title="merged skill PRs: 0"></i><i class="seg skopen" style="width:1.12%" title="open skill PRs: 2"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i><i class="seg cpr" style="width:0.00%" title="taken by a contributor PR: 0 — an open PR the review could not see references the issue"></i></div><span class="rlabel">2 PRs · 0 merged</span></div>
+<div class="crow"><span class="wk"><a class="qlink" href="dashboard.html#q=owner%3Abenibenj%20has%3Askillpr" title="Open the dashboard filtered to benibenj's issues with a sweeper-implement skill PR">benibenj</a></span><div class="track" style="width:100.00%" title="agent-ready pool: 246 (56 ready to implement · 190 ready to plan)"><i class="seg wc" style="width:0.41%" title="merged skill PRs: 1"></i><i class="seg skopen" style="width:0.00%" title="open skill PRs: 0"></i><i class="seg own" style="width:0.00%" title="closed unmerged: 0"></i><i class="seg cpr" style="width:0.41%" title="taken by a contributor PR: 1 — an open PR the review could not see references the issue"></i></div><span class="rlabel">1 PR · 1 merged</span></div>
   </div>
 
 
@@ -233,18 +249,18 @@
   record was re-reviewed since verification) are excluded from the mix, and live issue drift
   is re-checked by the nightly verify sweep, not this page. Scope is these two close reasons
   only.</p>
-  <p class="desc"><strong>duplicate</strong>: 841 of 841 open proposals verified · 108 closed unverified — <strong>implemented-on-main</strong>: 575 of 575 open proposals verified · 97 closed unverified</p>
+  <p class="desc"><strong>duplicate</strong>: 839 of 841 open proposals verified · <a href="dashboard.html#q=close%3Aduplicate%20has%3Acanonical%20-has%3Averify" title="Open the dashboard filtered to this lane's not-yet-verified open proposals">2 unverified</a> · 108 closed unverified — <strong>implemented-on-main</strong>: 574 of 574 open proposals verified · 97 closed unverified</p>
   <div class="strip">
-    <i class="seg wc" style="width:63.24%" title="confirmed: 1115 (63%)"></i>
+    <i class="seg wc" style="width:63.26%" title="confirmed: 1114 (63%)"></i>
     <i class="seg wcm" style="width:2.16%" title="confirmed, fix unreleased: 38 (2%)"></i>
-    <i class="seg disp" style="width:31.37%" title="disputed: 553 (31%)"></i>
-    <i class="seg own" style="width:3.23%" title="unverifiable: 57 (3%)"></i>
+    <i class="seg disp" style="width:31.35%" title="disputed: 552 (31%)"></i>
+    <i class="seg own" style="width:3.24%" title="unverifiable: 57 (3%)"></i>
     
   </div>
   <div class="legend">
-    <span><i class="sw wc"></i>confirmed 1115</span>
+    <span><i class="sw wc"></i>confirmed 1114</span>
     <span><i class="sw wcm"></i>confirmed, fix unreleased 38</span>
-    <span><i class="sw disp"></i>disputed 553</span>
+    <span><i class="sw disp"></i>disputed 552</span>
     <span><i class="sw own"></i>unverifiable 57</span>
     
   </div>
@@ -254,16 +270,16 @@
   (hover a row label for the lane). Right label: disputed / verified — a kind disputing
   well above its peers is a calibration signal for the review prompt.</p>
   <div class="chart">
-<div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg wc" style="width:66.16%" title="confirmed: 565"></i><i class="seg disp" style="width:30.56%" title="disputed: 261"></i><i class="seg own" style="width:3.28%" title="unverifiable: 28"></i></div><span class="rlabel">261/854</span></div>
-<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:37.24%" title="confirmed: 318"></i><i class="seg wcm" style="width:3.86%" title="confirmed, fix unreleased: 33"></i><i class="seg disp" style="width:17.10%" title="disputed: 146"></i><i class="seg own" style="width:2.58%" title="unverifiable: 22"></i></div><span class="rlabel">146/519</span></div>
-<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:13.00%" title="confirmed: 111"></i><i class="seg wcm" style="width:0.59%" title="confirmed, fix unreleased: 5"></i><i class="seg disp" style="width:8.20%" title="disputed: 70"></i><i class="seg own" style="width:0.35%" title="unverifiable: 3"></i></div><span class="rlabel">70/189</span></div>
-<div class="crow"><span class="wk" title="duplicate">meta</span><div class="bar"><i class="seg wc" style="width:8.67%" title="confirmed: 74"></i><i class="seg disp" style="width:1.76%" title="disputed: 15"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">15/90</span></div>
-<div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg wc" style="width:3.04%" title="confirmed: 26"></i><i class="seg disp" style="width:2.58%" title="disputed: 22"></i></div><span class="rlabel">22/48</span></div>
+<div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg wc" style="width:66.12%" title="confirmed: 564"></i><i class="seg disp" style="width:30.60%" title="disputed: 261"></i><i class="seg own" style="width:3.28%" title="unverifiable: 28"></i></div><span class="rlabel">261/853</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:37.28%" title="confirmed: 318"></i><i class="seg wcm" style="width:3.87%" title="confirmed, fix unreleased: 33"></i><i class="seg disp" style="width:17.00%" title="disputed: 145"></i><i class="seg own" style="width:2.58%" title="unverifiable: 22"></i></div><span class="rlabel">145/518</span></div>
+<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:13.01%" title="confirmed: 111"></i><i class="seg wcm" style="width:0.59%" title="confirmed, fix unreleased: 5"></i><i class="seg disp" style="width:8.21%" title="disputed: 70"></i><i class="seg own" style="width:0.35%" title="unverifiable: 3"></i></div><span class="rlabel">70/189</span></div>
+<div class="crow"><span class="wk" title="duplicate">meta</span><div class="bar"><i class="seg wc" style="width:8.68%" title="confirmed: 74"></i><i class="seg disp" style="width:1.76%" title="disputed: 15"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">15/90</span></div>
+<div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg wc" style="width:3.05%" title="confirmed: 26"></i><i class="seg disp" style="width:2.58%" title="disputed: 22"></i></div><span class="rlabel">22/48</span></div>
 <div class="crow"><span class="wk" title="duplicate">(gate-decided)</span><div class="bar"><i class="seg disp" style="width:3.40%" title="disputed: 29"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">29/30</span></div>
 <div class="crow"><span class="wk" title="duplicate">telemetry-aggregate</span><div class="bar"><i class="seg wc" style="width:2.46%" title="confirmed: 21"></i><i class="seg disp" style="width:0.47%" title="disputed: 4"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">4/26</span></div>
 <div class="crow"><span class="wk" title="implemented-on-main">(gate-decided)</span><div class="bar"><i class="seg disp" style="width:0.70%" title="disputed: 6"></i><i class="seg own" style="width:0.12%" title="unverifiable: 1"></i></div><span class="rlabel">6/7</span></div>
   </div>
-  <p class="desc">The 553 disputed proposals are
+  <p class="desc">The 552 disputed proposals are
   <a href="dashboard.html#q=verify%3Arefuted">listed on the dashboard</a> (the link
   lands pre-filtered); each ✗ badge carries the verifier's evidence. A dispute is worth a
   manual look before acting: either the review or the verifier is wrong, and both readings
@@ -275,8 +291,8 @@
   positive the verify lane flagged in advance.</p>
   <table>
     <tr><th>2nd-review verdict</th><th class="num">Still open</th><th class="num">Closed since</th><th class="num">Reopened after a close</th></tr>
-<tr><td>confirmed</td><td class="num">893</td><td class="num">258</td><td class="num">2</td></tr>
-<tr><td>disputed</td><td class="num">475</td><td class="num">78</td><td class="num">0</td></tr>
+<tr><td>confirmed</td><td class="num">891</td><td class="num">259</td><td class="num">2</td></tr>
+<tr><td>disputed</td><td class="num">474</td><td class="num">78</td><td class="num">0</td></tr>
 <tr><td>unverifiable</td><td class="num">47</td><td class="num">10</td><td class="num">0</td></tr>
   </table>
 
@@ -387,7 +403,7 @@
 <tr><td>alexdima</td><td class="num">115</td><td class="num">107 (93%)</td></tr>
 <tr><td>lramos15</td><td class="num">111</td><td class="num">60 (54%)</td></tr>
 <tr><td>dmitrivMS</td><td class="num">103</td><td class="num">0 (0%)</td></tr>
-<tr><td>vs-code-engineering</td><td class="num">82</td><td class="num">0 (0%)</td></tr>
+<tr><td>vs-code-engineering</td><td class="num">83</td><td class="num">0 (0%)</td></tr>
 <tr><td>roblourens</td><td class="num">58</td><td class="num">30 (52%)</td></tr>
 <tr><td>deepak1556</td><td class="num">39</td><td class="num">12 (31%)</td></tr>
 <tr><td>benibenj</td><td class="num">35</td><td class="num">27 (77%)</td></tr>
@@ -462,24 +478,24 @@
   <div class="cols">
     <table>
       <tr><th>Review verdict</th><th class="num">Closed</th></tr>
-<tr><td>keep-open</td><td class="num">1492</td></tr>
-<tr><td>propose-close</td><td class="num">974</td></tr>
-<tr><td>needs-info</td><td class="num">656</td></tr>
+<tr><td>keep-open</td><td class="num">1521</td></tr>
+<tr><td>propose-close</td><td class="num">975</td></tr>
+<tr><td>needs-info</td><td class="num">664</td></tr>
 <tr><td>route-to-area</td><td class="num">243</td></tr>
     </table>
     <table>
       <tr><th>Close reason</th><th class="num">Closed</th></tr>
-<tr><td>completed</td><td class="num">1724</td></tr>
-<tr><td>not_planned</td><td class="num">1084</td></tr>
-<tr><td>duplicate</td><td class="num">538</td></tr>
+<tr><td>completed</td><td class="num">1753</td></tr>
+<tr><td>not_planned</td><td class="num">1094</td></tr>
+<tr><td>duplicate</td><td class="num">537</td></tr>
 <tr><td>not_found</td><td class="num">19</td></tr>
     </table>
   </div>
 
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.
   Close proposals here count the whole corpus; the <a href="dashboard.html">dashboard</a>'s
-  <code>propose-close</code> card counts only the 2,042 still open
-  (closed records move to its ✔ closed view), so it reads lower by the 974
+  <code>propose-close</code> card counts only the 2,043 still open
+  (closed records move to its ✔ closed view), so it reads lower by the 975
   acted-on proposals. 1 proposal(s) had no comment text and are excluded from the fidelity split. Something off? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener">Send feedback</a>.</footer>
   <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
 </body>
