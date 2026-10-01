@@ -1,23 +1,23 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21420 issues reviewed · generated 2026-10-01 19:57 UTC
+[← Home](index.html) · 21422 issues reviewed · generated 2026-10-01 20:12 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21420
+- **Issues reviewed:** 21422
 - **Close proposals:** 3029 (14% of reviewed)
 - **Acted on (closed):** 975 (32% of proposals)
 - **2nd-reviewed before the close:** 260 confirmed · 78 disputed · 10 unverifiable · 627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 456 (47% of acted-on) — 404 verbatim, 29 inside a longer comment, 23 edited
-- **Likely fixed instead:** 22 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (22 of the 517 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Closed without the sweeper's comment:** 519 — 281 agree with the proposal, 139 differ, 96 not a maintainer action (reporter, bot timeout, transfer), 3 not yet classified
-- **Own wording:** 517 — 78 with the maintainer's own comment, 59 closed silently, 95 not a maintainer action, 285 not yet classified
+- **Likely fixed instead:** 22 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (22 of the 518 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Closed without the sweeper's comment:** 519 — 282 agree with the proposal, 140 differ, 97 not a maintainer action (reporter, bot timeout, transfer)
+- **Own wording:** 518 — 177 with the maintainer's own comment, 244 closed silently, 97 not a maintainer action
 - **Fresh-inbox closures:** 165 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 202 against the cited canonical, 16 one hop from it, 12 against a different one, 17 with no target recorded
 - **Still awaiting action:** 2054 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3403 of the 21420 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2054 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3411 of the 21422 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2054 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -98,7 +98,7 @@ _Close proposals count the whole corpus (3403 of the 21420 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3914 reviewed briefs (1976 ready to implement · 1938 ready to plan); 25 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 3915 reviewed briefs (1976 ready to implement · 1939 ready to plan); 25 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -216,17 +216,17 @@ _The 529 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1521 |
+| keep-open | 1531 |
 | propose-close | 975 |
-| needs-info | 664 |
-| route-to-area | 243 |
+| needs-info | 663 |
+| route-to-area | 242 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1753 |
-| not_planned | 1094 |
-| duplicate | 537 |
-| not_found | 19 |
+| completed | 1761 |
+| not_planned | 1095 |
+| duplicate | 538 |
+| not_found | 17 |
 
 ## Acceptance by close reason
 
@@ -245,5 +245,3 @@ _The 529 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | other | 21 | 10 | 48% | 6 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
-
-_1 closed proposal(s) not yet classified — run `npm run reconcile -- --push`._
