@@ -1,11 +1,11 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21422 issues reviewed · generated 2026-10-02 05:03 UTC
+[← Home](index.html) · 21483 issues reviewed · generated 2026-10-02 15:04 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21422
-- **Close proposals:** 3069 (14% of reviewed)
+- **Issues reviewed:** 21483
+- **Close proposals:** 3073 (14% of reviewed)
 - **Acted on (closed):** 975 (32% of proposals)
 - **2nd-reviewed before the close:** 260 confirmed · 78 disputed · 10 unverifiable · 627 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 456 (47% of acted-on) — 404 verbatim, 29 inside a longer comment, 23 edited
@@ -14,10 +14,10 @@
 - **Own wording:** 518 — 177 with the maintainer's own comment, 244 closed silently, 97 not a maintainer action
 - **Fresh-inbox closures:** 165 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 202 against the cited canonical, 16 one hop from it, 12 against a different one, 17 with no target recorded
-- **Still awaiting action:** 2094 open close proposals
+- **Still awaiting action:** 2098 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3411 of the 21422 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2094 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3428 of the 21483 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2098 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -98,12 +98,12 @@ _Close proposals count the whole corpus (3411 of the 21422 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4098 reviewed briefs (1990 ready to implement · 2108 ready to plan); 25 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4113 reviewed briefs (1991 ready to implement · 2122 ready to plan); 29 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
 | alexdima | 179 | 2 | 2 | — | — | — |
-| benibenj | 244 | 1 | — | 1 | — | 1 |
+| benibenj | 243 | 1 | — | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
@@ -216,16 +216,16 @@ _The 541 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1531 |
+| keep-open | 1542 |
 | propose-close | 975 |
-| needs-info | 663 |
-| route-to-area | 242 |
+| needs-info | 668 |
+| route-to-area | 243 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1761 |
-| not_planned | 1095 |
-| duplicate | 538 |
+| completed | 1770 |
+| not_planned | 1101 |
+| duplicate | 540 |
 | not_found | 17 |
 
 ## Acceptance by close reason
@@ -235,9 +235,9 @@ _The 541 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | duplicate | 1199 | 316 | 26% | 138 | 10 |
 | implemented on main | 883 | 291 | 33% | 181 | — |
 | as-designed | 327 | 91 | 28% | 51 | 6 |
-| out-of-scope | 209 | 78 | 37% | 23 | 1 |
-| question | 180 | 56 | 31% | 18 | — |
-| not-reproducible | 113 | 37 | 33% | 12 | 2 |
+| out-of-scope | 211 | 78 | 37% | 23 | 1 |
+| question | 181 | 56 | 31% | 18 | — |
+| not-reproducible | 114 | 37 | 32% | 12 | 2 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 3 |
 | off-topic | 39 | 23 | 59% | 7 | — |
 | invalid | 33 | 21 | 64% | 0 | — |
