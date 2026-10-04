@@ -11,11 +11,14 @@
     --wc: #1a7f37; --wc-mid: #4ac26b; --wc-lite: #aceebb;
     --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e; --track: #d0d7de;
     --dif: #bc4c00; --own-lite: #d8dee4;
+    /* Agreeing closes without the comment: the same green family as --wc (both are
+       "in line with the proposal"), lighter so the two tiers stay distinguishable. */
+    --agr: #8ddb9b;
   }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
       --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; --track:#30363d;
-      --dif:#db6d28; --own-lite:#30363d; }
+      --dif:#db6d28; --own-lite:#30363d; --agr:#256f3a; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -42,6 +45,7 @@
   .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
   .seg.fixedin, .sw.fixedin { background: var(--accent); }
   .seg.dif, .sw.dif { background: var(--dif); }
+  .seg.agr, .sw.agr { background: var(--agr); }
   .seg.sil, .sw.sil { background: var(--own-lite); }
   .seg.notm, .sw.notm { background: repeating-linear-gradient(45deg, var(--own) 0 3px, var(--own-lite) 3px 6px); }
   .freshtoggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; margin-bottom: 8px; cursor: pointer; }
@@ -77,13 +81,14 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-10-03 13:30 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-10-04 08:55 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">1,308</div><div class="tsub">1,299 still open · 9 closed since review</div></div>
     <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">358</div><div class="tsub">27% of reviewed · 356 still open</div></div>
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">2</div><div class="tsub">1% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
+    <div class="tile"><div class="tlabel">In line with the proposal</div><div class="tvalue">0</div><div class="tsub">0% of 0 maintainer closes · 0 with the comment + 0 in their own words</div></div>
   </div>
 
   <p class="desc">2nd-reviewed before the close: <strong>0 confirmed</strong> ·
@@ -94,7 +99,7 @@
   <p class="desc">Only closures of issues the sweeper proposed to close. Weeks start Monday.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment — 0</span>
-    <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw own"></i>own wording, agrees — 0</span>
+    <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw agr"></i>own wording, agrees — 0</span>
     <span title="Closed without the sweeper's comment and differently from the proposal (0), or not by a maintainer's decision — the reporter, a bot timeout, a transfer (2)"><i class="sw dif"></i>own wording, differs or not a maintainer action — 2</span>
     
   </div>
@@ -132,7 +137,7 @@
   less time to be acted on, so compare reasons with similar proposal ages cautiously.</p>
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment</span>
-    <span><i class="sw own"></i>closed otherwise, agrees</span>
+    <span><i class="sw agr"></i>closed otherwise, agrees</span>
     <span><i class="sw dif"></i>closed otherwise, differs</span>
     <span title="Closed without the sweeper's comment and with fix evidence (a closing pull request or commit, or a verified / insiders-released label), on a proposal that claimed no fix"><i class="sw fixedin"></i>likely fixed instead</span>
     <span title="Closed by the reporter, by a bot timeout, or transferred"><i class="sw notm"></i>not a maintainer action</span>
@@ -243,9 +248,9 @@
   <h2>Who acted on proposals</h2>
   <p class="desc">Attribution: poster of the matched comment, else who closed the issue.</p>
   <table>
-    <tr><th>User</th><th class="num">Closures</th><th class="num">With sweeper comment</th></tr>
-<tr><td>Princemovil</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
-<tr><td>vs-code-engineering</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
+    <tr><th>User</th><th class="num">Closures</th><th class="num">With sweeper comment</th><th class="num" title="Closed without the sweeper's comment, the way the proposal said. Agreement, not proof of use.">Agrees, own wording</th><th class="num" title="Closed without the sweeper's comment, differently from the proposal.">Differs</th><th class="num" title="With the sweeper's comment + agreeing in their own words, as a share of the user's closures.">In line with the proposal</th></tr>
+<tr><td>Princemovil</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>vs-code-engineering</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
   </table>
 
   <h2>All closures since review — context</h2>

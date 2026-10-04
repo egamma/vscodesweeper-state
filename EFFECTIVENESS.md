@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 40 swept users · 21550 issues reviewed · generated 2026-10-03 13:30 UTC
+[← Home](index.html) · 40 swept users · 21550 issues reviewed · generated 2026-10-04 08:55 UTC
 
 ## Verdict distribution
 
@@ -8,10 +8,10 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 883 | 4% | 732 (83%) | 491 (67%) | 193 (26%) | 48 (7%) | 151 (17%) | — |
-| duplicate | 1200 | 6% | 1092 (91%) | 711 (65%) | 347 (32%) | 34 (3%) | 108 (9%) | — |
-| as-designed | 327 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
-| out-of-scope | 213 | 1% | — | — | — | — | — | — |
+| implemented on main | 877 | 4% | 726 (83%) | 492 (68%) | 186 (26%) | 48 (7%) | 151 (17%) | — |
+| duplicate | 1186 | 6% | 1078 (91%) | 710 (66%) | 334 (31%) | 34 (3%) | 108 (9%) | — |
+| as-designed | 328 | 2% | 2 (1%) | — | 2 (100%) | — | — | — |
+| out-of-scope | 214 | 1% | — | — | — | — | — | — |
 | question | 181 | 1% | — | — | — | — | — | — |
 | not-reproducible | 114 | 1% | — | — | — | — | — | — |
 | caused-by-extension | 41 | 0% | — | — | — | — | — | — |
@@ -19,9 +19,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 33 | 0% | — | — | — | — | — | — |
 | extension-candidate | 24 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 3076 | 14% | 1826 (59%) | 1202 (66%) | 542 (30%) | 82 (4%) | — | — |
-| needs info | 2829 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 15645 | 73% | — | — | — | — | — | — |
+| **all close proposals** | 3058 | 14% | 1806 (59%) | 1202 (67%) | 522 (29%) | 82 (5%) | — | — |
+| needs info | 2834 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 15658 | 73% | — | — | — | — | — | — |
 | all reviews | 21550 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -36,7 +36,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | deepak1556 | 1169 | 193 (17%) | 405 (35%) | 571 (49%) | **51%** |
 | roblourens | 1120 | 195 (17%) | 217 (19%) | 708 (63%) | **37%** |
 | sandy081 | 1021 | 161 (16%) | 108 (11%) | 752 (74%) | **26%** |
-| lramos15 | 913 | 214 (23%) | 146 (16%) | 553 (61%) | **39%** |
+| lramos15 | 913 | 196 (21%) | 151 (17%) | 566 (62%) | **38%** |
 | TylerLeonhardt | 879 | 93 (11%) | 99 (11%) | 687 (78%) | **22%** |
 | meganrogge | 852 | 72 (8%) | 45 (5%) | 735 (86%) | **14%** |
 | connor4312 | 850 | 71 (8%) | 56 (7%) | 723 (85%) | **15%** |
@@ -83,7 +83,7 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | deepak1556 | 571 | 13 | 6 | 3% |
 | roblourens | 708 | 95 | 366 | 65% |
 | sandy081 | 752 | 112 | 268 | 51% |
-| lramos15 | 553 | 97 | 187 | 51% |
+| lramos15 | 566 | 99 | 191 | 51% |
 | TylerLeonhardt | 687 | 85 | 30 | 17% |
 | meganrogge | 735 | 107 | 50 | 21% |
 | connor4312 | 723 | 93 | 80 | 24% |
@@ -130,7 +130,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | deepak1556 | 193 | 27 (14%) | 98 (51%) | 12 (6%) | 21 (11%) | 13 (7%) | 19 (10%) | — | 3 (2%) |
 | roblourens | 195 | 59 (30%) | 87 (45%) | 11 (6%) | 20 (10%) | 6 (3%) | 5 (3%) | 5 (3%) | 2 (1%) |
 | sandy081 | 161 | 59 (37%) | 64 (40%) | 9 (6%) | 15 (9%) | 4 (2%) | 3 (2%) | 2 (1%) | 5 (3%) |
-| lramos15 | 214 | 59 (28%) | 80 (37%) | 10 (5%) | 9 (4%) | 30 (14%) | 6 (3%) | 4 (2%) | 16 (7%) |
+| lramos15 | 196 | 53 (27%) | 66 (34%) | 11 (6%) | 10 (5%) | 30 (15%) | 6 (3%) | 4 (2%) | 16 (8%) |
 | TylerLeonhardt | 93 | 24 (26%) | 38 (41%) | 6 (6%) | 10 (11%) | 7 (8%) | 2 (2%) | — | 6 (6%) |
 | meganrogge | 72 | 39 (54%) | 14 (19%) | 8 (11%) | 8 (11%) | 1 (1%) | 1 (1%) | — | 1 (1%) |
 | connor4312 | 71 | 21 (30%) | 28 (39%) | 8 (11%) | 7 (10%) | 1 (1%) | 5 (7%) | — | 1 (1%) |

@@ -1,11 +1,11 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21550 issues reviewed · generated 2026-10-03 13:30 UTC
+[← Home](index.html) · 21550 issues reviewed · generated 2026-10-04 08:55 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 21550
-- **Close proposals:** 3076 (14% of reviewed)
+- **Close proposals:** 3058 (14% of reviewed)
 - **Acted on (closed):** 978 (32% of proposals)
 - **2nd-reviewed before the close:** 260 confirmed · 78 disputed · 10 unverifiable · 630 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 456 (47% of acted-on) — 404 verbatim, 29 inside a longer comment, 23 edited
@@ -14,91 +14,91 @@
 - **Own wording:** 521 — 177 with the maintainer's own comment, 244 closed silently, 100 not a maintainer action
 - **Fresh-inbox closures:** 165 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 202 against the cited canonical, 16 one hop from it, 12 against a different one, 17 with no target recorded
-- **Still awaiting action:** 2098 open close proposals
+- **Still awaiting action:** 2080 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3463 of the 21550 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2098 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3463 of the 21550 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2080 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
-| User | Closures | With sweeper comment |
-| --- | --- | --- |
-| justschen | 133 | 70 (53%) |
-| alexdima | 115 | 107 (93%) |
-| lramos15 | 111 | 60 (54%) |
-| dmitrivMS | 103 | 0 (0%) |
-| vs-code-engineering | 84 | 0 (0%) |
-| roblourens | 58 | 30 (52%) |
-| deepak1556 | 39 | 12 (31%) |
-| benibenj | 35 | 27 (77%) |
-| hediet | 35 | 35 (100%) |
-| chrmarti | 31 | 29 (94%) |
-| kycutler | 30 | 14 (47%) |
-| aeschli | 18 | 11 (61%) |
-| sbatten | 16 | 16 (100%) |
-| pwang347 | 13 | 3 (23%) |
-| (unattributed) | 12 | 0 (0%) |
-| sandy081 | 12 | 0 (0%) |
-| TylerLeonhardt | 11 | 6 (55%) |
-| egamma | 10 | 10 (100%) |
-| lszomoru | 10 | 8 (80%) |
-| vritant24 | 10 | 3 (30%) |
-| meganrogge | 8 | 0 (0%) |
-| mrleemurray | 8 | 5 (63%) |
-| joshspicer | 6 | 0 (0%) |
-| karthiknadig | 5 | 2 (40%) |
-| alexr00 | 4 | 0 (0%) |
-| bhavyaus | 4 | 4 (100%) |
-| benvillalobos | 3 | 0 (0%) |
-| connor4312 | 3 | 0 (0%) |
-| dbaeumer | 3 | 1 (33%) |
-| eleanorjboyd | 3 | 3 (100%) |
-| Giuspepe | 3 | 0 (0%) |
-| dileepyavan | 2 | 0 (0%) |
-| AbhaySanthani-tekframeworks | 1 | 0 (0%) |
-| aiday-mar | 1 | 0 (0%) |
-| AndrewStopchenko-SO | 1 | 0 (0%) |
-| babakzarrinbal | 1 | 0 (0%) |
-| BladeJoe | 1 | 0 (0%) |
-| BobVul | 1 | 0 (0%) |
-| bryanchen-d | 1 | 0 (0%) |
-| Caffeine19 | 1 | 0 (0%) |
-| coder-free | 1 | 0 (0%) |
-| dalisoft | 1 | 0 (0%) |
-| danwilhelm | 1 | 0 (0%) |
-| DavidLangworthy | 1 | 0 (0%) |
-| DonJayamanne | 1 | 0 (0%) |
-| dustintran333 | 1 | 0 (0%) |
-| federicobrancasi | 1 | 0 (0%) |
-| garretwilson | 1 | 0 (0%) |
-| Goldenlion5648 | 1 | 0 (0%) |
-| houghj16 | 1 | 0 (0%) |
-| JMS-1 | 1 | 0 (0%) |
-| jruales | 1 | 0 (0%) |
-| juuzo | 1 | 0 (0%) |
-| kerberjg | 1 | 0 (0%) |
-| KukoCL | 1 | 0 (0%) |
-| M2zG0a | 1 | 0 (0%) |
-| magnumquest39-cloud | 1 | 0 (0%) |
-| Mapalmeira | 1 | 0 (0%) |
-| monolithed | 1 | 0 (0%) |
-| na2co3-ftw | 1 | 0 (0%) |
-| Prasanna-2005 | 1 | 0 (0%) |
-| romalpani | 1 | 0 (0%) |
-| rzhao271 | 1 | 0 (0%) |
-| sanket-bhalerao | 1 | 0 (0%) |
-| SimonSiefke | 1 | 0 (0%) |
-| steven8274 | 1 | 0 (0%) |
-| Tanishq-JM | 1 | 0 (0%) |
-| tomasbedrich | 1 | 0 (0%) |
-| trent-abc | 1 | 0 (0%) |
-| ulugbekna | 1 | 0 (0%) |
-| vikramnitin9 | 1 | 0 (0%) |
-| xgtxdzh | 1 | 0 (0%) |
+| User | Closures | With sweeper comment | Agrees, own wording | Differs | In line with the proposal |
+| --- | --- | --- | --- | --- | --- |
+| justschen | 133 | 70 (53%) | 45 (6 fresh) | 18 | 115 (86%) |
+| alexdima | 115 | 107 (93%) | 5 | 2 | 112 (97%) |
+| lramos15 | 111 | 60 (54%) | 33 (2 fresh) | 18 | 93 (84%) |
+| dmitrivMS | 103 | 0 (0%) | 73 (20 fresh) | 30 | 73 (71%) |
+| vs-code-engineering | 84 | 0 (0%) | 25 (17 fresh) | 9 | 25 (30%) |
+| roblourens | 58 | 30 (52%) | 13 (5 fresh) | 15 | 43 (74%) |
+| deepak1556 | 39 | 12 (31%) | 23 (9 fresh) | 4 | 35 (90%) |
+| benibenj | 35 | 27 (77%) | 3 (3 fresh) | 5 | 30 (86%) |
+| hediet | 35 | 35 (100%) | 0 | 0 | 35 (100%) |
+| chrmarti | 31 | 29 (94%) | 2 (1 fresh) | 0 | 31 (100%) |
+| kycutler | 30 | 14 (47%) | 12 (2 fresh) | 4 | 26 (87%) |
+| aeschli | 18 | 11 (61%) | 6 (2 fresh) | 1 | 17 (94%) |
+| sbatten | 16 | 16 (100%) | 0 | 0 | 16 (100%) |
+| pwang347 | 13 | 3 (23%) | 4 (1 fresh) | 6 | 7 (54%) |
+| (unattributed) | 12 | 0 (0%) | 0 | 0 | 0 (0%) |
+| sandy081 | 12 | 0 (0%) | 8 (2 fresh) | 4 | 8 (67%) |
+| TylerLeonhardt | 11 | 6 (55%) | 4 (4 fresh) | 1 | 10 (91%) |
+| egamma | 10 | 10 (100%) | 0 | 0 | 10 (100%) |
+| lszomoru | 10 | 8 (80%) | 1 | 1 | 9 (90%) |
+| vritant24 | 10 | 3 (30%) | 6 (1 fresh) | 1 | 9 (90%) |
+| meganrogge | 8 | 0 (0%) | 6 (5 fresh) | 1 | 6 (75%) |
+| mrleemurray | 8 | 5 (63%) | 1 (1 fresh) | 2 | 6 (75%) |
+| joshspicer | 6 | 0 (0%) | 2 (1 fresh) | 4 | 2 (33%) |
+| karthiknadig | 5 | 2 (40%) | 3 | 0 | 5 (100%) |
+| alexr00 | 4 | 0 (0%) | 1 (1 fresh) | 3 | 1 (25%) |
+| bhavyaus | 4 | 4 (100%) | 0 | 0 | 4 (100%) |
+| benvillalobos | 3 | 0 (0%) | 1 (1 fresh) | 2 | 1 (33%) |
+| connor4312 | 3 | 0 (0%) | 0 | 3 | 0 (0%) |
+| dbaeumer | 3 | 1 (33%) | 0 | 1 | 1 (33%) |
+| eleanorjboyd | 3 | 3 (100%) | 0 | 0 | 3 (100%) |
+| Giuspepe | 3 | 0 (0%) | 2 | 1 | 2 (67%) |
+| dileepyavan | 2 | 0 (0%) | 2 | 0 | 2 (100%) |
+| AbhaySanthani-tekframeworks | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| aiday-mar | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
+| AndrewStopchenko-SO | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| babakzarrinbal | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| BladeJoe | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| BobVul | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| bryanchen-d | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
+| Caffeine19 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| coder-free | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| dalisoft | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| danwilhelm | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| DavidLangworthy | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| DonJayamanne | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| dustintran333 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| federicobrancasi | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| garretwilson | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| Goldenlion5648 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| houghj16 | 1 | 0 (0%) | 1 | 0 | 1 (100%) |
+| JMS-1 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| jruales | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
+| juuzo | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| kerberjg | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| KukoCL | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| M2zG0a | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| magnumquest39-cloud | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| Mapalmeira | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| monolithed | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| na2co3-ftw | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| Prasanna-2005 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| romalpani | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| rzhao271 | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
+| sanket-bhalerao | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| SimonSiefke | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| steven8274 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| Tanishq-JM | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| tomasbedrich | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| trent-abc | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| ulugbekna | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| vikramnitin9 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| xgtxdzh | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4127 reviewed briefs (1993 ready to implement · 2134 ready to plan); 31 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4133 reviewed briefs (1995 ready to implement · 2138 ready to plan); 31 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -109,14 +109,14 @@ Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s s
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 884 of 884 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 594 of 594 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1202 confirmed (40 with the fix unreleased) · 542 disputed · 82 unverifiable
+- **duplicate:** 870 of 870 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 588 of 588 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1202 confirmed (39 with the fix unreleased) · 522 disputed · 82 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
 | confirmed | 941 | 259 | 2 |
-| disputed | 464 | 78 | 0 |
+| disputed | 444 | 78 | 0 |
 | unverifiable | 72 | 10 | 0 |
 
 ### Closed despite a dispute
@@ -202,7 +202,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 542 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 522 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -232,10 +232,10 @@ _The 542 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1200 | 316 | 26% | 138 | 10 |
-| implemented on main | 883 | 291 | 33% | 181 | — |
-| as-designed | 327 | 91 | 28% | 51 | 6 |
-| out-of-scope | 213 | 80 | 38% | 23 | 1 |
+| duplicate | 1186 | 316 | 27% | 138 | 10 |
+| implemented on main | 877 | 291 | 33% | 181 | — |
+| as-designed | 328 | 91 | 28% | 51 | 6 |
+| out-of-scope | 214 | 80 | 37% | 23 | 1 |
 | question | 181 | 56 | 31% | 18 | — |
 | not-reproducible | 114 | 37 | 32% | 12 | 2 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 3 |
