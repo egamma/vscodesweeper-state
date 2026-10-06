@@ -1,23 +1,23 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21749 issues reviewed · generated 2026-10-05 18:01 UTC
+[← Home](index.html) · 21845 issues reviewed · generated 2026-10-06 15:39 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21749
-- **Close proposals:** 3024 (14% of reviewed)
-- **Acted on (closed):** 1004 (33% of proposals)
-- **2nd-reviewed before the close:** 272 confirmed · 83 disputed · 13 unverifiable · 636 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Issues reviewed:** 21845
+- **Close proposals:** 3033 (14% of reviewed)
+- **Acted on (closed):** 1009 (33% of proposals)
+- **2nd-reviewed before the close:** 273 confirmed · 85 disputed · 14 unverifiable · 637 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 466 (46% of acted-on) — 412 verbatim, 29 inside a longer comment, 25 edited
-- **Likely fixed instead:** 23 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (23 of the 537 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Closed without the sweeper's comment:** 538 — 291 agree with the proposal, 147 differ, 100 not a maintainer action (reporter, bot timeout, transfer)
-- **Own wording:** 537 — 178 with the maintainer's own comment, 259 closed silently, 100 not a maintainer action
-- **Fresh-inbox closures:** 168 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
+- **Likely fixed instead:** 23 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (23 of the 542 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Closed without the sweeper's comment:** 543 — 295 agree with the proposal, 147 differ, 101 not a maintainer action (reporter, bot timeout, transfer)
+- **Own wording:** 542 — 181 with the maintainer's own comment, 260 closed silently, 101 not a maintainer action
+- **Fresh-inbox closures:** 169 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 207 against the cited canonical, 16 one hop from it, 13 against a different one, 18 with no target recorded
-- **Still awaiting action:** 2020 open close proposals
+- **Still awaiting action:** 2024 open close proposals
 - **Reversals (reopened after a close):** 4 — 1 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3543 of the 21749 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2020 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3618 of the 21845 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 2024 still open — closed records move to its ✔ closed view._
 
 ## Who acted on proposals
 
@@ -25,14 +25,14 @@ _Close proposals count the whole corpus (3543 of the 21749 reviewed issues have 
 | --- | --- | --- | --- | --- | --- |
 | justschen | 150 | 75 (50%) | 50 (6 fresh) | 25 | 125 (83%) |
 | alexdima | 115 | 107 (93%) | 5 | 2 | 112 (97%) |
-| lramos15 | 111 | 60 (54%) | 33 (2 fresh) | 18 | 93 (84%) |
+| lramos15 | 113 | 60 (53%) | 35 (2 fresh) | 18 | 95 (84%) |
 | dmitrivMS | 107 | 0 (0%) | 77 (23 fresh) | 30 | 77 (72%) |
 | vs-code-engineering | 84 | 0 (0%) | 25 (17 fresh) | 9 | 25 (30%) |
 | roblourens | 58 | 30 (52%) | 13 (5 fresh) | 15 | 43 (74%) |
 | deepak1556 | 39 | 12 (31%) | 23 (9 fresh) | 4 | 35 (90%) |
 | benibenj | 38 | 30 (79%) | 3 (3 fresh) | 5 | 33 (87%) |
 | hediet | 35 | 35 (100%) | 0 | 0 | 35 (100%) |
-| chrmarti | 31 | 29 (94%) | 2 (1 fresh) | 0 | 31 (100%) |
+| chrmarti | 32 | 29 (91%) | 3 (2 fresh) | 0 | 32 (100%) |
 | kycutler | 30 | 14 (47%) | 12 (2 fresh) | 4 | 26 (87%) |
 | aeschli | 18 | 11 (61%) | 6 (2 fresh) | 1 | 17 (94%) |
 | sbatten | 16 | 16 (100%) | 0 | 0 | 16 (100%) |
@@ -40,9 +40,9 @@ _Close proposals count the whole corpus (3543 of the 21749 reviewed issues have 
 | (unattributed) | 12 | 0 (0%) | 0 | 0 | 0 (0%) |
 | sandy081 | 12 | 0 (0%) | 8 (2 fresh) | 4 | 8 (67%) |
 | TylerLeonhardt | 11 | 6 (55%) | 4 (4 fresh) | 1 | 10 (91%) |
+| vritant24 | 11 | 3 (27%) | 7 (1 fresh) | 1 | 10 (91%) |
 | egamma | 10 | 10 (100%) | 0 | 0 | 10 (100%) |
 | lszomoru | 10 | 8 (80%) | 1 | 1 | 9 (90%) |
-| vritant24 | 10 | 3 (30%) | 6 (1 fresh) | 1 | 9 (90%) |
 | meganrogge | 8 | 0 (0%) | 6 (5 fresh) | 1 | 6 (75%) |
 | mrleemurray | 8 | 5 (63%) | 1 (1 fresh) | 2 | 6 (75%) |
 | joshspicer | 6 | 0 (0%) | 2 (1 fresh) | 4 | 2 (33%) |
@@ -86,6 +86,7 @@ _Close proposals count the whole corpus (3543 of the 21749 reviewed issues have 
 | na2co3-ftw | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | Prasanna-2005 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | romalpani | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
+| rwoll | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | rzhao271 | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
 | sanket-bhalerao | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | SimonSiefke | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
@@ -99,31 +100,33 @@ _Close proposals count the whole corpus (3543 of the 21749 reviewed issues have 
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4250 reviewed briefs (2016 ready to implement · 2234 ready to plan); 36 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4298 reviewed briefs (2021 ready to implement · 2277 ready to plan); 40 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
-| alexdima | 179 | 2 | 2 | — | — | — |
-| benibenj | 246 | 1 | — | 1 | — | 1 |
+| alexdima | 180 | 2 | 2 | — | — | — |
+| benibenj | 251 | 1 | — | 1 | — | 1 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 837 of 837 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 558 of 558 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1224 confirmed (39 with the fix unreleased) · 436 disputed · 103 unverifiable
+- **duplicate:** 842 of 842 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 554 of 554 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1226 confirmed (39 with the fix unreleased) · 439 disputed · 103 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 951 | 271 | 2 |
-| disputed | 352 | 83 | 1 |
-| unverifiable | 90 | 13 | 0 |
+| confirmed | 952 | 272 | 2 |
+| disputed | 353 | 85 | 1 |
+| unverifiable | 89 | 14 | 0 |
 
 ### Closed despite a dispute
 
 | Issue | Closed | Who acted | 2nd-review evidence |
 | --- | --- | --- | --- |
+| [#292420](https://github.com/microsoft/vscode/issues/292420) unclear how to cancel a copilot terminal | 2026-10-06 | rwoll | A asks for a discoverable cancel/stop affordance in the terminal toolbar; B asks for a clearer 'background' icon or label — different missing controls, so resolving B leaves A's stop-button gap unaddressed. |
+| [#338242](https://github.com/microsoft/vscode/issues/338242) Thinking Effort selector caps at "High", missing `xhigh`/`max` supported by underlying models | 2026-10-05 | vritant24 | The commit only softens session grid divider colors in sessionsPart theming and fixtures; it touches no model/effort configuration UI and adds no xhigh/max effort options. |
 | [#338205](https://github.com/microsoft/vscode/issues/338205) [Copilot agent] Can't see the file change list and can't perform keep/undo for each file/change | 2026-10-05 | dmitrivMS | A reports the file change list is absent entirely in the Agents Window; B states the changed-files summary and file-level Mark as Reviewed work and asks only for finer per-hunk review controls. |
 | [#300070](https://github.com/microsoft/vscode/issues/300070) Broken GPT5.4 in chat interface | 2026-10-03 | justschen | The diff only budgets and placeholders images inside tool-call results (toolCalling.tsx); the report's trigger is ten user-attached images in the chat request, a path the commit never touches. |
 | [#299177](https://github.com/microsoft/vscode/issues/299177) renderMermaidDiagram in dark mode styles the diagram with white theme assumption | 2026-10-03 | justschen | Report blames the model emitting light-theme styling directives in the generated diagram source and asks for prompt tuning; the commit only adds a VS Code-derived renderer theme, which hardcoded per-node styles still override. |
@@ -208,7 +211,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 436 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 439 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -223,28 +226,28 @@ _The 436 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1602 |
-| propose-close | 1004 |
-| needs-info | 688 |
-| route-to-area | 249 |
+| keep-open | 1668 |
+| propose-close | 1009 |
+| needs-info | 691 |
+| route-to-area | 250 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1830 |
-| not_planned | 1134 |
+| completed | 1897 |
+| not_planned | 1140 |
 | duplicate | 560 |
-| not_found | 19 |
+| not_found | 21 |
 
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1165 | 328 | 28% | 140 | 11 |
-| implemented on main | 855 | 299 | 35% | 184 | — |
-| as-designed | 332 | 96 | 29% | 55 | 6 |
-| out-of-scope | 216 | 80 | 37% | 23 | 1 |
+| duplicate | 1171 | 329 | 28% | 140 | 11 |
+| implemented on main | 854 | 302 | 35% | 184 | — |
+| as-designed | 333 | 96 | 29% | 55 | 6 |
+| out-of-scope | 218 | 81 | 37% | 23 | 1 |
 | question | 183 | 57 | 31% | 19 | — |
-| not-reproducible | 115 | 37 | 32% | 12 | 2 |
+| not-reproducible | 116 | 37 | 32% | 12 | 2 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 3 |
 | off-topic | 39 | 23 | 59% | 7 | — |
 | invalid | 33 | 21 | 64% | 0 | — |
