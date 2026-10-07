@@ -64,6 +64,8 @@
   .sw.trk { background: var(--track); }
   .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
   .skillchart .crow { grid-template-columns: 110px 1fr 140px; }
+  .agechart .crow { grid-template-columns: 110px 1fr 120px; }
+  details.fold > summary { color: var(--muted); font-size: 12px; cursor: pointer; margin: 8px 0 4px; }
   .wk a.qlink { color: inherit; }
   .wk a.qlink:hover { color: var(--accent); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
@@ -81,18 +83,19 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-10-06 15:40 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-10-07 16:06 UTC</div>
 
   <div class="tiles">
-    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">1,308</div><div class="tsub">1,299 still open · 9 closed since review</div></div>
-    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">358</div><div class="tsub">27% of reviewed · 356 still open</div></div>
-    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">2</div><div class="tsub">1% of proposals</div></div>
+    <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">1,308</div><div class="tsub">1,297 still open · 11 closed since review</div></div>
+    <div class="tile"><div class="tlabel">Close proposals</div><div class="tvalue">358</div><div class="tsub">27% of reviewed · 355 still open</div></div>
+    <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">3</div><div class="tsub">1% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
     <div class="tile"><div class="tlabel">In line with the proposal</div><div class="tvalue">0</div><div class="tsub">0% of 0 maintainer closes · 0 with the comment + 0 in their own words</div></div>
+    <div class="tile"><div class="tlabel">Adopted closes on the backlog</div><div class="tvalue">0</div><div class="tsub">0% of the 0 closes with the comment were on issues older than 90 days at close</div></div>
   </div>
 
   <p class="desc">2nd-reviewed before the close: <strong>0 confirmed</strong> ·
-  <strong>1 disputed</strong> ·
+  <strong>2 disputed</strong> ·
   1 never 2nd-reviewed. Details in <a href="#verification">Independent verification</a>.</p>
 
   <h2>Proposed-close issues closed per week</h2>
@@ -100,7 +103,7 @@
   <div class="legend">
     <span><i class="sw wc"></i>closed with sweeper comment — 0</span>
     <span title="Closed without the sweeper's comment, the way the proposal said: a duplicate proposal closed as duplicate, an implemented-on-main proposal closed completed, any other proposal closed without a fix"><i class="sw agr"></i>own wording, agrees — 0</span>
-    <span title="Closed without the sweeper's comment and differently from the proposal (0), or not by a maintainer's decision — the reporter, a bot timeout, a transfer (2)"><i class="sw dif"></i>own wording, differs or not a maintainer action — 2</span>
+    <span title="Closed without the sweeper's comment and differently from the proposal (0), or not by a maintainer's decision — the reporter, a bot timeout, a transfer (3)"><i class="sw dif"></i>own wording, differs or not a maintainer action — 3</span>
     
   </div>
   <input type="checkbox" id="nofresh">
@@ -111,6 +114,8 @@
 <div class="crow"><span class="wk">w/o 2026-09-07</span><div class="bar"></div><span class="rlabel">0</span></div>
 <div class="crow"><span class="wk">w/o 2026-09-14</span><div class="bar"></div><span class="rlabel">0</span></div>
 <div class="crow"><span class="wk">w/o 2026-09-21</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">1</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"></div><span class="rlabel">0</span></div>
+<div class="crow"><span class="wk">w/o 2026-10-05</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">1</span></div>
   </div>
   <div class="chart nofresh">
 <div class="crow"><span class="wk">w/o 2026-08-24</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">1</span></div>
@@ -118,14 +123,54 @@
 <div class="crow"><span class="wk">w/o 2026-09-07</span><div class="bar"></div><span class="rlabel">0</span></div>
 <div class="crow"><span class="wk">w/o 2026-09-14</span><div class="bar"></div><span class="rlabel">0</span></div>
 <div class="crow"><span class="wk">w/o 2026-09-21</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">1</span></div>
+<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"></div><span class="rlabel">0</span></div>
+<div class="crow"><span class="wk">w/o 2026-10-05</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 0 · not a maintainer action: 1"></i></div><span class="rlabel">1</span></div>
   </div>
 
-  <h3>Closes without the sweeper's comment — 2</h3>
+  <h3>Closes without the sweeper's comment — 3</h3>
   <table>
     <tr><th>Class</th><th>What happened</th><th class="num">Closes</th></tr>
+<tr><td>not a maintainer action</td><td>closed by the reporter</td><td class="num">2</td></tr>
 <tr><td>not a maintainer action</td><td>bot timeout (info-needed, stale, feature-request)</td><td class="num">1</td></tr>
-<tr><td>not a maintainer action</td><td>closed by the reporter</td><td class="num">1</td></tr>
   </table>
+
+  <h2>Adoption by issue age</h2>
+  <p class="desc">Is the sweeper an inbox tool or a backlog tool? Each bar is the acted-on
+  closes of issues that old <strong>at close</strong> (age counts from the issue's creation
+  date); right label: the share closed with the sweeper's comment. The table's reviewed /
+  proposals / needs-info columns use the age <strong>at review</strong> (the latest review — a
+  re-review overwrites the record) and are shaped by history (the backlog sweep reviewed every
+  old issue once, the nightly reviews a new issue within a day), not a sample of the open
+  backlog.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>closed with sweeper comment</span>
+    <span><i class="sw agr"></i>closed otherwise, agrees</span>
+    <span><i class="sw dif"></i>closed otherwise, differs</span>
+    <span title="Closed by the reporter, by a bot timeout, or transferred"><i class="sw notm"></i>not a maintainer action</span>
+    
+  </div>
+  <div class="chart agechart">
+<div class="crow"><span class="wk">≤2d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">3–7d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">8–30d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">31–90d</span><div class="bar"><i class="seg notm" style="width:100.00%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i></div><span class="rlabel" title="1 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">91d–1y</span><div class="bar"><i class="seg notm" style="width:100.00%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i></div><span class="rlabel" title="1 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">1–2y</span><div class="bar"><i class="seg notm" style="width:100.00%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i></div><span class="rlabel" title="1 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">&gt;2y</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+  </div>
+  <details class="fold">
+  <summary>The numbers, with the reviews and proposals by age at review</summary>
+  <table>
+    <tr><th>Issue age</th><th class="num">Reviewed</th><th class="num">Close proposals</th><th class="num">Needs-info</th><th class="num" title="Closed with the sweeper's comment">With comment</th><th class="num" title="Closed without the sweeper's comment, the way the proposal said">Agrees, own words</th><th class="num" title="Closed differently from the proposal, or not by a maintainer's decision">Differs / not a maintainer</th><th class="num" title="(with comment + agrees) / close proposals of that age at review">In line</th></tr>
+<tr><td>≤2d</td><td class="num">4</td><td class="num">2 (50%)</td><td class="num">2 (50%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>3–7d</td><td class="num">7</td><td class="num">3 (43%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>8–30d</td><td class="num">23</td><td class="num">7 (30%)</td><td class="num">9 (39%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>31–90d</td><td class="num">69</td><td class="num">22 (32%)</td><td class="num">25 (36%)</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
+<tr><td>91d–1y</td><td class="num">262</td><td class="num">111 (42%)</td><td class="num">77 (29%)</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
+<tr><td>1–2y</td><td class="num">210</td><td class="num">43 (20%)</td><td class="num">74 (35%)</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
+<tr><td>&gt;2y</td><td class="num">733</td><td class="num">170 (23%)</td><td class="num">119 (16%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+  </table>
+  </details>
 
   <h2>Acceptance by close reason</h2>
   <p class="desc">Each bar is one close reason — the same merged rows as the
@@ -145,7 +190,7 @@
     <span><i class="sw pend"></i>still open</span>
   </div>
   <div class="chart">
-<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg notm" style="width:0.46%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i><i class="seg pend" style="width:99.54%" title="still open: 217"></i></div><span class="rlabel">1/218 (0%)</span></div>
+<div class="crow"><span class="wk">duplicate</span><div class="bar"><i class="seg notm" style="width:0.92%" title="not a maintainer action (reporter, bot timeout, transfer): 2"></i><i class="seg pend" style="width:99.08%" title="still open: 216"></i></div><span class="rlabel">2/218 (1%)</span></div>
 <div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg pend" style="width:19.27%" title="still open: 42"></i></div><span class="rlabel">0/42 (0%)</span></div>
 <div class="crow"><span class="wk">invalid</span><div class="bar"><i class="seg notm" style="width:0.46%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i><i class="seg pend" style="width:13.76%" title="still open: 30"></i></div><span class="rlabel">1/31 (3%)</span></div>
 <div class="crow"><span class="wk">implemented on main</span><div class="bar"><i class="seg pend" style="width:11.01%" title="still open: 24"></i></div><span class="rlabel">0/24 (0%)</span></div>
@@ -154,14 +199,14 @@
 <div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg pend" style="width:3.21%" title="still open: 7"></i></div><span class="rlabel">0/7 (0%)</span></div>
   </div>
 
-  <h2>Comment adoption on the 2 acted-on proposals</h2>
+  <h2>Comment adoption on the 3 acted-on proposals</h2>
   <div class="strip">
     
     
     
     
     
-    <i class="seg notm" style="width:100.00%" title="own wording: not a maintainer action (reporter, bot timeout, transfer): 2 (100%)"></i>
+    <i class="seg notm" style="width:100.00%" title="own wording: not a maintainer action (reporter, bot timeout, transfer): 3 (100%)"></i>
     
   </div>
   <div class="legend">
@@ -170,7 +215,7 @@
     <span><i class="sw wcl"></i>edited 0</span>
     <span><i class="sw own"></i>own comment 0</span>
     <span><i class="sw sil"></i>closed silently 0</span>
-    <span><i class="sw notm"></i>not a maintainer action 2</span>
+    <span><i class="sw notm"></i>not a maintainer action 3</span>
     
   </div>
   
@@ -185,7 +230,7 @@
   record was re-reviewed since verification) are excluded from the mix, and live issue drift
   is re-checked by the nightly verify sweep, not this page. Scope is these two close reasons
   only.</p>
-  <p class="desc"><strong>duplicate</strong>: 217 of 217 open proposals verified — <strong>implemented-on-main</strong>: 24 of 24 open proposals verified</p>
+  <p class="desc"><strong>duplicate</strong>: 216 of 216 open proposals verified — <strong>implemented-on-main</strong>: 24 of 24 open proposals verified</p>
   <div class="strip">
     <i class="seg wc" style="width:53.31%" title="confirmed: 129 (53%)"></i>
     <i class="seg wcm" style="width:0.83%" title="confirmed, fix unreleased: 2 (1%)"></i>
@@ -225,7 +270,7 @@
   <table>
     <tr><th>2nd-review verdict</th><th class="num">Still open</th><th class="num">Closed since</th><th class="num">Reopened after a close</th></tr>
 <tr><td>confirmed</td><td class="num">131</td><td class="num">0</td><td class="num">0</td></tr>
-<tr><td>disputed</td><td class="num">101</td><td class="num">1</td><td class="num">0</td></tr>
+<tr><td>disputed</td><td class="num">100</td><td class="num">2</td><td class="num">0</td></tr>
 <tr><td>unverifiable</td><td class="num">9</td><td class="num">0</td><td class="num">0</td></tr>
   </table>
 
@@ -233,10 +278,14 @@
   <p class="desc">Closes that went ahead after the 2nd review refuted the proposal — either the
   human knew better (the dispute is advisory) or a false positive slipped past the warning;
   both readings are on record. The before-the-fact twin of the reversals queue below.</p>
+  <details class="fold">
+  <summary>Show the 2 closes with the verifier's evidence</summary>
   <table>
     <tr><th>Issue</th><th>Closed</th><th>Who acted</th><th>2nd-review evidence</th></tr>
+<tr><td><a href="https://github.com/microsoft/vscode-remote-release/issues/10902" target="_blank" rel="noopener">#10902</a> Remote Extension host terminated unexpectedly 3 times within the last 5 minutes</td><td>2026-10-07</td><td>sleepymalc</td><td>A is a 1.99.3 Remote-SSH extension host crash from April 2025; B is a June 2025 vscode 1.101 regression where Wasm memory allocation fails out-of-memory — different builds, mechanisms, and repos.</td></tr>
 <tr><td><a href="https://github.com/microsoft/vscode-remote-release/issues/11759" target="_blank" rel="noopener">#11759</a> Add WSL &quot;Kill VS Code Server on Host...&quot; command</td><td>2026-09-21</td><td>vs-code-engineering</td><td>Distinct Remote-SSH-parallel commands: A asks to kill the running WSL server process (to restart and reload .profile), while B asks to uninstall/delete the server installation for disk cleanup.</td></tr>
   </table>
+  </details>
 
   <h2>Reversals — reopened after a close</h2>
   <p class="desc">Close proposals whose closure was later reversed (the issue reopened) —
@@ -251,6 +300,7 @@
   <table>
     <tr><th>User</th><th class="num">Closures</th><th class="num">With sweeper comment</th><th class="num" title="Closed without the sweeper's comment, the way the proposal said. Agreement, not proof of use.">Agrees, own wording</th><th class="num" title="Closed without the sweeper's comment, differently from the proposal.">Differs</th><th class="num" title="With the sweeper's comment + agreeing in their own words, as a share of the user's closures.">In line with the proposal</th></tr>
 <tr><td>Princemovil</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>sleepymalc</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
 <tr><td>vs-code-engineering</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
   </table>
 
@@ -260,21 +310,22 @@
     <table>
       <tr><th>Review verdict</th><th class="num">Closed</th></tr>
 <tr><td>keep-open</td><td class="num">6</td></tr>
-<tr><td>propose-close</td><td class="num">2</td></tr>
+<tr><td>propose-close</td><td class="num">3</td></tr>
 <tr><td>needs-info</td><td class="num">1</td></tr>
+<tr><td>route-to-area</td><td class="num">1</td></tr>
     </table>
     <table>
       <tr><th>Close reason</th><th class="num">Closed</th></tr>
+<tr><td>completed</td><td class="num">5</td></tr>
 <tr><td>not_planned</td><td class="num">5</td></tr>
-<tr><td>completed</td><td class="num">3</td></tr>
 <tr><td>not_found</td><td class="num">1</td></tr>
     </table>
   </div>
 
   <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a>.
   Close proposals here count the whole corpus; the <a href="dashboard.html">dashboard</a>'s
-  <code>propose-close</code> card counts only the 356 still open
-  (closed records move to its ✔ closed view), so it reads lower by the 2
+  <code>propose-close</code> card counts only the 355 still open
+  (closed records move to its ✔ closed view), so it reads lower by the 3
   acted-on proposals. Something off? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener">Send feedback</a>.</footer>
   <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=outcomes" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
 </body>

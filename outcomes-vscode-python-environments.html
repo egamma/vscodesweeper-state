@@ -64,6 +64,8 @@
   .sw.trk { background: var(--track); }
   .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
   .skillchart .crow { grid-template-columns: 110px 1fr 140px; }
+  .agechart .crow { grid-template-columns: 110px 1fr 120px; }
+  details.fold > summary { color: var(--muted); font-size: 12px; cursor: pointer; margin: 8px 0 4px; }
   .wk a.qlink { color: inherit; }
   .wk a.qlink:hover { color: var(--accent); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
@@ -81,7 +83,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 144 issues reviewed · generated 2026-10-06 15:39 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 144 issues reviewed · generated 2026-10-07 16:06 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">144</div><div class="tsub">78 still open · 66 closed since review</div></div>
@@ -89,6 +91,7 @@
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">11</div><div class="tsub">69% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">3</div><div class="tsub">27% of acted-on</div></div>
     <div class="tile"><div class="tlabel">In line with the proposal</div><div class="tvalue">8</div><div class="tsub">89% of 9 maintainer closes · 3 with the comment + 5 in their own words</div></div>
+    <div class="tile"><div class="tlabel">Adopted closes on the backlog</div><div class="tvalue">3</div><div class="tsub">100% of the 3 closes with the comment were on issues older than 90 days at close</div></div>
   </div>
   <p class="desc">Of the 11 acted-on closes, <strong>1 were likely fixed
   instead</strong> — closed without the sweeper's comment and with fix evidence (a closing pull
@@ -138,6 +141,44 @@
 <tr><td>not a maintainer action</td><td>bot timeout (info-needed, stale, feature-request)</td><td class="num">1</td></tr>
 <tr><td>not a maintainer action</td><td>transferred or deleted</td><td class="num">1</td></tr>
   </table>
+
+  <h2>Adoption by issue age</h2>
+  <p class="desc">Is the sweeper an inbox tool or a backlog tool? Each bar is the acted-on
+  closes of issues that old <strong>at close</strong> (age counts from the issue's creation
+  date); right label: the share closed with the sweeper's comment. The table's reviewed /
+  proposals / needs-info columns use the age <strong>at review</strong> (the latest review — a
+  re-review overwrites the record) and are shaped by history (the backlog sweep reviewed every
+  old issue once, the nightly reviews a new issue within a day), not a sample of the open
+  backlog.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>closed with sweeper comment</span>
+    <span><i class="sw agr"></i>closed otherwise, agrees</span>
+    <span><i class="sw dif"></i>closed otherwise, differs</span>
+    <span title="Closed by the reporter, by a bot timeout, or transferred"><i class="sw notm"></i>not a maintainer action</span>
+    
+  </div>
+  <div class="chart agechart">
+<div class="crow"><span class="wk">≤2d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">3–7d</span><div class="bar"><i class="seg agr" style="width:20.00%" title="closed otherwise, agrees with the verdict: 1"></i></div><span class="rlabel" title="1 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">8–30d</span><div class="bar"><i class="seg agr" style="width:80.00%" title="closed otherwise, agrees with the verdict: 4"></i><i class="seg dif" style="width:20.00%" title="closed otherwise, differs from the verdict: 1"></i></div><span class="rlabel" title="5 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">31–90d</span><div class="bar"><i class="seg notm" style="width:20.00%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i></div><span class="rlabel" title="1 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">91d–1y</span><div class="bar"><i class="seg wc" style="width:40.00%" title="closed with sweeper comment: 2"></i><i class="seg notm" style="width:20.00%" title="not a maintainer action (reporter, bot timeout, transfer): 1"></i></div><span class="rlabel" title="3 closes of issues this old; 2 with the sweeper's comment">67% with comment</span></div>
+<div class="crow"><span class="wk">1–2y</span><div class="bar"><i class="seg wc" style="width:20.00%" title="closed with sweeper comment: 1"></i></div><span class="rlabel" title="1 closes of issues this old; 1 with the sweeper's comment">100% with comment</span></div>
+<div class="crow"><span class="wk">&gt;2y</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+  </div>
+  <details class="fold">
+  <summary>The numbers, with the reviews and proposals by age at review</summary>
+  <table>
+    <tr><th>Issue age</th><th class="num">Reviewed</th><th class="num">Close proposals</th><th class="num">Needs-info</th><th class="num" title="Closed with the sweeper's comment">With comment</th><th class="num" title="Closed without the sweeper's comment, the way the proposal said">Agrees, own words</th><th class="num" title="Closed differently from the proposal, or not by a maintainer's decision">Differs / not a maintainer</th><th class="num" title="(with comment + agrees) / close proposals of that age at review">In line</th></tr>
+<tr><td>≤2d</td><td class="num">2</td><td class="num">0 (0%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>3–7d</td><td class="num">4</td><td class="num">1 (25%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">1</td><td class="num">0</td><td class="num">1 (100%)</td></tr>
+<tr><td>8–30d</td><td class="num">24</td><td class="num">7 (29%)</td><td class="num">9 (38%)</td><td class="num">0</td><td class="num">4</td><td class="num">1</td><td class="num">4 (57%)</td></tr>
+<tr><td>31–90d</td><td class="num">23</td><td class="num">2 (9%)</td><td class="num">3 (13%)</td><td class="num">0</td><td class="num">0</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
+<tr><td>91d–1y</td><td class="num">41</td><td class="num">4 (10%)</td><td class="num">3 (7%)</td><td class="num">2</td><td class="num">0</td><td class="num">1</td><td class="num">2 (50%)</td></tr>
+<tr><td>1–2y</td><td class="num">47</td><td class="num">2 (4%)</td><td class="num">0 (0%)</td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">1 (50%)</td></tr>
+<tr><td>&gt;2y</td><td class="num">3</td><td class="num">0 (0%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+  </table>
+  </details>
 
   <h2>Acceptance by close reason</h2>
   <p class="desc">Each bar is one close reason — the same merged rows as the
@@ -251,11 +292,14 @@
   <p class="desc">Closes that went ahead after the 2nd review refuted the proposal — either the
   human knew better (the dispute is advisory) or a false positive slipped past the warning;
   both readings are on record. The before-the-fact twin of the reversals queue below.</p>
+  <details class="fold">
+  <summary>Show the 2 closes with the verifier's evidence</summary>
   <table>
     <tr><th>Issue</th><th>Closed</th><th>Who acted</th><th>2nd-review evidence</th></tr>
 <tr><td><a href="https://github.com/microsoft/vscode-python-environments/issues/1730" target="_blank" rel="noopener">#1730</a> How to expose environments created with Snakemake</td><td>2026-10-06</td><td>github-actions</td><td>A asks how to surface Snakemake's hash-named .snakemake/conda envs via workspaceSearchPaths (discovery of non-registered envs); B's named conda envs ARE discovered but fail to render in the picker UI — different mechanisms.</td></tr>
 <tr><td><a href="https://github.com/microsoft/vscode-python-environments/issues/1421" target="_blank" rel="noopener">#1421</a> IndentationError when executing nested for-loops via “Run Selection/Line in Python Terminal”</td><td>2026-09-25</td><td>(unattributed)</td><td>A's IndentationError triggers on nested for-loop blocks with no size or shell-integration evidence; B is a macOS chunking defect on large flat selections tied to python.terminal.shellIntegration.enabled — different trigger chains sharing one error.</td></tr>
   </table>
+  </details>
 
   <h2>Reversals — reopened after a close</h2>
   <p class="desc">Close proposals whose closure was later reversed (the issue reopened) —

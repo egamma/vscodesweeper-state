@@ -64,6 +64,8 @@
   .sw.trk { background: var(--track); }
   .track { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--track); }
   .skillchart .crow { grid-template-columns: 110px 1fr 140px; }
+  .agechart .crow { grid-template-columns: 110px 1fr 120px; }
+  details.fold > summary { color: var(--muted); font-size: 12px; cursor: pointer; margin: 8px 0 4px; }
   .wk a.qlink { color: inherit; }
   .wk a.qlink:hover { color: var(--accent); }
   .rlabel { color: var(--muted); font-size: 12px; white-space: nowrap; }
@@ -81,7 +83,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 72 issues reviewed · generated 2026-10-06 15:40 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 72 issues reviewed · generated 2026-10-07 16:06 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">72</div><div class="tsub">71 still open · 1 closed since review</div></div>
@@ -89,6 +91,7 @@
     <div class="tile"><div class="tlabel">Acted on (closed)</div><div class="tvalue">0</div><div class="tsub">0% of proposals</div></div>
     <div class="tile accent"><div class="tlabel">With sweeper comment</div><div class="tvalue">0</div><div class="tsub">0% of acted-on</div></div>
     <div class="tile"><div class="tlabel">In line with the proposal</div><div class="tvalue">0</div><div class="tsub">0% of 0 maintainer closes · 0 with the comment + 0 in their own words</div></div>
+    <div class="tile"><div class="tlabel">Adopted closes on the backlog</div><div class="tvalue">0</div><div class="tsub">0% of the 0 closes with the comment were on issues older than 90 days at close</div></div>
   </div>
 
   <p class="desc">2nd-reviewed before the close: <strong>0 confirmed</strong> ·
@@ -114,6 +117,44 @@
 
   <h3>Closes without the sweeper's comment — 0</h3>
   <p class="desc">None yet.</p>
+
+  <h2>Adoption by issue age</h2>
+  <p class="desc">Is the sweeper an inbox tool or a backlog tool? Each bar is the acted-on
+  closes of issues that old <strong>at close</strong> (age counts from the issue's creation
+  date); right label: the share closed with the sweeper's comment. The table's reviewed /
+  proposals / needs-info columns use the age <strong>at review</strong> (the latest review — a
+  re-review overwrites the record) and are shaped by history (the backlog sweep reviewed every
+  old issue once, the nightly reviews a new issue within a day), not a sample of the open
+  backlog.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>closed with sweeper comment</span>
+    <span><i class="sw agr"></i>closed otherwise, agrees</span>
+    <span><i class="sw dif"></i>closed otherwise, differs</span>
+    <span title="Closed by the reporter, by a bot timeout, or transferred"><i class="sw notm"></i>not a maintainer action</span>
+    
+  </div>
+  <div class="chart agechart">
+<div class="crow"><span class="wk">≤2d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">3–7d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">8–30d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">31–90d</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">91d–1y</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">1–2y</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+<div class="crow"><span class="wk">&gt;2y</span><div class="bar"></div><span class="rlabel" title="0 closes of issues this old; 0 with the sweeper's comment">0% with comment</span></div>
+  </div>
+  <details class="fold">
+  <summary>The numbers, with the reviews and proposals by age at review</summary>
+  <table>
+    <tr><th>Issue age</th><th class="num">Reviewed</th><th class="num">Close proposals</th><th class="num">Needs-info</th><th class="num" title="Closed with the sweeper's comment">With comment</th><th class="num" title="Closed without the sweeper's comment, the way the proposal said">Agrees, own words</th><th class="num" title="Closed differently from the proposal, or not by a maintainer's decision">Differs / not a maintainer</th><th class="num" title="(with comment + agrees) / close proposals of that age at review">In line</th></tr>
+<tr><td>≤2d</td><td class="num">0</td><td class="num">0 (0%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>3–7d</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>8–30d</td><td class="num">1</td><td class="num">1 (100%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>31–90d</td><td class="num">3</td><td class="num">0 (0%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>91d–1y</td><td class="num">13</td><td class="num">3 (23%)</td><td class="num">4 (31%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>1–2y</td><td class="num">10</td><td class="num">2 (20%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+<tr><td>&gt;2y</td><td class="num">44</td><td class="num">7 (16%)</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0 (0%)</td></tr>
+  </table>
+  </details>
 
   <h2>Acceptance by close reason</h2>
   <p class="desc">Each bar is one close reason — the same merged rows as the
