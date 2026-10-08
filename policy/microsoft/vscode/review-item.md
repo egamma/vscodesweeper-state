@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `001442b0be0ac0bb` — every verdict record carries the hash of the
+> Policy hash `50fd4b33ae613f68` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-10-07 16:06 UTC.
+> exactly this text. Published 2026-10-08 07:27 UTC.
 
 ---
 
@@ -503,6 +503,14 @@ review reads as useful rather than bureaucratic. Use plain maintainer English �
 mascot, theme, or catchphrases. For any external reference, use the full GitHub URL,
 not a bare `#123` — the one exception is the `/duplicate of #N` slash command, which
 the triage bot only recognizes with the bare number; never "fix" it into a URL.
+
+**The comment is for the reporter, not a validation report.** A fix citation in
+`proposedComment` says what changed for them — the commit, the release, and the
+behavior they will now see — and stops there. How the fix was validated is
+maintainer-side evidence: test additions, regression coverage, validation runs
+and the like belong in `evidence` only, never in the comment ("… and adds
+regression coverage asserting that the title and actions do not overlap" is the
+sentence to leave out).
 
 **Never invent process.** When a comment redirects the reporter to an external
 channel (GitHub Support, another team's queue), it may *name* the channel in one
