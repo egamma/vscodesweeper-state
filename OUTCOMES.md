@@ -1,11 +1,11 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 21926 issues reviewed · generated 2026-10-08 07:26 UTC
+[← Home](index.html) · 21928 issues reviewed · generated 2026-10-08 07:49 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 21926
-- **Close proposals:** 3001 (14% of reviewed)
+- **Issues reviewed:** 21928
+- **Close proposals:** 2967 (14% of reviewed)
 - **Acted on (closed):** 1014 (34% of proposals)
 - **2nd-reviewed before the close:** 276 confirmed · 85 disputed · 14 unverifiable · 639 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 466 (46% of acted-on) — 412 verbatim, 29 inside a longer comment, 25 edited
@@ -14,10 +14,10 @@
 - **Own wording:** 547 — 183 with the maintainer's own comment, 261 closed silently, 103 not a maintainer action
 - **Fresh-inbox closures:** 172 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 208 against the cited canonical, 16 one hop from it, 14 against a different one, 18 with no target recorded
-- **Still awaiting action:** 1987 open close proposals
+- **Still awaiting action:** 1953 open close proposals
 - **Reversals (reopened after a close):** 4 — 1 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3677 of the 21926 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1987 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3677 of the 21928 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1953 still open — closed records move to its ✔ closed view._
 
 ## Adoption by issue age
 
@@ -25,13 +25,13 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 | Issue age | Reviewed | Close proposals | Needs-info | With comment | Agrees, own words | Differs / not a maintainer | In line |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ≤2d | 2914 | 299 (10%) | 559 (19%) | 1 | 50 | 42 | 51 (17%) |
+| ≤2d | 2916 | 299 (10%) | 559 (19%) | 1 | 50 | 42 | 51 (17%) |
 | 3–7d | 967 | 110 (11%) | 275 (28%) | 1 | 27 | 33 | 28 (25%) |
 | 8–30d | 1814 | 263 (14%) | 300 (17%) | 30 | 57 | 36 | 87 (33%) |
-| 31–90d | 2293 | 364 (16%) | 317 (14%) | 52 | 55 | 48 | 107 (29%) |
-| 91d–1y | 6396 | 1163 (18%) | 1005 (16%) | 185 | 74 | 75 | 259 (22%) |
-| 1–2y | 2372 | 257 (11%) | 208 (9%) | 52 | 16 | 8 | 68 (26%) |
-| >2y | 5112 | 492 (10%) | 249 (5%) | 94 | 18 | 7 | 112 (23%) |
+| 31–90d | 2290 | 361 (16%) | 317 (14%) | 52 | 55 | 48 | 107 (30%) |
+| 91d–1y | 6398 | 1147 (18%) | 1009 (16%) | 185 | 74 | 75 | 259 (23%) |
+| 1–2y | 2373 | 256 (11%) | 208 (9%) | 52 | 16 | 8 | 68 (27%) |
+| >2y | 5112 | 478 (9%) | 251 (5%) | 94 | 18 | 7 | 112 (23%) |
 | unknown | 58 | 53 (91%) | 2 (3%) | 51 | 1 | 1 | 52 (98%) |
 
 ## Who acted on proposals
@@ -118,26 +118,26 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4335 reviewed briefs (2029 ready to implement · 2306 ready to plan); 45 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4353 reviewed briefs (2031 ready to implement · 2322 ready to plan); 45 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
 | alexdima | 180 | 2 | 2 | — | — | 1 |
-| benibenj | 251 | 1 | — | 1 | — | 2 |
+| benibenj | 252 | 1 | — | 1 | — | 2 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 833 of 833 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 525 of 525 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1223 confirmed (39 with the fix unreleased) · 407 disputed · 103 unverifiable
+- **duplicate:** 827 of 827 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 495 of 495 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1224 confirmed (39 with the fix unreleased) · 369 disputed · 104 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 946 | 275 | 2 |
-| disputed | 321 | 85 | 1 |
-| unverifiable | 89 | 14 | 0 |
+| confirmed | 947 | 275 | 2 |
+| disputed | 283 | 85 | 1 |
+| unverifiable | 90 | 14 | 0 |
 
 ### Closed despite a dispute
 
@@ -229,7 +229,7 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 407 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 369 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
@@ -260,12 +260,12 @@ _The 407 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1164 | 331 | 28% | 140 | 11 |
-| implemented on main | 826 | 303 | 37% | 184 | — |
+| duplicate | 1158 | 331 | 29% | 140 | 11 |
+| implemented on main | 796 | 303 | 38% | 184 | — |
 | as-designed | 334 | 97 | 29% | 55 | 6 |
 | out-of-scope | 217 | 81 | 37% | 23 | 1 |
 | question | 185 | 58 | 31% | 19 | — |
-| not-reproducible | 117 | 37 | 32% | 12 | 2 |
+| not-reproducible | 119 | 37 | 31% | 12 | 2 |
 | caused-by-extension | 41 | 41 | 100% | 17 | 3 |
 | off-topic | 39 | 23 | 59% | 7 | — |
 | invalid | 33 | 21 | 64% | 0 | — |
