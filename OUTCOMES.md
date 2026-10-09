@@ -1,23 +1,23 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 22003 issues reviewed · generated 2026-10-09 14:56 UTC
+[← Home](index.html) · 22089 issues reviewed · generated 2026-10-09 15:22 UTC
 
 ## Funnel
 
-- **Issues reviewed:** 22003
-- **Close proposals:** 2803 (13% of reviewed)
-- **Acted on (closed):** 1032 (37% of proposals)
-- **2nd-reviewed before the close:** 290 confirmed · 87 disputed · 14 unverifiable · 641 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
+- **Issues reviewed:** 22089
+- **Close proposals:** 2806 (13% of reviewed)
+- **Acted on (closed):** 1034 (37% of proposals)
+- **2nd-reviewed before the close:** 290 confirmed · 87 disputed · 14 unverifiable · 643 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 479 (46% of acted-on) — 425 verbatim, 29 inside a longer comment, 25 edited
-- **Likely fixed instead:** 24 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (24 of the 552 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
-- **Closed without the sweeper's comment:** 553 — 301 agree with the proposal, 149 differ, 103 not a maintainer action (reporter, bot timeout, transfer)
-- **Own wording:** 552 — 186 with the maintainer's own comment, 263 closed silently, 103 not a maintainer action
-- **Fresh-inbox closures:** 175 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
+- **Likely fixed instead:** 24 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (24 of the 554 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
+- **Closed without the sweeper's comment:** 555 — 303 agree with the proposal, 149 differ, 103 not a maintainer action (reporter, bot timeout, transfer)
+- **Own wording:** 554 — 187 with the maintainer's own comment, 264 closed silently, 103 not a maintainer action
+- **Fresh-inbox closures:** 176 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 219 against the cited canonical, 16 one hop from it, 14 against a different one, 18 with no target recorded
-- **Still awaiting action:** 1771 open close proposals
+- **Still awaiting action:** 1772 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3728 of the 22003 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1771 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3760 of the 22089 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1772 still open — closed records move to its ✔ closed view._
 
 ## Adoption by issue age
 
@@ -25,10 +25,10 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 | Issue age | Reviewed | Close proposals | Needs-info | With comment | Agrees, own words | Differs / not a maintainer | In line |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ≤2d | 2970 | 289 (10%) | 576 (19%) | 1 | 52 | 42 | 53 (18%) |
+| ≤2d | 3041 | 292 (10%) | 593 (20%) | 1 | 52 | 42 | 53 (18%) |
 | 3–7d | 969 | 106 (11%) | 279 (29%) | 1 | 27 | 34 | 28 (26%) |
-| 8–30d | 1808 | 246 (14%) | 303 (17%) | 30 | 57 | 36 | 87 (35%) |
-| 31–90d | 2296 | 346 (15%) | 324 (14%) | 52 | 56 | 49 | 108 (31%) |
+| 8–30d | 1823 | 246 (13%) | 305 (17%) | 30 | 57 | 36 | 87 (35%) |
+| 31–90d | 2296 | 346 (15%) | 324 (14%) | 52 | 58 | 49 | 110 (32%) |
 | 91d–1y | 6413 | 1085 (17%) | 1041 (16%) | 194 | 74 | 75 | 268 (25%) |
 | 1–2y | 2375 | 245 (10%) | 211 (9%) | 54 | 16 | 8 | 70 (29%) |
 | >2y | 5114 | 433 (8%) | 256 (5%) | 96 | 18 | 7 | 114 (26%) |
@@ -46,7 +46,7 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 | roblourens | 58 | 30 (52%) | 13 (5 fresh) | 15 | 43 (74%) |
 | deepak1556 | 39 | 12 (31%) | 23 (9 fresh) | 4 | 35 (90%) |
 | benibenj | 38 | 30 (79%) | 3 (3 fresh) | 5 | 33 (87%) |
-| hediet | 35 | 35 (100%) | 0 | 0 | 35 (100%) |
+| hediet | 37 | 35 (95%) | 2 (1 fresh) | 0 | 37 (100%) |
 | chrmarti | 32 | 29 (91%) | 3 (2 fresh) | 0 | 32 (100%) |
 | kycutler | 30 | 14 (47%) | 12 (2 fresh) | 4 | 26 (87%) |
 | aeschli | 18 | 11 (61%) | 6 (2 fresh) | 1 | 17 (94%) |
@@ -120,12 +120,12 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4432 reviewed briefs (2036 ready to implement · 2396 ready to plan); 47 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4449 reviewed briefs (2035 ready to implement · 2414 ready to plan); 48 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
 | alexdima | 181 | 2 | 2 | — | — | 1 |
-| benibenj | 254 | 1 | — | 1 | — | 3 |
+| benibenj | 255 | 1 | — | 1 | — | 3 |
 
 ## Independent verification — the 2nd review
 
@@ -247,17 +247,17 @@ _The 184 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Review verdict | Closed |
 | --- | --- |
-| keep-open | 1733 |
-| propose-close | 1032 |
-| needs-info | 709 |
-| route-to-area | 254 |
+| keep-open | 1750 |
+| propose-close | 1034 |
+| needs-info | 716 |
+| route-to-area | 260 |
 
 | Close reason | Closed |
 | --- | --- |
-| completed | 1965 |
-| not_planned | 1157 |
-| duplicate | 582 |
-| not_found | 24 |
+| completed | 1991 |
+| not_planned | 1160 |
+| duplicate | 584 |
+| not_found | 25 |
 
 ## Acceptance by close reason
 
@@ -265,13 +265,13 @@ _The 184 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | --- | --- | --- | --- | --- | --- |
 | duplicate | 1018 | 344 | 34% | 149 | 12 |
 | implemented on main | 768 | 306 | 40% | 187 | — |
-| as-designed | 337 | 97 | 29% | 55 | 6 |
+| as-designed | 337 | 98 | 29% | 55 | 6 |
 | out-of-scope | 217 | 82 | 38% | 24 | 1 |
-| question | 186 | 59 | 32% | 19 | — |
-| not-reproducible | 119 | 37 | 31% | 12 | 2 |
-| caused-by-extension | 41 | 41 | 100% | 17 | 3 |
+| question | 187 | 59 | 32% | 19 | — |
+| not-reproducible | 119 | 38 | 32% | 12 | 2 |
+| caused-by-extension | 42 | 41 | 98% | 17 | 3 |
 | off-topic | 39 | 23 | 59% | 7 | — |
-| invalid | 33 | 21 | 64% | 0 | — |
+| invalid | 34 | 21 | 62% | 0 | — |
 | extension-candidate | 24 | 11 | 46% | 3 | — |
 | other | 21 | 11 | 52% | 6 | — |
 
