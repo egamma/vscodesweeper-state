@@ -1,6 +1,6 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 22089 issues reviewed · generated 2026-10-09 15:22 UTC
+[← Home](index.html) · 22089 issues reviewed · generated 2026-10-09 19:48 UTC
 
 ## Funnel
 
@@ -29,9 +29,9 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 | 3–7d | 969 | 106 (11%) | 279 (29%) | 1 | 27 | 34 | 28 (26%) |
 | 8–30d | 1823 | 246 (13%) | 305 (17%) | 30 | 57 | 36 | 87 (35%) |
 | 31–90d | 2296 | 346 (15%) | 324 (14%) | 52 | 58 | 49 | 110 (32%) |
-| 91d–1y | 6413 | 1085 (17%) | 1041 (16%) | 194 | 74 | 75 | 268 (25%) |
-| 1–2y | 2375 | 245 (10%) | 211 (9%) | 54 | 16 | 8 | 70 (29%) |
-| >2y | 5114 | 433 (8%) | 256 (5%) | 96 | 18 | 7 | 114 (26%) |
+| 91d–1y | 6404 | 1085 (17%) | 1042 (16%) | 194 | 74 | 75 | 268 (25%) |
+| 1–2y | 2378 | 245 (10%) | 214 (9%) | 54 | 16 | 8 | 70 (29%) |
+| >2y | 5120 | 433 (8%) | 257 (5%) | 96 | 18 | 7 | 114 (26%) |
 | unknown | 58 | 53 (91%) | 2 (3%) | 51 | 1 | 1 | 52 (98%) |
 
 ## Who acted on proposals
@@ -39,28 +39,27 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 | User | Closures | With sweeper comment | Agrees, own wording | Differs | In line with the proposal |
 | --- | --- | --- | --- | --- | --- |
 | justschen | 150 | 75 (50%) | 50 (6 fresh) | 25 | 125 (83%) |
-| alexdima | 115 | 107 (93%) | 5 | 2 | 112 (97%) |
-| lramos15 | 114 | 60 (53%) | 36 (3 fresh) | 18 | 96 (84%) |
+| lramos15 | 113 | 59 (52%) | 36 (3 fresh) | 18 | 95 (84%) |
+| alexdima | 112 | 105 (94%) | 5 | 2 | 110 (98%) |
 | dmitrivMS | 107 | 0 (0%) | 77 (23 fresh) | 30 | 77 (72%) |
-| vs-code-engineering | 84 | 0 (0%) | 25 (17 fresh) | 9 | 25 (30%) |
-| roblourens | 58 | 30 (52%) | 13 (5 fresh) | 15 | 43 (74%) |
+| roblourens | 57 | 29 (51%) | 13 (5 fresh) | 15 | 42 (74%) |
 | deepak1556 | 39 | 12 (31%) | 23 (9 fresh) | 4 | 35 (90%) |
 | benibenj | 38 | 30 (79%) | 3 (3 fresh) | 5 | 33 (87%) |
 | hediet | 37 | 35 (95%) | 2 (1 fresh) | 0 | 37 (100%) |
+| vs-code-engineering | 34 | 0 (0%) | 25 (17 fresh) | 9 | 25 (74%) |
 | chrmarti | 32 | 29 (91%) | 3 (2 fresh) | 0 | 32 (100%) |
 | kycutler | 30 | 14 (47%) | 12 (2 fresh) | 4 | 26 (87%) |
-| aeschli | 18 | 11 (61%) | 6 (2 fresh) | 1 | 17 (94%) |
 | sbatten | 16 | 16 (100%) | 0 | 0 | 16 (100%) |
 | anthonykim1 | 15 | 15 (100%) | 0 | 0 | 15 (100%) |
+| aeschli | 13 | 6 (46%) | 6 (2 fresh) | 1 | 12 (92%) |
 | pwang347 | 13 | 3 (23%) | 4 (1 fresh) | 6 | 7 (54%) |
-| (unattributed) | 12 | 0 (0%) | 0 | 0 | 0 (0%) |
 | sandy081 | 12 | 0 (0%) | 8 (2 fresh) | 4 | 8 (67%) |
 | TylerLeonhardt | 11 | 6 (55%) | 4 (4 fresh) | 1 | 10 (91%) |
-| vritant24 | 11 | 3 (27%) | 7 (1 fresh) | 1 | 10 (91%) |
 | egamma | 10 | 10 (100%) | 0 | 0 | 10 (100%) |
-| lszomoru | 10 | 8 (80%) | 1 | 1 | 9 (90%) |
+| vritant24 | 10 | 2 (20%) | 7 (1 fresh) | 1 | 9 (90%) |
+| lszomoru | 9 | 7 (78%) | 1 | 1 | 8 (89%) |
 | mrleemurray | 9 | 5 (56%) | 2 (1 fresh) | 2 | 7 (78%) |
-| meganrogge | 8 | 0 (0%) | 6 (5 fresh) | 1 | 6 (75%) |
+| meganrogge | 7 | 0 (0%) | 6 (5 fresh) | 1 | 6 (86%) |
 | joshspicer | 6 | 0 (0%) | 2 (1 fresh) | 4 | 2 (33%) |
 | karthiknadig | 5 | 2 (40%) | 3 | 0 | 5 (100%) |
 | alexr00 | 4 | 0 (0%) | 1 (1 fresh) | 3 | 1 (25%) |
@@ -68,76 +67,29 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 | bamurtaugh | 3 | 0 (0%) | 3 (3 fresh) | 0 | 3 (100%) |
 | benvillalobos | 3 | 0 (0%) | 1 (1 fresh) | 2 | 1 (33%) |
 | connor4312 | 3 | 0 (0%) | 0 | 3 | 0 (0%) |
-| dbaeumer | 3 | 1 (33%) | 0 | 1 | 1 (33%) |
 | eleanorjboyd | 3 | 3 (100%) | 0 | 0 | 3 (100%) |
 | Giuspepe | 3 | 0 (0%) | 2 | 1 | 2 (67%) |
+| dbaeumer | 2 | 1 (50%) | 0 | 1 | 1 (50%) |
 | dileepyavan | 2 | 0 (0%) | 2 | 0 | 2 (100%) |
 | hawkticehurst | 2 | 0 (0%) | 1 | 1 | 1 (50%) |
-| AbhaySanthani-tekframeworks | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | aiday-mar | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
-| AndrewStopchenko-SO | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| babakzarrinbal | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| BladeJoe | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| BobVul | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | bryanchen-d | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
-| Caffeine19 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | chryw | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
-| coder-free | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| dalisoft | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| danwilhelm | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| DavidLangworthy | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| DonJayamanne | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| dustintran333 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| federicobrancasi | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| garretwilson | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| Goldenlion5648 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | houghj16 | 1 | 0 (0%) | 1 | 0 | 1 (100%) |
-| JMS-1 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | jruales | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
-| juuzo | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| kerberjg | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| KukoCL | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| lycc193bp | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| M2zG0a | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| magnumquest39-cloud | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| Mapalmeira | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| monolithed | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| na2co3-ftw | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| Prasanna-2005 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| romalpani | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| rwoll | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
 | rzhao271 | 1 | 0 (0%) | 0 | 1 | 0 (0%) |
-| sanket-bhalerao | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| shyeyian | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| SimonSiefke | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| steven8274 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| Tanishq-JM | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| tomasbedrich | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| trent-abc | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| ulugbekna | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| vikramnitin9 | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-| xgtxdzh | 1 | 0 (0%) | 0 | 0 | 0 (0%) |
-
-## sweeper-implement skill adoption
-
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4449 reviewed briefs (2035 ready to implement · 2414 ready to plan); 48 taken by a contributor PR. As current as the last reconcile run.
-
-| User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
-| --- | --- | --- | --- | --- | --- | --- |
-| alexdima | 181 | 2 | 2 | — | — | 1 |
-| benibenj | 255 | 1 | — | 1 | — | 3 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
 - **duplicate:** 674 of 674 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 464 of 464 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1239 confirmed (39 with the fix unreleased) · 184 disputed · 106 unverifiable
+- **implemented-on-main:** 463 of 464 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1238 confirmed (39 with the fix unreleased) · 184 disputed · 106 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 948 | 289 | 2 |
+| confirmed | 947 | 289 | 2 |
 | disputed | 97 | 87 | 0 |
 | unverifiable | 92 | 14 | 0 |
 
@@ -276,3 +228,12 @@ _The 184 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | other | 21 | 11 | 52% | 6 | — |
 
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
+## sweeper-implement skill adoption
+
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4471 reviewed briefs (2028 ready to implement · 2443 ready to plan); 48 taken by a contributor PR. As current as the last reconcile run.
+
+| User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
+| --- | --- | --- | --- | --- | --- | --- |
+| alexdima | 181 | 2 | 2 | — | — | 1 |
+| benibenj | 255 | 1 | — | 1 | — | 3 |
+
