@@ -1,12 +1,12 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 22003 issues reviewed · generated 2026-10-09 12:17 UTC
+[← Home](index.html) · 22003 issues reviewed · generated 2026-10-09 14:56 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 22003
-- **Close proposals:** 2935 (13% of reviewed)
-- **Acted on (closed):** 1032 (35% of proposals)
+- **Close proposals:** 2803 (13% of reviewed)
+- **Acted on (closed):** 1032 (37% of proposals)
 - **2nd-reviewed before the close:** 290 confirmed · 87 disputed · 14 unverifiable · 641 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 479 (46% of acted-on) — 425 verbatim, 29 inside a longer comment, 25 edited
 - **Likely fixed instead:** 24 (2% of acted-on) — closed without the sweeper's comment and with fix evidence (a closing PR or commit, or a `verified` / `insiders-released` label) on a proposal that claimed no fix; not claimed as adoption (24 of the 552 own-wording closes fall here — those comments weren't passed over, the close had a different cause)
@@ -14,10 +14,10 @@
 - **Own wording:** 552 — 186 with the maintainer's own comment, 263 closed silently, 103 not a maintainer action
 - **Fresh-inbox closures:** 175 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 219 against the cited canonical, 16 one hop from it, 14 against a different one, 18 with no target recorded
-- **Still awaiting action:** 1903 open close proposals
-- **Reversals (reopened after a close):** 4 — 1 after a close that used the sweeper's comment
+- **Still awaiting action:** 1771 open close proposals
+- **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3728 of the 22003 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1903 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3728 of the 22003 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1771 still open — closed records move to its ✔ closed view._
 
 ## Adoption by issue age
 
@@ -25,13 +25,13 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 | Issue age | Reviewed | Close proposals | Needs-info | With comment | Agrees, own words | Differs / not a maintainer | In line |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| ≤2d | 2981 | 302 (10%) | 575 (19%) | 1 | 52 | 42 | 53 (18%) |
-| 3–7d | 971 | 109 (11%) | 278 (29%) | 1 | 27 | 34 | 28 (26%) |
-| 8–30d | 1813 | 258 (14%) | 301 (17%) | 30 | 57 | 36 | 87 (34%) |
-| 31–90d | 2294 | 361 (16%) | 317 (14%) | 52 | 56 | 49 | 108 (30%) |
-| 91d–1y | 6401 | 1137 (18%) | 1012 (16%) | 194 | 74 | 75 | 268 (24%) |
-| 1–2y | 2373 | 254 (11%) | 209 (9%) | 54 | 16 | 8 | 70 (28%) |
-| >2y | 5112 | 461 (9%) | 253 (5%) | 96 | 18 | 7 | 114 (25%) |
+| ≤2d | 2970 | 289 (10%) | 576 (19%) | 1 | 52 | 42 | 53 (18%) |
+| 3–7d | 969 | 106 (11%) | 279 (29%) | 1 | 27 | 34 | 28 (26%) |
+| 8–30d | 1808 | 246 (14%) | 303 (17%) | 30 | 57 | 36 | 87 (35%) |
+| 31–90d | 2296 | 346 (15%) | 324 (14%) | 52 | 56 | 49 | 108 (31%) |
+| 91d–1y | 6413 | 1085 (17%) | 1041 (16%) | 194 | 74 | 75 | 268 (25%) |
+| 1–2y | 2375 | 245 (10%) | 211 (9%) | 54 | 16 | 8 | 70 (29%) |
+| >2y | 5114 | 433 (8%) | 256 (5%) | 96 | 18 | 7 | 114 (26%) |
 | unknown | 58 | 53 (91%) | 2 (3%) | 51 | 1 | 1 | 52 (98%) |
 
 ## Who acted on proposals
@@ -120,26 +120,26 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4392 reviewed briefs (2034 ready to implement · 2358 ready to plan); 47 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4432 reviewed briefs (2036 ready to implement · 2396 ready to plan); 47 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
-| alexdima | 180 | 2 | 2 | — | — | 1 |
-| benibenj | 253 | 1 | — | 1 | — | 3 |
+| alexdima | 181 | 2 | 2 | — | — | 1 |
+| benibenj | 254 | 1 | — | 1 | — | 3 |
 
 ## Independent verification — the 2nd review
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 802 of 802 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 469 of 469 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1227 confirmed (39 with the fix unreleased) · 331 disputed · 104 unverifiable
+- **duplicate:** 674 of 674 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 464 of 464 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1239 confirmed (39 with the fix unreleased) · 184 disputed · 106 unverifiable
 
 | 2nd-review verdict | Still open | Closed since | Reopened after a close |
 | --- | --- | --- | --- |
-| confirmed | 936 | 289 | 2 |
-| disputed | 243 | 87 | 1 |
-| unverifiable | 90 | 14 | 0 |
+| confirmed | 948 | 289 | 2 |
+| disputed | 97 | 87 | 0 |
+| unverifiable | 92 | 14 | 0 |
 
 ### Closed despite a dispute
 
@@ -233,13 +233,12 @@ _A blinded second review of duplicate / implemented-on-main close proposals. "Di
 | [#318485](https://github.com/microsoft/vscode/issues/318485) Replying to a past conversation results in "Input item ID does not belong to this connection: | 2026-08-19 | vs-code-engineering | A is a deterministic conversation-state bug ('Input item ID does not belong to this connection' when replying to a past chat), reproducible across retries and models — outside B's stated scope of transient/service-side request failures. |
 | [#330728](https://github.com/microsoft/vscode/issues/330728) fix: filter discovered pre-existing session in session config integration tests (build fix for vscode-engineering#3607) | 2026-08-16 | sandy081 | Commit serializes AgentPluginManager cache loading; it never touches sessionConfig.integrationTest.ts's root/sessionAdded predicate, so the discovered PRE_EXISTING_SESSION_URI notification race the issue reports remains unfiltered. |
 
-_The 331 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
+_The 184 disputed proposals are listed on the [dashboard](dashboard.html#q=verify%3Arefuted) — the link lands pre-filtered; each ✗ badge carries the verifier's evidence._
 
 ## Reversals — reopened after a close
 
 | Issue | Reopened | Reversed close used | Who had acted |
 | --- | --- | --- | --- |
-| [#318356](https://github.com/microsoft/vscode/issues/318356) Loading spinner is not rounded | 2026-10-05 | verbatim | benibenj |
 | [#309245](https://github.com/microsoft/vscode/issues/309245) `vscode/memory` tool never provisioned for GPT-5.4 — deterministic absence in both main chat and agent contexts | 2026-09-25 | none | (unattributed) |
 | [#314532](https://github.com/microsoft/vscode/issues/314532) Co-Author: Commits | 2026-09-18 | none | (unattributed) |
 | [#255890](https://github.com/microsoft/vscode/issues/255890) When you activate a source code chunk it scrolls to the top. | 2026-07-28 (closed again since) | none | justschen |
@@ -264,9 +263,9 @@ _The 331 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1146 | 344 | 30% | 149 | 12 |
-| implemented on main | 773 | 306 | 40% | 187 | — |
-| as-designed | 336 | 97 | 29% | 55 | 6 |
+| duplicate | 1018 | 344 | 34% | 149 | 12 |
+| implemented on main | 768 | 306 | 40% | 187 | — |
+| as-designed | 337 | 97 | 29% | 55 | 6 |
 | out-of-scope | 217 | 82 | 38% | 24 | 1 |
 | question | 186 | 59 | 32% | 19 | — |
 | not-reproducible | 119 | 37 | 31% | 12 | 2 |
