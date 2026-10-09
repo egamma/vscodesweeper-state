@@ -59,7 +59,7 @@
   .seg + .seg { margin-left: 2px; }
   .seg.wc { background: var(--wc); } .seg.wcm { background: var(--wc-mid); } .seg.wcl { background: var(--wc-lite); }
   .seg.own { background: var(--own); } .seg.uncl { background: var(--uncl); } .seg.disp { background: var(--disp); }
-  .seg.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
+  .seg.pend, .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
   .sw.skopen, .seg.skopen { background: var(--accent); }
   .sw.cpr, .seg.cpr { background: var(--uncl); }
   .sw.trk { background: var(--track); }
@@ -84,7 +84,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-10-09 20:18 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 1,308 issues reviewed · generated 2026-10-09 21:11 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">1,308</div><div class="tsub">1,297 still open · 11 closed since review</div></div>
@@ -183,6 +183,33 @@
 <div class="crow"><span class="wk">question</span><div class="bar"><i class="seg pend" style="width:6.42%" title="still open: 14"></i></div><span class="rlabel">0/14 (0%)</span></div>
 <div class="crow"><span class="wk">not-reproducible</span><div class="bar"><i class="seg pend" style="width:3.21%" title="still open: 7"></i></div><span class="rlabel">0/7 (0%)</span></div>
   </div>
+
+
+  <h2 id="needs-info">Needs-info — did anyone ask?</h2>
+  <p class="desc">The sweeper's needs-info verdicts propose a question for the reporter. Success
+  is a maintainer asking <strong>with the sweeper's question</strong> (the tools Request info
+  button posts it and applies the <code>info-needed</code> label); asking in their own
+  words is shown apart, never folded in. 306 needs-info verdicts,
+  <span title="The label was applied before the review, or was already on the issue when the sweeper reviewed it: the verdict agreed with a request someone had already made — it did not cause one. Outside the funnel.">42 of them on issues already asked at review</span>;
+  the strip covers the other 264. Never-asked verdicts are noise like the
+  keep-open closes, not counted against the lane. As current as the last reconcile run.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>asked with the sweeper's question — 0</span>
+    <span><i class="sw wcl"></i>asked in own words — 0</span>
+    
+    <span><i class="sw pend"></i>never asked — 264</span>
+  </div>
+  <div class="strip ni-ask"><i class="seg pend" style="width:100.00%" title="never asked since the review (open, or closed since): 264 (100%)"></i></div>
+  <h3>What the reporter did next</h3>
+  <p class="desc">Over the 0 asked — the reporter's doing, shown as an
+  outcome, not the sweeper's success or failure. This repository has no bot closing labelled issues on a timer, so there is no timed-out bucket; a close with the label still on counts as closed without an answer.</p>
+  <div class="legend">
+    <span><i class="sw wc"></i>answered — 0</span>
+    
+    <span><i class="sw sil"></i>closed without an answer — 0</span>
+    <span><i class="sw pend"></i>still waiting — 0</span>
+  </div>
+  <p class="desc">Nobody has asked since a review yet.</p>
 
 
   <h2 id="verification">Independent verification — the 2nd review</h2>

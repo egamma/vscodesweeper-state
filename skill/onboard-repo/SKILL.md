@@ -40,7 +40,11 @@ validation loop — do not stop at file creation:
    screen, also record the repo's canonical waiting-on-reporter label in the
    same entry: `"needsInfoLabel": "<label>"` — omit it entirely when the repo
    has no such convention (no waiting-on-reporter label in its triage; a
-   label that is applied but retired manually still counts). The vscode-tools apply
+   label that is applied but retired manually still counts), and
+   `"infoTimeoutBot": true` when the bot evidence shows a timer closing those
+   labelled issues with no reply (omit it when the bot never acts or closes are
+   manual — the needs-info outcomes read it, decision 4 of
+   `plans/needs-info-outcomes-plan.md`). The vscode-tools apply
    capability (Apply & close / Request info under the clicking maintainer's
    own identity) defaults ON for published repos — record `"apply": false`
    only when the repo's owners decline it. Both fields publish to
