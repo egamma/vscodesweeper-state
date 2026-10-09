@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 40 swept users · 22003 issues reviewed · generated 2026-10-09 11:53 UTC
+[← Home](index.html) · 40 swept users · 22003 issues reviewed · generated 2026-10-09 12:17 UTC
 
 ## Verdict distribution
 
@@ -9,7 +9,7 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | implemented on main | 773 | 4% | 622 (80%) | 497 (80%) | 56 (9%) | 69 (11%) | 151 (20%) | — |
-| duplicate | 1148 | 5% | 1040 (91%) | 728 (70%) | 277 (27%) | 35 (3%) | 108 (9%) | — |
+| duplicate | 1146 | 5% | 1038 (91%) | 728 (70%) | 275 (26%) | 35 (3%) | 108 (9%) | — |
 | as-designed | 336 | 2% | 2 (1%) | 2 (100%) | — | — | — | — |
 | out-of-scope | 217 | 1% | — | — | — | — | — | — |
 | question | 186 | 1% | — | — | — | — | — | — |
@@ -19,9 +19,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 33 | 0% | — | — | — | — | — | — |
 | extension-candidate | 24 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2937 | 13% | 1664 (57%) | 1227 (74%) | 333 (20%) | 104 (6%) | — | — |
-| needs info | 2946 | 13% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 16120 | 73% | — | — | — | — | — | — |
+| **all close proposals** | 2935 | 13% | 1662 (57%) | 1227 (74%) | 331 (20%) | 104 (6%) | — | — |
+| needs info | 2947 | 13% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 16121 | 73% | — | — | — | — | — | — |
 | all reviews | 22003 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -32,7 +32,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | --- | --- | --- | --- | --- | --- |
 | lszomoru | 1521 | 178 (12%) | 223 (15%) | 1120 (74%) | **26%** |
 | hediet | 1516 | 138 (9%) | 234 (15%) | 1144 (75%) | **25%** |
-| justschen | 1386 | 305 (22%) | 143 (10%) | 938 (68%) | **32%** |
+| justschen | 1386 | 303 (22%) | 144 (10%) | 939 (68%) | **32%** |
 | deepak1556 | 1184 | 183 (15%) | 414 (35%) | 587 (50%) | **50%** |
 | roblourens | 1172 | 203 (17%) | 227 (19%) | 742 (63%) | **37%** |
 | sandy081 | 1050 | 147 (14%) | 113 (11%) | 790 (75%) | **25%** |
@@ -79,7 +79,7 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | --- | --- | --- | --- | --- |
 | lszomoru | 1120 | 158 | 46 | 18% |
 | hediet | 1144 | 194 | 51 | 21% |
-| justschen | 938 | 172 | 346 | 55% |
+| justschen | 939 | 172 | 346 | 55% |
 | deepak1556 | 587 | 13 | 13 | 4% |
 | roblourens | 742 | 92 | 383 | 64% |
 | sandy081 | 790 | 119 | 290 | 52% |
@@ -126,7 +126,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | lszomoru | 178 | 41 (23%) | 66 (37%) | 22 (12%) | 4 (2%) | 16 (9%) | 8 (4%) | — | 21 (12%) |
 | hediet | 138 | 33 (24%) | 48 (35%) | 25 (18%) | 5 (4%) | 13 (9%) | 3 (2%) | 5 (4%) | 6 (4%) |
-| justschen | 305 | 132 (43%) | 107 (35%) | 30 (10%) | 11 (4%) | 10 (3%) | 9 (3%) | 4 (1%) | 2 (1%) |
+| justschen | 303 | 132 (44%) | 105 (35%) | 30 (10%) | 11 (4%) | 10 (3%) | 9 (3%) | 4 (1%) | 2 (1%) |
 | deepak1556 | 183 | 23 (13%) | 92 (50%) | 12 (7%) | 21 (11%) | 13 (7%) | 19 (10%) | — | 3 (2%) |
 | roblourens | 203 | 60 (30%) | 89 (44%) | 13 (6%) | 20 (10%) | 8 (4%) | 6 (3%) | 5 (2%) | 2 (1%) |
 | sandy081 | 147 | 52 (35%) | 55 (37%) | 10 (7%) | 15 (10%) | 4 (3%) | 4 (3%) | 2 (1%) | 5 (3%) |
