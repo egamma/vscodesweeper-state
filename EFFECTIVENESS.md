@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 40 swept users · 22001 issues reviewed · generated 2026-10-08 16:04 UTC
+[← Home](index.html) · 40 swept users · 22003 issues reviewed · generated 2026-10-09 07:34 UTC
 
 ## Verdict distribution
 
@@ -9,7 +9,7 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | implemented on main | 773 | 4% | 622 (80%) | 497 (80%) | 56 (9%) | 69 (11%) | 151 (20%) | — |
-| duplicate | 1148 | 5% | 1040 (91%) | 730 (70%) | 275 (26%) | 35 (3%) | 108 (9%) | — |
+| duplicate | 1148 | 5% | 1040 (91%) | 728 (70%) | 277 (27%) | 35 (3%) | 108 (9%) | — |
 | as-designed | 336 | 2% | 2 (1%) | 2 (100%) | — | — | — | — |
 | out-of-scope | 217 | 1% | — | — | — | — | — | — |
 | question | 186 | 1% | — | — | — | — | — | — |
@@ -19,10 +19,10 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 33 | 0% | — | — | — | — | — | — |
 | extension-candidate | 24 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2937 | 13% | 1664 (57%) | 1229 (74%) | 331 (20%) | 104 (6%) | — | — |
-| needs info | 2944 | 13% | — | — | — | — | — | — |
+| **all close proposals** | 2937 | 13% | 1664 (57%) | 1227 (74%) | 333 (20%) | 104 (6%) | — | — |
+| needs info | 2946 | 13% | — | — | — | — | — | — |
 | keep open (incl. route to area) | 16120 | 73% | — | — | — | — | — | — |
-| all reviews | 22001 | 100% | | | | | | |
+| all reviews | 22003 | 100% | | | | | | |
 
 ## Closure outcome per swept user
 
@@ -36,14 +36,14 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | deepak1556 | 1184 | 183 (15%) | 414 (35%) | 587 (50%) | **50%** |
 | roblourens | 1172 | 203 (17%) | 227 (19%) | 742 (63%) | **37%** |
 | sandy081 | 1050 | 147 (14%) | 113 (11%) | 790 (75%) | **25%** |
-| meganrogge | 920 | 69 (8%) | 52 (6%) | 799 (87%) | **13%** |
+| meganrogge | 921 | 69 (7%) | 53 (6%) | 799 (87%) | **13%** |
 | lramos15 | 919 | 194 (21%) | 158 (17%) | 567 (62%) | **38%** |
 | TylerLeonhardt | 895 | 91 (10%) | 102 (11%) | 702 (78%) | **22%** |
 | connor4312 | 861 | 73 (8%) | 57 (7%) | 731 (85%) | **15%** |
 | anthonykim1 | 842 | 87 (10%) | 132 (16%) | 623 (74%) | **26%** |
 | aeschli | 800 | 99 (12%) | 61 (8%) | 640 (80%) | **20%** |
 | osortega | 666 | 52 (8%) | 75 (11%) | 539 (81%) | **19%** |
-| benibenj | 646 | 66 (10%) | 46 (7%) | 534 (83%) | **17%** |
+| benibenj | 647 | 66 (10%) | 47 (7%) | 534 (83%) | **17%** |
 | joshspicer | 605 | 72 (12%) | 66 (11%) | 467 (77%) | **23%** |
 | alexdima | 583 | 139 (24%) | 103 (18%) | 341 (58%) | **42%** |
 | mjbvz | 580 | 56 (10%) | 31 (5%) | 493 (85%) | **15%** |
