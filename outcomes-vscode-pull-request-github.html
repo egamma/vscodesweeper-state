@@ -10,7 +10,9 @@
     --accent: #0969da; --row: #f6f8fa;
     --wc: #1a7f37; --wc-mid: #4ac26b; --wc-lite: #aceebb;
     --own: #afb8c1; --uncl: #d4a72c; --disp: #cf222e; --track: #d0d7de;
-    --dif: #bc4c00; --own-lite: #d8dee4;
+    /* Closes that differed from (or were not a decision on) the proposal: "not in
+       line", not a failure — the attention yellow, never the red of a disputed verdict. */
+    --dif: #d4a72c; --own-lite: #d8dee4;
     /* Agreeing closes without the comment: the same green family as --wc (both are
        "in line with the proposal"), lighter so the two tiers stay distinguishable. */
     --agr: #8ddb9b;
@@ -18,7 +20,7 @@
   @media (prefers-color-scheme: dark) {
     :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22;
       --wc:#3fb950; --wc-mid:#2ea043; --wc-lite:#1f6f34; --own:#484f58; --uncl:#bb8009; --disp:#f85149; --track:#30363d;
-      --dif:#db6d28; --own-lite:#30363d; --agr:#256f3a; }
+      --dif:#bb8009; --own-lite:#30363d; --agr:#256f3a; }
   }
   * { box-sizing: border-box; }
   body { margin: 0 auto; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -45,11 +47,10 @@
   .sw.pend { background: var(--row); border: 1px solid var(--border); box-sizing: border-box; }
   .seg.fixedin, .sw.fixedin { background: var(--accent); }
   .seg.dif, .sw.dif { background: var(--dif); }
+  .seg.unk, .sw.unk { background: var(--row); border: 1px dashed var(--border); box-sizing: border-box; }
   .seg.agr, .sw.agr { background: var(--agr); }
   .seg.sil, .sw.sil { background: var(--own-lite); }
   .seg.notm, .sw.notm { background: repeating-linear-gradient(45deg, var(--own) 0 3px, var(--own-lite) 3px 6px); }
-  .freshtoggle { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 12px; margin-bottom: 8px; cursor: pointer; }
-  #nofresh:not(:checked) ~ .chart.nofresh, #nofresh:checked ~ .chart.withfresh { display: none; }
   .crow { display: grid; grid-template-columns: 110px 1fr 60px; align-items: center; gap: 10px; margin: 6px 0; }
   .wk { text-align: right; color: var(--muted); font-size: 12px; white-space: nowrap; }
   .bar, .strip { display: flex; height: 18px; border-radius: 4px; overflow: hidden; }
@@ -83,7 +84,7 @@
 </head>
 <body>
   <h1>VS Code Sweeper — Adoption</h1>
-  <div class="sub"><a href="index.html">← home</a> · 238 issues reviewed · generated 2026-10-09 19:48 UTC</div>
+  <div class="sub"><a href="index.html">← home</a> · 238 issues reviewed · generated 2026-10-09 20:18 UTC</div>
 
   <div class="tiles">
     <div class="tile"><div class="tlabel">Issues reviewed</div><div class="tvalue">238</div><div class="tsub">230 still open · 8 closed since review</div></div>
@@ -104,20 +105,19 @@
     <span title="Closed without the sweeper's comment and differently from the proposal (1), or not by a maintainer's decision — the reporter, a bot timeout, a transfer (0)"><i class="sw dif"></i>own wording, differs or not a maintainer action — 1</span>
     
   </div>
-  <input type="checkbox" id="nofresh">
-  <label class="freshtoggle" for="nofresh" title="A closure is fresh when the issue was reviewed within 2 days of being filed (7 when it was on the needs-info path): inbox triage was already handling it, so the close says little about the proposal. Without them, 0% of the acted-on closes used the sweeper's comment (0% with them).">Hide the 0 fresh-inbox closures (0 with the sweeper's comment)</label>
-  <div class="chart withfresh">
-<div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 1 · not a maintainer action: 0"></i></div><span class="rlabel">1</span></div>
-  </div>
-  <div class="chart nofresh">
+  <div class="strip"><i class="seg dif" style="width:100.00%" title="own wording, differs: 1 · not a maintainer action (reporter, bot timeout, transfer): 0 — 100% together"></i></div>
+  
+  <div class="chart">
 <div class="crow"><span class="wk">w/o 2026-09-28</span><div class="bar"><i class="seg dif" style="width:100.00%" title="own wording, differs: 1 · not a maintainer action: 0"></i></div><span class="rlabel">1</span></div>
   </div>
 
-  <h3>Closes without the sweeper's comment — 1</h3>
+  <details class="fold">
+  <summary>Where the close differed from the proposal — 1</summary>
   <table>
-    <tr><th>Class</th><th>What happened</th><th class="num">Closes</th></tr>
-<tr><td>differs</td><td>duplicate proposal, closed another way</td><td class="num">1</td></tr>
+    <tr><th>What happened</th><th class="num">Closes</th></tr>
+<tr><td>duplicate proposal, closed another way</td><td class="num">1</td></tr>
   </table>
+  </details>
 
   <h2>Adoption by issue age</h2>
   <p class="desc">Is the sweeper an inbox tool or a backlog tool? Each bar is the acted-on
@@ -181,27 +181,6 @@
 <div class="crow"><span class="wk">as-designed</span><div class="bar"><i class="seg pend" style="width:7.41%" title="still open: 2"></i></div><span class="rlabel">0/2 (0%)</span></div>
   </div>
 
-  <h2>Comment adoption on the 1 acted-on proposals</h2>
-  <div class="strip">
-    
-    
-    
-    
-    <i class="seg sil" style="width:100.00%" title="own wording: closed silently (no team comment after the review): 1 (100%)"></i>
-    
-    
-  </div>
-  <div class="legend">
-    <span><i class="sw wc"></i>verbatim 0</span>
-    <span><i class="sw wcm"></i>inside a longer comment 0</span>
-    <span><i class="sw wcl"></i>edited 0</span>
-    <span><i class="sw own"></i>own comment 0</span>
-    <span><i class="sw sil"></i>closed silently 1</span>
-    <span><i class="sw notm"></i>not a maintainer action 0</span>
-    
-  </div>
-  
-  
 
   <h2 id="verification">Independent verification — the 2nd review</h2>
   <p class="desc">A blinded second review re-judges duplicate and implemented-on-main close
@@ -227,32 +206,11 @@
     
   </div>
 
-  <h3>Verdict mix by kind</h3>
-  <p class="desc">Duplicates by the canonical's kind, implemented-on-main by claim kind
-  (hover a row label for the lane). Right label: disputed / verified — a kind disputing
-  well above its peers is a calibration signal for the review prompt.</p>
-  <div class="chart">
-<div class="crow"><span class="wk" title="duplicate">peer</span><div class="bar"><i class="seg wc" style="width:38.46%" title="confirmed: 10"></i><i class="seg disp" style="width:61.54%" title="disputed: 16"></i></div><span class="rlabel">16/26</span></div>
-<div class="crow"><span class="wk" title="implemented-on-main">feature</span><div class="bar"><i class="seg wc" style="width:19.23%" title="confirmed: 5"></i><i class="seg disp" style="width:19.23%" title="disputed: 5"></i></div><span class="rlabel">5/10</span></div>
-<div class="crow"><span class="wk" title="duplicate">umbrella</span><div class="bar"><i class="seg disp" style="width:3.85%" title="disputed: 1"></i></div><span class="rlabel">1/1</span></div>
-<div class="crow"><span class="wk" title="implemented-on-main">bug-fix</span><div class="bar"><i class="seg wc" style="width:3.85%" title="confirmed: 1"></i></div><span class="rlabel">0/1</span></div>
-  </div>
   <p class="desc">The 22 disputed proposals are
   <a href="dashboard.html#q=verify%3Arefuted">listed on the dashboard</a> (the link
   lands pre-filtered); each ✗ badge carries the verifier's evidence. A dispute is worth a
   manual look before acting: either the review or the verifier is wrong, and both readings
   are on record.</p>
-
-  <h3>Verified proposals by eventual outcome</h3>
-  <p class="desc">Counts, not rates — closed-after-verification volume is still small, so
-  percentages would mislead. A disputed proposal closed anyway and later reopened is a false
-  positive the verify lane flagged in advance.</p>
-  <table>
-    <tr><th>2nd-review verdict</th><th class="num">Still open</th><th class="num">Closed since</th><th class="num">Reopened after a close</th></tr>
-<tr><td>confirmed</td><td class="num">16</td><td class="num">0</td><td class="num">0</td></tr>
-<tr><td>disputed</td><td class="num">21</td><td class="num">1</td><td class="num">0</td></tr>
-<tr><td>unverifiable</td><td class="num">0</td><td class="num">0</td><td class="num">0</td></tr>
-  </table>
 
   <h3>Closed despite a dispute</h3>
   <p class="desc">Closes that went ahead after the 2nd review refuted the proposal — either the
@@ -281,21 +239,6 @@
 <tr><td>alexr00</td><td class="num">1</td><td class="num">0 (0%)</td><td class="num">0</td><td class="num">1</td><td class="num">0 (0%)</td></tr>
   </table>
 
-  <h2>All closures since review — context</h2>
-  <p class="desc">Every reviewed issue that closed, by what the review had concluded. Only the propose-close row is claimed by the funnel above; needs-info issues auto-close on their own cadence, and keep-open closures happened for unrelated reasons (worth eyeballing as a precision check).</p>
-  <div class="cols">
-    <table>
-      <tr><th>Review verdict</th><th class="num">Closed</th></tr>
-<tr><td>keep-open</td><td class="num">6</td></tr>
-<tr><td>propose-close</td><td class="num">1</td></tr>
-<tr><td>route-to-area</td><td class="num">1</td></tr>
-    </table>
-    <table>
-      <tr><th>Close reason</th><th class="num">Closed</th></tr>
-<tr><td>completed</td><td class="num">7</td></tr>
-<tr><td>not_planned</td><td class="num">1</td></tr>
-    </table>
-  </div>
 
   <h2>sweeper-implement skill adoption</h2>
 <p class="desc">Draft PRs opened with the <a href="fix-skill.html">sweeper-implement skill</a>,

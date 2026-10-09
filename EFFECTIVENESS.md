@@ -1,6 +1,6 @@
 # VS Code Sweeper — Verdicts
 
-[← Home](index.html) · 40 swept users · 22089 issues reviewed · generated 2026-10-09 19:48 UTC
+[← Home](index.html) · 40 swept users · 22089 issues reviewed · generated 2026-10-09 20:17 UTC
 
 ## Verdict distribution
 
@@ -8,10 +8,10 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 
 | Verdict | Reviews | Share | 2nd reviewed | Confirmed | Disputed | Unverifiable | Closed before 2nd review | Open, not yet reviewed |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| implemented on main | 768 | 3% | 616 (80%) | 497 (81%) | 49 (8%) | 70 (11%) | 151 (20%) | 1 (0%) |
-| duplicate | 1018 | 5% | 910 (89%) | 739 (81%) | 135 (15%) | 36 (4%) | 108 (11%) | — |
+| implemented on main | 770 | 3% | 614 (80%) | 495 (81%) | 49 (8%) | 70 (11%) | 151 (20%) | 5 (1%) |
+| duplicate | 1020 | 5% | 909 (89%) | 739 (81%) | 135 (15%) | 35 (4%) | 108 (11%) | 3 (0%) |
 | as-designed | 337 | 2% | 2 (1%) | 2 (100%) | — | — | — | — |
-| out-of-scope | 217 | 1% | — | — | — | — | — | — |
+| out-of-scope | 216 | 1% | — | — | — | — | — | — |
 | question | 187 | 1% | — | — | — | — | — | — |
 | not-reproducible | 119 | 1% | — | — | — | — | — | — |
 | caused-by-extension | 42 | 0% | — | — | — | — | — | — |
@@ -19,9 +19,9 @@ The verdict mix alone, corpus-wide — independent of whether anyone acted on it
 | invalid | 34 | 0% | — | — | — | — | — | — |
 | extension-candidate | 24 | 0% | — | — | — | — | — | — |
 | other | 21 | 0% | — | — | — | — | — | — |
-| **all close proposals** | 2806 | 13% | 1528 (54%) | 1238 (81%) | 184 (12%) | 106 (7%) | — | — |
-| needs info | 3016 | 14% | — | — | — | — | — | — |
-| keep open (incl. route to area) | 16267 | 74% | — | — | — | — | — | — |
+| **all close proposals** | 2809 | 13% | 1525 (54%) | 1236 (81%) | 184 (12%) | 105 (7%) | — | — |
+| needs info | 3019 | 14% | — | — | — | — | — | — |
+| keep open (incl. route to area) | 16261 | 74% | — | — | — | — | — | — |
 | all reviews | 22089 | 100% | | | | | | |
 
 ## Closure outcome per swept user
@@ -40,7 +40,7 @@ Route-to-area counts as keep-open — it improves triage but the issue stays ope
 | lramos15 | 921 | 194 (21%) | 159 (17%) | 568 (62%) | **38%** |
 | TylerLeonhardt | 895 | 88 (10%) | 104 (12%) | 703 (79%) | **21%** |
 | connor4312 | 861 | 67 (8%) | 57 (7%) | 737 (86%) | **14%** |
-| anthonykim1 | 844 | 84 (10%) | 139 (16%) | 621 (74%) | **26%** |
+| anthonykim1 | 844 | 87 (10%) | 142 (17%) | 615 (73%) | **27%** |
 | aeschli | 803 | 85 (11%) | 62 (8%) | 656 (82%) | **18%** |
 | osortega | 670 | 51 (8%) | 77 (11%) | 542 (81%) | **19%** |
 | benibenj | 651 | 58 (9%) | 47 (7%) | 546 (84%) | **16%** |
@@ -81,13 +81,13 @@ Ready to implement = the review did the diagnosis; ready to plan = the goal is c
 | lszomoru | 1124 | 158 | 49 | 18% |
 | justschen | 941 | 171 | 348 | 55% |
 | roblourens | 763 | 93 | 391 | 63% |
-| deepak1556 | 592 | 13 | 17 | 5% |
+| deepak1556 | 592 | 13 | 18 | 5% |
 | sandy081 | 793 | 120 | 288 | 51% |
-| meganrogge | 809 | 115 | 89 | 25% |
+| meganrogge | 809 | 114 | 91 | 25% |
 | lramos15 | 568 | 100 | 192 | 51% |
 | TylerLeonhardt | 703 | 86 | 40 | 18% |
 | connor4312 | 737 | 94 | 90 | 25% |
-| anthonykim1 | 621 | 87 | 56 | 23% |
+| anthonykim1 | 615 | 77 | 93 | 28% |
 | aeschli | 656 | 63 | 268 | 50% |
 | osortega | 542 | 89 | 22 | 20% |
 | benibenj | 546 | 57 | 198 | 47% |
@@ -134,7 +134,7 @@ Counts and shares of each user's close proposals. The mix reflects inbox composi
 | lramos15 | 194 | 51 (26%) | 66 (34%) | 11 (6%) | 10 (5%) | 31 (16%) | 5 (3%) | 4 (2%) | 16 (8%) |
 | TylerLeonhardt | 88 | 19 (22%) | 37 (42%) | 6 (7%) | 10 (11%) | 8 (9%) | 2 (2%) | — | 6 (7%) |
 | connor4312 | 67 | 21 (31%) | 24 (36%) | 8 (12%) | 7 (10%) | 1 (1%) | 5 (7%) | — | 1 (1%) |
-| anthonykim1 | 84 | 11 (13%) | 25 (30%) | 15 (18%) | 13 (15%) | 9 (11%) | 6 (7%) | — | 5 (6%) |
+| anthonykim1 | 87 | 13 (15%) | 27 (31%) | 15 (17%) | 12 (14%) | 9 (10%) | 6 (7%) | — | 5 (6%) |
 | aeschli | 85 | 32 (38%) | 30 (35%) | 11 (13%) | 6 (7%) | 2 (2%) | 1 (1%) | 1 (1%) | 2 (2%) |
 | osortega | 51 | 14 (27%) | 20 (39%) | 7 (14%) | 6 (12%) | 2 (4%) | 1 (2%) | — | 1 (2%) |
 | benibenj | 58 | 14 (24%) | 24 (41%) | 11 (19%) | 2 (3%) | 5 (9%) | 2 (3%) | — | — |

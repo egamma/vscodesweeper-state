@@ -1,11 +1,11 @@
 # VS Code Sweeper — Adoption
 
-[← Home](index.html) · 22089 issues reviewed · generated 2026-10-09 19:48 UTC
+[← Home](index.html) · 22089 issues reviewed · generated 2026-10-09 20:17 UTC
 
 ## Funnel
 
 - **Issues reviewed:** 22089
-- **Close proposals:** 2806 (13% of reviewed)
+- **Close proposals:** 2809 (13% of reviewed)
 - **Acted on (closed):** 1034 (37% of proposals)
 - **2nd-reviewed before the close:** 290 confirmed · 87 disputed · 14 unverifiable · 643 never 2nd-reviewed — the verify lanes are newer than most of these closes; the split fills in from here
 - **Closed with the sweeper's comment:** 479 (46% of acted-on) — 425 verbatim, 29 inside a longer comment, 25 edited
@@ -14,10 +14,10 @@
 - **Own wording:** 554 — 187 with the maintainer's own comment, 264 closed silently, 103 not a maintainer action
 - **Fresh-inbox closures:** 176 of the acted-on closes (7 with the sweeper's comment) were reviewed within 2 days of filing (7 on the needs-info path) — inbox triage was already handling them
 - **Duplicate closes, canonical:** 219 against the cited canonical, 16 one hop from it, 14 against a different one, 18 with no target recorded
-- **Still awaiting action:** 1772 open close proposals
+- **Still awaiting action:** 1775 open close proposals
 - **Reversals (reopened after a close):** 3 — 0 after a close that used the sweeper's comment
 
-_Close proposals count the whole corpus (3760 of the 22089 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1772 still open — closed records move to its ✔ closed view._
+_Close proposals count the whole corpus (3760 of the 22089 reviewed issues have since closed). The dashboard's `propose-close` card counts only the 1775 still open — closed records move to its ✔ closed view._
 
 ## Adoption by issue age
 
@@ -29,9 +29,9 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 | 3–7d | 969 | 106 (11%) | 279 (29%) | 1 | 27 | 34 | 28 (26%) |
 | 8–30d | 1823 | 246 (13%) | 305 (17%) | 30 | 57 | 36 | 87 (35%) |
 | 31–90d | 2296 | 346 (15%) | 324 (14%) | 52 | 58 | 49 | 110 (32%) |
-| 91d–1y | 6404 | 1085 (17%) | 1042 (16%) | 194 | 74 | 75 | 268 (25%) |
-| 1–2y | 2378 | 245 (10%) | 214 (9%) | 54 | 16 | 8 | 70 (29%) |
-| >2y | 5120 | 433 (8%) | 257 (5%) | 96 | 18 | 7 | 114 (26%) |
+| 91d–1y | 6389 | 1085 (17%) | 1044 (16%) | 194 | 74 | 75 | 268 (25%) |
+| 1–2y | 2390 | 245 (10%) | 214 (9%) | 54 | 16 | 8 | 70 (29%) |
+| >2y | 5123 | 436 (9%) | 258 (5%) | 96 | 18 | 7 | 114 (26%) |
 | unknown | 58 | 53 (91%) | 2 (3%) | 51 | 1 | 1 | 52 (98%) |
 
 ## Who acted on proposals
@@ -83,15 +83,9 @@ _Issue age counts from the issue's creation date. Reviewed / proposals / needs-i
 
 _A blinded second review of duplicate / implemented-on-main close proposals. "Disputed" is a dispute to read, not a proven error. Coverage counts open proposals; stale stamps are excluded from the mix._
 
-- **duplicate:** 674 of 674 open proposals verified · 108 closed unverified
-- **implemented-on-main:** 463 of 464 open proposals verified · 97 closed unverified
-- **Verdict mix:** 1238 confirmed (39 with the fix unreleased) · 184 disputed · 106 unverifiable
-
-| 2nd-review verdict | Still open | Closed since | Reopened after a close |
-| --- | --- | --- | --- |
-| confirmed | 947 | 289 | 2 |
-| disputed | 97 | 87 | 0 |
-| unverifiable | 92 | 14 | 0 |
+- **duplicate:** 673 of 676 open proposals verified · 108 closed unverified
+- **implemented-on-main:** 461 of 466 open proposals verified · 97 closed unverified
+- **Verdict mix:** 1236 confirmed (39 with the fix unreleased) · 184 disputed · 105 unverifiable
 
 ### Closed despite a dispute
 
@@ -195,30 +189,14 @@ _The 184 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 | [#314532](https://github.com/microsoft/vscode/issues/314532) Co-Author: Commits | 2026-09-18 | none | (unattributed) |
 | [#255890](https://github.com/microsoft/vscode/issues/255890) When you activate a source code chunk it scrolls to the top. | 2026-07-28 (closed again since) | none | justschen |
 
-## All closures since review — context
-
-| Review verdict | Closed |
-| --- | --- |
-| keep-open | 1750 |
-| propose-close | 1034 |
-| needs-info | 716 |
-| route-to-area | 260 |
-
-| Close reason | Closed |
-| --- | --- |
-| completed | 1991 |
-| not_planned | 1160 |
-| duplicate | 584 |
-| not_found | 25 |
-
 ## Acceptance by close reason
 
 | Reason | Proposals | Acted on | Acceptance | With sweeper comment | Likely fixed instead |
 | --- | --- | --- | --- | --- | --- |
-| duplicate | 1018 | 344 | 34% | 149 | 12 |
-| implemented on main | 768 | 306 | 40% | 187 | — |
+| duplicate | 1020 | 344 | 34% | 149 | 12 |
+| implemented on main | 770 | 306 | 40% | 187 | — |
 | as-designed | 337 | 98 | 29% | 55 | 6 |
-| out-of-scope | 217 | 82 | 38% | 24 | 1 |
+| out-of-scope | 216 | 82 | 38% | 24 | 1 |
 | question | 187 | 59 | 32% | 19 | — |
 | not-reproducible | 119 | 38 | 32% | 12 | 2 |
 | caused-by-extension | 42 | 41 | 98% | 17 | 3 |
@@ -230,7 +208,7 @@ _The 184 disputed proposals are listed on the [dashboard](dashboard.html#q=verif
 _Only the propose-close funnel is claimed as a sweeper outcome; other closures are context._
 ## sweeper-implement skill adoption
 
-Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4471 reviewed briefs (2028 ready to implement · 2443 ready to plan); 48 taken by a contributor PR. As current as the last reconcile run.
+Draft PRs opened with the sweeper-implement skill, discovered by `reconcile`'s seeded-by-marker search, against the corpus-wide agent-ready pool of 4498 reviewed briefs (2018 ready to implement · 2480 ready to plan); 48 taken by a contributor PR. As current as the last reconcile run.
 
 | User | Agent-ready pool | Skill PRs | Open | Merged | Plan-first | Contributor PRs |
 | --- | --- | --- | --- | --- | --- | --- |
