@@ -3,138 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nightly sweep runs · VS Code Sweeper</title>
+<meta name="robots" content="noindex">
+<title>VS Code Sweeper has moved</title>
 <style>
-  :root {
-    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --accent: #0969da; --row: #f6f8fa; --bad: #d1242f;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; --bad:#f85149; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0 auto; font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 900px; }
-  h1 { font-size: 22px; margin: 0 0 6px; }
-  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 32px 0 12px; }
-  .lede { color: var(--muted); margin: 0 0 8px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .dashcard { display: block; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px;
-    margin-top: 8px; color: inherit; }
-  .dashcard:hover { border-color: var(--accent); text-decoration: none; }
-  .dashcard .t { font-size: 16px; font-weight: 600; }
-  .dashcard .d { color: var(--muted); font-size: 14px; margin-top: 2px; }
-  .muted { color: var(--muted); }
-  .bad { color: var(--bad); font-weight: 600; }
-  .runs { border-collapse: collapse; width: 100%; font-size: 13px; }
-  .runs th, .runs td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
-  .runs th { color: var(--muted); font-weight: 600; }
-  .runs tbody tr:nth-child(odd) { background: var(--row); }
-  .logmeta { font-size: 12px; margin-top: 6px; }
-  footer { margin-top: 36px; color: var(--muted); font-size: 12px; }
+  /* rgb() rather than hex: a hex colour reads as a bare issue reference to the reference guard. */
+  :root { color-scheme: light dark; --fg: rgb(31, 35, 40); --muted: rgb(89, 99, 110); --bg: white; --accent: rgb(9, 105, 218); }
+  @media (prefers-color-scheme: dark) { :root { --fg: rgb(230, 237, 243); --muted: rgb(145, 152, 161); --bg: rgb(13, 17, 23); --accent: rgb(68, 147, 248); } }
+  body { margin: 0; padding: 48px 16px; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg); background: var(--bg); }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0 0 16px; }
+  p { margin: 0 0 14px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  a { color: var(--accent); }
 </style>
 </head>
 <body>
-  <h1>Nightly sweep runs</h1>
-  <p class="lede"><a href="index.html">← home</a> · Operational history of the automated sweep — one row per run, from <code>meta/sweep-log.jsonl</code> on the state branch.</p>
-  <h2>Nightly sweeps</h2>
-  <table class="runs">
-    <thead><tr><th>Run (UTC)</th><th>Repo</th><th>Reviewed</th><th>Failed</th><th>Verdicts</th></tr></thead>
-    <tbody>
-<tr><td>2026-10-09 15:20</td><td>vscode</td><td><span class="muted">idle</span></td><td><span class="muted">0</span></td><td><span class="muted">nothing to review</span></td></tr>
-<tr><td>2026-10-09 15:04</td><td>vscode</td><td>132/133</td><td><span class="muted">0</span></td><td>keep-open 90 · needs-info 28 · route-to-area 9 · propose-close 5</td></tr>
-<tr><td>2026-10-09 14:34</td><td>vscode</td><td>62/62</td><td><span class="muted">0</span></td><td>propose-close 22 · keep-open 21 · needs-info 18 · route-to-area 1</td></tr>
-<tr><td>2026-10-09 12:11</td><td>vscode</td><td>3/3</td><td><span class="muted">0</span></td><td>keep-open 1 · needs-info 1 · propose-close 1</td></tr>
-<tr><td>2026-10-09 07:25</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>needs-info 2</td></tr>
-<tr><td>2026-10-08 15:51</td><td>vscode</td><td>40/40</td><td><span class="muted">0</span></td><td>keep-open 29 · needs-info 6 · propose-close 5</td></tr>
-<tr><td>2026-10-08 15:21</td><td>vscode</td><td>100/101</td><td><span class="muted">0</span></td><td>keep-open 65 · needs-info 24 · propose-close 8 · route-to-area 3</td></tr>
-<tr><td>2026-10-08 07:34</td><td>vscode</td><td>40/40</td><td><span class="muted">0</span></td><td>keep-open 28 · needs-info 6 · propose-close 6</td></tr>
-<tr><td>2026-10-08 07:28</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 2</td></tr>
-<tr><td>2026-10-08 07:10</td><td>vscode</td><td>40/40</td><td><span class="muted">0</span></td><td>keep-open 27 · needs-info 7 · propose-close 6</td></tr>
-<tr><td>2026-10-08 07:00</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>needs-info 1 · propose-close 1</td></tr>
-<tr><td>2026-10-08 06:56</td><td>vscode-python</td><td>1/1</td><td><span class="muted">0</span></td><td>propose-close 1</td></tr>
-<tr><td>2026-10-08 06:53</td><td>monaco-editor</td><td>3/3</td><td><span class="muted">0</span></td><td>propose-close 3</td></tr>
-<tr><td>2026-10-08 06:40</td><td>vscode</td><td>31/31</td><td><span class="muted">0</span></td><td>propose-close 17 · keep-open 7 · needs-info 7</td></tr>
-<tr><td>2026-10-07 15:18</td><td>vscode</td><td>194/195</td><td><span class="muted">0</span></td><td>keep-open 111 · needs-info 51 · propose-close 27 · route-to-area 5</td></tr>
-<tr><td>2026-10-06 14:52</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 123 · needs-info 49 · propose-close 21 · route-to-area 7</td></tr>
-<tr><td>2026-10-05 16:55</td><td>vscode</td><td>199/200</td><td><span class="muted">0</span></td><td>keep-open 153 · needs-info 22 · propose-close 14 · route-to-area 10</td></tr>
-<tr><td>2026-10-05 07:40</td><td>vscode</td><td>79/79</td><td><span class="muted">0</span></td><td>propose-close 33 · keep-open 28 · needs-info 9 · route-to-area 9</td></tr>
-<tr><td>2026-10-04 13:48</td><td>vscode</td><td>63/63</td><td><span class="muted">0</span></td><td>keep-open 43 · needs-info 12 · propose-close 7 · route-to-area 1</td></tr>
-<tr><td>2026-10-04 08:23</td><td>vscode</td><td>30/30</td><td><span class="muted">0</span></td><td>propose-close 12 · keep-open 11 · needs-info 5 · route-to-area 2</td></tr>
-<tr><td>2026-10-03 13:09</td><td>vscode</td><td>95/95</td><td><span class="muted">0</span></td><td>keep-open 72 · needs-info 18 · propose-close 4 · route-to-area 1</td></tr>
-<tr><td>2026-10-02 14:33</td><td>vscode</td><td>90/90</td><td><span class="muted">0</span></td><td>keep-open 51 · needs-info 28 · propose-close 8 · route-to-area 3</td></tr>
-<tr><td>2026-10-01 20:49</td><td>vscode</td><td>556/556</td><td><span class="muted">0</span></td><td>keep-open 366 · propose-close 85 · needs-info 79 · route-to-area 26</td></tr>
-<tr><td>2026-10-01 20:01</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 2</td></tr>
-<tr><td>2026-10-01 19:14</td><td>vscode</td><td>105/105</td><td><span class="muted">0</span></td><td>keep-open 85 · propose-close 12 · needs-info 4 · route-to-area 4</td></tr>
-<tr><td>2026-10-01 15:13</td><td>vscode</td><td>110/110</td><td><span class="muted">0</span></td><td>keep-open 83 · needs-info 18 · propose-close 5 · route-to-area 4</td></tr>
-<tr><td>2026-10-01 13:54</td><td>vscode</td><td>139/139</td><td><span class="muted">0</span></td><td>keep-open 77 · propose-close 32 · route-to-area 22 · needs-info 8</td></tr>
-<tr><td>2026-09-30 19:55</td><td>vscode</td><td>772/772</td><td><span class="muted">0</span></td><td>keep-open 518 · propose-close 129 · needs-info 75 · route-to-area 50</td></tr>
-<tr><td>2026-09-30 14:44</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 153 · needs-info 33 · propose-close 12 · route-to-area 2</td></tr>
-<tr><td>2026-09-29 15:40</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 2</td></tr>
-<tr><td>2026-09-28 16:34</td><td>vscode</td><td>155/159</td><td><span class="bad">1</span> <a href="https://github.com/microsoft/vscode/issues/338374" target="_blank" rel="noopener">#338374</a></td><td>keep-open 111 · needs-info 25 · propose-close 12 · route-to-area 7</td></tr>
-<tr><td>2026-09-28 06:20</td><td>sweeper-sandbox</td><td>17/17</td><td><span class="muted">0</span></td><td>keep-open 9 · propose-close 5 · needs-info 2 · route-to-area 1</td></tr>
-<tr><td>2026-09-27 14:22</td><td>vscode</td><td>4/4</td><td><span class="muted">0</span></td><td>route-to-area 3 · keep-open 1</td></tr>
-<tr><td>2026-09-27 13:39</td><td>vscode</td><td>50/50</td><td><span class="muted">0</span></td><td>keep-open 33 · needs-info 10 · propose-close 5 · route-to-area 2</td></tr>
-<tr><td>2026-09-26 13:19</td><td>vscode</td><td>124/124</td><td><span class="muted">0</span></td><td>keep-open 80 · propose-close 21 · needs-info 18 · route-to-area 5</td></tr>
-<tr><td>2026-09-26 12:46</td><td>vscode</td><td>121/121</td><td><span class="muted">0</span></td><td>keep-open 91 · needs-info 13 · propose-close 13 · route-to-area 4</td></tr>
-<tr><td>2026-09-26 06:46</td><td>vscode</td><td>11/11</td><td><span class="muted">0</span></td><td>propose-close 5 · keep-open 3 · needs-info 2 · route-to-area 1</td></tr>
-<tr><td>2026-09-25 21:08</td><td>vscode</td><td>443/454</td><td><span class="bad">11</span> <a href="https://github.com/microsoft/vscode/issues/287144" target="_blank" rel="noopener">#287144</a> <a href="https://github.com/microsoft/vscode/issues/292597" target="_blank" rel="noopener">#292597</a> <a href="https://github.com/microsoft/vscode/issues/295924" target="_blank" rel="noopener">#295924</a> <a href="https://github.com/microsoft/vscode/issues/295256" target="_blank" rel="noopener">#295256</a> <a href="https://github.com/microsoft/vscode/issues/299678" target="_blank" rel="noopener">#299678</a> <a href="https://github.com/microsoft/vscode/issues/306851" target="_blank" rel="noopener">#306851</a> <a href="https://github.com/microsoft/vscode/issues/306659" target="_blank" rel="noopener">#306659</a> <a href="https://github.com/microsoft/vscode/issues/306021" target="_blank" rel="noopener">#306021</a> <a href="https://github.com/microsoft/vscode/issues/308823" target="_blank" rel="noopener">#308823</a> <a href="https://github.com/microsoft/vscode/issues/310807" target="_blank" rel="noopener">#310807</a> <a href="https://github.com/microsoft/vscode/issues/303829" target="_blank" rel="noopener">#303829</a></td><td>propose-close 153 · keep-open 123 · needs-info 117 · route-to-area 50</td></tr>
-<tr><td>2026-09-25 18:30</td><td>vscode</td><td>15/15</td><td><span class="muted">0</span></td><td>needs-info 5 · propose-close 5 · keep-open 3 · route-to-area 2</td></tr>
-<tr><td>2026-09-25 17:32</td><td>vscode</td><td>71/86</td><td><span class="muted">0</span></td><td>propose-close 50 · keep-open 14 · needs-info 6 · route-to-area 1</td></tr>
-<tr><td>2026-09-25 13:23</td><td>vscode</td><td>124/124</td><td><span class="muted">0</span></td><td>keep-open 84 · needs-info 23 · propose-close 15 · route-to-area 2</td></tr>
-<tr><td>2026-09-25 10:59</td><td>vscode</td><td>452/453</td><td><span class="bad">1</span> <a href="https://github.com/microsoft/vscode/issues/250800" target="_blank" rel="noopener">#250800</a></td><td>keep-open 378 · propose-close 43 · needs-info 19 · route-to-area 12</td></tr>
-<tr><td>2026-09-25 09:47</td><td>vscode</td><td>45/45</td><td><span class="muted">0</span></td><td>keep-open 25 · propose-close 13 · needs-info 4 · route-to-area 3</td></tr>
-<tr><td>2026-09-25 08:35</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 1 · needs-info 1</td></tr>
-<tr><td>2026-09-24 13:23</td><td>vscode</td><td>146/146</td><td><span class="muted">0</span></td><td>keep-open 94 · needs-info 30 · propose-close 12 · route-to-area 10</td></tr>
-<tr><td>2026-09-23 13:27</td><td>vscode</td><td>129/129</td><td><span class="muted">0</span></td><td>keep-open 90 · needs-info 26 · propose-close 10 · route-to-area 3</td></tr>
-<tr><td>2026-09-22 13:13</td><td>vscode</td><td>186/186</td><td><span class="muted">0</span></td><td>keep-open 114 · needs-info 54 · propose-close 9 · route-to-area 9</td></tr>
-<tr><td>2026-09-21 14:56</td><td>vscode</td><td>183/184</td><td><span class="muted">0</span></td><td>keep-open 109 · needs-info 50 · propose-close 15 · route-to-area 9</td></tr>
-<tr><td>2026-09-20 12:56</td><td>vscode</td><td>69/69</td><td><span class="muted">0</span></td><td>keep-open 37 · needs-info 15 · route-to-area 9 · propose-close 8</td></tr>
-<tr><td>2026-09-20 09:05</td><td>vscode</td><td>645/645</td><td><span class="muted">0</span></td><td>keep-open 479 · propose-close 94 · needs-info 39 · route-to-area 33</td></tr>
-<tr><td>2026-09-19 19:53</td><td>vscode</td><td>64/64</td><td><span class="muted">0</span></td><td>keep-open 35 · needs-info 13 · propose-close 9 · route-to-area 7</td></tr>
-<tr><td>2026-09-19 19:51</td><td>vscode</td><td>3/3</td><td><span class="muted">0</span></td><td>keep-open 2 · route-to-area 1</td></tr>
-<tr><td>2026-09-19 17:03</td><td>vscode</td><td>797/800</td><td><span class="bad">3</span> <a href="https://github.com/microsoft/vscode/issues/308198" target="_blank" rel="noopener">#308198</a> <a href="https://github.com/microsoft/vscode/issues/334501" target="_blank" rel="noopener">#334501</a> <a href="https://github.com/microsoft/vscode/issues/331987" target="_blank" rel="noopener">#331987</a></td><td>keep-open 491 · needs-info 134 · propose-close 133 · route-to-area 39</td></tr>
-<tr><td>2026-09-19 14:28</td><td>vscode</td><td>128/128</td><td><span class="muted">0</span></td><td>keep-open 99 · propose-close 13 · route-to-area 12 · needs-info 4</td></tr>
-<tr><td>2026-09-19 12:21</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 128 · needs-info 36 · propose-close 29 · route-to-area 7</td></tr>
-<tr><td>2026-09-19 08:38</td><td>vscode</td><td>21/21</td><td><span class="muted">0</span></td><td>keep-open 12 · propose-close 8 · needs-info 1</td></tr>
-<tr><td>2026-09-19 07:22</td><td>vscode</td><td>331/331</td><td><span class="muted">0</span></td><td>keep-open 265 · propose-close 37 · needs-info 16 · route-to-area 13</td></tr>
-<tr><td>2026-09-18 19:27</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>propose-close 2</td></tr>
-<tr><td>2026-09-17 13:11</td><td>vscode</td><td>120/120</td><td><span class="muted">0</span></td><td>keep-open 65 · route-to-area 22 · needs-info 17 · propose-close 16</td></tr>
-<tr><td>2026-09-16 19:40</td><td>sweeper-sandbox</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 2</td></tr>
-<tr><td>2026-09-16 13:15</td><td>vscode</td><td>126/126</td><td><span class="muted">0</span></td><td>keep-open 60 · needs-info 33 · route-to-area 18 · propose-close 15</td></tr>
-<tr><td>2026-09-15 13:17</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 74 · needs-info 52 · route-to-area 46 · propose-close 28</td></tr>
-<tr><td>2026-09-14 14:50</td><td>vscode</td><td>93/93</td><td><span class="muted">0</span></td><td>keep-open 42 · needs-info 20 · route-to-area 19 · propose-close 12</td></tr>
-<tr><td>2026-09-13 13:11</td><td>vscode</td><td>144/144</td><td><span class="muted">0</span></td><td>keep-open 66 · needs-info 36 · propose-close 26 · route-to-area 16</td></tr>
-<tr><td>2026-09-12 12:01</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 129 · route-to-area 31 · needs-info 22 · propose-close 18</td></tr>
-<tr><td>2026-09-11 12:41</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 107 · needs-info 37 · route-to-area 35 · propose-close 21</td></tr>
-<tr><td>2026-09-11 08:04</td><td>vscode-livepreview</td><td>112/112</td><td><span class="muted">0</span></td><td>keep-open 70 · needs-info 23 · propose-close 13 · route-to-area 6</td></tr>
-<tr><td>2026-09-10 20:31</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 2</td></tr>
-<tr><td>2026-09-09 12:48</td><td>vscode</td><td>121/121</td><td><span class="muted">0</span></td><td>keep-open 55 · needs-info 29 · propose-close 20 · route-to-area 17</td></tr>
-<tr><td>2026-09-08 12:42</td><td>vscode</td><td>99/99</td><td><span class="muted">0</span></td><td>keep-open 64 · needs-info 14 · route-to-area 12 · propose-close 9</td></tr>
-<tr><td>2026-09-07 14:05</td><td>vscode</td><td>87/87</td><td><span class="muted">0</span></td><td>keep-open 46 · route-to-area 20 · needs-info 16 · propose-close 5</td></tr>
-<tr><td>2026-09-06 12:01</td><td>vscode</td><td>52/52</td><td><span class="muted">0</span></td><td>keep-open 20 · needs-info 15 · propose-close 11 · route-to-area 6</td></tr>
-<tr><td>2026-09-05 11:43</td><td>vscode</td><td>155/155</td><td><span class="muted">0</span></td><td>keep-open 101 · route-to-area 20 · needs-info 18 · propose-close 16</td></tr>
-<tr><td>2026-09-04 12:35</td><td>vscode</td><td>148/148</td><td><span class="muted">0</span></td><td>keep-open 83 · needs-info 27 · propose-close 19 · route-to-area 19</td></tr>
-<tr><td>2026-09-03 12:41</td><td>vscode</td><td>142/142</td><td><span class="muted">0</span></td><td>keep-open 69 · needs-info 31 · route-to-area 29 · propose-close 13</td></tr>
-<tr><td>2026-09-02 18:20</td><td>vscode</td><td>2/2</td><td><span class="muted">0</span></td><td>keep-open 1 · route-to-area 1</td></tr>
-<tr><td>2026-09-02 12:38</td><td>vscode</td><td>119/119</td><td><span class="muted">0</span></td><td>keep-open 69 · needs-info 23 · route-to-area 16 · propose-close 11</td></tr>
-<tr><td>2026-09-02 07:30</td><td>vscode-eslint</td><td>71/72</td><td><span class="bad">1</span> <a href="https://github.com/microsoft/vscode-eslint/issues/1843" target="_blank" rel="noopener">#1843</a></td><td>keep-open 50 · propose-close 13 · needs-info 4 · route-to-area 4</td></tr>
-<tr><td>2026-09-01 13:15</td><td>vscode</td><td>138/138</td><td><span class="muted">0</span></td><td>keep-open 104 · needs-info 16 · route-to-area 11 · propose-close 7</td></tr>
-<tr><td>2026-09-01 10:56</td><td>vscode-eslint</td><td>71/72</td><td><span class="bad">1</span> <a href="https://github.com/microsoft/vscode-eslint/issues/2088" target="_blank" rel="noopener">#2088</a></td><td>keep-open 47 · propose-close 14 · needs-info 5 · route-to-area 5</td></tr>
-<tr><td>2026-09-01 10:47</td><td>vscode-eslint</td><td>3/3</td><td><span class="muted">0</span></td><td>propose-close 3</td></tr>
-<tr><td>2026-09-01 10:37</td><td>vscode-eslint</td><td>0/3</td><td><span class="bad">3</span> <a href="https://github.com/microsoft/vscode-eslint/issues/2030" target="_blank" rel="noopener">#2030</a> <a href="https://github.com/microsoft/vscode-eslint/issues/1859" target="_blank" rel="noopener">#1859</a> <a href="https://github.com/microsoft/vscode-eslint/issues/1814" target="_blank" rel="noopener">#1814</a></td><td></td></tr>
-<tr><td>2026-09-01 10:23</td><td>vscode-eslint</td><td>69/72</td><td><span class="bad">3</span> <a href="https://github.com/microsoft/vscode-eslint/issues/1814" target="_blank" rel="noopener">#1814</a> <a href="https://github.com/microsoft/vscode-eslint/issues/1859" target="_blank" rel="noopener">#1859</a> <a href="https://github.com/microsoft/vscode-eslint/issues/2030" target="_blank" rel="noopener">#2030</a></td><td>keep-open 49 · propose-close 14 · needs-info 3 · route-to-area 3</td></tr>
-<tr><td>2026-08-31 18:09</td><td>vscode</td><td>3/3</td><td><span class="muted">0</span></td><td>route-to-area 2 · propose-close 1</td></tr>
-<tr><td>2026-08-31 16:14</td><td>vscode</td><td>194/198</td><td><span class="bad">3</span> <a href="https://github.com/microsoft/vscode/issues/330251" target="_blank" rel="noopener">#330251</a> <a href="https://github.com/microsoft/vscode/issues/330519" target="_blank" rel="noopener">#330519</a> <a href="https://github.com/microsoft/vscode/issues/330769" target="_blank" rel="noopener">#330769</a></td><td>route-to-area 96 · propose-close 75 · needs-info 19 · keep-open 4</td></tr>
-<tr><td>2026-08-31 15:58</td><td>vscode</td><td>200/200</td><td><span class="muted">0</span></td><td>keep-open 95 · needs-info 52 · route-to-area 35 · propose-close 18</td></tr>
-<tr><td>2026-08-31 14:46</td><td>vscode-pull-request-github</td><td>235/235</td><td><span class="muted">0</span></td><td>route-to-area 109 · keep-open 75 · propose-close 43 · needs-info 8</td></tr>
-<tr><td>2026-08-31 11:25</td><td>vscode-python</td><td>348/351</td><td><span class="bad">3</span> <a href="https://github.com/microsoft/vscode-python/issues/4586" target="_blank" rel="noopener">#4586</a> <a href="https://github.com/microsoft/vscode-python/issues/24407" target="_blank" rel="noopener">#24407</a> <a href="https://github.com/microsoft/vscode-python/issues/25995" target="_blank" rel="noopener">#25995</a></td><td>keep-open 219 · route-to-area 55 · propose-close 53 · needs-info 21</td></tr>
-<tr><td>2026-08-31 09:00</td><td>vscode-python-environments</td><td>133/133</td><td><span class="muted">0</span></td><td>keep-open 82 · route-to-area 20 · needs-info 16 · propose-close 15</td></tr>
-<tr><td>2026-08-31 09:00</td><td>vscode-python-environments</td><td>130/133</td><td><span class="bad">3</span> <a href="https://github.com/microsoft/vscode-python-environments/issues/960" target="_blank" rel="noopener">#960</a> <a href="https://github.com/microsoft/vscode-python-environments/issues/1672" target="_blank" rel="noopener">#1672</a> <a href="https://github.com/microsoft/vscode-python-environments/issues/1739" target="_blank" rel="noopener">#1739</a></td><td>keep-open 79 · route-to-area 20 · propose-close 17 · needs-info 14</td></tr>
-    </tbody>
-  </table>
-  <p class="muted logmeta">Last 90 run(s) · <a href="https://github.com/egamma/vscodesweeper-state/blob/state/meta/sweep-log.jsonl" target="_blank" rel="noopener">full log</a></p>
-
-  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> · 2026-10-10 09:15 UTC.</footer>
+<main>
+  <h1>VS Code Sweeper has moved</h1>
+  <p>The sweeper's dashboard and reports now live inside <strong>vscode-tools</strong>, the VS Code team's internal tooling site, under <em>Sweeper</em>. This page is no longer generated.</p>
+  <p>The data behind it stays here: every review record is on the <a href="https://github.com/egamma/vscodesweeper-state/tree/state/records">state branch</a> (one Markdown file per reviewed issue), and the JSON data contracts the tools views render are on the <a href="https://github.com/egamma/vscodesweeper-state/tree/main">main branch</a>.</p>
+  <p class="muted">The sweeper only ever proposes. Every verdict is a suggestion a human maintainer may act on, under their own identity; nothing is applied automatically. The review policy is public under <a href="https://github.com/egamma/vscodesweeper-state/tree/main/policy">policy/</a>, and corpus-level accuracy statistics are planned for the open-source repository.</p>
+  <p class="muted"><a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&page=moved">Send feedback</a> about the sweeper (opens a prefilled issue on the state repository).</p>
+</main>
 </body>
 </html>

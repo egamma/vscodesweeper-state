@@ -24,7 +24,7 @@ body:
     id: page
     attributes:
       label: Page
-      description: Where you spotted it (dashboard, outcomes, the tools page, …)
+      description: Where you spotted it (the tools dashboard, a report page, a record, …)
   - type: textarea
     id: what
     attributes:

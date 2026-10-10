@@ -9,7 +9,7 @@ The sweeper reviewed the open `microsoft/vscode` backlog with a source checkout 
 - **Ready to implement** — the review did the diagnosis (confirmed defect, bounded change, a named validation). `sweeper-implement` goes straight from the brief to the change.
 - **Ready to plan** — the goal is clear but a design or diagnosis is open (the brief lists the open decisions). `sweeper-plan` writes the plan with you first; nothing is implemented until you hand the plan to `sweeper-implement`.
 
-Your issues are on the [dashboard](https://egamma.github.io/vscodesweeper-state/dashboard.html)’s *Agent-ready* tab, ranked by value, and every brief is inspectable there before you run anything.
+Your issues are on the sweeper dashboard’s *Agent-ready* tab in vscode-tools, ranked by value, and every brief is inspectable there before you run anything.
 
 ## Using them
 
@@ -51,4 +51,4 @@ A *ready to plan* row's button copies the plan skill's call:
 - "Needs a plan first" refusal → a *plan* record reached `sweeper-implement` without a plan file in this checkout; run `/sweeper-plan <n>` first, in the same session.
 - Skills not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` and `.github/skills/sweeper-plan/SKILL.md` (pull a recent `main`); on an older checkout, copy the generated [sweeper-implement](https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md) and [sweeper-plan](https://egamma.github.io/vscodesweeper-state/skill/sweeper-plan/SKILL.md) SKILL.md files into `~/.copilot/skills/<name>/` or `~/.claude/skills/<name>/`.
 
-_sweeper agent skills v7 · generated 2026-10-10 09:15 UTC._
+_sweeper agent skills v7 · generated 2026-10-10 10:42 UTC._

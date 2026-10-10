@@ -3,123 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VS Code Sweeper</title>
+<meta name="robots" content="noindex">
+<title>VS Code Sweeper has moved</title>
 <style>
-  :root {
-    --bg: #ffffff; --fg: #1f2328; --muted: #656d76; --border: #d0d7de; --accent: #0969da; --row: #f6f8fa; --bad: #d1242f;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#0d1117; --fg:#e6edf3; --muted:#8b949e; --border:#30363d; --accent:#2f81f7; --row:#161b22; --bad:#f85149; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0 auto; font: 15px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: var(--bg); color: var(--fg); padding: 32px 24px; max-width: 900px; }
-  h1 { font-size: 22px; margin: 0 0 6px; }
-  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 32px 0 12px; }
-  .lede { color: var(--muted); margin: 0 0 8px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .dashcard { display: block; border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px;
-    margin-top: 8px; color: inherit; }
-  .dashcard:hover { border-color: var(--accent); text-decoration: none; }
-  .dashcard .t { font-size: 16px; font-weight: 600; }
-  .dashcard .d { color: var(--muted); font-size: 14px; margin-top: 2px; }
-  .muted { color: var(--muted); }
-  .bad { color: var(--bad); font-weight: 600; }
-  .runs { border-collapse: collapse; width: 100%; font-size: 13px; }
-  .runs th, .runs td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--border); }
-  .runs th { color: var(--muted); font-weight: 600; }
-  .runs tbody tr:nth-child(odd) { background: var(--row); }
-  .logmeta { font-size: 12px; margin-top: 6px; }
-  footer { margin-top: 36px; color: var(--muted); font-size: 12px; }
-  .fb-pill { position: fixed; right: 16px; bottom: 16px; z-index: 10; font-size: 12px;
-    border: 1px solid var(--border); background: var(--bg); color: var(--muted);
-    border-radius: 999px; padding: 5px 12px; box-shadow: 0 1px 4px rgba(0,0,0,.08); }
-  .fb-pill:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+  /* rgb() rather than hex: a hex colour reads as a bare issue reference to the reference guard. */
+  :root { color-scheme: light dark; --fg: rgb(31, 35, 40); --muted: rgb(89, 99, 110); --bg: white; --accent: rgb(9, 105, 218); }
+  @media (prefers-color-scheme: dark) { :root { --fg: rgb(230, 237, 243); --muted: rgb(145, 152, 161); --bg: rgb(13, 17, 23); --accent: rgb(68, 147, 248); } }
+  body { margin: 0; padding: 48px 16px; font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--fg); background: var(--bg); }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 0 0 16px; }
+  p { margin: 0 0 14px; }
+  .muted { color: var(--muted); font-size: 14px; }
+  a { color: var(--accent); }
 </style>
 </head>
 <body>
-  <h1>VS Code Sweeper</h1>
-  <p class="lede">Proposal-only AI triage for <code>microsoft/vscode</code> and its family repos. Nothing here is applied to the repos — every verdict is a suggestion for a human maintainer.</p>
-  <h2>VS Code</h2>
-  <a class="dashcard" href="dashboard.html">
-    <div class="t">Full review dashboard →</div>
-    <div class="d">22092 issues reviewed across all maintainers · filter by action, search, copy-apply comments</div>
-  </a>
-  <a class="dashcard" href="effectiveness.html">
-    <div class="t">Verdicts →</div>
-    <div class="d">What the sweep concluded — corpus-wide verdict distribution, per-user closure mix, agent-fixable leverage</div>
-  </a>
-  <a class="dashcard" href="outcomes.html">
-    <div class="t">Adoption →</div>
-    <div class="d">What humans did with the verdicts — reviewed → proposed → acted on, comment adoption, skill PRs</div>
-  </a>
-  <h2>vscode-python</h2>
-  <a class="dashcard" href="dashboard-vscode-python.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/vscode-python</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-vscode-python.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/vscode-python</code></div>
-  </a>
-  <h2>vscode-python-environments</h2>
-  <a class="dashcard" href="dashboard-vscode-python-environments.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/vscode-python-environments</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-vscode-python-environments.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/vscode-python-environments</code></div>
-  </a>
-  <h2>vscode-remote-release</h2>
-  <a class="dashcard" href="dashboard-vscode-remote-release.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/vscode-remote-release</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-vscode-remote-release.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/vscode-remote-release</code></div>
-  </a>
-  <h2>monaco-editor</h2>
-  <a class="dashcard" href="dashboard-monaco-editor.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/monaco-editor</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-monaco-editor.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/monaco-editor</code></div>
-  </a>
-  <h2>vscode-pull-request-github</h2>
-  <a class="dashcard" href="dashboard-vscode-pull-request-github.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/vscode-pull-request-github</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-vscode-pull-request-github.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/vscode-pull-request-github</code></div>
-  </a>
-  <h2>vscode-eslint</h2>
-  <a class="dashcard" href="dashboard-vscode-eslint.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/vscode-eslint</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-vscode-eslint.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/vscode-eslint</code></div>
-  </a>
-  <h2>vscode-livepreview</h2>
-  <a class="dashcard" href="dashboard-vscode-livepreview.html">
-    <div class="t">Review dashboard →</div>
-    <div class="d">Proposal-only reviews for <code>microsoft/vscode-livepreview</code></div>
-  </a>
-  <a class="dashcard" href="outcomes-vscode-livepreview.html">
-    <div class="t">Adoption →</div>
-    <div class="d">Close-proposal funnel and comment adoption for <code>microsoft/vscode-livepreview</code></div>
-  </a>
-  <footer>Generated by <a href="https://github.com/egamma/vscodesweeper">vscodesweeper</a> · 2026-10-10 09:15 UTC.
-  Agent-fixable rows on the pages route through the <a href="fix-skill.html">sweeper-implement skill</a>. The review policy is public: <a href="https://github.com/egamma/vscodesweeper-state/blob/main/policy/microsoft/vscode/review-item.md" target="_blank" rel="noopener">vscode</a> · <a href="https://github.com/egamma/vscodesweeper-state/blob/main/policy/microsoft/vscode-python/review-item.md" target="_blank" rel="noopener">vscode-python</a>. Feedback on a verdict or a page? <a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=home" target="_blank" rel="noopener">Open an issue on the state repo</a>.
-  <a href="runs.html">Nightly sweep runs</a>.</footer>
-  <a class="fb-pill" href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&amp;page=home" target="_blank" rel="noopener" title="Report a wrong verdict or a page problem — opens a prefilled issue on the state repo">⚑ Feedback</a>
+<main>
+  <h1>VS Code Sweeper has moved</h1>
+  <p>The sweeper's dashboard and reports now live inside <strong>vscode-tools</strong>, the VS Code team's internal tooling site, under <em>Sweeper</em>. This page is no longer generated.</p>
+  <p>The data behind it stays here: every review record is on the <a href="https://github.com/egamma/vscodesweeper-state/tree/state/records">state branch</a> (one Markdown file per reviewed issue), and the JSON data contracts the tools views render are on the <a href="https://github.com/egamma/vscodesweeper-state/tree/main">main branch</a>.</p>
+  <p class="muted">The sweeper only ever proposes. Every verdict is a suggestion a human maintainer may act on, under their own identity; nothing is applied automatically. The review policy is public under <a href="https://github.com/egamma/vscodesweeper-state/tree/main/policy">policy/</a>, and corpus-level accuracy statistics are planned for the open-source repository.</p>
+  <p class="muted"><a href="https://github.com/egamma/vscodesweeper-state/issues/new?template=feedback.yml&page=moved">Send feedback</a> about the sweeper (opens a prefilled issue on the state repository).</p>
+</main>
 </body>
 </html>
