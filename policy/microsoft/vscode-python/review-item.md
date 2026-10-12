@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode-python`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `f39f8b54701225f7` — every verdict record carries the hash of the
+> Policy hash `7283bb865656055c` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-10-11 14:59 UTC.
+> exactly this text. Published 2026-10-12 08:25 UTC.
 
 ---
 
@@ -333,9 +333,10 @@ Translate the underlying judgment into this repository's vocabulary:
   environment-dependent behavior — conda/venv/pyenv layouts, shell
   integration, OS differences — which cannot be verified by reading the
   source at all. When your only evidence for non-reproduction is a version
-  delta, the status is `unclear`, not `not_reproduced`: propose `needs-info`
-  asking the reporter to confirm on the current release (the version
-  reasoning belongs in the comment as context), and do not propose the close.
+  delta, the status is `unverified` when the report itself is complete (`unclear`
+  only when it is thin), the verdict is `keep-open` with the version reasoning
+  in `summary` as context for why it may be resolved, and do not propose the
+  close.
 - **Duplicate** → `*duplicate`, citing the canonical issue **by full URL** in
   `proposedComment`. There is **no working `/duplicate` slash command in this
   repository** — do not emit one; write a human comment a maintainer can post
@@ -442,7 +443,11 @@ Translate the underlying judgment into this repository's vocabulary:
   mapping is REQUIRED, not a suggestion: when you land on `reproductionStatus:
   "unclear"` — the report is too thin to verify and no commenter has confirmed
   a reproduction — the verdict is `triageAction: "needs-info"`, never
-  `keep-open` (the hard keep-open rules still win). `info-needed` is this
+  `keep-open` (the hard keep-open rules still win). This mapping is for `unclear` only: a bug at `unverified` — the report is
+  complete, you merely could not confirm it — is `keep-open`, never
+  `needs-info`, and a needs-info `proposedComment` must name the item the
+  report lacks; "please confirm on the current build" alone is not missing
+  information. `info-needed` is this
   repository's established lane for exactly this state: ask the reporter to
   confirm on the latest release and supply the missing details (Python
   version, environment manager, `Python: Report Issue` output, logs from the
@@ -638,12 +643,26 @@ stop there.
     "needs-info"` unless a hard keep-open rule applies (see the intent
     mapping). If the discussion already contains a credible confirmed repro,
     the status is `reproduced`, not `unclear`.
+  - `unverified` — the report carries what a maintainer needs (concrete steps
+    or a sample, the affected surface, the observed result) and you still could
+    not confirm the defect: you cannot execute it, the code has moved since the
+    report, or the behaviour is environment-dependent. This is the
+    complete-but-unconfirmed state, and it is NOT `unclear`: an intermittent
+    failure with no trigger a maintainer could follow is thin, hence `unclear`;
+    and if the discussion already contains a credible confirmed reproduction,
+    the status is `reproduced`, not `unverified`. For a bug it pairs
+    with `triageAction: "keep-open"` — never `needs-info`: asking the reporter
+    for what the report already contains ends in a timeout close of a valid
+    report (the second review refuted about half of the backlog's needs-info
+    verdicts on exactly this, 2026-10-12). Say in `summary` what moved since the
+    report and that the given steps suffice to retest.
   - `not_applicable` — not a bug (feature-request, question, upstream, debt,
     polish, under-discussion) or no reproduction is meaningful.
   Keep it consistent with the rest of the verdict: a cannot-reproduce close
   needs `not_reproduced`; a title-only read with no checkout is `unclear`,
-  never `not_reproduced`; a bug left at `unclear` takes `needs-info`, not
-  `keep-open`, unless a hard keep-open rule applies.
+  never `not_reproduced`; a bug left at `unclear` takes `needs-info`, not `keep-open`, and a bug
+  left at `unverified` takes `keep-open`, never `needs-info`, unless a hard
+  keep-open rule applies.
 - `severity` — the user-impact class of the defect, **for bugs only** (`none`
   for every other `itemType`). Purely descriptive: it never changes
   `triageAction`, and a `papercut` verdict is not a reason to close. Pick
@@ -862,7 +881,7 @@ match this shape exactly:
   "triageAction": "one of: propose-close | needs-info | route-to-area | keep-open",
   "closeReason": "one of: implemented-on-main | duplicate | as-designed | not-reproducible | out-of-scope | question | invalid | none (the close verdict's semantics, independent of labels; none unless propose-close)",
   "itemType": "one of: bug | feature-request | debt | polish | upstream | question | under-discussion",
-  "reproductionStatus": "one of: reproduced | source_reproducible | not_reproduced | unclear | not_applicable",
+  "reproductionStatus": "one of: reproduced | source_reproducible | not_reproduced | unverified | unclear | not_applicable",
   "severity": "one of: crash | data-loss | freeze | perf | correctness | visual | papercut | none (bugs only; none for non-bugs)",
   "breadth": "one of: broad | common | niche",
   "priority": "one of: important | none (rare; see the gates in the field guidance)",
@@ -906,6 +925,10 @@ Rules for the contract:
   the **30-day** auto-close in `proposedComment`.
 - A bug with `reproductionStatus: "unclear"` MUST take `triageAction:
   "needs-info"` — never `keep-open` — unless a hard keep-open rule applies.
+- A bug with `reproductionStatus: "unverified"` MUST take `triageAction:
+  "keep-open"` — never `needs-info`: the report already carries what a
+  maintainer needs; say in `summary` what moved since and that the given steps
+  suffice to retest.
 - For mid-verification issues, set `triageAction: "keep-open"` and never propose
   a close (see the verification lifecycle section above).
 - `severity` is `none` for every non-bug; `priority: "important"` is rare and
