@@ -48,8 +48,9 @@ validation loop — do not stop at file creation:
    capability (Apply & close / Request info under the clicking maintainer's
    own identity) defaults ON for published repos — record `"apply": false`
    only when the repo's owners decline it. Both fields publish to
-   `targets.json` as advisory intent for hosts; the host write allowlist
-   stays a separate reviewed change there.
+   `targets.json`, and vscode-tools derives its write enablement from them
+   for repos under an owner it admits (today `microsoft`) — a new
+   `microsoft/*` satellite needs no vscode-tools change or deploy.
 4. Produce the introspection evidence summary (per mechanic: the live probe
    that proved it) for the PR description, and remind the user of the gates a
    PR does NOT clear by itself: maintainer calibration and — for family
