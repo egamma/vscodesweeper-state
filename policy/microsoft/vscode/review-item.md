@@ -3,7 +3,7 @@
 > publish. This file is a generated artifact: do not edit it here.
 > Policy hash `0b48efe4475296d7` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-10-17 19:53 UTC.
+> exactly this text. Published 2026-10-17 20:59 UTC.
 
 ---
 
