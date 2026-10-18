@@ -1,78 +1,12 @@
 {
   "schema": 1,
   "target": "egamma/sweeper-sandbox",
-  "generatedAt": "2026-10-18T12:28:33.208Z",
+  "generatedAt": "2026-10-18T12:54:36.657Z",
   "policy": {
     "lanes": [
       "duplicate",
       "implemented"
     ]
   },
-  "candidates": [
-    {
-      "number": 35,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 4
-      },
-      "comment": "Thanks for the report. This is the same issue tracked in https://github.com/egamma/sweeper-sandbox/issues/4: `noteStats.showCharacters` is read when the extension activates, so enabling it does not update the status bar until a reload or restart. Closing this as a duplicate of that older report; your confirmation that restarting VS Code makes the character count appear matches its reload workaround.",
-      "reviewedAt": "2026-10-17T19:46:33.101Z",
-      "contentHash": "045e5e0cb0830c2d2b0795f6e928914ced2302d4e60e7a7d4928bf6e6588c8df",
-      "verifiedAt": "2026-10-17T19:48:39.443Z",
-      "confidence": 0.99,
-      "assignees": []
-    },
-    {
-      "number": 36,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 8
-      },
-      "comment": "Thanks for the suggestion. Reading-time estimates are already requested in https://github.com/egamma/sweeper-sandbox/issues/8, including how to display them and handle short documents. Closing this as a duplicate of that older request; your reference to Medium is useful context for the presentation discussion there.",
-      "reviewedAt": "2026-10-17T19:46:36.445Z",
-      "contentHash": "e5c02247133812d55567c7fb7f0f180865017f49e155ba667f6898ee41732386",
-      "verifiedAt": "2026-10-17T19:48:39.627Z",
-      "confidence": 0.98,
-      "assignees": []
-    },
-    {
-      "number": 39,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 30
-      },
-      "comment": "Thanks for the report. This is the same repeated-space counting defect tracked in https://github.com/egamma/sweeper-sandbox/issues/30, so we're closing this report as a duplicate of that older issue. Your additional example—three spaces adding two extra words—and the Note Stats 0.1.0 / VS Code 1.140 versions are useful supporting details. The intended behavior is to count whitespace-separated words without counting the extra spaces.",
-      "reviewedAt": "2026-10-17T19:46:49.760Z",
-      "contentHash": "c78557ae4e7066c69b3241d1cfee1cf9b97f961f7db240d8bf84eb3654fd7367",
-      "verifiedAt": "2026-10-17T19:48:50.346Z",
-      "confidence": 0.99,
-      "assignees": []
-    },
-    {
-      "number": 40,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 10
-      },
-      "comment": "Thanks for the request. This is already tracked in https://github.com/egamma/sweeper-sandbox/issues/10, which asks for the status bar to count selected text and return to the whole-document count when the selection is cleared. Your highlighted-paragraph example is the same use case, so we're closing this as a duplicate and keeping that request together there. Selection-based counts are not implemented yet.",
-      "reviewedAt": "2026-10-17T19:46:58.563Z",
-      "contentHash": "78215417d16dc1e75b92ab1d612c111ef7f0f0d74f26352a584aee74d04306fe",
-      "verifiedAt": "2026-10-17T19:48:49.867Z",
-      "confidence": 0.98,
-      "assignees": []
-    },
-    {
-      "number": 41,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 11
-      },
-      "comment": "Thanks for the request. This is already tracked in https://github.com/egamma/sweeper-sandbox/issues/11, which proposes a Note Stats: Copy Stats command to copy both word and character counts as plain text. That would also cover pasting the counts into your notes without retyping them and risking transcription errors. Closing this as a duplicate so the same capability is tracked in one place.",
-      "reviewedAt": "2026-10-17T19:46:56.155Z",
-      "contentHash": "0d4b648fe855949c85c8c22926ed70c01d6bc805b006a04381df08847a1f8bd1",
-      "verifiedAt": "2026-10-17T19:48:56.918Z",
-      "confidence": 0.98,
-      "assignees": []
-    }
-  ]
+  "candidates": []
 }
