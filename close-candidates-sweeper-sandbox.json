@@ -1,12 +1,14 @@
 {
   "schema": 1,
   "target": "egamma/sweeper-sandbox",
-  "generatedAt": "2026-10-18T17:51:39.412Z",
+  "generatedAt": "2026-10-19T16:05:31.500Z",
   "policy": {
     "lanes": [
       "duplicate",
       "implemented"
-    ]
+    ],
+    "excludeAssignees": [],
+    "unassignedOnly": false
   },
   "candidates": []
 }
