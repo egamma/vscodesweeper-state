@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-19T16:05:31.102Z",
+  "generatedAt": "2026-10-20T14:06:36.551Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -11,19 +11,163 @@
   },
   "candidates": [
     {
-      "number": 342038,
+      "number": 340551,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 341659,
+        "canonical": 317187,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. The same checkpoint commits cluttering Git history, and the request to stop or remove them, are tracked in https://github.com/microsoft/vscode/issues/341659. Consolidating there with the additional details from this thread: Ask mode creates refs/agents/<session-id>/checkpoints/turn/0 even with chat.checkpoints.enabled and chat.agentHost.enabled set to false, and the refs also appear in Git Extensions and TortoiseGit on Windows. The request for supported cleanup belongs there too.",
-      "reviewedAt": "2026-10-19T15:41:38.792Z",
-      "contentHash": "ebded949053d163e199f3989c8812fd01a3a43046b2e2e5008f1fc648c50811a",
-      "verifiedAt": "2026-10-19T15:57:20.431Z",
-      "confidence": 0.93,
+      "comment": "Thanks for the detailed analysis. The missing provider-usage contract is already tracked in https://github.com/microsoft/vscode/issues/317187, with an implementation proposed in https://github.com/microsoft/vscode/pull/319686. This report adds useful acceptance cases: the prompt/completion payload without total_tokens, and the Agents-window BYOK loopback path showing 0% despite backend-reported usage. Those details should remain part of the work tracked there.",
+      "reviewedAt": "2026-10-20T13:50:01.909Z",
+      "contentHash": "b0f4bad9ea6d0aa6f38fb4de532c9fa2ec7c9bd554d983fcf43387b24477a6a9",
+      "verifiedAt": "2026-10-20T13:59:47.705Z",
+      "confidence": 0.94,
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
+      "number": 342011,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 312400,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same Agent-selected, Ask-mode refusal is tracked in https://github.com/microsoft/vscode/issues/312400. This report adds an occurrence on VS Code 1.142.0 in Windows/WSL2 and the observation about assistant-visible Ask-mode instructions; those details are useful for the investigation there.",
+      "reviewedAt": "2026-10-20T13:46:26.048Z",
+      "contentHash": "dde7f49f5afe5ca0f92cbc664b1aa13405ca4a0a0be85d6b63db451f1ec046f0",
+      "verifiedAt": "2026-10-20T13:59:57.551Z",
+      "confidence": 0.86,
+      "assignees": [
+        "roblourens"
+      ]
+    },
+    {
+      "number": 342617,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 224933,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The sidebar staying narrow after moving a maximized window between monitors is already tracked in https://github.com/microsoft/vscode/issues/224933. This report adds that both sidebars are affected and that waking monitors also triggers it on Windows with 150% scaling and “Remember window locations based on monitor connection” enabled.",
+      "reviewedAt": "2026-10-20T13:41:40.786Z",
+      "contentHash": "0aa9f7bf10f3aac96574bb8748715c5d15d78cea6c1d2c6e051a340476a79897",
+      "verifiedAt": "2026-10-20T14:00:03.274Z",
+      "confidence": 0.9,
+      "assignees": [
+        "benibenj"
+      ]
+    },
+    {
+      "number": 342769,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 339148,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The missing spaces before cleanup are already tracked in https://github.com/microsoft/vscode/issues/339148. This adds a useful Spanish reproduction: with `\"agents.voice.language\": \"es\"` on macOS arm64 in 1.143.0-insider, the gray live transcript loses spaces even though postprocessing restores them. Correct spacing during live dictation remains part of the expected behavior.",
+      "reviewedAt": "2026-10-20T13:34:22.128Z",
+      "contentHash": "daaaeb14c5f7a859306857dc86bf05215a934beee682046915feb40517a330cc",
+      "verifiedAt": "2026-10-20T14:00:14.047Z",
+      "confidence": 0.86,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 342791,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338128,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the Windows emoji-picker insertion failure tracked in https://github.com/microsoft/vscode/issues/338128, where repeated selections can stop registering across editor-backed inputs. This report adds the Source Control commit-message input on Windows 10 22H2 build 19045.7807 with VS Code 1.142.0 and extensions disabled; that case should be included when verifying the fix.",
+      "reviewedAt": "2026-10-20T13:33:42.000Z",
+      "contentHash": "d8cb1c28ba5ad9d8c47a7b14fb052d3ea5f7e9d8bf4158fe8b98398e6dd7782b",
+      "verifiedAt": "2026-10-20T14:00:19.276Z",
+      "confidence": 0.9,
       "assignees": [
         "lszomoru"
+      ]
+    },
+    {
+      "number": 342804,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 300659,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed investigation. The garbled Windows 11 context-menu entry is already tracked in https://github.com/microsoft/vscode/issues/300659. This report adds useful evidence: VS Code 1.142.0 on zh-CN Windows with ACP 936, the identified shell DLL and CLSID, a correct UTF-16 registry title, changing garbage between right-clicks, and an entry that disappears with an ASCII title. Consolidating these findings there will keep the investigation together.",
+      "reviewedAt": "2026-10-20T13:32:57.673Z",
+      "contentHash": "871b4ee7db76ca4e29ec9befb5ed56614ebb516e8c9e58d944443751b2c64952",
+      "verifiedAt": "2026-10-20T14:00:29.345Z",
+      "confidence": 0.9,
+      "assignees": [
+        "sbatten"
+      ]
+    },
+    {
+      "number": 342830,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 342473,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs. This is the same legacy-chat disappearance tracked in https://github.com/microsoft/vscode/issues/342473: opening the chat archives the original without leaving a usable replacement. This report adds the managed-permissions trigger, repeated failure after unarchiving, and the ahp-session/copilotcli subscription mismatch followed by empty-session collection; those details should inform the investigation there. The proposed change in https://github.com/microsoft/vscode/pull/342504 is still open, so this is consolidation, not a claim that the problem is fixed.",
+      "reviewedAt": "2026-10-20T13:30:32.053Z",
+      "contentHash": "7a3ad448b6b6d04e35eb30e1a95c2c92a2c3ed1f6b56be405bcffb2dac094b23",
+      "verifiedAt": "2026-10-20T14:00:39.170Z",
+      "confidence": 0.91,
+      "assignees": [
+        "rwoll"
+      ]
+    },
+    {
+      "number": 342821,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 340456,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. This is already tracked in https://github.com/microsoft/vscode/issues/340456, which asks for an archive action directly within the conversation. Your examples explain why this matters: AI-generated titles make it hard to find the same session again, especially when reviewing older conversations for cleanup. Mark as Done is the archive action under the newer wording, so both reports cover the same change.",
+      "reviewedAt": "2026-10-20T13:30:30.075Z",
+      "contentHash": "70fc2a48254cc1590115f899c586dc6a1e7555287101d2f7bc06fe8a464bdc42",
+      "verifiedAt": "2026-10-20T14:00:31.995Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 342842,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 125993,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the webview service-worker registration failure tracked in https://github.com/microsoft/vscode/issues/125993, which also has confirmed Windows reports. This occurrence affects the built-in image preview (`vscode.media-preview`) on VS Code 1.142.0, Windows 10.0.26100.",
+      "reviewedAt": "2026-10-20T13:29:44.581Z",
+      "contentHash": "815cbdd8e14f5cb32eba97434ec6c0a948b7fff9076578538e037d9bef994b55",
+      "verifiedAt": "2026-10-20T14:00:37.653Z",
+      "confidence": 0.94,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 342851,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 291504,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/291504, where changing the account preference updates the selected account but Copilot Chat still uses another account's quota. Your report adds that this occurs on VS Code 1.142.0 on macOS arm64, with the new account icon visible while the previous account's balance remains in use.",
+      "reviewedAt": "2026-10-20T13:29:34.899Z",
+      "contentHash": "3f2320fb182a27f9e0f49b844b6bd35870346f5915e1afc666437852ebd69ddc",
+      "verifiedAt": "2026-10-20T14:00:47.478Z",
+      "confidence": 0.9,
+      "assignees": [
+        "TylerLeonhardt"
       ]
     },
     {
@@ -88,54 +232,6 @@
       "confidence": 0.94,
       "assignees": [
         "osortega"
-      ]
-    },
-    {
-      "number": 342535,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 332765,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This matches the Safari/WebKit webview overlay sizing problem tracked in https://github.com/microsoft/vscode/issues/332765, including the approximately 300 × 150 rendering already confirmed there on iPadOS. This report adds useful Codex/Codespaces reproduction details, macOS and iPadOS measurements, successful CSS feature checks, and a ResizeObserver workaround for the shared investigation.",
-      "reviewedAt": "2026-10-19T15:29:24.038Z",
-      "contentHash": "dce191de5697f8bf7b22fcd5fc4db4e1998528f2aef82e7ef48fd3de686c3962",
-      "verifiedAt": "2026-10-19T15:57:55.723Z",
-      "confidence": 0.96,
-      "assignees": [
-        "bhavyaus"
-      ]
-    },
-    {
-      "number": 342563,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 304054,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/304054, which requests an in-chat 'Forked from' message linking to the original conversation. This report adds the Copilot Agent Host case: after sending a prompt and running `/fork`, the title change alone makes the command appear to have been ignored.",
-      "reviewedAt": "2026-10-19T15:26:54.259Z",
-      "contentHash": "9c650269e74a04366a957b37d028576ba9b511d7478f897396e860a0f296d775",
-      "verifiedAt": "2026-10-19T15:58:03.687Z",
-      "confidence": 0.95,
-      "assignees": [
-        "DonJayamanne"
-      ]
-    },
-    {
-      "number": 342011,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 312400,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the Agent-selected/Ask-mode refusal already tracked in https://github.com/microsoft/vscode/issues/312400. This report adds VS Code 1.142.0 on Windows/WSL2 and the observation that assistant-visible session instructions identified Ask mode; those details should remain part of the investigation there.",
-      "reviewedAt": "2026-10-18T12:37:16.538Z",
-      "contentHash": "7ec750b794873168ce977f5315241b7f4257db4f0eab9778547d7c712ff645ea",
-      "verifiedAt": "2026-10-18T13:00:16.490Z",
-      "confidence": 0.86,
-      "assignees": [
-        "roblourens"
       ]
     },
     {
@@ -2376,22 +2472,6 @@
       ]
     },
     {
-      "number": 341432,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 340657,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This matches the missing-koffi terminal failure tracked in https://github.com/microsoft/vscode/issues/340657, including an independently confirmed system-install reproduction. Your report adds that it persists in 1.141.1 after a clean reinstall and that downgrading to 1.140.0 restores execution; those details should be retained in the consolidated investigation.",
-      "reviewedAt": "2026-10-14T08:35:21.468Z",
-      "contentHash": "ad960db82dcddb3de3637d38eb3e1610f763b46ad7df063ecc512e9c0fe9714e",
-      "verifiedAt": "2026-10-18T11:54:14.589Z",
-      "confidence": 0.95,
-      "assignees": [
-        "meganrogge"
-      ]
-    },
-    {
       "number": 341416,
       "lane": "duplicate",
       "evidence": {
@@ -3348,22 +3428,6 @@
       ]
     },
     {
-      "number": 340551,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 293085,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The same provider-usage contract and empty context indicator are tracked in https://github.com/microsoft/vscode/issues/293085.\n\nCurrent main already consumes `LanguageModelDataPart` with MIME type `usage` in the panel path, but requires numeric `total_tokens` alongside `prompt_tokens` and `completion_tokens`. Your agent-host-compatible payload omits `total_tokens`; that contract mismatch and the LiteLLM gateway example are useful details to retain in the existing issue.",
-      "reviewedAt": "2026-10-12T13:08:30.014Z",
-      "contentHash": "2ebf8308ee05104ecf05bd321cdd2aed53d1631224774687a9b948d32ba132d9",
-      "verifiedAt": "2026-10-18T11:54:01.736Z",
-      "confidence": 0.91,
-      "assignees": [
-        "vritant24"
-      ]
-    },
-    {
       "number": 330713,
       "lane": "duplicate",
       "evidence": {
@@ -4157,22 +4221,6 @@
       "contentHash": "c2bddd79df382bbf6fe584b0111e7a1dabb2aaebc26d7c21d2d3ab4649a33f1b",
       "verifiedAt": "2026-10-18T11:33:29.038Z",
       "confidence": 0.9,
-      "assignees": [
-        "deepak1556"
-      ]
-    },
-    {
-      "number": 320375,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 170708,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This is already tracked in https://github.com/microsoft/vscode/issues/170708, including the same Nemo reproduction that pastes '/'. Your Nautilus/X11 clipboard diagnostics—text/uri-list contains the full file URI while text/plain contains only the filename—and confirmations through 1.135.0 are useful additional evidence for that issue.",
-      "reviewedAt": "2026-10-11T18:43:25.494Z",
-      "contentHash": "6b5307614b25acd2fdf1c3e8d9f260d53824f37a79918b7f15103a520a6b1147",
-      "verifiedAt": "2026-10-18T07:16:30.571Z",
-      "confidence": 0.96,
       "assignees": [
         "deepak1556"
       ]
@@ -6943,22 +6991,6 @@
       "contentHash": "6925851fe473eceeaf079997c997135ec50a32af95904a1d7d9d0ed751739cf2",
       "verifiedAt": "2026-10-18T11:53:12.150Z",
       "confidence": 0.97,
-      "assignees": [
-        "sandy081"
-      ]
-    },
-    {
-      "number": 313053,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 313052,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is an exact duplicate of the open report at https://github.com/microsoft/vscode/issues/313052, so the investigation should continue there.",
-      "reviewedAt": "2026-09-30T22:43:37.545Z",
-      "contentHash": "0833e5de867f32613fd0fffd293e627e3bb479e332f0dc7cb833a3d1e78b2308",
-      "verifiedAt": "2026-10-18T11:45:02.699Z",
-      "confidence": 0.99,
       "assignees": [
         "sandy081"
       ]
