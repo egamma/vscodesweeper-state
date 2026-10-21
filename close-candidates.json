@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-20T14:06:36.551Z",
+  "generatedAt": "2026-10-21T10:58:38.736Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -24,38 +24,6 @@
       "confidence": 0.94,
       "assignees": [
         "vritant24"
-      ]
-    },
-    {
-      "number": 342011,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 312400,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same Agent-selected, Ask-mode refusal is tracked in https://github.com/microsoft/vscode/issues/312400. This report adds an occurrence on VS Code 1.142.0 in Windows/WSL2 and the observation about assistant-visible Ask-mode instructions; those details are useful for the investigation there.",
-      "reviewedAt": "2026-10-20T13:46:26.048Z",
-      "contentHash": "dde7f49f5afe5ca0f92cbc664b1aa13405ca4a0a0be85d6b63db451f1ec046f0",
-      "verifiedAt": "2026-10-20T13:59:57.551Z",
-      "confidence": 0.86,
-      "assignees": [
-        "roblourens"
-      ]
-    },
-    {
-      "number": 342617,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 224933,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The sidebar staying narrow after moving a maximized window between monitors is already tracked in https://github.com/microsoft/vscode/issues/224933. This report adds that both sidebars are affected and that waking monitors also triggers it on Windows with 150% scaling and “Remember window locations based on monitor connection” enabled.",
-      "reviewedAt": "2026-10-20T13:41:40.786Z",
-      "contentHash": "0aa9f7bf10f3aac96574bb8748715c5d15d78cea6c1d2c6e051a340476a79897",
-      "verifiedAt": "2026-10-20T14:00:03.274Z",
-      "confidence": 0.9,
-      "assignees": [
-        "benibenj"
       ]
     },
     {
@@ -104,22 +72,6 @@
       "confidence": 0.9,
       "assignees": [
         "sbatten"
-      ]
-    },
-    {
-      "number": 342830,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 342473,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed logs. This is the same legacy-chat disappearance tracked in https://github.com/microsoft/vscode/issues/342473: opening the chat archives the original without leaving a usable replacement. This report adds the managed-permissions trigger, repeated failure after unarchiving, and the ahp-session/copilotcli subscription mismatch followed by empty-session collection; those details should inform the investigation there. The proposed change in https://github.com/microsoft/vscode/pull/342504 is still open, so this is consolidation, not a claim that the problem is fixed.",
-      "reviewedAt": "2026-10-20T13:30:32.053Z",
-      "contentHash": "7a3ad448b6b6d04e35eb30e1a95c2c92a2c3ed1f6b56be405bcffb2dac094b23",
-      "verifiedAt": "2026-10-20T14:00:39.170Z",
-      "confidence": 0.91,
-      "assignees": [
-        "rwoll"
       ]
     },
     {
@@ -187,70 +139,6 @@
       ]
     },
     {
-      "number": 342394,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 339269,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction and SDK isolation results. This is the same duplicate user-instruction injection tracked in https://github.com/microsoft/vscode/issues/339269. This report adds a clean 1.142.0 reproduction, SDK 1.0.22 directory/case comparisons, and a launcher experiment reducing the marker from two copies to one; those details should inform the fix there, including preserving distinct instruction sources and enablement behavior.",
-      "reviewedAt": "2026-10-19T15:38:49.880Z",
-      "contentHash": "479032ba570c6230448fe82e13b943b014ebfc2c936958b4e8e5e36fb6de1907",
-      "verifiedAt": "2026-10-19T15:57:38.244Z",
-      "confidence": 0.97,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 342376,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 341675,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the additional context. This matches your earlier report at https://github.com/microsoft/vscode/issues/341675: pressing AltGr moves the cursor backward and loses focus on the same WSL2 Linux system. Let's keep the investigation there, including these additional details: it also occurs in 1.142.0 through RDP to XRDP, while native Windows VS Code and other applications work normally.",
-      "reviewedAt": "2026-10-19T15:38:12.797Z",
-      "contentHash": "52124970e79447b7448932b1e68c93a0a4f28fcc19b1c3ecdcb8ab2c8eb2de83",
-      "verifiedAt": "2026-10-19T15:57:37.670Z",
-      "confidence": 0.96,
-      "assignees": [
-        "ulugbekna"
-      ]
-    },
-    {
-      "number": 342419,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 334248,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The same agent-host recursive watcher ignoring `files.watcherExclude` is already tracked in https://github.com/microsoft/vscode/issues/334248. Consolidating there; this report adds the Yocto build tree with over one million files, reported ENOSPC failures affecting other watchers, and the request to consider automatic or opt-in `.gitignore` support.",
-      "reviewedAt": "2026-10-19T15:37:39.421Z",
-      "contentHash": "fee624a7be79b0aec2ce72670091a9761a46673b1dedb98f367f50dee81cd251",
-      "verifiedAt": "2026-10-19T15:57:42.007Z",
-      "confidence": 0.94,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 342290,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 340844,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed comparison. This matches the custom-agent model-mapping failure tracked in https://github.com/microsoft/vscode/issues/340844. This report adds a useful Windows/1.142.0 Azure case: `azure/Azure/gpt-6-luna` is listed as available and succeeds as an explicit model override, but fails when selected through agent frontmatter. Those details should remain part of the investigation there.",
-      "reviewedAt": "2026-10-18T12:36:50.816Z",
-      "contentHash": "9a4c889c718ee584aa1147b41af277c8df31cf93eb87153eb28df8bae80715ef",
-      "verifiedAt": "2026-10-18T13:00:32.308Z",
-      "confidence": 0.88,
-      "assignees": [
-        "hediet"
-      ]
-    },
-    {
       "number": 342308,
       "lane": "duplicate",
       "evidence": {
@@ -312,22 +200,6 @@
       "verifiedAt": "2026-10-17T20:51:18.805Z",
       "confidence": 0.96,
       "assignees": []
-    },
-    {
-      "number": 306936,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 307630,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/307630 covers per-agent skill isolation, including agent-specific skill discovery folders. Your planner using skills A/B and implementer using C/D is a useful example of the same requirement: unrelated skills should stay out of each subagent's discovery context, rather than merely preloading preferred skills.",
-      "reviewedAt": "2026-10-17T20:24:36.154Z",
-      "contentHash": "85a6b1ca494f1f7af86718d51601351783db0e812cc376c371fa9d75d2bcd03f",
-      "verifiedAt": "2026-10-17T20:51:15.078Z",
-      "confidence": 0.93,
-      "assignees": [
-        "aeschli"
-      ]
     },
     {
       "number": 303677,
@@ -2423,23 +2295,6 @@
       ]
     },
     {
-      "number": 270016,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 129425,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and sample repository. This is the same selection-reset behavior tracked in https://github.com/microsoft/vscode/issues/129425; its discussion also reproduces the workspace launch section plus folder launch.json case. Your sample at https://github.com/FMorschel/vscode-repro-launch and the observation that an existing folder-source selection remains unchanged provide additional reproduction detail for that issue.",
-      "reviewedAt": "2026-10-14T10:21:07.738Z",
-      "contentHash": "aae7d8d019701be5e8dc84c999b4960def6106a2178f7859cee6f2931f8e14eb",
-      "verifiedAt": "2026-10-18T11:35:33.117Z",
-      "confidence": 0.96,
-      "assignees": [
-        "roblourens",
-        "connor4312"
-      ]
-    },
-    {
       "number": 263870,
       "lane": "duplicate",
       "evidence": {
@@ -3600,22 +3455,6 @@
       "assignees": [
         "vritant24",
         "vijayupadya"
-      ]
-    },
-    {
-      "number": 320926,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 320145,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/320145 already tracks Agent requests rejected by OpenAI-compatible endpoints when parameterless tools such as terminal_selection and terminal_last_command lack an explicit object schema. Your Aliyun Responses API example adds the empty parameters dictionary case, which should be covered alongside omitted parameters in that fix.",
-      "reviewedAt": "2026-10-12T12:23:06.636Z",
-      "contentHash": "4ff40d4026bd43c6ee1f41724e1316c4446899528707c8acde0b6eaf81e9ccb6",
-      "verifiedAt": "2026-10-18T11:48:06.654Z",
-      "confidence": 0.91,
-      "assignees": [
-        "vritant24"
       ]
     },
     {
@@ -6868,22 +6707,6 @@
       ]
     },
     {
-      "number": 306770,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 282004,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and for documenting the safer keybinding workaround. This is the same Chat-input Ctrl+Backspace behavior already tracked by the older open https://github.com/microsoft/vscode/issues/282004, including the risk that the next typing key confirms Undo All Edits. Your Windows/remote-Linux context and Ctrl+Shift+Backspace workaround remain useful evidence for that investigation.",
-      "reviewedAt": "2026-10-01T10:46:59.416Z",
-      "contentHash": "9b6083f36a0041e1df5ad727106bf1a28a6d75183481bf50e8bfa2476ab6a887",
-      "verifiedAt": "2026-10-18T11:43:12.116Z",
-      "confidence": 0.95,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
       "number": 307939,
       "lane": "duplicate",
       "evidence": {
@@ -7539,167 +7362,6 @@
       "confidence": 0.98,
       "assignees": [
         "Giuspepe"
-      ]
-    },
-    {
-      "number": 325658,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 320154,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the additional Windows confirmation. This is covered by https://github.com/microsoft/vscode/issues/320154, which tracks profile creation being aborted by the Python template's extension installation; consolidating the reports there.",
-      "reviewedAt": "2026-09-20T10:41:24.386Z",
-      "contentHash": "2dbdbb3abf76793bb502a4faa7f8e9093433318736d4a958f659d215d1bb0065",
-      "verifiedAt": "2026-10-18T11:49:35.929Z",
-      "confidence": 0.97,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 313442,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 311035,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed proposal. The same immutable built-in prompt behavior, token overhead, and conflicts with custom-agent instructions are already tracked in https://github.com/microsoft/vscode/issues/311035; the per-agent/session/workspace section controls suggested here are useful design input for that work.",
-      "reviewedAt": "2026-09-20T10:40:56.987Z",
-      "contentHash": "a5f8bb68b9d7d2ac02d916061ea4d3a63776275e299dab5a26739e1fea8a0e37",
-      "verifiedAt": "2026-10-18T11:45:15.623Z",
-      "confidence": 0.91,
-      "assignees": [
-        "aeschli",
-        "jukasper"
-      ]
-    },
-    {
-      "number": 321437,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 117013,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is already tracked by https://github.com/microsoft/vscode/issues/117013, which covers keeping the vscode-json-languageserver npm package synchronized with the implementation and VS Code releases.",
-      "reviewedAt": "2026-09-20T10:37:50.914Z",
-      "contentHash": "bb0389fa564e79acfc0db3a0c34068682ed30392186d8b7f4271474b05ef957b",
-      "verifiedAt": "2026-10-18T07:16:39.688Z",
-      "confidence": 0.97,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 299185,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 287667,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the exact EROFS path. This is the same Plan mode “Open in Editor” save failure tracked by https://github.com/microsoft/vscode/issues/287667; the `/plan-filterRefactor.prompt.md` path and macOS confirmation here should be carried into that investigation.",
-      "reviewedAt": "2026-09-20T10:31:28.767Z",
-      "contentHash": "fd0150b740eb8146ab42d7296342d8623409966a3e6015aa74889a5b91913052",
-      "verifiedAt": "2026-10-18T11:41:04.783Z",
-      "confidence": 0.96,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 299693,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 299459,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is already tracked in https://github.com/microsoft/vscode/issues/299459, where the difference between the `1.110` repository tag and the `1.110.0` product/download version is under investigation. Your additional detail that three-component semantic versioning is required for automation should be carried into that discussion.",
-      "reviewedAt": "2026-09-20T10:19:38.620Z",
-      "contentHash": "b97ef7566896cabfa28e05979750277c4b0e7593eccc9010f5ac22febd089aee",
-      "verifiedAt": "2026-10-18T11:41:20.910Z",
-      "confidence": 0.98,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 252610,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 230136,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request and the detailed API example. The same dynamic per-document schema-association gap is already tracked in https://github.com/microsoft/vscode/issues/230136, including dynamically supplied schema content and the limitations of static `contributes.jsonValidation` globs, so consolidating the API discussion there.",
-      "reviewedAt": "2026-09-20T09:59:20.238Z",
-      "contentHash": "89051950b88782c6ddf97fdf01181f49d7cb186fe1e88b33ee5ef04bcce4f2e4",
-      "verifiedAt": "2026-10-18T11:34:20.225Z",
-      "confidence": 0.97,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 259183,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 251515,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. This is covered by the older open tracking issue https://github.com/microsoft/vscode/issues/251515, including workspace-owned tool-set files that can be shared with repository agent configuration. This report's specific failure mode—references being unavailable when another user lacks the profile-scoped tool set—should be carried into that discussion.",
-      "reviewedAt": "2026-09-20T09:54:34.816Z",
-      "contentHash": "9ce91420e8351b1d9485fa518d0c5ad738c3b90acb84883edd35a8068d54b1c0",
-      "verifiedAt": "2026-10-18T11:34:48.263Z",
-      "confidence": 0.97,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 224977,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 86768,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same CSS completion behavior already tracked by https://github.com/microsoft/vscode/issues/86768: accepting a completion inserts `;`, and typing `;` again should overtype it rather than produce `;;`. The Java confirmation here is useful additional evidence that the shared editor behavior may also need consideration.",
-      "reviewedAt": "2026-09-20T09:48:25.845Z",
-      "contentHash": "3ef9a388e5f58006ced235bc7055a7b8efe7ab4e840ef378fd832c1cb0b8874d",
-      "verifiedAt": "2026-10-18T11:32:28.160Z",
-      "confidence": 0.97,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 163649,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 149193,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the updated-version confirmation. This is the same LESS parser issue tracked by https://github.com/microsoft/vscode/issues/149193, including the false diagnostics for `each` inside `@keyframes`, so the discussion can be consolidated there.",
-      "reviewedAt": "2026-09-20T09:30:01.273Z",
-      "contentHash": "1abea24d8571d7d4c5c84c91f3f4641e691b2496180ac5972c26d9a2c72ef423",
-      "verifiedAt": "2026-10-18T11:29:56.449Z",
-      "confidence": 0.98,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 132784,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 136867,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the Pug/Python reproduction. The remaining editor-core defect is tracked by https://github.com/microsoft/vscode/issues/136867, which was extracted from this case and covers the hidden-area update that incorrectly leaves the inserted line folded.",
-      "reviewedAt": "2026-09-20T09:26:21.058Z",
-      "contentHash": "a19e18106f4adf157363f7151923d84bba22e77292f26b8eea0304d368efaad8",
-      "verifiedAt": "2026-10-18T11:29:21.331Z",
-      "confidence": 0.94,
-      "assignees": [
-        "aeschli"
       ]
     },
     {
