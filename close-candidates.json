@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-21T10:58:38.736Z",
+  "generatedAt": "2026-10-21T14:27:36.439Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -10,6 +10,118 @@
     "unassignedOnly": false
   },
   "candidates": [
+    {
+      "number": 342001,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 340493,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is covered by https://github.com/microsoft/vscode/issues/340493, which tracks Agent Host ignoring the selected Copilot account with multiple GitHub accounts signed in, including empty model catalogs. This report adds the Claude harness case: Local uses the work account correctly, Claude's Copilot group has no models, and signing out of the personal account and restarting restores them; those details should remain part of the shared investigation.",
+      "reviewedAt": "2026-10-21T14:09:34.995Z",
+      "contentHash": "4d8160e2cc86e5cc2cf49e90cd9dbb7b4532d1eebda1edf6d4c6948ca34660a1",
+      "verifiedAt": "2026-10-21T14:19:40.770Z",
+      "confidence": 0.93,
+      "assignees": [
+        "sandy081"
+      ]
+    },
+    {
+      "number": 342172,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 309861,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/309861, including the same thinking_0 rejection with Auto-selected models and existing conversations that cannot recover through retries or restarting. This report adds reproduction on VS Code 1.142.0 with Auto (Balance) on Windows, unsuccessful reload/retry attempts, and the need to preserve the original conversation.",
+      "reviewedAt": "2026-10-21T14:04:42.899Z",
+      "contentHash": "860f8a401e65160235945a7892aa901797b899a05c1588899d5d016a25d89d4c",
+      "verifiedAt": "2026-10-21T14:19:45.614Z",
+      "confidence": 0.96,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 342216,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 301414,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. Global Copilot conversation history is already tracked in https://github.com/microsoft/vscode/issues/301414, including finding earlier conversations without reopening each project's folder.",
+      "reviewedAt": "2026-10-21T14:03:39.657Z",
+      "contentHash": "2513c869ac969f0ee5705336c76f464ae35ff58799e629dbbab1b68dbfa9f9a7",
+      "verifiedAt": "2026-10-21T14:19:48.384Z",
+      "confidence": 0.96,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 342419,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 334248,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same Agent Host recursive-watch exclusion problem is tracked in https://github.com/microsoft/vscode/issues/334248. This report adds the Linux/Claude Yocto case, the reported million-entry build tree and ENOSPC impact, and a request to consider .gitignore-aware exclusions; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-21T14:00:46.818Z",
+      "contentHash": "da507b274acd2b52dbba5f6a1d7d8c138f102ca5646966c29b3b0ce89ed35930",
+      "verifiedAt": "2026-10-21T14:20:01.498Z",
+      "confidence": 0.95,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 342617,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 224933,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the sidebar width-restoration problem tracked in https://github.com/microsoft/vscode/issues/224933, which also describes sidebars remaining narrow after moving a maximized window between monitors. This report adds that both sidebars are affected and that waking monitors triggers it too, with 150% scaling and Windows’ “Remember window locations based on monitor connection” enabled.",
+      "reviewedAt": "2026-10-21T13:58:53.975Z",
+      "contentHash": "de322d45950b741df5bce45757100140287242d4a24abcbf5356a60431b1ea54",
+      "verifiedAt": "2026-10-21T14:20:11.127Z",
+      "confidence": 0.88,
+      "assignees": [
+        "benibenj"
+      ]
+    },
+    {
+      "number": 343084,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 308616,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Avoiding repeated output checks while a command is still running is tracked in https://github.com/microsoft/vscode/issues/308616. This report adds a Windows 10 reproduction with a 20–30-minute Python command, more than ten identical output checks, and the eventual “Sorry, no response was returned” error; those details should remain part of that investigation.",
+      "reviewedAt": "2026-10-21T13:46:49.037Z",
+      "contentHash": "8736f756bd9b9201f28b7db1b4f56725c7cb49a04c11efff7db2220ebe00bb9c",
+      "verifiedAt": "2026-10-21T14:20:40.586Z",
+      "confidence": 0.89,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 343136,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338433,
+        "kind": "peer"
+      },
+      "comment": "Thanks for flagging this. The same automated warning is already tracked in https://github.com/microsoft/vscode/issues/338433. This repository contains an MIT license in LICENSE.txt, linked from README.md; any remaining policy-detection investigation can stay in that thread.",
+      "reviewedAt": "2026-10-21T13:43:46.580Z",
+      "contentHash": "1063ca93e32467c494afeb5a42f6f81b3d65388df31786ce42d15b0f887622d0",
+      "verifiedAt": "2026-10-21T14:20:55.296Z",
+      "confidence": 0.98,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
     {
       "number": 340551,
       "lane": "duplicate",
