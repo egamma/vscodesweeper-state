@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-21T14:27:36.439Z",
+  "generatedAt": "2026-10-22T14:44:28.109Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -11,33 +11,97 @@
   },
   "candidates": [
     {
+      "number": 341479,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 341675,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Your follow-up at https://github.com/microsoft/vscode/issues/341675 tracks the same backward cursor movement and adds the Turkish-layout AltGr reproduction details. Let's consolidate there, retaining this report's initial 1.141.1 occurrence and its impact on typing $, [, ], {, and } under WSL2/X11 without extensions.",
+      "reviewedAt": "2026-10-22T14:19:09.736Z",
+      "contentHash": "b1574485bc842e1fc42295e278d5ee8de15bde5fcc135162f97d46f1d1f48edb",
+      "verifiedAt": "2026-10-22T14:35:16.412Z",
+      "confidence": 0.95,
+      "assignees": [
+        "ulugbekna"
+      ]
+    },
+    {
       "number": 342001,
       "lane": "duplicate",
       "evidence": {
         "canonical": 340493,
         "kind": "peer"
       },
-      "comment": "Thanks for the detailed reproduction. This is covered by https://github.com/microsoft/vscode/issues/340493, which tracks Agent Host ignoring the selected Copilot account with multiple GitHub accounts signed in, including empty model catalogs. This report adds the Claude harness case: Local uses the work account correctly, Claude's Copilot group has no models, and signing out of the personal account and restarting restores them; those details should remain part of the shared investigation.",
-      "reviewedAt": "2026-10-21T14:09:34.995Z",
-      "contentHash": "4d8160e2cc86e5cc2cf49e90cd9dbb7b4532d1eebda1edf6d4c6948ca34660a1",
-      "verifiedAt": "2026-10-21T14:19:40.770Z",
-      "confidence": 0.93,
+      "comment": "Thanks for the detailed report. This is another case of the Agent Host account-preference problem tracked in https://github.com/microsoft/vscode/issues/340493. The additional case to retain there is Claude showing no Copilot models while Local works with the selected Enterprise account, with models restored after signing out of the personal account and restarting.",
+      "reviewedAt": "2026-10-22T14:10:08.903Z",
+      "contentHash": "b6cccf76c4c9cc8152a3122d98d846df092be3764897ad18564a927fcacf8d9a",
+      "verifiedAt": "2026-10-22T14:35:30.265Z",
+      "confidence": 0.87,
       "assignees": [
-        "sandy081"
+        "TylerLeonhardt"
       ]
     },
     {
-      "number": 342172,
+      "number": 343405,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 309861,
+        "canonical": 336761,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/309861, including the same thinking_0 rejection with Auto-selected models and existing conversations that cannot recover through retries or restarting. This report adds reproduction on VS Code 1.142.0 with Auto (Balance) on Windows, unsuccessful reload/retry attempts, and the need to preserve the original conversation.",
-      "reviewedAt": "2026-10-21T14:04:42.899Z",
-      "contentHash": "860f8a401e65160235945a7892aa901797b899a05c1588899d5d016a25d89d4c",
-      "verifiedAt": "2026-10-21T14:19:45.614Z",
-      "confidence": 0.96,
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/336761, including the Remote-SSH case where the picker shows the custom agent but its instructions and tool restrictions are not applied. Consolidating there, with your VS Code 1.143.0 / CLI 1.0.100-1 versions, six-session reproduction, selection-event observations, and unintended external-write impact as additional evidence.",
+      "reviewedAt": "2026-10-22T13:49:31.018Z",
+      "contentHash": "143d9fca1dc4fded542b94e2f4b3523e2209a88645f9d9fea48ba317eae8114a",
+      "verifiedAt": "2026-10-22T14:35:47.468Z",
+      "confidence": 0.95,
+      "assignees": [
+        "dileepyavan"
+      ]
+    },
+    {
+      "number": 343425,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 342801,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. We're tracking the same missing-model-endpoints and HydraFusion policy error on VS Code 1.142.0 in https://github.com/microsoft/vscode/issues/342801. This report adds useful details: an organization-managed account, Windows with WSL/Ubuntu, only HydraFusion in the picker, and working behavior on 1.140.x.",
+      "reviewedAt": "2026-10-22T13:47:25.622Z",
+      "contentHash": "06109c3a856e9f2def98f390cb4f5833f0d6f901533aebfd1c8c88e9cf3710c7",
+      "verifiedAt": "2026-10-22T14:35:59.733Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 343471,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333447,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report and trace logs. This matches the remote changed-file URI failure tracked in https://github.com/microsoft/vscode/issues/333447. Your report adds a macOS reproduction on 1.144.0-insider, with explicit file:/// versus vscode-remote:// traces; those details are useful additional evidence for that investigation.",
+      "reviewedAt": "2026-10-22T13:43:32.219Z",
+      "contentHash": "c1d3eae3262d414af77952b8fb2124e6e72e7867196b708aac50b2208410190e",
+      "verifiedAt": "2026-10-22T14:36:09.849Z",
+      "confidence": 0.93,
+      "assignees": [
+        "kycutler"
+      ]
+    },
+    {
+      "number": 343482,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 313703,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction and source analysis. This is the same unchecked snapshot restoration tracked in https://github.com/microsoft/vscode/issues/313703: reopening a session with unresolved edits can replace newer file contents and dirty the editor buffers. Your terminal-commit versus Git UI comparison and branch-switch steps add a useful reproduction to that report; https://github.com/microsoft/vscode/pull/313793 is an open fix candidate, not yet a landed fix.",
+      "reviewedAt": "2026-10-22T13:43:31.992Z",
+      "contentHash": "5f267de3eba1b459d3408e3cd84aced33c00afebb252258df8709d703c7f78a3",
+      "verifiedAt": "2026-10-22T14:36:15.653Z",
+      "confidence": 0.97,
       "assignees": [
         "lszomoru"
       ]
@@ -104,22 +168,6 @@
       "confidence": 0.89,
       "assignees": [
         "meganrogge"
-      ]
-    },
-    {
-      "number": 343136,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 338433,
-        "kind": "peer"
-      },
-      "comment": "Thanks for flagging this. The same automated warning is already tracked in https://github.com/microsoft/vscode/issues/338433. This repository contains an MIT license in LICENSE.txt, linked from README.md; any remaining policy-detection investigation can stay in that thread.",
-      "reviewedAt": "2026-10-21T13:43:46.580Z",
-      "contentHash": "1063ca93e32467c494afeb5a42f6f81b3d65388df31786ce42d15b0f887622d0",
-      "verifiedAt": "2026-10-21T14:20:55.296Z",
-      "confidence": 0.98,
-      "assignees": [
-        "lszomoru"
       ]
     },
     {
@@ -3600,22 +3648,6 @@
       "assignees": []
     },
     {
-      "number": 315827,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 306545,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same stale diff-modal file list tracked in https://github.com/microsoft/vscode/issues/306545. This report adds a useful reproduction detail: discard changes on a file other than the selected one; the discard succeeds, but the modal only reflects it after closing and reopening.",
-      "reviewedAt": "2026-10-12T12:08:34.278Z",
-      "contentHash": "365551de1e5242ac2734ea019f302ee7c1f92cc4b9c71cdd3566722d69acadd2",
-      "verifiedAt": "2026-10-18T11:46:12.254Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 314703,
       "lane": "duplicate",
       "evidence": {
@@ -4241,22 +4273,6 @@
       ]
     },
     {
-      "number": 286890,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 176467,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Respecting GNOME's configured minimize and maximize button visibility is already tracked in https://github.com/microsoft/vscode/issues/176467, where you have also described the close-only layout. This report adds the Fedora 43 / VS Code 1.108.0 comparison with Chrome to that same request.",
-      "reviewedAt": "2026-10-11T18:08:26.356Z",
-      "contentHash": "65c52d04127fe0d85eff0c4bc4d473fba2c74a2ca12dff0f904410b23728c381",
-      "verifiedAt": "2026-10-18T11:37:20.742Z",
-      "confidence": 0.97,
-      "assignees": [
-        "deepak1556"
-      ]
-    },
-    {
       "number": 306688,
       "lane": "duplicate",
       "evidence": {
@@ -4561,22 +4577,6 @@
       ]
     },
     {
-      "number": 340121,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 297353,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. The generic attribution feature from https://github.com/microsoft/vscode/issues/266584 was implemented through https://github.com/microsoft/vscode/pull/296435. The `git.addAICoAuthor` setting adds a Copilot co-author trailer, but does not identify the model used; I haven't verified its first stable release.\n\nYour request to include the specific model is already tracked in https://github.com/microsoft/vscode/issues/297353. Consolidating there also preserves your customer requirement for model/version traceability in software evidence packages.",
-      "reviewedAt": "2026-10-11T13:15:59.902Z",
-      "contentHash": "b615a3552340f8520ac0851b871b8a336b569358f9e68e3ce337ece06289893f",
-      "verifiedAt": "2026-10-18T11:53:45.965Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 322340,
       "lane": "duplicate",
       "evidence": {
@@ -4593,22 +4593,6 @@
       ]
     },
     {
-      "number": 319084,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 327092,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the Windows confirmation. This is the same deleted-clone cache problem tracked in https://github.com/microsoft/vscode/issues/327092: VS Code can treat the surviving parent folder as an existing clone and skip cloning. That issue also has an open fix proposal at https://github.com/microsoft/vscode/pull/327198. This report adds a Linux Mint reproduction and a Windows confirmation that clearing the profile did not help.",
-      "reviewedAt": "2026-10-11T13:11:27.915Z",
-      "contentHash": "5fc31f26c623782426c9ed24841a41b197139de29e415e12a9c9553895da229b",
-      "verifiedAt": "2026-10-18T11:47:27.004Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 338443,
       "lane": "duplicate",
       "evidence": {
@@ -4620,54 +4604,6 @@
       "contentHash": "64406ef890a5654f92cb72e58dc6b3d849556f480a384a8bf4aa3c3200c758b0",
       "verifiedAt": "2026-10-18T11:53:30.312Z",
       "confidence": 0.91,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 245578,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 43809,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. GPG passphrase prompting is tracked in https://github.com/microsoft/vscode/issues/43809, whose discussion includes signed commits failing in WSL until the key is unlocked from a terminal. This report adds the Windows 11/WSL2 case on VS Code 1.98.2, where committing from the console works but the Source Control UI provides no passphrase prompt.",
-      "reviewedAt": "2026-10-11T13:09:26.403Z",
-      "contentHash": "ccabc6028b8a23f6f938ef7a38328289a0795b039e4f1860026a390a7e0dab07",
-      "verifiedAt": "2026-10-18T11:33:46.579Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 338133,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 32129,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/32129 already tracks modifier-clicking a Source Control file to open the editable file instead of its diff, including the distinction from the Open File row button. Your explicit Ctrl+click mapping on Windows/Linux and Cmd+click mapping on macOS should be considered there alongside the existing selection behavior.",
-      "reviewedAt": "2026-10-11T13:09:22.623Z",
-      "contentHash": "c14f6fa4273d709deb18323cdc52705f44443930f23486f3ad8a4e3287669edd",
-      "verifiedAt": "2026-10-18T11:53:31.191Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 334092,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 127441,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction. This is the same working-tree-encoding comparison problem tracked in https://github.com/microsoft/vscode/issues/127441. This report adds a UTF-16LE+BOM reproduction and an independent CP932 confirmation that using `git cat-file --filters` locally corrects the original-side decoding, diff, and gutter; those details should remain part of the investigation there.",
-      "reviewedAt": "2026-10-11T13:05:49.934Z",
-      "contentHash": "1804fdfa1df2e198e3a175ca518c9bbb57f0d0f5278ca81ff537e7f7d7360807",
-      "verifiedAt": "2026-10-18T11:52:26.382Z",
-      "confidence": 0.94,
       "assignees": [
         "lszomoru"
       ]
@@ -4705,22 +4641,6 @@
       ]
     },
     {
-      "number": 275318,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 205244,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and detailed reproduction. This is the same pre-rename Git Timeline opening failure tracked in https://github.com/microsoft/vscode/issues/205244: historical entries use the current file path rather than the path at the selected commit. Consolidating there, with this report's VS Code 1.129.0/macOS Apple Silicon reproduction and the diagnostic that `git show <commit>:<old-path>` succeeds while the Timeline URI uses the current path.",
-      "reviewedAt": "2026-10-11T12:43:52.586Z",
-      "contentHash": "7c66fe8edcb327897bdf2ce919509758cbfd0f4437d566e3e310ae79e39b7f11",
-      "verifiedAt": "2026-10-18T11:35:48.800Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 331219,
       "lane": "duplicate",
       "evidence": {
@@ -4748,70 +4668,6 @@
       "contentHash": "86b9de4a5c2daa9c7834d127e495ebff1ff5d1cd6428ec75a884108119a219fb",
       "verifiedAt": "2026-10-18T11:51:20.312Z",
       "confidence": 0.88,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 312791,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 275112,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed telemetry. This matches the SCM Graph disposal error already tracked in https://github.com/microsoft/vscode/issues/275112, including the history-reference update → refresh → disposed throttler path. This report adds Mac, Windows and Linux exposure, both history-reference callback variants, and continuing telemetry through stable 1.130.0; those details remain useful for resolving the canonical issue.",
-      "reviewedAt": "2026-10-11T12:32:34.636Z",
-      "contentHash": "f55c3a5200bd19faf01fb4f465e92f84238a9a930a4e64995823aaa3a62c59d8",
-      "verifiedAt": "2026-10-18T11:45:01.152Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 286778,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 282852,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The bracket-triggered search from a parent directory and excessive rg.exe processes are already tracked in https://github.com/microsoft/vscode/issues/282852. This report adds useful detail: it occurs with an empty workspace under the Windows Users directory, before granting workspace trust, and during the all-disabled phase of Extension Bisect.",
-      "reviewedAt": "2026-10-11T12:32:00.780Z",
-      "contentHash": "f609af666662eb72c0afddabef45bc630c71848ba23c724232f039aa210d7a85",
-      "verifiedAt": "2026-10-18T11:37:10.215Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 327061,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 297786,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same linked-worktree ENOENT warnings are tracked in https://github.com/microsoft/vscode/issues/297786. This report adds a useful narrow requirement: expected ENOENT should be silent, other filesystem errors should remain visible, and the git rev-parse fallback should remain unchanged.",
-      "reviewedAt": "2026-10-11T12:31:36.364Z",
-      "contentHash": "289f86ba1247091a8ebf1d83ec6c5d3ed1984ac72834451b1f4b96066142ca39",
-      "verifiedAt": "2026-10-18T11:50:02.848Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 317388,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 313526,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/313526, which tracks manually closed repositories immediately reopening, including when discovery is disabled. This thread adds a WSL reproduction, sibling-repository reopening, and unwanted commit-picker prompts; `scm.repositories.selectionMode=single` does not reliably resolve those symptoms.",
-      "reviewedAt": "2026-10-11T12:31:27.656Z",
-      "contentHash": "54ba7799a2c35d12914e549f4093664f84bcd561fd3a504debe242d4e73a7b03",
-      "verifiedAt": "2026-10-18T11:46:55.157Z",
-      "confidence": 0.96,
       "assignees": [
         "lszomoru"
       ]
@@ -4849,38 +4705,6 @@
       ]
     },
     {
-      "number": 320595,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 62751,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/62751 already tracks detailed Git progress, including push percentages and completed/total counts. This report also asks for transfer size and file counts; those details belong in the same discussion, noting that Git reports object counts rather than file counts and its percentages describe individual phases.",
-      "reviewedAt": "2026-10-11T12:15:07.066Z",
-      "contentHash": "d7ef651f74320c60504f546b2c5cbcde488bdc072f9c66db57374e8ca7647ea8",
-      "verifiedAt": "2026-10-18T07:16:29.181Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 260637,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 31153,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. The built-in interactive rebase editor is covered by https://github.com/microsoft/vscode/issues/31153, where the discussion includes editing the rebase plan and visual actions for reordering, squashing, and rewriting commits. This report adds useful context about wanting a lightweight alternative to GitLens; the settings workaround above reduces GitLens noise but does not replace a built-in editor.",
-      "reviewedAt": "2026-10-11T12:10:17.410Z",
-      "contentHash": "7614ac19f693d81582c7512f7a075ff68b5398d0e70359686508fdb851b94bc4",
-      "verifiedAt": "2026-10-18T11:34:59.535Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 321163,
       "lane": "duplicate",
       "evidence": {
@@ -4892,38 +4716,6 @@
       "contentHash": "7cfe634c5f7f23c103a5aae6dfb1b79b7e079ac85d3e835b9672b123a3db7595",
       "verifiedAt": "2026-10-18T11:48:11.583Z",
       "confidence": 0.91,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 319778,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 278083,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/278083 already tracks increasing the same five-pixel SCM gutter limit to improve visibility. Your requested 8–10 pixel range and difficulty noticing modified-line markers while scrolling are useful details to carry into that discussion.",
-      "reviewedAt": "2026-10-11T11:59:43.489Z",
-      "contentHash": "0de25914ab94be6495e743c97ec4a22af6a80dd08ae9cb28d7c2860ad954fece",
-      "verifiedAt": "2026-10-18T11:47:38.339Z",
-      "confidence": 0.97,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 319329,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 318972,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/318972: after an agent edits a file in a non-Git folder, Files remains empty and shows the same unknown-resource ENOPRO error. This report adds a minimal reproduction with a newly created folder and test.txt on Windows, alongside the Linux reproduction there.",
-      "reviewedAt": "2026-10-11T11:55:13.752Z",
-      "contentHash": "e1aa9cf4e4ce329572604c6385709b7515e015c87619f0e28419267f775d0412",
-      "verifiedAt": "2026-10-18T11:47:32.745Z",
-      "confidence": 0.93,
       "assignees": [
         "lszomoru"
       ]
@@ -4945,38 +4737,6 @@
       ]
     },
     {
-      "number": 316928,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 113593,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same rebase perspective issue tracked in https://github.com/microsoft/vscode/issues/113593. Your example adds the staging dialog's exact wording—“deleted by us and modified by them” and “Keep Their Version”—when your local modification is replayed onto a branch that deleted the file. The existing discussion suggests consistent current/incoming terminology to avoid this confusion.",
-      "reviewedAt": "2026-10-11T11:45:37.449Z",
-      "contentHash": "bb10112969b38266f53cb3505b390653c090c20d39c4fb5f0093d57f892cb0bf",
-      "verifiedAt": "2026-10-18T11:46:39.643Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 314981,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 288177,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same count-only warning and difficulty identifying the failed file are already reported in https://github.com/microsoft/vscode/issues/288177. Consolidating this request there: the warning should identify the failed file or folder rather than require searching the Git output.",
-      "reviewedAt": "2026-10-11T11:40:41.433Z",
-      "contentHash": "4d069fc660a2e279d7683dcfe1c6530d64fd778bb391da3b5f4bf545a572e80a",
-      "verifiedAt": "2026-10-18T11:46:06.069Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 308658,
       "lane": "duplicate",
       "evidence": {
@@ -4993,22 +4753,6 @@
       ]
     },
     {
-      "number": 313007,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 249974,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Separate lists for local changes are covered by https://github.com/microsoft/vscode/issues/249974, which tracks named changelists and independent commits. Its discussion explicitly includes keeping local testing changes separate from changes intended for commit, so this use case can be tracked there.",
-      "reviewedAt": "2026-10-11T11:33:03.657Z",
-      "contentHash": "648f7cf14764ed686d2b070a6aeb1343625eba88f5f5e721939da03a80dc7f42",
-      "verifiedAt": "2026-10-18T11:45:03.480Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 312834,
       "lane": "duplicate",
       "evidence": {
@@ -5020,86 +4764,6 @@
       "contentHash": "784b45d209e35f5297e3711fd684f9d6fce40c86f9639683ddc980dcdb7d46ea",
       "verifiedAt": "2026-10-18T11:45:01.911Z",
       "confidence": 0.9,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 311943,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 229970,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/229970, which tracks Up-arrow history navigation unexpectedly replacing the commit message being edited. Your reproduction with a Copilot-generated message on Windows 11 in VS Code 1.115.0 adds useful context to that issue. The discussion there also documents Undo recovery and a keybinding workaround.",
-      "reviewedAt": "2026-10-11T11:30:18.430Z",
-      "contentHash": "ae2c15747d21ba5ab5e70b95291ab5e729b20bab30cba5374c5b2da58651c69b",
-      "verifiedAt": "2026-10-18T11:44:47.766Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 310917,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 9475,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/9475 already tracks selecting subsets of deleted lines for both staging and unstaging, including deleted-line context-menu actions. Your staged-file example—unstaging unrelated deletions without including adjacent added or modified code—is covered by that work.",
-      "reviewedAt": "2026-10-11T11:27:44.141Z",
-      "contentHash": "d1b4334299b49bdc2ef54954e17be4cf6b239b77c8e62ec94e29a3a39083daed",
-      "verifiedAt": "2026-10-18T11:44:23.944Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 309821,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 295575,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The missing tree/list toolbar button and difficulty finding it are already tracked in https://github.com/microsoft/vscode/issues/295575; this report adds the Windows 1.115.0 case and a preference for keeping tree mode selected.\n\nYou can restore the button by right-clicking the Source Control `...` button and selecting “View as Tree”; after switching modes, repeat for “View as List” if you want both directions available. `scm.defaultViewMode` can be set to `tree`, and an explicitly selected mode is remembered per workspace and overrides that default.",
-      "reviewedAt": "2026-10-11T11:26:41.018Z",
-      "contentHash": "d7fd85010e635efff1d3576903466d42e989e18d29860ba56672fc1c6bb419d0",
-      "verifiedAt": "2026-10-18T11:44:12.848Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 309877,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 205244,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/205244: Timeline follows the rename when listing commits, but comparisons still use the current filename for older revisions. Your Windows 1.115.0 report, with the rename isolated in its own commit, provides another clear reproduction of that issue.",
-      "reviewedAt": "2026-10-11T11:26:32.194Z",
-      "contentHash": "29506d14720c19232ce159c667b0710f14a45e36475d46054a30b757b8944a7b",
-      "verifiedAt": "2026-10-18T11:44:11.256Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 309450,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 234814,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/234814: the Open File toolbar button opens the editable working file, while invoking the same action through a keybinding can reopen a read-only Git revision. Your report adds the Windows/WSL scenario on VS Code 1.115.0 with F4 assigned from the toolbar button.",
-      "reviewedAt": "2026-10-11T11:25:29.729Z",
-      "contentHash": "93d09a8e6bb534e788822db5b7da6ee8525858c76e85fb7392ca115d47b1a92d",
-      "verifiedAt": "2026-10-18T11:43:55.346Z",
-      "confidence": 0.95,
       "assignees": [
         "lszomoru"
       ]
@@ -5169,38 +4833,6 @@
       ]
     },
     {
-      "number": 306261,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 300647,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction. This is the same repository-name truncation tracked in https://github.com/microsoft/vscode/issues/300647. This report additionally confirms that both `test-fork.net` and `test-fork.net.git` target `test-fork`, and that accepting the fork replaces `origin` with the wrong repository; those details should be retained in the consolidated investigation.",
-      "reviewedAt": "2026-10-11T11:09:45.275Z",
-      "contentHash": "f69101bcee9dc1bf5a0d0bf9e80329641f324e5f717e50be1341128c064284ef",
-      "verifiedAt": "2026-10-18T07:15:28.843Z",
-      "confidence": 0.97,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 303139,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 276834,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/276834 already tracks node_modules missing from newly created background-session worktrees and dependency initialization. Consolidating there also preserves your additional motivation: avoiding repeated npm installs and their CPU/RAM costs when running parallel sessions.\n\nThe existing experimental `git.worktreeIncludeFiles` setting provides configurable copying of git-ignored files and folders; it does not enable dependency copying by default.",
-      "reviewedAt": "2026-10-11T11:08:34.340Z",
-      "contentHash": "0391d02a41e4d4f8fb38457d923b6f9250e74098d2fab129e077661c725e7fad",
-      "verifiedAt": "2026-10-18T11:42:14.522Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 305699,
       "lane": "duplicate",
       "evidence": {
@@ -5212,134 +4844,6 @@
       "contentHash": "41e4fa70ffa3a932eac5f740343fca1479dba0b6332675444870507e290a623f",
       "verifiedAt": "2026-10-18T11:42:56.139Z",
       "confidence": 0.92,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 303899,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 103444,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction. This matches https://github.com/microsoft/vscode/issues/103444, which tracks missing editor Git changes after filename casing changes while the editor retains the old path casing. Your macOS reproduction using committed `readme.md` → `readme2.md` → `README.md` renames, the affected `Show Next Change` / `Go to Next Change` commands, and the deletion-and-reload workaround add useful evidence to that issue.",
-      "reviewedAt": "2026-10-11T11:04:51.812Z",
-      "contentHash": "31ef9033c2056ad7f19590d0536dbf262c3420f25fe0b3e46926eb17e785e1da",
-      "verifiedAt": "2026-10-18T07:15:19.203Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 304096,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 305993,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same failure—Send doing nothing in an empty non-Git folder while submission works in a Git repository—is tracked in https://github.com/microsoft/vscode/issues/305993. Consolidating there with your additional details: agent mode, GPT 5.4, Copilot Chat 0.40.1, VS Code 1.112.0 on Windows 10.0.26200, and git init restoring submission. The cloud-session log alone does not explain the submission failure.",
-      "reviewedAt": "2026-10-11T11:04:44.693Z",
-      "contentHash": "cee21733154ae7729cd449b39efe382596a7099cd70556fc5ad27569ca5980ff",
-      "verifiedAt": "2026-10-18T11:42:32.506Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 302653,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 300828,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/300828: Copilot CLI sessions using Workspace isolation show Apply even though their edits are already in the workspace. Consolidating Kai's folder-without-a-worktree report there.",
-      "reviewedAt": "2026-10-11T11:00:42.610Z",
-      "contentHash": "10dde85e7ec217946ed4b7fd317d02c84f56599dfeb43d24d77e042d57641ec8",
-      "verifiedAt": "2026-10-18T07:15:14.636Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 301474,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 152042,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/152042 already tracks replacing the side-by-side revert arrow with the icon used in inline diffs. Your report adds another example of the confusion when switching layouts, so consolidating it with that discussion.",
-      "reviewedAt": "2026-10-11T10:59:20.176Z",
-      "contentHash": "718f3475dc325d2c02f596291c2f42a68fafe191bafae0e47f4ba0ab90f6c51e",
-      "verifiedAt": "2026-10-18T11:41:56.842Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 286273,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 264676,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. The missing offer to open a newly created worktree is already tracked in https://github.com/microsoft/vscode/issues/264676, including opening in the current window, a new window, or leaving it unopened. This report adds a useful discovery detail: the Worktrees section stays collapsed, so reaching the open action requires extra navigation.",
-      "reviewedAt": "2026-10-11T10:51:27.174Z",
-      "contentHash": "ed7bb97594b6de23d47f116111612ee451a3d94ac2e163e7144bac3660975c80",
-      "verifiedAt": "2026-10-18T11:37:07.014Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 300710,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 31153,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request and the CLion examples. Both squashing selected commits and editing existing commit messages are covered by the interactive-rebase request at https://github.com/microsoft/vscode/issues/31153. Consolidating there preserves these examples of the desired menu actions, including your follow-up about Edit Commit Message.",
-      "reviewedAt": "2026-10-11T10:50:17.001Z",
-      "contentHash": "d3497eb056c215a5dc7461b015049e34f2caf2ea355e2c5586929b37d55dc0a8",
-      "verifiedAt": "2026-10-18T11:41:40.150Z",
-      "confidence": 0.92,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 296607,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 111596,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. The SCM limitation is already tracked in https://github.com/microsoft/vscode/issues/111596: change navigation wraps within the current file instead of continuing to the adjacent changed file. Your suggestion to stay in the file on the first boundary action and cross files on a second press or double-click is useful interaction detail for that work.\n\nThe Multi Diff Editor already supports cross-file traversal through `multiDiffEditor.goToNextChange` and `multiDiffEditor.goToPreviousChange` (Alt+F5 / Alt+Shift+F5), although it does not use the proposed boundary-pause gesture.",
-      "reviewedAt": "2026-10-11T10:45:38.179Z",
-      "contentHash": "09c1b4a0f43978d49aee68927d97e3db66ea6dc1992a8715a4a267abedec85c8",
-      "verifiedAt": "2026-10-18T11:40:25.092Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 285361,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 245853,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same tracked-file confirmation wording reported in https://github.com/microsoft/vscode/issues/245853. This report also confirms it through the Source Control entry's Discard Changes arrow on macOS in VS Code 1.107.1.",
-      "reviewedAt": "2026-10-11T10:34:58.499Z",
-      "contentHash": "cec0f501dd4580f81e5cdbabc9750187769f320d252672d8cddd45adf0dadb31",
-      "verifiedAt": "2026-10-18T11:36:44.397Z",
-      "confidence": 0.97,
       "assignees": [
         "lszomoru"
       ]
@@ -5377,22 +4881,6 @@
       ]
     },
     {
-      "number": 286487,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 194060,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Visually distinguishing the Staged Changes and Changes headings from file rows is already tracked in https://github.com/microsoft/vscode/issues/194060, including typography and themeable styling options. Let's consolidate this request there.",
-      "reviewedAt": "2026-10-11T10:26:07.646Z",
-      "contentHash": "a28c0d1860bdab6a0b4e87eca8a34acb52537cb6442146b1b0de65fada3d46e1",
-      "verifiedAt": "2026-10-18T11:37:10.682Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 287691,
       "lane": "duplicate",
       "evidence": {
@@ -5409,22 +4897,6 @@
       ]
     },
     {
-      "number": 283999,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 52700,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/52700 already tracks submodule commands and Source Control menu actions. Consolidating there should retain your explicit init, update, and deinit requirements, along with the planned placement in the Repositories view alongside the submodule list.",
-      "reviewedAt": "2026-10-11T10:17:54.191Z",
-      "contentHash": "f4360e0ef0504c256134d31a63f6678bb81c072570c5b500e9ae0d493a00670b",
-      "verifiedAt": "2026-10-18T07:14:57.652Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 260382,
       "lane": "duplicate",
       "evidence": {
@@ -5436,246 +4908,6 @@
       "contentHash": "1c8cff3c8d46ced2b2748d9f3972a923e909284ccfcdb3d8f6e35543e5fde4e3",
       "verifiedAt": "2026-10-18T11:34:56.710Z",
       "confidence": 0.9,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 237846,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 169871,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same first-line-only commit-hook diagnostic problem tracked in https://github.com/microsoft/vscode/issues/169871. Your Windows reproduction—lint-staged printing 'No staged files match any configured task.' before commitlint rejects the message—is a useful concrete example to preserve there. Show Command Output exposes the full failure output in the meantime.",
-      "reviewedAt": "2026-10-11T10:03:58.327Z",
-      "contentHash": "e06da5227cf8ed3cf67652270237e2397e988de099baf3a4ff14b5f0c2b87c79",
-      "verifiedAt": "2026-10-18T11:33:16.889Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 262751,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 36893,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Selecting an earlier commit as the baseline for editor diff decorations is already tracked in https://github.com/microsoft/vscode/issues/36893, including keeping committed changes highlighted while continuing work on a branch. Your A/B/C example makes the requirement concrete: choosing A at origin/main should include changes from B and C plus staged and working-tree edits, beyond the existing staged/working-tree toggles.",
-      "reviewedAt": "2026-10-11T09:40:22.113Z",
-      "contentHash": "5a006bf1b954089006dd7e559f8b18e0572c6452709651d439d156b5e52f9249",
-      "verifiedAt": "2026-10-18T11:35:08.674Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 272001,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 24389,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Next/previous changed-file navigation from the SCM diff view is already tracked in https://github.com/microsoft/vscode/issues/24389. This report adds the VS Code 1.105.1/macOS context and the request to move between files without selecting each entry in Source Control.",
-      "reviewedAt": "2026-10-11T09:40:21.683Z",
-      "contentHash": "336c6ddc58860def28c3af525fc298a4fda13de68b7e4a60064c912e15656acb",
-      "verifiedAt": "2026-10-18T11:35:33.819Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 256958,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 143496,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The pointer appearing beside the blue diff indicator while clicks there do nothing is already tracked in https://github.com/microsoft/vscode/issues/143496. This report adds a reproduction on macOS 15.5 with VS Code 1.102.1 and extensions disabled, including a screenshot and confirmation that clicking directly on the bar works.",
-      "reviewedAt": "2026-10-11T09:33:39.971Z",
-      "contentHash": "28e959a375d3b5c7cb61cb3a6e2e3e583aac8e60d4d67c7b9e0115e48c8e9d30",
-      "verifiedAt": "2026-10-18T11:34:41.774Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 279710,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 168820,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/168820 already tracks sorting repositories by change count to bring modified repositories together. Your multi-root workflow—finding uncommitted files without scrolling through all repositories—is the same use case, so we can consolidate the discussion there.",
-      "reviewedAt": "2026-10-11T09:32:27.744Z",
-      "contentHash": "3df6911028e82f8f2f6e55fe7a66cd70e357b2e60cfa89f09d39bcb5bc90d255",
-      "verifiedAt": "2026-10-18T11:36:02.133Z",
-      "confidence": 0.97,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 145009,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 24389,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Keyboard shortcuts to move between changed files while reviewing individual diffs are already tracked in https://github.com/microsoft/vscode/issues/24389, including an explicit request for a dedicated next-file command. This report highlights the same need to replace mouse clicks between files, so let's consolidate that requirement there.",
-      "reviewedAt": "2026-10-11T09:29:03.801Z",
-      "contentHash": "8059a5bfa9991e2f24f5a81e847bd00e95014f0d33b1d2e1bc253d73793f0318",
-      "verifiedAt": "2026-10-18T11:29:29.888Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 190236,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 61877,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same interactive-rebase edit-stop problem tracked in https://github.com/microsoft/vscode/issues/61877: the SCM interface treats committing as continuing the rebase and warns against changing the message. Consolidating there also preserves the Windows 1.81.1 report and the additional confirmations here about splitting commits, blocked GUI commits, and the terminal workarounds.",
-      "reviewedAt": "2026-10-11T09:22:52.991Z",
-      "contentHash": "bf3a9e231cb14e0c3ee60c839782ee96e7821479922cc41755067d665dde51cb",
-      "verifiedAt": "2026-10-18T11:31:01.638Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 243688,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 140644,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/140644 already tracks GitHub Desktop-style default messages for single-file commits. This report adds explicit cases for adding or removing a file without entering a message; those belong in the same request.",
-      "reviewedAt": "2026-10-11T09:22:51.109Z",
-      "contentHash": "75ac702d0a5049831da80387a91be6a2d339bffb370635950bf4cc190499a45f",
-      "verifiedAt": "2026-10-18T11:33:40.344Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 236857,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 205244,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same blank pre-rename Timeline comparison tracked in https://github.com/microsoft/vscode/issues/205244. Consolidating there, including your Windows 11 / VS Code 1.96.2 reproduction using git mv without changing file contents; historical comparisons need the file's path at the selected commits.",
-      "reviewedAt": "2026-10-11T09:12:54.445Z",
-      "contentHash": "e8f68944b5bc7522498d3e22af0c0382756cc085219f9a26b6d995e1d2130da1",
-      "verifiedAt": "2026-10-18T11:33:05.191Z",
-      "confidence": 0.96,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 234488,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 211519,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/211519, which tracks SCM keyboard actions ignoring highlighted files and using the open editor instead. That discussion also records multi-selection and the context-menu remapping limitation; this report adds the list.toggle workflow and explicitly includes git.stage, git.unstage, and git.clean.",
-      "reviewedAt": "2026-10-11T09:04:58.388Z",
-      "contentHash": "6d6d760baf9a00305e367fac496196fff2aa8647c08c1e4613a67cf89a0a0400",
-      "verifiedAt": "2026-10-18T11:32:53.994Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 176361,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 116495,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and detailed logs. Environment-variable resolution in `git.path` is already tracked in https://github.com/microsoft/vscode/issues/116495. Your portable Windows setup adds useful evidence: `${env:GIT_CMD_PATH}` is tried literally, so an installed system Git wins; without that installation, discovery eventually finds portable Git through PATH. Consolidating this case there preserves that distinction.",
-      "reviewedAt": "2026-10-11T08:25:09.721Z",
-      "contentHash": "102c1ed94013ab6e3d032bf426f67add4e39eaa22033f69f07468e9af30f0924",
-      "verifiedAt": "2026-10-18T11:30:25.124Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 149236,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 183906,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Local branches remaining after fetch pruning is tracked in https://github.com/microsoft/vscode/issues/183906. The existing `git.pruneOnFetch` setting prunes stale remote-tracking refs, but does not delete local branches. This report adds the Azure DevOps auto-complete workflow on Windows and a claimed change between VS Code 1.66 and 1.67; those details remain relevant to the cleanup discussion.",
-      "reviewedAt": "2026-10-11T08:25:09.075Z",
-      "contentHash": "20c40f14d6ec4caf66c1b9ac83f73937505626c74cd94ceb0845ad948e6560c2",
-      "verifiedAt": "2026-10-18T11:29:44.735Z",
-      "confidence": 0.92,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 136387,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 38113,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Keyboard support for these inline change-review actions is already tracked in https://github.com/microsoft/vscode/issues/38113. This report adds the `git.stageChange` case and reproductions both after navigating a diff with Alt+F5 and with the gutter's inline review open; those details remain relevant, and the selected-range workaround does not fix the named shortcuts.",
-      "reviewedAt": "2026-10-11T07:58:55.005Z",
-      "contentHash": "044d23297da95220f00b077ed619eaa6cfa91d311defba999f69c9ea688751b4",
-      "verifiedAt": "2026-10-18T11:29:28.749Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 207882,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 169253,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. The earlier hidden-mode change does not provide -unormal behavior. The older, open issue https://github.com/microsoft/vscode/issues/169253 tracks the same missing option to show untracked directories without enumerating all their files. Consolidating there should preserve your specific requirement that directories remain visible and stageable, including your workaround of removing -uall and stripping trailing directory slashes.",
-      "reviewedAt": "2026-10-11T07:23:56.189Z",
-      "contentHash": "46bb0f320bc5875a32a8273e98ad4afb5df11d307491fead0bc489c7d6791b5a",
-      "verifiedAt": "2026-10-18T11:31:48.533Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 232700,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 24916,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. This is already tracked in https://github.com/microsoft/vscode/issues/24916, including a shortcut that stages the focused Source Control file without navigating its toolbar or context menu. Your requirement to review and stage each file with one shortcut, and the context limitation explained above, belong in that discussion; the existing workarounds do not fully cover it.",
-      "reviewedAt": "2026-10-11T07:19:35.413Z",
-      "contentHash": "b42cc6cab3873f903d4e92bea5615184ce0cde3261eaf4cb5badb7c3855d5ee2",
-      "verifiedAt": "2026-10-18T11:32:45.159Z",
-      "confidence": 0.96,
       "assignees": [
         "lszomoru"
       ]
@@ -6480,22 +5712,6 @@
       "confidence": 0.9,
       "assignees": [
         "anthonykim1"
-      ]
-    },
-    {
-      "number": 340475,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 335460,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This looks like the same problem already tracked in detail at https://github.com/microsoft/vscode/issues/335460 — agent plugins installed from an external Git source fail to update on both the automatic and manual/forced paths. Consolidating the discussion there.",
-      "reviewedAt": "2026-10-08T15:27:40.398Z",
-      "contentHash": "de52dd2c2aae4a14b974652c14a1773989a7e11303103e07a2222c27dacb4cc3",
-      "verifiedAt": "2026-10-18T11:54:00.347Z",
-      "confidence": 0.72,
-      "assignees": [
-        "sandy081"
       ]
     },
     {
