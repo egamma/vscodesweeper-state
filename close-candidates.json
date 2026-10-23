@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-22T14:44:28.109Z",
+  "generatedAt": "2026-10-23T13:55:50.788Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -10,6 +10,87 @@
     "unassignedOnly": false
   },
   "candidates": [
+    {
+      "number": 338978,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 330391,
+        "kind": "peer"
+      },
+      "comment": "Thanks for confirming. https://github.com/microsoft/vscode/issues/330391 tracks the same custom-folder skills missing from the Agents window. Consolidating there, with this report's Windows 1.140.0 context, requirement to reuse user and applicable workspace skill locations, and your note that you switched to AgentPlugins.",
+      "reviewedAt": "2026-10-23T13:38:24.020Z",
+      "contentHash": "60e8ba2855a3dd140976e32f3781683de6c9486311c7bdffb856e3f53cde84d2",
+      "verifiedAt": "2026-10-23T13:48:18.317Z",
+      "confidence": 0.97,
+      "assignees": [
+        "aeschli"
+      ]
+    },
+    {
+      "number": 341980,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 55044,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. `SignatureInformation.label` currently accepts plain text; `MarkdownString` formatting applies to documentation, not the label. The same limitation is tracked in https://github.com/microsoft/vscode/issues/55044. Your screenshots comparing the extension and built-in presentation, and your clarification that active-parameter highlighting already works, are useful examples for that request.",
+      "reviewedAt": "2026-10-23T13:34:41.909Z",
+      "contentHash": "2a0f90b564711c6ec9fed808c6b2c6133849ad3b29b3fef6150507fb9839c80b",
+      "verifiedAt": "2026-10-23T13:48:25.109Z",
+      "confidence": 0.93,
+      "assignees": [
+        "ulugbekna"
+      ]
+    },
+    {
+      "number": 343520,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 339960,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/339960: MCP tool calls in the Copilot harness do not offer native sign-in and instead suggest `/mcp auth`, which is unavailable in VS Code chat. Your Windows 11, VS Code 1.143.0, and Entra details add useful evidence that this also affects that configuration; we'll consolidate tracking there.",
+      "reviewedAt": "2026-10-23T13:30:46.397Z",
+      "contentHash": "6655d4c8b70072b56af23d135c7e3c5570d228bb8b97e27e18aef87230193cc1",
+      "verifiedAt": "2026-10-23T13:48:35.565Z",
+      "confidence": 0.93,
+      "assignees": [
+        "connor4312",
+        "aeschli"
+      ]
+    },
+    {
+      "number": 343639,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 316946,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/316946 already tracks a first-party mobile companion for monitoring running agent sessions, sending follow-up prompts, and responding to approval notifications, including a dedicated app option. This report adds voice input, pause/cancel controls, and Tunnels/Codespaces integration suggestions to that discussion.",
+      "reviewedAt": "2026-10-23T13:25:23.566Z",
+      "contentHash": "347a083a803706f37a209106f2d16a58f3fef633bf18447b3bb552b95f655da5",
+      "verifiedAt": "2026-10-23T13:48:49.250Z",
+      "confidence": 0.94,
+      "assignees": [
+        "amunger"
+      ]
+    },
+    {
+      "number": 343712,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343665,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This repeats https://github.com/microsoft/vscode/issues/343665, where you've also confirmed that the task approval prompt still appears after upgrading to VS Code 1.143.1 on Windows. Let's keep the Local-session Allow all investigation together there.",
+      "reviewedAt": "2026-10-23T13:21:45.248Z",
+      "contentHash": "4fcf44203370e46dfa610686bd4762bcb814da1101a71fcc5de8665304b21e44",
+      "verifiedAt": "2026-10-23T13:49:04.474Z",
+      "confidence": 0.99,
+      "assignees": [
+        "justschen"
+      ]
+    },
     {
       "number": 341479,
       "lane": "duplicate",
@@ -200,22 +281,6 @@
       "confidence": 0.86,
       "assignees": [
         "meganrogge"
-      ]
-    },
-    {
-      "number": 342791,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 338128,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the Windows emoji-picker insertion failure tracked in https://github.com/microsoft/vscode/issues/338128, where repeated selections can stop registering across editor-backed inputs. This report adds the Source Control commit-message input on Windows 10 22H2 build 19045.7807 with VS Code 1.142.0 and extensions disabled; that case should be included when verifying the fix.",
-      "reviewedAt": "2026-10-20T13:33:42.000Z",
-      "contentHash": "d8cb1c28ba5ad9d8c47a7b14fb052d3ea5f7e9d8bf4158fe8b98398e6dd7782b",
-      "verifiedAt": "2026-10-20T14:00:19.276Z",
-      "confidence": 0.9,
-      "assignees": [
-        "lszomoru"
       ]
     },
     {
@@ -2535,22 +2600,6 @@
       ]
     },
     {
-      "number": 314168,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 297530,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The same customizations-modal focus escape is tracked in https://github.com/microsoft/vscode/issues/297530. This report adds the Agents app reproduction on macOS with VoiceOver enabled, where Tab reaches the background New Session button; those steps should be included when verifying the fix. The accessibility changes in https://github.com/microsoft/vscode/pull/314770 did not address modal focus containment.",
-      "reviewedAt": "2026-10-14T07:42:38.010Z",
-      "contentHash": "7342c2fa8f6ee22200bd904c2e18ed11b7bb079330326741731245970d6f73c4",
-      "verifiedAt": "2026-10-18T11:45:41.950Z",
-      "confidence": 0.92,
-      "assignees": [
-        "meganrogge"
-      ]
-    },
-    {
       "number": 309480,
       "lane": "duplicate",
       "evidence": {
@@ -2661,20 +2710,6 @@
       "assignees": [
         "meganrogge"
       ]
-    },
-    {
-      "number": 327364,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 320335,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same disabled `chat.sessionSync.enabled` checkbox and unexpected “Managed by organization” notice tracked in https://github.com/microsoft/vscode/issues/320335, including reports from accounts with no organization membership. Consolidating there; this report adds Fedora 44 KDE, 1.131.0-insider, reproduction with extensions disabled, and two further confirmations.",
-      "reviewedAt": "2026-10-13T00:27:13.665Z",
-      "contentHash": "547be1e54ac96ddb0cebef71de9a13b9635407369dd9271af28a2e7285929470",
-      "verifiedAt": "2026-10-18T07:17:01.922Z",
-      "confidence": 0.95,
-      "assignees": []
     },
     {
       "number": 314961,
@@ -4577,22 +4612,6 @@
       ]
     },
     {
-      "number": 322340,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 240861,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. The same built-in Git blame date-formatting limitation is tracked in https://github.com/microsoft/vscode/issues/240861. Your suggestions for locale-independent formats, relative-date styles, and formatting modifiers on template variables are useful design input for that request.",
-      "reviewedAt": "2026-10-11T13:13:25.544Z",
-      "contentHash": "7c40c82f54e3158dc7d8143a041930fd5467973bc94eba7a3412873680fac79b",
-      "verifiedAt": "2026-10-18T11:48:33.078Z",
-      "confidence": 0.92,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 338443,
       "lane": "duplicate",
       "evidence": {
@@ -4716,38 +4735,6 @@
       "contentHash": "7cfe634c5f7f23c103a5aae6dfb1b79b7e079ac85d3e835b9672b123a3db7595",
       "verifiedAt": "2026-10-18T11:48:11.583Z",
       "confidence": 0.91,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 317798,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 309537,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/309537 already tracks worktree creation failing and continuing in the original repository when that was not wanted. Consolidating there, with this report's specific requirement preserved: show an inline confirmation before proceeding in the local folder, similar to the uncommitted-changes prompt.",
-      "reviewedAt": "2026-10-11T11:48:35.340Z",
-      "contentHash": "c452e1497a1f3ab5dfc8a0ebddab7edf64ce22111818fb1bf7a3cf34d34d0dc6",
-      "verifiedAt": "2026-10-18T11:47:10.028Z",
-      "confidence": 0.91,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 308658,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 332292,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Multi-root sessions in the Agents Window are tracked in https://github.com/microsoft/vscode/issues/332292. This report adds the useful case of making one change across multiple repositories, with all workspace folders available in the same session; selecting those folders individually does not cover that need.",
-      "reviewedAt": "2026-10-11T11:37:42.485Z",
-      "contentHash": "c6e78be7d82b2a4e90fea0ae2e218d4ce17bfc7d783c2ad73d7478875ae4cbe1",
-      "verifiedAt": "2026-10-18T11:43:52.809Z",
-      "confidence": 0.92,
       "assignees": [
         "lszomoru"
       ]
