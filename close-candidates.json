@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-23T13:55:50.788Z",
+  "generatedAt": "2026-10-24T13:10:39.296Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -10,6 +10,86 @@
     "unassignedOnly": false
   },
   "candidates": [
+    {
+      "number": 343639,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 316946,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/316946 already tracks a first-party mobile companion for monitoring running agents, sending follow-up prompts, and responding to approval notifications. Consolidating there also preserves your iPhone-focused requirements: voice input, pause/cancel controls, and Tunnels or Codespaces connectivity.",
+      "reviewedAt": "2026-10-24T12:53:19.502Z",
+      "contentHash": "2722111aeb002e0addf9be346024d4c7ae3944d2ff2af98b595baece06370c17",
+      "verifiedAt": "2026-10-24T13:04:21.795Z",
+      "confidence": 0.93,
+      "assignees": [
+        "roblourens"
+      ]
+    },
+    {
+      "number": 343851,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 337517,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is another trigger for the orphaned question UI tracked in https://github.com/microsoft/vscode/issues/337517. This reproduction adds that resending the original message without editing also leaves the question behind, and subsequent questions stack on top; both cases should be covered together.",
+      "reviewedAt": "2026-10-24T12:47:48.902Z",
+      "contentHash": "e3b92095fffa791164dacd54f179ae0f3cab7d7ebfa1f515882f16d8aad60144",
+      "verifiedAt": "2026-10-24T13:04:32.715Z",
+      "confidence": 0.9,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 343941,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343918,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is another presentation of the workspace-picker focus issue tracked in https://github.com/microsoft/vscode/issues/343918. The additional detail here is that, in icon-only mode, the X covers the workspace icon while the picker has focus, so moving between the picker and clear action looks like two stops on the same X; that case should be covered there too.",
+      "reviewedAt": "2026-10-24T12:40:54.211Z",
+      "contentHash": "748af77e739ca05b516fce29e701711139f7975b18e8b128433d17dde881ddea",
+      "verifiedAt": "2026-10-24T13:04:40.835Z",
+      "confidence": 0.86,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 344028,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343489,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed diagnosis. This matches https://github.com/microsoft/vscode/issues/343489: after upgrading to 1.143.0, copying selected webview text focuses the input instead and copies nothing. Consolidating there, with this report adding the Linux snap reproduction, instrumented focus-restoration diagnosis, and non-editable-root workaround alongside the existing macOS report.",
+      "reviewedAt": "2026-10-24T12:33:54.079Z",
+      "contentHash": "05aa6fd45a5225c4f915c1a0ad3801d3dd5a6133ab2450318bdde4d471e6db49",
+      "verifiedAt": "2026-10-24T13:05:02.698Z",
+      "confidence": 0.94,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 344043,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343406,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same workspace-transition session loss is tracked in https://github.com/microsoft/vscode/issues/343406. This adds a Windows 1.143.1 occurrence where the chat becomes read-only, its title remains in the index, and the backing session directory is missing with zero stored turns; those details should stay with the investigation there.",
+      "reviewedAt": "2026-10-24T12:33:29.648Z",
+      "contentHash": "990c4245a50b394dfc2e9be6e766aade6cc5e30b0821e99d8dc4988857e6d17a",
+      "verifiedAt": "2026-10-24T13:05:06.462Z",
+      "confidence": 0.91,
+      "assignees": [
+        "roblourens"
+      ]
+    },
     {
       "number": 338978,
       "lane": "duplicate",
@@ -40,39 +120,6 @@
       "confidence": 0.93,
       "assignees": [
         "ulugbekna"
-      ]
-    },
-    {
-      "number": 343520,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 339960,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/339960: MCP tool calls in the Copilot harness do not offer native sign-in and instead suggest `/mcp auth`, which is unavailable in VS Code chat. Your Windows 11, VS Code 1.143.0, and Entra details add useful evidence that this also affects that configuration; we'll consolidate tracking there.",
-      "reviewedAt": "2026-10-23T13:30:46.397Z",
-      "contentHash": "6655d4c8b70072b56af23d135c7e3c5570d228bb8b97e27e18aef87230193cc1",
-      "verifiedAt": "2026-10-23T13:48:35.565Z",
-      "confidence": 0.93,
-      "assignees": [
-        "connor4312",
-        "aeschli"
-      ]
-    },
-    {
-      "number": 343639,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 316946,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/316946 already tracks a first-party mobile companion for monitoring running agent sessions, sending follow-up prompts, and responding to approval notifications, including a dedicated app option. This report adds voice input, pause/cancel controls, and Tunnels/Codespaces integration suggestions to that discussion.",
-      "reviewedAt": "2026-10-23T13:25:23.566Z",
-      "contentHash": "347a083a803706f37a209106f2d16a58f3fef633bf18447b3bb552b95f655da5",
-      "verifiedAt": "2026-10-23T13:48:49.250Z",
-      "confidence": 0.94,
-      "assignees": [
-        "amunger"
       ]
     },
     {
@@ -140,22 +187,6 @@
       ]
     },
     {
-      "number": 343425,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 342801,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. We're tracking the same missing-model-endpoints and HydraFusion policy error on VS Code 1.142.0 in https://github.com/microsoft/vscode/issues/342801. This report adds useful details: an organization-managed account, Windows with WSL/Ubuntu, only HydraFusion in the picker, and working behavior on 1.140.x.",
-      "reviewedAt": "2026-10-22T13:47:25.622Z",
-      "contentHash": "06109c3a856e9f2def98f390cb4f5833f0d6f901533aebfd1c8c88e9cf3710c7",
-      "verifiedAt": "2026-10-22T14:35:59.733Z",
-      "confidence": 0.9,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 343471,
       "lane": "duplicate",
       "evidence": {
@@ -199,22 +230,6 @@
       "contentHash": "2513c869ac969f0ee5705336c76f464ae35ff58799e629dbbab1b68dbfa9f9a7",
       "verifiedAt": "2026-10-21T14:19:48.384Z",
       "confidence": 0.96,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 342419,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 334248,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The same Agent Host recursive-watch exclusion problem is tracked in https://github.com/microsoft/vscode/issues/334248. This report adds the Linux/Claude Yocto case, the reported million-entry build tree and ENOSPC impact, and a request to consider .gitignore-aware exclusions; those details should remain part of the investigation there.",
-      "reviewedAt": "2026-10-21T14:00:46.818Z",
-      "contentHash": "da507b274acd2b52dbba5f6a1d7d8c138f102ca5646966c29b3b0ce89ed35930",
-      "verifiedAt": "2026-10-21T14:20:01.498Z",
-      "confidence": 0.95,
       "assignees": [
         "osortega"
       ]
@@ -4740,22 +4755,6 @@
       ]
     },
     {
-      "number": 312834,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 289835,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The repeated trust prompt after reopening or reloading an SSH folder, including needing to dismiss it twice, is already tracked in https://github.com/microsoft/vscode/issues/289835. This report adds a Windows 11 Dev Drive reproduction with PowerShell 7 configured as the OpenSSH default shell; those details should be retained in the investigation there.",
-      "reviewedAt": "2026-10-11T11:33:01.210Z",
-      "contentHash": "784b45d209e35f5297e3711fd684f9d6fce40c86f9639683ddc980dcdb7d46ea",
-      "verifiedAt": "2026-10-18T11:45:01.911Z",
-      "confidence": 0.9,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 298102,
       "lane": "duplicate",
       "evidence": {
@@ -5686,22 +5685,6 @@
       ]
     },
     {
-      "number": 334343,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 308421,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the black background appearing after a space tracked in https://github.com/microsoft/vscode/issues/308421. Your report adds an occurrence on Windows 10 with VS Code 1.136.1 when typing `git --version` in a light theme. Several users there resolved it by updating PSReadLine; please add your terminal shell and version to that thread so we can compare your case.",
-      "reviewedAt": "2026-10-10T09:11:21.863Z",
-      "contentHash": "90017eebb1271f57e38c880254dd23617b927910390e1b45f1b8b94bbe9f69fb",
-      "verifiedAt": "2026-10-18T11:52:32.274Z",
-      "confidence": 0.9,
-      "assignees": [
-        "anthonykim1"
-      ]
-    },
-    {
       "number": 328942,
       "lane": "duplicate",
       "evidence": {
@@ -6113,22 +6096,6 @@
       "contentHash": "eda504a959adfff48ad1e5e1a9ab6d3e188b82e08f80b0f2f37ec495916013ba",
       "verifiedAt": "2026-10-18T11:51:38.068Z",
       "confidence": 0.87,
-      "assignees": [
-        "sandy081"
-      ]
-    },
-    {
-      "number": 337918,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 70656,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the current Coding Cat reproduction. This is the same extension-host reload lifecycle tracked by https://github.com/microsoft/vscode/issues/70656: adding the first workspace folder leaves the webview running but disconnects its `onDidReceiveMessage` path. Your detail that the counter continues while messages stop is useful confirmation for that issue.",
-      "reviewedAt": "2026-09-30T23:02:57.661Z",
-      "contentHash": "6925851fe473eceeaf079997c997135ec50a32af95904a1d7d9d0ed751739cf2",
-      "verifiedAt": "2026-10-18T11:53:12.150Z",
-      "confidence": 0.97,
       "assignees": [
         "sandy081"
       ]
