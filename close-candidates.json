@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-24T13:10:39.296Z",
+  "generatedAt": "2026-10-25T13:23:15.382Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -10,6 +10,36 @@
     "unassignedOnly": false
   },
   "candidates": [
+    {
+      "number": 340551,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 317187,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The supported provider-usage API and zero-usage behavior are already tracked in https://github.com/microsoft/vscode/issues/317187, with an implementation proposal at https://github.com/microsoft/vscode/pull/319686. This report adds useful macOS/LiteLLM details and the requirement to forward usage through the Agents-window BYOK loopback proxy; those should remain part of the consolidated work.",
+      "reviewedAt": "2026-10-25T13:12:14.171Z",
+      "contentHash": "cc12a5d45e65da62251819579a91c4b845f3aa32fadb379e1cf8521aa55e12db",
+      "verifiedAt": "2026-10-25T13:19:16.354Z",
+      "confidence": 0.94,
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
+      "number": 344132,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 321731,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/321731, where a Codex installation also crashes vsce-sign 2.1.0 at `rdvl x0, #1`. Your Debian 13/OrbStack reproduction and successful macOS verification add useful environment coverage; the suggested .NET fix still needs confirmation with a rebuilt verifier.",
+      "reviewedAt": "2026-10-25T13:05:11.696Z",
+      "contentHash": "88f37cdebad9ff4cb1436604bfcc4d1505c5798df7f3833be4a038cd1e5ece6c",
+      "verifiedAt": "2026-10-25T13:19:34.975Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
     {
       "number": 343639,
       "lane": "duplicate",
@@ -267,22 +297,6 @@
       ]
     },
     {
-      "number": 340551,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 317187,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed analysis. The missing provider-usage contract is already tracked in https://github.com/microsoft/vscode/issues/317187, with an implementation proposed in https://github.com/microsoft/vscode/pull/319686. This report adds useful acceptance cases: the prompt/completion payload without total_tokens, and the Agents-window BYOK loopback path showing 0% despite backend-reported usage. Those details should remain part of the work tracked there.",
-      "reviewedAt": "2026-10-20T13:50:01.909Z",
-      "contentHash": "b0f4bad9ea6d0aa6f38fb4de532c9fa2ec7c9bd554d983fcf43387b24477a6a9",
-      "verifiedAt": "2026-10-20T13:59:47.705Z",
-      "confidence": 0.94,
-      "assignees": [
-        "vritant24"
-      ]
-    },
-    {
       "number": 342769,
       "lane": "duplicate",
       "evidence": {
@@ -376,22 +390,6 @@
       "confidence": 0.96,
       "assignees": [
         "aiday-mar"
-      ]
-    },
-    {
-      "number": 342308,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 325827,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed request. The public runtime-registration capability is already tracked in https://github.com/microsoft/vscode/issues/325827, including independent agent implementations, capability discovery, and native lifecycle integration—not just custom model providers. This report adds useful acceptance criteria for Chat and Agents window parity, localhost and remote operation, subscription independence, permitted VS Code/MCP tools, portable sessions, safe secret scoping, and a documented conformance sample; those requirements belong with that API discussion.",
-      "reviewedAt": "2026-10-18T12:35:14.431Z",
-      "contentHash": "f83ebb175c6221a7431fcb91bf0c3252c06d35a13a11919860807f799b6bdaa9",
-      "verifiedAt": "2026-10-18T13:00:41.786Z",
-      "confidence": 0.91,
-      "assignees": [
-        "Yoyokrazy"
       ]
     },
     {
@@ -4035,22 +4033,6 @@
       ]
     },
     {
-      "number": 200692,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 159977,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same Ctrl+W → deleteWordLeft failure in the macOS Command Palette is already reported in https://github.com/microsoft/vscode/issues/159977, including the difference from Alt+Backspace. This report also adds the unconditional-binding case, editor-side deletion, and observations from File Search and Settings/Keyboard Shortcuts inputs; those details remain relevant to resolving the input-command support there.",
-      "reviewedAt": "2026-10-11T21:59:49.512Z",
-      "contentHash": "b40678532effa50132fb03e87ce9587326068e2275e817762800fa3ced2b6069",
-      "verifiedAt": "2026-10-18T11:31:16.317Z",
-      "confidence": 0.94,
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
       "number": 329257,
       "lane": "duplicate",
       "evidence": {
@@ -6369,22 +6351,6 @@
       "contentHash": "022a2a79d43a0e42956f7824a52c66f7431e1c4282003423258864d0029e8a19",
       "verifiedAt": "2026-10-18T11:30:37.001Z",
       "confidence": 0.98,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 317531,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 327521,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and follow-up. This is the same Linux terminal-completion failure tracked in https://github.com/microsoft/vscode/issues/327521, including commands that have already finished remaining stuck until Enter is pressed. Your AlmaLinux 10, plain Bash, and VS Code 1.120/1.121 regression details are useful additional evidence for that investigation.",
-      "reviewedAt": "2026-09-26T06:31:00.743Z",
-      "contentHash": "578d45b618aab5dffa0522aad39df035283490c8d038e3b284d9197fe5409792",
-      "verifiedAt": "2026-10-18T11:46:59.938Z",
-      "confidence": 0.93,
       "assignees": [
         "chrmarti"
       ]
