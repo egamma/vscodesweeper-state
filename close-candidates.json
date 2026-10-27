@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-26T15:35:37.951Z",
+  "generatedAt": "2026-10-27T14:54:16.460Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -10,6 +10,20 @@
     "unassignedOnly": true
   },
   "candidates": [
+    {
+      "number": 344553,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343406,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs. This matches the workspace-change-triggered session deletion tracked in https://github.com/microsoft/vscode/issues/343406. Your report adds important coverage: editing an already saved multi-root workspace on macOS with 1.144.0-insider deletes 15 loaded conversations, including pinned and actively running sessions, after the client sends `disposeSession`. Those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-27T14:14:26.959Z",
+      "contentHash": "5920449302711599a0c933e2cf2e94835f3128dff6a967d602aabe09bee4f0e8",
+      "verifiedAt": "2026-10-27T14:48:15.588Z",
+      "confidence": 0.88,
+      "assignees": []
+    },
     {
       "number": 205946,
       "lane": "duplicate",
@@ -151,20 +165,6 @@
       "assignees": []
     },
     {
-      "number": 238786,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 105487,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/105487 already tracks invoking extension commands from the CLI with multiple arguments, including execution in an existing VS Code window. This report also highlights scripting and flexible argument values; those requirements belong in the same discussion.",
-      "reviewedAt": "2026-10-12T19:43:02.374Z",
-      "contentHash": "8054c8a8ee04fb3ecebb1f42797294b41a6e7ac5ca47778bc77597fab7e49970",
-      "verifiedAt": "2026-10-18T07:14:39.728Z",
-      "confidence": 0.97,
-      "assignees": []
-    },
-    {
       "number": 273774,
       "lane": "duplicate",
       "evidence": {
@@ -232,20 +232,6 @@
       "contentHash": "b3ad13f26b75722c3adc5d7c3178c9ca7366567658d92a47d183c907ce7f51dc",
       "verifiedAt": "2026-10-18T11:28:34.383Z",
       "confidence": 0.9,
-      "assignees": []
-    },
-    {
-      "number": 190375,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 125120,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. ARM64 Snap availability is already tracked in https://github.com/microsoft/vscode/issues/125120, which remains open until the ARM64 channels are actually published. This report adds the Ubuntu 20.04 ARM64 installation error and the suggestion to investigate Canonical's remote ARM build service; those details belong with that work. The available deb package does not replace the requested Snap Store support.",
-      "reviewedAt": "2026-10-12T18:44:46.626Z",
-      "contentHash": "40e5c4b41cdc656b3d33d61f8abfac189d8f70f7763c1ef853e829381c29372f",
-      "verifiedAt": "2026-10-18T11:30:59.839Z",
-      "confidence": 0.97,
       "assignees": []
     },
     {
@@ -386,20 +372,6 @@
       "contentHash": "ce044b511ce71e6226c79ab8a4e1d5a77ffed2be8e4581754ed89fb3477df7a1",
       "verifiedAt": "2026-10-18T11:29:00.890Z",
       "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 47151,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 11809,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/11809, which tracks moving consecutive lines with multiple cursors without losing cursors or moving only the primary line. Your Windows 7 reproduction using Ctrl+Alt+Down followed by Alt+Up, and the unmerged implementation attempt at https://github.com/microsoft/vscode/pull/48406, provide additional context for that work.",
-      "reviewedAt": "2026-10-12T14:16:36.055Z",
-      "contentHash": "634bda216bb622ce5727b80a0f48acb66aff67853b4ffb6326076504df486395",
-      "verifiedAt": "2026-10-18T11:28:45.430Z",
-      "confidence": 0.97,
       "assignees": []
     },
     {
