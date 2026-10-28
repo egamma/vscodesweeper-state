@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `0b48efe4475296d7` — every verdict record carries the hash of the
+> Policy hash `f470db6e10aa1f66` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-10-27 14:54 UTC.
+> exactly this text. Published 2026-10-28 14:09 UTC.
 
 ---
 
@@ -452,16 +452,17 @@ in `evidence` what the existing surface does and does not do.
 **Re-reviewed items — the stronger duplicate bar.** When the context carries a
 `PRIOR REVIEW` block (this item was reviewed before and stayed open), a
 duplicate close needs more than the cluster rule. BOTH must hold: the canonical
-is **older** than this item — a younger issue cannot own an older report; if
-they are the same problem, the newer one is the duplicate, so keep this one open
-and name the pair in `evidence` (code enforces this half) — AND it reports the
-**same reporter-observable symptom**: the same thing going wrong in the same
-place, not merely a shared root cause, the same area, or "the discussion belongs
-there". A canonical you would pick only because it is better-diagnosed or more
-discussed does not clear this bar for a re-reviewed item: cite it as related and
-keep the item open. Re-reviewed rows are where a fresh duplicate close is most
-often a false close (the verify lane refutes ~70% of them against ~30% on first
-reviews) — when in doubt, it stays open.
+is **older** than this item, or is the issue the project tracks (an open PR, a
+milestone, clearly more upvotes — code checks this half) — otherwise a younger
+issue cannot own an older report; if they are the same problem, the newer one
+is the duplicate, so keep this one open and name the pair in `evidence` — AND
+it reports the **same reporter-observable symptom**: the same thing going wrong
+in the same place, not merely a shared root cause, the same area, or "the
+discussion belongs there". A canonical you would pick only because it is
+better-diagnosed or more discussed does not clear this bar for a re-reviewed
+item: cite it as related and keep the item open. Re-reviewed rows are where a
+fresh duplicate close is most often a false close (the verify lane refutes ~70%
+of them against ~30% on first reviews) — when in doubt, it stays open.
 
 **Re-reviewed items — a refuted fix.** When the `PRIOR REVIEW` block names a fix
 commit that an independent second review refuted, that commit is off the table:
