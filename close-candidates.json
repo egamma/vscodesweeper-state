@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-28T14:09:56.887Z",
+  "generatedAt": "2026-10-28T15:46:58.753Z",
   "policy": {
     "lanes": [
       "duplicate"
