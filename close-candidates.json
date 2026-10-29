@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-29T20:42:58.199Z",
+  "generatedAt": "2026-10-29T21:24:07.731Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -16,6 +16,70 @@
     ]
   },
   "candidates": [
+    {
+      "number": 325324,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 148069,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. This is tracked in https://github.com/microsoft/vscode/issues/148069, including status-bar access and a Command Palette action. Your preference for an easily accessible action without the terminal or experimental repository explorer belongs in that discussion.",
+      "reviewedAt": "2026-10-29T21:18:01.952Z",
+      "contentHash": "cdc2b06f99e72573b19780a2aeeb60ea2c53d7b26b761af66568623b276e1c19",
+      "verifiedAt": "2026-10-29T21:20:53.664Z",
+      "confidence": 0.96,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 320045,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 318088,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/318088 already tracks WSL becoming unusable when the replacement server download fails after removal of the existing installation. This thread adds the Windows per-commit cache workaround: manually downloading the matching server archive before reopening VS Code restores installation. The desktop and server versions must still match, so retaining an older server alone is not sufficient recovery.",
+      "reviewedAt": "2026-10-29T21:18:23.975Z",
+      "contentHash": "dfd8b70a20836d7f88a0012ef056cfe9f17bde08318b2cf9ac506751182c31ae",
+      "verifiedAt": "2026-10-29T21:20:55.008Z",
+      "confidence": 0.94,
+      "assignees": [
+        "aeschli"
+      ]
+    },
+    {
+      "number": 317607,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 313703,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is the stale chat snapshot overwrite tracked in https://github.com/microsoft/vscode/issues/313703. Your nested-workspace steps and video with autosave enabled provide another concrete reproduction: reopening the pending conversation restores older contents over edits saved through the nested workspace. Those details should remain part of the fix's acceptance checks.",
+      "reviewedAt": "2026-10-29T21:18:12.961Z",
+      "contentHash": "b2fda776fef4ae5c0fb72e8aafbe3d63bb83c03283c2bae9c24587836ebf8bbb",
+      "verifiedAt": "2026-10-29T21:20:54.221Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 280603,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 265912,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same extension-provided server visibility gap tracked in https://github.com/microsoft/vscode/issues/265912. This report adds the GitHub example: enabling github.copilot.chat.githubMcpServer.enabled makes GitHub appear in Configure Tools, but not in MCP Servers - Installed.",
+      "reviewedAt": "2026-10-29T21:18:35.821Z",
+      "contentHash": "fe99323262095dda54ce6c5b4f0b300e9c78caa1458124046c600fa58896ca21",
+      "verifiedAt": "2026-10-29T21:20:54.473Z",
+      "confidence": 0.96,
+      "assignees": [
+        "aeschli"
+      ]
+    },
     {
       "number": 147888,
       "lane": "duplicate",
