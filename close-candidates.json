@@ -1,350 +1,1188 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-29T15:43:12.998Z",
+  "generatedAt": "2026-10-29T20:10:30.044Z",
   "policy": {
     "lanes": [
       "duplicate"
     ],
     "excludeAssignees": [],
-    "unassignedOnly": true
+    "unassignedOnly": false,
+    "includeAssignees": [
+      "aeschli",
+      "benibenj",
+      "hediet",
+      "lszomoru"
+    ]
   },
   "candidates": [
     {
-      "number": 272905,
+      "number": 344887,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 287867,
+        "canonical": 242428,
         "kind": "peer"
       },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/287867 tracks the same remaining work: URI-addressable terminal selections with attachment previews. This report's command-relative range examples, including selections spanning multiple commands, are useful design input for that work.",
-      "reviewedAt": "2026-10-28T13:17:53.937Z",
-      "contentHash": "3391c8ee90170823dbda69498bb8e3d5ce67187fbcce5f16ad6ec1984b17e765",
-      "verifiedAt": "2026-10-28T14:05:12.889Z",
-      "confidence": 0.94,
-      "assignees": []
+      "comment": "Thanks for the detailed context. https://github.com/microsoft/vscode/issues/242428 already tracks exposing speech recognition to third-party extensions, including text-input integration and recognition events. Consolidating there; this report adds concrete Claude Code and Codex webview scenarios, partial/final transcript requirements, and the need to keep microphone capture on the client over Remote Tunnels.",
+      "reviewedAt": "2026-10-29T15:11:02.611Z",
+      "contentHash": "a8e4be8c6152a5bf8c23e2fec034b4bb637886368e6a48e1d0214693414d5778",
+      "verifiedAt": "2026-10-29T15:36:35.016Z",
+      "confidence": 0.91,
+      "assignees": [
+        "hediet"
+      ]
     },
     {
-      "number": 149026,
+      "number": 344942,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 201846,
+        "canonical": 329430,
         "kind": "peer"
       },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/201846 tracks selecting providers for references, definitions, declarations, and related navigation operations. This report adds a useful scenario: switching between clangd for a single ARM target and C++ IntelliSense for shared headers across A53/R5 targets, without disabling extensions or restarting VS Code.",
-      "reviewedAt": "2026-10-28T13:16:46.661Z",
-      "contentHash": "ba78a70410269b33b747a712e692f5c95f5abde11ba8902c4ec88b06794ef6b9",
-      "verifiedAt": "2026-10-28T14:04:58.616Z",
-      "confidence": 0.94,
-      "assignees": []
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/329430, where the discussion already documents the same legacy URI collision causing a restored user chat to take a subagent's title and become read-only, including the need to handle persisted entries. Your stable 1.144.0 Windows reproduction, deep-link steps, and confirmation that the backend still marks the user chat as fully interactive provide useful additional evidence for that issue; workspace relocation is not established as the cause.",
+      "reviewedAt": "2026-10-29T15:06:59.049Z",
+      "contentHash": "4f86d193557842a0b7e77a2dab90575b41588f51ce52a604915cdc3bef6bad92",
+      "verifiedAt": "2026-10-29T15:37:02.631Z",
+      "confidence": 0.96,
+      "assignees": [
+        "aeschli"
+      ]
     },
     {
-      "number": 205946,
+      "number": 342395,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 300085,
+        "canonical": 341760,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. The same behavior is tracked in https://github.com/microsoft/vscode/issues/300085, with a proposed fix in https://github.com/microsoft/vscode/pull/300086. This report also provides a Linux reproduction by moving the cursor without selecting text, affecting both `selection` and `never`.",
-      "reviewedAt": "2026-10-28T13:16:42.294Z",
-      "contentHash": "5f604aba08ca3ac5ef99332df83c173e1fd427ab310a2d7d924ad52e76dd9cad",
-      "verifiedAt": "2026-10-28T14:05:00.836Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 213048,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 30874,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The editor freezing while evaluating a regex is tracked in https://github.com/microsoft/vscode/issues/30874, including a Windows report where pasting a C-comment regex hangs the window. This report adds the expression `\\/\\*([^*]|\\*+[^/])*\\*\\/` on VS Code 1.85.1, Windows 10 x64, while using Ctrl+H in a C file.",
-      "reviewedAt": "2026-10-12T20:45:31.751Z",
-      "contentHash": "f86f7550bc44452baefa586e4b20b7e5c00c2d80fb008bb5cdbe34988fce2082",
-      "verifiedAt": "2026-10-18T11:32:01.947Z",
+      "comment": "Thanks for the detailed report. This matches the remote transcript synchronization problem tracked in https://github.com/microsoft/vscode/issues/341760, which also records responses being dropped in VS Code after browser-submitted prompts execute. This report adds a Windows 11 reproduction with Allow All, visible local code changes despite missing chat output, and eventual loss of responses to local prompts; those details should remain part of the investigation.",
+      "reviewedAt": "2026-10-28T15:27:13.852Z",
+      "contentHash": "1a611c39e0fe72bc3d1cf7d835ce417a5abb9fa9c9b6a21bbc1cf4f1a3b02286",
+      "verifiedAt": "2026-10-28T15:36:22.492Z",
       "confidence": 0.88,
-      "assignees": []
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 221827,
+      "number": 344576,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 30874,
+        "canonical": 338949,
         "kind": "peer"
       },
-      "comment": "Thanks for the reproduction. This is the editor Find regex-blocking problem tracked in https://github.com/microsoft/vscode/issues/30874. This report adds a pinned terminal recording fixture and the exact trigger—completing `\\[.+,.+,.+,\\]`—plus the non-freezing alternative `\\[([^,]+,){3}[^,]+\\]`.",
-      "reviewedAt": "2026-10-12T20:43:06.512Z",
-      "contentHash": "d32d90b01dadda7b78299d4a790c8ad2884fcd9044658ad61b884067b6fd2bbe",
-      "verifiedAt": "2026-10-18T11:32:20.310Z",
+      "comment": "Thanks for the detailed report. This is covered by https://github.com/microsoft/vscode/issues/338949, which tracks custom-agent model pins being overridden by the session picker, including Auto in the Copilot harness. Your report adds Windows VS Code 1.143.1 / runtime 1.0.100-1 evidence: the agent is selected successfully, but Auto serves gpt-6.1-sol instead of the configured Haiku 5.5 model across two turns. The existing fix candidate is https://github.com/microsoft/vscode/pull/343750; it has not merged.",
+      "reviewedAt": "2026-10-28T15:11:39.898Z",
+      "contentHash": "03d4870b7bd0ddaf5de9edb9f8c829690360dd8a604e9b94f950daa826624b3c",
+      "verifiedAt": "2026-10-28T15:37:36.643Z",
       "confidence": 0.94,
-      "assignees": []
+      "assignees": [
+        "aeschli"
+      ]
     },
     {
-      "number": 239831,
+      "number": 344694,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 101064,
+        "canonical": 316604,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. Configurable find/replace fonts are already tracked in https://github.com/microsoft/vscode/issues/101064, including monospace fonts for regex readability. Your example of distinguishing `{}` and `()` in long expressions adds useful context; the configurable-font option you suggested fits that existing request.",
-      "reviewedAt": "2026-10-12T20:41:19.244Z",
-      "contentHash": "d2eeb74a0e295c233b6654b038229af0f06e26139da48693794075b95836e286",
-      "verifiedAt": "2026-10-18T11:33:26.417Z",
+      "comment": "Thanks for the report. Submodule changes missing from the Agents window are already tracked in https://github.com/microsoft/vscode/issues/316604. This report adds the useful detail that the main window lets you inspect individual submodules, and that the Agents window needs equivalent per-submodule changeset selection.",
+      "reviewedAt": "2026-10-28T15:03:46.239Z",
+      "contentHash": "38abb6d17e600f514cf272459d3a144c77b385cea86936c1750b184bd5448f2c",
+      "verifiedAt": "2026-10-28T15:37:58.284Z",
       "confidence": 0.93,
-      "assignees": []
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 239418,
+      "number": 344738,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 233573,
+        "canonical": 343405,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. The Arabic text reordering when using Ctrl+F is already tracked in https://github.com/microsoft/vscode/issues/233573. Your mixed Arabic/English Markdown sample, selecting a whole RTL word before opening Find, and Fedora Snap environment provide additional reproduction details for that issue.",
-      "reviewedAt": "2026-10-12T20:41:07.801Z",
-      "contentHash": "11e7f435d19c935b0b9efdc7305b13a71947a303517c3687a5db29d06bdc1a62",
-      "verifiedAt": "2026-10-18T11:33:22.506Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 60978,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 48123,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/48123, which discusses punctuation ordering in Sort Lines Ascending and includes the same quoted-prefix behavior. This report adds a useful double-quoted JSON example: \"abc-def\" sorts before \"abc\", although the unquoted values sort in the opposite order.",
-      "reviewedAt": "2026-10-12T20:28:43.162Z",
-      "contentHash": "66d5e8132603b2e9c6acd7c5782e1bee6dc32b8365ecb77039bf5ee55ff02fd6",
-      "verifiedAt": "2026-10-18T11:28:53.402Z",
+      "comment": "Thanks for the minimal example and the Local-harness comparison. This matches https://github.com/microsoft/vscode/issues/343405, which tracks workspace agents appearing in the picker but not becoming active in remote Copilot harness sessions. The `zzz-test.agent.md` example and `[AGENT:ZZZ]` marker provide a useful additional reproduction for that investigation.",
+      "reviewedAt": "2026-10-28T15:01:30.974Z",
+      "contentHash": "2d87a342c147566ed3124a58ac1415db13d398dc1ba736480a85cca192a10479",
+      "verifiedAt": "2026-10-28T15:38:12.582Z",
       "confidence": 0.94,
-      "assignees": []
+      "assignees": [
+        "aeschli"
+      ]
     },
     {
-      "number": 310720,
+      "number": 342038,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 307605,
+        "canonical": 341659,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. The active-file ranking regression is already tracked in https://github.com/microsoft/vscode/issues/307605. This report adds useful reproduction details across agent/ask/plan modes on Windows 11, particularly the difficulty finding the active file among identically named Next.js page.tsx files.",
-      "reviewedAt": "2026-10-12T20:13:52.035Z",
-      "contentHash": "4d26f3c12bd7e39fffb8fe099de126833c5377676f4086cad19c792792c099f6",
-      "verifiedAt": "2026-10-18T11:44:22.255Z",
-      "confidence": 0.95,
-      "assignees": []
-    },
-    {
-      "number": 114514,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 93470,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/93470 already tracks distinguishing Explorer-triggered file events from workspace-edit-triggered events, including onWillRenameFiles. Consolidating there should retain this Java class-and-file rename example, where applying the refactoring triggers another rename calculation, and the alternative suggested here of suppressing events for edits originating from onWill listeners.",
-      "reviewedAt": "2026-10-12T20:02:13.455Z",
-      "contentHash": "364f74603e9b74f2bf72916e06e1169611dfcf0dfc220f5af0bf6fba987931a4",
-      "verifiedAt": "2026-10-18T11:29:11.369Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 198454,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 162455,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/162455 already tracks native TODO diagnostic classification and filtering TODOs independently from other Problems, including the Dart analyzer case. Your specific request for a Show TODOs toggle alongside Show Infos belongs with that work; !todo remains a text-filter workaround, not a replacement for the requested category.",
-      "reviewedAt": "2026-10-12T19:45:26.997Z",
-      "contentHash": "5ce21bd054da527ea65fdc463833d0e179e06906358b007ad1f965379d73ace9",
-      "verifiedAt": "2026-10-18T11:31:15.923Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 206914,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 135114,
-        "kind": "peer"
-      },
-      "comment": "Thanks for clarifying the interaction requirement. https://github.com/microsoft/vscode/issues/135114 already tracks clickable padding before the first character, including your earlier explanation there, so this can be consolidated with that request.\n\nThe important details from this report are that clicking the padding should place the cursor at column one and dragging right should select part of the line. Visual-only CSS spacing and line-number or keyboard workarounds do not fully cover those interactions.",
-      "reviewedAt": "2026-10-12T19:25:18.937Z",
-      "contentHash": "b292d69312607188e3ad107dc17e376d65c367fe0e0e2a042c0172047be2c681",
-      "verifiedAt": "2026-10-18T11:31:38.809Z",
-      "confidence": 0.97,
-      "assignees": []
-    },
-    {
-      "number": 26646,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 12223,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the renderer investigation. Inline newline and CR/LF markers are already requested in https://github.com/microsoft/vscode/issues/12223, including the expectation that editor.renderControlCharacters should show them. Consolidating there preserves this report's Windows reproduction, the concern about the setting's description, and your source investigation at https://github.com/microsoft/vscode/issues/26646#issuecomment-2490997272; this does not mean the capability has been implemented.",
-      "reviewedAt": "2026-10-12T18:56:41.242Z",
-      "contentHash": "f18333313a3958f03e73346e2bb575b90a5c89d9aaebea512cf15563b9818556",
-      "verifiedAt": "2026-10-18T11:28:34.176Z",
-      "confidence": 0.96,
-      "assignees": []
-    },
-    {
-      "number": 71506,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 42785,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. The same native Backspace behavior—removing an indented whitespace-only line and returning to the previous line's end—is already tracked in https://github.com/microsoft/vscode/issues/42785. Consolidating there; this thread also contributes reports that Hungry Delete can disable Backspace until a reload or delay/freeze when suggestions appear, reinforcing the request for native support.",
-      "reviewedAt": "2026-10-12T15:08:00.698Z",
-      "contentHash": "cbe74cb71d630ab85324ef0e23469eed801633c62f681d030b667b0629078a25",
-      "verifiedAt": "2026-10-18T11:28:49.342Z",
-      "confidence": 0.95,
-      "assignees": []
-    },
-    {
-      "number": 34354,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 27905,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed examples. https://github.com/microsoft/vscode/issues/27905 already tracks both Ctrl+click whole-word selection and Ctrl+drag selection that snaps to word boundaries. This report adds a useful demonstration (https://www.youtube.com/watch?v=bfyO8haWKfg) and explains why double-click dragging does not replace the continuous Ctrl-held select-copy-paste workflow; those details remain relevant to that request.",
-      "reviewedAt": "2026-10-12T14:56:24.389Z",
-      "contentHash": "fcfa25a1dcbe260d6923331bdbd692feb1799c6cde6c3f9d68cd6b4680fa8bc5",
-      "verifiedAt": "2026-10-18T11:28:34.406Z",
-      "confidence": 0.96,
-      "assignees": []
-    },
-    {
-      "number": 160804,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 30191,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/30191 already includes configurable sizing across all scrollbars and global horizontal/vertical defaults. Consolidating there, with this report's explicit requirement that component-specific settings inherit the global size unless overridden.",
-      "reviewedAt": "2026-10-12T14:47:56.878Z",
-      "contentHash": "884856ab8dd853724627ad3880569a2e92b8ba0dbce7ce818f1a99526b09c888",
-      "verifiedAt": "2026-10-18T11:30:00.212Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 98013,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 107989,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. This capability is also tracked in https://github.com/microsoft/vscode/issues/107989: matching the embedded language at the cursor rather than only the document-level editorLangId. This report adds a concrete use case worth retaining there: formatting selected Vue HTML with extension.formatSelectionAsHtml, including matching HTML regions with =~ /html/.",
-      "reviewedAt": "2026-10-12T14:38:54.858Z",
-      "contentHash": "be648a29e665ad12ee7dc6b057ac2d06f6139f329469941fb792c9a962b16724",
-      "verifiedAt": "2026-10-18T11:29:00.749Z",
-      "confidence": 0.95,
-      "assignees": []
-    },
-    {
-      "number": 104292,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 47770,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. Touch-based editor text selection is tracked in https://github.com/microsoft/vscode/issues/47770, whose discussion explicitly includes Remote Desktop in Touch mode. This report adds Surface Pro X pen/stylus use and iPad Remote Desktop observations, including unsuccessful double-tap and Shift-plus-arrow selection, which are useful cases to retain there.",
-      "reviewedAt": "2026-10-12T14:35:15.372Z",
-      "contentHash": "dbcada1412f2bdd113f96c8ef0faf9783bcd7cc822db2bd333943bf0a6b36aac",
-      "verifiedAt": "2026-10-18T11:29:05.072Z",
+      "comment": "Thanks for the report and the additional reproduction details. This is the same unwanted Agent Host checkpoint creation and Git-history clutter tracked in https://github.com/microsoft/vscode/issues/341659, which also asks how to stop or remove these commits. Consolidating there should retain this thread's important details: reproduction in Ask mode with both settings disabled, the maintainer confirmation that `chat.checkpoints.enabled=false` does not prevent it, visibility in Git Extensions and TortoiseGit, and the missing Local-harness workaround.",
+      "reviewedAt": "2026-10-27T14:36:29.410Z",
+      "contentHash": "64e8651baccb2266dac845c9b0dcc5fd8fcdbd92024395ea866808d406cafd6d",
+      "verifiedAt": "2026-10-27T14:47:09.936Z",
       "confidence": 0.92,
-      "assignees": []
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 10749,
+      "number": 342821,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 16998,
+        "canonical": 292426,
         "kind": "peer"
       },
-      "comment": "Thanks for the detailed examples. https://github.com/microsoft/vscode/issues/16998 tracks indentation-aware navigation to blank lines with both the mouse and arrow keys, covering your second proposed solution without requiring automatic whitespace cleanup to be disabled. Your alternative of preserving whitespace-only lines is also tracked in https://github.com/microsoft/vscode/issues/209939.",
-      "reviewedAt": "2026-10-12T14:29:10.712Z",
-      "contentHash": "692a607c36e8cfe7c7c0c44d521b3b0a136e54da4554dcafd5af7d198612a6e7",
-      "verifiedAt": "2026-10-18T11:28:36.076Z",
-      "confidence": 0.9,
-      "assignees": []
+      "comment": "Thanks for the request. This is tracked in https://github.com/microsoft/vscode/issues/292426, which asks for a Mark as Done/archive button in the conversation header without returning to the sessions list. Your explanation of AI-generated titles making conversations hard to identify, especially when reviewing older sessions, adds useful context to that request.",
+      "reviewedAt": "2026-10-27T14:33:14.027Z",
+      "contentHash": "9c64dee17add876426a417b5d0ced22d1a47f280f017e33187a41051d352aa08",
+      "verifiedAt": "2026-10-27T14:47:17.894Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
     },
     {
-      "number": 47559,
+      "number": 344536,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 224134,
+        "canonical": 344292,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. Extensions can already render gutter icons with `gutterIconPath` and contribute right-click actions through `editor/lineNumber/context`, but those do not provide direct click actions on their decorations. That remaining capability is tracked in https://github.com/microsoft/vscode/issues/224134, including coexistence with breakpoints and overlapping icons; this thread also contributes the bookmark-click use case and the concern about which decoration receives interaction.",
-      "reviewedAt": "2026-10-12T14:27:18.804Z",
-      "contentHash": "f547aac83fb0321110e5b21cec6170fd0a8ca89c97a9b8e7ca79fba21a8bcb75",
-      "verifiedAt": "2026-10-18T11:28:47.572Z",
-      "confidence": 0.93,
-      "assignees": []
+      "comment": "Thanks for the detailed report. This matches the session deletion after adding a workspace folder tracked in https://github.com/microsoft/vscode/issues/344292, including missing backing-session and agentSessionData directories. Your report adds important evidence: eight sessions were affected together on an Ubuntu remote server with GPT6 astra, with deletion-fenced catalog writes immediately before SDK destroy events. Recovery remains unconfirmed.",
+      "reviewedAt": "2026-10-27T14:15:19.033Z",
+      "contentHash": "3f8bf53c8db9a8d4903f57e05e859dcdbb9a5697b1bcd1557f4f0176d63d24ab",
+      "verifiedAt": "2026-10-27T14:48:08.703Z",
+      "confidence": 0.95,
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 81616,
+      "number": 344212,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 47770,
+        "canonical": 337420,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. Touch-drag text selection is already tracked in https://github.com/microsoft/vscode/issues/47770. Your Windows proposal adds a useful interaction option: start horizontally to select or vertically to scroll, then retain that mode even if the drag changes direction. Consolidating there keeps that proposal with the other touch-selection designs.",
-      "reviewedAt": "2026-10-12T14:19:57.635Z",
-      "contentHash": "ce044b511ce71e6226c79ab8a4e1d5a77ffed2be8e4581754ed89fb3477df7a1",
-      "verifiedAt": "2026-10-18T11:29:00.890Z",
-      "confidence": 0.94,
-      "assignees": []
+      "comment": "Thanks for the detailed investigation. This matches the large-branch-comparison freeze tracked in https://github.com/microsoft/vscode/issues/337420. This report adds a Windows case where selecting a three-turn, zero-change session is sufficient to encounter the stall, without explicitly opening Branch Changes, with a 19,703-file comparison and multi-diff model-loading stacks. Whether the Changes view was restored remains an investigation point.\n\nThe default-changeset preference is tracked in https://github.com/microsoft/vscode/issues/336866, and lazy text-model loading in https://github.com/microsoft/vscode/issues/240181.",
+      "reviewedAt": "2026-10-26T15:06:10.470Z",
+      "contentHash": "a113c7d4ca5b613b20cb0a0786e053927a187fdcad82ef9f0fc79ecc00600cc2",
+      "verifiedAt": "2026-10-26T15:28:40.562Z",
+      "confidence": 0.89,
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 329561,
+      "number": 338978,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 157275,
+        "canonical": 330391,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. The missing remote VS Code IPC socket error is tracked in https://github.com/microsoft/vscode/issues/157275, which also includes Python browser-opening failures. This report adds the LangGraph development trigger after updating to VS Code 1.132.0, with Windows connecting to Ubuntu and an ENOENT error under /run/user/4100/.",
-      "reviewedAt": "2026-10-12T13:05:32.740Z",
-      "contentHash": "0736e981e3390144f5edc52f64fefeb2f323a889a6a05c636308fa33d875e23d",
-      "verifiedAt": "2026-10-18T11:51:09.459Z",
+      "comment": "Thanks for confirming. https://github.com/microsoft/vscode/issues/330391 tracks the same custom-folder skills missing from the Agents window. Consolidating there, with this report's Windows 1.140.0 context, requirement to reuse user and applicable workspace skill locations, and your note that you switched to AgentPlugins.",
+      "reviewedAt": "2026-10-23T13:38:24.020Z",
+      "contentHash": "60e8ba2855a3dd140976e32f3781683de6c9486311c7bdffb856e3f53cde84d2",
+      "verifiedAt": "2026-10-23T13:48:18.317Z",
+      "confidence": 0.97,
+      "assignees": [
+        "aeschli"
+      ]
+    },
+    {
+      "number": 343482,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 313703,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction and source analysis. This is the same unchecked snapshot restoration tracked in https://github.com/microsoft/vscode/issues/313703: reopening a session with unresolved edits can replace newer file contents and dirty the editor buffers. Your terminal-commit versus Git UI comparison and branch-switch steps add a useful reproduction to that report; https://github.com/microsoft/vscode/pull/313793 is an open fix candidate, not yet a landed fix.",
+      "reviewedAt": "2026-10-22T13:43:31.992Z",
+      "contentHash": "5f267de3eba1b459d3408e3cd84aced33c00afebb252258df8709d703c7f78a3",
+      "verifiedAt": "2026-10-22T14:36:15.653Z",
+      "confidence": 0.97,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 333644,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 332861,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same missing ghost text with successful XtabProvider requests on VS Code 1.135.0 is already tracked in https://github.com/microsoft/vscode/issues/332861. This report adds useful evidence: the failure spans multiple languages and unrelated workspaces, no classic completion requests appear in the inspected logs, and disabling other extensions and resetting the cache did not help. Those details should remain part of the investigation; a rollout or feature-flag cause is not yet confirmed.",
+      "reviewedAt": "2026-10-12T13:31:57.164Z",
+      "contentHash": "9ad3ea4a30e2f0e74d844db32953226722509cd156e10ba5795bd5f72f8087e6",
+      "verifiedAt": "2026-10-18T11:52:22.649Z",
       "confidence": 0.87,
-      "assignees": []
+      "assignees": [
+        "hediet"
+      ]
     },
     {
-      "number": 316590,
+      "number": 325172,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 315161,
+        "canonical": 302926,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. The chat-saving error and stack match https://github.com/microsoft/vscode/issues/315161, which tracks this serialization failure. Consolidating there preserves your additional report of macOS Tahoe 26.4.1 and more than ten crashes in one day; the supplied stack identifies the saving failure but does not establish what caused those crashes.",
-      "reviewedAt": "2026-10-12T12:12:42.805Z",
-      "contentHash": "4d7d8c8f59ec3d43a5310ad74a762c10749c3732e2ddf7c1384d7c7faf5e586b",
-      "verifiedAt": "2026-10-18T11:46:30.189Z",
+      "comment": "Thanks for the report. The incorrect Changes comparison after rewriting a session branch is already tracked in https://github.com/microsoft/vscode/issues/302926. This report adds Windows context, reset/amend/filter-branch scenarios, and the suggestion to refresh the comparison baseline without losing conversation context; those details should remain part of the fix's scope.",
+      "reviewedAt": "2026-10-12T12:48:01.283Z",
+      "contentHash": "4bd75b0dc3ceb0d61336f5edbb7fb09f8bbe12249e234d84b2e460c75b2cd879",
+      "verifiedAt": "2026-10-18T11:49:24.244Z",
+      "confidence": 0.86,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 229075,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 204193,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The default for `editor.cursorSurroundingLines` is 0, but the current reveal calculation also uses `editor.stickyScroll.maxLineCount`, which defaults to 5. The resulting override of smaller cursor margins, including below the cursor, is already tracked in https://github.com/microsoft/vscode/issues/204193.\n\nConsolidating there, with this report's concern about the misleading setting description and your observation that it also happens without Sticky Scroll retained for investigation.",
+      "reviewedAt": "2026-10-12T07:41:50.605Z",
+      "contentHash": "c589546ff95dca12eb11482bd0b7e2f73d606525f83d1233feadb958e62641f6",
+      "verifiedAt": "2026-10-18T07:14:22.114Z",
+      "confidence": 0.87,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 338443,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333217,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The missing error feedback from Sync Changes is already tracked in https://github.com/microsoft/vscode/issues/333217. This report adds a concrete reproduction to retain there: one outgoing commit with unstaged changes causes `git pull origin main` to fail with “cannot pull with rebase: You have unstaged changes,” but the button shows no explanation.",
+      "reviewedAt": "2026-10-11T13:11:21.534Z",
+      "contentHash": "64406ef890a5654f92cb72e58dc6b3d849556f480a384a8bf4aa3c3200c758b0",
+      "verifiedAt": "2026-10-18T11:53:30.312Z",
+      "confidence": 0.91,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 336085,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 255613,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. Repeatedly suggesting an edit after it has been rejected is already tracked in https://github.com/microsoft/vscode/issues/255613. This report adds the document-editing use case on VS Code 1.137.0 and the idea of a suppression rule as an alternative to conclusive rejection.",
+      "reviewedAt": "2026-10-11T13:00:06.454Z",
+      "contentHash": "6e07c56d8d34a7fead3f8cb76394c4bdb2280d5a604c5c4d5668b09d2dab17be",
+      "verifiedAt": "2026-10-18T11:52:54.815Z",
       "confidence": 0.9,
-      "assignees": []
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 62651,
+      "number": 334693,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 237975,
+        "canonical": 327999,
         "kind": "peer"
       },
-      "comment": "Thanks for the detailed report and sample files. This is the same size-dependent regex Replace All defect tracked in https://github.com/microsoft/vscode/issues/237975: negated character classes can unexpectedly span newlines on the large-replacement path. This report adds the Windows 10 reproduction with extensions disabled and the specific case where ^([^\\t<]+).*$ replaced with $1 clears a following </odstavec> line; those examples should be retained when addressing the shared defect.",
-      "reviewedAt": "2026-10-12T07:02:34.236Z",
-      "contentHash": "9e9765463558d76244af0afac0482db4df71b07b07490f43f6bc8c714aedab0b",
-      "verifiedAt": "2026-10-18T11:28:48.298Z",
+      "comment": "Thanks for the report. The same upstream changes appearing as Turn Changes after updating a stale branch are tracked in https://github.com/microsoft/vscode/issues/327999. This report adds the existing-folder case, apparently without new-worktree isolation, on macOS with 1.137.0-insider; those details should remain part of the investigation.",
+      "reviewedAt": "2026-10-11T12:54:36.223Z",
+      "contentHash": "4870b244333309196b8ef30a2cd26ccb111395151c2ca32983b0eb03d6bcd3f0",
+      "verifiedAt": "2026-10-18T11:52:40.329Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 331219,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 330830,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/330830, which reports Generate Commit Message finishing without a message on Windows with VS Code 1.133.0. Your report adds that the wait lasts 10–30 seconds; consolidating that detail with the existing report.",
+      "reviewedAt": "2026-10-11T12:41:23.021Z",
+      "contentHash": "863a5cb56e7f139b15ae8bdc286f12c0de82be36bcf4a06c58ef130c9e95db38",
+      "verifiedAt": "2026-10-18T11:51:31.373Z",
+      "confidence": 0.86,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 330159,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 278104,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The `setItems` error during Copilot's Git-repository observer initialization is tracked in https://github.com/microsoft/vscode/issues/278104, which includes a matching stack and a detailed reproduction. This report adds Windows 11 build 22631 with VS Code 1.132.0 and Copilot Chat 0.60.0 to the affected environments.",
+      "reviewedAt": "2026-10-11T12:40:23.741Z",
+      "contentHash": "86b9de4a5c2daa9c7834d127e495ebff1ff5d1cd6428ec75a884108119a219fb",
+      "verifiedAt": "2026-10-18T11:51:20.312Z",
+      "confidence": 0.88,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 326421,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 273271,
+        "kind": "peer"
+      },
+      "comment": "Thanks for clarifying that you want a quick picker, rather than another settings-based override. Model selection for Generate Commit Message is already tracked in https://github.com/microsoft/vscode/issues/273271; this report adds the specific need for a chat-like picker and convenient BYOK cost control, which should be included in that work.",
+      "reviewedAt": "2026-10-11T12:28:55.974Z",
+      "contentHash": "e33c525b2e4039fe66b95ebcfe762e2f7e6318691289260cd51985f9745cabda",
+      "verifiedAt": "2026-10-18T11:49:56.379Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 326365,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 257583,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/257583 already tracks this same unnecessary `git fetch --dry-run` during Copilot repository discovery on large repositories. Your explanation that dry-run still incurs network costs, and your suggestions of `ls-remote` or local-only SSH configuration resolution, belong with that report; the current repository tracker still contains the fetch.",
+      "reviewedAt": "2026-10-11T12:28:29.582Z",
+      "contentHash": "06dba66c8d7a4a6e28c2a02c1dec31ddcdcdcddeef42e2c5b161ee12ecdf7796",
+      "verifiedAt": "2026-10-18T11:49:50.267Z",
+      "confidence": 0.91,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 321163,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 315545,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/315545: Changes does not recognize an existing PR checked out in a worktree session. This report adds the review-prompt trigger on macOS in 1.125.0-insider, where Copilot checks out the PR but its button never appears; that case should be covered by the same fix.",
+      "reviewedAt": "2026-10-11T12:04:29.320Z",
+      "contentHash": "7cfe634c5f7f23c103a5aae6dfb1b79b7e079ac85d3e835b9672b123a3db7595",
+      "verifiedAt": "2026-10-18T11:48:11.583Z",
+      "confidence": 0.91,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 307025,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 306842,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the plugin-related Git refresh failures tracked in https://github.com/microsoft/vscode/issues/306842, including the same remote-ref locking error. This report adds Windows 11, VS Code 1.113.0 with Copilot Chat 0.42.2, and the anthropics/claude-plugins-official marketplace configuration to that investigation.",
+      "reviewedAt": "2026-10-11T11:21:48.360Z",
+      "contentHash": "df9f74b1d090ad8f71a2f24b0d9b2fa19727977419cf264a83c57df47cdbf453",
+      "verifiedAt": "2026-10-18T11:43:25.762Z",
+      "confidence": 0.88,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 298102,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 293464,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and follow-up details. The same Windows changed-files tool stall is tracked in https://github.com/microsoft/vscode/issues/293464. Consolidating there, with this report's multi-folder workspace, long-session recurrence, and the later observation that interrupting and saying \"continue\" resumes work, possibly following context compaction. The clean reinstall helped the original reporter, but the later confirmation means we should not treat that as a general fix.",
+      "reviewedAt": "2026-10-11T11:17:38.058Z",
+      "contentHash": "95c0d7ef3b059cce022d5c6ceca6c2b53352ff4e0339ca5ad6c2529263a2f037",
+      "verifiedAt": "2026-10-18T11:40:53.781Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 326730,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 242448,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the inline quick-suggestion auto-import cursor issue tracked in https://github.com/microsoft/vscode/issues/242448. This report adds a TypeScript/TSX reproduction on macOS 26.5.2 with VS Code 1.129.1: accepting with Tab inserts the import but leaves the cursor one line above the completed identifier.",
+      "reviewedAt": "2026-10-11T11:11:54.799Z",
+      "contentHash": "866212bd9e2ed15030d236e6b3bf8a06da84fc3421f58278eb8995728fc8cc96",
+      "verifiedAt": "2026-10-18T07:16:57.613Z",
+      "confidence": 0.91,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 323014,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 314556,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The failure after uploading pictures is covered by https://github.com/microsoft/vscode/issues/314556, which tracks image-heavy chat sessions growing too large and producing \"Invalid string length\" errors. This report adds the Windows configuration with VS Code 1.109.2 and Copilot 0.37.5, where subsequent requests consistently fail after the image uploads.",
+      "reviewedAt": "2026-10-11T11:10:35.178Z",
+      "contentHash": "40b2d4908819f97cb86e45cd11c7944509ae4b56dda2a0773bce6b0d9e0874f8",
+      "verifiedAt": "2026-10-18T11:48:47.874Z",
+      "confidence": 0.86,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 322695,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 228251,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Searching only the focused file instead of all files in the multi-diff editor is already tracked in https://github.com/microsoft/vscode/issues/228251. This report adds the Cmd+F observation and attached recording as supporting evidence for that work.",
+      "reviewedAt": "2026-10-11T11:10:11.605Z",
+      "contentHash": "e3de6ede5e92c2b3bdcb761f31aa1213e638ca6a0818789fe5e285c25a65cede",
+      "verifiedAt": "2026-10-18T11:48:37.485Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 305699,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 209552,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is the same Git extension console error for paths beneath symlinks tracked in https://github.com/microsoft/vscode/issues/209552. Your pnpm workspace case adds useful detail: the paths are inside ignored node_modules directories, and the listed symlink, repository-ignore, and watcher settings did not prevent the errors.",
+      "reviewedAt": "2026-10-11T11:07:31.717Z",
+      "contentHash": "41e4fa70ffa3a932eac5f740343fca1479dba0b6332675444870507e290a623f",
+      "verifiedAt": "2026-10-18T11:42:56.139Z",
+      "confidence": 0.92,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 290847,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 282394,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the context. The same issue—background worktrees remaining after archiving—is already tracked in https://github.com/microsoft/vscode/issues/282394, including the discussion about retaining access to archived changes. Consolidating there with this report's detail that both applied and unapplied sessions leave worktrees, and its requirement to preserve changes and recreate the worktree when resuming.",
+      "reviewedAt": "2026-10-11T10:30:47.895Z",
+      "contentHash": "645316a75ac7305862f6245a0cb61fc8b840f094ffa7e35a7d80afa6f4a54a99",
+      "verifiedAt": "2026-10-18T11:39:10.415Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 288452,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 137686,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is the same Source Control push-destination problem tracked in https://github.com/microsoft/vscode/issues/137686: a local branch created from a differently named remote branch pushes back to that tracked branch rather than the same-named remote branch. This report adds the Commit & Push entry point on Windows 11, the expectation of `git push origin HEAD`, and the lack of a destination warning; those details should be retained in the consolidated work.",
+      "reviewedAt": "2026-10-11T10:26:39.168Z",
+      "contentHash": "392ff6343f6b77170d1607c839547186a345cdb05ab081099f00aa3fe8dace8d",
+      "verifiedAt": "2026-10-18T11:38:27.908Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 287691,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 193935,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Clicking Commit with an empty message and then finding the commit workflow apparently stuck is already tracked in https://github.com/microsoft/vscode/issues/193935. Your Windows 10 / VS Code 1.107.1 report adds another instance of the recurring problem.\n\nBy default, VS Code opens a commit-message editor and waits for that tab to close. Setting `git.useEditorAsCommitInput` to `false` uses a message prompt instead; the linked issue tracks the confusing feedback around this workflow.",
+      "reviewedAt": "2026-10-11T10:24:25.931Z",
+      "contentHash": "721015915d80f50135c4895992226971fc76196d33f7ee9d5acae69b0a719142",
+      "verifiedAt": "2026-10-18T11:38:00.299Z",
+      "confidence": 0.9,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 340256,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338604,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the update. Your earlier report at https://github.com/microsoft/vscode/issues/338604 is still open and tracks this same editor visibility problem. Please continue there with these additional screenshots and the important detail that it persists in VS Code 1.140.0 after disabling Sticky Scroll; that suggestion has not been confirmed as the cause.",
+      "reviewedAt": "2026-10-10T19:13:26.362Z",
+      "contentHash": "437d19759e4c8b29221d8ea0993bee15fd0d4526243823c9726c64c301bf9dbf",
+      "verifiedAt": "2026-10-18T11:53:50.586Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 339966,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 279209,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same unwanted replacement of Unity's `linearVelocity` with `velocity` is tracked in https://github.com/microsoft/vscode/issues/279209, which includes an inline-edit example. This report adds evidence that it also occurs in VS Code 1.140.0 on Windows, so let's consolidate the discussion there.",
+      "reviewedAt": "2026-10-10T19:11:30.386Z",
+      "contentHash": "4c1a20e29ee61ca38eb29e437b4f5a5bdee9bc95e53d00bccdefe177213c0bec",
+      "verifiedAt": "2026-10-18T11:53:45.139Z",
+      "confidence": 0.92,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 339728,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 224189,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Unequal comparison widths with word wrap are already tracked in https://github.com/microsoft/vscode/issues/224189. This report adds the vscode.dev case and the expectations that resizing the Explorer preserves the split proportion and a new comparison starts equally sized; those details belong with the same work.",
+      "reviewedAt": "2026-10-10T19:11:06.468Z",
+      "contentHash": "63e6cf00b895c3068a00f44dd8cf5f74ae7f813926ef1cd1d8f8a14aee00c6c2",
+      "verifiedAt": "2026-10-18T11:53:44.810Z",
+      "confidence": 0.9,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 336061,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 306017,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same Ask-mode behavior—continuing to reason about edits without recognizing that editing tools are unavailable—is tracked in https://github.com/microsoft/vscode/issues/306017. This report adds a GPT-5.3-Codex example on Windows 1.137.0, the exact follow-up prompt, and a displayed 1m 5s / 155.0-credit response; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-10T19:02:27.323Z",
+      "contentHash": "631e596eea3efa15d2e590ecb0e9f780d4e78bdd5aa270f447cb5152f47ef330",
+      "verifiedAt": "2026-10-18T11:52:52.283Z",
+      "confidence": 0.88,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 318561,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 247687,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same swapped Accept All tooltip behavior is tracked in https://github.com/microsoft/vscode/issues/247687. This adds confirmation on VS Code 1.121.0 with Windows/WSL and clarifies that the buttons accept the correct pane's changes despite the misleading tooltips.",
+      "reviewedAt": "2026-10-10T18:30:48.628Z",
+      "contentHash": "dac5755ac1b637c23ec1fbbbfb5ee1244982f13a53a261cebcd87881b8b98151",
+      "verifiedAt": "2026-10-18T11:47:21.963Z",
+      "confidence": 0.97,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 334268,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 201051,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/201051 already tracks the empty comparison pane and full-file background for added files, including replacing the background with a small status indicator. The specific suggestion here is to place a “New file” annotation beside the filename.",
+      "reviewedAt": "2026-10-10T18:30:45.050Z",
+      "contentHash": "60a038c5f1083738655b4c2e723cbdb29b540eba6d837ffcec5fedcdee06a735",
+      "verifiedAt": "2026-10-18T11:52:29.004Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 333387,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 15106,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Scrollbar up/down buttons and more controlled scrolling are already requested in https://github.com/microsoft/vscode/issues/15106. Your Windows example involving roughly 300,000 lines adds useful context to that request. In the meantime, setting `editor.scrollbar.scrollByPage` to `true` makes clicks on the scrollbar track scroll by page instead of jumping to the clicked position, though it does not add arrow buttons.",
+      "reviewedAt": "2026-10-10T18:29:26.063Z",
+      "contentHash": "10578384e50ffd346e1a47f2ba7ba83d1be799b446907e48e1d576896a4e4ef3",
+      "verifiedAt": "2026-10-18T11:52:17.980Z",
+      "confidence": 0.86,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 333320,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333046,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and the additional testing. This matches the Windows path-space inline suggestion regression tracked in https://github.com/microsoft/vscode/issues/333046. Please retain the filename-only example (`G:\\ruby test.rb` versus `G:\\ruby-test.rb`), the clean-profile reproduction outside a workspace or Git repository, and the working VS Code 1.125.1 comparison as additional evidence there.",
+      "reviewedAt": "2026-10-10T18:28:48.666Z",
+      "contentHash": "bb128d45a9c8224c943853a27a40f9ae73dd488566dffdf12fe00043f5f56e45",
+      "verifiedAt": "2026-10-18T11:52:09.030Z",
       "confidence": 0.93,
-      "assignees": []
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 332897,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 221571,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is the same embedded-SQL highlighting leak tracked in https://github.com/microsoft/vscode/issues/221571: an unmatched `[` prevents highlighting from returning to PHP after the string ends. Your SELECT-prefixed example with escaped single quotes, the working controls, and the confirmation with extensions disabled provide useful additional cases for that fix.",
+      "reviewedAt": "2026-10-10T18:24:26.234Z",
+      "contentHash": "9ca537cbe4f906df66cb7864ee963406793bcf62742695ded78b008bc9d2a092",
+      "verifiedAt": "2026-10-18T11:52:03.427Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 332567,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 330488,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Your earlier report at https://github.com/microsoft/vscode/issues/330488 tracks the same missing variable suggestions. Let's consolidate there, retaining that this continues on 1.134.0 in your LSL workspace and that unrelated suggestions are appearing instead.",
+      "reviewedAt": "2026-10-10T18:23:09.040Z",
+      "contentHash": "9dfbc2f88b62513345da02c80bffd3348a7d802f14bbbeb63a42e60156b2df45",
+      "verifiedAt": "2026-10-18T11:51:49.179Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 327986,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 317863,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs. This matches the interaction tracked in https://github.com/microsoft/vscode/issues/317863: `editor.quickSuggestions.other` now defaults to `\"offWhenInlineCompletions\"`, independently of `editor.inlineSuggest.suppressSuggestions`. Explicitly setting `\"editor.quickSuggestions\": { \"other\": \"on\", \"comments\": \"off\", \"strings\": \"off\" }` restores automatic IntelliSense while retaining inline suggestions.\n\nConsolidating there preserves your macOS 1.130/1.131 reproduction and the evidence that identifier typing sends no `completionInfo` requests while dot-triggered completion works. If the problem persists with `other` explicitly set to `\"on\"`, please add that result there so it can be distinguished from the default behavior.",
+      "reviewedAt": "2026-10-10T18:11:42.210Z",
+      "contentHash": "9b59610a4a9c098513c9eb2bbec4dbd0ee35c5332785ba395ec921f151b5f1fd",
+      "verifiedAt": "2026-10-18T07:17:13.961Z",
+      "confidence": 0.93,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 328348,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 311373,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and the update confirmation. The text disappearing after scrolling deep into a large file matches https://github.com/microsoft/vscode/issues/311373. This report adds Blender's locale/po/zh_HANS.po example, the threshold near line 26370, and Windows 10 with an NVIDIA RTX 3090; those details remain useful for investigating the shared rendering problem.",
+      "reviewedAt": "2026-10-10T18:08:31.396Z",
+      "contentHash": "70b402a5bb677fbd814b5e27ab9635d59437b184ee8e5f3d83f0f53740bf0191",
+      "verifiedAt": "2026-10-18T11:50:28.253Z",
+      "confidence": 0.9,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 327633,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 241548,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction and logs. This matches the move-detection failure tracked in https://github.com/microsoft/vscode/issues/241548, where enabling `diffEditor.experimental.showMoves` prevents the diff from loading after blocks are rearranged. Your Windows 1.130.0 stack trace and Dockerfile examples at https://gist.github.com/iqfareez/0cf0e9ad0a7224333ec78ba2c12c6709 provide an additional reproduction to retain with that issue.",
+      "reviewedAt": "2026-10-10T18:07:24.159Z",
+      "contentHash": "f0b0cb81220422196298c0ef5fcc2bb4df48d4d1c8965826fdb68d49f52230ad",
+      "verifiedAt": "2026-10-18T11:50:21.004Z",
+      "confidence": 0.9,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 324423,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 256329,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This same behavior—deleted red lines not wrapping while added green lines do—is tracked in https://github.com/microsoft/vscode/issues/256329. Your report adds Linux/Wayland and Markdown/LaTeX context on VS Code 1.127.0 to that discussion.",
+      "reviewedAt": "2026-10-10T17:19:04.051Z",
+      "contentHash": "227c8ff8bfcbc34bd8c15c65c4d18a4ae4435fb5d25125beb3bcde2680e77931",
+      "verifiedAt": "2026-10-18T11:49:07.495Z",
+      "confidence": 0.97,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 324126,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 317863,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the automatic-suggestions behavior discussed in https://github.com/microsoft/vscode/issues/317863. Your Windows 11 / 1.128.0-insider example—typing `fo` after declaring `foo`, with the popup returning when Copilot is snoozed—is another reproduction of that behavior.\n\nTo restore automatic identifier suggestions without snoozing Copilot, set `\"editor.quickSuggestions\": { \"other\": \"on\", \"comments\": \"off\", \"strings\": \"off\" }`.",
+      "reviewedAt": "2026-10-10T17:18:22.632Z",
+      "contentHash": "8cea7c140147b39968b43785500e00f47f2009957ed75baafb1be5f94e08fdff",
+      "verifiedAt": "2026-10-18T11:48:56.984Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 318194,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 256851,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/256851, where Copilot next-edit suggestions intercept Tab intended for indentation and move the cursor away. Your report adds that this occurs in VS Code 1.121.0 on Windows with a remote Linux arm64 host, and that disabling inline autocomplete restores normal Tab behavior.",
+      "reviewedAt": "2026-10-10T16:00:40.792Z",
+      "contentHash": "6233395ea0970e7864cd4dd51e0c6469a343b39b374bd3ea1044900e49ea1c63",
+      "verifiedAt": "2026-10-18T07:16:17.809Z",
+      "confidence": 0.91,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 313536,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 152042,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/152042 already tracks changing the split-view revert icon to match inline view. This report adds clear Git hunk/selection reproduction steps, including switching layouts or resizing the editor; consolidating that context there keeps the icon decision in one place.",
+      "reviewedAt": "2026-10-10T15:57:45.876Z",
+      "contentHash": "6196e492ebd97185ef5a9263dd0a5b1f246b6b90872bcc432b8d4da9d2174146",
+      "verifiedAt": "2026-10-18T11:45:20.981Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 313632,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 256329,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same Agent edit-review issue tracked in https://github.com/microsoft/vscode/issues/256329: removed lines remain unwrapped while added lines honor word wrap. Your long-line Markdown example on macOS with VS Code 1.118.1 adds useful reproduction details to that report.",
+      "reviewedAt": "2026-10-10T15:52:19.153Z",
+      "contentHash": "516fc0759911c2afb320c9fc9c6b42eeacde59c156c6b2c0125b53b986a5cd5f",
+      "verifiedAt": "2026-10-18T11:45:25.554Z",
+      "confidence": 0.97,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 313203,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 202753,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The replacement preview scrolling out of view when unchanged regions collapse is already tracked in https://github.com/microsoft/vscode/issues/202753. This report adds the transition from a match far down one file to a match near the top of another after replacement, plus the unreachable-content variation shown in https://github.com/microsoft/vscode/issues/313203#issuecomment-4343321547; those details should be included in the investigation there.",
+      "reviewedAt": "2026-10-10T15:51:11.066Z",
+      "contentHash": "c001516043aa19fadc8655c3687d54f894432ab8b644f9f5c92366dd80c7aeb7",
+      "verifiedAt": "2026-10-18T11:45:12.101Z",
+      "confidence": 0.91,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 309543,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 309540,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the context. This custom-agent case is covered by https://github.com/microsoft/vscode/issues/309540, which requests allowing higher-cost subagents with user approval. The configured `model:` use case and the preference for persistent opt-in in this discussion should be included there, so a lower-cost orchestrator can invoke the intended specialist models.",
+      "reviewedAt": "2026-10-10T15:22:23.568Z",
+      "contentHash": "36bfd192204f281380e32e734bb806891f31858c049ba1bff45c35dde9e66a37",
+      "verifiedAt": "2026-10-18T11:44:00.644Z",
+      "confidence": 0.91,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 309632,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 309422,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/309422 tracks the same behavior after all three artifact rule settings are set to `{}`. Your screenshot and confirmation of the test-plan failure provide additional evidence for that investigation, including whether the remaining artifacts came from rules or explicit tool contributions.",
+      "reviewedAt": "2026-10-10T15:19:57.255Z",
+      "contentHash": "77ac74d64eeecbaa39c7ceae3f178c6dbcd61ab80290b6673f792d5f0ba251fc",
+      "verifiedAt": "2026-10-18T11:44:04.473Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 285603,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 234432,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/234432 already tracks bringing decoration style parsing and validation together in ViewGpuContext. This report highlights the same split, specifically the supported-rule list and renderer-side interpretation, which should be covered by that consolidation.",
+      "reviewedAt": "2026-10-10T15:08:55.062Z",
+      "contentHash": "58aa18b5b2794f3e48747525ab7ba74a8bc9ea40feaae840e73559664e087f0b",
+      "verifiedAt": "2026-10-18T11:36:57.296Z",
+      "confidence": 0.92,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 235435,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 234576,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/234576, which tracks bracket color customizations not updating existing GPU-rendered editors. This report adds that reloading applies the colors and non-GPU lines update immediately; those details should remain part of the investigation.",
+      "reviewedAt": "2026-10-10T15:07:04.526Z",
+      "contentHash": "85a191316bf1fed720614e0674fb429ba8bfc2953ad1e20a5c565dd8b1ddf3a1",
+      "verifiedAt": "2026-10-18T11:32:55.344Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 299953,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 252762,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is tracked in https://github.com/microsoft/vscode/issues/252762, which covers selecting and copying deleted text in Copilot's edit review. Your use case of quoting deleted fragments back to the agent, without undoing changes or consulting Git history, belongs there too.",
+      "reviewedAt": "2026-10-10T15:00:46.825Z",
+      "contentHash": "5f0fa34323b8bafbed8d9b42751c1df7ad755440d75e7a59080cc8d7293bfaf7",
+      "verifiedAt": "2026-10-18T11:41:17.717Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 297189,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 120460,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The overlap between Git change indicators and folding controls is already tracked in https://github.com/microsoft/vscode/issues/120460. This report adds a screenshot and accessibility context from C# editing on macOS arm64 with VS Code 1.109.5, where the indicator makes folding arrows difficult to see and target.",
+      "reviewedAt": "2026-10-10T13:15:09.506Z",
+      "contentHash": "a9372e8e0e3a7aa566f629ec3061224f0c0400dfd12d9a2f5e37b33ab1158ecc",
+      "verifiedAt": "2026-10-18T11:40:43.130Z",
+      "confidence": 0.9,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 295342,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 257504,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/257504, which already tracks next-edit previews not wrapping and proposed changes being cropped on long Markdown lines. Your Windows report on VS Code 1.109.3 with Copilot 0.37.6 and the NextEditProvider logs add useful evidence to that issue.",
+      "reviewedAt": "2026-10-10T13:14:55.488Z",
+      "contentHash": "4920a80e6044ea3544527e6344479b17df055afdff3109af7b9431d984b68a61",
+      "verifiedAt": "2026-10-18T11:40:13.447Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 227635,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 150910,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The unexpected character when a block cursor overlaps an inline debug execution arrow is already tracked in https://github.com/microsoft/vscode/issues/150910. This report adds an occurrence on VS Code 1.92.2 with macOS on an Apple M2.",
+      "reviewedAt": "2026-10-10T12:54:25.792Z",
+      "contentHash": "1c0d866bfea21c934ceca12b30689ed3a683369b842a116ff2085fb065c0c1e5",
+      "verifiedAt": "2026-10-18T07:14:09.783Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 207118,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 199474,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and clarification. This is tracked in https://github.com/microsoft/vscode/issues/199474, which requests the same option to stop diff-editor Next Change at the last change instead of wrapping. Your confirmation that editor.find.loop does not control this behavior is useful context for that work; this is not being closed as fixed.",
+      "reviewedAt": "2026-10-10T12:43:11.928Z",
+      "contentHash": "97a82a2984efbd3f3976a202cc61b176229d306dd7d4d96696f873f30237d87e",
+      "verifiedAt": "2026-10-18T11:31:39.221Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 262657,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 210745,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. This is already tracked in https://github.com/microsoft/vscode/issues/210745, which asks for the same unstage buttons when viewing staged changes. Your screenshots illustrate the missing counterpart to the stage/revert controls; selecting lines and using Git: Unstage Selected Ranges remains a workaround, not a replacement for these buttons.",
+      "reviewedAt": "2026-10-10T12:01:09.434Z",
+      "contentHash": "eaea9e72f2e8fc688cb98fa7f39c7afd1c2c68415258f6453b78bc108bfdde91",
+      "verifiedAt": "2026-10-18T11:35:06.678Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 255372,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 3130,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. Configurable mouse-button and modifier gestures are already tracked in https://github.com/microsoft/vscode/issues/3130. Your example—plain middle-click for scrolling, with Alt+middle-click retaining multiple-cursor selection—is a useful concrete requirement for that work; the current settings do not support that combination.",
+      "reviewedAt": "2026-10-10T11:33:13.593Z",
+      "contentHash": "a22866f351937f757b52acaf47c760f9bfab7535fb2a08eb630aef14e152cdaf",
+      "verifiedAt": "2026-10-18T11:34:36.300Z",
+      "confidence": 0.92,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 238347,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 161560,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and follow-up. Recovering the original conflict-marked contents is already tracked in https://github.com/microsoft/vscode/issues/161560, covering both auto-save recovery and discarding unsaved merge changes. This report adds useful detail: Reset also produces a partially merged result without the original markers, and another reporter confirmed the close behavior with auto save disabled on 1.97.2.",
+      "reviewedAt": "2026-10-10T11:26:28.166Z",
+      "contentHash": "071a1c598118ac7091ff442f4ce66221cbab4bbc9c91706371ab8c51604dccb4",
+      "verifiedAt": "2026-10-18T11:33:16.545Z",
+      "confidence": 0.92,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 241365,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 146670,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same difficulty distinguishing inline suggestions from ordinary text in Dark HC is already tracked in https://github.com/microsoft/vscode/issues/146670, including how to improve the defaults while preserving accessible contrast. Consolidating there with this report's Dark HC example: https://github.com/user-attachments/assets/7f115d2f-6580-472f-9cb7-7fdbd8d6be09.",
+      "reviewedAt": "2026-10-10T11:23:39.497Z",
+      "contentHash": "a02d2cda7581834ebb2db925ddff038aefe5e9dab78c77dcf02b936e4e61ca2b",
+      "verifiedAt": "2026-10-18T11:33:38.199Z",
+      "confidence": 0.93,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 234752,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 96104,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/96104, which tracks partial staging converting a CRLF file's line endings throughout the staged content. This report adds a reproduction using the block '+' control on Windows in VS Code 1.95.3 with `files.eol` set to `auto`, and notes that whole-file staging preserves the line endings while unstaging does not restore them.",
+      "reviewedAt": "2026-10-10T11:21:47.147Z",
+      "contentHash": "63ca84f4e4073975529addea5ea6855210e77f6ae4425ee014ec339ef045306f",
+      "verifiedAt": "2026-10-18T11:32:53.016Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 202502,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 180833,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and reproduction details. This is the same Firefox selection-release problem tracked in https://github.com/microsoft/vscode/issues/180833, which also covers unintended activation of sidebar buttons. Please retain this specific case there: on macOS with code serve-web, selecting editor text and releasing over Search's Open Folder link intermittently opens the folder picker. The open candidate https://github.com/microsoft/vscode/pull/211245 excludes some Search controls, so this case still needs to be covered.",
+      "reviewedAt": "2026-10-10T11:19:06.839Z",
+      "contentHash": "4d3cb37204e7bf9fe0a05439b19d7aacb39ae527292495e615392d096da795a6",
+      "verifiedAt": "2026-10-18T11:31:26.514Z",
+      "confidence": 0.94,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 220162,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 63972,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. This is already tracked in https://github.com/microsoft/vscode/issues/63972, where your earlier comment also describes moving an entire collapsed region past other collapsed regions without unfolding them, using the existing Move Line Up/Down commands. Consolidating there preserves that specific expectation and the Atom comparison.",
+      "reviewedAt": "2026-10-10T11:14:31.579Z",
+      "contentHash": "acc57504843501944c0ae2aed455ae81a467ca1c4f32957d14bb36a069138464",
+      "verifiedAt": "2026-10-18T11:32:18.738Z",
+      "confidence": 0.98,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 232212,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 139726,
+        "kind": "peer"
+      },
+      "comment": "Thanks for explaining these use cases. Configuring the limit that currently suppresses Unicode highlighting is already tracked in https://github.com/microsoft/vscode/issues/139726. This report adds useful context: security-critical review and documentation mixing intentional Unicode typography with ASCII markup or LaTeX both need highlighting to remain available above that limit.",
+      "reviewedAt": "2026-10-10T11:13:53.619Z",
+      "contentHash": "1c01ee81fd04c52cfbd2607744cd84fc4d51c59a0af81c5ab6c2b2f862fd66e6",
+      "verifiedAt": "2026-10-18T11:32:42.804Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 232970,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 146670,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same null high-contrast defaults are already being discussed in https://github.com/microsoft/vscode/issues/146670, including choosing foreground colors that preserve adequate contrast. This report adds an important extension-author use case: consuming editorGhostText.foreground in the built-in Dark High Contrast and Light High Contrast themes on VS Code 1.95.1, macOS arm64.",
+      "reviewedAt": "2026-10-10T11:13:50.220Z",
+      "contentHash": "a5efa87a34ca1b086730529c014b308edb20430fb7c88f59b51b6d046a7478f7",
+      "verifiedAt": "2026-10-18T11:32:52.985Z",
+      "confidence": 0.88,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 225587,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 87944,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. Ignoring comment-only changes is explicitly covered by https://github.com/microsoft/vscode/issues/87944. Your C example—changing only the trailing comment from `reg timer_0` to `reg timer_1` while keeping the code unchanged—is a useful acceptance case for that work.",
+      "reviewedAt": "2026-10-10T11:08:32.278Z",
+      "contentHash": "7ab30815009b3c2bd8d847c64517bcb38ce1648bb2e0141875dc1ef5afe6409b",
+      "verifiedAt": "2026-10-18T11:32:32.838Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 213222,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 152672,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The inlay hint appearing selected alongside the adjacent word is already tracked in https://github.com/microsoft/vscode/issues/152672. This report adds the TypeScript parameter-hint reproduction using Cmd+D/Ctrl+D; that keyboard case should be covered alongside the double-click case there.",
+      "reviewedAt": "2026-10-10T11:02:22.817Z",
+      "contentHash": "c525cdd568167319fefec443772faa48b23ca33ccd10299ea4596c14af7c5671",
+      "verifiedAt": "2026-10-18T11:32:04.729Z",
+      "confidence": 0.9,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 147888,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 139726,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/139726 already tracks an option to suppress this recurring banner while retaining Unicode highlighting, alongside configuring the highlighting limit. Your Japanese-file example and the banner returning after switching tabs are useful details to retain in that discussion.",
+      "reviewedAt": "2026-10-10T11:00:40.088Z",
+      "contentHash": "57eb4c3f0e5795255cde5075b70ae0e1d2b207dd283ae2a80fe8c1a66021713e",
+      "verifiedAt": "2026-10-18T11:29:36.814Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 193363,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 190549,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the reproduction. This is the same preview-versus-acceptance indentation mismatch tracked in https://github.com/microsoft/vscode/issues/190549. Your Python example provides an explicit replacement range after four leading spaces and a multiline snippet ending in $0; the playground reproduction and source attachments here remain useful evidence for that issue.",
+      "reviewedAt": "2026-10-10T10:40:41.198Z",
+      "contentHash": "ee983252daa15f9ad8de7341304ecc7ca48c123a5b5f19d073e3be1e1f3ffdec",
+      "verifiedAt": "2026-10-18T11:31:01.380Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
     }
   ]
 }
