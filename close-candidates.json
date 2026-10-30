@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-29T21:24:07.731Z",
+  "generatedAt": "2026-10-30T15:34:55.439Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -17,81 +17,49 @@
   },
   "candidates": [
     {
-      "number": 325324,
+      "number": 345145,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 148069,
+        "canonical": 244780,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. This is tracked in https://github.com/microsoft/vscode/issues/148069, including status-bar access and a Command Palette action. Your preference for an easily accessible action without the terminal or experimental repository explorer belongs in that discussion.",
-      "reviewedAt": "2026-10-29T21:18:01.952Z",
-      "contentHash": "cdc2b06f99e72573b19780a2aeeb60ea2c53d7b26b761af66568623b276e1c19",
-      "verifiedAt": "2026-10-29T21:20:53.664Z",
-      "confidence": 0.96,
+      "comment": "Thanks for the clear request. This is tracked in https://github.com/microsoft/vscode/issues/244780: automatically follow the checked-out branch without the additional base-branch commits included by Auto. Your example of 19 origin/master commits above the current tip, and the requirement to retain shared ancestors while excluding unreachable commits, add useful detail to that request.",
+      "reviewedAt": "2026-10-30T14:59:57.110Z",
+      "contentHash": "a68961fca8c0059486e75a0f9ed02a9cf8d7f24a7346c847df6e4ba30ab6b794",
+      "verifiedAt": "2026-10-30T15:25:05.350Z",
+      "confidence": 0.95,
       "assignees": [
         "lszomoru"
       ]
     },
     {
-      "number": 320045,
+      "number": 345139,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 318088,
+        "canonical": 333046,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/318088 already tracks WSL becoming unusable when the replacement server download fails after removal of the existing installation. This thread adds the Windows per-commit cache workaround: manually downloading the matching server archive before reopening VS Code restores installation. The desktop and server versions must still match, so retaining an older server alone is not sufficient recovery.",
-      "reviewedAt": "2026-10-29T21:18:23.975Z",
-      "contentHash": "dfd8b70a20836d7f88a0012ef056cfe9f17bde08318b2cf9ac506751182c31ae",
-      "verifiedAt": "2026-10-29T21:20:55.008Z",
-      "confidence": 0.94,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 317607,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 313703,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction. This is the stale chat snapshot overwrite tracked in https://github.com/microsoft/vscode/issues/313703. Your nested-workspace steps and video with autosave enabled provide another concrete reproduction: reopening the pending conversation restores older contents over edits saved through the nested workspace. Those details should remain part of the fix's acceptance checks.",
-      "reviewedAt": "2026-10-29T21:18:12.961Z",
-      "contentHash": "b2fda776fef4ae5c0fb72e8aafbe3d63bb83c03283c2bae9c24587836ebf8bbb",
-      "verifiedAt": "2026-10-29T21:20:54.221Z",
-      "confidence": 0.96,
+      "comment": "Thanks for the report. This matches the Windows path-with-spaces inline-suggestion failure tracked in https://github.com/microsoft/vscode/issues/333046. Your report adds the save-and-reopen trigger, affected Python files and notebooks, and testing on 1.144.0 and 1.143.1; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-30T14:59:55.915Z",
+      "contentHash": "2ac76f6f72dbee7c3b5f2f4e0591a26685c89236b327129f2214c58e20dabd05",
+      "verifiedAt": "2026-10-30T15:24:59.462Z",
+      "confidence": 0.89,
       "assignees": [
         "hediet"
       ]
     },
     {
-      "number": 280603,
+      "number": 343154,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 265912,
+        "canonical": 13516,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. This is the same extension-provided server visibility gap tracked in https://github.com/microsoft/vscode/issues/265912. This report adds the GitHub example: enabling github.copilot.chat.githubMcpServer.enabled makes GitHub appear in Configure Tools, but not in MCP Servers - Installed.",
-      "reviewedAt": "2026-10-29T21:18:35.821Z",
-      "contentHash": "fe99323262095dda54ce6c5b4f0b300e9c78caa1458124046c600fa58896ca21",
-      "verifiedAt": "2026-10-29T21:20:54.473Z",
-      "confidence": 0.96,
-      "assignees": [
-        "aeschli"
-      ]
-    },
-    {
-      "number": 147888,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 139726,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/139726 already tracks an option to suppress this recurring banner while retaining Unicode highlighting, alongside configuring the highlighting limit. Your Japanese-file example and the banner returning after switching tabs are useful details to retain in that discussion.",
-      "reviewedAt": "2026-10-10T11:00:40.088Z",
-      "contentHash": "57eb4c3f0e5795255cde5075b70ae0e1d2b207dd283ae2a80fe8c1a66021713e",
-      "verifiedAt": "2026-10-18T11:29:36.814Z",
-      "confidence": 0.95,
+      "comment": "Thanks for the detailed reproduction. This is the same retained scroll-width behavior tracked in https://github.com/microsoft/vscode/issues/13516. Your additional case is useful: with `editor.wordWrap: bounded` and `git.blame.editorDecoration.enabled`, moving blame from an overflowing line to a short line leaves horizontal scrolling enabled until the editor is resized.",
+      "reviewedAt": "2026-10-30T15:11:39.663Z",
+      "contentHash": "20e04b7a209a0b4d1ccf558a92eab1afa68dd82328aaf87e216a3f8028cc9f36",
+      "verifiedAt": "2026-10-30T15:24:16.472Z",
+      "confidence": 0.92,
       "assignees": [
         "hediet"
       ]
