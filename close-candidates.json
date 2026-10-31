@@ -1,336 +1,100 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-31T16:42:00.754Z",
+  "generatedAt": "2026-10-31T16:50:34.549Z",
   "policy": {
     "lanes": [
       "duplicate"
     ],
     "excludeAssignees": [],
-    "unassignedOnly": true
+    "unassignedOnly": false,
+    "includeAssignees": [
+      "aeschli",
+      "benibenj",
+      "hediet",
+      "lszomoru"
+    ]
   },
   "candidates": [
     {
-      "number": 272905,
+      "number": 345211,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 287867,
+        "canonical": 333046,
         "kind": "peer"
       },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/287867 tracks the same remaining work: URI-addressable terminal selections with attachment previews. This report's command-relative range examples, including selections spanning multiple commands, are useful design input for that work.",
-      "reviewedAt": "2026-10-28T13:17:53.937Z",
-      "contentHash": "3391c8ee90170823dbda69498bb8e3d5ce67187fbcce5f16ad6ec1984b17e765",
-      "verifiedAt": "2026-10-28T14:05:12.889Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 149026,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 201846,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/201846 tracks selecting providers for references, definitions, declarations, and related navigation operations. This report adds a useful scenario: switching between clangd for a single ARM target and C++ IntelliSense for shared headers across A53/R5 targets, without disabling extensions or restarting VS Code.",
-      "reviewedAt": "2026-10-28T13:16:46.661Z",
-      "contentHash": "ba78a70410269b33b747a712e692f5c95f5abde11ba8902c4ec88b06794ef6b9",
-      "verifiedAt": "2026-10-28T14:04:58.616Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 205946,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 300085,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same behavior is tracked in https://github.com/microsoft/vscode/issues/300085, with a proposed fix in https://github.com/microsoft/vscode/pull/300086. This report also provides a Linux reproduction by moving the cursor without selecting text, affecting both `selection` and `never`.",
-      "reviewedAt": "2026-10-28T13:16:42.294Z",
-      "contentHash": "5f604aba08ca3ac5ef99332df83c173e1fd427ab310a2d7d924ad52e76dd9cad",
-      "verifiedAt": "2026-10-28T14:05:00.836Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 213048,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 30874,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The editor freezing while evaluating a regex is tracked in https://github.com/microsoft/vscode/issues/30874, including a Windows report where pasting a C-comment regex hangs the window. This report adds the expression `\\/\\*([^*]|\\*+[^/])*\\*\\/` on VS Code 1.85.1, Windows 10 x64, while using Ctrl+H in a C file.",
-      "reviewedAt": "2026-10-12T20:45:31.751Z",
-      "contentHash": "f86f7550bc44452baefa586e4b20b7e5c00c2d80fb008bb5cdbe34988fce2082",
-      "verifiedAt": "2026-10-18T11:32:01.947Z",
-      "confidence": 0.88,
-      "assignees": []
-    },
-    {
-      "number": 221827,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 30874,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the reproduction. This is the editor Find regex-blocking problem tracked in https://github.com/microsoft/vscode/issues/30874. This report adds a pinned terminal recording fixture and the exact trigger—completing `\\[.+,.+,.+,\\]`—plus the non-freezing alternative `\\[([^,]+,){3}[^,]+\\]`.",
-      "reviewedAt": "2026-10-12T20:43:06.512Z",
-      "contentHash": "d32d90b01dadda7b78299d4a790c8ad2884fcd9044658ad61b884067b6fd2bbe",
-      "verifiedAt": "2026-10-18T11:32:20.310Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 239831,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 101064,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Configurable find/replace fonts are already tracked in https://github.com/microsoft/vscode/issues/101064, including monospace fonts for regex readability. Your example of distinguishing `{}` and `()` in long expressions adds useful context; the configurable-font option you suggested fits that existing request.",
-      "reviewedAt": "2026-10-12T20:41:19.244Z",
-      "contentHash": "d2eeb74a0e295c233b6654b038229af0f06e26139da48693794075b95836e286",
-      "verifiedAt": "2026-10-18T11:33:26.417Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 239418,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 233573,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The Arabic text reordering when using Ctrl+F is already tracked in https://github.com/microsoft/vscode/issues/233573. Your mixed Arabic/English Markdown sample, selecting a whole RTL word before opening Find, and Fedora Snap environment provide additional reproduction details for that issue.",
-      "reviewedAt": "2026-10-12T20:41:07.801Z",
-      "contentHash": "11e7f435d19c935b0b9efdc7305b13a71947a303517c3687a5db29d06bdc1a62",
-      "verifiedAt": "2026-10-18T11:33:22.506Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 60978,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 48123,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/48123, which discusses punctuation ordering in Sort Lines Ascending and includes the same quoted-prefix behavior. This report adds a useful double-quoted JSON example: \"abc-def\" sorts before \"abc\", although the unquoted values sort in the opposite order.",
-      "reviewedAt": "2026-10-12T20:28:43.162Z",
-      "contentHash": "66d5e8132603b2e9c6acd7c5782e1bee6dc32b8365ecb77039bf5ee55ff02fd6",
-      "verifiedAt": "2026-10-18T11:28:53.402Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 310720,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 307605,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The active-file ranking regression is already tracked in https://github.com/microsoft/vscode/issues/307605. This report adds useful reproduction details across agent/ask/plan modes on Windows 11, particularly the difficulty finding the active file among identically named Next.js page.tsx files.",
-      "reviewedAt": "2026-10-12T20:13:52.035Z",
-      "contentHash": "4d26f3c12bd7e39fffb8fe099de126833c5377676f4086cad19c792792c099f6",
-      "verifiedAt": "2026-10-18T11:44:22.255Z",
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/333046, which tracks Copilot ghost-text suggestions failing in Windows paths containing spaces and includes a minimal reproduction. Your report adds an occurrence on VS Code 1.143.1 with Windows build 26200.",
+      "reviewedAt": "2026-10-31T14:31:33.111Z",
+      "contentHash": "80aca7d1b11e9d2f0c53363017c90b19db53c6bf4caf39d2a8f99cb9711b4d2a",
+      "verifiedAt": "2026-10-31T14:44:12.029Z",
       "confidence": 0.95,
-      "assignees": []
+      "assignees": [
+        "hediet"
+      ]
     },
     {
-      "number": 114514,
+      "number": 345145,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 93470,
+        "canonical": 244780,
         "kind": "peer"
       },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/93470 already tracks distinguishing Explorer-triggered file events from workspace-edit-triggered events, including onWillRenameFiles. Consolidating there should retain this Java class-and-file rename example, where applying the refactoring triggers another rename calculation, and the alternative suggested here of suppressing events for edits originating from onWill listeners.",
-      "reviewedAt": "2026-10-12T20:02:13.455Z",
-      "contentHash": "364f74603e9b74f2bf72916e06e1169611dfcf0dfc220f5af0bf6fba987931a4",
-      "verifiedAt": "2026-10-18T11:29:11.369Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 198454,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 162455,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/162455 already tracks native TODO diagnostic classification and filtering TODOs independently from other Problems, including the Dart analyzer case. Your specific request for a Show TODOs toggle alongside Show Infos belongs with that work; !todo remains a text-filter workaround, not a replacement for the requested category.",
-      "reviewedAt": "2026-10-12T19:45:26.997Z",
-      "contentHash": "5ce21bd054da527ea65fdc463833d0e179e06906358b007ad1f965379d73ace9",
-      "verifiedAt": "2026-10-18T11:31:15.923Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 206914,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 135114,
-        "kind": "peer"
-      },
-      "comment": "Thanks for clarifying the interaction requirement. https://github.com/microsoft/vscode/issues/135114 already tracks clickable padding before the first character, including your earlier explanation there, so this can be consolidated with that request.\n\nThe important details from this report are that clicking the padding should place the cursor at column one and dragging right should select part of the line. Visual-only CSS spacing and line-number or keyboard workarounds do not fully cover those interactions.",
-      "reviewedAt": "2026-10-12T19:25:18.937Z",
-      "contentHash": "b292d69312607188e3ad107dc17e376d65c367fe0e0e2a042c0172047be2c681",
-      "verifiedAt": "2026-10-18T11:31:38.809Z",
-      "confidence": 0.97,
-      "assignees": []
-    },
-    {
-      "number": 26646,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 12223,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the renderer investigation. Inline newline and CR/LF markers are already requested in https://github.com/microsoft/vscode/issues/12223, including the expectation that editor.renderControlCharacters should show them. Consolidating there preserves this report's Windows reproduction, the concern about the setting's description, and your source investigation at https://github.com/microsoft/vscode/issues/26646#issuecomment-2490997272; this does not mean the capability has been implemented.",
-      "reviewedAt": "2026-10-12T18:56:41.242Z",
-      "contentHash": "f18333313a3958f03e73346e2bb575b90a5c89d9aaebea512cf15563b9818556",
-      "verifiedAt": "2026-10-18T11:28:34.176Z",
-      "confidence": 0.96,
-      "assignees": []
-    },
-    {
-      "number": 71506,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 42785,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. The same native Backspace behavior—removing an indented whitespace-only line and returning to the previous line's end—is already tracked in https://github.com/microsoft/vscode/issues/42785. Consolidating there; this thread also contributes reports that Hungry Delete can disable Backspace until a reload or delay/freeze when suggestions appear, reinforcing the request for native support.",
-      "reviewedAt": "2026-10-12T15:08:00.698Z",
-      "contentHash": "cbe74cb71d630ab85324ef0e23469eed801633c62f681d030b667b0629078a25",
-      "verifiedAt": "2026-10-18T11:28:49.342Z",
+      "comment": "Thanks for the clear request. This is tracked in https://github.com/microsoft/vscode/issues/244780: automatically follow the checked-out branch without the additional base-branch commits included by Auto. Your example of 19 origin/master commits above the current tip, and the requirement to retain shared ancestors while excluding unreachable commits, add useful detail to that request.",
+      "reviewedAt": "2026-10-30T14:59:57.110Z",
+      "contentHash": "a68961fca8c0059486e75a0f9ed02a9cf8d7f24a7346c847df6e4ba30ab6b794",
+      "verifiedAt": "2026-10-30T15:25:05.350Z",
       "confidence": 0.95,
-      "assignees": []
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
-      "number": 34354,
+      "number": 345139,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 27905,
+        "canonical": 333046,
         "kind": "peer"
       },
-      "comment": "Thanks for the detailed examples. https://github.com/microsoft/vscode/issues/27905 already tracks both Ctrl+click whole-word selection and Ctrl+drag selection that snaps to word boundaries. This report adds a useful demonstration (https://www.youtube.com/watch?v=bfyO8haWKfg) and explains why double-click dragging does not replace the continuous Ctrl-held select-copy-paste workflow; those details remain relevant to that request.",
-      "reviewedAt": "2026-10-12T14:56:24.389Z",
-      "contentHash": "fcfa25a1dcbe260d6923331bdbd692feb1799c6cde6c3f9d68cd6b4680fa8bc5",
-      "verifiedAt": "2026-10-18T11:28:34.406Z",
-      "confidence": 0.96,
-      "assignees": []
+      "comment": "Thanks for the report. This matches the Windows path-with-spaces inline-suggestion failure tracked in https://github.com/microsoft/vscode/issues/333046. Your report adds the save-and-reopen trigger, affected Python files and notebooks, and testing on 1.144.0 and 1.143.1; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-30T14:59:55.915Z",
+      "contentHash": "2ac76f6f72dbee7c3b5f2f4e0591a26685c89236b327129f2214c58e20dabd05",
+      "verifiedAt": "2026-10-30T15:24:59.462Z",
+      "confidence": 0.89,
+      "assignees": [
+        "hediet"
+      ]
     },
     {
-      "number": 160804,
+      "number": 343154,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 30191,
+        "canonical": 13516,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/30191 already includes configurable sizing across all scrollbars and global horizontal/vertical defaults. Consolidating there, with this report's explicit requirement that component-specific settings inherit the global size unless overridden.",
-      "reviewedAt": "2026-10-12T14:47:56.878Z",
-      "contentHash": "884856ab8dd853724627ad3880569a2e92b8ba0dbce7ce818f1a99526b09c888",
-      "verifiedAt": "2026-10-18T11:30:00.212Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 98013,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 107989,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. This capability is also tracked in https://github.com/microsoft/vscode/issues/107989: matching the embedded language at the cursor rather than only the document-level editorLangId. This report adds a concrete use case worth retaining there: formatting selected Vue HTML with extension.formatSelectionAsHtml, including matching HTML regions with =~ /html/.",
-      "reviewedAt": "2026-10-12T14:38:54.858Z",
-      "contentHash": "be648a29e665ad12ee7dc6b057ac2d06f6139f329469941fb792c9a962b16724",
-      "verifiedAt": "2026-10-18T11:29:00.749Z",
-      "confidence": 0.95,
-      "assignees": []
-    },
-    {
-      "number": 104292,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 47770,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. Touch-based editor text selection is tracked in https://github.com/microsoft/vscode/issues/47770, whose discussion explicitly includes Remote Desktop in Touch mode. This report adds Surface Pro X pen/stylus use and iPad Remote Desktop observations, including unsuccessful double-tap and Shift-plus-arrow selection, which are useful cases to retain there.",
-      "reviewedAt": "2026-10-12T14:35:15.372Z",
-      "contentHash": "dbcada1412f2bdd113f96c8ef0faf9783bcd7cc822db2bd333943bf0a6b36aac",
-      "verifiedAt": "2026-10-18T11:29:05.072Z",
+      "comment": "Thanks for the detailed reproduction. This is the same retained scroll-width behavior tracked in https://github.com/microsoft/vscode/issues/13516. Your additional case is useful: with `editor.wordWrap: bounded` and `git.blame.editorDecoration.enabled`, moving blame from an overflowing line to a short line leaves horizontal scrolling enabled until the editor is resized.",
+      "reviewedAt": "2026-10-30T15:11:39.663Z",
+      "contentHash": "20e04b7a209a0b4d1ccf558a92eab1afa68dd82328aaf87e216a3f8028cc9f36",
+      "verifiedAt": "2026-10-30T15:24:16.472Z",
       "confidence": 0.92,
-      "assignees": []
+      "assignees": [
+        "hediet"
+      ]
     },
     {
-      "number": 47559,
+      "number": 342290,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 224134,
+        "canonical": 340844,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. Extensions can already render gutter icons with `gutterIconPath` and contribute right-click actions through `editor/lineNumber/context`, but those do not provide direct click actions on their decorations. That remaining capability is tracked in https://github.com/microsoft/vscode/issues/224134, including coexistence with breakpoints and overlapping icons; this thread also contributes the bookmark-click use case and the concern about which decoration receives interaction.",
-      "reviewedAt": "2026-10-12T14:27:18.804Z",
-      "contentHash": "f547aac83fb0321110e5b21cec6170fd0a8ca89c97a9b8e7ca79fba21a8bcb75",
-      "verifiedAt": "2026-10-18T11:28:47.572Z",
-      "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 81616,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 47770,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Touch-drag text selection is already tracked in https://github.com/microsoft/vscode/issues/47770. Your Windows proposal adds a useful interaction option: start horizontally to select or vertically to scroll, then retain that mode even if the drag changes direction. Consolidating there keeps that proposal with the other touch-selection designs.",
-      "reviewedAt": "2026-10-12T14:19:57.635Z",
-      "contentHash": "ce044b511ce71e6226c79ab8a4e1d5a77ffed2be8e4581754ed89fb3477df7a1",
-      "verifiedAt": "2026-10-18T11:29:00.890Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 329561,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 157275,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The missing remote VS Code IPC socket error is tracked in https://github.com/microsoft/vscode/issues/157275, which also includes Python browser-opening failures. This report adds the LangGraph development trigger after updating to VS Code 1.132.0, with Windows connecting to Ubuntu and an ENOENT error under /run/user/4100/.",
-      "reviewedAt": "2026-10-12T13:05:32.740Z",
-      "contentHash": "0736e981e3390144f5edc52f64fefeb2f323a889a6a05c636308fa33d875e23d",
-      "verifiedAt": "2026-10-18T11:51:09.459Z",
-      "confidence": 0.87,
-      "assignees": []
-    },
-    {
-      "number": 316590,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 315161,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The chat-saving error and stack match https://github.com/microsoft/vscode/issues/315161, which tracks this serialization failure. Consolidating there preserves your additional report of macOS Tahoe 26.4.1 and more than ten crashes in one day; the supplied stack identifies the saving failure but does not establish what caused those crashes.",
-      "reviewedAt": "2026-10-12T12:12:42.805Z",
-      "contentHash": "4d7d8c8f59ec3d43a5310ad74a762c10749c3732e2ddf7c1384d7c7faf5e586b",
-      "verifiedAt": "2026-10-18T11:46:30.189Z",
-      "confidence": 0.9,
-      "assignees": []
-    },
-    {
-      "number": 62651,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 237975,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report and sample files. This is the same size-dependent regex Replace All defect tracked in https://github.com/microsoft/vscode/issues/237975: negated character classes can unexpectedly span newlines on the large-replacement path. This report adds the Windows 10 reproduction with extensions disabled and the specific case where ^([^\\t<]+).*$ replaced with $1 clears a following </odstavec> line; those examples should be retained when addressing the shared defect.",
-      "reviewedAt": "2026-10-12T07:02:34.236Z",
-      "contentHash": "9e9765463558d76244af0afac0482db4df71b07b07490f43f6bc8c714aedab0b",
-      "verifiedAt": "2026-10-18T11:28:48.298Z",
-      "confidence": 0.93,
-      "assignees": []
+      "comment": "Thanks for the detailed reproduction. This matches https://github.com/microsoft/vscode/issues/340844, which tracks custom subagents rejecting configured model names or IDs. Your Azure case adds useful evidence: azure/Azure/gpt-6-luna appears in the available-model list and succeeds with an explicit task override, but fails when supplied through agent frontmatter; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-31T14:37:29.771Z",
+      "contentHash": "47b5ead505a4d6f63e0e3bb5e7d7be8309ef7698ead008de6618dec70132d28b",
+      "verifiedAt": "2026-10-31T14:43:59.861Z",
+      "confidence": 0.91,
+      "assignees": [
+        "hediet"
+      ]
     }
   ]
 }
