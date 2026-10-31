@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-30T15:34:55.439Z",
+  "generatedAt": "2026-10-31T14:51:41.963Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -16,6 +16,22 @@
     ]
   },
   "candidates": [
+    {
+      "number": 345211,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333046,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/333046, which tracks Copilot ghost-text suggestions failing in Windows paths containing spaces and includes a minimal reproduction. Your report adds an occurrence on VS Code 1.143.1 with Windows build 26200.",
+      "reviewedAt": "2026-10-31T14:31:33.111Z",
+      "contentHash": "80aca7d1b11e9d2f0c53363017c90b19db53c6bf4caf39d2a8f99cb9711b4d2a",
+      "verifiedAt": "2026-10-31T14:44:12.029Z",
+      "confidence": 0.95,
+      "assignees": [
+        "hediet"
+      ]
+    },
     {
       "number": 345145,
       "lane": "duplicate",
@@ -60,6 +76,22 @@
       "contentHash": "20e04b7a209a0b4d1ccf558a92eab1afa68dd82328aaf87e216a3f8028cc9f36",
       "verifiedAt": "2026-10-30T15:24:16.472Z",
       "confidence": 0.92,
+      "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 342290,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 340844,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This matches https://github.com/microsoft/vscode/issues/340844, which tracks custom subagents rejecting configured model names or IDs. Your Azure case adds useful evidence: azure/Azure/gpt-6-luna appears in the available-model list and succeeds with an explicit task override, but fails when supplied through agent frontmatter; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-10-31T14:37:29.771Z",
+      "contentHash": "47b5ead505a4d6f63e0e3bb5e7d7be8309ef7698ead008de6618dec70132d28b",
+      "verifiedAt": "2026-10-31T14:43:59.861Z",
+      "confidence": 0.91,
       "assignees": [
         "hediet"
       ]
