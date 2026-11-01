@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-10-31T16:50:34.549Z",
+  "generatedAt": "2026-11-01T15:13:26.549Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -30,22 +30,6 @@
       "confidence": 0.95,
       "assignees": [
         "hediet"
-      ]
-    },
-    {
-      "number": 345145,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 244780,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the clear request. This is tracked in https://github.com/microsoft/vscode/issues/244780: automatically follow the checked-out branch without the additional base-branch commits included by Auto. Your example of 19 origin/master commits above the current tip, and the requirement to retain shared ancestors while excluding unreachable commits, add useful detail to that request.",
-      "reviewedAt": "2026-10-30T14:59:57.110Z",
-      "contentHash": "a68961fca8c0059486e75a0f9ed02a9cf8d7f24a7346c847df6e4ba30ab6b794",
-      "verifiedAt": "2026-10-30T15:25:05.350Z",
-      "confidence": 0.95,
-      "assignees": [
-        "lszomoru"
       ]
     },
     {
