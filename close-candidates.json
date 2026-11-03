@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-02T18:46:09.601Z",
+  "generatedAt": "2026-11-03T16:49:47.736Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -14,18 +14,68 @@
   },
   "candidates": [
     {
-      "number": 345599,
+      "number": 345815,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 323732,
+        "canonical": 344973,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/323732 already tracks adding Fork Conversation at the end of the chat. This report adds a footer-toolbar placement suggestion and the workaround of sending a no-op message; consolidating those details there. The existing `/fork` command can fork the full conversation without that extra message.",
-      "reviewedAt": "2026-11-02T18:02:54.794Z",
-      "contentHash": "5af5b1e2ed0dc2a182edc7c3f49fa34c6ee6ba350fa8ee31d820408e3c341983",
-      "verifiedAt": "2026-11-02T18:39:16.731Z",
-      "confidence": 0.96,
-      "assignees": []
+      "comment": "Thanks for the report. This matches the persistent Keep Changes failure tracked in https://github.com/microsoft/vscode/issues/344973. This adds confirmation on Windows with VS Code 1.144.1 and Copilot Chat 0.72.0: both individual and bulk Keep fail, even after saving all files, reloading, and restarting.",
+      "reviewedAt": "2026-11-03T16:02:56.032Z",
+      "contentHash": "c9850fb65ce00f213d881259e066ca17c7cefdde617096923815b2f52655e6c2",
+      "verifiedAt": "2026-11-03T16:41:41.526Z",
+      "confidence": 0.91,
+      "assignees": [
+        "sandy081"
+      ]
+    },
+    {
+      "number": 345741,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343406,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report and corrections. This matches the workspace-change conversation deletion tracked in https://github.com/microsoft/vscode/issues/343406. Consolidating there should retain your WSL saved-workspace case: adding or removing a folder was sufficient, three loaded conversations with real turns were destroyed and tombstoned, while dormant conversations remained intact.",
+      "reviewedAt": "2026-11-03T16:05:53.294Z",
+      "contentHash": "c8482dea6492554e0e9b789a85534eb50ca837bb6af1e97ab29f8be707b11167",
+      "verifiedAt": "2026-11-03T16:41:15.648Z",
+      "confidence": 0.91,
+      "assignees": [
+        "sandy081"
+      ]
+    },
+    {
+      "number": 345709,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333447,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/333447, which tracks agent changed-file diffs trying to open remote paths on the Windows client. This thread adds a Remote-SSH report on 1.144.0 and a WSL confirmation on 1.144.1; both configurations should be covered when verifying the fix.",
+      "reviewedAt": "2026-11-03T16:06:31.618Z",
+      "contentHash": "b2dfde5ea43fcf2edca3ebabae7dfaf71b3d673d06ea53d06eb6908b5e5b60d9",
+      "verifiedAt": "2026-11-03T16:41:05.163Z",
+      "confidence": 0.92,
+      "assignees": [
+        "chrmarti"
+      ]
+    },
+    {
+      "number": 345657,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 344534,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/344534, which tracks notebook hovers closing when moving the pointer into them, including with user extensions disabled. This report adds reproduction on Fedora with 1.144.0, a working comparison with 1.137, and the Ctrl+K, Ctrl+I workaround.",
+      "reviewedAt": "2026-11-03T16:09:22.527Z",
+      "contentHash": "c9d1101669e0a207d6e87ddefefd328d0696771fbbb3015ea4066bc73923ddc7",
+      "verifiedAt": "2026-11-03T16:40:56.929Z",
+      "confidence": 0.94,
+      "assignees": [
+        "amunger"
+      ]
     },
     {
       "number": 345556,
@@ -66,11 +116,11 @@
         "canonical": 333046,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. This matches the Windows path-with-spaces inline-suggestion failure tracked in https://github.com/microsoft/vscode/issues/333046. Your report adds the save-and-reopen trigger, affected Python files and notebooks, and testing on 1.144.0 and 1.143.1; those details should remain part of the investigation there.",
-      "reviewedAt": "2026-10-30T14:59:55.915Z",
-      "contentHash": "2ac76f6f72dbee7c3b5f2f4e0591a26685c89236b327129f2214c58e20dabd05",
-      "verifiedAt": "2026-10-30T15:24:59.462Z",
-      "confidence": 0.89,
+      "comment": "Thanks for the report. We're tracking the Windows path-space inline suggestion regression in https://github.com/microsoft/vscode/issues/333046. This report adds useful details: suggestions fail after saving and reopening, affect Python files and notebooks, and recover when spaces are removed from filenames or folders.",
+      "reviewedAt": "2026-11-03T16:19:16.497Z",
+      "contentHash": "87044e420016692b6836d8859532fc7129cb12e1262ca818ae08b9ec75872a65",
+      "verifiedAt": "2026-11-03T16:40:49.439Z",
+      "confidence": 0.91,
       "assignees": [
         "hediet"
       ]
@@ -130,13 +180,29 @@
         "canonical": 344178,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/344178, which tracks Local switching to Copilot when starting a new chat. This report adds that Local initially works after restarting VS Code and that the subsequent switch makes Plan unavailable.",
-      "reviewedAt": "2026-11-02T18:17:46.747Z",
-      "contentHash": "5a49eeeccc71fd8d9766d18a8e507d5841b2ab50928698ab61b593ff90973926",
-      "verifiedAt": "2026-11-02T18:38:39.428Z",
-      "confidence": 0.94,
+      "comment": "Thanks for the report. The automatic switch from Local to Copilot when creating another chat is already tracked in https://github.com/microsoft/vscode/issues/344178. This report adds that restarting restores Local initially, and that the switch makes Plan unavailable on Windows with VS Code 1.143.1.",
+      "reviewedAt": "2026-11-03T16:24:23.689Z",
+      "contentHash": "5e9e3e1237c6ecfa924dfc26e7cd73ec58953d0216e595c69373276f81c94ce8",
+      "verifiedAt": "2026-11-03T16:40:23.575Z",
+      "confidence": 0.96,
       "assignees": [
         "federicobrancasi"
+      ]
+    },
+    {
+      "number": 344004,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 318442,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/318442, which tracks renamed chat titles not updating until reload. Your Windows 1.143.1 report adds that reopening Chat is not always enough, but closing and reopening the workspace reveals the new title.",
+      "reviewedAt": "2026-11-03T16:26:33.602Z",
+      "contentHash": "acc3fa3003d4f1451986ca278aa0d269f51a9f03d03bcb7c840906a31c3d6534",
+      "verifiedAt": "2026-11-03T16:40:08.254Z",
+      "confidence": 0.94,
+      "assignees": [
+        "meganrogge"
       ]
     },
     {
@@ -425,22 +491,6 @@
       "confidence": 0.97,
       "assignees": [
         "ulugbekna"
-      ]
-    },
-    {
-      "number": 340002,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 47899,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed use case. Modal webviews for extensions are already tracked in https://github.com/microsoft/vscode/issues/47899. This report adds useful requirements for matrix-style forms, cross-field validation, preserving editor splits, and explicit submit/cancel dismissal; those belong with that API discussion.",
-      "reviewedAt": "2026-10-30T15:13:40.949Z",
-      "contentHash": "cb31c0cf02701ee0f94407ad3c9e02c9f538915a450b8d9f81788a1b8efe2a65",
-      "verifiedAt": "2026-10-30T15:23:45.747Z",
-      "confidence": 0.95,
-      "assignees": [
-        "sbatten"
       ]
     },
     {
@@ -1438,22 +1488,6 @@
       ]
     },
     {
-      "number": 314703,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 280824,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the newer-version confirmations. This matches the incomplete todo updates tracked in https://github.com/microsoft/vscode/issues/280824. Please retain this report's Plan-to-implementation workflow, Windows confirmations on 1.127.0 and 1.130.0, and the need to explicitly ask Copilot to update the list when consolidating the investigation.",
-      "reviewedAt": "2026-10-12T12:06:39.201Z",
-      "contentHash": "7405fa5587943346d9a6964830070a853d381fc2edc20a81f6b814beff25fc64",
-      "verifiedAt": "2026-10-18T11:45:53.301Z",
-      "confidence": 0.94,
-      "assignees": [
-        "jo-oikawa"
-      ]
-    },
-    {
       "number": 314569,
       "lane": "duplicate",
       "evidence": {
@@ -2350,23 +2384,6 @@
       "confidence": 0.99,
       "assignees": [
         "chrmarti"
-      ]
-    },
-    {
-      "number": 292072,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283214,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. This is already tracked in https://github.com/microsoft/vscode/issues/283214 for same-named files in read/edit pills. The suggestion here to show only the minimal distinguishing path, like editor tabs, is useful guidance for that work.",
-      "reviewedAt": "2026-10-14T10:50:55.114Z",
-      "contentHash": "b26eadabe956270c4c65768c7e44234ac984620cee24a0d57b03d7faba4eee75",
-      "verifiedAt": "2026-10-18T11:39:23.053Z",
-      "confidence": 0.94,
-      "assignees": [
-        "connor4312",
-        "justschen"
       ]
     },
     {
