@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-04T10:21:56.764Z",
+  "generatedAt": "2026-11-04T16:53:09.239Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -13,6 +13,38 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 346020,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333447,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the remote-path problem tracked in https://github.com/microsoft/vscode/issues/333447: clicking a chat changed-file entry on Windows produces a Windows-style path for a remote Linux file. Your 1.145.0 report, SSH/WSL setup, and observation that it worked last week add useful regression details.",
+      "reviewedAt": "2026-11-04T16:07:34.836Z",
+      "contentHash": "9664c8bc5923a3e4364188f5f768463449a855b8b44a399a780d207a01ec8c64",
+      "verifiedAt": "2026-11-04T16:45:19.772Z",
+      "confidence": 0.88,
+      "assignees": [
+        "bryanchen-d"
+      ]
+    },
+    {
+      "number": 345994,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 328684,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/328684, which tracks Add File to Chat silently doing nothing in the Agents Window. This report adds a Windows 10 reproduction on VS Code 1.144.1 using the editor-tab header context menu.",
+      "reviewedAt": "2026-11-04T16:08:26.299Z",
+      "contentHash": "9ad2526c1115035d97b6d271f9eab5ce1dee3184ebcd7ec730db9978854800b5",
+      "verifiedAt": "2026-11-04T16:45:11.548Z",
+      "confidence": 0.94,
+      "assignees": [
+        "justschen"
+      ]
+    },
     {
       "number": 345815,
       "lane": "duplicate",
@@ -52,11 +84,11 @@
         "canonical": 333447,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/333447, which tracks agent changed-file diffs trying to open remote paths on the Windows client. This thread adds a Remote-SSH report on 1.144.0 and a WSL confirmation on 1.144.1; both configurations should be covered when verifying the fix.",
-      "reviewedAt": "2026-11-03T16:06:31.618Z",
-      "contentHash": "b2dfde5ea43fcf2edca3ebabae7dfaf71b3d673d06ea53d06eb6908b5e5b60d9",
-      "verifiedAt": "2026-11-03T16:41:05.163Z",
-      "confidence": 0.92,
+      "comment": "Thanks for the report and confirmations. This matches the remote changed-file navigation failure tracked in https://github.com/microsoft/vscode/issues/333447. This thread adds reports on 1.144.0/1.144.1 and the same symptom with WSL and Windows-hosted Linux dev containers, which should be included when checking the fix.",
+      "reviewedAt": "2026-11-04T16:16:38.967Z",
+      "contentHash": "4e0f403e1b219355b29a5ff8e8cb1f4077a718d1b0dee702c4af39e5cf6d321c",
+      "verifiedAt": "2026-11-04T16:44:33.001Z",
+      "confidence": 0.88,
       "assignees": [
         "chrmarti"
       ]
@@ -91,6 +123,22 @@
       "confidence": 0.94,
       "assignees": [
         "roblourens"
+      ]
+    },
+    {
+      "number": 345180,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 344969,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed debugging. This matches the Windows/WSL edited-file opening failure reported in https://github.com/microsoft/vscode/issues/344969 on the same VS Code build. This report adds useful evidence: the filename action receives a local `file:` URI for the WSL path, while Explorer and Show Changes in Diff Editor work; those details should stay with the investigation.",
+      "reviewedAt": "2026-11-04T16:18:45.267Z",
+      "contentHash": "b3f675d57a5d3562e61b0e086dd2edb03531abbff3649a6e3beb1c63d709334f",
+      "verifiedAt": "2026-11-04T16:44:32.064Z",
+      "confidence": 0.88,
+      "assignees": [
+        "osortega"
       ]
     },
     {
@@ -190,6 +238,22 @@
       ]
     },
     {
+      "number": 343471,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333447,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and detailed URI traces. This matches https://github.com/microsoft/vscode/issues/333447: opening a changed-file entry resolves the remote working-tree file against the local filesystem, while Explorer and Quick Open work. This report adds macOS trace evidence and confirmations from WSL and dev containers to that investigation.",
+      "reviewedAt": "2026-11-04T16:24:09.295Z",
+      "contentHash": "6e1f147b4eb5335f3e4464e9845361a6e0f0c4dfc803b363a4f22fa89260a64a",
+      "verifiedAt": "2026-11-04T16:43:55.838Z",
+      "confidence": 0.94,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
       "number": 343154,
       "lane": "duplicate",
       "evidence": {
@@ -235,6 +299,22 @@
       "confidence": 0.94,
       "assignees": [
         "deepak1556"
+      ]
+    },
+    {
+      "number": 342533,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 323131,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same Markdown paste error is tracked in https://github.com/microsoft/vscode/issues/323131. This report adds a vscode.dev reproduction with a locally opened folder, Ctrl+V, VS Code 1.145.0, and Chrome 154.0.8037.98; those details should be retained when verifying the fix.",
+      "reviewedAt": "2026-11-04T16:28:54.254Z",
+      "contentHash": "0e443927da2220747852437cea8fe92b8e18e2f4dbad2c239b73c5703cceae61",
+      "verifiedAt": "2026-11-04T16:43:32.628Z",
+      "confidence": 0.94,
+      "assignees": [
+        "sandy081"
       ]
     },
     {
