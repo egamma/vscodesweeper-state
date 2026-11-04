@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-03T16:49:47.736Z",
+  "generatedAt": "2026-11-04T10:21:56.764Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -62,22 +62,6 @@
       ]
     },
     {
-      "number": 345657,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 344534,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/344534, which tracks notebook hovers closing when moving the pointer into them, including with user extensions disabled. This report adds reproduction on Fedora with 1.144.0, a working comparison with 1.137, and the Ctrl+K, Ctrl+I workaround.",
-      "reviewedAt": "2026-11-03T16:09:22.527Z",
-      "contentHash": "c9d1101669e0a207d6e87ddefefd328d0696771fbbb3015ea4066bc73923ddc7",
-      "verifiedAt": "2026-11-03T16:40:56.929Z",
-      "confidence": 0.94,
-      "assignees": [
-        "amunger"
-      ]
-    },
-    {
       "number": 345556,
       "lane": "duplicate",
       "evidence": {
@@ -107,22 +91,6 @@
       "confidence": 0.94,
       "assignees": [
         "roblourens"
-      ]
-    },
-    {
-      "number": 345139,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 333046,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. We're tracking the Windows path-space inline suggestion regression in https://github.com/microsoft/vscode/issues/333046. This report adds useful details: suggestions fail after saving and reopening, affect Python files and notebooks, and recover when spaces are removed from filenames or folders.",
-      "reviewedAt": "2026-11-03T16:19:16.497Z",
-      "contentHash": "87044e420016692b6836d8859532fc7129cb12e1262ca818ae08b9ec75872a65",
-      "verifiedAt": "2026-11-03T16:40:49.439Z",
-      "confidence": 0.91,
-      "assignees": [
-        "hediet"
       ]
     },
     {
@@ -190,22 +158,6 @@
       ]
     },
     {
-      "number": 344004,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 318442,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/318442, which tracks renamed chat titles not updating until reload. Your Windows 1.143.1 report adds that reopening Chat is not always enough, but closing and reopening the workspace reveals the new title.",
-      "reviewedAt": "2026-11-03T16:26:33.602Z",
-      "contentHash": "acc3fa3003d4f1451986ca278aa0d269f51a9f03d03bcb7c840906a31c3d6534",
-      "verifiedAt": "2026-11-03T16:40:08.254Z",
-      "confidence": 0.94,
-      "assignees": [
-        "meganrogge"
-      ]
-    },
-    {
       "number": 343851,
       "lane": "duplicate",
       "evidence": {
@@ -238,22 +190,6 @@
       ]
     },
     {
-      "number": 343471,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 333447,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed logs. The same remote changed-file URI failure is tracked in https://github.com/microsoft/vscode/issues/333447. This report adds macOS trace logs and confirmations on WSL and Dev Containers, including recurrence on 1.144.0; those details should remain part of the investigation.",
-      "reviewedAt": "2026-10-31T14:37:30.477Z",
-      "contentHash": "6321db365fdaa89f67416a9573f8daab6f8f7c83d0d7869f2c2517747653651e",
-      "verifiedAt": "2026-10-31T14:43:56.395Z",
-      "confidence": 0.92,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
       "number": 343154,
       "lane": "duplicate",
       "evidence": {
@@ -267,22 +203,6 @@
       "confidence": 0.92,
       "assignees": [
         "hediet"
-      ]
-    },
-    {
-      "number": 343084,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 308616,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Avoiding repeated output checks while a command is still running is tracked in https://github.com/microsoft/vscode/issues/308616. This report adds a Windows 10 reproduction with a 20–30-minute Python command, more than ten identical output checks, and the eventual “Sorry, no response was returned” error; those details should remain part of that investigation.",
-      "reviewedAt": "2026-10-21T13:46:49.037Z",
-      "contentHash": "8736f756bd9b9201f28b7db1b4f56725c7cb49a04c11efff7db2220ebe00bb9c",
-      "verifiedAt": "2026-10-21T14:20:40.586Z",
-      "confidence": 0.89,
-      "assignees": [
-        "meganrogge"
       ]
     },
     {
@@ -315,22 +235,6 @@
       "confidence": 0.94,
       "assignees": [
         "deepak1556"
-      ]
-    },
-    {
-      "number": 342769,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 339148,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the follow-up. The missing word boundaries are tracked in https://github.com/microsoft/vscode/issues/339148, including cases where optional cleanup is disabled or skipped. Consolidating there with this report's additional evidence: Spanish live-preview spacing on macOS, and confirmation on Ubuntu with Insiders 1.145.0 and runtime 2.2.1, where the raw transcript remains joined when cleanup reports `reason=noModel`. This is separate from the resolved Spanish recognition regression.",
-      "reviewedAt": "2026-10-30T15:12:01.787Z",
-      "contentHash": "69e2a790a3c083daa31631710d6a8fc37c36273b0ad2d5005a9d99ae71274ca4",
-      "verifiedAt": "2026-10-30T15:24:07.576Z",
-      "confidence": 0.9,
-      "assignees": [
-        "meganrogge"
       ]
     },
     {
@@ -393,22 +297,6 @@
       "contentHash": "d95b0501074e766dafa2c609dbbb7e9bcd6f6fda770435316398a9debb8599d1",
       "verifiedAt": "2026-10-18T11:54:14.703Z",
       "confidence": 0.97,
-      "assignees": [
-        "meganrogge"
-      ]
-    },
-    {
-      "number": 340865,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 337676,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Remembering Local across new chats and windows is already covered by https://github.com/microsoft/vscode/issues/337676, including the same Local-to-Copilot reset in its discussion. This report adds the Windows 10.0.26100 and VS Code 1.141.0 case.",
-      "reviewedAt": "2026-10-12T14:44:19.723Z",
-      "contentHash": "fef8254e9ce621d5af823494d25081cbd98eb1c296afe2f1972eeab08247e4e8",
-      "verifiedAt": "2026-10-18T11:54:19.039Z",
-      "confidence": 0.94,
       "assignees": [
         "meganrogge"
       ]
