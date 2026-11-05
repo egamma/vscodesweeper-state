@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-05T08:35:04.589Z",
+  "generatedAt": "2026-11-05T16:51:15.157Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -14,820 +14,145 @@
   },
   "candidates": [
     {
-      "number": 346020,
+      "number": 346271,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 333447,
+        "canonical": 345263,
         "kind": "peer"
       },
-      "comment": "Thanks for the report. This matches the remote-path problem tracked in https://github.com/microsoft/vscode/issues/333447: clicking a chat changed-file entry on Windows produces a Windows-style path for a remote Linux file. Your 1.145.0 report, SSH/WSL setup, and observation that it worked last week add useful regression details.",
-      "reviewedAt": "2026-11-04T16:07:34.836Z",
-      "contentHash": "9664c8bc5923a3e4364188f5f768463449a855b8b44a399a780d207a01ec8c64",
-      "verifiedAt": "2026-11-04T16:45:19.772Z",
+      "comment": "Thanks for the report. The failed Keep action and “changes were updated after they were shown” error are already tracked in https://github.com/microsoft/vscode/issues/345263. This report adds that comparison tabs keep loading with Fusion selected, and reopening comparisons, reloading, and restarting do not restore Keep; those details should remain part of the investigation.",
+      "reviewedAt": "2026-11-05T16:20:29.108Z",
+      "contentHash": "051b66807a3d63ce3400b0f9617afba190ab01596afa16fbee04c1dc6c079a81",
+      "verifiedAt": "2026-11-05T16:44:19.265Z",
       "confidence": 0.88,
-      "assignees": [
-        "bryanchen-d"
-      ]
-    },
-    {
-      "number": 345994,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 328684,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/328684, which tracks Add File to Chat silently doing nothing in the Agents Window. This report adds a Windows 10 reproduction on VS Code 1.144.1 using the editor-tab header context menu.",
-      "reviewedAt": "2026-11-04T16:08:26.299Z",
-      "contentHash": "9ad2526c1115035d97b6d271f9eab5ce1dee3184ebcd7ec730db9978854800b5",
-      "verifiedAt": "2026-11-04T16:45:11.548Z",
-      "confidence": 0.94,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
-      "number": 345815,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 344973,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the persistent Keep Changes failure tracked in https://github.com/microsoft/vscode/issues/344973. This adds confirmation on Windows with VS Code 1.144.1 and Copilot Chat 0.72.0: both individual and bulk Keep fail, even after saving all files, reloading, and restarting.",
-      "reviewedAt": "2026-11-03T16:02:56.032Z",
-      "contentHash": "c9850fb65ce00f213d881259e066ca17c7cefdde617096923815b2f52655e6c2",
-      "verifiedAt": "2026-11-03T16:41:41.526Z",
-      "confidence": 0.91,
-      "assignees": [
-        "sandy081"
-      ]
-    },
-    {
-      "number": 345741,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 343406,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report and corrections. This matches the workspace-change conversation deletion tracked in https://github.com/microsoft/vscode/issues/343406. Consolidating there should retain your WSL saved-workspace case: adding or removing a folder was sufficient, three loaded conversations with real turns were destroyed and tombstoned, while dormant conversations remained intact.",
-      "reviewedAt": "2026-11-03T16:05:53.294Z",
-      "contentHash": "c8482dea6492554e0e9b789a85534eb50ca837bb6af1e97ab29f8be707b11167",
-      "verifiedAt": "2026-11-03T16:41:15.648Z",
-      "confidence": 0.91,
-      "assignees": [
-        "sandy081"
-      ]
-    },
-    {
-      "number": 345709,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 333447,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and confirmations. This matches the remote changed-file navigation failure tracked in https://github.com/microsoft/vscode/issues/333447. This thread adds reports on 1.144.0/1.144.1 and the same symptom with WSL and Windows-hosted Linux dev containers, which should be included when checking the fix.",
-      "reviewedAt": "2026-11-04T16:16:38.967Z",
-      "contentHash": "4e0f403e1b219355b29a5ff8e8cb1f4077a718d1b0dee702c4af39e5cf6d321c",
-      "verifiedAt": "2026-11-04T16:44:33.001Z",
-      "confidence": 0.88,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 345556,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 335774,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/335774, which already tracks missing Copilot inline suggestions for custom filesystem schemes, including Code for IBM i's `member:` documents. Additional evidence here includes the VS Code 1.143.1 regression report, manual-trigger failure, RPGLE sample, and NES traces reporting “ignored document” and “document not found in workspace.”",
-      "reviewedAt": "2026-11-02T18:04:50.345Z",
-      "contentHash": "27be3696ffe3b29c81f342fcec9dacc7596b66a256a8faf2b9ff94e72fd1b22a",
-      "verifiedAt": "2026-11-02T18:39:15.032Z",
-      "confidence": 0.96,
-      "assignees": [
-        "hediet"
-      ]
-    },
-    {
-      "number": 345527,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 321290,
-        "kind": "peer"
-      },
-      "comment": "Thanks for tracing this. This matches the empty-session overwrite and disappearing history tracked in https://github.com/microsoft/vscode/issues/321290. Your report adds the disposal/save ordering reproducer, the intervening queued-task condition, and the Windows-to-Linux Remote-SSH observations; those details should carry into the investigation there.",
-      "reviewedAt": "2026-11-02T18:07:09.635Z",
-      "contentHash": "8641c505a0023dd16b295607d74a79cd3ece3a7b00496f835f3a6d18dc1baf36",
-      "verifiedAt": "2026-11-02T18:39:17.572Z",
-      "confidence": 0.94,
-      "assignees": [
-        "roblourens"
-      ]
-    },
-    {
-      "number": 345180,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 344969,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed debugging. This matches the Windows/WSL edited-file opening failure reported in https://github.com/microsoft/vscode/issues/344969 on the same VS Code build. This report adds useful evidence: the filename action receives a local `file:` URI for the WSL path, while Explorer and Show Changes in Diff Editor work; those details should stay with the investigation.",
-      "reviewedAt": "2026-11-04T16:18:45.267Z",
-      "contentHash": "b3f675d57a5d3562e61b0e086dd2edb03531abbff3649a6e3beb1c63d709334f",
-      "verifiedAt": "2026-11-04T16:44:32.064Z",
-      "confidence": 0.88,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 345100,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 191094,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Configuring date/time formats independently of the display language is tracked in https://github.com/microsoft/vscode/issues/191094. This report adds Git blame and Source Control Graph examples on Linux/KDE, including a 24-hour system preference that is not reflected in those displays.",
-      "reviewedAt": "2026-10-30T15:02:17.221Z",
-      "contentHash": "b9a18c2a14286e692773de89163a90b4aa89066a98ea889ee60af2683d9a7170",
-      "verifiedAt": "2026-10-30T15:24:55.497Z",
-      "confidence": 0.94,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 344656,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 326128,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/326128, which explicitly tracks suppressing the active chat's redundant progress indicator. Your example of title dots appearing alongside the animated response logo illustrates that case; the suggested visibility condition is useful context for that work.",
-      "reviewedAt": "2026-10-29T15:17:24.798Z",
-      "contentHash": "001f94e66fb6b88f53d5f912b8cf62d05213fe825aa0e669cc908dbaaa068355",
-      "verifiedAt": "2026-10-29T15:36:10.233Z",
-      "confidence": 0.96,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
-      "number": 344550,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 342470,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The macOS ARM64 error matches https://github.com/microsoft/vscode/issues/342470, which already tracks this native-runtime startup failure. This thread also mentions Windows, but without logs establishing whether that is the same failure.",
-      "reviewedAt": "2026-11-02T18:16:50.131Z",
-      "contentHash": "cd7b0d6b9f90765c6bda59b6e6c9b0d1e4eee7ea98673c0b4d59a4aabb495dc2",
-      "verifiedAt": "2026-11-02T18:38:47.835Z",
-      "confidence": 0.94,
-      "assignees": [
-        "roblourens"
-      ]
-    },
-    {
-      "number": 344186,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 344178,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The automatic switch from Local to Copilot when creating another chat is already tracked in https://github.com/microsoft/vscode/issues/344178. This report adds that restarting restores Local initially, and that the switch makes Plan unavailable on Windows with VS Code 1.143.1.",
-      "reviewedAt": "2026-11-03T16:24:23.689Z",
-      "contentHash": "5e9e3e1237c6ecfa924dfc26e7cd73ec58953d0216e595c69373276f81c94ce8",
-      "verifiedAt": "2026-11-03T16:40:23.575Z",
-      "confidence": 0.96,
-      "assignees": [
-        "federicobrancasi"
-      ]
-    },
-    {
-      "number": 343851,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 337517,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is another trigger for the orphaned question UI tracked in https://github.com/microsoft/vscode/issues/337517. This reproduction adds that resending the original message without editing also leaves the question behind, and subsequent questions stack on top; both cases should be covered together.",
-      "reviewedAt": "2026-10-24T12:47:48.902Z",
-      "contentHash": "e3b92095fffa791164dacd54f179ae0f3cab7d7ebfa1f515882f16d8aad60144",
-      "verifiedAt": "2026-10-24T13:04:32.715Z",
-      "confidence": 0.9,
-      "assignees": [
-        "connor4312"
-      ]
-    },
-    {
-      "number": 343639,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 316946,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/316946 already tracks a first-party mobile companion for monitoring running agents, sending follow-up prompts, and responding to approval notifications. Consolidating there also preserves your iPhone-focused requirements: voice input, pause/cancel controls, and Tunnels or Codespaces connectivity.",
-      "reviewedAt": "2026-10-24T12:53:19.502Z",
-      "contentHash": "2722111aeb002e0addf9be346024d4c7ae3944d2ff2af98b595baece06370c17",
-      "verifiedAt": "2026-10-24T13:04:21.795Z",
-      "confidence": 0.93,
-      "assignees": [
-        "roblourens"
-      ]
-    },
-    {
-      "number": 343154,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 13516,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction. This is the same retained scroll-width behavior tracked in https://github.com/microsoft/vscode/issues/13516. Your additional case is useful: with `editor.wordWrap: bounded` and `git.blame.editorDecoration.enabled`, moving blame from an overflowing line to a short line leaves horizontal scrolling enabled until the editor is resized.",
-      "reviewedAt": "2026-10-30T15:11:39.663Z",
-      "contentHash": "20e04b7a209a0b4d1ccf558a92eab1afa68dd82328aaf87e216a3f8028cc9f36",
-      "verifiedAt": "2026-10-30T15:24:16.472Z",
-      "confidence": 0.92,
-      "assignees": [
-        "hediet"
-      ]
-    },
-    {
-      "number": 342851,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 291504,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/291504, where changing the account preference updates the selected account but Copilot Chat still uses another account's quota. Your report adds that this occurs on VS Code 1.142.0 on macOS arm64, with the new account icon visible while the previous account's balance remains in use.",
-      "reviewedAt": "2026-10-20T13:29:34.899Z",
-      "contentHash": "3f2320fb182a27f9e0f49b844b6bd35870346f5915e1afc666437852ebd69ddc",
-      "verifiedAt": "2026-10-20T14:00:47.478Z",
-      "confidence": 0.9,
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
-      "number": 342842,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 125993,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the webview service-worker registration failure tracked in https://github.com/microsoft/vscode/issues/125993, which also has confirmed Windows reports. This occurrence affects the built-in image preview (`vscode.media-preview`) on VS Code 1.142.0, Windows 10.0.26100.",
-      "reviewedAt": "2026-10-20T13:29:44.581Z",
-      "contentHash": "815cbdd8e14f5cb32eba97434ec6c0a948b7fff9076578538e037d9bef994b55",
-      "verifiedAt": "2026-10-20T14:00:37.653Z",
-      "confidence": 0.94,
-      "assignees": [
-        "deepak1556"
-      ]
-    },
-    {
-      "number": 342533,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 323131,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same Markdown paste error is tracked in https://github.com/microsoft/vscode/issues/323131. This report adds a vscode.dev reproduction with a locally opened folder, Ctrl+V, VS Code 1.145.0, and Chrome 154.0.8037.98; those details should be retained when verifying the fix.",
-      "reviewedAt": "2026-11-04T16:28:54.254Z",
-      "contentHash": "0e443927da2220747852437cea8fe92b8e18e2f4dbad2c239b73c5703cceae61",
-      "verifiedAt": "2026-11-04T16:43:32.628Z",
-      "confidence": 0.94,
-      "assignees": [
-        "sandy081"
-      ]
-    },
-    {
-      "number": 342216,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 301414,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. Global Copilot conversation history is already tracked in https://github.com/microsoft/vscode/issues/301414, including finding earlier conversations without reopening each project's folder.",
-      "reviewedAt": "2026-10-21T14:03:39.657Z",
-      "contentHash": "2513c869ac969f0ee5705336c76f464ae35ff58799e629dbbab1b68dbfa9f9a7",
-      "verifiedAt": "2026-10-21T14:19:48.384Z",
-      "confidence": 0.96,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 341980,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 55044,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. `SignatureInformation.label` currently accepts plain text; `MarkdownString` formatting applies to documentation, not the label. The same limitation is tracked in https://github.com/microsoft/vscode/issues/55044. Your screenshots comparing the extension and built-in presentation, and your clarification that active-parameter highlighting already works, are useful examples for that request.",
-      "reviewedAt": "2026-10-23T13:34:41.909Z",
-      "contentHash": "2a0f90b564711c6ec9fed808c6b2c6133849ad3b29b3fef6150507fb9839c80b",
-      "verifiedAt": "2026-10-23T13:48:25.109Z",
-      "confidence": 0.93,
-      "assignees": [
-        "ulugbekna"
-      ]
-    },
-    {
-      "number": 341416,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 70118,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed proposal. https://github.com/microsoft/vscode/issues/70118 already tracks a default Run task analogous to build and test, without requiring a debugger configuration. Your proposed `group.kind: \"run\"`, boolean/glob `isDefault`, and matching configure/run commands provide concrete detail for that request; the Agents-window comparison is useful prior art.",
-      "reviewedAt": "2026-10-14T08:35:04.165Z",
-      "contentHash": "d95b0501074e766dafa2c609dbbb7e9bcd6f6fda770435316398a9debb8599d1",
-      "verifiedAt": "2026-10-18T11:54:14.703Z",
-      "confidence": 0.97,
-      "assignees": [
-        "meganrogge"
-      ]
-    },
-    {
-      "number": 340862,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 338790,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This looks like the same problem as https://github.com/microsoft/vscode/issues/338790, where output is delayed on the second Python run in the same terminal, so I'm consolidating the discussion there. If you see anything different, such as a different delay or a different shell, please add it to that issue.",
-      "reviewedAt": "2026-10-12T15:23:00.211Z",
-      "contentHash": "200cac718ee583b0ab21a4251db87284ff314ae456f10300ca7ca72c47288c41",
-      "verifiedAt": "2026-10-18T11:54:15.739Z",
-      "confidence": 0.7,
-      "assignees": [
-        "anthonykim1"
-      ]
-    },
-    {
-      "number": 340736,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 324809,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and for the version details. This looks like the same problem as https://github.com/microsoft/vscode/issues/324809 (Copilot Chat causing a window OOM on Remote-SSH, avoided by disabling Copilot Chat), so we'll track it there. I'll carry over that downgrading to VS Code 1.116.0 with Copilot Chat 0.44.2 avoids the crash while 1.141.0 does not. Please add any logs or details to that issue.",
-      "reviewedAt": "2026-10-14T13:34:45.294Z",
-      "contentHash": "60674d096bd6c5ffbcbb064a868f753d0442c24421ce70afeedee8bada3bfe6a",
-      "verifiedAt": "2026-10-18T11:54:03.560Z",
-      "confidence": 0.7,
-      "assignees": [
-        "deepak1556"
-      ]
-    },
-    {
-      "number": 340551,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 317187,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The supported provider-usage API and zero-usage behavior are already tracked in https://github.com/microsoft/vscode/issues/317187, with an implementation proposal at https://github.com/microsoft/vscode/pull/319686. This report adds useful macOS/LiteLLM details and the requirement to forward usage through the Agents-window BYOK loopback proxy; those should remain part of the consolidated work.",
-      "reviewedAt": "2026-10-25T13:12:14.171Z",
-      "contentHash": "cc12a5d45e65da62251819579a91c4b845f3aa32fadb379e1cf8521aa55e12db",
-      "verifiedAt": "2026-10-25T13:19:16.354Z",
-      "confidence": 0.94,
-      "assignees": [
-        "vritant24"
-      ]
-    },
-    {
-      "number": 340452,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 333153,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the Local-versus-Copilot comparison. The nearly empty Agent Debug Logs with the Copilot harness are already tracked in https://github.com/microsoft/vscode/issues/333153, which documents the panel looking up the Agent Host session ID instead of the backing SDK conversation ID. Your comparison—sending `Hey` in both harnesses and seeing detailed logs only for Local—provides another useful reproduction of that symptom.",
-      "reviewedAt": "2026-10-15T12:53:54.918Z",
-      "contentHash": "2d1b377e87d71d8d0308c71311d3f4c3a6d66396abf6e21811b6dd9d8243e7e5",
-      "verifiedAt": "2026-10-18T11:54:02.847Z",
-      "confidence": 0.94,
-      "assignees": [
-        "vijayupadya"
-      ]
-    },
-    {
-      "number": 340286,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 23757,
-        "kind": "peer"
-      },
-      "comment": "Thanks for clarifying. Tasks can run repository scripts, but they do not provide checked-in workspace-local shortcuts. That missing capability is already tracked in https://github.com/microsoft/vscode/issues/23757, including the same concern about globally defined shortcuts behaving differently across projects. Your build.sh and non-build script examples fit that request.",
-      "reviewedAt": "2026-10-16T07:48:05.763Z",
-      "contentHash": "c885a0a15dd8320ddab479ffa9c69340535fb0e421be8d0d99b36abccf3eda90",
-      "verifiedAt": "2026-10-18T11:53:52.837Z",
-      "confidence": 0.97,
-      "assignees": [
-        "ulugbekna"
-      ]
-    },
-    {
-      "number": 339781,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 329209,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/329209 already tracks cron scheduling, including monthly runs, a scheduling UI, and agent-created schedules. Consolidating there, with the explicit requirement from this report that the agent tool accept cron expressions alongside the UI.",
-      "reviewedAt": "2026-10-17T15:29:47.403Z",
-      "contentHash": "7832665cc6f37bfc5768634a03c08fd3c7a37cee5fcc6d94aa8d3250479174ed",
-      "verifiedAt": "2026-10-17T15:34:11.185Z",
-      "confidence": 0.94,
-      "assignees": [
-        "benvillalobos"
-      ]
-    },
-    {
-      "number": 339276,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 325618,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report and repro. This is the same problem as https://github.com/microsoft/vscode/issues/325618, where the strict tool-schema validation rejects an array parameter with no `items`. Your points are worth carrying over: the failure should treat a missing `items` as an unconstrained array, or at least affect only the offending tool rather than every tool from every server. The Meta VR `ui_swipe` report on 1.141.0 is another instance. Consolidating the discussion there.",
-      "reviewedAt": "2026-10-12T15:26:00.202Z",
-      "contentHash": "1f109f1692d5d481d9786030773bf57cb8f78cfda48842e53309ea1257c390a2",
-      "verifiedAt": "2026-10-18T11:53:39.903Z",
-      "confidence": 0.82,
-      "assignees": [
-        "connor4312"
-      ]
-    },
-    {
-      "number": 338308,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 302887,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/302887, including the workaround of renaming through the open chat's title. This report adds macOS confirmation and useful JSONL evidence: the list rename does not write customTitle, while the title-based rename does.",
-      "reviewedAt": "2026-10-16T13:30:06.692Z",
-      "contentHash": "43701a4e4f3bd972205c1690728e2ab31c4c4bb7eb97415bb68c711ea07fd6c2",
-      "verifiedAt": "2026-10-18T11:53:34.241Z",
-      "confidence": 0.95,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 338301,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283735,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed troubleshooting log. This matches https://github.com/microsoft/vscode/issues/283735, which tracks Windows Ctrl+Alt shortcuts being interpreted as AltGr character input. Your report adds the Hungarian QWERTZ and UK QWERTY cases on VS Code 1.139.1, including a log showing Ctrl+Alt on AltLeft but no modifiers on KeyI, which then inserts Í.",
-      "reviewedAt": "2026-10-16T07:46:43.152Z",
-      "contentHash": "74e4d5c3e464d1c4176bd9940f96c5539e5c176028871333876c9dc4ce032321",
-      "verifiedAt": "2026-10-18T11:53:30.006Z",
-      "confidence": 0.93,
-      "assignees": [
-        "ulugbekna"
-      ]
-    },
-    {
-      "number": 338095,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 296469,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/296469 already tracks primary agents dynamically delegating subtasks across models and synthesizing the results. This report adds a useful local/BYOK requirement: routine work should be eligible for a local model such as Qwen, with the primary model reviewing its results to reduce premium usage and keep delegated processing local.",
-      "reviewedAt": "2026-10-12T12:58:52.425Z",
-      "contentHash": "e7595900ef146ee605347b64157cf31ef0f5a838754bb11057668641386cf4c0",
-      "verifiedAt": "2026-10-18T11:53:28.143Z",
-      "confidence": 0.88,
-      "assignees": [
-        "vritant24"
-      ]
-    },
-    {
-      "number": 337582,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 335320,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/335320 already requests indented `/btw` child entries in the Sessions list and clearer activity indicators. Consolidating there, including this requirement that the main session remain top-level and its working side chats stay discoverable beneath it. Side-chat activity now appears on the parent row, but individual child entries are still missing.",
-      "reviewedAt": "2026-10-16T12:35:11.569Z",
-      "contentHash": "3834ec174023cc7c014ffca8dbc90fdcf8a3af0d3c27bc692e167a309ab84c89",
-      "verifiedAt": "2026-10-18T11:53:13.168Z",
-      "confidence": 0.93,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 336760,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 139634,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Duplicate Dock icons when running `code` while VS Code is already open are tracked in https://github.com/microsoft/vscode/issues/139634, including reproduction with extensions disabled. This report adds VS Code 1.138.0 on macOS Tahoe 26.6.2 and the observation that both icons remain after closing VS Code, with only one openable at a time.",
-      "reviewedAt": "2026-10-11T18:47:34.225Z",
-      "contentHash": "5fd5c810456cbe624f44f67e4fedb1f7cd4c6df1fe48f3f2de4750ed096442d1",
-      "verifiedAt": "2026-10-18T11:52:58.672Z",
-      "confidence": 0.93,
-      "assignees": [
-        "deepak1556"
-      ]
-    },
-    {
-      "number": 336456,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 278443,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the follow-up. The misleading GNOME wording is already tracked in https://github.com/microsoft/vscode/issues/278443. This report adds EndeavourOS with Cinnamon 6.6.9 on X11, reproduction with extensions disabled, and your finding that the warning no longer appears in visual-studio-code-bin 1.138 without gnome-keyring installed; the Arch Code - OSS retest was blocked by package-download errors.",
-      "reviewedAt": "2026-10-11T22:13:45.975Z",
-      "contentHash": "799906de360ce751f0bc354f9b62aab3f5b30b2846891e8021e2d2edd6e225f8",
-      "verifiedAt": "2026-10-18T11:53:04.792Z",
-      "confidence": 0.91,
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
-      "number": 334527,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 327473,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This looks like the same defect already being tracked in https://github.com/microsoft/vscode/issues/327473 — `edit_notebook_file` reporting success while the notebook cell content isn't actually persisted. That issue is assigned and under investigation, so I'd like to consolidate the discussion there; your reproduction (edits accepted/claimed successful but silently discarded, working fine for new notebooks and for .py files via replace_string_in_file) is useful corroborating detail worth adding there.",
-      "reviewedAt": "2026-09-15T13:51:26.073Z",
-      "contentHash": "6625879bfdc2b2109be379f3bc77282d0e3aa5c7029bff923f0be4a11837b63f",
-      "verifiedAt": "2026-10-18T11:52:44.388Z",
-      "confidence": 0.78,
-      "assignees": [
-        "zhichli"
-      ]
-    },
-    {
-      "number": 334464,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 333447,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed investigation. This is covered by the older open report https://github.com/microsoft/vscode/issues/333447, which tracks the same Windows-to-Linux Remote-SSH changed-file diff failure. The additional trace here is useful: it points to the `local` handling in `agentHostUri.ts`, and your diagnostic remapping to the active `vscode-remote` authority confirms the modified-side URI is the failing boundary.",
-      "reviewedAt": "2026-09-25T09:50:57.189Z",
-      "contentHash": "8af0d182a5f3ed5ff8e4982c46d9cd838f921cab3efc30ff1994935c9bef9353",
-      "verifiedAt": "2026-10-18T11:52:36.847Z",
-      "confidence": 0.98,
-      "assignees": [
-        "Giuspepe"
-      ]
-    },
-    {
-      "number": 334149,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 322483,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the additional reproduction path. This is tracked by https://github.com/microsoft/vscode/issues/322483, which covers the same “MISSING inline chat edit tools” failure when agent mode is disabled; the lint diagnostic Fix action described here is useful additional evidence for that investigation.",
-      "reviewedAt": "2026-10-01T14:10:51.037Z",
-      "contentHash": "3ab6a7052c64bc9bfbf8cb4bfbb90089432eb50fe9a529c4f225c62ea9fa5dff",
-      "verifiedAt": "2026-10-18T07:17:25.492Z",
-      "confidence": 0.94,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
-      "number": 334015,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 328396,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Incorrect change counts on sessions that made no edits are already tracked in https://github.com/microsoft/vscode/issues/328396. This report adds a Claude example: a failed 'test' request displays +699/-7724, while earlier conversations show repeated counts attributed to different sessions.",
-      "reviewedAt": "2026-10-12T13:51:13.533Z",
-      "contentHash": "1428fbaa428cdb592a3a70d81c056854fdb5a3ed4f0a043cdf3f950d21c231ac",
-      "verifiedAt": "2026-10-18T11:52:20.269Z",
-      "confidence": 0.88,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 333533,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 313334,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same chat-history Rename failure is tracked in https://github.com/microsoft/vscode/issues/313334. This report adds confirmation on Windows 10.0.26200 with VS Code 1.135.0; consolidating it there keeps that version and platform evidence with the existing discussion.",
-      "reviewedAt": "2026-10-12T13:32:10.330Z",
-      "contentHash": "9b03bdf8b53a2b4314795e61e24d13ec3166d9d5d3474b8a9d1eee487865d23a",
-      "verifiedAt": "2026-10-18T11:52:17.272Z",
-      "confidence": 0.94,
-      "assignees": [
-        "osortega"
-      ]
-    },
-    {
-      "number": 332430,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 331578,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. BYOK utility-model configuration for the Copilot Harness is already tracked in https://github.com/microsoft/vscode/issues/331578, including use without GitHub sign-in. Consolidating this request there.",
-      "reviewedAt": "2026-10-12T12:43:30.934Z",
-      "contentHash": "4d030d4d5bc32fb34cadc037fe55080290ad6e5f33111f9136925ed8ec406133",
-      "verifiedAt": "2026-10-18T11:51:43.713Z",
-      "confidence": 0.93,
-      "assignees": [
-        "vritant24"
-      ]
-    },
-    {
-      "number": 332277,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 331621,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the context. https://github.com/microsoft/vscode/issues/331621 already tracks promoting automation runs into the sessions list through UI and user interaction. Consolidating this there, including drag and drop, a context-menu action, an action in the automation chat, and the question of whether replying to a run should promote it.",
-      "reviewedAt": "2026-10-16T07:46:40.397Z",
-      "contentHash": "17167068e0456a5ff82fbf662b95c7e008245c0d572bbb720d07eb71ff54e252",
-      "verifiedAt": "2026-10-18T11:51:42.304Z",
-      "confidence": 0.94,
-      "assignees": [
-        "benvillalobos",
-        "ulugbekna"
-      ]
-    },
-    {
-      "number": 332193,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 330693,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The unexpected Modern UI change and difficulty finding how to revert it are already covered by https://github.com/microsoft/vscode/issues/330693, which requests clearer communication and an obvious option to retain the previous interface. This report adds useful feedback about searching for the setting: users needed an external answer, while a later comment found it with “round corners”. The current opt-out is `\"workbench.experimental.modernUI\": false`.",
-      "reviewedAt": "2026-10-12T08:48:52.083Z",
-      "contentHash": "021567305027c5d8295810fe8f9d3cfc16f3e93c1d87081ee0bcbc3df6c1626f",
-      "verifiedAt": "2026-10-18T11:51:41.973Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chryw",
-        "mrleemurray"
-      ]
-    },
-    {
-      "number": 332136,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 325459,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The environment propagation into unrelated extension-launched processes is already tracked in https://github.com/microsoft/vscode/issues/325459, including the same DEBUG=release value. Consolidating this report there preserves the Linux/Delve case and your Markdown-worker process observations; those observations do not yet establish that VS Code's Markdown build introduced the variable.",
-      "reviewedAt": "2026-10-14T12:15:41.448Z",
-      "contentHash": "232d0e1a052338cb04046a018fe1ca43f776ae83c3edf28bc724fc978352571e",
-      "verifiedAt": "2026-10-18T11:51:41.300Z",
-      "confidence": 0.86,
-      "assignees": [
-        "connor4312"
-      ]
-    },
-    {
-      "number": 331581,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 326584,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. Your Windows screenshots show the same problem tracked in https://github.com/microsoft/vscode/issues/326584: the Agent Debug Logs enablement button opens Settings with no results instead of showing `github.copilot.chat.agentDebugLog.fileLogging.enabled`. Consolidating this report there.",
-      "reviewedAt": "2026-10-15T12:49:42.248Z",
-      "contentHash": "9a14604e3ea4361cf0eeba286b700c7086bae954522e65bdea53353a13f5fe1c",
-      "verifiedAt": "2026-10-18T07:17:10.813Z",
-      "confidence": 0.94,
-      "assignees": [
-        "vijayupadya"
-      ]
-    },
-    {
-      "number": 331473,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 318839,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed color analysis. The same symptom—Dark 2026 variables appearing like unhighlighted plain text—is already tracked in https://github.com/microsoft/vscode/issues/318839. This report adds useful JS/TS detail: `variable.other` uses `#C9D1D9` against the `#BBBEBF` editor foreground, while const/readonly variables remain distinctly blue. Consolidating that evidence with the existing palette discussion.",
-      "reviewedAt": "2026-10-17T20:44:06.866Z",
-      "contentHash": "4340f26561269ca6a30004f389ca41238b8ed5b4d2367322fb2a4615958f5325",
-      "verifiedAt": "2026-10-17T20:51:45.494Z",
-      "confidence": 0.93,
-      "assignees": [
-        "hawkticehurst"
-      ]
-    },
-    {
-      "number": 331455,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 328393,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed captures. This matches https://github.com/microsoft/vscode/issues/328393, which already tracks missing foreground-model chat spans while gpt-4o-mini utility spans continue to arrive. The additional evidence here is the Windows reproduction across GPT-5 and Claude on Copilot Chat 0.61.0/0.62.0, plus confirmation that hooks and transcripts lack the needed usage data and that xiufengsun/TokenTracker#527 (https://github.com/xiufengsun/TokenTracker/pull/527) only improves discovery and deduplication, not missing telemetry emission.",
-      "reviewedAt": "2026-10-16T05:35:57.673Z",
-      "contentHash": "02877706850f96ece7d3f689d7020f12bb2bf57ada1bc0152458d7f8d90b131b",
-      "verifiedAt": "2026-10-18T11:51:30.973Z",
-      "confidence": 0.95,
-      "assignees": [
-        "dmitrivMS",
-        "zhichli"
-      ]
-    },
-    {
-      "number": 330713,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 327586,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The repeated delivery after the first execution completes is already tracked in https://github.com/microsoft/vscode/issues/327586. This report adds useful reproduction details: heavy queuing on WSL2, approximately six occurrences in one session, and a second delivery whose attachment reference uses `wsl__ubuntu` and fails with ENOENT. Those details should remain part of the investigation there.",
-      "reviewedAt": "2026-10-12T13:08:22.372Z",
-      "contentHash": "1ede01079a2832a8119b6f47b815129895adb25820298548c2715c17a4387e0d",
-      "verifiedAt": "2026-10-18T11:51:27.522Z",
-      "confidence": 0.9,
-      "assignees": [
-        "anthonykim1"
-      ]
-    },
-    {
-      "number": 330417,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 326082,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The missing TODO checklist is tracked in https://github.com/microsoft/vscode/issues/326082, where TODO tools run without displaying the checklist. This report adds the Windows/GPT-5.6 Luna scenario and the useful comparison that the checklist appears with the Local harness.",
-      "reviewedAt": "2026-10-17T14:25:19.155Z",
-      "contentHash": "e42631b7713e69b6b494b5473ab9fa1bfabe4de6c797071f245cdd4b79e9ef8c",
-      "verifiedAt": "2026-10-17T14:28:12.403Z",
-      "confidence": 0.93,
-      "assignees": [
-        "jo-oikawa"
-      ]
-    },
-    {
-      "number": 330184,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 132872,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/132872: launching VS Code in separate RDP sessions under the same Windows account opens the window in the already-running session. Your reproduction on Windows Server 2019 and 2025 with `fSingleSessionPerUser=0`, using the Start Menu in VS Code 1.132.0, provides additional confirmation for that issue.",
-      "reviewedAt": "2026-10-11T18:27:08.652Z",
-      "contentHash": "ec31749442fd4f077ce0ad4e5c52eff4d048823fc46581b2951611a22125f22b",
-      "verifiedAt": "2026-10-18T11:51:18.078Z",
-      "confidence": 0.96,
-      "assignees": [
-        "deepak1556"
-      ]
-    },
-    {
-      "number": 329561,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 157275,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The missing remote VS Code IPC socket error is tracked in https://github.com/microsoft/vscode/issues/157275, which also includes Python browser-opening failures. This report adds the LangGraph development trigger after updating to VS Code 1.132.0, with Windows connecting to Ubuntu and an ENOENT error under /run/user/4100/.",
-      "reviewedAt": "2026-10-12T13:05:32.740Z",
-      "contentHash": "0736e981e3390144f5edc52f64fefeb2f323a889a6a05c636308fa33d875e23d",
-      "verifiedAt": "2026-10-18T11:51:09.459Z",
-      "confidence": 0.87,
       "assignees": []
     },
     {
-      "number": 329164,
+      "number": 346260,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 310807,
+        "canonical": 341514,
         "kind": "peer"
       },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/310807 already tracks Agent Skills support for the same Source Control Review Changes action, including uncommitted changes. This report adds useful parity context from GitHub code review's Agent Skills support: https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/.",
-      "reviewedAt": "2026-10-17T15:24:21.517Z",
-      "contentHash": "a7df1f4aa84313d503d9cfb81d8597cbcd00e3104c60cfa79c06abd70a44924e",
-      "verifiedAt": "2026-10-17T15:34:11.520Z",
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/341514, which tracks the same thinking-signature failure and already includes an Amazon Bedrock confirmation. Your Windows 11 / VS Code 1.145.0 reproduction and successful proxy workaround using `anthropic_beta: [\"thinking-binding-controls-2026-08-01\"]` with `thinking.block_binding.prefix_mismatch_behavior: \"drop_block\"` add useful Bedrock-specific evidence to that investigation.",
+      "reviewedAt": "2026-11-05T16:20:14.468Z",
+      "contentHash": "597b9cacef28d2a2bf10ae831f4efd007d29c9dd2048399742eace147961eb93",
+      "verifiedAt": "2026-11-05T16:44:19.724Z",
       "confidence": 0.96,
       "assignees": [
+        "hediet"
+      ]
+    },
+    {
+      "number": 346219,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 342764,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This is the same bootstrap failure tracked in https://github.com/microsoft/vscode/issues/342764 for tcsh. This report additionally confirms /bin/csh on build a717861c07586a53d83b80d742cd3f59b20a6273 and documents that changing the login shell is not an acceptable workaround in a managed environment; both cases need the bootstrap to run under a compatible shell.",
+      "reviewedAt": "2026-11-05T16:23:17.128Z",
+      "contentHash": "da6ad162d96e9a38416475e828bb122256510e8f3deb5caf99e6dfd8724a462e",
+      "verifiedAt": "2026-11-05T16:43:58.470Z",
+      "confidence": 0.96,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 346175,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 305853,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/305853 already tracks exposing conversation identity and an optional request ID to language model providers. This report adds per-chat routing, consistent tier choices, and prompt-cache affinity as concrete use cases for that API.",
+      "reviewedAt": "2026-11-05T16:24:05.499Z",
+      "contentHash": "e7dca29444aa59aa066c391fd2213f84890fd797585b218d66ee8e360b318467",
+      "verifiedAt": "2026-11-05T16:43:57.537Z",
+      "confidence": 0.97,
+      "assignees": [
         "benvillalobos"
+      ]
+    },
+    {
+      "number": 346097,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345262,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the implementation details. https://github.com/microsoft/vscode/issues/345262 already tracks this installation support, including the Copilot Agent Host harness, transport selection, inputs, and secrets. Carrying forward the runtime-plan details here: use requiredValues and secretPlaceholders, honor recommendedTransportChoiceId, and match confirmation against the values actually supplied while retaining the direct-card fallback's fail-closed behavior.",
+      "reviewedAt": "2026-11-05T16:27:47.264Z",
+      "contentHash": "af669efdd408aaad0300253ccf5f0104dc2373c248b4110cd5379f52b0caa057",
+      "verifiedAt": "2026-11-05T16:43:25.404Z",
+      "confidence": 0.97,
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
+      "number": 346072,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345420,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/345420: Copilot's changed-file preview fails for existing remote Linux files with backslash paths, while Source Control diffs work. This report additionally confirms WSL Ubuntu 24.04 on VS Code 1.145.0, with the failure persisting after Reload Window.",
+      "reviewedAt": "2026-11-05T16:29:38.178Z",
+      "contentHash": "647cb1332a5308660affb429841dbd6e52979350f7370d0af9602aad67f41d58",
+      "verifiedAt": "2026-11-05T16:43:24.650Z",
+      "confidence": 0.94,
+      "assignees": [
+        "bhavyaus"
+      ]
+    },
+    {
+      "number": 343471,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 333447,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs. This matches the remote-path handling tracked in https://github.com/microsoft/vscode/issues/333447. This report adds macOS, WSL, and Dev Containers confirmations, plus an important distinction: clicking the filename fails, while the adjacent “Open Changes in the Diff Editor” action works as a workaround. Those details should be retained in the consolidated investigation.",
+      "reviewedAt": "2026-11-05T16:34:12.302Z",
+      "contentHash": "f29c05cb034de9b2bdc2f219f363bb8a4c47de3967aff3fc529447262b74c912",
+      "verifiedAt": "2026-11-05T16:42:13.732Z",
+      "confidence": 0.9,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
+      "number": 342001,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 340493,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This matches the Agent Host account-selection problem tracked in https://github.com/microsoft/vscode/issues/340493. This report adds the Claude harness case: its Copilot group is empty despite the preferred work account working in Local, and signing out of the other account restores the models.",
+      "reviewedAt": "2026-11-05T16:35:17.615Z",
+      "contentHash": "e42273d3ca7ebad01832e4b10ec725dd5a310143ac0c0c9c63418d724284763f",
+      "verifiedAt": "2026-11-05T16:41:58.434Z",
+      "confidence": 0.92,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 340707,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 340489,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report and sanitized logs. https://github.com/microsoft/vscode/issues/340489 tracks the same Agent Host high CPU and repeated sourceUnresolvable retries, with investigation covering both Claude and Copilot CLI sessions. Consolidating there preserves this report's macOS observations and mixed-provider retry evidence.",
+      "reviewedAt": "2026-11-05T16:35:16.781Z",
+      "contentHash": "fc9fe1c71c5d60fad100cad364ef2d5ae2e95aaf8b9ec8216a42872d2ba2929f",
+      "verifiedAt": "2026-11-05T16:41:48.193Z",
+      "confidence": 0.94,
+      "assignees": [
+        "roblourens"
       ]
     },
     {
