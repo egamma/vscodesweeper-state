@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-04T16:53:09.239Z",
+  "generatedAt": "2026-11-05T08:35:04.589Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -238,22 +238,6 @@
       ]
     },
     {
-      "number": 343471,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 333447,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and detailed URI traces. This matches https://github.com/microsoft/vscode/issues/333447: opening a changed-file entry resolves the remote working-tree file against the local filesystem, while Explorer and Quick Open work. This report adds macOS trace evidence and confirmations from WSL and dev containers to that investigation.",
-      "reviewedAt": "2026-11-04T16:24:09.295Z",
-      "contentHash": "6e1f147b4eb5335f3e4464e9845361a6e0f0c4dfc803b363a4f22fa89260a64a",
-      "verifiedAt": "2026-11-04T16:43:55.838Z",
-      "confidence": 0.94,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
       "number": 343154,
       "lane": "duplicate",
       "evidence": {
@@ -331,22 +315,6 @@
       "confidence": 0.96,
       "assignees": [
         "osortega"
-      ]
-    },
-    {
-      "number": 342001,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 340493,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This is another case of the Agent Host account-preference problem tracked in https://github.com/microsoft/vscode/issues/340493. The additional case to retain there is Claude showing no Copilot models while Local works with the selected Enterprise account, with models restored after signing out of the personal account and restarting.",
-      "reviewedAt": "2026-10-22T14:10:08.903Z",
-      "contentHash": "b6cccf76c4c9cc8152a3122d98d846df092be3764897ad18564a927fcacf8d9a",
-      "verifiedAt": "2026-10-22T14:35:30.265Z",
-      "confidence": 0.87,
-      "assignees": [
-        "TylerLeonhardt"
       ]
     },
     {
