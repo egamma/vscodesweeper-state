@@ -49,6 +49,6 @@ A *ready to plan* row's button copies the plan skill's call:
 - Skill doesn't trigger → name it explicitly ("sweeper-implement skill" / "sweeper-plan skill"); restart Copilot CLI after the checkout gains them (skills load at session start).
 - "Not agent-ready" refusal → the review found no brief to work from; check the record for what it concluded instead.
 - "Needs a plan first" refusal → a *plan* record reached `sweeper-implement` without a plan file in this checkout; run `/sweeper-plan <n>` first, in the same session.
-- Skills not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` and `.github/skills/sweeper-plan/SKILL.md` (pull a recent `main`); on an older checkout, copy the generated [sweeper-implement](https://egamma.github.io/vscodesweeper-state/skill/sweeper-implement/SKILL.md) and [sweeper-plan](https://egamma.github.io/vscodesweeper-state/skill/sweeper-plan/SKILL.md) SKILL.md files into `~/.copilot/skills/<name>/` or `~/.claude/skills/<name>/`.
+- Skills not found → check the checkout has `.github/skills/sweeper-implement/SKILL.md` and `.github/skills/sweeper-plan/SKILL.md` (pull a recent `main`); on an older checkout, copy the generated [sweeper-implement](https://github.com/egamma/vscodesweeper-state/blob/main/skill/sweeper-implement/SKILL.md) and [sweeper-plan](https://github.com/egamma/vscodesweeper-state/blob/main/skill/sweeper-plan/SKILL.md) SKILL.md files into `~/.copilot/skills/<name>/` or `~/.claude/skills/<name>/`.
 
-_sweeper agent skills v7 · generated 2026-11-05 17:07 UTC._
+_sweeper agent skills v7 · generated 2026-11-05 21:06 UTC._

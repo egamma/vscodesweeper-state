@@ -7,7 +7,7 @@ State repository for [vscodesweeper](https://github.com/egamma/vscodesweeper) �
 - **`state` branch** — the review ledger: one Markdown record per reviewed issue under `records/<owner>/<repo>/items/<n>.md` (YAML frontmatter with the verdict, then evidence, reasoning and the proposed comment), plus `meta/sweep-log.jsonl`, one line per nightly run.
 - **`main` branch** — the published artifacts: the JSON data contracts the VS Code team's internal tooling (vscode-tools) renders (`targets.json`, `index-<repo>.json`, `report-adoption[-<repo>].json`, `report-verdicts.json`), the public review policy under `policy/`, the agent skills under `skill/` with their getting-started page, and frozen evidence snapshots under `evidence/`.
 
-The dashboard and report pages that used to be served from this repository's GitHub Pages site retired on 2026-10-10; their paths serve a short notice. The surface is now vscode-tools, which is team-internal.
+The dashboard and report pages that used to be served from this repository's GitHub Pages site retired on 2026-10-10, and the Pages site itself was switched off on 2026-11-05. The surface is now vscode-tools, which is team-internal.
 
 ## How to read a record
 
