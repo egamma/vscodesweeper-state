@@ -1,16 +1,543 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-06T18:26:47.192Z",
+  "generatedAt": "2026-11-06T19:04:18.900Z",
   "policy": {
     "lanes": [
-      "duplicate"
+      "duplicate",
+      "implemented"
     ],
     "excludeAssignees": [
       "aiday-mar"
     ],
-    "unassignedOnly": false,
+    "unassignedOnly": true,
     "includeAssignees": []
   },
-  "candidates": []
+  "candidates": [
+    {
+      "number": 326521,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "ac067516e30a1fd5e4fde1dd9dab1e8f9df32a84",
+        "fixedRelease": "1.137.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/ac067516e30a1fd5e4fde1dd9dab1e8f9df32a84"
+      },
+      "comment": "Thanks for the request. This was implemented in https://github.com/microsoft/vscode/commit/ac067516e30a1fd5e4fde1dd9dab1e8f9df32a84: the Agents Window workspace picker now offers a workspace-less chat choice, currently labeled Chat. With `sessions.chat.unifiedWorkspacePicker.enabled` enabled and a supported local provider available, select Chat to start without choosing a folder or repository. The fix shipped in 1.137.0.",
+      "reviewedAt": "2026-10-13T00:02:58.777Z",
+      "contentHash": "fb980d30fd4b57130f27ea5413177a589eea63c9d2970d55b3816476a7e1063e",
+      "verifiedAt": "2026-10-16T20:07:16.174Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 322481,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "45d531aafdcf4d5c73316187ee539406e0b0c08c",
+        "fixedRelease": "1.141.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/45d531aafdcf4d5c73316187ee539406e0b0c08c"
+      },
+      "comment": "Thanks for the report. Markdown preview now preserves non-line fragments such as #page=3 when opening files, fixed in https://github.com/microsoft/vscode/commit/45d531aafdcf4d5c73316187ee539406e0b0c08c. A PDF viewer that honors the fragment can open the requested page; tomoki1207.pdf does not currently read it. The separate relative-link Ctrl+click problem in the Markdown source editor remains tracked in https://github.com/microsoft/vscode/issues/338920. The fix shipped in 1.141.0.",
+      "reviewedAt": "2026-10-12T21:43:57.452Z",
+      "contentHash": "713b6197978a40f0cde442adf3860d80ba5079932403c5ba82d0a9c54f24d7d9",
+      "verifiedAt": "2026-10-16T20:05:55.596Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 321420,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cfb41fb5662b5c2a096e675720ed811409ea9ded",
+        "fixedRelease": "1.126.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cfb41fb5662b5c2a096e675720ed811409ea9ded"
+      },
+      "comment": "Thanks for the report. The default-context mismatch was addressed in https://github.com/microsoft/vscode/commit/cfb41fb5662b5c2a096e675720ed811409ea9ded: the model picker's default context size now reaches the request configuration instead of falling back to the full model window. Selecting 200K should therefore no longer retain the 936000-token prompt budget described here. The fix shipped in 1.126.0.",
+      "reviewedAt": "2026-10-12T23:50:58.024Z",
+      "contentHash": "44eba33e162ff0d5f87d83cacaf17d91bb4d52de736b19d42c9e95bc9f45c664",
+      "verifiedAt": "2026-10-16T20:05:14.540Z",
+      "confidence": 0.88,
+      "assignees": []
+    },
+    {
+      "number": 317750,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "5bd54fc0b4223ba8cf37b4ac4a55e15581d23485",
+        "fixedRelease": "1.122.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/5bd54fc0b4223ba8cf37b4ac4a55e15581d23485"
+      },
+      "comment": "Thanks for the report. The staging-directory extraction failure linked in the discussion was fixed in https://github.com/microsoft/vscode/commit/5bd54fc0b4223ba8cf37b4ac4a55e15581d23485: the installer now skips the archive's bare top-level directory instead of rejecting its parent as outside the extraction root. Please update VS Code Insiders and retry the connection. The fix shipped in 1.122.0.",
+      "reviewedAt": "2026-10-12T23:08:41.314Z",
+      "contentHash": "5b8794212186209c174a0fb75bf410d8ed50e9a1718c85f687c86a5516703e32",
+      "verifiedAt": "2026-10-16T20:04:16.986Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 316157,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d707e949d9f0c4e342d7ceefb1e7ef1972f51b16",
+        "fixedRelease": "1.140.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d707e949d9f0c4e342d7ceefb1e7ef1972f51b16"
+      },
+      "comment": "Thanks for the usability context. The Agents Window now shows the active worktree branch beside the workspace name in the command center, alongside a worktree icon, implemented in https://github.com/microsoft/vscode/commit/d707e949d9f0c4e342d7ceefb1e7ef1972f51b16. This addresses the persistent orientation indicator requested here; the separate missing “Worktree created” confirmation remains tracked in https://github.com/microsoft/vscode/issues/337959. The fix shipped in 1.140.0.",
+      "reviewedAt": "2026-10-12T23:03:13.291Z",
+      "contentHash": "f2a5590716b2d86c66848aa712155234221aa55c72f218285182d210e85fed60",
+      "verifiedAt": "2026-10-16T20:03:39.864Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 315161,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "eb308be4f9d2ce27a4117d84b7a789d90dd6cd62",
+        "fixedRelease": "1.123.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/eb308be4f9d2ce27a4117d84b7a789d90dd6cd62"
+      },
+      "comment": "Thanks for the report. This large-session serialization failure was addressed in https://github.com/microsoft/vscode/commit/eb308be4f9d2ce27a4117d84b7a789d90dd6cd62: saving now retries after the string-length error, replacing oversized persisted values with truncation markers rather than losing the entire session. Closing as completed. The fix shipped in 1.123.0.",
+      "reviewedAt": "2026-10-12T23:00:26.515Z",
+      "contentHash": "296f97d24d5f23a8652dcd328c8972bd595e8027daf54cf9e58c5f721a745e1e",
+      "verifiedAt": "2026-10-16T20:03:00.922Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 313025,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "ea8e43b23fd8812b123f139de25209f8705945ad",
+        "fixedRelease": "1.124.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/ea8e43b23fd8812b123f139de25209f8705945ad"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/ea8e43b23fd8812b123f139de25209f8705945ad: with `\"workbench.editor.useModal\": \"off\"`, `aiCustomization.openManagementEditor` now opens Customizations in an editor group rather than forcing a modal. Closing as completed. The fix shipped in 1.124.0.",
+      "reviewedAt": "2026-10-12T22:57:59.400Z",
+      "contentHash": "175d3527bcb26f373b1bae950c91a2db03a0451e90e7bb4988e22c08945c15d5",
+      "verifiedAt": "2026-10-16T20:02:01.159Z",
+      "confidence": 0.95,
+      "assignees": []
+    },
+    {
+      "number": 312544,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "92f548bcc17b17750f9514b96714a6e120d79bf6",
+        "fixedRelease": "1.119.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/92f548bcc17b17750f9514b96714a6e120d79bf6"
+      },
+      "comment": "Thanks for the request. This was implemented in https://github.com/microsoft/vscode/pull/312545 by https://github.com/microsoft/vscode/commit/92f548bcc17b17750f9514b96714a6e120d79bf6: markdown customizations have structured metadata with field help, a formatted body, and Edit/View Raw/Preview switching. Enable `chat.customizations.structuredPreview.enabled` to use it; the setting is currently off by default. The fix shipped in 1.119.0.",
+      "reviewedAt": "2026-10-12T22:54:34.068Z",
+      "contentHash": "3cb62be5c77711c024ee4ef4bf1e917a172b437f2f99d912d6bf6cdb33fea317",
+      "verifiedAt": "2026-10-16T20:01:30.134Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 309300,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "eb308be4f9d2ce27a4117d84b7a789d90dd6cd62",
+        "fixedRelease": "1.123.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/eb308be4f9d2ce27a4117d84b7a789d90dd6cd62"
+      },
+      "comment": "Thanks for the report. The `Invalid string length` failure while saving chat sessions was addressed in https://github.com/microsoft/vscode/commit/eb308be4f9d2ce27a4117d84b7a789d90dd6cd62: saving now retries with oversized stored values truncated instead of abandoning the session save. This can be closed as completed; the separate fatal renderer-OOM problem remains tracked at https://github.com/microsoft/vscode/issues/340982. The fix shipped in 1.123.0.",
+      "reviewedAt": "2026-10-12T22:52:05.128Z",
+      "contentHash": "b4524bf776a180117543d22e4f5adf7bc8de0345759d6f5caaea3b2807b04cfb",
+      "verifiedAt": "2026-10-16T20:00:27.530Z",
+      "confidence": 0.91,
+      "assignees": []
+    },
+    {
+      "number": 297270,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "17e938946e06326658d2a1b884a57b75f0d4fd2f",
+        "fixedRelease": "1.111.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/17e938946e06326658d2a1b884a57b75f0d4fd2f"
+      },
+      "comment": "Thanks for the feedback. The Committed indicators were removed from Chat Customizations in https://github.com/microsoft/vscode/commit/17e938946e06326658d2a1b884a57b75f0d4fd2f, leaving source-control status to the SCM view. This addresses the requested cleanup. The fix shipped in 1.111.0.",
+      "reviewedAt": "2026-10-12T22:43:44.115Z",
+      "contentHash": "677f1db0444dacceb2307d07b8b8f3580b0f731e5378afc4162c5a7fa8ad5e58",
+      "verifiedAt": "2026-10-16T19:56:00.673Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 296944,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "1e6a57bfb4aee9999650a37618d29e1352bb7d91",
+        "fixedRelease": "1.113.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/1e6a57bfb4aee9999650a37618d29e1352bb7d91"
+      },
+      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/1e6a57bfb4aee9999650a37618d29e1352bb7d91: Ask and other customizations supplied by Copilot now appear under \"Built-in\" rather than \"Extensions\", while remaining available to inspect. The fix shipped in 1.113.0.",
+      "reviewedAt": "2026-10-12T22:41:02.656Z",
+      "contentHash": "fe4a58e5e6ec32a482659e0d9fed8ece66413ada31508b16e4cf4eadfcbcac80",
+      "verifiedAt": "2026-10-16T19:55:47.089Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 291519,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "0561e9e261001dfa8dbac42da80dd055e2f88242",
+        "fixedRelease": "1.110.1",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/0561e9e261001dfa8dbac42da80dd055e2f88242"
+      },
+      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/0561e9e261001dfa8dbac42da80dd055e2f88242: the agent status indicator now uses its own theme color, `agentStatusIndicator.background`, so starting debugging no longer changes the status badge's background through the command center's debug color. The fix shipped in 1.110.1.",
+      "reviewedAt": "2026-10-12T22:34:43.975Z",
+      "contentHash": "866a955fb31942b7a10f508304d835d35ef15d84aadc8830a27389a2eade2e43",
+      "verifiedAt": "2026-10-16T19:53:43.505Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 270138,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "721e49963985583e624a5d47d26b909c1dd909b9",
+        "fixedRelease": "1.133.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/721e49963985583e624a5d47d26b909c1dd909b9"
+      },
+      "comment": "Thanks for flagging this. The linked policy-source introspection was removed in https://github.com/microsoft/vscode/commit/721e49963985583e624a5d47d26b909c1dd909b9: Developer: Policy Diagnostics now uses the typed getPolicyValueSource API instead of any casts and constructor-name/private-field inspection. This addresses the specific block reported here. The fix shipped in 1.133.0.",
+      "reviewedAt": "2026-10-12T22:10:16.409Z",
+      "contentHash": "57ff690413a6de0403b75b5f20b25e0f9cf606a2cff6198d10a5e417bc7b6063",
+      "verifiedAt": "2026-10-16T19:49:10.870Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 270031,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "c2c9b0de15098235d2addf24dd5c2478f4460735",
+        "fixedRelease": "1.119.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/c2c9b0de15098235d2addf24dd5c2478f4460735"
+      },
+      "comment": "Thanks for the suggestion. Fun working messages were added in https://github.com/microsoft/vscode/commit/c2c9b0de15098235d2addf24dd5c2478f4460735: chat now rotates progress phrases and occasionally shows playful messages such as “Reticulating splines” and “Mining diamonds.” You can also customize the phrases with `chat.agent.thinking.phrases`, so this request can be closed as completed. The fix shipped in 1.119.0.",
+      "reviewedAt": "2026-10-12T18:57:12.806Z",
+      "contentHash": "a3c9989c049c3514c1d61f773c46ea16cabb20cc046092be03f88ec8e55923f2",
+      "verifiedAt": "2026-10-16T19:48:48.690Z",
+      "confidence": 0.93,
+      "assignees": []
+    },
+    {
+      "number": 254526,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d72d6a24245db6cc9d80988f7cda1305a385037c",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d72d6a24245db6cc9d80988f7cda1305a385037c"
+      },
+      "comment": "Thanks for the report. This was resolved by https://github.com/microsoft/vscode/commit/d72d6a24245db6cc9d80988f7cda1305a385037c, which replaced source parsing with exported policy data and removed the duplicated-description workaround linked to this issue. Settings can use `markdownDescription` without a setting-level `description`; administrative policy text is supplied separately through `policy.localization.description`. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-12T22:06:03.723Z",
+      "contentHash": "a740934febe022cee2d62f6025aaee031ccfcaba526cd3be18ecf0f526c6bae6",
+      "verifiedAt": "2026-10-16T19:46:59.786Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 251621,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cb9e1165f2bf74663457c12a1b9ec1c596207d61",
+        "fixedRelease": "1.111.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cb9e1165f2bf74663457c12a1b9ec1c596207d61"
+      },
+      "comment": "Thanks for the request. Direct approval is now implemented: https://github.com/microsoft/vscode/commit/cb9e1165f2bf74663457c12a1b9ec1c596207d61 makes the OS notification's Allow action approve a pending tool confirmation without bringing the VS Code window forward. Notifications are controlled by `chat.notifyWindowOnConfirmation`, and approval is available where the OS supports notification action buttons. This request can be closed as completed; the remaining multiple-confirmation behavior is tracked in https://github.com/microsoft/vscode/issues/334809. The fix shipped in 1.111.0.",
+      "reviewedAt": "2026-10-12T19:16:15.255Z",
+      "contentHash": "8753454e7a1ba916c9f362ef4cacd57af81762d53ae56374cbe2db27c0002dde",
+      "verifiedAt": "2026-10-16T19:46:52.280Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 249904,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "657601215027277115e422f62f82790aca047adc",
+        "fixedRelease": "1.110.1",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/657601215027277115e422f62f82790aca047adc"
+      },
+      "comment": "Thanks for the request. Built-in terminal notifications were added in https://github.com/microsoft/vscode/commit/657601215027277115e422f62f82790aca047adc. With `terminal.integrated.enableNotifications` enabled (the default), your command or completion hook can run `printf '\\033]99;;Task complete\\033\\\\'` in the integrated terminal, including inside a Dev Container, to display a VS Code notification. This provides the requested terminal-to-VS Code notification path. The fix shipped in 1.110.1.",
+      "reviewedAt": "2026-10-12T18:59:21.510Z",
+      "contentHash": "494205236bd97f016ccf619bc9d7fb38d74a7d40c3bf4862910d6b4c1e8052cb",
+      "verifiedAt": "2026-10-16T19:46:22.414Z",
+      "confidence": 0.91,
+      "assignees": []
+    },
+    {
+      "number": 226465,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "2c35b6a4da4306a10d3ecb52625f72115417e375",
+        "fixedRelease": "1.98.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/2c35b6a4da4306a10d3ecb52625f72115417e375"
+      },
+      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/2c35b6a4da4306a10d3ecb52625f72115417e375: Web-only publishing no longer waits for the unselected CompileCLI stage. Select VSCODE_BUILD_WEB=true and disable the native build target parameters to run a Web-only product build. The fix shipped in 1.98.0.",
+      "reviewedAt": "2026-10-12T21:15:35.125Z",
+      "contentHash": "3bb42e5848172a9ecef8e228ce9f5c86ee5025baed528bc270e49347e5c7cc05",
+      "verifiedAt": "2026-10-16T19:43:44.559Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 208093,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "dd6118537b9bd89e107ba52bfce8335dadff4d12",
+        "fixedRelease": "1.128.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/dd6118537b9bd89e107ba52bfce8335dadff4d12"
+      },
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/commit/dd6118537b9bd89e107ba52bfce8335dadff4d12 added `workbench.action.focusWindow`, which extensions can invoke with `await vscode.commands.executeCommand('workbench.action.focusWindow')` to bring the current editor window to the foreground, including when another application is active. This provides the requested explicit window-raising capability through a command rather than a new `window.raiseWindow` function; it does not change LSP `showDocument` behavior. The fix shipped in 1.128.0.",
+      "reviewedAt": "2026-10-12T19:22:47.982Z",
+      "contentHash": "303a57cafc672d52ee74849d0471b744292786d29854817c2280708388ce1a0d",
+      "verifiedAt": "2026-10-16T19:43:01.041Z",
+      "confidence": 0.91,
+      "assignees": []
+    },
+    {
+      "number": 199610,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "7a62c886fd9fc2a238e08bde7708298d28921873",
+        "fixedRelease": "1.94.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/7a62c886fd9fc2a238e08bde7708298d28921873"
+      },
+      "comment": "Thanks for the request. Default truncation is implemented, and configurable limits were completed in https://github.com/microsoft/vscode/commit/7a62c886fd9fc2a238e08bde7708298d28921873 and shipped in VS Code 1.94. Set `editor.inlayHints.maximumLength` to your preferred total hint length per line, or `0` to disable truncation. The main request can be closed as completed. Viewport-aware limits, separate per-hint budgets, and automatically showing the full truncated label on hover would be follow-up improvements. The fix shipped in 1.94.0.",
+      "reviewedAt": "2026-10-12T19:45:47.741Z",
+      "contentHash": "6c0524ea3a47475adb62554dde982014027bd6f5659a33f284ba2d6e8e7a191d",
+      "verifiedAt": "2026-10-16T19:41:59.878Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 193094,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "55e8693bda5031b892ece42bb720c4f923297c92",
+        "fixedRelease": "1.140.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/55e8693bda5031b892ece42bb720c4f923297c92"
+      },
+      "comment": "Thanks for the report. Independent selection matching was added in https://github.com/microsoft/vscode/commit/55e8693bda5031b892ece42bb720c4f923297c92: set `editor.selectedTextMatchMode` to `caseSensitive` or `caseInsensitive` to make selection highlights independent of Find's Match Case and Match Whole Word options. Both modes match substrings; the default `findOptions` preserves the previous behavior. This addresses the requested independent configuration. The fix shipped in 1.140.0.",
+      "reviewedAt": "2026-10-12T20:49:28.529Z",
+      "contentHash": "46c7c42f3d7a16e9fc569ea3c6510b99d04d05823b3f43f81dfbbe35fb8bf583",
+      "verifiedAt": "2026-10-16T19:41:23.020Z",
+      "confidence": 0.95,
+      "assignees": []
+    },
+    {
+      "number": 187756,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "0f5be7c29fc276f70cfd4cf4140079aaef649823",
+        "fixedRelease": "1.88.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/0f5be7c29fc276f70cfd4cf4140079aaef649823"
+      },
+      "comment": "Thanks for the report. The agreed “falsy yields the floor” behavior was implemented in https://github.com/microsoft/vscode/commit/0f5be7c29fc276f70cfd4cf4140079aaef649823: a decoration with no color can contribute its badge and tooltip while another provider’s defined color, including Git’s, remains visible on files and collapsed folders. This resolves the original request without needing explicit decoration priorities. The fix shipped in 1.88.0.",
+      "reviewedAt": "2026-10-12T20:21:41.830Z",
+      "contentHash": "7a8c7b339f0aa65097161b0f882748c8ecc80a6184acaf17e01edf73447077f2",
+      "verifiedAt": "2026-10-16T19:41:05.771Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 165741,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "04fbbf26c0ddba277c9e4bbad2828ff7a561cbed",
+        "fixedRelease": "1.74.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/04fbbf26c0ddba277c9e4bbad2828ff7a561cbed"
+      },
+      "comment": "Thanks for the context. This separation was implemented in https://github.com/microsoft/vscode/pull/165743 by https://github.com/microsoft/vscode/commit/04fbbf26c0ddba277c9e4bbad2828ff7a561cbed: cell content renders synchronously, while title and insert toolbars render in the next animation frame. That architecture remains in place, so this cleanup can be closed as completed. The fix shipped in 1.74.0.",
+      "reviewedAt": "2026-10-12T20:38:10.141Z",
+      "contentHash": "8401bb9cb3f5d9f2273559526cf68a218874b2a3cac498d4b65b8a0f991ca9ad",
+      "verifiedAt": "2026-10-16T19:39:29.406Z",
+      "confidence": 0.97,
+      "assignees": []
+    },
+    {
+      "number": 164593,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "dcebed3cb20e2ead9f57259a2430af612c5e5af9",
+        "fixedRelease": "1.76.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/dcebed3cb20e2ead9f57259a2430af612c5e5af9"
+      },
+      "comment": "Thanks for the context. The timeout-based experiment was implemented in https://github.com/microsoft/vscode/commit/dcebed3cb20e2ead9f57259a2430af612c5e5af9 via https://github.com/microsoft/vscode/pull/171769. Enabling `extensions.experimental.deferredStartupFinishedActivation` schedules `onStartupFinished` activation through a timeout; the setting remains opt-in and defaults to false. Closing this experiment as completed. The fix shipped in 1.76.0.",
+      "reviewedAt": "2026-10-12T14:49:02.309Z",
+      "contentHash": "2787977d7232f634fcc2080293367741832908c2d26416b6dcfce24487b9066b",
+      "verifiedAt": "2026-10-16T19:39:13.579Z",
+      "confidence": 0.97,
+      "assignees": []
+    },
+    {
+      "number": 144716,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "4e68b628ea4444bca3ed1b7d4080bf1e880ca8d7",
+        "fixedRelease": "1.101.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/4e68b628ea4444bca3ed1b7d4080bf1e880ca8d7"
+      },
+      "comment": "Thanks for the request. This is now supported by https://github.com/microsoft/vscode/commit/4e68b628ea4444bca3ed1b7d4080bf1e880ca8d7: keep `window.titleBarStyle` set to `native`, set `window.menuStyle` to `custom`, and fully restart VS Code. Then set `window.menuBarVisibility` to `compact` or uncheck **View > Appearance > Show Menu Bar** to show the hamburger menu in the activity bar. The menu-style setting also switches context menus to the custom style. The fix shipped in 1.101.0.",
+      "reviewedAt": "2026-10-12T18:39:40.517Z",
+      "contentHash": "4689449f33df481d6f4a0e1e0fc64f0591bea63f67c8dd70bc869f8e3e09732c",
+      "verifiedAt": "2026-10-16T19:38:21.260Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 144204,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "b5bd304ac8596cba829b8fa6b2307486dcbf3975",
+        "fixedRelease": "1.91.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/b5bd304ac8596cba829b8fa6b2307486dcbf3975"
+      },
+      "comment": "Thanks for the report and the clarification about Azure ML latency. Saving feedback was added in https://github.com/microsoft/vscode/commit/b5bd304ac8596cba829b8fa6b2307486dcbf3975: a notebook save that takes longer than three seconds now shows saving progress in the status bar, continuing through serialization and writing. This addresses the missing-feedback request; remote notebook saving performance is separately tracked in https://github.com/microsoft/vscode/issues/172345. The fix shipped in 1.91.0.",
+      "reviewedAt": "2026-10-12T20:33:06.112Z",
+      "contentHash": "00f75759562090375a8584f33af90920cf61af303f603c151bc5144878406b60",
+      "verifiedAt": "2026-10-16T19:38:17.397Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 143736,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "8749fe9658ed81018b69e15489a5d2d460d1c5f1",
+        "fixedRelease": "1.129.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/8749fe9658ed81018b69e15489a5d2d460d1c5f1"
+      },
+      "comment": "Thanks for the report. This is now addressed by https://github.com/microsoft/vscode/commit/8749fe9658ed81018b69e15489a5d2d460d1c5f1: Refactor Preview checkboxes no longer receive individual Tab stops, including after the tree refreshes, so Tab can move to Apply and Discard. Tree rows retain their checkbox role, and Space still toggles the focused change. The fix shipped in 1.129.0.",
+      "reviewedAt": "2026-10-12T20:01:50.512Z",
+      "contentHash": "566e4b9b72a6ace095003efa9871abfa972d47d523ca638d83610e975bcd863b",
+      "verifiedAt": "2026-10-16T19:38:04.497Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 68555,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "6a356716709a9bd3b4e2116226b5e0e76c0b877f",
+        "fixedRelease": "1.44.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/6a356716709a9bd3b4e2116226b5e0e76c0b877f"
+      },
+      "comment": "Thanks for the report. Explorer now shows “Leading or trailing whitespace detected in file or folder name” when creating or renaming a name such as `reducers `, without requiring a setting. This behavior was restored in https://github.com/microsoft/vscode/pull/92221, with the file-and-folder validation implemented in https://github.com/microsoft/vscode/commit/6a356716709a9bd3b4e2116226b5e0e76c0b877f, so the requested warning is covered. The fix shipped in 1.44.0.",
+      "reviewedAt": "2026-10-12T14:19:54.124Z",
+      "contentHash": "b716371b8af656479f4d092c9184533d5a526f0da89a1eee6021e7d244bd2450",
+      "verifiedAt": "2026-10-16T19:36:10.517Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 48153,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "908f34c37dd98bf1e6d88e695cc8b5a4cf0addc0",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/908f34c37dd98bf1e6d88e695cc8b5a4cf0addc0"
+      },
+      "comment": "Thanks for the report and the discussion distinguishing the scrollbar track from its slider. This option was added in https://github.com/microsoft/vscode/commit/908f34c37dd98bf1e6d88e695cc8b5a4cf0addc0: set \"scrollbar.background\" to an opaque color under \"workbench.colorCustomizations\", for example { \"scrollbar.background\": \"#333333\" }. This makes the editor scrollbar track opaque without requiring a minimap; transparency remains the default. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-12T14:59:52.274Z",
+      "contentHash": "295d88f277cfb4e4ad8d4b01de2241184d3d07f60c4d7e407ebb39e67d4aadcf",
+      "verifiedAt": "2026-10-16T19:35:45.635Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 46331,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "79e3994280ff914844114eb9a28a725a4f16780a",
+        "fixedRelease": "1.108.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/79e3994280ff914844114eb9a28a725a4f16780a"
+      },
+      "comment": "Thanks for the request. Scope-specific line heights were added in https://github.com/microsoft/vscode/commit/79e3994280ff914844114eb9a28a725a4f16780a, so the larger-spacing alternative is now supported without changing the file contents. In editor.tokenColorCustomizations.textMateRules, target your grammar's block-boundary scope and set settings.lineHeight to a multiplier such as 2, with editor.allowVariableLineHeights enabled. Horizontal rules are not a TextMate theme property, but an extension can draw them using window.createTextEditorDecorationType. The fix shipped in 1.108.0.",
+      "reviewedAt": "2026-10-12T14:18:30.220Z",
+      "contentHash": "1eda94ec8858e677932d9a0093ce9b5c98c7cdcaa4a32539a5d0e67e1e7ce89e",
+      "verifiedAt": "2026-10-16T19:35:39.905Z",
+      "confidence": 0.91,
+      "assignees": []
+    },
+    {
+      "number": 34757,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "fa758a7cc52429139fb2a5fe5ee91c6182414d81",
+        "fixedRelease": "1.77.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/fa758a7cc52429139fb2a5fe5ee91c6182414d81"
+      },
+      "comment": "Thanks for the request. The dedicated-shortcut option described here was implemented in https://github.com/microsoft/vscode/commit/fa758a7cc52429139fb2a5fe5ee91c6182414d81 via https://github.com/microsoft/vscode/pull/160270: **Remove Brackets** (`editor.action.removeBrackets`, Ctrl+Alt+Backspace on Windows/Linux or Cmd+Alt+Backspace on macOS) removes the matching delimiters while preserving their contents, including when the cursor is before the opening parenthesis in your example. This resolves the original request through its shortcut option. Automatically applying the operation through ordinary Delete or Backspace would be a separate enhancement. The fix shipped in 1.77.0.",
+      "reviewedAt": "2026-10-12T19:04:22.475Z",
+      "contentHash": "a4539c3c47a97f7c0482c9b67a42fe251b5c6ab3e3fbc7783b891b6d737a94d7",
+      "verifiedAt": "2026-10-16T19:35:35.563Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 32811,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cd73b23142c5f9939970d41af04bf760ee74c733",
+        "fixedRelease": "1.74.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cd73b23142c5f9939970d41af04bf760ee74c733"
+      },
+      "comment": "Thanks for the report. Independent tab display width and indentation size were enabled by https://github.com/microsoft/vscode/commit/cd73b23142c5f9939970d41af04bf760ee74c733, merged through https://github.com/microsoft/vscode/pull/155450. Set `editor.tabSize` to `8`, `editor.indentSize` to `4`, `editor.insertSpaces` to `true`, and `editor.detectIndentation` to `false`: existing tabs will display at eight-column tab stops while new indentation uses four spaces. This covers the requested migration workflow, so this can be closed as completed. The fix shipped in 1.74.0.",
+      "reviewedAt": "2026-10-12T18:39:09.783Z",
+      "contentHash": "20a8099399a43176b1e16a1a5df764abeb71c320ff15e6bebea7b4414a4aacb6",
+      "verifiedAt": "2026-10-16T19:35:14.295Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 30925,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "79e3994280ff914844114eb9a28a725a4f16780a",
+        "fixedRelease": "1.108.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/79e3994280ff914844114eb9a28a725a4f16780a"
+      },
+      "comment": "Thanks for the request. Per-token font families were added in https://github.com/microsoft/vscode/commit/79e3994280ff914844114eb9a28a725a4f16780a. You can keep Operator Mono in `editor.fontFamily`, assign Fira Code to the relevant operator scopes through `editor.tokenColorCustomizations.textMateRules` using `settings.fontFamily`, and enable `editor.fontLigatures`. Comments can likewise use a separate font, without Custom CSS and JS Loader. The fix shipped in 1.108.0.",
+      "reviewedAt": "2026-10-12T15:04:22.692Z",
+      "contentHash": "e53d81398c92873fcf4bf433b96fbdf4bc8124eb42b71ba0798f556c3d9548e1",
+      "verifiedAt": "2026-10-16T19:35:19.407Z",
+      "confidence": 0.92,
+      "assignees": []
+    },
+    {
+      "number": 23707,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "79e3994280ff914844114eb9a28a725a4f16780a",
+        "fixedRelease": "1.108.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/79e3994280ff914844114eb9a28a725a4f16780a"
+      },
+      "comment": "Thanks for the request and the examples. This capability was added in https://github.com/microsoft/vscode/commit/79e3994280ff914844114eb9a28a725a4f16780a: themes can set fontFamily in tokenColors rules, and users can set settings.fontFamily in editor.tokenColorCustomizations.textMateRules for specific TextMate scopes while keeping editor.fontFamily as the base font. This covers using different fonts for comments, keywords, or Markdown regions without CSS injection, so this can be closed as completed. The fix shipped in 1.108.0.",
+      "reviewedAt": "2026-10-12T14:27:47.766Z",
+      "contentHash": "082f76d3b37a7a53891cf7b27e0c18e0d7357e93cac4b942ee833eb61840b748",
+      "verifiedAt": "2026-10-16T19:35:11.330Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 18666,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "2d80cb75c4b14e85e17e25b1b2355305f08e9074",
+        "fixedRelease": "1.57.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/2d80cb75c4b14e85e17e25b1b2355305f08e9074"
+      },
+      "comment": "Thanks for the request. Multiple end-of-line decorations are now supported by https://github.com/microsoft/vscode/commit/2d80cb75c4b14e85e17e25b1b2355305f08e9074: each `after` attachment renders separately rather than merging into one element. Separate decoration types with their own `after.contentText` and `after.color` can therefore style the inline name and value independently, so this request can be closed as completed. The fix shipped in 1.57.0.",
+      "reviewedAt": "2026-10-12T14:27:43.757Z",
+      "contentHash": "cef966654d337fad7fb39aae74ba6e4dbfb4a540dd2f289f538a89a06a527434",
+      "verifiedAt": "2026-10-16T19:35:10.813Z",
+      "confidence": 0.94,
+      "assignees": []
+    }
+  ]
 }
