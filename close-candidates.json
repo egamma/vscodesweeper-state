@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-05T21:17:16.847Z",
+  "generatedAt": "2026-11-06T16:23:50.071Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -13,6 +13,116 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 346556,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 344726,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. https://github.com/microsoft/vscode/issues/344726 already tracks this verifier SIGILL and the missing signal/stderr diagnostics. Your Lima/Ubuntu reproduction, strace confirmation, and unsuccessful process-local overrides add useful evidence; signature verification should remain enabled, and the proposed .NET connection still needs confirmation.",
+      "reviewedAt": "2026-11-06T15:50:15.077Z",
+      "contentHash": "117727f00a187a5b823c8c490174fd653b1db5d91f0eff98b6cc72bc577b5748",
+      "verifiedAt": "2026-11-06T16:17:37.861Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 346522,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 309861,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the reasoning-item ID failure tracked in https://github.com/microsoft/vscode/issues/309861, including failures after Auto model selection and retries that cannot recover the conversation. This report adds an occurrence on Windows with VS Code 1.145.1 after Auto switched to GPT-6 Luna, with both new messages and Try Again rejected.",
+      "reviewedAt": "2026-11-06T15:50:52.639Z",
+      "contentHash": "bbe746e649fd305948df61c27946de837f3f9b6ee2f2ed6a4758ccd9f1330091",
+      "verifiedAt": "2026-11-06T16:17:35.230Z",
+      "confidence": 0.94,
+      "assignees": [
+        "dbaeumer"
+      ]
+    },
+    {
+      "number": 346513,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 332085,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/332085, which tracks BYOK models missing from the Copilot harness in WSL and other remote workspaces. Your Debian WSL reproduction on 1.145.2 and the comparison showing successful provider registration but no remote BYOK wiring add useful diagnostic evidence to that issue.",
+      "reviewedAt": "2026-11-06T15:50:52.487Z",
+      "contentHash": "884e80ef22d22920377b8f2708f95e352019332e426449ce527bf8da3acc2060",
+      "verifiedAt": "2026-11-06T16:17:27.783Z",
+      "confidence": 0.97,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
+      "number": 346491,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346473,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This duplicates https://github.com/microsoft/vscode/issues/346473, which already includes the fragmented reasoning blocks, broken formatting, and progressive slowdown during longer reasoning responses. We'll consolidate the investigation there.",
+      "reviewedAt": "2026-11-06T15:52:09.669Z",
+      "contentHash": "f569644b75772970b542a380aca5225db1b3be2c6aeb1d3575350d4039b8b614",
+      "verifiedAt": "2026-11-06T16:17:19.980Z",
+      "confidence": 0.99,
+      "assignees": [
+        "Giuspepe"
+      ]
+    },
+    {
+      "number": 346349,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345575,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the individual-change Undo failure tracked in https://github.com/microsoft/vscode/issues/345575. This report adds Windows and README.md reproduction details on VS Code 1.145.0.",
+      "reviewedAt": "2026-11-06T15:58:16.260Z",
+      "contentHash": "263511feee796b5f29e6b642ce1329b6a7b178db27d1f815656ae4282ec6e3b6",
+      "verifiedAt": "2026-11-06T16:16:59.767Z",
+      "confidence": 0.92,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
+      "number": 346325,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345857,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/345857, which tracks the same Keep error after forking a chat, along with Undo failures. Your screenshot adds a multi-file occurrence on Windows with VS Code 1.145.0.",
+      "reviewedAt": "2026-11-06T15:58:19.714Z",
+      "contentHash": "b129a359a8e08204ea08dc45a21daa602fc60ace235cf77bf9231dc9944b1da3",
+      "verifiedAt": "2026-11-06T16:17:01.031Z",
+      "confidence": 0.96,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 346273,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345420,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/345420: changed-file links in a remote Linux workspace open as local files, producing the file-not-found error and backslash paths. Your Copilot CLI session on WSL Debian13 with Code 1.145.0 adds a specific reproduction, including the incorrect file:///home/... URI instead of vscode-remote://wsl+Debian13/....",
+      "reviewedAt": "2026-11-06T15:59:34.635Z",
+      "contentHash": "34d06eb4bafb585605bf61c1ec876c0677220df3c9774dedfe15577c558dd6e2",
+      "verifiedAt": "2026-11-06T16:16:51.610Z",
+      "confidence": 0.96,
+      "assignees": [
+        "Giuspepe"
+      ]
+    },
     {
       "number": 346260,
       "lane": "duplicate",
@@ -75,6 +185,22 @@
       "confidence": 0.94,
       "assignees": [
         "bhavyaus"
+      ]
+    },
+    {
+      "number": 346065,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338194,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and for checking the workaround. The same Fedora 45 failure when installing any extension is tracked in https://github.com/microsoft/vscode/issues/338194. This thread adds confirmation on VS Code 1.145.0 and two reports that installing `openssl3-libs` restores installation—useful evidence for investigating the package's runtime dependencies.",
+      "reviewedAt": "2026-11-06T16:00:53.387Z",
+      "contentHash": "89db653d0f7c89e999b8170c85347ac3c96bbf87abc388ce80ca999f7afe89a8",
+      "verifiedAt": "2026-11-06T16:16:44.012Z",
+      "confidence": 0.88,
+      "assignees": [
+        "sandy081"
       ]
     },
     {
