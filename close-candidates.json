@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-06T19:28:28.834Z",
+  "generatedAt": "2026-11-07T15:20:19.930Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -12,5 +12,71 @@
     "unassignedOnly": false,
     "includeAssignees": []
   },
-  "candidates": []
+  "candidates": [
+    {
+      "number": 346630,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 288094,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Automatic recovery without manually clicking Retry, while keeping the error visible, is tracked in https://github.com/microsoft/vscode/issues/288094. This report adds the network-interruption case: agents should recover when connectivity returns rather than require each request to be restarted manually.",
+      "reviewedAt": "2026-11-07T14:53:05.636Z",
+      "contentHash": "95b5ee6d95f5647b6dd12ea17c9991006edb28547628229dc2e5b7e6e0ddc882",
+      "verifiedAt": "2026-11-07T15:13:25.510Z",
+      "confidence": 0.88,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 346590,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346579,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This repeats https://github.com/microsoft/vscode/issues/346579, including the Windows 1.145.2 startup steps, logs, and Refresh workaround. That thread also has an independent confirmation, so let's consolidate the investigation there.",
+      "reviewedAt": "2026-11-07T14:54:36.235Z",
+      "contentHash": "6ac165346feb38239ec99f6c3ec75650e6a731b780bbd4cb2d4fb623fe91ce16",
+      "verifiedAt": "2026-11-07T15:13:15.726Z",
+      "confidence": 0.99,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 346242,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346020,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches the Windows/remote changed-file path regression tracked in https://github.com/microsoft/vscode/issues/346020. Linking your WSL launch steps, confirmation across models, slash mismatch between the list and hover, and subsequent trust warning there so those details remain part of the investigation.",
+      "reviewedAt": "2026-11-06T15:59:27.516Z",
+      "contentHash": "414c68354cbecb411cb9f0790d0a3ba10e097c53fb6ad4b2cff9913d713c920a",
+      "verifiedAt": "2026-11-06T16:16:48.004Z",
+      "confidence": 0.94,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 346027,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346023,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the remote changed-file widget problem tracked in https://github.com/microsoft/vscode/issues/346023. This report adds an Arch Linux-to-Debian reproduction on 1.145.0 and confirms that creating the same path locally makes the widget open the local copy; those details should be retained in the investigation.",
+      "reviewedAt": "2026-11-05T16:30:11.993Z",
+      "contentHash": "41cecdd5ec842b3a3fdebec6181dec320ec17019941b265e9bd4e158d9754ab6",
+      "verifiedAt": "2026-11-05T16:43:16.501Z",
+      "confidence": 0.92,
+      "assignees": [
+        "lszomoru",
+        "benibenj"
+      ]
+    }
+  ]
 }
