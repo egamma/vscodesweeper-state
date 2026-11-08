@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-07T21:21:26.053Z",
+  "generatedAt": "2026-11-08T15:16:40.735Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -13,6 +13,54 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 346819,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346164,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/346164 already tracks individual workspace instructions, prompts, and skills selected per chat session without changing their files. This report adds explicit requirements for excluding disabled assets' metadata as well as content, and for multi-root workspace handling; those should be retained in the shared design.",
+      "reviewedAt": "2026-11-08T14:55:38.315Z",
+      "contentHash": "230eaee75f1b5f533d61d64736c298c4f229f2c21ad910a6d2a537d5c492abe7",
+      "verifiedAt": "2026-11-08T15:10:30.061Z",
+      "confidence": 0.94,
+      "assignees": [
+        "rzhao271"
+      ]
+    },
+    {
+      "number": 346786,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346020,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the Windows-to-remote Linux chat file-list navigation problem tracked in https://github.com/microsoft/vscode/issues/346020. This report adds confirmation on 1.145.2 with WSL Ubuntu: direct opening and Open Changes in Diff Editor work, but clicking the file list fails and reloading does not help.",
+      "reviewedAt": "2026-11-08T14:56:39.226Z",
+      "contentHash": "abc3d912d4c0e7abe811019c7d38e7ece3f3d17832c0466090613250f870102a",
+      "verifiedAt": "2026-11-08T15:10:29.658Z",
+      "confidence": 0.93,
+      "assignees": [
+        "ulugbekna"
+      ]
+    },
+    {
+      "number": 346719,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346240,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the streaming-reasoning fragmentation tracked in https://github.com/microsoft/vscode/issues/346240, including reports on 1.145.2. Your confirmations across vLLM, llama.cpp, Basalt, and different models, plus the successful downgrade to 1.144.1, provide additional evidence for that issue.",
+      "reviewedAt": "2026-11-08T14:58:42.342Z",
+      "contentHash": "9e684e4defd1572a5f8f98001119989922727cf4e45628a9b68f0b67050f9ad7",
+      "verifiedAt": "2026-11-08T15:10:22.013Z",
+      "confidence": 0.95,
+      "assignees": [
+        "justschen"
+      ]
+    },
     {
       "number": 346630,
       "lane": "duplicate",
@@ -46,6 +94,22 @@
       ]
     },
     {
+      "number": 346390,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338194,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and the crash logs. This matches https://github.com/microsoft/vscode/issues/338194, which tracks extension installation failing on Fedora 45 without OpenSSL 3 compatibility libraries. This thread adds x64 and ARM64 verifier crashes, including stable 1.145.2 and Insiders, and confirmation that `sudo dnf install openssl3-libs` restores installation; those details should remain part of the investigation there.",
+      "reviewedAt": "2026-11-08T14:59:12.016Z",
+      "contentHash": "b87bc943ddae67a8bdf1f2394104df804bf628bdf4f5ad2eabb0b7579d49b477",
+      "verifiedAt": "2026-11-08T15:10:22.687Z",
+      "confidence": 0.94,
+      "assignees": [
+        "bryanchen-d"
+      ]
+    },
+    {
       "number": 346242,
       "lane": "duplicate",
       "evidence": {
@@ -76,6 +140,22 @@
       "assignees": [
         "lszomoru",
         "benibenj"
+      ]
+    },
+    {
+      "number": 341055,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 307560,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and screenshot. This is the same Keep/Undo toolbar overlap tracked in https://github.com/microsoft/vscode/issues/307560. This report adds a Windows 10 example on VS Code 1.141.0 and a screenshot showing obscured code: https://github.com/microsoft/vscode/issues/341055#issuecomment-6716305651.",
+      "reviewedAt": "2026-11-08T15:00:02.833Z",
+      "contentHash": "e37eac2e8154a24810003c7186e08aa7c0f4b9a4ee5bd3bc22eb853181639685",
+      "verifiedAt": "2026-11-08T15:10:12.625Z",
+      "confidence": 0.96,
+      "assignees": [
+        "hediet"
       ]
     }
   ]
