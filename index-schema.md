@@ -35,7 +35,7 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `fixPr` | string | historical rows only (retired fork lane) | URL of a draft fix PR from the retired fork lane. |
 | `implementPr` | string | historical rows only (retired implement lane) | URL of a draft PR from the retired implement lane. |
 | `lane` | string | on open keep-open rows of the two ranked types | Which ranking the row belongs to. Rows without a lane are not ranked (closed, close proposals, needs-info, other item types). Values: `bugs`, `features`. |
-| `valueRaw` | number | beside `lane` | The UN-normalized value score (demand × severity/breadth, age-damped). Compare only within one assignee × lane; sort with `sort_by(-(.valueRaw // 0))`. |
+| `valueRaw` | number | beside `lane` | The UN-normalized value score (demand × severity/breadth, age-damped). Comparable across assignees WITHIN one lane, never across lanes (features outrank bugs by construction); sort with `sort_by(-(.valueRaw // 0))`. |
 | `upvotes` | number | beside `lane` | 👍 reactions at review time. |
 | `comments` | number | beside `lane` | Comment count at review time. |
 | `severity` | string | bugs lane | The bug's severity class. Values: `crash`, `data-loss`, `freeze`, `perf`, `correctness`, `visual`, `papercut`, `none`. |
@@ -43,6 +43,7 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `infoRequestedAt` | string | on a needs-info row whose request still stands (ISO, or `unknown`) | When the repo's needs-info label was applied. |
 | `infoAnsweredAt` | string | beside `infoRequestedAt`, when the reporter answered but the label is still on | The reporter's first reply after the ask — the issue now waits on the maintainer. |
 | `infoAnsweredBy` | string | beside `infoAnsweredAt` | Who answered. Values: `reporter`. |
+| `autoAskedAt` | string | beside `infoRequestedAt`, when the needs-info bot posted the ask (ISO) | The bot asked, not a maintainer — never count the row as a maintainer's ask. Absent until the auto-ask lane runs. |
 | `infoRequestedBy` | string | on needs-info rows with a post-review request | Login that applied the label. |
 | `infoCommentUsed` | string | on needs-info rows with a post-review request | Whether the proposed question was posted. Values: `verbatim`, `embedded`, `edited`, `none`, `not-proposed`. |
 | `infoActedBy` | string | beside `infoCommentUsed` | Login that posted the question. |

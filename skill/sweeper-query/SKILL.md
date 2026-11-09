@@ -1,6 +1,6 @@
 ---
 name: sweeper-query
-description: Answer natural-language questions about the VS Code Sweeper's published issue index (index-<name>.json for microsoft/vscode and the enrolled family repos) — which issues are agent-ready to implement or plan, what the sweeper proposed for an assignee or area, whether a report is a known duplicate, the highest-value open bugs in a lane. Use when the user asks about sweeper verdicts, agent-ready issues, duplicates, value ranking, needs-info asks or anything else "the sweeper knows". Read-only; discovery only.
+description: Answer natural-language questions about the VS Code Sweeper's published issue index (index-<name>.json for microsoft/vscode and the enrolled family repos) — which issues are agent-ready to implement or plan, what the sweeper proposed for an assignee or area, whether the sweeper knows a report as a duplicate, the highest-value open bugs in a lane — and, for one issue, the review's full record (evidence with file citations, fix brief, proposed comment). Use ONLY when the request explicitly names the sweeper — "sweeper", "vscodesweeper", "sweeper-query", a sweeper verdict, record, brief or index, an agent-ready issue — or asks what "the sweeper" found, proposed or knows. Do NOT use for general questions about issues, duplicates, priorities or ranking that do not mention the sweeper. Read-only; discovery only.
 ---
 
 # Query the sweeper's index
@@ -9,7 +9,8 @@ The sweeper reviews every open issue of microsoft/vscode and a family of enrolle
 repos nightly and publishes one JSON index per repo. Each row carries the review's
 verdict, a value score, an agent-readiness tier, a duplicate canonical, the
 assignee, labels and lifecycle stamps. This skill turns a question in plain language
-into a `jq` query over that file and answers with a short table.
+into a `jq` query over that file and answers with a short table. For ONE issue it can
+go one level deeper and read the review record behind the row (section 5).
 
 **You write the jq.** There is no query language to learn and no helper script: read
 the field reference at the end of this file, map the question onto fields, run `jq`
@@ -18,9 +19,11 @@ assignee? open only?), prefer the defaults below and say which you used — ask 
 when the answer would be useless under every default.
 
 **Read-only, discovery only.** Never comment on, label, close, react to or edit any
-issue, and never write to the state repo. Do not hand the result to another skill or
-start implementing an issue from here; the deliverable is the list. If the user wants
-to act on a row, they say so in their own words and that is a separate task.
+issue, and never write to the state repo. This skill itself acts on nothing: it does
+not start implementing an issue and it does not pick the next step; the deliverable
+is the list (or, for one issue, the record). What happens next is the caller's call —
+the user in their own words, or a skill or agent that uses this one as its discovery
+step (section 6) — under the caller's own rules, never this skill's.
 
 ## 1. Pick the repository
 
@@ -43,17 +46,20 @@ say so instead of guessing a file name.
 The file is 10–15 MB for vscode and changes only when the sweeper publishes (nightly,
 plus the occasional hand run). Cache it once per target and re-validate the cache
 against the file's latest commit before each question — one small request, no
-re-download unless it changed:
+re-download unless it changed. The recipe stops when either request fails: a stale
+cache must never answer silently (say that GitHub was unreachable instead):
 
 ```bash
 STATE=egamma/vscodesweeper-state
 NAME=vscode                                   # from targets.json .targets[].name
 DIR="${TMPDIR:-/tmp}/sweeper-query"; mkdir -p "$DIR"
 FILE="index-$NAME.json"
-SHA=$(gh api "repos/$STATE/commits?path=$FILE&sha=main&per_page=1" --jq '.[0].sha')
+SHA=$(gh api "repos/$STATE/commits?path=$FILE&sha=main&per_page=1" --jq '.[0].sha') \
+  && [ -n "$SHA" ] || { echo "cannot validate the cache: commit lookup for $FILE failed" >&2; exit 1; }
 if [ ! -s "$DIR/$FILE" ] || [ "$(cat "$DIR/$FILE.sha" 2>/dev/null)" != "$SHA" ]; then
   gh api "repos/$STATE/contents/$FILE?ref=main" -H "Accept: application/vnd.github.raw" > "$DIR/$FILE.tmp" \
-    && mv "$DIR/$FILE.tmp" "$DIR/$FILE" && printf '%s' "$SHA" > "$DIR/$FILE.sha"
+    && mv "$DIR/$FILE.tmp" "$DIR/$FILE" && printf '%s' "$SHA" > "$DIR/$FILE.sha" \
+    || { echo "refresh of $FILE failed; not answering from a stale cache" >&2; exit 1; }
 fi
 jq -r '"\(.target) · \(.rows | length) rows · generated \(.generatedAt) · schema \(.schema)"' "$DIR/$FILE"
 ```
@@ -82,9 +88,10 @@ documented below.
   agent can start there too. Offer both tiers when the user does not specify. Say
   that readiness is a review-time snapshot: re-check the live issue (open, no
   `security` label, no open PR) before anyone starts.
-- **Ranking.** Sort laned rows by `-(.valueRaw // 0)`; compare values only within one
-  assignee × lane, never across the whole corpus. `lane == "bugs"` has `severity`,
-  `lane == "features"` has `signal`.
+- **Ranking.** Sort laned rows by `-(.valueRaw // 0)`. The score is comparable across
+  assignees and areas WITHIN one lane (it has no per-assignee term), never across
+  lanes: features outrank bugs by construction, so filter on `lane` before sorting.
+  `lane == "bugs"` has `severity`, `lane == "features"` has `signal`.
 - **Time windows.** `reviewedAt`, `createdAt`, `closedAt`, `lastCommentAt` are ISO
   strings: `.reviewedAt >= (now - 7*86400 | todate)` for "this week".
 - **Duplicates.** A duplicate proposal is `closeReason == "duplicate"` with the target
@@ -104,6 +111,71 @@ documented below.
 - Never print `proposedComment` for more than one issue, and never dump rows the
   question did not ask for.
 
+## 5. Drill into one issue — the review record
+
+The index row is the verdict's summary line. The record behind it carries the
+review's reasoning: a Summary, the Evidence section with file and line citations into
+the checkout, the canonical search (which candidates were read and why they were
+rejected), the fix brief under `## Auto-fix candidate` (implement records) or
+`## Plan brief` with its open decisions (plan records), the full proposed comment, and
+a few fields the index drops (`breadth`, `priority`, `visionFit`, `milestone`,
+`refutedReason`). Read it when the question is about ONE issue — "what did the sweeper
+find on 12345?", "why does it think this is a duplicate?", "show me the brief" — or to
+explain a single row the index query returned. Read the record only when the question
+asks for what the row does not carry — the reasoning, the evidence, the brief or the
+proposed comment; a verdict, readiness, assignee, label or staleness question is
+answered from the row alone (offer the brief, don't paste it). Never read records in
+bulk; the index is the corpus query.
+
+```bash
+STATE=egamma/vscodesweeper-state
+REPO=microsoft/vscode                        # the envelope's .target
+N=12345
+gh api "repos/$STATE/contents/records/$REPO/items/$N.md?ref=state" -H "Accept: application/vnd.github.raw"
+```
+
+A 404 means the sweeper has not reviewed the issue (it is closed, filtered, or newer
+than the last sweep) — say so. The row's `reviewUrl`, when present, overrides the
+path. Present the record by its sections, not verbatim: Summary · Proposed action
+(with the proposed comment — one issue, so printing it is fine) · the brief, if any ·
+Evidence as a list of cited locations. Two caveats go in every record answer: the
+record is as of its `reviewedAt` (`contentStale` on the index row means the issue has
+changed since), and evidence line numbers drift with main — point the reader at the
+cited FILE, and let them re-find the lines.
+
+## 6. Use from another skill or script
+
+This skill composes as instructions, not as a function: an agent that follows another
+skill (say, one that picks and implements bugs) loads this file beside it. Four rules
+keep the two compatible:
+
+- **The query stays read-only; the caller owns every action.** Nothing in this skill
+  comments, labels, closes or writes, whoever invokes it. A caller that acts on a
+  row does so under its own rules and its own identity.
+- **Machine mode.** When the result feeds a next step instead of a person, emit
+  `jq -c` JSON lines (one row per line, the fields the caller needs, `number` always),
+  no Markdown table, no prose, and no row cap unless the caller sets one — but still
+  state the envelope's `generatedAt` once, so the caller can record the snapshot.
+- **The caller re-checks live before acting.** The index is a review-time snapshot.
+  For each row it is about to act on, the caller verifies against GitHub (read-only):
+  the issue is still open, has no `security` label, has no open PR referencing it,
+  and the assignee has not changed. A row that fails any check is skipped, not fixed.
+- **Records one at a time, for the rows about to be worked.** The caller drills into
+  the record (section 5) only for the issue it is about to act on, when it needs the
+  brief under `## Auto-fix candidate` (or `## Plan brief`) — never for the whole set.
+
+The stable interfaces are the fetch recipe in section 2 (cache path, SHA validation),
+the record path in section 5, the ready-to-implement / ready-to-plan predicates in
+section 3, and the record's `## Auto-fix candidate` / `## Plan brief` sections. The
+machine-mode form of the implement-ready set, highest value first:
+
+```bash
+jq -c '[.rows[] | select(.currentState == null and .agentReadiness == "implement"
+        and .linkedPr == null and .skillPr == null and .dismissed != true and .lane == "bugs")]
+  | sort_by(-(.valueRaw // 0))
+  | .[] | {number, title, owner, labels, severity, valueRaw, reviewedAt, contentStale}' "$DIR/$FILE"
+```
+
 ## Worked examples
 
 **"What did the sweeper propose in my area this week?"** (area = the `terminal`
@@ -119,19 +191,24 @@ jq -r '[.rows[] | select(.currentState == null and .triageAction != null
 
 **"Is this a known duplicate before I file?"** (the report: minimap renders blurry
 on a scaled display) — search open titles by the symptom's keywords, then show
-whether each hit is itself a confirmed duplicate of something older:
+whether each hit itself carries a duplicate proposal, and whether the blinded second
+review confirmed it:
 
 ```bash
 jq -r '[.rows[] | select(.currentState == null
         and (.title | test("minimap"; "i")) and (.title | test("blur|scal|dpi|zoom"; "i")))]
   | sort_by(-(.upvotes // 0))
-  | .[:20][] | [.number, (.upvotes // 0), (.canonical // ""), (.verifyVerdict // ""), .title] | @tsv' "$DIR/$FILE"
+  | .[:20][] | [.number, (.upvotes // 0), (.canonical // ""), (.verifyVerdict // ""),
+                (if .verifyStale == true then "stale" else "" end), .title] | @tsv' "$DIR/$FILE"
 ```
 
-Read the result for the user: a hit with a `canonical` points at the issue the
-family already tracks; no hit means the index knows no open report with those words
-(it is a title search, not a semantic one — suggest one more phrasing before
-concluding).
+Read the result for the user. A `canonical` is a PROPOSAL, not a fact: only
+`verifyVerdict == "confirmed"` with no `verifyStale` means the family tracks the hit
+under that canonical — say "duplicate of N (confirmed)". A `refuted`, `unverifiable`,
+unverified or stale proposal is "the sweeper proposed N; not confirmed", and the user
+should look at both before deciding not to file. No hit means the index knows no open
+report with those words (it is a title search, not a semantic one — suggest one more
+phrasing before concluding).
 
 **"Pick me three implementable papercuts in terminal."**
 
@@ -155,6 +232,20 @@ jq -r '[.rows[] | select(.currentState == null and .owner == "alexdima" and .lan
   | sort_by(-(.valueRaw // 0))
   | .[:50][] | [.number, (.valueRaw // 0), (.severity // ""), .title] | @tsv' "$DIR/$FILE"
 ```
+
+**"What did the sweeper find on 285145?"** — one issue, so read its record (section
+5). Confirm the row first (open? which verdict? `contentStale`?), then fetch:
+
+```bash
+jq -r '.rows[] | select(.number == 285145)
+  | [.number, (.triageAction // "keep-open"), (.agentReadiness // "none"), (.contentStale // false), .reviewedAt, .title] | @tsv' "$DIR/$FILE"
+gh api "repos/$STATE/contents/records/microsoft/vscode/items/285145.md?ref=state" -H "Accept: application/vnd.github.raw"
+```
+
+Answer with the verdict line, the Summary, the proposed comment (one issue), the brief
+when the record is agent-ready, and the Evidence as a list of file citations — with
+the `reviewedAt` date and the line-drift caveat. If the user then wants to act on
+it, that is their call and a separate task.
 
 ## Field reference
 
@@ -194,7 +285,7 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `fixPr` | string | historical rows only (retired fork lane) | URL of a draft fix PR from the retired fork lane. |
 | `implementPr` | string | historical rows only (retired implement lane) | URL of a draft PR from the retired implement lane. |
 | `lane` | string | on open keep-open rows of the two ranked types | Which ranking the row belongs to. Rows without a lane are not ranked (closed, close proposals, needs-info, other item types). Values: `bugs`, `features`. |
-| `valueRaw` | number | beside `lane` | The UN-normalized value score (demand × severity/breadth, age-damped). Compare only within one assignee × lane; sort with `sort_by(-(.valueRaw // 0))`. |
+| `valueRaw` | number | beside `lane` | The UN-normalized value score (demand × severity/breadth, age-damped). Comparable across assignees WITHIN one lane, never across lanes (features outrank bugs by construction); sort with `sort_by(-(.valueRaw // 0))`. |
 | `upvotes` | number | beside `lane` | 👍 reactions at review time. |
 | `comments` | number | beside `lane` | Comment count at review time. |
 | `severity` | string | bugs lane | The bug's severity class. Values: `crash`, `data-loss`, `freeze`, `perf`, `correctness`, `visual`, `papercut`, `none`. |
@@ -202,6 +293,7 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `infoRequestedAt` | string | on a needs-info row whose request still stands (ISO, or `unknown`) | When the repo's needs-info label was applied. |
 | `infoAnsweredAt` | string | beside `infoRequestedAt`, when the reporter answered but the label is still on | The reporter's first reply after the ask — the issue now waits on the maintainer. |
 | `infoAnsweredBy` | string | beside `infoAnsweredAt` | Who answered. Values: `reporter`. |
+| `autoAskedAt` | string | beside `infoRequestedAt`, when the needs-info bot posted the ask (ISO) | The bot asked, not a maintainer — never count the row as a maintainer's ask. Absent until the auto-ask lane runs. |
 | `infoRequestedBy` | string | on needs-info rows with a post-review request | Login that applied the label. |
 | `infoCommentUsed` | string | on needs-info rows with a post-review request | Whether the proposed question was posted. Values: `verbatim`, `embedded`, `edited`, `none`, `not-proposed`. |
 | `infoActedBy` | string | beside `infoCommentUsed` | Login that posted the question. |
