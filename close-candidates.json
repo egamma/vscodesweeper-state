@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-09T20:05:03.498Z",
+  "generatedAt": "2026-11-10T17:02:56.091Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -13,6 +13,38 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 347328,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338433,
+        "kind": "peer"
+      },
+      "comment": "Thanks for flagging this. The same report is already tracked in https://github.com/microsoft/vscode/issues/338433. The repository contains an MIT license in LICENSE.txt, linked from the README.",
+      "reviewedAt": "2026-11-10T16:19:39.396Z",
+      "contentHash": "1063ca93e32467c494afeb5a42f6f81b3d65388df31786ce42d15b0f887622d0",
+      "verifiedAt": "2026-11-10T16:56:03.354Z",
+      "confidence": 0.99,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 347326,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345186,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and version details. This is the same metadata-loss issue tracked in https://github.com/microsoft/vscode/issues/345186. This report adds confirmation on Windows x64 with VS Code 1.145.2, Copilot 1.0.103 and SDK 1.0.27, using Fusion in Interactive mode and affecting both get_current_timer and start_timer.",
+      "reviewedAt": "2026-11-10T16:19:51.117Z",
+      "contentHash": "6e1e3635755dac0a0b117fa98afa1d62b769749a416c440343b4be1050aade28",
+      "verifiedAt": "2026-11-10T16:56:00.863Z",
+      "confidence": 0.96,
+      "assignees": [
+        "dileepyavan"
+      ]
+    },
     {
       "number": 347001,
       "lane": "duplicate",
@@ -142,22 +174,6 @@
       ]
     },
     {
-      "number": 346786,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 346020,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the Windows-to-remote Linux chat file-list navigation problem tracked in https://github.com/microsoft/vscode/issues/346020. This report adds confirmation on 1.145.2 with WSL Ubuntu: direct opening and Open Changes in Diff Editor work, but clicking the file list fails and reloading does not help.",
-      "reviewedAt": "2026-11-08T14:56:39.226Z",
-      "contentHash": "abc3d912d4c0e7abe811019c7d38e7ece3f3d17832c0466090613250f870102a",
-      "verifiedAt": "2026-11-08T15:10:29.658Z",
-      "confidence": 0.93,
-      "assignees": [
-        "ulugbekna"
-      ]
-    },
-    {
       "number": 346630,
       "lane": "duplicate",
       "evidence": {
@@ -190,22 +206,6 @@
       ]
     },
     {
-      "number": 346390,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 338194,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report and the crash logs. This matches https://github.com/microsoft/vscode/issues/338194, which tracks extension installation failing on Fedora 45 without OpenSSL 3 compatibility libraries. This thread adds x64 and ARM64 verifier crashes, including stable 1.145.2 and Insiders, and confirmation that `sudo dnf install openssl3-libs` restores installation; those details should remain part of the investigation there.",
-      "reviewedAt": "2026-11-08T14:59:12.016Z",
-      "contentHash": "b87bc943ddae67a8bdf1f2394104df804bf628bdf4f5ad2eabb0b7579d49b477",
-      "verifiedAt": "2026-11-08T15:10:22.687Z",
-      "confidence": 0.94,
-      "assignees": [
-        "bryanchen-d"
-      ]
-    },
-    {
       "number": 346027,
       "lane": "duplicate",
       "evidence": {
@@ -220,6 +220,38 @@
       "assignees": [
         "lszomoru",
         "benibenj"
+      ]
+    },
+    {
+      "number": 346020,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 345837,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/345837, including changed-file clicks converting remote Linux paths to backslashes. This report adds useful detail: the Copilot harness with `chat.editor.workingSet.enabled: true`, plus confirmations for Remote-SSH/WSL and dev containers.",
+      "reviewedAt": "2026-11-10T16:38:44.513Z",
+      "contentHash": "ee9eb800b23141f957eeec58405ef4f6363207c068d1118dd80ba3f2185490e1",
+      "verifiedAt": "2026-11-10T16:55:18.073Z",
+      "confidence": 0.94,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
+      "number": 345554,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 246105,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/246105: deleting lines can leave inline Git blame before the remaining code. This report adds a screenshot and a newer reproduction on macOS arm64 with Insiders 1.145.0, which should be retained with the existing issue.",
+      "reviewedAt": "2026-11-10T16:41:33.567Z",
+      "contentHash": "67391e9b363c988ee2f6d66b33e17a002272c484c33f9bf28bec0f2b7dd7d3cd",
+      "verifiedAt": "2026-11-10T16:55:08.172Z",
+      "confidence": 0.95,
+      "assignees": [
+        "TylerLeonhardt"
       ]
     },
     {
