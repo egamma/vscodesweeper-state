@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-10T17:02:56.091Z",
+  "generatedAt": "2026-11-11T12:40:19.740Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -13,6 +13,22 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 347601,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346692,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is tracked in https://github.com/microsoft/vscode/issues/346692, including creating child sessions in new worktrees from a workspace-less quick chat. This report adds confirmation on macOS with 1.147.0-insider.",
+      "reviewedAt": "2026-11-11T12:21:44.690Z",
+      "contentHash": "153e0cfd8846d80ed2a0bce4f1aeefee464f6ac9ef378bda1c8ffe1688c84707",
+      "verifiedAt": "2026-11-11T12:36:04.033Z",
+      "confidence": 0.96,
+      "assignees": [
+        "sandy081"
+      ]
+    },
     {
       "number": 347328,
       "lane": "duplicate",
@@ -43,22 +59,6 @@
       "confidence": 0.96,
       "assignees": [
         "dileepyavan"
-      ]
-    },
-    {
-      "number": 347001,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 342774,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed Windows timeline. This matches https://github.com/microsoft/vscode/issues/342774: the disconnected client remains cached, the same SDK error bypasses recovery, and runtime-exit diagnostics are missing. The recovery work in https://github.com/microsoft/vscode/pull/345494 should also cover this Windows managed-settings startup-restart case; the CI timing here is useful additional evidence, while the reason the fresh runtime disconnects remains unresolved.",
-      "reviewedAt": "2026-11-09T19:34:47.727Z",
-      "contentHash": "e97f24859cef436c275559b356fc9dc1e65f4e06e6e7c61124394d4fcdee35a0",
-      "verifiedAt": "2026-11-09T20:00:51.552Z",
-      "confidence": 0.96,
-      "assignees": [
-        "alexr00"
       ]
     },
     {
@@ -220,22 +220,6 @@
       "assignees": [
         "lszomoru",
         "benibenj"
-      ]
-    },
-    {
-      "number": 346020,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 345837,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/345837, including changed-file clicks converting remote Linux paths to backslashes. This report adds useful detail: the Copilot harness with `chat.editor.workingSet.enabled: true`, plus confirmations for Remote-SSH/WSL and dev containers.",
-      "reviewedAt": "2026-11-10T16:38:44.513Z",
-      "contentHash": "ee9eb800b23141f957eeec58405ef4f6363207c068d1118dd80ba3f2185490e1",
-      "verifiedAt": "2026-11-10T16:55:18.073Z",
-      "confidence": 0.94,
-      "assignees": [
-        "justschen"
       ]
     },
     {
