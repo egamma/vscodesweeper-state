@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-11T12:40:19.740Z",
+  "generatedAt": "2026-11-11T16:50:55.047Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -30,6 +30,86 @@
       ]
     },
     {
+      "number": 347579,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 342919,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Markdown Preview outline support is tracked in https://github.com/microsoft/vscode/issues/342919, which describes the same missing outline when switching from source to preview. This report also records the behavior on VS Code 1.145.0 with macOS Darwin arm64 27.2.0.",
+      "reviewedAt": "2026-11-11T16:07:01.662Z",
+      "contentHash": "d12217a6dc43c8b283683eba4ddb1c6931f076f97d06ef852be23547ba7a93a2",
+      "verifiedAt": "2026-11-11T16:39:37.686Z",
+      "confidence": 0.96,
+      "assignees": [
+        "benibenj"
+      ]
+    },
+    {
+      "number": 347541,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338530,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the macOS 27 Agents Window control overlap tracked in https://github.com/microsoft/vscode/issues/338530. This report adds that it affects VS Code 1.145.2 on Darwin arm64 27.2.0 and makes the Side Bar toggle difficult to click.",
+      "reviewedAt": "2026-11-11T16:08:33.955Z",
+      "contentHash": "78bc6c34a7397b6146eaad662dbe9bb73433a4e899a970697264c61354957163",
+      "verifiedAt": "2026-11-11T16:39:31.655Z",
+      "confidence": 0.94,
+      "assignees": [
+        "sandy081"
+      ]
+    },
+    {
+      "number": 347496,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 342582,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The custom-agent model selection problem is already tracked in https://github.com/microsoft/vscode/issues/342582. This report adds that the manual Sonnet selection persists across new sessions in VS Code 1.145.3 on Windows and clears only after restarting VS Code.",
+      "reviewedAt": "2026-11-11T16:10:01.475Z",
+      "contentHash": "f912d32810802525f9373d5cf2fb7118b740fcbd24ad24d00296634cd87fb8ff",
+      "verifiedAt": "2026-11-11T16:39:22.318Z",
+      "confidence": 0.9,
+      "assignees": [
+        "aeschli"
+      ]
+    },
+    {
+      "number": 347441,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 326584,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/326584: clicking Enable in Settings searches for `agentDebugLog` but shows no settings. Your Windows 1.145.2 confirmation and full-setting-ID workaround provide additional evidence for that issue.",
+      "reviewedAt": "2026-11-11T16:11:23.919Z",
+      "contentHash": "3ef9a7e24996971a148605cbfbc655385639b6dbf9d39f353f858e95bd57ad10",
+      "verifiedAt": "2026-11-11T16:39:21.783Z",
+      "confidence": 0.96,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
+      "number": 347407,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346242,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the WSL changed-files navigation failure tracked in https://github.com/microsoft/vscode/issues/346242, where files exist but opening them from chat reports that they cannot be found. Your report also confirms the symptom on stable 1.145.2.",
+      "reviewedAt": "2026-11-11T16:13:13.451Z",
+      "contentHash": "a4f1c1ded17994dd1b5d8b97aebcc5cbb61a086e0f41cd85f824d7e08a3f73e4",
+      "verifiedAt": "2026-11-11T16:39:25.180Z",
+      "confidence": 0.91,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
       "number": 347328,
       "lane": "duplicate",
       "evidence": {
@@ -46,19 +126,19 @@
       ]
     },
     {
-      "number": 347326,
+      "number": 347001,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 345186,
+        "canonical": 342774,
         "kind": "peer"
       },
-      "comment": "Thanks for the report and version details. This is the same metadata-loss issue tracked in https://github.com/microsoft/vscode/issues/345186. This report adds confirmation on Windows x64 with VS Code 1.145.2, Copilot 1.0.103 and SDK 1.0.27, using Fusion in Interactive mode and affecting both get_current_timer and start_timer.",
-      "reviewedAt": "2026-11-10T16:19:51.117Z",
-      "contentHash": "6e1e3635755dac0a0b117fa98afa1d62b769749a416c440343b4be1050aade28",
-      "verifiedAt": "2026-11-10T16:56:00.863Z",
-      "confidence": 0.96,
+      "comment": "Thanks for the detailed diagnosis. https://github.com/microsoft/vscode/issues/342774 already tracks this exact disconnected-client error, the missing host recovery, and runtime-exit diagnostics. This report adds the Windows managed-settings restart sequence and CI failures in builds 493134 and 494061; those should remain linked as additional recovery cases.",
+      "reviewedAt": "2026-11-11T16:14:25.393Z",
+      "contentHash": "77db2585c6d2c009a599459036b13ed372de12ebf31ab6dab78d74c16d8e5cdd",
+      "verifiedAt": "2026-11-11T16:39:13.732Z",
+      "confidence": 0.94,
       "assignees": [
-        "dileepyavan"
+        "bryanchen-d"
       ]
     },
     {
@@ -174,6 +254,22 @@
       ]
     },
     {
+      "number": 346786,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346020,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the Windows-to-remote Linux chat file-list navigation problem tracked in https://github.com/microsoft/vscode/issues/346020. This report adds confirmation on 1.145.2 with WSL Ubuntu: direct opening and Open Changes in Diff Editor work, but clicking the file list fails and reloading does not help.",
+      "reviewedAt": "2026-11-08T14:56:39.226Z",
+      "contentHash": "abc3d912d4c0e7abe811019c7d38e7ece3f3d17832c0466090613250f870102a",
+      "verifiedAt": "2026-11-08T15:10:29.658Z",
+      "confidence": 0.93,
+      "assignees": [
+        "ulugbekna"
+      ]
+    },
+    {
       "number": 346630,
       "lane": "duplicate",
       "evidence": {
@@ -236,6 +332,38 @@
       "confidence": 0.95,
       "assignees": [
         "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 342857,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 302887,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and the additional confirmation. This matches https://github.com/microsoft/vscode/issues/302887, which tracks renamed conversations reverting when selected. Consolidating there should retain this report's Windows/SSH context, the name initially surviving reload, and the sidebar/editor-tab mismatch, including the two-conversation switching and reload checks.",
+      "reviewedAt": "2026-11-11T16:24:06.740Z",
+      "contentHash": "f81836b76beddb60d27805bb9b0a55fff0e715e83e35edafb7f00571076fe02b",
+      "verifiedAt": "2026-11-11T16:38:13.268Z",
+      "confidence": 0.88,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 342447,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338194,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and the additional reproductions. This matches https://github.com/microsoft/vscode/issues/338194, which also includes Ubuntu 26.10 with VS Code 1.142.0. Consolidating there; this thread adds confirmation on two clean installations, an OS application-closure notification, and failures affecting multiple extensions and updates—not only Google Antigravity.",
+      "reviewedAt": "2026-11-11T16:26:19.166Z",
+      "contentHash": "be093dc031eaaa0cf93b9ec8bcb10388cb53175bc600c9f3ce7b099f01108c95",
+      "verifiedAt": "2026-11-11T16:38:11.711Z",
+      "confidence": 0.94,
+      "assignees": [
+        "sandy081"
       ]
     },
     {
