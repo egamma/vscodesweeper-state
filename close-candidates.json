@@ -1,10 +1,11 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-12T19:57:27.677Z",
+  "generatedAt": "2026-11-12T20:01:32.532Z",
   "policy": {
     "lanes": [
-      "duplicate"
+      "duplicate",
+      "implemented"
     ],
     "excludeAssignees": [
       "aiday-mar"
@@ -12,5 +13,1025 @@
     "unassignedOnly": false,
     "includeAssignees": []
   },
-  "candidates": []
+  "candidates": [
+    {
+      "number": 317320,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 306770,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and recording. The same empty-input Ctrl+Backspace sequence and accidental confirmation are tracked in https://github.com/microsoft/vscode/issues/306770. Consolidating there, with this recording and your report of losing hours of work as additional evidence.",
+      "reviewedAt": "2026-10-14T11:54:32.795Z",
+      "contentHash": "34bb5448da7a2b58a22caa84ca63a2a1872e7870d067cfdca1e0c40795540e80",
+      "verifiedAt": "2026-10-18T11:46:53.687Z",
+      "confidence": 0.96,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 303032,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 304214,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and setup log. The missing folder and folder-background actions are also tracked in https://github.com/microsoft/vscode/issues/304214, including cases where the file action remains available. This report adds useful detail: Windows build 26200 with forced classic menus, and a setup log showing a non-background install with the folder task disabled and its registration missing. Consolidating these details there keeps the installer investigation together.",
+      "reviewedAt": "2026-10-11T17:48:23.895Z",
+      "contentHash": "e9cd08fbfaeeb383d9c35a93e963e6238090704d5af3e0cc39f6baee0b6b6a91",
+      "verifiedAt": "2026-10-18T11:42:07.883Z",
+      "confidence": 0.88,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 294633,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 304214,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same update-related loss of folder context-menu entries, while file entries remain available, is tracked in https://github.com/microsoft/vscode/issues/304214. This report adds an earlier occurrence on 1.109.2, affecting several team members on Windows build 26100, with the folder registry entries missing.",
+      "reviewedAt": "2026-10-11T18:09:38.478Z",
+      "contentHash": "7ceeea6417b3f472bb66a81cdd28758a0d03b9450e042b9a3f869466d97517e3",
+      "verifiedAt": "2026-10-18T11:40:11.317Z",
+      "confidence": 0.91,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 285946,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "8d8f1028df37be745a244f27fb300ed12272fa57",
+        "fixedRelease": "1.126.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/8d8f1028df37be745a244f27fb300ed12272fa57"
+      },
+      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/8d8f1028df37be745a244f27fb300ed12272fa57: the recording icon and pulse now use `editorInfo.foreground`, which has blue defaults in light and dark themes, instead of the activity-bar foreground. High-contrast themes retain their contrast-specific color. The fix shipped in 1.126.0.",
+      "reviewedAt": "2026-10-12T07:57:06.817Z",
+      "contentHash": "15b8e038ad65cde7517aaec17a1354ecf40af78fc581d1e43da89307aa528fc5",
+      "verifiedAt": "2026-10-16T19:51:59.753Z",
+      "confidence": 0.93,
+      "assignees": [
+        "mrleemurray"
+      ]
+    },
+    {
+      "number": 284498,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "60869c766646abcd55bc396882a98f67aea15fc5",
+        "fixedRelease": "1.109.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/60869c766646abcd55bc396882a98f67aea15fc5"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/60869c766646abcd55bc396882a98f67aea15fc5 via https://github.com/microsoft/vscode/pull/285112: choosing Copy All from an AI search result now copies the AI search results rather than the ordinary search results. This can be closed as completed. The fix shipped in 1.109.0.",
+      "reviewedAt": "2026-10-16T10:52:28.725Z",
+      "contentHash": "776be67cea4a9bcee8dec6fb0b3caa7ed874f1939d251682c59e7da1a599293e",
+      "verifiedAt": "2026-10-16T19:51:51.351Z",
+      "confidence": 0.96,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 284230,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "8e70e1e590fd93ed39877a769bf976e8fef67233",
+        "fixedRelease": "1.109.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/8e70e1e590fd93ed39877a769bf976e8fef67233"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/8e70e1e590fd93ed39877a769bf976e8fef67233 changes saved session status so an interrupted tool confirmation is recorded as cancelled, rather than continuing to show that input is needed after restart. This addresses the stale indicator; continuing the confirmation itself across a reload remains a separate capability. The fix shipped in 1.109.0.",
+      "reviewedAt": "2026-10-16T10:54:32.167Z",
+      "contentHash": "07f3979de96b99f123224014c12a4e4502ee183d8f1e8a62d205acfdf6c7962e",
+      "verifiedAt": "2026-10-16T19:51:32.404Z",
+      "confidence": 0.93,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 280545,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d529467855d6a6ae194471f1a2817f0d731feced",
+        "fixedRelease": "1.108.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d529467855d6a6ae194471f1a2817f0d731feced"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/d529467855d6a6ae194471f1a2817f0d731feced: the URL approval picker now lists each shared pattern once when fetching multiple URLs from the same domain. The fix shipped in 1.108.0.",
+      "reviewedAt": "2026-10-14T10:29:23.810Z",
+      "contentHash": "ef528345f3f7af8d2649ba23ca03acbd6fe9d5add0ac3e6e7bc3adca66c323e8",
+      "verifiedAt": "2026-10-16T19:50:59.535Z",
+      "confidence": 0.97,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 279359,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "dd1cba93568028144d73f56f24fe0705bda19014",
+        "fixedRelease": "1.114.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/dd1cba93568028144d73f56f24fe0705bda19014"
+      },
+      "comment": "Thanks for the cleanup request. The local session controller now observes chat models directly, and the remaining `registerChatModelChangeListeners` helper was removed from the service interface and implementation in https://github.com/microsoft/vscode/commit/dd1cba93568028144d73f56f24fe0705bda19014. This completes the remaining cleanup identified in the January discussion. The fix shipped in 1.114.0.",
+      "reviewedAt": "2026-10-16T11:07:38.171Z",
+      "contentHash": "1ffcedeed00c2eb3166830b8dc7e4dea797a49fe08ec4a6e94e34da62260a5c1",
+      "verifiedAt": "2026-10-16T19:50:31.781Z",
+      "confidence": 0.95,
+      "assignees": [
+        "roblourens",
+        "osortega"
+      ]
+    },
+    {
+      "number": 279341,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "a2a163471d5bc3adf346564f4f99fe6fce48db65",
+        "fixedRelease": "1.116.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/a2a163471d5bc3adf346564f4f99fe6fce48db65"
+      },
+      "comment": "Thanks for the detailed logs. The failing `Readable.fromWeb(resp.body)` bridge was removed in https://github.com/microsoft/vscode/commit/a2a163471d5bc3adf346564f4f99fe6fce48db65, and the replacement stream handling shipped in 1.116.0, so this should be resolved on current versions.",
+      "reviewedAt": "2026-09-25T22:02:00.479Z",
+      "contentHash": "8ea2aa497e6124eccfc2e5d123458992b391e5a9cc11021f0bb2303443bca699",
+      "verifiedAt": "2026-10-16T19:50:35.399Z",
+      "confidence": 0.93,
+      "assignees": [
+        "chrmarti"
+      ]
+    },
+    {
+      "number": 271232,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "69e459e483605a9b93acdb08a90d5a0798a09eef",
+        "fixedRelease": "1.132.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/69e459e483605a9b93acdb08a90d5a0798a09eef"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/69e459e483605a9b93acdb08a90d5a0798a09eef: signature help now follows TypeScript's updated overload recommendation as you type, rather than retaining the initially displayed overload. For your example, typing func(\"three\", should select signature 3/4 without dismissing and reopening the tooltip. The fix shipped in 1.132.0.",
+      "reviewedAt": "2026-10-15T17:05:40.693Z",
+      "contentHash": "6d69155f547143e8ab8d75495b16fb1ce9bb17d4ebd90528d6d4e6c1b577ce13",
+      "verifiedAt": "2026-10-16T19:49:04.619Z",
+      "confidence": 0.91,
+      "assignees": [
+        "mjbvz"
+      ]
+    },
+    {
+      "number": 268094,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "9c64fc03ba3679db7dbb0b7812fa3d75d9dab42b",
+        "fixedRelease": "1.125.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/9c64fc03ba3679db7dbb0b7812fa3d75d9dab42b"
+      },
+      "comment": "Thanks for the request. Manage Models now includes an **Install Model Providers** button that opens the Extensions Marketplace with `tag:\"language-models\"`, providing the discovery entry point discussed here. This was implemented in https://github.com/microsoft/vscode/commit/9c64fc03ba3679db7dbb0b7812fa3d75d9dab42b, so this can be closed as completed. The fix shipped in 1.125.0.",
+      "reviewedAt": "2026-10-12T12:25:38.752Z",
+      "contentHash": "62dfe4e3ec803a2ee3eedc9a4b4e5d7ec79ec1797b755f687a7c98f39e87c653",
+      "verifiedAt": "2026-10-16T19:48:48.918Z",
+      "confidence": 0.96,
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
+      "number": 266100,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "9dadd5ad1defcc3140bcdff44517284aeaf5bb91",
+        "fixedRelease": "1.139.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/9dadd5ad1defcc3140bcdff44517284aeaf5bb91"
+      },
+      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/9dadd5ad1defcc3140bcdff44517284aeaf5bb91 by removing the Snap launcher's `XDG_DATA_HOME` override, so new Explorer deletions are no longer redirected to the Snap-specific trash directory. The fix does not automatically clear files already accumulated in that directory; closing this as completed for the incorrect trash routing. The fix shipped in 1.139.0.",
+      "reviewedAt": "2026-10-11T15:35:35.428Z",
+      "contentHash": "64ecd5bd275918f917e974b78a2f6200b2884c424261eb5921586cc7b5d01315",
+      "verifiedAt": "2026-10-16T19:48:14.122Z",
+      "confidence": 0.93,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 265914,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "24b129ba6fcba077a8e7bb42636958a819fbd47f",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/24b129ba6fcba077a8e7bb42636958a819fbd47f"
+      },
+      "comment": "Thanks for the request. This is now available as **Chat: Manage Tool Approval** in the Command Palette (`workbench.action.chat.editToolApproval`), implemented in https://github.com/microsoft/vscode/commit/24b129ba6fcba077a8e7bb42636958a819fbd47f. It lets you inspect and change individual tool approval preferences, including workspace and global approvals, without resetting them all or waiting for a tool invocation. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-14T10:20:17.817Z",
+      "contentHash": "f27b4e0c32838f5648228a4ddf009850b48a451262083f5377efe38caf139266",
+      "verifiedAt": "2026-10-16T19:48:05.654Z",
+      "confidence": 0.97,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 264631,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "405897eb1103a7141acc9113defc0aaa1287a12a",
+        "fixedRelease": "1.110.1",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/405897eb1103a7141acc9113defc0aaa1287a12a"
+      },
+      "comment": "Thanks for the context. The centralized customization editor was implemented in https://github.com/microsoft/vscode/commit/405897eb1103a7141acc9113defc0aaa1287a12a through https://github.com/microsoft/vscode/pull/296680. Use **Chat: Open Customizations** (`aiCustomization.openManagementEditor`) or the Customizations button in the Chat header to review and manage customization types in one surface, with descriptions explaining their roles. This completes the original request. The further Agents app navigation and settings-layout improvements are tracked in https://github.com/microsoft/vscode/issues/313828. The fix shipped in 1.110.1.",
+      "reviewedAt": "2026-10-17T20:13:50.748Z",
+      "contentHash": "2de5f15052f7990b9a91890a83c70ea4a3f887085276a0422965615d72b2f5d6",
+      "verifiedAt": "2026-10-17T20:50:46.228Z",
+      "confidence": 0.94,
+      "assignees": [
+        "digitarald"
+      ]
+    },
+    {
+      "number": 262771,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "af690bd87db3a70924652f5d235121997a442f79",
+        "fixedRelease": "1.107.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/af690bd87db3a70924652f5d235121997a442f79"
+      },
+      "comment": "Thanks for the context. https://github.com/microsoft/vscode/commit/af690bd87db3a70924652f5d235121997a442f79 removed the separately styled MCP auto-approval row and passed its approval information into the tool's own presentation part. This addresses the integration and styling mismatch described here. The fix shipped in 1.107.0.",
+      "reviewedAt": "2026-10-12T08:13:45.731Z",
+      "contentHash": "ddbbc3825adedfaf2c4a82419617ba903dc77d9f921e5a801c2039e0f1222b67",
+      "verifiedAt": "2026-10-16T19:47:56.228Z",
+      "confidence": 0.91,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 260864,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d68a730e8d9034e7f65ff129fbf29690a0526212",
+        "fixedRelease": "1.107.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d68a730e8d9034e7f65ff129fbf29690a0526212"
+      },
+      "comment": "Thanks for the request. This was implemented in https://github.com/microsoft/vscode/commit/d68a730e8d9034e7f65ff129fbf29690a0526212: URLs explicitly included in your chat messages are automatically approved, without needing a separate opt-in dropdown choice. For persistent URL or domain approvals, chat.tools.urls.autoApprove provides separate request and response controls rather than granting permission to the entire fetch tool. The fix shipped in 1.107.0.",
+      "reviewedAt": "2026-10-11T20:32:10.477Z",
+      "contentHash": "8f41d90ad265ebd4621659deef1a2497185243d166938fb747592e81da5b48a3",
+      "verifiedAt": "2026-10-16T19:47:45.475Z",
+      "confidence": 0.92,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 258502,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "68e1b20ce90dedaf48054b721dbe4b630ff6e143",
+        "fixedRelease": "1.110.1",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/68e1b20ce90dedaf48054b721dbe4b630ff6e143"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/68e1b20ce90dedaf48054b721dbe4b630ff6e143 added horizontal relayout when Quick Chat's toolbar changes size, so switching between models with different label widths now recalculates the input width. This appears addressed by that change. The fix shipped in 1.110.1.",
+      "reviewedAt": "2026-10-11T20:31:25.661Z",
+      "contentHash": "9eb8feee9cfab5c83bc2338b99ff8183b94698ff97eaa4010030c7ce534b3569",
+      "verifiedAt": "2026-10-16T19:47:27.706Z",
+      "confidence": 0.86,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 258410,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "3fe7649e8a92bf62ab62aa6ed97d6684b5c99004",
+        "fixedRelease": "1.107.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/3fe7649e8a92bf62ab62aa6ed97d6684b5c99004"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/3fe7649e8a92bf62ab62aa6ed97d6684b5c99004: authentication provider selection now checks the full protected-resource URI as well as the authorization server. The two MCP servers therefore use separate resource-specific providers, so Product2's authorization request uses its own resource identifier rather than Product1's. The fix shipped in 1.107.0.",
+      "reviewedAt": "2026-10-11T20:32:20.735Z",
+      "contentHash": "5f301745a7e663882dde5eb66b899b4773e22714e5fd5ca28b8b0e7010cd0106",
+      "verifiedAt": "2026-10-16T19:47:26.530Z",
+      "confidence": 0.94,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 257840,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "c33015014853aedcb02d69b1b50ef2b80891afce",
+        "fixedRelease": "1.122.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/c33015014853aedcb02d69b1b50ef2b80891afce"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/c33015014853aedcb02d69b1b50ef2b80891afce: hiding the selected model now triggers model-selection reconciliation, so the picker switches to the fallback model that will actually handle the request. The fix shipped in 1.122.0.",
+      "reviewedAt": "2026-10-01T22:00:17.639Z",
+      "contentHash": "c6e1443da3984e48b8c10cc3aecd831506748513b5736617ec2d142e9c0ad723",
+      "verifiedAt": "2026-10-16T19:47:26.525Z",
+      "confidence": 0.96,
+      "assignees": [
+        "lramos15"
+      ]
+    },
+    {
+      "number": 251304,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d72d6a24245db6cc9d80988f7cda1305a385037c",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d72d6a24245db6cc9d80988f7cda1305a385037c"
+      },
+      "comment": "Thanks for the report. This is resolved by https://github.com/microsoft/vscode/commit/d72d6a24245db6cc9d80988f7cda1305a385037c: policy generation now consumes evaluated configuration data rather than parsing TypeScript source, so `policy.name` can reference a string constant. The current export entry point is `npm run export-policy-data`. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-17T20:12:14.594Z",
+      "contentHash": "499e07a60a31763fc593dbaf2546073eac366d77e3c62b86b854952dd5846bde",
+      "verifiedAt": "2026-10-17T20:50:44.697Z",
+      "confidence": 0.94,
+      "assignees": [
+        "Copilot"
+      ]
+    },
+    {
+      "number": 250756,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "487cb1e360f3e0108c98396a75bfad62520f60a7",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/487cb1e360f3e0108c98396a75bfad62520f60a7"
+      },
+      "comment": "Thanks for the report. This leak was fixed in https://github.com/microsoft/vscode/commit/487cb1e360f3e0108c98396a75bfad62520f60a7: dropdown markdown descriptions are now disposed when replaced and when the dropdown widget is disposed, including descriptions rendered during layout measurement. This addresses the disposable warning reported here. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-15T13:39:17.172Z",
+      "contentHash": "c46d1a2e06e7dbac33bbb7da13d717d1e98c2ce4452f74f7fb014b3ba7d26b80",
+      "verifiedAt": "2026-10-16T19:46:36.182Z",
+      "confidence": 0.96,
+      "assignees": [
+        "rzhao271"
+      ]
+    },
+    {
+      "number": 250544,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "011ffacbdb366c501e4768ecd15c95150553c790",
+        "fixedRelease": "1.102.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/011ffacbdb366c501e4768ecd15c95150553c790"
+      },
+      "comment": "Thanks for the context. This was implemented in https://github.com/microsoft/vscode/commit/011ffacbdb366c501e4768ecd15c95150553c790: the MCP server's More... CodeLens menu now offers Sign Out when the account is used only by that server, or Disconnect Account when it is shared with other servers or extensions. This covers the requested entry point while preserving other consumers' access, so this can be closed as completed. The fix shipped in 1.102.0.",
+      "reviewedAt": "2026-10-11T20:26:28.823Z",
+      "contentHash": "c20ca945da990624654717ede74149f86249a8b0baf890cc935f745b9f12221c",
+      "verifiedAt": "2026-10-16T19:46:34.636Z",
+      "confidence": 0.97,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 250060,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "5ba9ca4ec1eb57c686052b2f12dee7e236ebb75b",
+        "fixedRelease": "1.110.1",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/5ba9ca4ec1eb57c686052b2f12dee7e236ebb75b"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/5ba9ca4ec1eb57c686052b2f12dee7e236ebb75b: the shared progress indicator now always has a localized accessible name, defaulting to \"Progress\", including during indeterminate loading. This addresses the missing name shown in your DOM example. The fix shipped in 1.110.1.",
+      "reviewedAt": "2026-10-13T14:44:05.016Z",
+      "contentHash": "1e5ba241a46cf7f980d9f845020ae96645a85a0ec811d1bc59c3468ba6fff0b0",
+      "verifiedAt": "2026-10-16T19:46:33.129Z",
+      "confidence": 0.95,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 250013,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "b640cbe0e1bcbf1a1d3757d4c81ac88774d0ceab",
+        "fixedRelease": "1.110.1",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/b640cbe0e1bcbf1a1d3757d4c81ac88774d0ceab"
+      },
+      "comment": "Thanks for the request. This workflow was implemented by https://github.com/microsoft/vscode/commit/b640cbe0e1bcbf1a1d3757d4c81ac88774d0ceab: when extensions require a restart, the Extensions view now shows a global notification with a **Restart Extensions** action and a link to display all affected extensions. This removes the need to locate an individual extension's restart button. The fix shipped in 1.110.1.",
+      "reviewedAt": "2026-09-30T20:00:28.717Z",
+      "contentHash": "612d88808f6691a686d3d43dd9e1d782f51c1239b1bdf09e2d0342605343ee25",
+      "verifiedAt": "2026-10-16T19:46:31.657Z",
+      "confidence": 0.95,
+      "assignees": [
+        "sandy081"
+      ]
+    },
+    {
+      "number": 248825,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "3632569fd065694daf1abe5ed2cc03c9b3a24a73",
+        "fixedRelease": "1.120.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/3632569fd065694daf1abe5ed2cc03c9b3a24a73"
+      },
+      "comment": "Thanks for the reports. This error path was fixed in https://github.com/microsoft/vscode/commit/3632569fd065694daf1abe5ed2cc03c9b3a24a73: opening the Debug Console after a hidden style change now skips the tree refresh when no debug-session input has been initialized. The fix shipped in 1.120.0.",
+      "reviewedAt": "2026-10-14T11:54:39.191Z",
+      "contentHash": "392dafe5de0f7e469e861ab8d6769a762a0329e68d73073e1cc48fcc44ddfa6b",
+      "verifiedAt": "2026-10-16T19:46:04.754Z",
+      "confidence": 0.96,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 247766,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cf84cd4e4cdacc99211628c260ac2e7ad84a12ab",
+        "fixedRelease": "1.138.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cf84cd4e4cdacc99211628c260ac2e7ad84a12ab"
+      },
+      "comment": "Thanks for the context. The editor-font fallback was changed in https://github.com/microsoft/vscode/commit/146b12cdd0c393c389e2f4c271a0ecb96b2a1dc5: ChromeOS and other non-Mac, non-Windows platforms now use the Linux editor-font defaults rather than Consolas. Your later suggestion to detect ChromeOS separately is also implemented in https://github.com/microsoft/vscode/commit/cf84cd4e4cdacc99211628c260ac2e7ad84a12ab, which adds the isChromeOS platform flag and context key without treating ChromeOS as Linux. Together these address both parts of this discussion, so this can be closed as completed. The fix shipped in 1.138.0.",
+      "reviewedAt": "2026-10-11T17:09:06.339Z",
+      "contentHash": "bf057a1b45c0ddee415a0c24b51e3ea0551b1548a5bbb151deeb740d4a84d5ae",
+      "verifiedAt": "2026-10-16T19:46:07.702Z",
+      "confidence": 0.95,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 247516,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "9dadd5ad1defcc3140bcdff44517284aeaf5bb91",
+        "fixedRelease": "1.139.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/9dadd5ad1defcc3140bcdff44517284aeaf5bb91"
+      },
+      "comment": "Thanks for the report and the detail about user-installed versus system-wide fonts. https://github.com/microsoft/vscode/commit/9dadd5ad1defcc3140bcdff44517284aeaf5bb91 removes the Snap launcher's override of XDG_DATA_HOME, allowing fonts in ~/.local/share/fonts to be discovered without moving them into /usr/share/fonts. This addresses the Linux Snap font-loading failure described here. The fix shipped in 1.139.0.",
+      "reviewedAt": "2026-10-15T13:47:31.966Z",
+      "contentHash": "824158a42ba0977cd8ceda5f0d9a35191c9aa888607ffb5d263c7e56acef2445",
+      "verifiedAt": "2026-10-16T19:45:52.927Z",
+      "confidence": 0.89,
+      "assignees": [
+        "deepak1556",
+        "rzhao271"
+      ]
+    },
+    {
+      "number": 247164,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "168a80297b9d3ccf46ea0b08038f8fd042518de9",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/168a80297b9d3ccf46ea0b08038f8fd042518de9"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/168a80297b9d3ccf46ea0b08038f8fd042518de9 disabled sorting in Open Recent, so typing now filters the list without changing the relative order of matching workspaces. This addresses the jumping shown here. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-11T20:40:49.800Z",
+      "contentHash": "22ca6813d98e7cb2383fa718913d4f40d4d72ab3161c34eee9919058ebe8ae46",
+      "verifiedAt": "2026-10-16T19:45:47.854Z",
+      "confidence": 0.95,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 246399,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "9ffcdaeef885e038f712b6028260450f0ae7fc72",
+        "fixedRelease": "1.101.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/9ffcdaeef885e038f712b6028260450f0ae7fc72"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/9ffcdaeef885e038f712b6028260450f0ae7fc72: AI-provider registration now skips refreshing the search results tree until that tree exists, preventing this undefined `hasNode` exception. The fix shipped in 1.101.0.",
+      "reviewedAt": "2026-10-16T09:19:25.687Z",
+      "contentHash": "e13e4647862311a8c6df407dcc9d49298a6d910f20a7d5c6d4d52de897649394",
+      "verifiedAt": "2026-10-16T19:45:40.790Z",
+      "confidence": 0.97,
+      "assignees": [
+        "osortega"
+      ]
+    },
+    {
+      "number": 246178,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "7f6c7bc9e981411742090cabcc58ccc9ad9e2f60",
+        "fixedRelease": "1.104.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/7f6c7bc9e981411742090cabcc58ccc9ad9e2f60"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/7f6c7bc9e981411742090cabcc58ccc9ad9e2f60 registers the terminal editor input's shutdown listener for disposal, so closing its editor now releases the subscription identified in your stack trace. This specific leak is resolved. The fix shipped in 1.104.0.",
+      "reviewedAt": "2026-10-13T14:39:06.530Z",
+      "contentHash": "478d12b42bbaaeffa5661e7da4d4e1bbb4efdb4c661b90292cc96848dc48ac63",
+      "verifiedAt": "2026-10-16T19:45:38.560Z",
+      "confidence": 0.95,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 237981,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "23f0f365ffe7a0b0771587b06eae1fcc18cf10ac",
+        "fixedRelease": "1.102.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/23f0f365ffe7a0b0771587b06eae1fcc18cf10ac"
+      },
+      "comment": "Thanks for the request. Git Bash path suggestions were implemented in https://github.com/microsoft/vscode/commit/23f0f365ffe7a0b0771587b06eae1fcc18cf10ac: mapped paths such as `/c/Users/` resolve against the Windows filesystem, and completion labels use forward slashes. This covers the requested support, so this can be closed as completed. The fix shipped in 1.102.0.",
+      "reviewedAt": "2026-10-14T07:41:38.169Z",
+      "contentHash": "1eab49862179b801ed48f368226e7be29d4ada1d185816fee29489c23bbf1dd5",
+      "verifiedAt": "2026-10-16T19:44:43.696Z",
+      "confidence": 0.91,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 230946,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "89263b454a1682eb3d33658201dff8e66c7e5eb2",
+        "fixedRelease": "1.142.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/89263b454a1682eb3d33658201dff8e66c7e5eb2"
+      },
+      "comment": "Thanks for the request. This is implemented in https://github.com/microsoft/vscode/commit/89263b454a1682eb3d33658201dff8e66c7e5eb2. Set `\"editor.occurrencesHighlightFromAllProviders\": true` to merge highlights from matching providers, allowing Java and Spring query highlights to appear together. The setting defaults to false to preserve existing behavior. The fix shipped in 1.142.0.",
+      "reviewedAt": "2026-10-16T22:20:19.342Z",
+      "contentHash": "d7ddc5fc084cf63264dc7371499559b7790600c96476357f665f56f553737b90",
+      "verifiedAt": "2026-10-16T23:55:42.424Z",
+      "confidence": 0.97,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 214213,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "f9ea0442d33294806c08f8be8bb868c1ea3300a9",
+        "fixedRelease": "1.106.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/f9ea0442d33294806c08f8be8bb868c1ea3300a9"
+      },
+      "comment": "Thanks for the request. Notebook support for `editor.action.nextMatchFindAction` and `editor.action.previousMatchFindAction` was added in https://github.com/microsoft/vscode/commit/f9ea0442d33294806c08f8be8bb868c1ea3300a9. With a notebook search active, these commands navigate across cells and select and reveal the matching occurrence, so this request can be closed as completed. The fix shipped in 1.106.0.",
+      "reviewedAt": "2026-10-16T22:22:15.548Z",
+      "contentHash": "bb5d60ae4fcb35626d4b4dca69d819973676e0e3d840786aa0d03efc1bbc6e34",
+      "verifiedAt": "2026-10-16T23:55:38.776Z",
+      "confidence": 0.94,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 213928,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "4fe05641998b6ca74777f43fde3e68171067ebb2",
+        "fixedRelease": "1.129.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/4fe05641998b6ca74777f43fde3e68171067ebb2"
+      },
+      "comment": "Thanks for the report and logs. This was fixed in https://github.com/microsoft/vscode/commit/4fe05641998b6ca74777f43fde3e68171067ebb2: repeated task reruns now retain the remote platform information, preventing Windows-style string arguments from being sent to the Linux terminal. This covers the launch failure shown in your logs. The fix shipped in 1.129.0.",
+      "reviewedAt": "2026-10-13T12:49:03.361Z",
+      "contentHash": "1aa97122b9c85dc7883f252387bd9093b2c10e0f39512f79578e40f2710aa8c1",
+      "verifiedAt": "2026-10-16T19:43:32.969Z",
+      "confidence": 0.94,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 209153,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cca0d7ce611ca38af8844924357eb029441380ae",
+        "fixedRelease": "1.94.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cca0d7ce611ca38af8844924357eb029441380ae"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/cca0d7ce611ca38af8844924357eb029441380ae changed Notebook Variables to be expanded by default on first opening, which addresses this request. Previously saved collapse preferences are still respected. The fix shipped in 1.94.0.",
+      "reviewedAt": "2026-10-17T06:54:34.172Z",
+      "contentHash": "873c95b0414a28fbd604e22f64bca155665815feff2ec9bffa2df80b66c7453d",
+      "verifiedAt": "2026-10-17T07:21:28.718Z",
+      "confidence": 0.97,
+      "assignees": [
+        "amunger"
+      ]
+    },
+    {
+      "number": 209151,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "063d715c4504380317f9ca8eefc602d71e56adb5",
+        "fixedRelease": "1.89.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/063d715c4504380317f9ca8eefc602d71e56adb5"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/063d715c4504380317f9ca8eefc602d71e56adb5 removed the wait for code symbols before displaying the notebook Outline; the outline now appears first and incorporates symbols as they arrive. This addresses the symbol-fetching blockage described here, so this can be closed as completed. The fix shipped in 1.89.0.",
+      "reviewedAt": "2026-10-16T21:41:26.271Z",
+      "contentHash": "de88ac37c6c812746d55736ebbbfb47ae38a6c4f6f90cdfd9aa8a5f1b5d9b5c2",
+      "verifiedAt": "2026-10-16T23:55:20.856Z",
+      "confidence": 0.87,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 208500,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "5d3e84d3aaaea9e132bad476f1be5a4846289b75",
+        "fixedRelease": "1.101.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/5d3e84d3aaaea9e132bad476f1be5a4846289b75"
+      },
+      "comment": "Thanks for the request. This is now available through the gutter context menu: right-click a running test's gutter icon and choose **Cancel Test Run**. Added in https://github.com/microsoft/vscode/commit/5d3e84d3aaaea9e132bad476f1be5a4846289b75, this cancels active test runs without leaving the editor. The fix shipped in 1.101.0.",
+      "reviewedAt": "2026-10-14T09:43:54.821Z",
+      "contentHash": "f0ddfdebe595b65b2060ddefb6f6ba05d38096c76ac0d0d7202868d3aabf4f2f",
+      "verifiedAt": "2026-10-16T19:42:56.287Z",
+      "confidence": 0.94,
+      "assignees": [
+        "connor4312"
+      ]
+    },
+    {
+      "number": 207930,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cac2dcf41eb9ceccb4ec5515d5ba278c8d6b828e",
+        "fixedRelease": "1.88.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cac2dcf41eb9ceccb4ec5515d5ba278c8d6b828e"
+      },
+      "comment": "Thanks for the report. This execution stall was fixed in https://github.com/microsoft/vscode/commit/cac2dcf41eb9ceccb4ec5515d5ba278c8d6b828e: moving to a preview markdown cell no longer waits for an editor attachment when notebook.scrolling.revealNextCellOnExecute is set to firstLine, allowing the original code cell to run. The fix remains in the current source, so this can be closed as completed. The fix shipped in 1.88.0.",
+      "reviewedAt": "2026-10-12T07:33:07.659Z",
+      "contentHash": "25e2137e745703bc77f345cc28dbcc3d6324b91376e269f63a532f59cb85bf7f",
+      "verifiedAt": "2026-10-16T19:42:50.313Z",
+      "confidence": 0.91,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 204398,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "dd65f0c5ef8782267e37abfac88c5931c63c9ba2",
+        "fixedRelease": "1.108.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/dd65f0c5ef8782267e37abfac88c5931c63c9ba2"
+      },
+      "comment": "Thanks for the request. The root development scripts now use npm-run-all2, implemented in https://github.com/microsoft/vscode/commit/dd65f0c5ef8782267e37abfac88c5931c63c9ba2 through https://github.com/microsoft/vscode/pull/284087. This completes the replacement proposed in https://github.com/microsoft/vscode/pull/204251; the remaining usages in the separate Copilot packages can be tracked independently. The fix shipped in 1.108.0.",
+      "reviewedAt": "2026-10-13T12:50:52.642Z",
+      "contentHash": "db769b88ee83f03e601068e9260e8b3263f76b4d998ec7047bbf2e97498fd7f8",
+      "verifiedAt": "2026-10-16T19:42:26.398Z",
+      "confidence": 0.94,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 203909,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "992db109271d117ca794b59bfbcc77a1d90d566e",
+        "fixedRelease": "1.126.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/992db109271d117ca794b59bfbcc77a1d90d566e"
+      },
+      "comment": "Thanks for the report. This sidebar navigation issue was addressed in https://github.com/microsoft/vscode/commit/992db109271d117ca794b59bfbcc77a1d90d566e: the webview view body now participates in the sidebar's Tab order and forwards focus into the webview, so tabbing past the header actions enters its content. The fix shipped in 1.126.0.",
+      "reviewedAt": "2026-10-15T16:26:44.928Z",
+      "contentHash": "85791866d7c9294ef9d61524b964f3565cc7d47d4c05c9361d8506388ddd1332",
+      "verifiedAt": "2026-10-16T19:42:14.029Z",
+      "confidence": 0.94,
+      "assignees": [
+        "mjbvz"
+      ]
+    },
+    {
+      "number": 200464,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "e3e15e15e82df2390b0c9e1ad4bc8add01752610",
+        "fixedRelease": "1.91.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/e3e15e15e82df2390b0c9e1ad4bc8add01752610"
+      },
+      "comment": "Thanks for the request. This was implemented in https://github.com/microsoft/vscode/commit/e3e15e15e82df2390b0c9e1ad4bc8add01752610 and shipped in VS Code 1.91. Add `192.168.0.199` to the `http.noProxy` array to bypass `http.proxy` for that local Jupyter server. The fix shipped in 1.91.0.",
+      "reviewedAt": "2026-09-25T21:41:40.238Z",
+      "contentHash": "a271833a8a1d89068129fc961783d6f18e521e22e5028835520bbfe621468f6a",
+      "verifiedAt": "2026-10-16T19:42:05.116Z",
+      "confidence": 0.98,
+      "assignees": [
+        "chrmarti"
+      ]
+    },
+    {
+      "number": 199126,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "5cb209f624eed24c1e4ff5e4d58a761fd47eec33",
+        "fixedRelease": "1.105.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/5cb209f624eed24c1e4ff5e4d58a761fd47eec33"
+      },
+      "comment": "Thanks for the request. Returning to the previously focused response is now supported by `workbench.chat.action.focusLastFocused` (Focus Last Focused Chat List Item), added in https://github.com/microsoft/vscode/commit/5cb209f624eed24c1e4ff5e4d58a761fd47eec33. On Windows, use Ctrl+Shift+Up, or replace `chat.action.focus` with this command in your `runCommands` sequence before `editor.action.accessibleView`. Ordinary Ctrl+Up still focuses the latest response; the separate command provides the position-preserving behavior discussed here. The fix shipped in 1.105.0.",
+      "reviewedAt": "2026-10-13T12:44:58.989Z",
+      "contentHash": "e26a6e08bcab4de4f940d4a591af3667c1e049e1bac9fa184f92260a4bd0ab48",
+      "verifiedAt": "2026-10-16T19:41:40.859Z",
+      "confidence": 0.95,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 184694,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d4f566b68d21eb2ebbd2e3394b0bf0c829abae80",
+        "fixedRelease": "1.94.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d4f566b68d21eb2ebbd2e3394b0bf0c829abae80"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/d4f566b68d21eb2ebbd2e3394b0bf0c829abae80 added the Open File action to the notebook diff editor toolbar. It opens the modified notebook in a regular editor, addressing the missing navigation described here. The fix shipped in 1.94.0.",
+      "reviewedAt": "2026-10-16T22:11:25.929Z",
+      "contentHash": "1ded15f3f681943607d2b203e1ad7ce3937eb75dfa35182af42b263244eb0a55",
+      "verifiedAt": "2026-10-16T23:54:48.864Z",
+      "confidence": 0.94,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 183297,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "3e56b3a2a4002a63b82bdcfdb7ea5873dbc6957e",
+        "fixedRelease": "1.109.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/3e56b3a2a4002a63b82bdcfdb7ea5873dbc6957e"
+      },
+      "comment": "Thanks for the request. Windows 11 primary context-menu integration was enabled for stable builds in https://github.com/microsoft/vscode/commit/3e56b3a2a4002a63b82bdcfdb7ea5873dbc6957e, so “Open with Code” can appear directly on folders without Shift+right-click. This completes the requested capability; installation cases where the entry still does not appear are tracked separately, including https://github.com/microsoft/vscode/issues/304214. The fix shipped in 1.109.0.",
+      "reviewedAt": "2026-10-11T14:45:02.834Z",
+      "contentHash": "713420c521121d77bf411cfeaa3a20cb16a804ce8fe4d358007de79b007fa914",
+      "verifiedAt": "2026-10-16T19:40:39.706Z",
+      "confidence": 0.94,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 180869,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "64e01374b338c95820f0547cec1eca78fc710363",
+        "fixedRelease": "1.91.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/64e01374b338c95820f0547cec1eca78fc710363"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/64e01374b338c95820f0547cec1eca78fc710363: Home and End in the Problems filter now retain their normal caret movement instead of navigating the surrounding toolbar. The fix shipped in 1.91.0.",
+      "reviewedAt": "2026-10-16T06:37:58.453Z",
+      "contentHash": "be15a949983cb4aef9f739a84c82e5c8695a6831190d05b58913a8354e687cc9",
+      "verifiedAt": "2026-10-16T19:40:35.468Z",
+      "confidence": 0.96,
+      "assignees": [
+        "ulugbekna"
+      ]
+    },
+    {
+      "number": 175282,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "542b272f06c526836c3d3744e45833f04ae352b7",
+        "fixedRelease": "1.93.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/542b272f06c526836c3d3744e45833f04ae352b7"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/542b272f06c526836c3d3744e45833f04ae352b7 added an explicit aria-label of \"Toggle Search Details\" to this button in both Search and Search Editor, while preserving its visual hover. The reported control no longer relies on title for its accessible name, so this can be closed as completed. The fix shipped in 1.93.0.",
+      "reviewedAt": "2026-10-13T11:04:53.401Z",
+      "contentHash": "571c3577f8fa32aad95ef8ff578f72280de9dfe7743899d6d7b1be24d5fdb83d",
+      "verifiedAt": "2026-10-16T19:39:51.689Z",
+      "confidence": 0.91,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 165222,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "db1c4d4f85c9171e3a938fb4ec369fb3bc7d23af",
+        "fixedRelease": "1.74.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/db1c4d4f85c9171e3a938fb4ec369fb3bc7d23af"
+      },
+      "comment": "Thanks for the report and contribution. This was fixed by https://github.com/microsoft/vscode/pull/165223 in https://github.com/microsoft/vscode/commit/db1c4d4f85c9171e3a938fb4ec369fb3bc7d23af, which makes the affected tip blocks consistently start with an uppercase letter. The fix shipped in 1.74.0.",
+      "reviewedAt": "2026-09-25T21:39:29.742Z",
+      "contentHash": "0b525e46d2a16b24039ef527fe3faf44d83245d85a6c9f56283e028dd9690a64",
+      "verifiedAt": "2026-10-16T19:39:25.431Z",
+      "confidence": 0.99,
+      "assignees": [
+        "chrmarti"
+      ]
+    },
+    {
+      "number": 158764,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "0f2239fc7c2703312928b6f7ff9ce6642d2e3354",
+        "fixedRelease": "1.71.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/0f2239fc7c2703312928b6f7ff9ce6642d2e3354"
+      },
+      "comment": "Thanks for the report. The competing input dialogs that caused earlier parallel tasks to be skipped were addressed in https://github.com/microsoft/vscode/commit/0f2239fc7c2703312928b6f7ff9ce6642d2e3354: input selection dialogs are now queued rather than canceling one another, allowing each dependency to run after its input is accepted. This change was absent from the reported 1.70.2 build. Parallel dependencies may still prompt more than once for the same input; collecting inputs up front without repeated prompts is a separate request tracked in https://github.com/microsoft/vscode/issues/306748. The fix shipped in 1.71.0.",
+      "reviewedAt": "2026-10-13T10:54:08.445Z",
+      "contentHash": "806931f4ae3e07b6d848d0b51bdec289c6e9f417d9ae598358ee017962d0d078",
+      "verifiedAt": "2026-10-16T19:38:54.964Z",
+      "confidence": 0.92,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 154895,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cbdfe4e0b4e31575549496093617df08f011f370",
+        "fixedRelease": "1.82.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cbdfe4e0b4e31575549496093617df08f011f370"
+      },
+      "comment": "Thanks for the report. The legacy “Tweet Feedback” control was removed in https://github.com/microsoft/vscode/commit/cbdfe4e0b4e31575549496093617df08f011f370, eliminating the input that disappeared when moving across the status bar. The separate Issue Reporter taskbar omission was fixed in https://github.com/microsoft/vscode/commit/f9bee281e0f250d4cf073f0e5ed469256e6f8135, so both reported problems have been addressed. The fix shipped in 1.82.0.",
+      "reviewedAt": "2026-10-16T23:44:37.803Z",
+      "contentHash": "6dd926aa4b79ec86479013586258ad177631dc2f5da8886e7485a41f7bd50890",
+      "verifiedAt": "2026-10-16T23:54:22.350Z",
+      "confidence": 0.94,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 143978,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "731d08f2bb1b20007cddb6cb8acf7a53d52bcb42",
+        "fixedRelease": "1.79.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/731d08f2bb1b20007cddb6cb8acf7a53d52bcb42"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/731d08f2bb1b20007cddb6cb8acf7a53d52bcb42 added a guard so configuration updates return when the settings model has not been initialized, instead of throwing while reading `settingsGroups`. That guard remains in the current code and addresses the exception shown here. The fix shipped in 1.79.0.",
+      "reviewedAt": "2026-10-15T13:31:04.233Z",
+      "contentHash": "0f69cddf937f089455ef4a4d96f8e494877c9ec652c617a0d8474bacf51ba82d",
+      "verifiedAt": "2026-10-16T19:38:24.812Z",
+      "confidence": 0.94,
+      "assignees": [
+        "rzhao271"
+      ]
+    },
+    {
+      "number": 141806,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "53ee45f63e8fac1afb5fbe99bc3638c7f93f2f3f",
+        "fixedRelease": "1.109.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/53ee45f63e8fac1afb5fbe99bc3638c7f93f2f3f"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/53ee45f63e8fac1afb5fbe99bc3638c7f93f2f3f: successful Save As now clears the dirty state inherited from a restored backup, so replacing the original custom editor no longer triggers an extra save confirmation. The fix shipped in 1.109.0.",
+      "reviewedAt": "2026-10-15T16:14:40.613Z",
+      "contentHash": "7725b5ff7fe46bf838865a676710b3b5eb4c7985a7a0cccc5b4c09569045850d",
+      "verifiedAt": "2026-10-16T19:37:56.642Z",
+      "confidence": 0.94,
+      "assignees": [
+        "mjbvz"
+      ]
+    },
+    {
+      "number": 125206,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cbdfe4e0b4e31575549496093617df08f011f370",
+        "fixedRelease": "1.82.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cbdfe4e0b4e31575549496093617df08f011f370"
+      },
+      "comment": "Thanks for the report. The Send a Smile status-bar control was removed in https://github.com/microsoft/vscode/commit/cbdfe4e0b4e31575549496093617df08f011f370, including both the report-issue and missing-feature links discussed here. Closing as completed because the affected entry points no longer exist. The fix shipped in 1.82.0.",
+      "reviewedAt": "2026-10-16T23:45:57.841Z",
+      "contentHash": "ee73e1582582fe5e4d4d7b3eaeeff31659db4a96a6141f8f997c859059bb986b",
+      "verifiedAt": "2026-10-16T23:54:25.117Z",
+      "confidence": 0.96,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 117657,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d2ff8d16065d4748b8a205bfebdc98d7d76f7864",
+        "fixedRelease": "1.104.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d2ff8d16065d4748b8a205bfebdc98d7d76f7864"
+      },
+      "comment": "Thanks for the request. This was implemented in https://github.com/microsoft/vscode/commit/d2ff8d16065d4748b8a205bfebdc98d7d76f7864: when signed in, choose “Preview on GitHub” from the dropdown next to “Create on GitHub” to open a prefilled issue without publishing it. You can then edit the text and attach images on GitHub before submitting. The fix shipped in 1.104.0.",
+      "reviewedAt": "2026-10-16T23:46:00.556Z",
+      "contentHash": "e383b9459c4d6249a95ead0e80cd99475eed1b00004f24e2c38eac3207251f2b",
+      "verifiedAt": "2026-10-16T23:54:21.228Z",
+      "confidence": 0.96,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 117656,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "d2ff8d16065d4748b8a205bfebdc98d7d76f7864",
+        "fixedRelease": "1.104.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/d2ff8d16065d4748b8a205bfebdc98d7d76f7864"
+      },
+      "comment": "Thanks for the report. This sign-out/sign-in case was addressed in https://github.com/microsoft/vscode/commit/d2ff8d16065d4748b8a205bfebdc98d7d76f7864: an already-open issue reporter now refreshes its GitHub token when authentication sessions change, rather than retaining the invalid token. Closing this specific report as completed; broader invalid-token recovery remains tracked in https://github.com/microsoft/vscode/issues/188296. The fix shipped in 1.104.0.",
+      "reviewedAt": "2026-10-16T23:46:00.561Z",
+      "contentHash": "99e3cf89f0c57baef6ad3942eacf90353c9dbd864d881a4e7981ddfe9639af3f",
+      "verifiedAt": "2026-10-16T23:54:26.124Z",
+      "confidence": 0.91,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 114481,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "edf0b737f34d5050cc04bba08af7a1c509f87678",
+        "fixedRelease": "1.78.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/edf0b737f34d5050cc04bba08af7a1c509f87678"
+      },
+      "comment": "Thanks for the detailed repro and for sticking with this. The flakiness came from the language-feature registry: when your provider and the built-in TypeScript provider scored the same for a file, the tie was broken by registration time, so whichever extension happened to register last won — hence the roughly 50/50 behavior. That tiebreak changed in https://github.com/microsoft/vscode/commit/edf0b737f34d5050cc04bba08af7a1c509f87678: providers from built-in extensions are now de-prioritized when scores are equal, so a provider from an installed (non-built-in) extension wins consistently. No `extensionDependencies` workaround is needed anymore. Closing as resolved — please open a new issue if you still see a built-in provider taking over on a current build. The fix shipped in 1.78.0.",
+      "reviewedAt": "2026-10-16T06:27:06.961Z",
+      "contentHash": "fedc0a2bd9621720f53f5aeb3b78c727a011e91768b3907adfa9ae74a1a8ba1e",
+      "verifiedAt": "2026-10-16T19:37:05.562Z",
+      "confidence": 0.76,
+      "assignees": [
+        "dmitrivMS"
+      ]
+    },
+    {
+      "number": 92312,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "c43e386ec18a4f1a08b342f4f8695f23b5e1c5f2",
+        "fixedRelease": "1.77.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/c43e386ec18a4f1a08b342f4f8695f23b5e1c5f2"
+      },
+      "comment": "Thanks for the report and the additional examples. The User Interface Overview feature, including its static Activity Bar labels and `workbench.action.showInterfaceOverview` command, was removed in https://github.com/microsoft/vscode/commit/c43e386ec18a4f1a08b342f4f8695f23b5e1c5f2 through https://github.com/microsoft/vscode/pull/175686, so this labeling defect can no longer occur. The fix shipped in 1.77.0.",
+      "reviewedAt": "2026-09-25T21:11:34.052Z",
+      "contentHash": "93bde7b4a035bee5867d318765b0b95d48267d26e78d9252a4c022ccbe676e90",
+      "verifiedAt": "2026-10-16T19:36:36.013Z",
+      "confidence": 0.98,
+      "assignees": [
+        "chrmarti"
+      ]
+    },
+    {
+      "number": 91436,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "9b2ce6996eead848f349aaa12eaeaffad33f5c78",
+        "fixedRelease": "1.79.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/9b2ce6996eead848f349aaa12eaeaffad33f5c78"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/9b2ce6996eead848f349aaa12eaeaffad33f5c78 changed instance counting to include tasks waiting on dependencies, so the supplied Run Mock task now respects its limit of three before Run tests finishes. The remaining instance-limit behavior for compound tasks without their own command is tracked in https://github.com/microsoft/vscode/issues/248733. The fix shipped in 1.79.0.",
+      "reviewedAt": "2026-10-13T10:59:25.814Z",
+      "contentHash": "395e4502df63b4e9d2d74f56e96146ca6f4dd804e9ee973b8d5b66c82da13cce",
+      "verifiedAt": "2026-10-16T19:36:41.719Z",
+      "confidence": 0.92,
+      "assignees": [
+        "meganrogge"
+      ]
+    },
+    {
+      "number": 90800,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "96d0dc4154d0e68bc541d528d651b1c933ad07f1",
+        "fixedRelease": "1.56.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/96d0dc4154d0e68bc541d528d651b1c933ad07f1"
+      },
+      "comment": "Thanks for the request. This was implemented by https://github.com/microsoft/vscode/commit/96d0dc4154d0e68bc541d528d651b1c933ad07f1: custom keybindings can use `mergeConflictsCount && mergeConflictsCount != 0` in their `when` clauses to select conflict navigation when the current document contains conflicts. The fix shipped in 1.56.0.",
+      "reviewedAt": "2026-09-25T21:09:38.096Z",
+      "contentHash": "746141d5445ba3f9dae6a8faacdc9a6994b37eff717ec9c02d0098a977b0b730",
+      "verifiedAt": "2026-10-16T19:36:38.727Z",
+      "confidence": 0.96,
+      "assignees": [
+        "chrmarti"
+      ]
+    },
+    {
+      "number": 78243,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "316c67d8a25f2f892227bc21df0b2b7c5a98aaa0",
+        "fixedRelease": "1.92.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/316c67d8a25f2f892227bc21df0b2b7c5a98aaa0"
+      },
+      "comment": "Thanks for the report. This is addressed by https://github.com/microsoft/vscode/commit/316c67d8a25f2f892227bc21df0b2b7c5a98aaa0: saving an array entry now refreshes only that setting, leaving unfinished entries in the other settings intact. The fix shipped in 1.92.0.",
+      "reviewedAt": "2026-10-15T13:06:49.662Z",
+      "contentHash": "fdcc84e4349ced4b42d4a995cf46c1c3683c9d543ec1792a3b15a1847d6cf015",
+      "verifiedAt": "2026-10-16T19:36:15.070Z",
+      "confidence": 0.88,
+      "assignees": [
+        "rzhao271"
+      ]
+    },
+    {
+      "number": 24605,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "a6e59815c82ff654f1754c7858194142d7528f1c",
+        "fixedRelease": "1.45.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/a6e59815c82ff654f1754c7858194142d7528f1c"
+      },
+      "comment": "Thanks for the request. VS Code now uses WebAssembly for its syntax-highlighting engine, implemented in https://github.com/microsoft/vscode/commit/a6e59815c82ff654f1754c7858194142d7528f1c. The accompanying https://github.com/microsoft/vscode/pull/95958 includes performance comparisons showing both improvements and workload-specific tradeoffs. This addresses the general adoption request; it does not mean compiling the entire TypeScript application to WebAssembly. Extension business logic can also use WebAssembly behind a JavaScript activation entry point, as explained above. The fix shipped in 1.45.0.",
+      "reviewedAt": "2026-10-17T20:07:35.013Z",
+      "contentHash": "393ed0a58410d4f6aa611a7eba1c10ec1a398fdafa4bfcd139978e81f4a506f4",
+      "verifiedAt": "2026-10-17T20:50:45.045Z",
+      "confidence": 0.93,
+      "assignees": [
+        "kieferrm"
+      ]
+    }
+  ]
 }
