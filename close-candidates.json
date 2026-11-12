@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-12T09:20:44.341Z",
+  "generatedAt": "2026-11-12T17:26:58.243Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -13,6 +13,70 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 347885,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338433,
+        "kind": "peer"
+      },
+      "comment": "Thanks for flagging this. The same automated notice is already tracked in https://github.com/microsoft/vscode/issues/338433. The repository currently contains a root LICENSE.txt with the MIT license; any remaining detection discrepancy can be investigated in that thread.",
+      "reviewedAt": "2026-11-12T16:46:42.551Z",
+      "contentHash": "1063ca93e32467c494afeb5a42f6f81b3d65388df31786ce42d15b0f887622d0",
+      "verifiedAt": "2026-11-12T17:19:43.835Z",
+      "confidence": 0.98,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 347788,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 290290,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed request. Individual skill enablement is tracked in https://github.com/microsoft/vscode/issues/290290. Consolidating there, with this report capturing the Agents-window requirements: immediate, non-destructive toggles across all skill sources; workspace/global persistence; exclusion from automatic invocation and the slash menu; discoverable disabled entries; and independent plugin, extension, and MCP skill control while respecting the MCP-skills gate.",
+      "reviewedAt": "2026-11-12T16:52:26.251Z",
+      "contentHash": "85400b4353104264206e7e9f239ede419d389f5fc621ad556dc2b37387012e8b",
+      "verifiedAt": "2026-11-12T17:19:37.544Z",
+      "confidence": 0.91,
+      "assignees": [
+        "aeschli"
+      ]
+    },
+    {
+      "number": 347724,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338433,
+        "kind": "peer"
+      },
+      "comment": "Thanks for flagging this. The same report is already tracked in https://github.com/microsoft/vscode/issues/338433; the repository contains an MIT license in LICENSE.txt, so consolidating the policy-check concern there.",
+      "reviewedAt": "2026-11-12T16:52:54.750Z",
+      "contentHash": "1063ca93e32467c494afeb5a42f6f81b3d65388df31786ce42d15b0f887622d0",
+      "verifiedAt": "2026-11-12T17:19:23.128Z",
+      "confidence": 0.98,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 347718,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 344044,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the Intel Mac Copilot runtime loading failure tracked in https://github.com/microsoft/vscode/issues/344044. This thread adds confirmation on VS Code 1.146.0 and macOS 12.7.6, a report that downgrading to 1.141 works, and a report that the local harness works while the Copilot harness fails.",
+      "reviewedAt": "2026-11-12T16:53:46.893Z",
+      "contentHash": "6a632caf8f06c06b6e495e7fc51e85333035580c2806d56f5d8e4877de99f6cc",
+      "verifiedAt": "2026-11-12T17:19:21.687Z",
+      "confidence": 0.94,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
     {
       "number": 347601,
       "lane": "duplicate",
@@ -126,6 +190,22 @@
       ]
     },
     {
+      "number": 347255,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346240,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the reasoning-stream fragmentation tracked in https://github.com/microsoft/vscode/issues/346240. This thread adds confirmation with LM Studio on Windows and OpenRouter GLM 5.3 on Linux, both on VS Code 1.145.2; please share the latest-build retest result on that issue.",
+      "reviewedAt": "2026-11-12T16:57:15.731Z",
+      "contentHash": "368e1e2027af7f5dd4e5e84bff548452dec7aa972fc9c252b7829acebb91e4b5",
+      "verifiedAt": "2026-11-12T17:19:18.072Z",
+      "confidence": 0.96,
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
       "number": 347001,
       "lane": "duplicate",
       "evidence": {
@@ -219,6 +299,22 @@
       "confidence": 0.95,
       "assignees": [
         "lszomoru"
+      ]
+    },
+    {
+      "number": 346841,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 328251,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The difficulty finding enough title-bar space to drag the window is already tracked in https://github.com/microsoft/vscode/issues/328251. Your Windows report adds the useful detail that attempts to drag can activate Open in Agents, along with suggestions for a clearer drag affordance. You can hide that button with `\"chat.titleBar.openInAgentsWindow.enabled\": false` as a workaround.",
+      "reviewedAt": "2026-11-12T16:58:40.997Z",
+      "contentHash": "cf25d758bb9d1a5a13758596911671640b1480da1cc3b2e614f4330bd9b1b144",
+      "verifiedAt": "2026-11-12T17:19:04.340Z",
+      "confidence": 0.91,
+      "assignees": [
+        "eli-w-king"
       ]
     },
     {
