@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-11T17:37:19.943Z",
+  "generatedAt": "2026-11-12T08:00:47.887Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -219,38 +219,6 @@
       "confidence": 0.95,
       "assignees": [
         "lszomoru"
-      ]
-    },
-    {
-      "number": 346841,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 328251,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The difficulty finding enough space to drag the window is already tracked in https://github.com/microsoft/vscode/issues/328251. This adds the useful detail that attempts near the right-hand controls can accidentally activate Open in Agents. You can hide that button with `\"chat.titleBar.openInAgentsWindow.enabled\": false`, although that does not fully address drag-target discoverability.",
-      "reviewedAt": "2026-11-09T19:43:56.434Z",
-      "contentHash": "083bf4344a8af3a579d50f5004312df53143afe8efdb12f56280d60755c45b7a",
-      "verifiedAt": "2026-11-09T20:00:16.032Z",
-      "confidence": 0.93,
-      "assignees": [
-        "rzhao271"
-      ]
-    },
-    {
-      "number": 346819,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 346164,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed request. https://github.com/microsoft/vscode/issues/346164 already tracks individual selection of workspace instructions, skills, and prompts per chat session, without changing their files or exposing excluded customizations to the agent. Consolidating there should retain this report’s multi-root identity requirements, explicit exclusion of metadata, and the discussion’s distinction between instruction injection, skill discovery, and prompt invocation.",
-      "reviewedAt": "2026-11-09T19:45:40.970Z",
-      "contentHash": "97d15be017b68d41aae34b460c383aad404e63dbfdcfa27bf6f46c77edbf4ae1",
-      "verifiedAt": "2026-11-09T20:00:07.380Z",
-      "confidence": 0.94,
-      "assignees": [
-        "rzhao271"
       ]
     },
     {
