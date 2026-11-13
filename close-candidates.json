@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-13T09:08:23.974Z",
+  "generatedAt": "2026-11-13T16:46:26.708Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -14,786 +14,99 @@
   },
   "candidates": [
     {
-      "number": 334419,
+      "number": 348138,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
+        "canonical": 335780,
+        "kind": "peer"
       },
-      "comment": "Thanks for the report. The same HTTP 408 `user_request_timeout` failure, including Agent requests failing across models, is already tracked in https://github.com/microsoft/vscode/issues/253136.\n\nThis report adds that disabling Figma/MCP did not help and that even “help me to understand this workspace?” failed. For the investigation: Client Request Id `e466c439-b494-4d66-afc7-4cf25d6aef57`; GH Request Id `05F6:3EC5D3:23EF31A:293DF2B:6A9A51C6`.",
-      "reviewedAt": "2026-10-11T12:53:29.233Z",
-      "contentHash": "62d9f6496a8a9d14e3cd0ee07b1e79f4e85a7f39e42e24e69f550871ef95a2b9",
-      "verifiedAt": "2026-10-18T11:52:34.048Z",
-      "confidence": 0.91,
+      "comment": "Thanks for the report. This matches the reasoning-history validation failure tracked in https://github.com/microsoft/vscode/issues/335780. Your OpenWebUI/Mistral configuration and the fact that Local works while Copilot fails after thinking/tool calls are useful additional evidence for that issue.",
+      "reviewedAt": "2026-11-13T16:06:34.336Z",
+      "contentHash": "403bb755b331533d5c27b8f10f477950b2af03a37093ebd141eb80e9dafd1631",
+      "verifiedAt": "2026-11-13T16:39:39.394Z",
+      "confidence": 0.93,
       "assignees": [
-        "lszomoru"
+        "alexr00"
       ]
     },
     {
-      "number": 314984,
+      "number": 348118,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 27317,
-        "kind": "meta"
+        "canonical": 340041,
+        "kind": "peer"
       },
-      "comment": "Thanks for the report. The ranking and highlighting problems are covered by https://github.com/microsoft/vscode/issues/27317. This report adds a recent example from VS Code 1.119.0 on macOS with extensions disabled, unexpected underscore matching around restaurant/order, and another confirmation that near-complete path matches rank below weaker results.",
-      "reviewedAt": "2026-10-11T21:26:39.598Z",
-      "contentHash": "c322e628b97a75321acc598a0e46e3613f87515173b5dc4bb8849082af15bda1",
-      "verifiedAt": "2026-10-18T11:46:09.339Z",
-      "confidence": 0.88,
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
-      "number": 311235,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. The generic “Sorry, your request failed” scenarios are being consolidated in https://github.com/microsoft/vscode/issues/253136; this report adds the useful context that it started after updating to Copilot Chat 0.44.1 and occurred through Ctrl+I in a Remote-SSH workspace.",
-      "reviewedAt": "2026-09-26T06:02:32.038Z",
-      "contentHash": "ffeae0b9d7f7a4a4d2b6b32def18b14b7c1e0753986309222084b440e5451487",
-      "verifiedAt": "2026-10-18T11:44:33.052Z",
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/340041 already tracks bringing the Local tool picker to the Copilot harness, including different tool sets for different sessions. This report adds a useful explicit requirement: enable or disable tools, including MCP tools, in an existing session without changing workspace defaults or other sessions.",
+      "reviewedAt": "2026-11-13T16:06:52.775Z",
+      "contentHash": "2401a279562d6499abb11d432d0f5cc6a39df9f7358c3eff1995455f296d54b1",
+      "verifiedAt": "2026-11-13T16:39:42.525Z",
       "confidence": 0.94,
       "assignees": [
-        "chrmarti"
+        "connor4312"
       ]
     },
     {
-      "number": 309842,
+      "number": 348098,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
+        "canonical": 95493,
+        "kind": "peer"
       },
-      "comment": "Thanks for the detailed logs. This is covered by the open Copilot request-failure investigation at https://github.com/microsoft/vscode/issues/253136; the locally reachable organization custom-model endpoint, the CLI-versus-VS-Code difference, and request ID 682ac3a5-2904-4640-9b68-23007c5597e6 are useful details for that investigation.",
-      "reviewedAt": "2026-10-01T22:34:33.181Z",
-      "contentHash": "2f673d7bb64b3b820b0428bea21510a6c219511bdb28003edfaa11468ca9c9db",
-      "verifiedAt": "2026-10-18T11:44:10.905Z",
-      "confidence": 0.91,
-      "assignees": [
-        "lramos15"
-      ]
-    },
-    {
-      "number": 307644,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. We're tracking these Copilot request failures in https://github.com/microsoft/vscode/issues/253136. This report adds repeated HTTP 500 failures on Windows with VS Code 1.108.2 and Copilot 0.36.2, with Copilot request ID af79cc5b-c685-42ad-a7c0-fa1120bcf028 and GitHub request ID FC9E:2B2F6C:6D21C:7D688:69CFC888. If failures continue after updating, please add sanitized GitHub Copilot Chat output logs to that issue.",
-      "reviewedAt": "2026-10-16T07:19:21.872Z",
-      "contentHash": "185922725b3b572df092babb2454700b084b09849c3b40f36c66b49890d3fed9",
-      "verifiedAt": "2026-10-18T07:15:41.197Z",
-      "confidence": 0.9,
-      "assignees": [
-        "ulugbekna"
-      ]
-    },
-    {
-      "number": 307620,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This request-failure scenario is tracked in https://github.com/microsoft/vscode/issues/253136. For consolidation, this report concerns Claude Opus 4.6 returning HTTP 500, with Copilot request ID `af55aeae-4def-4751-90c8-02b805892bbd` and GH request ID `45C4:209944:862947:991DCD:69CF8D3D`; no internal code needs to be shared.",
-      "reviewedAt": "2026-10-11T11:17:37.961Z",
-      "contentHash": "c0add03a77c3d0e80616c7026ba0f83c1d3965b5280203c69d099e229171f30b",
-      "verifiedAt": "2026-10-18T11:43:40.174Z",
-      "confidence": 0.9,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 307089,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and the additional model comparison. This exact 408 `user_request_timeout` is tracked by https://github.com/microsoft/vscode/issues/253136; this report adds useful Windows plan-mode evidence, including stalls before the error, reproduction across Claude, GPT, and Gemini, and different behavior for the same prompt in Visual Studio.",
-      "reviewedAt": "2026-09-26T05:25:17.614Z",
-      "contentHash": "c8290769027c357999036d2e60bd780c7a53f241c487bf59a04089a444360072",
-      "verifiedAt": "2026-10-18T07:15:38.015Z",
-      "confidence": 0.96,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 307086,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This exact request-failure symptom is covered by https://github.com/microsoft/vscode/issues/253136, which tracks Copilot Chat failures caused by model and service disruptions. The rejected `tool_search_tool_regex_20251119` tag, request IDs, and remote SSH context here remain useful evidence there.",
-      "reviewedAt": "2026-09-26T05:09:54.094Z",
-      "contentHash": "b0bee4572539af914402c2c82fe9abf444dda015bf8cae0788e8e7cd75240aac",
-      "verifiedAt": "2026-10-18T07:15:31.571Z",
-      "confidence": 0.96,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 306851,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. Copilot requests failing during service disruptions are tracked by https://github.com/microsoft/vscode/issues/253136. The additional observation here is that requests appeared to be accepted, and premium-usage tracking remained active, during the disruption.",
-      "reviewedAt": "2026-09-26T06:47:33.550Z",
-      "contentHash": "8f07c49f4feb6163f345f440c99bfd18fa1d26dc2429791cc59388764b666f4a",
-      "verifiedAt": "2026-10-18T11:43:14.972Z",
-      "confidence": 0.92,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 305106,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253126,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. We're tracking intermittent empty model responses in https://github.com/microsoft/vscode/issues/253126. This report adds request ID `03a8db98-99d8-45ba-a75c-a9c07041087f`, Copilot 0.41.1 / VS Code 1.113.0 on macOS arm64 with a Linux arm64 Dev Container, and recovery after waiting.",
-      "reviewedAt": "2026-10-12T09:19:08.996Z",
-      "contentHash": "0d1fcf435f99ad5adf86b980cf4c64f35b4c2e965e6ae9265f46297e25988d5b",
-      "verifiedAt": "2026-10-18T11:42:46.157Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
-    {
-      "number": 301448,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253126,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the detailed report. This is covered by the open meta issue https://github.com/microsoft/vscode/issues/253126, where these “no response was returned” failures are being consolidated. Unique evidence from this report includes the Windows host with a Dev Container on WSL2, an HTTP/2 stream timeout after 300000 ms, and later logs showing `finish_reason: length` before the empty-response message.",
-      "reviewedAt": "2026-09-26T06:44:14.182Z",
-      "contentHash": "4e29fab71333f6c8a368247c59feb678cbd29dd025e1afaefbfd22d8eb03aaf5",
-      "verifiedAt": "2026-10-18T11:41:55.322Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 301437,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253137,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and diagnostics. This is covered by the open investigation at https://github.com/microsoft/vscode/issues/253137. The useful detail specific to this report is that Copilot Chat runs as a workspace extension on the Remote-SSH host, where diagnostics use `127.0.0.1:7890` and the model endpoint fails during TLS setup, while the local window succeeds.",
-      "reviewedAt": "2026-09-26T06:01:09.628Z",
-      "contentHash": "d538f04f5e1c3a6625e4ea270f7c7aaa167f3f5228426349cca4113dc23637a3",
-      "verifiedAt": "2026-10-18T11:41:47.227Z",
-      "confidence": 0.91,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 301425,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253126,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and confirmation. This matches the intermittent Claude response failures tracked in https://github.com/microsoft/vscode/issues/253126, including requests that make partial progress before returning “Sorry, no response was returned.” This report adds that it occurred frequently with Opus 4.6 over Remote SSH on March 13, 2026.",
-      "reviewedAt": "2026-09-26T03:06:22.692Z",
-      "contentHash": "6a867bd405d6e11eea987ecbedebbb426ef399e89d51a43b12239499da54f140",
-      "verifiedAt": "2026-10-18T11:41:45.065Z",
-      "confidence": 0.96,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 299818,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This exact GPT-5 Mini `xhigh` 400 failure is already tracked in https://github.com/microsoft/vscode/issues/253136; the Windows on ARM and WSL2 details here add another affected environment to that cluster.",
-      "reviewedAt": "2026-09-26T03:05:48.711Z",
-      "contentHash": "11e1c5f68e8c0786557d3ca67ede7c2c4f5be72c5ddbc1d0c2c5df739449c07f",
-      "verifiedAt": "2026-10-18T11:41:20.089Z",
+      "comment": "Thanks for the detailed report and the confirmation on 1.146.0. This is covered by https://github.com/microsoft/vscode/issues/95493, which tracks editor font-stretch support, including Iosevka Extended. Your Windows DirectWrite findings and the static-font limitations of the family-name and font-variation workarounds are useful additional evidence for that request.",
+      "reviewedAt": "2026-11-13T16:07:52.927Z",
+      "contentHash": "a9cd7c1f7cd3b942629ea1e72834a6bd74443604f8173f35ac775f57319d9c18",
+      "verifiedAt": "2026-11-13T16:39:31.391Z",
       "confidence": 0.97,
       "assignees": [
-        "chrmarti"
+        "rzhao271"
       ]
     },
     {
-      "number": 299678,
+      "number": 348088,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 253126,
-        "kind": "meta"
+        "canonical": 347791,
+        "kind": "peer"
       },
-      "comment": "Thanks for the report. The exact “Sorry, no response was returned” failure is tracked in https://github.com/microsoft/vscode/issues/253126; please carry over the affected model, request ID, and Copilot Chat logs there if this recurs. The additional usage-counter concern is tracked in https://github.com/microsoft/vscode/issues/252230.",
-      "reviewedAt": "2026-09-26T06:48:15.975Z",
-      "contentHash": "37e2ae5f3a184e64083a4015c9e359ca81f426b1fea9a604db2b432fc05cfcb1",
-      "verifiedAt": "2026-10-18T11:41:12.130Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 296339,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and request IDs. This exact Copilot request-body timeout is already tracked in https://github.com/microsoft/vscode/issues/253136, including the same `request body is not valid JSON: read tcp ... i/o timeout` response, so we are consolidating the reports there.",
-      "reviewedAt": "2026-09-26T02:11:25.175Z",
-      "contentHash": "d39a4a8a8e83ee9a79cae02033cadb9fb72667ecf63fe9bedff790fbb377baa9",
-      "verifiedAt": "2026-10-18T11:40:26.749Z",
-      "confidence": 0.98,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 296020,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. The persistent Copilot Chat request-failure symptom is tracked in https://github.com/microsoft/vscode/issues/253136; the affected Claude models and Windows-to-Linux-ARM64 Remote SSH environment reported here are useful additional evidence for that investigation.",
-      "reviewedAt": "2026-09-26T02:11:22.098Z",
-      "contentHash": "275c293773203bb3a4af6c37086720e0cc953b63b6b4afb0d1cfce13680aa341",
-      "verifiedAt": "2026-10-18T11:40:22.670Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 293594,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the additional diagnosis. This request-failure family is tracked in https://github.com/microsoft/vscode/issues/253136; the useful detail from this report is that responses render locally but not over Remote-SSH even though backend logs show successful completion, so that evidence should be carried into the canonical investigation.",
-      "reviewedAt": "2026-09-26T01:05:49.843Z",
-      "contentHash": "91f493ba71d0a6db5adc8a7d5f7e548733c5eeb839ebc69856c1c29764a39a9c",
-      "verifiedAt": "2026-10-18T11:40:02.742Z",
-      "confidence": 0.88,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 293593,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This request failure is covered by the open tracking issue https://github.com/microsoft/vscode/issues/253136. This occurrence was on macOS arm64 with VS Code 1.108.1, Copilot 0.36.2, and Remote SSH to Linux; any available GitHub Copilot Chat output logs would be useful on the tracking issue.",
-      "reviewedAt": "2026-09-26T01:05:30.769Z",
-      "contentHash": "b5bcdf153dbf29021234db74ddf7dee4fca46075ad1a9467e631512ba27d4d63",
-      "verifiedAt": "2026-10-18T11:40:01.496Z",
-      "confidence": 0.96,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 293540,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253126,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and confirmation. This Opus 4.6 occurrence is covered by the open meta issue https://github.com/microsoft/vscode/issues/253126, which tracks the same “Sorry, no response was returned” failure across Claude and other model-backed agent requests; the macOS and Remote SSH context from this report remains useful evidence for that investigation.",
-      "reviewedAt": "2026-09-26T01:05:26.955Z",
-      "contentHash": "51cb60364b7f9a319bb85cc2c866bb3f3be62f57ab811dbe378e179d5ed91f4c",
-      "verifiedAt": "2026-10-18T11:39:54.880Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 293472,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and the additional timing context. This is covered by https://github.com/microsoft/vscode/issues/253136, which tracks this Copilot request-failure message, including Gemini requests returning 400 responses; the Singapore time-of-day pattern reported here may help characterize the service-side failures.",
-      "reviewedAt": "2026-09-26T01:37:36.890Z",
-      "contentHash": "aaac2c7def28a9aebfaecbc63f045d6837abb5ae5a3e0a5b6b0992c9d2cee112",
-      "verifiedAt": "2026-10-18T11:39:52.162Z",
-      "confidence": 0.95,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 292670,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This Remote SSH occurrence—including the file-download timeout and request IDs—is covered by the open request-failure tracker at https://github.com/microsoft/vscode/issues/253136, so the evidence should be consolidated there.",
-      "reviewedAt": "2026-09-26T00:38:35.053Z",
-      "contentHash": "7c1c01609ac4cc113499b525ada643be1e78a5c573584db398453ea966bd1813",
-      "verifiedAt": "2026-10-18T11:39:40.342Z",
-      "confidence": 0.97,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 292648,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This is tracked by https://github.com/microsoft/vscode/issues/253136, which covers repeated Copilot request failures including this file-download timeout. This report adds a Windows-to-Linux Remote-SSH occurrence and its request identifiers to that incident cluster.",
-      "reviewedAt": "2026-09-26T00:38:46.486Z",
-      "contentHash": "29deb28fa5938123655e9564597c5e9f0e9deb28060177bb1f00ff344445439e",
-      "verifiedAt": "2026-10-18T11:39:42.198Z",
-      "confidence": 0.97,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 291470,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253137,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This is tracked by https://github.com/microsoft/vscode/issues/253137, the open meta issue for the “Language model unavailable” Chat failure. This report adds a Dev Container case on a Darwin arm64 host with a Linux x64 remote, VS Code 1.108.2, and Copilot Chat 0.36.2.",
-      "reviewedAt": "2026-09-26T00:37:38.823Z",
-      "contentHash": "e6d6ea41f5d5aa38346eba53f6a6a140f05cf5d462ae6879802fa23ff45c9d58",
-      "verifiedAt": "2026-10-18T11:39:11.048Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 290842,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and logs. This is covered by https://github.com/microsoft/vscode/issues/283560, which tracks the same Chat readiness failure in WSL and other remote environments. This report adds useful WSL evidence: authentication and model metadata completed, while the `/models` response and other remote requests failed during initialization.",
-      "reviewedAt": "2026-09-25T23:46:57.696Z",
-      "contentHash": "c74714e639ed0df5f78f1d330840b1692ec1e7cb757616f3100d0a5d5c010f09",
-      "verifiedAt": "2026-10-18T11:39:09.082Z",
-      "confidence": 0.88,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 290350,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and confirmations. This WSL readiness failure is covered by https://github.com/microsoft/vscode/issues/283560, the open tracking issue for the same Copilot Chat symptom in remote environments; this report adds Windows/WSL details from VS Code 1.108.2 and a same-day Insiders regression confirmation.",
-      "reviewedAt": "2026-09-25T23:45:39.273Z",
-      "contentHash": "b1888c61ea3d82c20bae44af23970067c4621f732fc9efd4de7d78cfaa5b93a0",
-      "verifiedAt": "2026-10-18T11:38:57.737Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 290127,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This Windows-to-Linux Remote-SSH case is covered by https://github.com/microsoft/vscode/issues/283560, which tracks the same Chat readiness timeout across remote environments and centralizes the proxy-related investigation.",
-      "reviewedAt": "2026-09-25T23:46:08.163Z",
-      "contentHash": "f2b4b8230b9a6b772dc130f9f014569ba0a9433c04d35b328f5e28b090aff1f1",
-      "verifiedAt": "2026-10-18T11:39:00.361Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 289418,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This failure is tracked in https://github.com/microsoft/vscode/issues/253136, which covers the generic conversation-request error and its different underlying causes. This occurrence was on Copilot Chat 0.36.1 / VS Code 1.108.1 with a Windows client connected to Linux over Remote SSH; request ID `e194e288-e733-45f0-bf8d-5c6b04ad8d81`.",
-      "reviewedAt": "2026-09-25T23:29:13.959Z",
-      "contentHash": "2e0cb3981095b0b9fa7c2be8b538bdefaf8c45285a4b15320a21072072da064d",
-      "verifiedAt": "2026-10-18T11:38:43.723Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 289029,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253137,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the detailed remote SSH workaround. This is covered by the open Language Model Unavailable tracker at https://github.com/microsoft/vscode/issues/253137, which includes remote extension-host failures to fetch model metadata; the detail that forcing Copilot into the local UI extension host restores the model list is useful evidence for that investigation.",
-      "reviewedAt": "2026-09-25T23:03:36.481Z",
-      "contentHash": "a2b8135da87d66a1d4d989c3893b3b0ddc87e499ffc4370b89ea6f4a3f4f5699",
-      "verifiedAt": "2026-10-18T11:38:41.151Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 288973,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the detailed logs. This is covered by https://github.com/microsoft/vscode/issues/283560, the open tracking issue for the same chat-readiness failure in Remote SSH, WSL, and Dev Container setups. This report adds a useful recovery trace: authentication and model setup took roughly 7–8 seconds, after which model requests succeeded.",
-      "reviewedAt": "2026-09-25T23:04:07.138Z",
-      "contentHash": "06d3940aa56b8ae36ad9993af02ca7de75ae6551746fbe04caf2a4e7becb7c0d",
-      "verifiedAt": "2026-10-18T11:38:42.337Z",
-      "confidence": 0.92,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 288554,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the detailed logs. This is covered by the open remote-setup tracking issue at https://github.com/microsoft/vscode/issues/283560, which includes Remote SSH readiness failures. Your macOS-to-Linux SSH environment, canceled connection, and model-initialization timings add useful evidence for that investigation.",
-      "reviewedAt": "2026-09-25T23:02:46.679Z",
-      "contentHash": "ddbbacdbacf79eb38f9cfb958bc74c64898e136255c7481ff999b1afb5a4a76b",
-      "verifiedAt": "2026-10-18T11:38:32.659Z",
-      "confidence": 0.91,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 288350,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the detailed logs. This is covered by https://github.com/microsoft/vscode/issues/283560, which tracks the same Chat readiness timeout across Remote SSH, WSL, and Dev Containers. This report adds the macOS-to-Linux Remote SSH case, including the remote extension-host reconnection and socket timeout evidence.",
-      "reviewedAt": "2026-09-25T23:02:48.162Z",
-      "contentHash": "6c5d3cc6e1f5318a4dc9ae3781190df4f0644a16ee61f2f7769c625c763547ab",
-      "verifiedAt": "2026-10-18T11:38:21.566Z",
-      "confidence": 0.96,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 288168,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/283560, which tracks the same Chat readiness timeout in remote setups, including Dev Containers. This report adds the useful detail that the Dev Container connection itself could not be established.",
-      "reviewedAt": "2026-09-25T23:02:02.788Z",
-      "contentHash": "ec55636f76040f4db3e3ba21b0e4b1bde0517a77efb058f46e0fabe195bcc953",
-      "verifiedAt": "2026-10-18T11:38:18.743Z",
-      "confidence": 0.91,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 288096,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This matches the remote-network and proxy failure tracked in https://github.com/microsoft/vscode/issues/283560. This report adds a Windows/WSL2 case where Copilot token retrieval fails with ETIMEDOUT on IPv4 and ENETUNREACH on IPv6.",
-      "reviewedAt": "2026-09-25T23:02:04.251Z",
-      "contentHash": "e48235b7f1d3b168a26acd6df13aad8ccc4611f5babfc4a2895edda1e7e20c28",
-      "verifiedAt": "2026-10-18T11:38:17.368Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 287992,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 283560,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This WSL instance of the Chat readiness timeout is covered by the open remote-environments tracking issue at https://github.com/microsoft/vscode/issues/283560; that thread also contains the proxy diagnosis and current workarounds.",
-      "reviewedAt": "2026-09-25T23:01:48.679Z",
-      "contentHash": "d388f86b584b796d209eaf8e258eba1d2465eb958fc38dbc51d55a28e482b43b",
-      "verifiedAt": "2026-10-18T11:38:11.925Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 287962,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This request-failure instance is covered by https://github.com/microsoft/vscode/issues/253136, which tracks Copilot Chat network and service failures and collects the corresponding logs. This report adds the `socket hang up` signature from a Windows/WSL2 workspace to that investigation.",
-      "reviewedAt": "2026-09-25T23:04:02.817Z",
-      "contentHash": "afa2886468b9385ad8a47c151197322fcaaf0a8174547af4e000b3ad9f840ddf",
-      "verifiedAt": "2026-10-18T11:38:07.930Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 287785,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This 408 `user_request_timeout` occurrence is covered by the open request-failure meta issue at https://github.com/microsoft/vscode/issues/253136; the request IDs, request-body timeout, and failed Remote SSH connection are useful details to retain with that investigation.",
-      "reviewedAt": "2026-09-25T23:01:43.994Z",
-      "contentHash": "30f3fe1e9f441fcbfbdeb45a8f591fd04f8104a5bb0c7e0196b1fba93ed18583",
-      "verifiedAt": "2026-10-18T11:38:00.967Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 287690,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253137,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/253137, which tracks the empty model picker and unavailable-language-model state caused by failed model-list requests. This report adds a concrete connection timeout to `api.individual.githubcopilot.com:443`.",
-      "reviewedAt": "2026-10-01T22:10:34.652Z",
-      "contentHash": "300a83bd458bab0b8b21e8c5d424e8c77d2eca01fed19d8dff37a4adff6a0135",
-      "verifiedAt": "2026-10-18T11:37:53.475Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lramos15"
-      ]
-    },
-    {
-      "number": 287167,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This occurrence is covered by the open failed-chat-request tracker at https://github.com/microsoft/vscode/issues/253136; this report uniquely records the Windows/WSL environment and request ID for a server-side “Stream terminated” failure.",
-      "reviewedAt": "2026-09-25T22:24:58.617Z",
-      "contentHash": "1efa3baba74ef38e78a7373d5b7322b982a9414952a4effed7bb84d41817833e",
-      "verifiedAt": "2026-10-18T11:37:31.751Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 286874,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This is covered by the open request-failure meta issue at https://github.com/microsoft/vscode/issues/253136. The persistent HTTP 500 for this conversation—including failed retries and model changes until its context is cleared—is useful evidence to consolidate there.",
-      "reviewedAt": "2026-09-25T22:26:15.883Z",
-      "contentHash": "d3455aeda268e8e0885f4b30af50699025903eb7b3ef62920a90a9e5abfcd2dc",
-      "verifiedAt": "2026-10-18T11:37:19.365Z",
-      "confidence": 0.95,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 286789,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This is covered by the open request-failure tracker at https://github.com/microsoft/vscode/issues/253136; this report adds useful evidence that HTTP 413 `failed to parse request` persisted in Codespaces across repeated restarts, so the investigation should be consolidated there.",
-      "reviewedAt": "2026-09-25T22:44:00.968Z",
-      "contentHash": "a6bcb4d53abe2d5df5bc8e06318ed29946e75bdfb7323277990cb21d651e593c",
-      "verifiedAt": "2026-10-18T11:37:19.007Z",
-      "confidence": 0.91,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 286462,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. This exact conversation-request failure is tracked in https://github.com/microsoft/vscode/issues/253136, which also covers failures during Copilot service disruptions. The detail that this occurred after about five idle minutes in a WSL session remains useful context there.",
-      "reviewedAt": "2026-09-25T22:25:04.841Z",
-      "contentHash": "e0646fcc942b13b030a51cd07283cc4b84cb084684a38a3c56a52f1c970c3a80",
-      "verifiedAt": "2026-10-18T11:37:09.700Z",
-      "confidence": 0.93,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 283961,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253136,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. Copilot chat request failures like this are tracked in https://github.com/microsoft/vscode/issues/253136, including service-side failures; the Copilot request ID `4ca024fa-0f80-427a-ab17-8b7a9dc1a1b5` and GH request ID `76BB:211541:56072A:69A8EF:69420D10` from this report remain available as diagnostic evidence.",
-      "reviewedAt": "2026-09-25T21:52:30.678Z",
-      "contentHash": "8b89a088668ed623083efda3f4be3f2a2673f430e77d5a277cd1bca2adec35c1",
-      "verifiedAt": "2026-10-18T11:36:29.896Z",
-      "confidence": 0.93,
-      "assignees": [
-        "samvantran",
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 283739,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 253137,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the detailed remote and local diagnostics. This is covered by the open language-model-unavailable tracking issue at https://github.com/microsoft/vscode/issues/253137; the useful SSH-specific evidence here is that Copilot Chat runs in the remote workspace extension host, where the Copilot endpoint requests reset even though they succeed locally.",
-      "reviewedAt": "2026-09-25T21:52:39.612Z",
-      "contentHash": "d16c84f26e1caae04f765e0ec5a9bff4815bee4a5aa909064aa7f3f62a52061b",
-      "verifiedAt": "2026-10-18T11:36:26.777Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chrmarti"
-      ]
-    },
-    {
-      "number": 254915,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 131450,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. We're tracking this in https://github.com/microsoft/vscode/issues/131450, which already includes the same case: HTML beginning with `<!doctype html>` is detected as CSS when a large embedded style block dominates the content. This report adds a clean-profile reproduction on Windows and an approximate 600-line CSS trigger to that shared investigation.",
-      "reviewedAt": "2026-10-11T20:41:52.156Z",
-      "contentHash": "06269899129adee96c5bcd81be72808968002a45a29f6cc80c6ee12a577035e0",
-      "verifiedAt": "2026-10-18T11:34:35.303Z",
-      "confidence": 0.95,
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
-      "number": 241470,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 131450,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. We're collecting incorrect language-detection samples in https://github.com/microsoft/vscode/issues/131450, including non-code text identified as programming languages. This report adds the Linux example of `.gdb_history` containing `info registers` displaying a Go icon in VS Code 1.97.2.",
-      "reviewedAt": "2026-10-12T07:53:45.154Z",
-      "contentHash": "cd91b08a25f075ae0f89a24440570cb15a6bb827d02f201b2bf78ee8c11e87b7",
-      "verifiedAt": "2026-10-18T11:33:37.562Z",
-      "confidence": 0.85,
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
-      "number": 171016,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 134921,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report and timing logs. This is covered by https://github.com/microsoft/vscode/issues/134921, which tracks Git operations taking much longer inside VS Code than the same commands in a terminal. This report adds WSL1 with a Windows-filesystem workspace, multi-second command timings, and subsequent Ubuntu, Windows, and macOS confirmations; those details remain useful to the investigation. Consolidating the reports does not mean the performance problem is resolved.",
-      "reviewedAt": "2026-10-11T13:25:24.093Z",
-      "contentHash": "546d1115da656d81ca7cf9d1e96e6706698981b3c749d0b8bf81d0b8d245b321",
-      "verifiedAt": "2026-10-18T11:30:22.194Z",
-      "confidence": 0.91,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 152535,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 131450,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. We're consolidating incorrect language-detection samples in https://github.com/microsoft/vscode/issues/131450. This report adds a Windows Jupyter notebook case where Python code such as `df['Example 1'] = df['Example 4'].str[0]` incorrectly prompts to switch the cell language to SQL.",
-      "reviewedAt": "2026-10-11T19:48:58.604Z",
-      "contentHash": "91a3ff1f80b8f1396c46e2b03d7f4ca4b0e1959f02c28659c0afa2b479092a37",
-      "verifiedAt": "2026-10-18T11:29:43.194Z",
+      "comment": "Thanks for the detailed report. Terminal-profile support for the Copilot harness is already tracked in https://github.com/microsoft/vscode/issues/347791. This report adds important Windows requirements: launcher-based PowerShell discovery, bootstrap arguments, explicit CMD/PowerShell execution, and successful initialization before commands—including delegated work—without changing approvals or command lifecycle behavior. Those requirements belong in the same work; loading user profiles or prompting the agent to load a .env file does not fully address them.",
+      "reviewedAt": "2026-11-13T16:08:37.569Z",
+      "contentHash": "640ed6e2e56681850f1184da9254c96ae2d5f260e997faa9f28e2a053b8ff21f",
+      "verifiedAt": "2026-11-13T16:39:30.237Z",
       "confidence": 0.9,
       "assignees": [
-        "TylerLeonhardt"
+        "meganrogge"
       ]
     },
     {
-      "number": 151286,
+      "number": 348078,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 27317,
+        "canonical": 347909,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/347909: two resume rebuilds precede a turn that finishes in the Claude transcript but never delivers its response to the Agents window. Please retain this report's multi-window tool/customization trigger, persistence across Reload Window, and steering-message recovery observation in that investigation.",
+      "reviewedAt": "2026-11-13T16:08:17.337Z",
+      "contentHash": "111317c119f8488c16b2927e8053c1362d695a92b2cf90283f8c34293fa81af4",
+      "verifiedAt": "2026-11-13T16:39:28.032Z",
+      "confidence": 0.96,
+      "assignees": [
+        "roblourens"
+      ]
+    },
+    {
+      "number": 347814,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 339363,
         "kind": "meta"
       },
-      "comment": "Thanks for the clear example. This is covered by https://github.com/microsoft/vscode/issues/27317, which tracks Quick Open ranking improvements, including preferring contiguous path matches over scattered-letter matches. The useful acceptance case here is `ps/app.h` ranking `ps/src/app.h` above `pp/src/app.h`; the two-character folder diagnosis and the `\"ps\" app.h` workaround should remain part of that discussion.",
-      "reviewedAt": "2026-10-11T19:49:20.227Z",
-      "contentHash": "6c4c792dcde119b675a5d0858d0c294675f7bb2f85019615d21542973f8f971b",
-      "verifiedAt": "2026-10-18T11:29:43.866Z",
-      "confidence": 0.91,
+      "comment": "Thanks for the report. Missing per-file Keep/Undo controls across Copilot harnesses are tracked in https://github.com/microsoft/vscode/issues/339363. This report adds the Windows 1.146 experience and a workaround reported in the discussion: switching to Local restored the controls, while changing the automatic-accept delay had an uncertain effect. The recurring loss of these controls after updates belongs in that discussion too.",
+      "reviewedAt": "2026-11-13T16:15:03.204Z",
+      "contentHash": "ceab1950886bb6fa3eb4d9d50594a0add7fead6c5a4edf01c04bdb8a7546aaf4",
+      "verifiedAt": "2026-11-13T16:39:16.767Z",
+      "confidence": 0.94,
       "assignees": [
-        "TylerLeonhardt"
+        "lszomoru"
       ]
     }
   ]
