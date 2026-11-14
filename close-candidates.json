@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-13T16:46:26.708Z",
+  "generatedAt": "2026-11-14T15:27:44.463Z",
   "policy": {
     "lanes": [
       "duplicate"
@@ -27,22 +27,6 @@
       "confidence": 0.93,
       "assignees": [
         "alexr00"
-      ]
-    },
-    {
-      "number": 348118,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 340041,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/340041 already tracks bringing the Local tool picker to the Copilot harness, including different tool sets for different sessions. This report adds a useful explicit requirement: enable or disable tools, including MCP tools, in an existing session without changing workspace defaults or other sessions.",
-      "reviewedAt": "2026-11-13T16:06:52.775Z",
-      "contentHash": "2401a279562d6499abb11d432d0f5cc6a39df9f7358c3eff1995455f296d54b1",
-      "verifiedAt": "2026-11-13T16:39:42.525Z",
-      "confidence": 0.94,
-      "assignees": [
-        "connor4312"
       ]
     },
     {
