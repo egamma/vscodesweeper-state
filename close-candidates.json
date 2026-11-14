@@ -1,10 +1,11 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-14T15:27:44.463Z",
+  "generatedAt": "2026-11-14T15:31:06.845Z",
   "policy": {
     "lanes": [
-      "duplicate"
+      "duplicate",
+      "implemented"
     ],
     "excludeAssignees": [
       "aiday-mar"
@@ -91,6 +92,89 @@
       "confidence": 0.94,
       "assignees": [
         "lszomoru"
+      ]
+    },
+    {
+      "number": 333413,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "5784197e5a85269550bed86abd9ebfd32a24adf5",
+        "fixedRelease": "1.140.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/5784197e5a85269550bed86abd9ebfd32a24adf5"
+      },
+      "comment": "Thanks for the detailed report. This path was fixed in https://github.com/microsoft/vscode/commit/5784197e5a85269550bed86abd9ebfd32a24adf5: model-configuration section discovery now asks the configuration access layer for the live schema, whose chat implementation looks up the provider's current registration, instead of relying on the selected model's stale metadata snapshot. The change was included in the 1.140.0 milestone, so newly added schema properties should appear without requiring a configuration write.",
+      "reviewedAt": "2026-10-01T22:52:00.232Z",
+      "contentHash": "c8e81d7a171571a7428b5000389a72ca254d95184a2538927602c4412af3f14d",
+      "verifiedAt": "2026-11-12T21:26:40.623Z",
+      "confidence": 0.93,
+      "assignees": [
+        "lramos15"
+      ]
+    },
+    {
+      "number": 321786,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "e886f3e07de31233c89ecdba812b05bfd07616d7",
+        "fixedRelease": "1.138.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/e886f3e07de31233c89ecdba812b05bfd07616d7"
+      },
+      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/e886f3e07de31233c89ecdba812b05bfd07616d7: Dark 2026's `editor.findRangeHighlightBackground` now uses translucent `#FFFFFF13` instead of opaque `#242526`, allowing the underlying selection highlight to remain visible. The fix shipped in 1.138.0.",
+      "reviewedAt": "2026-10-12T08:23:14.343Z",
+      "contentHash": "1cee8a1bac7886faacd2d62404c5a19a166e37a681d29ff2fe74d0409993dba5",
+      "verifiedAt": "2026-11-12T21:25:29.938Z",
+      "confidence": 0.94,
+      "assignees": [
+        "mrleemurray"
+      ]
+    },
+    {
+      "number": 311551,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "cd5814553ec9b1e40fae681e1163199a23b16480",
+        "fixedRelease": "1.134.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/cd5814553ec9b1e40fae681e1163199a23b16480"
+      },
+      "comment": "Thanks for the report. This failure path was removed in https://github.com/microsoft/vscode/commit/cd5814553ec9b1e40fae681e1163199a23b16480: cloud delegation now opens the created task without waiting for GitHub search to find its pull request. This resolves the reported post-delegation lookup error. The fix shipped in 1.134.0.",
+      "reviewedAt": "2026-10-12T22:54:24.993Z",
+      "contentHash": "dd5a79bdbee999b8739a66829dd7b6035d0b7ef673adafb632b54c31a0e69767",
+      "verifiedAt": "2026-11-12T21:25:01.854Z",
+      "confidence": 0.95,
+      "assignees": []
+    },
+    {
+      "number": 183297,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "3e56b3a2a4002a63b82bdcfdb7ea5873dbc6957e",
+        "fixedRelease": "1.109.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/3e56b3a2a4002a63b82bdcfdb7ea5873dbc6957e"
+      },
+      "comment": "Thanks for the request. Windows 11 primary context-menu integration was enabled for stable builds in https://github.com/microsoft/vscode/commit/3e56b3a2a4002a63b82bdcfdb7ea5873dbc6957e, so “Open with Code” can appear directly on folders without Shift+right-click. This completes the requested capability; installation cases where the entry still does not appear are tracked separately, including https://github.com/microsoft/vscode/issues/304214. The fix shipped in 1.109.0.",
+      "reviewedAt": "2026-10-11T14:45:02.834Z",
+      "contentHash": "713420c521121d77bf411cfeaa3a20cb16a804ce8fe4d358007de79b007fa914",
+      "verifiedAt": "2026-10-16T19:40:39.706Z",
+      "confidence": 0.94,
+      "assignees": [
+        "deepak1556"
+      ]
+    },
+    {
+      "number": 140633,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "bd95a8d4516d590256eefecfce465a2f10e8f5e5",
+        "fixedRelease": "1.67.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/bd95a8d4516d590256eefecfce465a2f10e8f5e5"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/bd95a8d4516d590256eefecfce465a2f10e8f5e5 changed language detection to honor the document URI's filename association before guessing from its contents. An untitled URI ending in .md now retains Markdown rather than switching to Dart or Rust, so this can be closed as resolved. The fix shipped in 1.67.0.",
+      "reviewedAt": "2026-10-11T19:44:34.252Z",
+      "contentHash": "3238877ff428c54f687ba9effec8b49c4af65fd8bd5f2db3c0474be35b7fd7f1",
+      "verifiedAt": "2026-11-12T21:22:58.268Z",
+      "confidence": 0.94,
+      "assignees": [
+        "TylerLeonhardt"
       ]
     }
   ]
