@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-15T21:06:17.293Z",
+  "generatedAt": "2026-11-15T21:13:45.356Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
