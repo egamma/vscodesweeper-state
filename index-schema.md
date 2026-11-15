@@ -56,6 +56,16 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `autoClosedAt` | string | rows the sweeper-close action closed (ISO) | An automatic close — never a maintainer action. |
 | `autoLane` | string | beside `autoClosedAt` | Which auto-close lane closed it. Values: `duplicate`, `implemented`. |
 | `autoObjectedAt` | string | auto-closed rows someone replied to afterwards (ISO) | A possible objection the assignee should look at. |
+| `reopenedAt` | string | rows reopened after a close the sweeper proposed (ISO) — open again, or closed a second time | The close was reversed. A row came back when it has `reopenedAt` or `closeRepliedAt`. |
+| `reopenedBy` | string | beside `reopenedAt`, when known | Login that reopened the issue. |
+| `priorCloseReason` | string | beside `reopenedAt`, when known | The close reason of the reversed close, `closeReason`'s values (the row's own `closeReason` may be a later re-review's). |
+| `priorAutoLane` | string | beside `reopenedAt`, when the sweeper-close action made the reversed close | That close was automatic (absent = a person closed it). Values: `duplicate`, `implemented`. |
+| `priorCloseVerdict` | string | beside `reopenedAt`, once a maintainer judged the reversed close | `wrong`: the close was a mistake; `held`: it stands (a reopen for another reason). Values: `held`, `wrong`. |
+| `closeRepliedAt` | string | closed close-proposal rows the issue author or a non-team account commented on after the close (ISO) | A reply after a close that used the sweeper's comment, or after an auto-close. Its text is not in the index — read the comment at `closeRepliedUrl` (a thank-you looks like any other reply here). |
+| `closeRepliedBy` | string | beside `closeRepliedAt` | Who replied. Values: `author`, `other`. |
+| `closeRepliedUrl` | string | beside `closeRepliedAt` | The reply comment's link (`…#issuecomment-<id>`; the id reads it with `gh api repos/<repo>/issues/comments/<id>`). |
+| `closeHandledAt` | string | beside `closeRepliedAt`, once a team member answered (ISO) | Absent = the reply is still unanswered. |
+| `closeVerdict` | string | closed close-proposal rows a maintainer judged after a reply | `wrong`: the close was a mistake; `held`: it stands (a thank-you, a question, an unfounded objection). Values: `held`, `wrong`. |
 | `lastCommentAt` | string | open rows with a non-bot comment (ISO) | The newest human comment. |
 | `lastCommentBy` | string | beside `lastCommentAt` | `reporter` for the issue author, else the login. |
 | `assigneeActedAt` | string | open rows where a live assignee acted (ISO) | The assignee's latest action. |

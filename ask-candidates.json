@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-15T15:54:53.666Z",
+  "generatedAt": "2026-11-15T21:06:17.293Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -9,18 +9,6 @@
     "excludeAssignees": []
   },
   "candidates": [
-    {
-      "number": 346861,
-      "comment": "Thanks for the report. To keep the buttons visible, enable `scm.alwaysShowActions` for inline actions and `workbench.view.alwaysShowHeaderActions` for view-header actions.\n\nFor the missing changes, please try the latest stable version and provide a small step-by-step example: which Copilot action edits a file, whether the edit is saved in the repository shown in Source Control, and whether an ordinary saved edit also requires Refresh. Please include your `git.autorefresh` setting and relevant Output → Git entries, removing any sensitive information.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-09T19:43:12.392Z",
-      "verifiedAt": "2026-11-09T20:00:21.010Z",
-      "contentHash": "426de46d91ca4c2d3b0bf5de02140cb48db653033ee5aebd77184a309f309aef",
-      "itemCreatedAt": "2026-11-08T20:29:08Z",
-      "itemUpdatedAt": "2026-11-08T22:12:36Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
     {
       "number": 346866,
       "comment": "Thanks for the report. Which shell are you using, and what command or action immediately preceded the missing prompt? Please share steps that trigger this, any visible terminal output, and whether Ctrl+C restores the prompt or a newly created terminal works. Does it still happen in the latest available VS Code build?\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
@@ -163,18 +151,6 @@
       "itemUpdatedAt": "2026-11-13T02:17:22Z",
       "assignees": [
         "Giuspepe"
-      ]
-    },
-    {
-      "number": 348099,
-      "comment": "Thanks for the report. Could you provide a shareable sample or steps to create an affected file, the exact edits made in Antigravity Auto mode, and which command or button you use to accept or stage changes? Please include approximate timings, whether staging the same changes remains slow with Antigravity disabled, and whether `git add` from a terminal is also slow. Please also clarify the Linux distribution, since the description and generated system information differ.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-13T16:07:53.120Z",
-      "verifiedAt": "2026-11-13T16:39:32.121Z",
-      "contentHash": "bc179c909f9ebc309ddf6097f7521ad1d03a34d90938e3fee4f6cc4f43fda143",
-      "itemCreatedAt": "2026-11-13T09:44:04Z",
-      "itemUpdatedAt": "2026-11-13T11:13:47Z",
-      "assignees": [
-        "lszomoru"
       ]
     },
     {
@@ -10246,6 +10222,18 @@
       "itemUpdatedAt": "2026-11-06T20:14:55Z",
       "assignees": [
         "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 346861,
+      "comment": "Thanks for the report. To keep the buttons visible, enable `scm.alwaysShowActions` for inline actions and `workbench.view.alwaysShowHeaderActions` for view-header actions.\n\nFor the missing changes, please try the latest stable version and provide a small step-by-step example: which Copilot action edits a file, whether the edit is saved in the repository shown in Source Control, and whether an ordinary saved edit also requires Refresh. Please include your `git.autorefresh` setting and relevant Output → Git entries, removing any sensitive information.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-09T19:43:12.392Z",
+      "verifiedAt": "2026-11-09T20:00:21.010Z",
+      "contentHash": "426de46d91ca4c2d3b0bf5de02140cb48db653033ee5aebd77184a309f309aef",
+      "itemCreatedAt": "2026-11-08T20:29:08Z",
+      "itemUpdatedAt": "2026-11-08T22:12:36Z",
+      "assignees": [
+        "lszomoru"
       ]
     },
     {
