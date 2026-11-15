@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-14T15:31:07.852Z",
+  "generatedAt": "2026-11-15T15:54:53.666Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -142,19 +142,6 @@
       ]
     },
     {
-      "number": 346832,
-      "comment": "Thanks for the report. Please share the exact error message or a screenshot, the app’s installation path, the external drive’s filesystem format, and the versions you updated from and to. Please also describe how you applied the update and tried to reopen VS Code, and include any available update or launch logs.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-12T16:58:30.862Z",
-      "verifiedAt": "2026-11-12T17:19:02.262Z",
-      "contentHash": "34f6a667edcabf68b87e0382d0634d2a70a13e28e394712bf55b884116f1ee21",
-      "itemCreatedAt": "2026-11-08T13:33:24Z",
-      "itemUpdatedAt": "2026-11-11T22:44:14Z",
-      "assignees": [
-        "deepak1556",
-        "dmitrivMS"
-      ]
-    },
-    {
       "number": 347164,
       "comment": "Thanks for the report. Please provide the Insiders and Copilot CLI versions, the CLI folder's relationship to the open workspace, which windows were open, and the Chat view state and trace logs requested above so we can reproduce this configuration. Issues marked `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-13T16:16:08.422Z",
@@ -191,18 +178,6 @@
       ]
     },
     {
-      "number": 348150,
-      "comment": "Thanks for the report. Please retry the installation and paste the relevant log from `F1 > Open View... > Shared`, including the signature verification result and error. Please also include the Python extension version and whether this happened during installation or an update. These details will help distinguish this from other signature verification failures.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-13T16:05:16.046Z",
-      "verifiedAt": "2026-11-13T16:39:38.560Z",
-      "contentHash": "c60070b200e7179853edfb888e346c9357e1dbe07eeaff560d9843835b723639",
-      "itemCreatedAt": "2026-11-13T13:44:14Z",
-      "itemUpdatedAt": "2026-11-13T15:14:24Z",
-      "assignees": [
-        "benibenj"
-      ]
-    },
-    {
       "number": 348166,
       "comment": "Thanks for the report and system details. What actions immediately precede the mouse becoming blocked—for example, opening a file picker, switching windows, or responding to a prompt? Please share any repeatable sequence, or a short recording showing the transition into the blocked state. When it happens, does pressing Escape or using Alt+Tab reveal or dismiss another dialog and restore mouse input?\n\nThis information is needed to investigate; issues marked `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-14T15:02:29.487Z",
@@ -215,6 +190,18 @@
       ]
     },
     {
+      "number": 348204,
+      "comment": "Thanks for the report. Could you share one concrete task where this happens: the exact prompt, a minimal sample project, the changes Copilot produced, and what fails despite its completion message? Please include your VS Code version, OS, selected model and mode, and a transcript or relevant logs with sensitive information removed. If possible, compare Copilot and Local using the same model and starting workspace on the latest build.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-14T15:01:02.169Z",
+      "verifiedAt": "2026-11-14T15:22:08.663Z",
+      "contentHash": "fc318b426cca7334f36ff1d46e71586d0b4eb3b2c8a26e51fb297d32f5509e14",
+      "itemCreatedAt": "2026-11-13T17:35:48Z",
+      "itemUpdatedAt": "2026-11-13T19:12:54Z",
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
       "number": 347771,
       "comment": "Thanks for the report. Which model/provider and agent harness are you using? Please include a prompt and steps that reproduce this, your `chat.agent.thinkingStyle` setting, and whether reasoning text appears when you expand the completed thinking blocks. Does this also happen in a new chat on the latest build?\n\nThe related report at https://github.com/microsoft/vscode/issues/345390 concerns custom endpoints with the Local harness, so these details will help determine whether it is the same problem. Issues marked `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-14T15:03:23.656Z",
@@ -224,6 +211,42 @@
       "itemUpdatedAt": "2026-11-13T19:26:56Z",
       "assignees": [
         "justschen"
+      ]
+    },
+    {
+      "number": 348272,
+      "comment": "Thanks for the report. After updating VS Code and Copilot as suggested above, please share the selected model and chat mode, the exact prompt or a minimal example, and the steps from viewing the filename in the terminal to attaching the file and sending the request. How long does it keep spinning, and does the same request stall in a new chat? Please include any error shown in the GitHub Copilot Chat output, removing private content.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-14T15:00:03.840Z",
+      "verifiedAt": "2026-11-14T15:22:14.189Z",
+      "contentHash": "21a22a610a4fa28c2f9a8305b8feda0ad83ddb7c139414fcf9ed35ea5249c37f",
+      "itemCreatedAt": "2026-11-13T22:46:11Z",
+      "itemUpdatedAt": "2026-11-14T02:18:53Z",
+      "assignees": [
+        "dbaeumer"
+      ]
+    },
+    {
+      "number": 348268,
+      "comment": "Thanks for the report. The error shows that the bundled Copilot runtime could not load its native library. Please provide your VS Code version and architecture from About, your macOS version, whether your Mac uses Intel or Apple Silicon, and the exact action that triggers the error. Please also include the full error output, especially any additional details after `dlopen failed`, with secrets removed, and whether it still occurs on the latest VS Code build.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-14T15:00:05.744Z",
+      "verifiedAt": "2026-11-14T15:22:17.529Z",
+      "contentHash": "c273ac686e918c7e4a25e65dabdbcfd6f1f659295fc13a30b2e17bec35f7793f",
+      "itemCreatedAt": "2026-11-13T22:43:57Z",
+      "itemUpdatedAt": "2026-11-14T02:19:00Z",
+      "assignees": [
+        "anthonykim1"
+      ]
+    },
+    {
+      "number": 348150,
+      "comment": "Thanks for the report. Please include the Shared log from `F1 > Open View... > Shared` immediately after the failure, the Python extension version, and the steps that trigger it, including whether you are installing or updating. Please also say whether other extensions fail the same way and whether it persists on the latest VS Code build; redact any sensitive information from the log.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-15T15:37:13.835Z",
+      "verifiedAt": "2026-11-15T15:51:15.398Z",
+      "contentHash": "f615fb8f159ab166e016c0b8e50d0528584fdb7391f0d3233c7d66f6919b8028",
+      "itemCreatedAt": "2026-11-13T13:44:14Z",
+      "itemUpdatedAt": "2026-11-15T08:25:41Z",
+      "assignees": [
+        "sandy081"
       ]
     },
     {
@@ -5538,18 +5561,6 @@
       ]
     },
     {
-      "number": 316910,
-      "comment": "Thanks for the report. Does this still happen on the latest stable version of VS Code? If so, please share:\n\n- The session type/provider and whether it uses the workspace directly or a separate worktree.\n- The selected Changes category, an example edited file's path, and the output of `git status --short` from the session's working directory while the panel is empty.\n- Whether clicking the response's changed-files pill shows the edits or makes the Changes panel populate, as described in https://github.com/microsoft/vscode/issues/337581.\n- Any relevant errors from the Git output or window/session logs, with sensitive information removed.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T11:46:00.096Z",
-      "verifiedAt": "2026-11-13T18:11:50.724Z",
-      "contentHash": "b0673c58c1768aace62b48d6c3c420d14aa04128884f15c447140497fd238659",
-      "itemCreatedAt": "2026-05-17T22:17:46Z",
-      "itemUpdatedAt": "2026-05-17T22:23:51Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 316956,
       "comment": "Thanks for the report. The current UI has separate per-turn and session-wide change summaries, so could you confirm this still occurs on the latest VS Code build and include the exact sequence of prompts and edits, which \"files changed\" element is affected, and a screenshot or Agent Host debug-log export? Issues marked `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-09-19T18:38:18.816Z",
@@ -5811,18 +5822,6 @@
       "itemUpdatedAt": "2026-05-25T10:37:09Z",
       "assignees": [
         "deepak1556"
-      ]
-    },
-    {
-      "number": 317648,
-      "comment": "Thanks for the report. Could you confirm whether this still happens on the latest VS Code build? If it does, please include:\n\n- The session provider, whether it uses a folder or worktree, and steps that lead to a failing click.\n- The selected changes view and `git status --short --branch` from the session's working directory before and after clicking.\n- Whether a new commit appears in `git log -1`, whether waiting changes the result, and any notification or relevant Output log error, with sensitive details removed.\n\nThis will help distinguish a failed commit from missing feedback or changes remaining visible after a successful commit. Issues labeled `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T11:50:38.696Z",
-      "verifiedAt": "2026-11-13T18:12:27.710Z",
-      "contentHash": "935338111b6bc0ea61daf6344050fbd28d804ccf5ab8b727e3a78aeefe609cf0",
-      "itemCreatedAt": "2026-05-20T22:24:06Z",
-      "itemUpdatedAt": "2026-05-25T10:37:21Z",
-      "assignees": [
-        "lszomoru"
       ]
     },
     {
@@ -10250,18 +10249,6 @@
       ]
     },
     {
-      "number": 346757,
-      "comment": "Thanks for the report. Does the VS Code entry disappear from Start entirely, or does it remain with a blank or generic icon? Please share the steps leading to this, whether it happens after an update or restart, and whether you installed using the User Installer, System Installer, or ZIP download. If the shortcut remains, please include its Target from Properties, replacing any personal username with a placeholder, and confirm whether it still launches VS Code.\n\nPlease also check whether this persists on the latest build. Issues labeled info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-08T14:56:38.956Z",
-      "verifiedAt": "2026-11-08T15:10:22.500Z",
-      "contentHash": "b66993ff4c105cf2504451e4bcf3f9d4d88240b471ec6b625134723ed22d08c0",
-      "itemCreatedAt": "2026-11-07T13:17:15Z",
-      "itemUpdatedAt": "2026-11-07T15:12:22Z",
-      "assignees": [
-        "Yoyokrazy"
-      ]
-    },
-    {
       "number": 345454,
       "comment": "Thanks for the report. Which assistant, model, and chat mode were you using? Please share a minimal example with the exact instructions, what you expected, and the response or changes you received, removing any private information. Please also clarify whether you are reporting instruction-following behavior or only a charge or credit-accounting concern. Issues marked info-needed automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-10T16:41:21.384Z",
@@ -10380,6 +10367,19 @@
       ]
     },
     {
+      "number": 346832,
+      "comment": "Thanks for the report. Please share the exact error message or a screenshot, the app’s installation path, the external drive’s filesystem format, and the versions you updated from and to. Please also describe how you applied the update and tried to reopen VS Code, and include any available update or launch logs.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-12T16:58:30.862Z",
+      "verifiedAt": "2026-11-12T17:19:02.262Z",
+      "contentHash": "34f6a667edcabf68b87e0382d0634d2a70a13e28e394712bf55b884116f1ee21",
+      "itemCreatedAt": "2026-11-08T13:33:24Z",
+      "itemUpdatedAt": "2026-11-11T22:44:14Z",
+      "assignees": [
+        "deepak1556",
+        "dmitrivMS"
+      ]
+    },
+    {
       "number": 346128,
       "comment": "Thanks for the report. Could you share the tunnel host's OS and VS Code/CLI version, how you start the tunnel (from VS Code or as an installed service), and the exact steps from a working connection through the update/restart to the failure? Please specify which machine restarts, include the exact data-limit error if one appears, and attach host tunnel logs covering the disconnect and failed recovery, with credentials and personal information removed. Also clarify whether restarting the host service restores the tunnel or whether the tunnel remains available but agent sessions fail to reconnect.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-12T17:01:44.168Z",
@@ -10473,6 +10473,18 @@
       "itemUpdatedAt": "2026-11-14T02:19:02Z",
       "assignees": [
         "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 346757,
+      "comment": "Thanks for the report. Does the entire VS Code shortcut disappear from Start, or does the shortcut remain with a blank or incorrect icon? Please describe the steps leading up to this, including whether it happens after an update or restart, whether you use the User Installer, System Installer, or ZIP download, and whether the remaining shortcut still launches VS Code. If a shortcut remains, please include its Target and icon location from Properties, with personal path details redacted.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-15T15:39:16.079Z",
+      "verifiedAt": "2026-11-15T15:51:12.693Z",
+      "contentHash": "abb05beb93567e6a37671b6dd206543ba4b09d60d7127e84d5427eedf885390b",
+      "itemCreatedAt": "2026-11-07T13:17:15Z",
+      "itemUpdatedAt": "2026-11-14T16:14:05Z",
+      "assignees": [
+        "Yoyokrazy"
       ]
     }
   ]

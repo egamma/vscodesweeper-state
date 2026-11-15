@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-14T15:31:06.845Z",
+  "generatedAt": "2026-11-15T15:54:53.073Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,135 +14,6 @@
     "includeAssignees": []
   },
   "candidates": [
-    {
-      "number": 348138,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 335780,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches the reasoning-history validation failure tracked in https://github.com/microsoft/vscode/issues/335780. Your OpenWebUI/Mistral configuration and the fact that Local works while Copilot fails after thinking/tool calls are useful additional evidence for that issue.",
-      "reviewedAt": "2026-11-13T16:06:34.336Z",
-      "contentHash": "403bb755b331533d5c27b8f10f477950b2af03a37093ebd141eb80e9dafd1631",
-      "verifiedAt": "2026-11-13T16:39:39.394Z",
-      "confidence": 0.93,
-      "assignees": [
-        "alexr00"
-      ]
-    },
-    {
-      "number": 348098,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 95493,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report and the confirmation on 1.146.0. This is covered by https://github.com/microsoft/vscode/issues/95493, which tracks editor font-stretch support, including Iosevka Extended. Your Windows DirectWrite findings and the static-font limitations of the family-name and font-variation workarounds are useful additional evidence for that request.",
-      "reviewedAt": "2026-11-13T16:07:52.927Z",
-      "contentHash": "a9cd7c1f7cd3b942629ea1e72834a6bd74443604f8173f35ac775f57319d9c18",
-      "verifiedAt": "2026-11-13T16:39:31.391Z",
-      "confidence": 0.97,
-      "assignees": [
-        "rzhao271"
-      ]
-    },
-    {
-      "number": 348088,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 347791,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. Terminal-profile support for the Copilot harness is already tracked in https://github.com/microsoft/vscode/issues/347791. This report adds important Windows requirements: launcher-based PowerShell discovery, bootstrap arguments, explicit CMD/PowerShell execution, and successful initialization before commands—including delegated work—without changing approvals or command lifecycle behavior. Those requirements belong in the same work; loading user profiles or prompting the agent to load a .env file does not fully address them.",
-      "reviewedAt": "2026-11-13T16:08:37.569Z",
-      "contentHash": "640ed6e2e56681850f1184da9254c96ae2d5f260e997faa9f28e2a053b8ff21f",
-      "verifiedAt": "2026-11-13T16:39:30.237Z",
-      "confidence": 0.9,
-      "assignees": [
-        "meganrogge"
-      ]
-    },
-    {
-      "number": 348078,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 347909,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/347909: two resume rebuilds precede a turn that finishes in the Claude transcript but never delivers its response to the Agents window. Please retain this report's multi-window tool/customization trigger, persistence across Reload Window, and steering-message recovery observation in that investigation.",
-      "reviewedAt": "2026-11-13T16:08:17.337Z",
-      "contentHash": "111317c119f8488c16b2927e8053c1362d695a92b2cf90283f8c34293fa81af4",
-      "verifiedAt": "2026-11-13T16:39:28.032Z",
-      "confidence": 0.96,
-      "assignees": [
-        "roblourens"
-      ]
-    },
-    {
-      "number": 347814,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 339363,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. Missing per-file Keep/Undo controls across Copilot harnesses are tracked in https://github.com/microsoft/vscode/issues/339363. This report adds the Windows 1.146 experience and a workaround reported in the discussion: switching to Local restored the controls, while changing the automatic-accept delay had an uncertain effect. The recurring loss of these controls after updates belongs in that discussion too.",
-      "reviewedAt": "2026-11-13T16:15:03.204Z",
-      "contentHash": "ceab1950886bb6fa3eb4d9d50594a0add7fead6c5a4edf01c04bdb8a7546aaf4",
-      "verifiedAt": "2026-11-13T16:39:16.767Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 333413,
-      "lane": "implemented",
-      "evidence": {
-        "fixedSha": "5784197e5a85269550bed86abd9ebfd32a24adf5",
-        "fixedRelease": "1.140.0",
-        "fixUrl": "https://github.com/microsoft/vscode/commit/5784197e5a85269550bed86abd9ebfd32a24adf5"
-      },
-      "comment": "Thanks for the detailed report. This path was fixed in https://github.com/microsoft/vscode/commit/5784197e5a85269550bed86abd9ebfd32a24adf5: model-configuration section discovery now asks the configuration access layer for the live schema, whose chat implementation looks up the provider's current registration, instead of relying on the selected model's stale metadata snapshot. The change was included in the 1.140.0 milestone, so newly added schema properties should appear without requiring a configuration write.",
-      "reviewedAt": "2026-10-01T22:52:00.232Z",
-      "contentHash": "c8e81d7a171571a7428b5000389a72ca254d95184a2538927602c4412af3f14d",
-      "verifiedAt": "2026-11-12T21:26:40.623Z",
-      "confidence": 0.93,
-      "assignees": [
-        "lramos15"
-      ]
-    },
-    {
-      "number": 321786,
-      "lane": "implemented",
-      "evidence": {
-        "fixedSha": "e886f3e07de31233c89ecdba812b05bfd07616d7",
-        "fixedRelease": "1.138.0",
-        "fixUrl": "https://github.com/microsoft/vscode/commit/e886f3e07de31233c89ecdba812b05bfd07616d7"
-      },
-      "comment": "Thanks for the report. This was fixed in https://github.com/microsoft/vscode/commit/e886f3e07de31233c89ecdba812b05bfd07616d7: Dark 2026's `editor.findRangeHighlightBackground` now uses translucent `#FFFFFF13` instead of opaque `#242526`, allowing the underlying selection highlight to remain visible. The fix shipped in 1.138.0.",
-      "reviewedAt": "2026-10-12T08:23:14.343Z",
-      "contentHash": "1cee8a1bac7886faacd2d62404c5a19a166e37a681d29ff2fe74d0409993dba5",
-      "verifiedAt": "2026-11-12T21:25:29.938Z",
-      "confidence": 0.94,
-      "assignees": [
-        "mrleemurray"
-      ]
-    },
-    {
-      "number": 311551,
-      "lane": "implemented",
-      "evidence": {
-        "fixedSha": "cd5814553ec9b1e40fae681e1163199a23b16480",
-        "fixedRelease": "1.134.0",
-        "fixUrl": "https://github.com/microsoft/vscode/commit/cd5814553ec9b1e40fae681e1163199a23b16480"
-      },
-      "comment": "Thanks for the report. This failure path was removed in https://github.com/microsoft/vscode/commit/cd5814553ec9b1e40fae681e1163199a23b16480: cloud delegation now opens the created task without waiting for GitHub search to find its pull request. This resolves the reported post-delegation lookup error. The fix shipped in 1.134.0.",
-      "reviewedAt": "2026-10-12T22:54:24.993Z",
-      "contentHash": "dd5a79bdbee999b8739a66829dd7b6035d0b7ef673adafb632b54c31a0e69767",
-      "verifiedAt": "2026-11-12T21:25:01.854Z",
-      "confidence": 0.95,
-      "assignees": []
-    },
     {
       "number": 183297,
       "lane": "implemented",
@@ -158,23 +29,6 @@
       "confidence": 0.94,
       "assignees": [
         "deepak1556"
-      ]
-    },
-    {
-      "number": 140633,
-      "lane": "implemented",
-      "evidence": {
-        "fixedSha": "bd95a8d4516d590256eefecfce465a2f10e8f5e5",
-        "fixedRelease": "1.67.0",
-        "fixUrl": "https://github.com/microsoft/vscode/commit/bd95a8d4516d590256eefecfce465a2f10e8f5e5"
-      },
-      "comment": "Thanks for the report. https://github.com/microsoft/vscode/commit/bd95a8d4516d590256eefecfce465a2f10e8f5e5 changed language detection to honor the document URI's filename association before guessing from its contents. An untitled URI ending in .md now retains Markdown rather than switching to Dart or Rust, so this can be closed as resolved. The fix shipped in 1.67.0.",
-      "reviewedAt": "2026-10-11T19:44:34.252Z",
-      "contentHash": "3238877ff428c54f687ba9effec8b49c4af65fd8bd5f2db3c0474be35b7fd7f1",
-      "verifiedAt": "2026-11-12T21:22:58.268Z",
-      "confidence": 0.94,
-      "assignees": [
-        "TylerLeonhardt"
       ]
     }
   ]
