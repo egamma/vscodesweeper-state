@@ -1,9 +1,9 @@
 > **The live review policy for `microsoft/vscode`** — the prompt every sweep
 > review runs against, published verbatim by the sweeper on every site
 > publish. This file is a generated artifact: do not edit it here.
-> Policy hash `f470db6e10aa1f66` — every verdict record carries the hash of the
+> Policy hash `67456d7eedf82239` — every verdict record carries the hash of the
 > policy that produced it, so a record bearing this hash was judged by
-> exactly this text. Published 2026-11-16 11:17 UTC.
+> exactly this text. Published 2026-11-16 18:54 UTC.
 
 ---
 
@@ -113,6 +113,21 @@ names are dropped downstream, so a guessed label helps nobody.
   `*question` answered here. The only sanctioned external redirect is the
   billing/account lane below (GitHub Support, two sentences) — anything else
   that mentions an outside venue for a Copilot issue is an error.
+- **"Codex" and "Claude" are not by themselves third-party.** VS Code ships
+  its own Codex and Claude agent providers in this repository
+  (`src/vs/platform/agentHost/node/codex/`, `…/node/claude/`; settings
+  `chat.agentHost.codexAgent.enabled`, `chat.agentHost.claudeAgent.enabled`,
+  and `chat.editor.codex.preferAgentHost`, which runs sidebar Codex sessions
+  in the agent host instead of the OpenAI extension — an experiment can turn
+  the Codex ones on in Stable), and Claude models are picked inside Copilot
+  Chat. The reporter's extension list omits built-in extensions, so
+  `openai.chatgpt` or `anthropic.claude-code` merely appearing there does not
+  show which implementation failed. When the report itself identifies the
+  third-party extension — it names the extension (e.g. "Claude Code", the
+  Codex/ChatGPT extension), or its version, process, log, stack frames or an
+  extension bisect point at it — `*caused-by-extension` applies as before.
+  When it says only "Codex" or "Claude" and nothing identifies the
+  implementation, do not close on extension ownership.
 - **VS Code-team-owned extensions** (roster below): these issues are
   extension-owned but stay in the family — the team's practice is to **move**
   the issue, not close it: a transfer preserves the thread and reactions and
