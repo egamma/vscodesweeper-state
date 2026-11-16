@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-15T21:13:45.356Z",
+  "generatedAt": "2026-11-16T08:41:08.815Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -9,18 +9,6 @@
     "excludeAssignees": []
   },
   "candidates": [
-    {
-      "number": 346866,
-      "comment": "Thanks for the report. Which shell are you using, and what command or action immediately preceded the missing prompt? Please share steps that trigger this, any visible terminal output, and whether Ctrl+C restores the prompt or a newly created terminal works. Does it still happen in the latest available VS Code build?\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-09T19:42:36.970Z",
-      "verifiedAt": "2026-11-09T20:00:19.774Z",
-      "contentHash": "ecd18568199c0bf7360fd41dedd0d8fac4ba89645ed0763118e25a0d2cc58da5",
-      "itemCreatedAt": "2026-11-08T22:14:19Z",
-      "itemUpdatedAt": "2026-11-09T00:36:53Z",
-      "assignees": [
-        "Giuspepe"
-      ]
-    },
     {
       "number": 346942,
       "comment": "Thanks for the report. Please describe what happens, what you expected, and the steps that trigger the problem. Include your VS Code version, OS, Copilot version, affected feature/model, and any relevant error message or logs, with sensitive information removed.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
@@ -106,18 +94,6 @@
       ]
     },
     {
-      "number": 347621,
-      "comment": "Thanks for the report and update. After restarting, can you send a request to your third-party model without signing in, or has only the prompt disappeared? Please name the provider/model, whether you were using local Chat or an agent session, and the steps that brought up the prompt, including whether it appeared immediately after updating. Issues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-11T16:04:02.417Z",
-      "verifiedAt": "2026-11-11T16:39:47.796Z",
-      "contentHash": "ac994f7eb345486f324a0dbb38d108c2b284f5fc317aee1421e5bdf0a2255205",
-      "itemCreatedAt": "2026-11-11T13:38:40Z",
-      "itemUpdatedAt": "2026-11-11T15:13:38Z",
-      "assignees": [
-        "TylerLeonhardt"
-      ]
-    },
-    {
       "number": 347659,
       "comment": "Thanks for the report. Please attach the generated GitHub.copilot-chat-unresponsive.cpuprofile.txt file—the local file link does not upload it—and describe what you were doing when CPU usage increased, how long it lasted, and whether it happens repeatedly. Please also let us know whether it persists after updating VS Code and Copilot Chat.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-12T16:53:37.239Z",
@@ -175,18 +151,6 @@
       "itemUpdatedAt": "2026-11-13T19:12:54Z",
       "assignees": [
         "vritant24"
-      ]
-    },
-    {
-      "number": 347771,
-      "comment": "Thanks for the report. Which model/provider and agent harness are you using? Please include a prompt and steps that reproduce this, your `chat.agent.thinkingStyle` setting, and whether reasoning text appears when you expand the completed thinking blocks. Does this also happen in a new chat on the latest build?\n\nThe related report at https://github.com/microsoft/vscode/issues/345390 concerns custom endpoints with the Local harness, so these details will help determine whether it is the same problem. Issues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-14T15:03:23.656Z",
-      "verifiedAt": "2026-11-14T15:22:06.981Z",
-      "contentHash": "3c2512107be647ed5ff3c308eb887569b68c1d58a888319f39471e63312b330e",
-      "itemCreatedAt": "2026-11-12T00:26:51Z",
-      "itemUpdatedAt": "2026-11-13T19:26:56Z",
-      "assignees": [
-        "justschen"
       ]
     },
     {
@@ -9646,18 +9610,6 @@
       "itemUpdatedAt": "2026-10-28T05:16:10Z",
       "assignees": [
         "sandy081"
-      ]
-    },
-    {
-      "number": 342303,
-      "comment": "Thanks for the additional details—the Cascade message helps narrow this down. Could you share an example request that led to the spike, the selected model and session type, and the workspace size or languages involved? Please also capture **Developer: Open Process Explorer** while memory is rising, before the system becomes unresponsive, so we can see which process is growing and its CPU/memory usage. Include the exact version from **Help: About** and whether this still happens on the latest build.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-28T15:26:37.712Z",
-      "verifiedAt": "2026-10-28T15:36:24.823Z",
-      "contentHash": "cc26b0952a2553124c92e0eb1746d6c94867271d52f08acc4101e1aa967aa418",
-      "itemCreatedAt": "2026-10-17T16:24:10Z",
-      "itemUpdatedAt": "2026-10-28T05:16:18Z",
-      "assignees": [
-        "DonJayamanne"
       ]
     },
     {
