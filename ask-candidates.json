@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-16T09:09:21.292Z",
+  "generatedAt": "2026-11-16T09:54:11.872Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -151,18 +151,6 @@
       "itemUpdatedAt": "2026-11-13T19:12:54Z",
       "assignees": [
         "vritant24"
-      ]
-    },
-    {
-      "number": 348272,
-      "comment": "Thanks for the report. After updating VS Code and Copilot as suggested above, please share the selected model and chat mode, the exact prompt or a minimal example, and the steps from viewing the filename in the terminal to attaching the file and sending the request. How long does it keep spinning, and does the same request stall in a new chat? Please include any error shown in the GitHub Copilot Chat output, removing private content.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-14T15:00:03.840Z",
-      "verifiedAt": "2026-11-14T15:22:14.189Z",
-      "contentHash": "21a22a610a4fa28c2f9a8305b8feda0ad83ddb7c139414fcf9ed35ea5249c37f",
-      "itemCreatedAt": "2026-11-13T22:46:11Z",
-      "itemUpdatedAt": "2026-11-14T02:18:53Z",
-      "assignees": [
-        "dbaeumer"
       ]
     },
     {
