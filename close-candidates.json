@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-16T19:31:20.142Z",
+  "generatedAt": "2026-11-17T18:20:33.942Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,54 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 348701,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 348170,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The inability to stop agent terminals is already included in your earlier report at https://github.com/microsoft/vscode/issues/348170. This adds a screenshot of the missing controls and the detail that you must use `pgrep` to find and terminate processes manually; those details belong with the same regression.",
+      "reviewedAt": "2026-11-17T17:41:32.183Z",
+      "contentHash": "5aa7b7ba24ed52f047e23f55154a9e2c228d53c371ecb01a709b5eb2570c2544",
+      "verifiedAt": "2026-11-17T18:10:36.223Z",
+      "confidence": 0.95,
+      "assignees": [
+        "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 347057,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 291008,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same Ctrl+C and right-click copying failures in expanded chat terminal output are tracked in https://github.com/microsoft/vscode/issues/291008. This report adds Linux Flatpak on VS Code 1.139.1, a long-running command, and a brief content flash when right-clicking.",
+      "reviewedAt": "2026-11-17T17:55:58.562Z",
+      "contentHash": "905e1275e5deacb3b62b9b863969a0c5b5b475c3a6110cd09d346b458d8219ca",
+      "verifiedAt": "2026-11-17T18:09:57.250Z",
+      "confidence": 0.94,
+      "assignees": [
+        "Giuspepe"
+      ]
+    },
+    {
+      "number": 346876,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 248992,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction and analysis. This is the same workspace-root filtering bug tracked in https://github.com/microsoft/vscode/issues/248992. Your macOS reproduction adds useful detail: the root disappears on expansion, returns after reload, and partially reappears when a file is opened.",
+      "reviewedAt": "2026-11-17T17:56:56.308Z",
+      "contentHash": "02325b7220301fd892652874fad53853938b08ef4a5819b7a8f333733043ac95",
+      "verifiedAt": "2026-11-17T18:09:43.101Z",
+      "confidence": 0.97,
+      "assignees": [
+        "lramos15"
+      ]
+    },
     {
       "number": 183297,
       "lane": "implemented",
