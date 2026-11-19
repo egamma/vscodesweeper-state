@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-19T16:33:54.019Z",
+  "generatedAt": "2026-11-19T17:40:34.171Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,20 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 349250,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 348902,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed diagnosis. This is the side-chat authentication failure tracked in https://github.com/microsoft/vscode/issues/348902. This report adds the session-not-available renderer warning, the missing Disable for This Session action, and the owning-session lookup gap in AgentHostCustomizationService._resolveTarget; those details should stay with the investigation there.",
+      "reviewedAt": "2026-11-19T17:16:10.291Z",
+      "contentHash": "7214f434e4d8504b8baed901f71c0f04fb69ed3aef78f6e875cbd39f55d06503",
+      "verifiedAt": "2026-11-19T17:36:29.698Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
     {
       "number": 349039,
       "lane": "duplicate",
@@ -28,6 +42,22 @@
       "confidence": 0.96,
       "assignees": [
         "hediet"
+      ]
+    },
+    {
+      "number": 349027,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343575,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the additional details. Integrated-terminal access in Copilot sessions is already tracked in https://github.com/microsoft/vscode/issues/343575, where you also reported this limitation. Consolidating this report there, including your Windows 11 / VS Code 1.145.2 details and the “Error fetching embeddings: 403” encountered with tool discovery and your custom tool; that error's cause is not yet established.",
+      "reviewedAt": "2026-11-19T17:22:13.542Z",
+      "contentHash": "5b226de2ea0fc9663159669a7143852b7e7f4f11c852ad123cf65e039dba5acc",
+      "verifiedAt": "2026-11-19T17:36:09.528Z",
+      "confidence": 0.96,
+      "assignees": [
+        "anthonykim1"
       ]
     },
     {
