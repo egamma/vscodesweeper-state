@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-18T17:54:36.527Z",
+  "generatedAt": "2026-11-19T16:33:54.838Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -13,6 +13,26 @@
     ]
   },
   "candidates": [
+    {
+      "number": 349071,
+      "comment": "Thanks for the report. Please provide the title and description in English, including which feature you used, what happened, and what you expected.",
+      "reviewedAt": "2026-11-18T17:09:10.075Z",
+      "verifiedAt": "2026-11-18T17:46:17.388Z",
+      "contentHash": "a182f30c8f3ac82bd4c98e7a0d38530eec7f89b1761654c055fe4354e03305df",
+      "itemCreatedAt": "2026-11-18T13:56:13Z",
+      "itemUpdatedAt": "2026-11-18T13:56:13Z",
+      "assignees": []
+    },
+    {
+      "number": 348997,
+      "comment": "Thanks for the report. Please share a small sample showing the code before and after saving, the file's language, and the exact steps that cause the deletion. Include your `editor.formatOnSave` and `editor.codeActionsOnSave` settings, whether a Copilot edit or agent session is active, and whether it still happens on the latest VS Code version with Copilot disabled.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-18T17:14:12.948Z",
+      "verifiedAt": "2026-11-18T17:45:58.893Z",
+      "contentHash": "73641106310664cfcb69f2f95a5e7adb27712de1318b372526f0456ae9ad32d1",
+      "itemCreatedAt": "2026-11-18T07:11:29Z",
+      "itemUpdatedAt": "2026-11-18T13:56:34Z",
+      "assignees": []
+    },
     {
       "number": 188507,
       "comment": "Thanks for the report. Please provide a minimal code sample, the exact command or button you use to run it, the expected output, and whether you are looking in the Terminal, Output panel (including the selected channel), or Debug Console. Please also check on the latest VS Code and tell us whether the same program produces output when run directly in an external terminal.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
@@ -1113,16 +1133,6 @@
       "contentHash": "a48b3630a1d49a5c0e29d19b0b1d9d39ae1833718f346a68b3bccee0f8b3794e",
       "itemCreatedAt": "2026-07-28T16:58:18Z",
       "itemUpdatedAt": "2026-09-03T23:12:18Z",
-      "assignees": []
-    },
-    {
-      "number": 327935,
-      "comment": "Thanks for the report. Could you check the latest stable or Insiders build and provide the SSH extension name/version, remote host OS, relevant connection settings, and what is open or running before the hang? In particular, does it happen while idle in an empty remote window, with other extensions disabled but the SSH extension enabled?\n\nPlease also attach the Remote-SSH output, if that is the extension you use, and the local window/main logs around the failure, including the full exit reason and code. Remove credentials and sensitive host details before sharing. Issues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-13T00:03:02.050Z",
-      "verifiedAt": "2026-11-13T18:20:04.834Z",
-      "contentHash": "fa26992920f14afc5a1648d73882c3a9b849cf22b7c72511804ca1d7365d7327",
-      "itemCreatedAt": "2026-07-28T23:38:14Z",
-      "itemUpdatedAt": "2026-09-03T23:12:44Z",
       "assignees": []
     },
     {
