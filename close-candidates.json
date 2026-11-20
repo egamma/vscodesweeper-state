@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-19T17:40:34.171Z",
+  "generatedAt": "2026-11-20T17:30:13.821Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -15,17 +15,45 @@
   },
   "candidates": [
     {
-      "number": 349250,
+      "number": 349437,
       "lane": "duplicate",
       "evidence": {
-        "canonical": 348902,
+        "canonical": 345237,
         "kind": "peer"
       },
-      "comment": "Thanks for the detailed diagnosis. This is the side-chat authentication failure tracked in https://github.com/microsoft/vscode/issues/348902. This report adds the session-not-available renderer warning, the missing Disable for This Session action, and the owning-session lookup gap in AgentHostCustomizationService._resolveTarget; those details should stay with the investigation there.",
-      "reviewedAt": "2026-11-19T17:16:10.291Z",
-      "contentHash": "7214f434e4d8504b8baed901f71c0f04fb69ed3aef78f6e875cbd39f55d06503",
-      "verifiedAt": "2026-11-19T17:36:29.698Z",
+      "comment": "Thanks for the detailed deployment context. This is covered by https://github.com/microsoft/vscode/issues/345237, which requests serving the dedicated Agents interface through code serve-web or a separate command. Your restricted-network and LAN/VPN scenarios add useful requirements: locally served frontend assets, direct Agent Host connectivity without cloud relays, and connection-token protection.",
+      "reviewedAt": "2026-11-20T16:57:33.763Z",
+      "contentHash": "5c175001ef01fb801b362f122247a5b54fb5c6e979b1878ee9e6120485af1004",
+      "verifiedAt": "2026-11-20T17:23:11.822Z",
+      "confidence": 0.95,
+      "assignees": []
+    },
+    {
+      "number": 349409,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 332085,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. Remote Copilot BYOK support is tracked in https://github.com/microsoft/vscode/issues/332085, including SSH and other remote scenarios. Consolidating this report there also preserves the tunnel scenario and your request for an easier, explained switch to the Local harness; current switching guidance is at https://github.com/microsoft/vscode/issues/332085#issuecomment-6002604036.",
+      "reviewedAt": "2026-11-20T16:57:51.972Z",
+      "contentHash": "0b47a7e101d920679a3eba8a47e18d4af30e1a091f21d0b8ef112a5913b05192",
+      "verifiedAt": "2026-11-20T17:23:17.348Z",
       "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 349381,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 346555,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same editNotebook missing-stream failure in agent sessions is tracked in https://github.com/microsoft/vscode/issues/346555. This report adds a newer Insiders reproduction with Qwen3.8-27B, timestamped failures after reload, and successful configureNotebook calls alongside getNotebookSummary.",
+      "reviewedAt": "2026-11-20T16:58:36.630Z",
+      "contentHash": "5897044150169e6af8ea557532b3f0c2813797709c9ee8f674ee87b22c17c65e",
+      "verifiedAt": "2026-11-20T17:23:00.713Z",
+      "confidence": 0.94,
       "assignees": []
     },
     {
@@ -90,22 +118,6 @@
       "confidence": 0.97,
       "assignees": [
         "bhavyaus"
-      ]
-    },
-    {
-      "number": 348862,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 339363,
-        "kind": "meta"
-      },
-      "comment": "Thanks for the report. The missing per-change Keep/Undo controls in Copilot SDK sessions are tracked in https://github.com/microsoft/vscode/issues/339363. Your macOS report on VS Code 1.146.0 with agent host 1.0.108-0 adds a useful comparison with Local sessions.\n\nAs suggested above, try `\"chat.editor.workingSet.enabled\": true` and ensure **Keep and Undo** is enabled in the working set's context menu. If controls remain absent, please add that configuration detail to the existing thread.",
-      "reviewedAt": "2026-11-18T17:17:45.464Z",
-      "contentHash": "21a3747d1f00b0cae973d0454d0dc487582a8047c302933c06aa60b0fb81da74",
-      "verifiedAt": "2026-11-18T17:45:52.493Z",
-      "confidence": 0.94,
-      "assignees": [
-        "lszomoru"
       ]
     },
     {
