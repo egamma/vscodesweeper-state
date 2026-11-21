@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-20T17:30:14.792Z",
+  "generatedAt": "2026-11-21T16:57:31.211Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -41,6 +41,78 @@
       "contentHash": "ea736867db26f35397ba4ea28d962c4d0fdd3f4da48758b4e0af0288a6db65c0",
       "itemCreatedAt": "2026-11-19T01:56:09Z",
       "itemUpdatedAt": "2026-11-20T03:16:47Z",
+      "assignees": []
+    },
+    {
+      "number": 349318,
+      "comment": "Thanks for the report. The screenshot shows overlapping repository headings, commit buttons, and changed-file rows. Please share the steps that produce this state, including the repository/worktree setup and whether it starts on opening the workspace or after an action. Please also include the extensions-disabled result and any Console or Git output errors requested above.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T17:01:43.424Z",
+      "verifiedAt": "2026-11-20T17:22:46.933Z",
+      "contentHash": "a5ca1ae0446ce31ba3862eeebc07b8385439bb0b5651e2eeed01ba34f449705a",
+      "itemCreatedAt": "2026-11-19T20:02:30Z",
+      "itemUpdatedAt": "2026-11-20T03:19:22Z",
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 349384,
+      "comment": "Thanks for the report. Please try the latest stable VS Code and tell us whether you are signing in with GitHub or Microsoft, which command or feature starts sign-in, the steps you follow, and the complete error message. Please also describe whether the browser opens and returns to VS Code, and include relevant authentication Output logs with tokens and personal information removed.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T16:58:02.839Z",
+      "verifiedAt": "2026-11-20T17:23:03.475Z",
+      "contentHash": "18cf62b568eefbda1eafee0ebdf47d0a47517b0e0848bfda5266a7ea060e0ee8",
+      "itemCreatedAt": "2026-11-20T06:52:17Z",
+      "itemUpdatedAt": "2026-11-20T06:52:17Z",
+      "assignees": []
+    },
+    {
+      "number": 349383,
+      "comment": "Thanks for the detailed logs. The recorded Extension Host exit is graceful: the renderer sends a termination message and the host exits with code 0. That message alone does not distinguish a window close/reload from a host restart or explain the freeze. The missing-bundle messages concern translations, and Git decoration capping is an intentional limit; neither establishes the cause.\n\nCould you provide the action sequence leading to a hang, or a small workspace that triggers it, plus main.log from the same session and the approximate time the window stopped responding versus when you closed it? If no repeatable sequence is available, please capture process CPU/memory information or a hang dump while it is stuck, before closing it. This request does not require permanently disabling your development extensions. Issues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T16:58:40.388Z",
+      "verifiedAt": "2026-11-20T17:23:00.911Z",
+      "contentHash": "48f84b74a0f6d991dc121b66250487223a9975820c7d2cc3e87d56027e61329e",
+      "itemCreatedAt": "2026-11-20T06:45:16Z",
+      "itemUpdatedAt": "2026-11-20T07:14:15Z",
+      "assignees": []
+    },
+    {
+      "number": 349393,
+      "comment": "Thanks for the report. `git.scanRepositories` adds paths to the normal scan; it does not restrict scanning to those paths, and `git.autoRepositoryDetection: \"subFolders\"` still scans other subfolders.\n\nCould you provide an approximate folder count and a minimal directory layout showing where the repositories are, your `git.repositoryScanMaxDepth` and `git.repositoryScanIgnoredFolders` values, and the Git Output log covering the failure? Please clarify whether repositories stop appearing, the Git extension stops responding, or a VS Code process actually exits, and include any error shown. Please also confirm the behavior on the latest Insiders build and whether it occurs with third-party extensions disabled while built-in Git remains enabled.\n\nIssues labeled `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T16:58:10.647Z",
+      "verifiedAt": "2026-11-20T17:23:08.302Z",
+      "contentHash": "eba3e466126ce536b12aff3983087ca4c973da5a91ae0f8e623a44a5b80b2a85",
+      "itemCreatedAt": "2026-11-20T08:20:13Z",
+      "itemUpdatedAt": "2026-11-20T08:20:13Z",
+      "assignees": []
+    },
+    {
+      "number": 349422,
+      "comment": "Thanks for the report and the comparison with 1.146. Please provide the HiSpark Studio extension ID and version, the command you use to open the monitor, and screenshots from both VS Code versions using the same profile and configuration. Please also include your terminal.integrated.fontSize, terminal.integrated.fontFamily, and window.zoomLevel settings, and say whether an ordinary integrated terminal has the same problem in 1.147.\n\nIssues labeled info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T16:57:05.156Z",
+      "verifiedAt": "2026-11-20T17:23:12.189Z",
+      "contentHash": "0aaea69104ec1fc77b4f129a35c810d07205768f99eec7c886042463242f56b8",
+      "itemCreatedAt": "2026-11-20T11:33:05Z",
+      "itemUpdatedAt": "2026-11-20T11:34:48Z",
+      "assignees": []
+    },
+    {
+      "number": 349445,
+      "comment": "Thanks for the report. You mentioned that Fusion is not in use; could you describe the sequence before the mismatch, including whether this was a new or existing chat, when GPT-6 Luna was selected, and whether Opus appeared on the main response, a subagent, or in the response text? Please also say whether the picker remained on GPT-6 Luna afterward and whether a new chat with a harmless prompt reproduces it. You do not need to share private prompts or full logs.\n\nIssues labeled `info-needed` auto-close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T16:57:24.853Z",
+      "verifiedAt": "2026-11-20T17:23:18.502Z",
+      "contentHash": "07261c215444328d6c1e37944aabfe7b1367c17983ded94ecc0e52533e0baf6c",
+      "itemCreatedAt": "2026-11-20T14:12:01Z",
+      "itemUpdatedAt": "2026-11-20T14:12:01Z",
+      "assignees": []
+    },
+    {
+      "number": 349446,
+      "comment": "Thanks for the report. Please provide your VS Code version, OS and installation method, which chat surface or mode fails, and the steps that trigger the error. Please also include the complete error text after \"Unable to load your organization's managed settings\" and relevant GitHub Copilot Chat or Agent Host logs, with tokens and sensitive information removed. Does it still occur after reloading the window on the latest build?\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T16:57:08.435Z",
+      "verifiedAt": "2026-11-20T17:23:25.784Z",
+      "contentHash": "e96e134fc5d25455a312ab3e26f37da14cceb56ca3cebc086e295d617c4ae018",
+      "itemCreatedAt": "2026-11-20T14:14:32Z",
+      "itemUpdatedAt": "2026-11-20T14:14:32Z",
       "assignees": []
     },
     {

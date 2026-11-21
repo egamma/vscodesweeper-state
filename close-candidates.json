@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-20T17:30:13.821Z",
+  "generatedAt": "2026-11-21T16:57:30.617Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,20 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 349599,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 255717,
+        "kind": "peer"
+      },
+      "comment": "Thanks for explaining your workflow. Native iPadOS support is already tracked in https://github.com/microsoft/vscode/issues/255717. Your need for offline local-directory access and live previews, without Codespaces usage limits or browser file-access restrictions, belongs in that request.",
+      "reviewedAt": "2026-11-21T16:03:40.866Z",
+      "contentHash": "ffe9582fd2efd158dee15307feb0031a90e804848cafc3481bd02798eeebb541",
+      "verifiedAt": "2026-11-21T16:38:08.238Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
     {
       "number": 349437,
       "lane": "duplicate",
