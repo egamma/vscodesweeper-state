@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-21T21:50:02.244Z",
+  "generatedAt": "2026-11-22T16:39:08.004Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -66,16 +66,6 @@
       "assignees": []
     },
     {
-      "number": 349383,
-      "comment": "Thanks for the detailed logs. The recorded Extension Host exit is graceful: the renderer sends a termination message and the host exits with code 0. That message alone does not distinguish a window close/reload from a host restart or explain the freeze. The missing-bundle messages concern translations, and Git decoration capping is an intentional limit; neither establishes the cause.\n\nCould you provide the action sequence leading to a hang, or a small workspace that triggers it, plus main.log from the same session and the approximate time the window stopped responding versus when you closed it? If no repeatable sequence is available, please capture process CPU/memory information or a hang dump while it is stuck, before closing it. This request does not require permanently disabling your development extensions. Issues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-20T16:58:40.388Z",
-      "verifiedAt": "2026-11-20T17:23:00.911Z",
-      "contentHash": "48f84b74a0f6d991dc121b66250487223a9975820c7d2cc3e87d56027e61329e",
-      "itemCreatedAt": "2026-11-20T06:45:16Z",
-      "itemUpdatedAt": "2026-11-20T07:14:15Z",
-      "assignees": []
-    },
-    {
       "number": 349393,
       "comment": "Thanks for the report. `git.scanRepositories` adds paths to the normal scan; it does not restrict scanning to those paths, and `git.autoRepositoryDetection: \"subFolders\"` still scans other subfolders.\n\nCould you provide an approximate folder count and a minimal directory layout showing where the repositories are, your `git.repositoryScanMaxDepth` and `git.repositoryScanIgnoredFolders` values, and the Git Output log covering the failure? Please clarify whether repositories stop appearing, the Git extension stops responding, or a VS Code process actually exits, and include any error shown. Please also confirm the behavior on the latest Insiders build and whether it occurs with third-party extensions disabled while built-in Git remains enabled.\n\nIssues labeled `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-20T16:58:10.647Z",
@@ -113,6 +103,36 @@
       "contentHash": "e96e134fc5d25455a312ab3e26f37da14cceb56ca3cebc086e295d617c4ae018",
       "itemCreatedAt": "2026-11-20T14:14:32Z",
       "itemUpdatedAt": "2026-11-20T14:14:32Z",
+      "assignees": []
+    },
+    {
+      "number": 349590,
+      "comment": "Thanks for the report. Do you mean opening a local folder with File > Open Folder, uploading through VS Code in a browser, or transferring a folder to a remote workspace? Please provide the exact steps, what you expected, and what happens instead, including any error message or a screenshot. Please also confirm whether it still happens on the latest VS Code build.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-21T16:03:40.329Z",
+      "verifiedAt": "2026-11-21T16:38:03.068Z",
+      "contentHash": "cf7a8e22e9e2564774d27b15d5a15930c6620d019c25cb5e0d68dba7fcb23b2b",
+      "itemCreatedAt": "2026-11-21T05:39:53Z",
+      "itemUpdatedAt": "2026-11-21T05:39:53Z",
+      "assignees": []
+    },
+    {
+      "number": 349607,
+      "comment": "Thanks for the report. Could you provide the steps that led to this error, including the chat mode and whether albatross (Preview) appeared in the model picker or was configured manually? Please also check whether it still fails with current VS Code and Copilot Chat versions and whether another model works in the same conversation. Issues labeled info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-21T16:02:50.818Z",
+      "verifiedAt": "2026-11-21T16:38:09.667Z",
+      "contentHash": "ea0cb135b953e8de37ec7b56e72ea2c792aec32763b374113187a52753e69473",
+      "itemCreatedAt": "2026-11-21T08:18:11Z",
+      "itemUpdatedAt": "2026-11-21T08:18:11Z",
+      "assignees": []
+    },
+    {
+      "number": 349614,
+      "comment": "Thanks for the report. Please describe what goes wrong, what you expected, and the exact steps to reproduce it. Include your VS Code and OS versions and whether it happens with all extensions disabled on the latest build.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-21T16:02:42.412Z",
+      "verifiedAt": "2026-11-21T16:38:10.169Z",
+      "contentHash": "6a293626820ecd1356bc03b9db206d41a734e299c18cba57505aa07c73f08828",
+      "itemCreatedAt": "2026-11-21T12:13:19Z",
+      "itemUpdatedAt": "2026-11-21T12:13:19Z",
       "assignees": []
     },
     {

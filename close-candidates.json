@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-21T21:50:01.254Z",
+  "generatedAt": "2026-11-22T16:39:07.472Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -15,17 +15,31 @@
   },
   "candidates": [
     {
+      "number": 349634,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 348390,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same cached-token loss tracked in https://github.com/microsoft/vscode/issues/348390, which also includes an Ollama reproduction. Your macOS 1.147.0 example adds useful evidence: the final streaming usage chunk reports 30,592 cached tokens, while the matching saved session.usage_record contains cacheReadTokens: 0. The open fix candidate is https://github.com/microsoft/vscode/pull/348662.",
+      "reviewedAt": "2026-11-22T16:06:56.692Z",
+      "contentHash": "8e2aabbe749e7747efcad9076d0bf3a9f5f5d155ba78e93327ad68e9d827df99",
+      "verifiedAt": "2026-11-22T16:34:16.162Z",
+      "confidence": 0.97,
+      "assignees": []
+    },
+    {
       "number": 349599,
       "lane": "duplicate",
       "evidence": {
         "canonical": 255717,
         "kind": "peer"
       },
-      "comment": "Thanks for explaining your workflow. Native iPadOS support is already tracked in https://github.com/microsoft/vscode/issues/255717. Your need for offline local-directory access and live previews, without Codespaces usage limits or browser file-access restrictions, belongs in that request.",
-      "reviewedAt": "2026-11-21T16:03:40.866Z",
-      "contentHash": "ffe9582fd2efd158dee15307feb0031a90e804848cafc3481bd02798eeebb541",
-      "verifiedAt": "2026-11-21T16:38:08.238Z",
-      "confidence": 0.94,
+      "comment": "Thanks for explaining your iPad workflow. Native iPadOS support is already tracked in https://github.com/microsoft/vscode/issues/255717, including the limitations of local file access and cloud alternatives. Your need for offline project management and live preview without Codespaces usage limits belongs in that discussion; the request remains open in the backlog.",
+      "reviewedAt": "2026-11-22T16:08:57.730Z",
+      "contentHash": "93ca372c662bc4debdeff5772aa7a50f76f3c0da98942b53895cf0cc6aa0ef97",
+      "verifiedAt": "2026-11-22T16:34:03.421Z",
+      "confidence": 0.95,
       "assignees": []
     },
     {
