@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-22T16:39:07.472Z",
+  "generatedAt": "2026-11-22T20:23:48.880Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -25,6 +25,34 @@
       "reviewedAt": "2026-11-22T16:06:56.692Z",
       "contentHash": "8e2aabbe749e7747efcad9076d0bf3a9f5f5d155ba78e93327ad68e9d827df99",
       "verifiedAt": "2026-11-22T16:34:16.162Z",
+      "confidence": 0.97,
+      "assignees": []
+    },
+    {
+      "number": 349633,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 327815,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed investigation. The same Windows Extension Host startup failure with numeric environment-variable names is tracked in https://github.com/microsoft/vscode/issues/327815. Your report adds a concrete reproduction on VS Code 1.147.0 with `1=C:\\Program Files\\VMware\\VMware Workstation`, plus confirmation that removing it from the process environment restores extension loading.",
+      "reviewedAt": "2026-11-22T19:38:41.028Z",
+      "contentHash": "8335b4cfde4b9ed631609abdc89aa79d2b9e2462467a0b47a19ba4fbe5f5afc9",
+      "verifiedAt": "2026-11-22T20:20:34.633Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 349620,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 258281,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This shortcut collision is tracked in https://github.com/microsoft/vscode/issues/258281. Your report adds Windows 1.146.0 confirmation that repeated Ctrl+N presses discard pending edits and can advance into other modified files.",
+      "reviewedAt": "2026-11-22T19:38:49.943Z",
+      "contentHash": "2d9b2d87407bbd14557d5e110a9873104a54c0fd3e4d1b057140e6e54e749260",
+      "verifiedAt": "2026-11-22T20:20:34.356Z",
       "confidence": 0.97,
       "assignees": []
     },
@@ -149,6 +177,22 @@
       ]
     },
     {
+      "number": 348838,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 341659,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same checkpoint refs cluttering Git history, and the request to make them configurable, are tracked in https://github.com/microsoft/vscode/issues/341659. Consolidating there should preserve your Windows 11 / VS Code 1.146.0 / Git Extensions details, the fact that `chat.checkpoints.enabled=false` does not stop ref creation, and your proposed opt-out or separate-storage alternatives.",
+      "reviewedAt": "2026-11-22T19:37:13.970Z",
+      "contentHash": "4c08344db596fe73d30288f990a884604b2610b56956d2dd68ded152abc3a39e",
+      "verifiedAt": "2026-11-22T20:20:22.064Z",
+      "confidence": 0.95,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
       "number": 348701,
       "lane": "duplicate",
       "evidence": {
@@ -197,6 +241,22 @@
       ]
     },
     {
+      "number": 346464,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 322408,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. https://github.com/microsoft/vscode/issues/322408 already tracks this same wrong-group write, including the collision when two endpoints expose the same model ID. This report adds a concrete customendpoint example: Provider A's existing shared-model setting captures changes intended for Provider B, while an initial write can succeed when neither group has an entry. That remaining case is not covered by the different-model-ID fix discussed here.",
+      "reviewedAt": "2026-11-22T19:29:18.995Z",
+      "contentHash": "4a23eed12d58f8cb35a361379e5bd888cf97d3d9dee9a4aaf675018b7f44cd3f",
+      "verifiedAt": "2026-11-22T20:20:14.164Z",
+      "confidence": 0.95,
+      "assignees": [
+        "vritant24"
+      ]
+    },
+    {
       "number": 345186,
       "lane": "implemented",
       "evidence": {
@@ -228,6 +288,23 @@
       "confidence": 0.96,
       "assignees": [
         "osortega"
+      ]
+    },
+    {
+      "number": 340861,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "7878b2859cf8ccb0bb8e24122d19e8c82d7f4ed9",
+        "fixedRelease": "1.144.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/7878b2859cf8ccb0bb8e24122d19e8c82d7f4ed9"
+      },
+      "comment": "Thanks for the detailed report. This forwarding mismatch was fixed in https://github.com/microsoft/vscode/commit/7878b2859cf8ccb0bb8e24122d19e8c82d7f4ed9: manual-only agents now carry disableModelInvocation: true into the Copilot runtime instead of relying on infer: false alone, preserving manual selection while restricting model-driven delegation. The fix shipped in 1.144.0.",
+      "reviewedAt": "2026-11-22T19:22:15.356Z",
+      "contentHash": "699f6284f39be6da16ee1ea8845e2fa9d580f9dee5ac727b197482f60da2a8a3",
+      "verifiedAt": "2026-11-22T20:20:10.687Z",
+      "confidence": 0.94,
+      "assignees": [
+        "roblourens"
       ]
     },
     {
