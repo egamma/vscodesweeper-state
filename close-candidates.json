@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T09:08:07.445Z",
+  "generatedAt": "2026-11-23T09:56:24.695Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -260,6 +260,86 @@
       ]
     },
     {
+      "number": 344931,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 337448,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is covered by https://github.com/microsoft/vscode/issues/337448, which tracks extension-provided Markdown syntax rendering in Preview but not in the new editor, including admonitions. Your Markdown Alert example is a concrete case of that compatibility gap.",
+      "reviewedAt": "2026-11-23T09:43:23.290Z",
+      "contentHash": "5a1ab82e3507aa86d633e5e1fa63094858630af45da103b5c255d0c11df38c51",
+      "verifiedAt": "2026-11-23T09:52:45.377Z",
+      "confidence": 0.9,
+      "assignees": [
+        "hawkticehurst"
+      ]
+    },
+    {
+      "number": 343715,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 343405,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The selected-agent activation failure is already tracked in https://github.com/microsoft/vscode/issues/343405. This report adds useful evidence: Dev Container through WSL2, a synced agent selected using a `vscode-remote://` URI while plugin materialization uses `file://`, Auto Intelligence, runtime 1.0.102, and successful behavior with the Local harness. The URI mismatch remains unconfirmed; the central issue is the selected agent not becoming active, rather than Auto model precedence.",
+      "reviewedAt": "2026-11-23T09:40:38.295Z",
+      "contentHash": "4f21cabd1a6a824741445c1e3abbb38265b95bfd68fec0b5f74f0a23e832c7f2",
+      "verifiedAt": "2026-11-23T09:52:43.776Z",
+      "confidence": 0.87,
+      "assignees": [
+        "roblourens"
+      ]
+    },
+    {
+      "number": 343710,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 320335,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same locked `chat.sessionSync.enabled` setting without organization membership is tracked in https://github.com/microsoft/vscode/issues/320335. This report adds screenshots and a Windows 11/WSL reproduction on Insiders 1.144.0.",
+      "reviewedAt": "2026-11-23T09:39:51.537Z",
+      "contentHash": "0f00eb88d704786a053d3eb69ba940f72646da01c1e2a56530053a135a80ee21",
+      "verifiedAt": "2026-11-23T09:52:38.947Z",
+      "confidence": 0.95,
+      "assignees": [
+        "vijayupadya"
+      ]
+    },
+    {
+      "number": 342291,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 331704,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. https://github.com/microsoft/vscode/issues/331704 already requests disabling the Copilot Agent Host provider, including removing it from new-session selectors while keeping Chat and other providers available. Your reproduction with the Cloud/Claude/Codex settings disabled and diagnosis of the dynamically registered `agent-host-copilotcli` entry provide useful detail for that work; the background-agent setting does not cover this path.",
+      "reviewedAt": "2026-11-23T09:27:20.848Z",
+      "contentHash": "11a021fe30bc5ae1abe17a1e8b0417fe4aa5f498fb08a4b4d7693d221c06691a",
+      "verifiedAt": "2026-11-23T09:52:30.385Z",
+      "confidence": 0.95,
+      "assignees": [
+        "Giuspepe"
+      ]
+    },
+    {
+      "number": 342106,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 342105,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This duplicates your earlier report at https://github.com/microsoft/vscode/issues/342105, including the same URI error. Please retain the additional confirmation there that Authenticate also fails in a fresh Windows-only window without WSL or an open folder.",
+      "reviewedAt": "2026-11-23T09:26:15.813Z",
+      "contentHash": "fda2577c08c079e626b74c67bd42364a18ae8cf62def63f8862225fa3edab21f",
+      "verifiedAt": "2026-11-23T09:52:27.122Z",
+      "confidence": 0.98,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
+    {
       "number": 341638,
       "lane": "implemented",
       "evidence": {
@@ -274,6 +354,40 @@
       "confidence": 0.96,
       "assignees": [
         "osortega"
+      ]
+    },
+    {
+      "number": 341521,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 337280,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/337280: Branch Changes reports changed files above chat but opens an empty editor in a remote workspace. This report adds a seven-file example on VS Code 1.141.1 with Windows/WSL Ubuntu-24.04 and the screenshot above.",
+      "reviewedAt": "2026-11-23T09:22:44.988Z",
+      "contentHash": "c233e293e4f690705470c71f33201a832e1839c1582257c15d20d6a666dde3fd",
+      "verifiedAt": "2026-11-23T09:52:09.012Z",
+      "confidence": 0.91,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 341150,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "8fb60541db0e1a371ea40157e0f58951ae4a485d",
+        "fixedRelease": "1.145.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/8fb60541db0e1a371ea40157e0f58951ae4a485d"
+      },
+      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/8fb60541db0e1a371ea40157e0f58951ae4a485d: Ctrl-selecting multiple Connected editor tabs now keeps a visible selection accent on both active and inactive selected tabs. The fix shipped in 1.145.0.",
+      "reviewedAt": "2026-11-23T09:22:08.332Z",
+      "contentHash": "39284dac659839c517e25ff74b95cd9b1ec8e6db19d97363839158b0d7f13a6f",
+      "verifiedAt": "2026-11-23T09:52:18.927Z",
+      "confidence": 0.94,
+      "assignees": [
+        "chryw",
+        "mrleemurray"
       ]
     },
     {
@@ -308,6 +422,54 @@
       "confidence": 0.93,
       "assignees": [
         "TylerLeonhardt"
+      ]
+    },
+    {
+      "number": 314010,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 313437,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. https://github.com/microsoft/vscode/issues/313437 already contains this same custom-agent sample and all three comparison scenarios, including your clarification that default CLI sessions successfully use ask_user and sql while custom-agent sessions fall back to text. Keeping the investigation together there preserves that distinction and the screenshots.",
+      "reviewedAt": "2026-11-23T09:15:16.282Z",
+      "contentHash": "407c061541b6fbc7c2450114f5ea18bbc0fc2dd721fa3ac958dc2a3d2eadfbfb",
+      "verifiedAt": "2026-11-23T09:51:53.403Z",
+      "confidence": 0.97,
+      "assignees": [
+        "vijayupadya"
+      ]
+    },
+    {
+      "number": 313054,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 302846,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/302846, which tracks the empty Source Control panel when opening a repository file and the same regression from 1.109 to 1.110. This report adds Windows Server coverage, the Explorer double-click launch without a workspace, and the git.autoRepositoryDetection workaround; those details should remain part of the investigation.",
+      "reviewedAt": "2026-11-23T09:16:24.803Z",
+      "contentHash": "234575280ed6d6a8a38db0a5979d4b3600ab5221d718829209bd76714fcca1eb",
+      "verifiedAt": "2026-11-23T09:51:44.323Z",
+      "confidence": 0.91,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 306370,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 251644,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The conversation disappearing when an empty window opens a workspace is already tracked in https://github.com/microsoft/vscode/issues/251644. This report adds the Windows 1.113.0 case: a planning conversation disappeared after opening a newly created folder, accompanied by a brief workspace-switch warning.",
+      "reviewedAt": "2026-11-23T09:15:51.922Z",
+      "contentHash": "9393f7e3f7daefe3b15572bd8ca853c4c08a37839efe5b3315f633be24dc6764",
+      "verifiedAt": "2026-11-23T09:51:30.870Z",
+      "confidence": 0.9,
+      "assignees": [
+        "justschen"
       ]
     },
     {
