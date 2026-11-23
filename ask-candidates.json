@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T10:48:37.235Z",
+  "generatedAt": "2026-11-23T20:55:27.133Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -143,6 +143,26 @@
       "contentHash": "36fae55688c6bc6311058b3423d5401632295f615b6fdcad6bbf0e7cd04740fc",
       "itemCreatedAt": "2026-11-21T20:14:09Z",
       "itemUpdatedAt": "2026-11-21T20:14:09Z",
+      "assignees": []
+    },
+    {
+      "number": 349668,
+      "comment": "Thanks for the report. Please include the Shared log from `F1 > Open View... > Shared` immediately after the failed installation, the full error shown, and the Live Server extension identifier and version you tried to install. Please also say whether it still happens on the latest VS Code release. Issues labeled `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-22T16:05:50.957Z",
+      "verifiedAt": "2026-11-22T16:34:15.950Z",
+      "contentHash": "7c6e9e9786a9cd58e644b501e4fa840c22ee684eb8feef581a6c31826f893960",
+      "itemCreatedAt": "2026-11-22T13:10:01Z",
+      "itemUpdatedAt": "2026-11-22T13:10:01Z",
+      "assignees": []
+    },
+    {
+      "number": 349673,
+      "comment": "Thanks for the report. Could you provide a minimal file and exact edit prompt that fail in native Copilot, together with the tool name, schema sent to the model, generated arguments, and returned error, with private content removed? Copilot's replacement tool currently requires `oldString`, not `old_text`, and already supports whitespace-flexible matching, so those details will help identify the failing path. If available, please also identify the last working VS Code/Copilot version with the same model and example.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T10:10:48.583Z",
+      "verifiedAt": "2026-11-23T10:44:44.587Z",
+      "contentHash": "0124778766a866976804427b1a4e741f1ac3d2b2e652e0975fd1c224386336f1",
+      "itemCreatedAt": "2026-11-22T17:02:51Z",
+      "itemUpdatedAt": "2026-11-22T17:54:54Z",
       "assignees": []
     },
     {
@@ -481,18 +501,6 @@
       "contentHash": "b46815c971d8b0141ffc08d11179ea571b3339e5fff08597f368c1fc202dc04c",
       "itemCreatedAt": "2026-03-31T07:31:23Z",
       "itemUpdatedAt": "2026-03-31T07:41:04Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 306769,
-      "comment": "Thanks for the report. Could you confirm whether this still happens on the latest VS Code build and share a minimal example with staged edits in one file and unstaged edits in another, showing the copied patch and the output of `git diff --cached` and `git diff`? Please also identify the command ID behind “Copy Changes (Patch)” and clarify which extensions, if any, remain enabled; I couldn't locate that action in the current built-in Git command registrations.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T11:13:19.898Z",
-      "verifiedAt": "2026-11-13T18:04:32.406Z",
-      "contentHash": "35977e8521e1c0f61bb02f5cd87d4158a19f1efea4c95dcb451442218cf3e07e",
-      "itemCreatedAt": "2026-03-31T14:18:13Z",
-      "itemUpdatedAt": "2026-03-31T14:43:38Z",
       "assignees": [
         "lszomoru"
       ]

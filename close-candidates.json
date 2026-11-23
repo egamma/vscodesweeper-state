@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T10:48:36.617Z",
+  "generatedAt": "2026-11-23T20:55:26.325Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,52 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 349884,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 349450,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed profiling. This matches the shutdown tool-reference recomputation and policy-driven configuration cloning tracked in https://github.com/microsoft/vscode/issues/349450. This report adds Fedora/Wayland, `chat.mcp.access=registry`, and a reproduction with 63 registered tools; those details are useful for checking the shared fix.",
+      "reviewedAt": "2026-11-23T20:05:23.300Z",
+      "contentHash": "62903b5f4b8cf9145c46821e82e19d75b47f674c580e5ff7468ac1d239137db7",
+      "verifiedAt": "2026-11-23T20:46:57.561Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 349838,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 331517,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. https://github.com/microsoft/vscode/issues/331517 already tracks identifying which automation a History run belongs to when its session title differs. Your case of similar automations on different branches, and the suggestion to include the automation name in a hover, add useful context to that work.",
+      "reviewedAt": "2026-11-23T20:08:43.520Z",
+      "contentHash": "e9a2a1b22acaa0239f2aa408b1db8e899f5eaa3b65139eebd959d0175e4871c6",
+      "verifiedAt": "2026-11-23T20:46:50.521Z",
+      "confidence": 0.94,
+      "assignees": [
+        "benvillalobos"
+      ]
+    },
+    {
+      "number": 349810,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 349809,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is the migration consequence of https://github.com/microsoft/vscode/issues/349809, which already tracks the ignored hook-disablement setting and explicitly notes that it blocks guard migration. Please retain this acceptance case there: after explicitly pausing repository hooks, migration must be able to ask for confirmation and update local-guard.json together with its script while preserving the guard's behavior.",
+      "reviewedAt": "2026-11-23T20:10:01.756Z",
+      "contentHash": "8687ef06a2bd1923d46555cd0628e07047e221a9f38611fe2d24f99f06809351",
+      "verifiedAt": "2026-11-23T20:46:33.337Z",
+      "confidence": 0.92,
+      "assignees": [
+        "vritant24"
+      ]
+    },
     {
       "number": 349741,
       "lane": "duplicate",
@@ -40,20 +86,6 @@
       "contentHash": "03b8fba6a03137f06ead1996c725b1e9f223570ae060bd3678d68f466290bcb8",
       "verifiedAt": "2026-11-23T10:44:45.948Z",
       "confidence": 0.91,
-      "assignees": []
-    },
-    {
-      "number": 349634,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 348390,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same cached-token loss tracked in https://github.com/microsoft/vscode/issues/348390, which also includes an Ollama reproduction. Your macOS 1.147.0 example adds useful evidence: the final streaming usage chunk reports 30,592 cached tokens, while the matching saved session.usage_record contains cacheReadTokens: 0. The open fix candidate is https://github.com/microsoft/vscode/pull/348662.",
-      "reviewedAt": "2026-11-22T16:06:56.692Z",
-      "contentHash": "8e2aabbe749e7747efcad9076d0bf3a9f5f5d155ba78e93327ad68e9d827df99",
-      "verifiedAt": "2026-11-22T16:34:16.162Z",
-      "confidence": 0.97,
       "assignees": []
     },
     {
