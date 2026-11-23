@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-22T20:23:49.819Z",
+  "generatedAt": "2026-11-23T09:08:08.370Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -143,36 +143,6 @@
       "contentHash": "36fae55688c6bc6311058b3423d5401632295f615b6fdcad6bbf0e7cd04740fc",
       "itemCreatedAt": "2026-11-21T20:14:09Z",
       "itemUpdatedAt": "2026-11-21T20:14:09Z",
-      "assignees": []
-    },
-    {
-      "number": 349627,
-      "comment": "Thanks for the report. Please provide your OS and Copilot Chat version, the exact steps and a sample prompt that stalls, and whether this also happens in a new chat with another model. Please attach the Copilot Chat output logs from one stalled request, removing sensitive information, and note whether any text, tool activity or error appears before it stops progressing. Please also confirm whether this persists on the latest VS Code build.\n\nIssues labeled `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-22T16:07:00.020Z",
-      "verifiedAt": "2026-11-22T16:34:15.220Z",
-      "contentHash": "2fca7932b850b59f6077cbc8727175a07ed4317180f3021c0cff1229d886c163",
-      "itemCreatedAt": "2026-11-21T20:18:16Z",
-      "itemUpdatedAt": "2026-11-21T20:18:16Z",
-      "assignees": []
-    },
-    {
-      "number": 349624,
-      "comment": "Thanks for the report. Could you describe what you were doing immediately before the failure and whether the window stops responding, closes, or shows an extension-host error? Please include any dialog text, crash report, or logs from that occurrence, and whether it also happens with extensions disabled. Your attachment includes the system details, but not the triggering steps or failure diagnostics.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-22T16:07:32.928Z",
-      "verifiedAt": "2026-11-22T16:34:08.573Z",
-      "contentHash": "0d379f50514829323fac9cbd9d40adf127e9e540a57336f6b7ee155ee270a663",
-      "itemCreatedAt": "2026-11-21T18:12:01Z",
-      "itemUpdatedAt": "2026-11-22T03:13:33Z",
-      "assignees": []
-    },
-    {
-      "number": 349623,
-      "comment": "Thanks for the report. The screenshot shows messages without visible replies. Which model and chat mode are selected, how long does a request remain on these statuses, and what steps reproduce this in a new chat? Please include any error shown in the GitHub Copilot Chat output channel, with private information removed, and let us know whether the suggested chat toggle changes the behavior on the latest VS Code build.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-22T16:07:57.944Z",
-      "verifiedAt": "2026-11-22T16:34:03.498Z",
-      "contentHash": "e94b3178c988b2c1ac35f77b9b8b68510915ad27188a929672eac0d030f5fac7",
-      "itemCreatedAt": "2026-11-21T16:52:59Z",
-      "itemUpdatedAt": "2026-11-22T03:45:26Z",
       "assignees": []
     },
     {
@@ -1551,18 +1521,6 @@
       "contentHash": "f76dbc96c51bcebedd70fda98db064796b207d8073e51ca8c1e94c1a68c4e3e7",
       "itemCreatedAt": "2026-11-04T22:05:58Z",
       "itemUpdatedAt": "2026-11-04T23:14:29Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 346861,
-      "comment": "Thanks for the report. To keep the buttons visible, enable `scm.alwaysShowActions` for inline actions and `workbench.view.alwaysShowHeaderActions` for view-header actions.\n\nFor the missing changes, please try the latest stable version and provide a small step-by-step example: which Copilot action edits a file, whether the edit is saved in the repository shown in Source Control, and whether an ordinary saved edit also requires Refresh. Please include your `git.autorefresh` setting and relevant Output → Git entries, removing any sensitive information.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-09T19:43:12.392Z",
-      "verifiedAt": "2026-11-09T20:00:21.010Z",
-      "contentHash": "426de46d91ca4c2d3b0bf5de02140cb48db653033ee5aebd77184a309f309aef",
-      "itemCreatedAt": "2026-11-08T20:29:08Z",
-      "itemUpdatedAt": "2026-11-08T22:12:36Z",
       "assignees": [
         "lszomoru"
       ]

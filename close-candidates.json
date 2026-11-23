@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-22T20:23:48.880Z",
+  "generatedAt": "2026-11-23T09:08:07.445Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -96,20 +96,6 @@
       "contentHash": "0b47a7e101d920679a3eba8a47e18d4af30e1a091f21d0b8ef112a5913b05192",
       "verifiedAt": "2026-11-20T17:23:17.348Z",
       "confidence": 0.96,
-      "assignees": []
-    },
-    {
-      "number": 349381,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 346555,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. The same editNotebook missing-stream failure in agent sessions is tracked in https://github.com/microsoft/vscode/issues/346555. This report adds a newer Insiders reproduction with Qwen3.8-27B, timestamped failures after reload, and successful configureNotebook calls alongside getNotebookSummary.",
-      "reviewedAt": "2026-11-20T16:58:36.630Z",
-      "contentHash": "5897044150169e6af8ea557532b3f0c2813797709c9ee8f674ee87b22c17c65e",
-      "verifiedAt": "2026-11-20T17:23:00.713Z",
-      "confidence": 0.94,
       "assignees": []
     },
     {
