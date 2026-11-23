@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T09:56:24.695Z",
+  "generatedAt": "2026-11-23T10:48:36.617Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,34 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 349741,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 338194,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs. This matches the Fedora 45 signature-verification failure tracked in https://github.com/microsoft/vscode/issues/338194, including confirmation on VS Code 1.146.0. Your report adds failures across Python, C/C++, and GitLens, plus successful Python and C/C++ installations when verification was bypassed; these details belong in the shared investigation.",
+      "reviewedAt": "2026-11-23T10:07:27.462Z",
+      "contentHash": "d374076803eb3aa3569103d0bc3a17ee09701bcc5971d17f35c108ead26c07d5",
+      "verifiedAt": "2026-11-23T10:45:06.170Z",
+      "confidence": 0.93,
+      "assignees": []
+    },
+    {
+      "number": 349724,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 349607,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. The same Albatross (Preview) error is tracked in https://github.com/microsoft/vscode/issues/349607. This report additionally confirms that even \"hello\" fails on Windows 10 with VS Code 1.104.2 and Copilot Chat 0.31.5.",
+      "reviewedAt": "2026-11-23T10:09:03.015Z",
+      "contentHash": "03b8fba6a03137f06ead1996c725b1e9f223570ae060bd3678d68f466290bcb8",
+      "verifiedAt": "2026-11-23T10:44:45.948Z",
+      "confidence": 0.91,
+      "assignees": []
+    },
     {
       "number": 349634,
       "lane": "duplicate",
@@ -96,6 +124,20 @@
       "contentHash": "0b47a7e101d920679a3eba8a47e18d4af30e1a091f21d0b8ef112a5913b05192",
       "verifiedAt": "2026-11-20T17:23:17.348Z",
       "confidence": 0.96,
+      "assignees": []
+    },
+    {
+      "number": 349381,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 348324,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report and tool comparison. Both failures are tracked in https://github.com/microsoft/vscode/issues/348324. This adds reproduction on 1.148.0-insider with Qwen3.8-27B: insert, edit, and delete all fail, notebook creation fails too, and reading, execution, and package operations succeed. Please retain that comparison when consolidating the reports.",
+      "reviewedAt": "2026-11-23T10:13:23.229Z",
+      "contentHash": "a2712857bcafc149e6f38dea00d826f5e9349529ef2e490dff7e99296cfdb3e8",
+      "verifiedAt": "2026-11-23T10:44:27.202Z",
+      "confidence": 0.93,
       "assignees": []
     },
     {

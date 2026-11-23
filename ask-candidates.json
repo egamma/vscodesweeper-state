@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T09:56:25.897Z",
+  "generatedAt": "2026-11-23T10:48:37.235Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -143,6 +143,36 @@
       "contentHash": "36fae55688c6bc6311058b3423d5401632295f615b6fdcad6bbf0e7cd04740fc",
       "itemCreatedAt": "2026-11-21T20:14:09Z",
       "itemUpdatedAt": "2026-11-21T20:14:09Z",
+      "assignees": []
+    },
+    {
+      "number": 349623,
+      "comment": "Thanks for the report. The screenshot shows unanswered messages, but we need a few details to investigate: which model and chat mode are selected, how long the request remains pending, and the steps that trigger it. Does it happen in a fresh chat immediately, or only after leaving a conversation idle? Does stopping the request and sending it again help?\n\nPlease include any relevant errors from the GitHub Copilot Chat output channel, removing sensitive information. These details will also help determine whether this matches https://github.com/microsoft/vscode/issues/348540. Issues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T10:11:56.388Z",
+      "verifiedAt": "2026-11-23T10:44:38.738Z",
+      "contentHash": "2b3fa7767f5660189054e57625587020798910069c1fe3d82237e883abe931e0",
+      "itemCreatedAt": "2026-11-21T16:52:59Z",
+      "itemUpdatedAt": "2026-11-23T08:32:19Z",
+      "assignees": []
+    },
+    {
+      "number": 349627,
+      "comment": "Thanks for the report. Please provide your OS and Copilot Chat version, whether you are using sidebar chat or the Agents Window, and exact steps with a minimal prompt. Does it stall on the first request in a fresh conversation, or only after a pause, and does cancelling and retrying recover? Please attach Copilot Chat logs for one stalled request, with sensitive information removed.\n\nhttps://github.com/microsoft/vscode/issues/348540 describes a stall after inactivity; these details will help determine whether this is the same issue. Issues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T10:10:26.085Z",
+      "verifiedAt": "2026-11-23T10:44:35.448Z",
+      "contentHash": "62ee0a94037612b8a4f5c776152ace812950e73f8473f2b62595381d8cbc9320",
+      "itemCreatedAt": "2026-11-21T20:18:16Z",
+      "itemUpdatedAt": "2026-11-23T08:33:50Z",
+      "assignees": []
+    },
+    {
+      "number": 349624,
+      "comment": "Thanks for the report. Could you describe what you were doing immediately before the failure and whether VS Code exits, the whole window stops responding, or only a chat request stops responding? Please include steps to reproduce, any error dialog text, and logs or a macOS crash report from the same occurrence, with its timestamp. Also let us know whether it happens on the latest build with extensions disabled.\n\nThe linked chat-response issue is not yet a confirmed match. Issues marked `info-needed` auto-close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T10:10:39.035Z",
+      "verifiedAt": "2026-11-23T10:44:34.524Z",
+      "contentHash": "0bdafd6c55969af7e8c2b65abf74d2e7fa093adffd097243873b5e248a15221e",
+      "itemCreatedAt": "2026-11-21T18:12:01Z",
+      "itemUpdatedAt": "2026-11-23T08:35:11Z",
       "assignees": []
     },
     {
