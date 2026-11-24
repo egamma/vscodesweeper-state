@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-24T11:56:24.402Z",
+  "generatedAt": "2026-11-24T19:26:42.307Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -28,22 +28,6 @@
       "confidence": 0.94,
       "assignees": [
         "benvillalobos"
-      ]
-    },
-    {
-      "number": 349810,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 349809,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed reproduction. This is the migration consequence of https://github.com/microsoft/vscode/issues/349809, which already tracks the ignored hook-disablement setting and explicitly notes that it blocks guard migration. Please retain this acceptance case there: after explicitly pausing repository hooks, migration must be able to ask for confirmation and update local-guard.json together with its script while preserving the guard's behavior.",
-      "reviewedAt": "2026-11-23T20:10:01.756Z",
-      "contentHash": "8687ef06a2bd1923d46555cd0628e07047e221a9f38611fe2d24f99f06809351",
-      "verifiedAt": "2026-11-23T20:46:33.337Z",
-      "confidence": 0.92,
-      "assignees": [
-        "vritant24"
       ]
     },
     {

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-24T11:56:26.356Z",
+  "generatedAt": "2026-11-24T19:26:44.242Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -203,6 +203,26 @@
       "contentHash": "0bdafd6c55969af7e8c2b65abf74d2e7fa093adffd097243873b5e248a15221e",
       "itemCreatedAt": "2026-11-21T18:12:01Z",
       "itemUpdatedAt": "2026-11-23T08:35:11Z",
+      "assignees": []
+    },
+    {
+      "number": 349823,
+      "comment": "Thanks for the report. Could you share a short recording or exact steps showing how you open the earlier prompt for editing and submit it? Please include the chat mode and selected agent/model, whether a response is still running, and whether both the original and edited prompts remain visible afterward. Please also check whether this happens on the latest VS Code build.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T20:08:32.506Z",
+      "verifiedAt": "2026-11-23T20:46:47.618Z",
+      "contentHash": "2e8624b9bb02d4e4688669e69933661de6db4afa8bd041d192f02db4c517deab",
+      "itemCreatedAt": "2026-11-23T12:15:12Z",
+      "itemUpdatedAt": "2026-11-23T12:16:35Z",
+      "assignees": []
+    },
+    {
+      "number": 349846,
+      "comment": "Thanks for the report. Please paste the Shared log from `F1 > Open View... > Shared` immediately after retrying the installation, including the signature verification result and any associated error. Please also include the Google Antigravity version and whether this occurs during installation or an update. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T20:07:02.533Z",
+      "verifiedAt": "2026-11-23T20:46:51.755Z",
+      "contentHash": "77f30860fb8f415b548dddcb0d2ab397c381c3e6bbb5811a41391526bafea9fc",
+      "itemCreatedAt": "2026-11-23T13:31:33Z",
+      "itemUpdatedAt": "2026-11-23T13:31:33Z",
       "assignees": []
     },
     {
