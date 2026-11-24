@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-24T19:54:55.529Z",
+  "generatedAt": "2026-11-24T20:26:36.846Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -1529,6 +1529,18 @@
       "contentHash": "809c15e325cbf100e27e41045d67fc0cca636f5e66fea0177cd692a1a5a04e56",
       "itemCreatedAt": "2026-11-05T14:21:32Z",
       "itemUpdatedAt": "2026-11-12T17:13:31Z",
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 346942,
+      "comment": "Thanks for the report. Please describe what happens and what you expected, provide steps to reproduce, and include your VS Code version, OS, and affected Copilot mode/model. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:46:57.584Z",
+      "verifiedAt": "2026-11-24T20:18:01.011Z",
+      "contentHash": "4cd2a34bb97e1050dfcd70b547f1171d9e0972b3bc952c80941ae7036010621f",
+      "itemCreatedAt": "2026-11-09T10:52:59Z",
+      "itemUpdatedAt": "2026-11-24T11:44:14Z",
       "assignees": [
         "lszomoru"
       ]

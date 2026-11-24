@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-24T19:54:53.549Z",
+  "generatedAt": "2026-11-24T20:26:35.196Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,92 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 350154,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 289346,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same submitted-message renumbering tracked in https://github.com/microsoft/vscode/issues/289346. Your example of answering questions 1 and 4 belongs there as another reproduction case.",
+      "reviewedAt": "2026-11-24T19:33:48.666Z",
+      "contentHash": "3ccf8cf90249d4e8e6a25fde06c9dbad7be2f830df933ef041e554e18110de26",
+      "verifiedAt": "2026-11-24T20:18:50.853Z",
+      "confidence": 0.97,
+      "assignees": [
+        "justschen"
+      ]
+    },
+    {
+      "number": 350114,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 349895,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches https://github.com/microsoft/vscode/issues/349895: Agent Host OAuth discovery fails with ERR_SSL_CLIENT_AUTH_CERT_NEEDED, while authenticating through Local first allows the server to work. This report adds another affected server behind Zscaler, persistence across restarts that still requires Local initialization, and confirmation that changing the Copilot fetcher does not resolve it.",
+      "reviewedAt": "2026-11-24T19:34:44.011Z",
+      "contentHash": "30419ab92f53d0d6a449e0a4c9b45da180c823daba481f0c82e4d1b3dc44e408",
+      "verifiedAt": "2026-11-24T20:18:41.803Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 350102,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 350101,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This repeats your report at https://github.com/microsoft/vscode/issues/350101; please add the error message and steps to reproduce there.",
+      "reviewedAt": "2026-11-24T19:34:35.324Z",
+      "contentHash": "3a3453fe04c9b167a107f5256617b327e736260882bfdc31cf003fe65c86253c",
+      "verifiedAt": "2026-11-24T20:18:36.504Z",
+      "confidence": 0.99,
+      "assignees": []
+    },
+    {
+      "number": 350089,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 347909,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs and isolation steps. This matches https://github.com/microsoft/vscode/issues/347909, which tracks double rebuilds followed by completed Claude replies not reaching chat. Your Windows 11 report adds a useful trigger: plugin-cache `.in_use/<pid>` deletion, a suspected plugin loading-to-loaded transition, and 207–298-second first-progress delays that disappear with plugins disabled.",
+      "reviewedAt": "2026-11-24T19:35:33.782Z",
+      "contentHash": "2fc241226c8fc345f0fd02196add81966fc481d9376f096a5a6bdf8526f9fb4a",
+      "verifiedAt": "2026-11-24T20:18:36.939Z",
+      "confidence": 0.94,
+      "assignees": []
+    },
+    {
+      "number": 350037,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 332166,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. Folder moves breaking Copilot session associations, including supported migration and stable project identity, are already tracked in https://github.com/microsoft/vscode/issues/332166. This report adds useful non-Git Windows reproduction steps, agent-host storage observations, the old-path junction workaround, and an extension-facing migration contract proposal to consider there; global Chats behavior should remain unchanged.",
+      "reviewedAt": "2026-11-24T19:38:02.450Z",
+      "contentHash": "9019f19ee6f5013f19d877243d52deaa6df1dad86e6d3739a62740cc2a9ebcb6",
+      "verifiedAt": "2026-11-24T20:18:22.871Z",
+      "confidence": 0.9,
+      "assignees": []
+    },
+    {
+      "number": 349980,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 349846,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. Your earlier report at https://github.com/microsoft/vscode/issues/349846 tracks the same Google Antigravity signature-verification failure on VS Code 1.147.0 and Linux ARM64. Please add the requested `F1 > Open View... > Shared` log there so the investigation stays together.",
+      "reviewedAt": "2026-11-24T19:41:03.513Z",
+      "contentHash": "3309f1abebaf19493530f8f658aa3b96c584caf72f534bf0c436c8c729c244bf",
+      "verifiedAt": "2026-11-24T20:18:22.688Z",
+      "confidence": 0.96,
+      "assignees": []
+    },
     {
       "number": 349838,
       "lane": "duplicate",
