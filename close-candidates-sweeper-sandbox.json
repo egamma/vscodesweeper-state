@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "egamma/sweeper-sandbox",
-  "generatedAt": "2026-11-24T19:26:44.241Z",
+  "generatedAt": "2026-11-24T19:54:55.528Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -40,22 +40,6 @@
       "contentHash": "c78557ae4e7066c69b3241d1cfee1cf9b97f961f7db240d8bf84eb3654fd7367",
       "verifiedAt": "2026-11-24T11:48:26.498Z",
       "confidence": 0.98,
-      "assignees": [
-        "egamma"
-      ]
-    },
-    {
-      "number": 61,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 8,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the suggestion. Reading-time estimates are already tracked in https://github.com/egamma/sweeper-sandbox/issues/8, so we're closing this as a duplicate of that older request. Your reference to Medium is useful context for how the estimate could be presented.",
-      "reviewedAt": "2026-11-24T11:45:56.222Z",
-      "contentHash": "e5c02247133812d55567c7fb7f0f180865017f49e155ba667f6898ee41732386",
-      "verifiedAt": "2026-11-24T11:48:26.295Z",
-      "confidence": 0.96,
       "assignees": [
         "egamma"
       ]
