@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T20:55:27.133Z",
+  "generatedAt": "2026-11-24T11:56:26.356Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -163,6 +163,16 @@
       "contentHash": "0124778766a866976804427b1a4e741f1ac3d2b2e652e0975fd1c224386336f1",
       "itemCreatedAt": "2026-11-22T17:02:51Z",
       "itemUpdatedAt": "2026-11-22T17:54:54Z",
+      "assignees": []
+    },
+    {
+      "number": 349728,
+      "comment": "Thanks for the report. What is failing to sync: VS Code settings/extensions, Git changes, files, or something else? Please include the steps you take, what you expect, what actually happens, and any error message. If you mean Settings Sync, please include the relevant output from “Settings Sync: Show Log” in the Command Palette, removing personal information. If you suspect storage cleanup is related, please describe what CleanMyMac removed and when the problem started.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-23T10:08:57.813Z",
+      "verifiedAt": "2026-11-23T10:44:54.121Z",
+      "contentHash": "a42299b050e0e35e3a69498eb71b8e38734c42908ab7b0e77f71498e18166d80",
+      "itemCreatedAt": "2026-11-23T02:37:19Z",
+      "itemUpdatedAt": "2026-11-23T02:37:19Z",
       "assignees": []
     },
     {
@@ -357,18 +367,6 @@
       "contentHash": "759c166d9a566e4d4040eed014317c475cfe679ebf68f37f395817495f29ec8a",
       "itemCreatedAt": "2026-02-12T10:21:56Z",
       "itemUpdatedAt": "2026-02-24T19:07:00Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 294808,
-      "comment": "Thanks for the report. Could you confirm whether this still happens on the latest VS Code release? While your branch has incoming commits, run Git: Fetch and then Git: Refresh in VS Code, without pulling yet. Please share a status-bar screenshot and the output of `git status -sb` and `git rev-list --left-right --count HEAD...@{upstream}` from that same repository, along with the Git output log from Git: Show Git Output, redacting private paths and remote URLs. Please also include your values for `git.autofetch`, `git.autorefresh`, and `git.enableStatusBarSync`.\n\nThe incoming count uses fetched remote-tracking information and disappears when the branch is fully synchronized, so the comparison before pulling is important. Issues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T10:41:41.708Z",
-      "verifiedAt": "2026-11-13T17:55:32.317Z",
-      "contentHash": "e45224468c3d392d26e05c7b3b2b3297c7a1813f4bdd3b7b7ece8b5a5f562c6f",
-      "itemCreatedAt": "2026-02-12T08:55:20Z",
-      "itemUpdatedAt": "2026-02-24T19:07:02Z",
       "assignees": [
         "lszomoru"
       ]
@@ -782,18 +780,6 @@
       ]
     },
     {
-      "number": 313008,
-      "comment": "Thanks for the report. Could you check whether this still happens on the latest stable VS Code and provide repeatable steps, including which view overlaps, how the worktrees are opened, and whether reloading the window clears it? Please also try a clean profile without extensions or injected custom CSS/animations; disabling a custom-CSS extension may not remove modifications it previously applied.\n\nIf it persists, please include an updated screenshot or short recording and the current VS Code version. Issues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T11:33:02.255Z",
-      "verifiedAt": "2026-11-13T18:08:41.397Z",
-      "contentHash": "1116787b70b645d904418b8c0380b5320b0463b5ddee25c7ceef8659a9f77194",
-      "itemCreatedAt": "2026-04-28T12:19:42Z",
-      "itemUpdatedAt": "2026-04-28T12:24:45Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 313234,
       "comment": "Thanks for the report. Can you confirm whether this still happens on the latest VS Code release and provide the VS Code and Git versions, Linux distribution, and exact commit/push commands or UI actions? Please include whether the repository is local or remote, the value of `git.autorefresh`, and whether it occurs with installed extensions disabled while keeping the built-in Git extension enabled.\n\nPlease also capture trace-level Git output around the stale entry and manual refresh, alongside the clean `git status --short` output, removing any sensitive information. Issues marked `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-10-11T11:36:01.267Z",
@@ -874,18 +860,6 @@
       ]
     },
     {
-      "number": 319900,
-      "comment": "Thanks for the report. Does this still happen on the latest stable release or Insiders with a small new repository?\n\nPlease confirm that `git.autorefresh` is enabled, describe whether you edit and save files inside VS Code or change them externally, and say whether the repository is on a local disk, another mounted drive, or a network filesystem. Please also try with installed extensions disabled while keeping the built-in Git extension enabled, and share the Git output at Trace log level covering a saved edit followed by manual refresh, along with any File Watcher warnings from the Window log. Redact sensitive paths or remote URLs.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T12:02:27.627Z",
-      "verifiedAt": "2026-11-13T18:13:54.915Z",
-      "contentHash": "9a22308d46bc97bbbf36d68197ca1f1658c0311075f778f9edbeb88d95fcae97",
-      "itemCreatedAt": "2026-06-04T11:40:11Z",
-      "itemUpdatedAt": "2026-06-09T10:02:03Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 321241,
       "comment": "Thanks for the report. Could you confirm whether this still occurs on the latest stable VS Code? If it does, please share the exact tool names and error messages, a screenshot or relevant chat transcript, and the Copilot output logs around the Plan/Agent switch, with sensitive content removed. Please also indicate whether it happens in a fresh session or only after repeated mode switches, and share a minimal example of the referenced instructions if possible.\n\nIssues labeled info-needed automatically close after 7 days without a reply.",
       "reviewedAt": "2026-10-11T12:04:10.214Z",
@@ -893,18 +867,6 @@
       "contentHash": "5ceeaf0d11b1de080cb36aff0a5a2fa73c6c5107b80d2b928ff637b1f1548e35",
       "itemCreatedAt": "2026-06-13T00:41:00Z",
       "itemUpdatedAt": "2026-06-13T03:21:59Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 319157,
-      "comment": "Thanks for the report. Could you confirm whether this still happens on the latest VS Code build and share the following?\n\n- The effective `git.autofetch` and `git.autofetchPeriod` values for the affected repository, including any workspace overrides.\n- Whether the workspace is trusted, the connection is metered, and the VS Code window stays focused for longer than the configured fetch interval.\n- Whether the remote uses HTTPS or SSH and whether the repository is private.\n- Git trace output covering an automatic-fetch interval and a successful manual `Git: Fetch`. Open the Output panel, select Git, and use its gear menu to select Trace; redact credentials and sensitive repository details before posting.\n\nPlease also confirm whether it occurs with installed extensions disabled while keeping the built-in Git extension enabled. There is a related silent-fetch authentication report at https://github.com/microsoft/vscode/issues/257423, but we need the output to determine whether it is the same problem.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T12:10:34.671Z",
-      "verifiedAt": "2026-11-13T18:13:50.717Z",
-      "contentHash": "1561ff12ca17fe4bac66be894db586925e83a3ccd0e030e9e423ff7dbb47e0b9",
-      "itemCreatedAt": "2026-05-30T16:46:57Z",
-      "itemUpdatedAt": "2026-06-27T14:15:14Z",
       "assignees": [
         "lszomoru"
       ]
@@ -1176,16 +1138,6 @@
       "assignees": []
     },
     {
-      "number": 316406,
-      "comment": "Thanks for the report. Could you share the chat mode and selected model, and the sequence leading from the chat stopping responding to its disappearance—for example, whether you reload the same workspace, switch sessions, or rename the chat? Please also say whether the conversation later reappears or can still be opened, and attach relevant Copilot Chat and window logs from an affected occurrence, removing private content. If it happens on the latest VS Code version, please include that version and any error shown; a screenshot identifying the refresh control would also help.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-12T23:04:27.378Z",
-      "verifiedAt": "2026-11-13T18:11:16.816Z",
-      "contentHash": "ce9dd1cd0ee2864e960f619469cf6425f5cecc60dc5cbd99447db8c030a40b0c",
-      "itemCreatedAt": "2026-05-14T12:56:09Z",
-      "itemUpdatedAt": "2026-09-03T22:49:43Z",
-      "assignees": []
-    },
-    {
       "number": 316929,
       "comment": "Thanks for the report. Could you identify the session type/provider for a failing example, the exact control you use to delete it (context-menu Delete, keyboard shortcut, or another action), and whether a confirmation dialog appears? Please include a short recording showing a successful and unsuccessful attempt, any Chat/Copilot errors logged at that time, and whether the remaining session survives a window reload. This will help distinguish an intermittent Delete failure from sessions that only support Archive. Please also include your current VS Code and Copilot versions when retesting.\n\nIssues labeled `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-10-12T23:05:38.931Z",
@@ -1318,30 +1270,6 @@
       ]
     },
     {
-      "number": 335339,
-      "comment": "Thanks for the report. Could you explain what goes wrong in VS Code while you are creating GPT 6 Astra? Please include the steps to reproduce, what you expected, what actually happened, any error message, and which feature or extension you were using. Please also try the latest stable release, as requested above, and let us know whether the problem remains.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T12:56:48.506Z",
-      "verifiedAt": "2026-11-13T18:25:48.244Z",
-      "contentHash": "3a28df4570738ab13612e913b3a971e820126f67663684cf977a340ff04be056",
-      "itemCreatedAt": "2026-09-09T19:48:22Z",
-      "itemUpdatedAt": "2026-09-09T19:57:25Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 335440,
-      "comment": "Thanks for the report. Does this still happen on the latest stable VS Code with installed extensions disabled?\n\nPlease share a minimal reproduction for both Source Control and search: whether you edit and save files in VS Code or change them externally, whether the search already contains matches in those files, and whether the workspace is on a local filesystem or a mounted/network location. Please also confirm the value of `git.autorefresh` and include relevant Git Output and File Watcher log messages captured while reproducing.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T12:57:36.696Z",
-      "verifiedAt": "2026-11-13T18:25:59.739Z",
-      "contentHash": "b15fd153a3212aa9c2b23ba94d974f2a0819c65a3d904ad29265432cba27754f",
-      "itemCreatedAt": "2026-09-10T10:23:41Z",
-      "itemUpdatedAt": "2026-09-10T10:33:07Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 335457,
       "comment": "Thanks for the report. Please confirm whether this still happens on the latest stable VS Code and share the steps leading to the failure: are you cloning, fetching, pushing, or signing in through an extension? Please include the exact error, whether the remote uses HTTPS or SSH, and whether the same Git operation succeeds outside VS Code. If it fails in Source Control, include the relevant Output → Git messages, with credentials, tokens, and private URLs removed.\n\nIssues labeled `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-10-11T12:57:21.449Z",
@@ -1373,18 +1301,6 @@
       "contentHash": "8e4cad3c9f646a28a187049a526a5c59039d9e9cfe0ae468851367686929563e",
       "itemCreatedAt": "2026-09-13T23:25:40Z",
       "itemUpdatedAt": "2026-09-13T23:54:05Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
-      "number": 335399,
-      "comment": "Thanks for the report. Does this still happen on the latest VS Code build when started with `code --disable-extensions`? Please share the exact steps and a short recording with `Developer: Toggle Screencast Mode` enabled, and clarify whether “scroll through the text” means moving the caret with arrow keys or scrolling with the mouse. Please also check whether copy/paste works from the context menu; if keyboard commands still fail, capture the output from `Developer: Toggle Keyboard Shortcuts Troubleshooting` while pressing Backspace and the affected shortcuts.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-10-11T13:00:11.223Z",
-      "verifiedAt": "2026-11-13T18:25:59.110Z",
-      "contentHash": "33cf6e54eaaa4cf1fddb0eca8f528da59af2aaab893a9e040f39aa7cb9b5050f",
-      "itemCreatedAt": "2026-09-10T06:25:37Z",
-      "itemUpdatedAt": "2026-09-14T21:24:56Z",
       "assignees": [
         "lszomoru"
       ]
@@ -1506,18 +1422,6 @@
       "assignees": []
     },
     {
-      "number": 345482,
-      "comment": "Thanks for opening this issue. Could you describe what you would like Copilot to do and the workflow this would improve? The description currently contains only the empty template. Issues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-02T18:09:03.421Z",
-      "verifiedAt": "2026-11-02T18:39:08.618Z",
-      "contentHash": "2cfa3a27ba53d5e70ba8d919ce7e3aeb912a43105d73dd114b8ec9a292fa2117",
-      "itemCreatedAt": "2026-11-02T04:16:39Z",
-      "itemUpdatedAt": "2026-11-02T06:30:02Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
-    {
       "number": 344256,
       "comment": "Thanks for the report. Which exact setting did you turn off? `github.copilot.chat.agent.autoFix` controls automatic diagnostics fixes for edited files; edit approval is controlled separately by `chat.tools.edits.autoApprove`.\n\nPlease share the relevant settings, the session type and permission mode, and a minimal example showing your prompt, the starting code, and the change made without approval. Please also include whether this occurs on the latest VS Code version. Issues marked `info-needed` automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-03T16:23:32.190Z",
@@ -1572,18 +1476,6 @@
       "itemCreatedAt": "2026-10-28T07:09:05Z",
       "itemUpdatedAt": "2026-11-09T12:21:15Z",
       "assignees": []
-    },
-    {
-      "number": 346942,
-      "comment": "Thanks for the report. Please describe what happens, what you expected, and the steps that trigger the problem. Include your VS Code version, OS, Copilot version, affected feature/model, and any relevant error message or logs, with sensitive information removed.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-09T19:37:39.472Z",
-      "verifiedAt": "2026-11-09T20:00:32.954Z",
-      "contentHash": "7aaae087a1bd32b7e33b08eaeb285dac36448a909e53ea1429207ee8572f9faf",
-      "itemCreatedAt": "2026-11-09T10:52:59Z",
-      "itemUpdatedAt": "2026-11-09T12:21:17Z",
-      "assignees": [
-        "lszomoru"
-      ]
     },
     {
       "number": 347044,

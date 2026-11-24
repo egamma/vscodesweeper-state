@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-23T20:55:26.325Z",
+  "generatedAt": "2026-11-24T11:56:24.402Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,20 +14,6 @@
     "includeAssignees": []
   },
   "candidates": [
-    {
-      "number": 349884,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 349450,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed profiling. This matches the shutdown tool-reference recomputation and policy-driven configuration cloning tracked in https://github.com/microsoft/vscode/issues/349450. This report adds Fedora/Wayland, `chat.mcp.access=registry`, and a reproduction with 63 registered tools; those details are useful for checking the shared fix.",
-      "reviewedAt": "2026-11-23T20:05:23.300Z",
-      "contentHash": "62903b5f4b8cf9145c46821e82e19d75b47f674c580e5ff7468ac1d239137db7",
-      "verifiedAt": "2026-11-23T20:46:57.561Z",
-      "confidence": 0.94,
-      "assignees": []
-    },
     {
       "number": 349838,
       "lane": "duplicate",
@@ -72,20 +58,6 @@
       "contentHash": "d374076803eb3aa3569103d0bc3a17ee09701bcc5971d17f35c108ead26c07d5",
       "verifiedAt": "2026-11-23T10:45:06.170Z",
       "confidence": 0.93,
-      "assignees": []
-    },
-    {
-      "number": 349724,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 349607,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. The same Albatross (Preview) error is tracked in https://github.com/microsoft/vscode/issues/349607. This report additionally confirms that even \"hello\" fails on Windows 10 with VS Code 1.104.2 and Copilot Chat 0.31.5.",
-      "reviewedAt": "2026-11-23T10:09:03.015Z",
-      "contentHash": "03b8fba6a03137f06ead1996c725b1e9f223570ae060bd3678d68f466290bcb8",
-      "verifiedAt": "2026-11-23T10:44:45.948Z",
-      "confidence": 0.91,
       "assignees": []
     },
     {
@@ -512,22 +484,6 @@
       "confidence": 0.97,
       "assignees": [
         "vijayupadya"
-      ]
-    },
-    {
-      "number": 313054,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 302846,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This matches https://github.com/microsoft/vscode/issues/302846, which tracks the empty Source Control panel when opening a repository file and the same regression from 1.109 to 1.110. This report adds Windows Server coverage, the Explorer double-click launch without a workspace, and the git.autoRepositoryDetection workaround; those details should remain part of the investigation.",
-      "reviewedAt": "2026-11-23T09:16:24.803Z",
-      "contentHash": "234575280ed6d6a8a38db0a5979d4b3600ab5221d718829209bd76714fcca1eb",
-      "verifiedAt": "2026-11-23T09:51:44.323Z",
-      "confidence": 0.91,
-      "assignees": [
-        "lszomoru"
       ]
     },
     {

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "egamma/sweeper-sandbox",
-  "generatedAt": "2026-11-23T20:55:27.133Z",
+  "generatedAt": "2026-11-24T11:56:26.355Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -11,5 +11,70 @@
     "unassignedOnly": false,
     "includeAssignees": []
   },
-  "candidates": []
+  "candidates": [
+    {
+      "number": 63,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 4,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same setting-refresh defect tracked in https://github.com/egamma/sweeper-sandbox/issues/4: `noteStats.showCharacters` is read when the extension activates, so enabling it does not update the status bar until a reload or restart. Closing this as a duplicate of that older report; this report also confirms the restart workaround on Note Stats 0.1.0.",
+      "reviewedAt": "2026-11-24T11:46:08.134Z",
+      "contentHash": "b02f6b79304151b6c8e58e5b533a9875c4545a3dd53d1b06fccff4d7b337c54f",
+      "verifiedAt": "2026-11-24T11:48:26.721Z",
+      "confidence": 0.99,
+      "assignees": [
+        "egamma"
+      ]
+    },
+    {
+      "number": 62,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 30,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same repeated-space counting defect tracked in https://github.com/egamma/sweeper-sandbox/issues/30, so we're closing this report in favor of that older issue. Your additional observation that three spaces add two words, with Note Stats 0.1.0 and VS Code 1.140, helps confirm the scope of the defect.",
+      "reviewedAt": "2026-11-24T11:46:01.319Z",
+      "contentHash": "c78557ae4e7066c69b3241d1cfee1cf9b97f961f7db240d8bf84eb3654fd7367",
+      "verifiedAt": "2026-11-24T11:48:26.498Z",
+      "confidence": 0.98,
+      "assignees": [
+        "egamma"
+      ]
+    },
+    {
+      "number": 61,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 8,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the suggestion. Reading-time estimates are already tracked in https://github.com/egamma/sweeper-sandbox/issues/8, so we're closing this as a duplicate of that older request. Your reference to Medium is useful context for how the estimate could be presented.",
+      "reviewedAt": "2026-11-24T11:45:56.222Z",
+      "contentHash": "e5c02247133812d55567c7fb7f0f180865017f49e155ba667f6898ee41732386",
+      "verifiedAt": "2026-11-24T11:48:26.295Z",
+      "confidence": 0.96,
+      "assignees": [
+        "egamma"
+      ]
+    },
+    {
+      "number": 60,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 4,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This is the same defect tracked in https://github.com/egamma/sweeper-sandbox/issues/4: `noteStats.showCharacters` is read only when the extension activates, so changing it does not update the status bar until a reload or restart. Closing this as a duplicate of that older report; your observation that restarting makes the character count appear matches its reproduction.",
+      "reviewedAt": "2026-11-24T11:45:59.618Z",
+      "contentHash": "045e5e0cb0830c2d2b0795f6e928914ced2302d4e60e7a7d4928bf6e6588c8df",
+      "verifiedAt": "2026-11-24T11:48:26.049Z",
+      "confidence": 0.99,
+      "assignees": [
+        "egamma"
+      ]
+    }
+  ]
 }
