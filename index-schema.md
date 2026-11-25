@@ -29,7 +29,7 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `verification` | string | on bugs the review assessed | Reproduction strength tier, best → worst. Values: `Confirmed`, `Source-confirmed`, `Traced`, `Plausible`, `Unverified`, `Inconclusive`, `not applicable`. |
 | `agentReadiness` | string | when not `none` (the absent default) | `implement`: diagnosis done, bounded change, named validation — an agent can go straight to code. `plan`: goal clear, but a design/diagnosis decision is open first. A review-time snapshot: the issue may have gained a PR or a `security` label since. Values: `implement`, `plan`. |
 | `autoFixable` | string | always, as the STRING `"true"`/`"false"` | Legacy boolean = `agentReadiness == "implement"`. Prefer `agentReadiness`. |
-| `linkedPr` | string | on agent-ready rows an OPEN contributor PR already references | That PR's URL. Treat the issue as taken. |
+| `linkedPr` | string | on open keep-open rows an OPEN pull request already references | That PR's URL (the sweeper's own skill PR never counts). Treat the issue as taken: an agent-ready row is not started over it, and the row is not quiet. |
 | `skillPr` | string | when a sweeper-implement skill PR exists for the issue | That PR's URL. |
 | `skillPrState` | string | beside `skillPr` | Its state when last seen. Values: `open`, `merged`, `closed`. |
 | `fixPr` | string | historical rows only (retired fork lane) | URL of a draft fix PR from the retired fork lane. |
@@ -87,4 +87,8 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `dismissedBy` | string | beside `dismissed` | Who. |
 | `dismissedReason` | string | when a reason was given | The maintainer's one-line reason. |
 | `dismissedKind` | string | when classified | Why it was dismissed. Values: `disagree`, `other-direction`, `already-handled`, `keep-open-anyway`, `other`. |
+| `reproductionStatus` | string | open keep-open rows, unless `not_applicable` | Whether the review could confirm the reported bug. Not confirmed: `unverified`, `unclear`, `not_reproduced`. Values: `source_reproducible`, `reproduced`, `unverified`, `unclear`, `not_reproduced`. |
+| `updatedAt` | string | open keep-open rows, when the live lookup answered (ISO) | The issue's last activity on GitHub, read live when the index was built — not a review-time value. |
+| `milestone` | string | open keep-open rows with a milestone | The issue's milestone title, read live when the index was built (the review-time one when the lookup did not answer). |
+| `citedAsCanonical` | boolean | open keep-open rows that an open duplicate proposal names as its original | Other reports point here, so the issue is not quiet however long it has been silent. |
 | `contentStale` | boolean | when the issue changed since its review | The verdict may be out of date. |

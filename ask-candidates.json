@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-24T20:26:36.846Z",
+  "generatedAt": "2026-11-25T19:29:31.314Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -13,26 +13,6 @@
     ]
   },
   "candidates": [
-    {
-      "number": 349071,
-      "comment": "Thanks for the report. Please provide the title and description in English, including which feature you used, what happened, and what you expected.",
-      "reviewedAt": "2026-11-18T17:09:10.075Z",
-      "verifiedAt": "2026-11-18T17:46:17.388Z",
-      "contentHash": "a182f30c8f3ac82bd4c98e7a0d38530eec7f89b1761654c055fe4354e03305df",
-      "itemCreatedAt": "2026-11-18T13:56:13Z",
-      "itemUpdatedAt": "2026-11-18T13:56:13Z",
-      "assignees": []
-    },
-    {
-      "number": 348997,
-      "comment": "Thanks for the report. Please share a small sample showing the code before and after saving, the file's language, and the exact steps that cause the deletion. Include your `editor.formatOnSave` and `editor.codeActionsOnSave` settings, whether a Copilot edit or agent session is active, and whether it still happens on the latest VS Code version with Copilot disabled.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-18T17:14:12.948Z",
-      "verifiedAt": "2026-11-18T17:45:58.893Z",
-      "contentHash": "73641106310664cfcb69f2f95a5e7adb27712de1318b372526f0456ae9ad32d1",
-      "itemCreatedAt": "2026-11-18T07:11:29Z",
-      "itemUpdatedAt": "2026-11-18T13:56:34Z",
-      "assignees": []
-    },
     {
       "number": 349194,
       "comment": "Thanks for the report. Please follow up on the questions above with a complete Go file showing whether `color` is used, your effective `editor.codeActionsOnSave` and `editor.formatOnSave` settings including `[go]` overrides, and whether saving still removes the import with extensions disabled. Issues marked `info-needed` automatically close after 7 days without a reply.",
@@ -146,36 +126,6 @@
       "assignees": []
     },
     {
-      "number": 349668,
-      "comment": "Thanks for the report. Please include the Shared log from `F1 > Open View... > Shared` immediately after the failed installation, the full error shown, and the Live Server extension identifier and version you tried to install. Please also say whether it still happens on the latest VS Code release. Issues labeled `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-22T16:05:50.957Z",
-      "verifiedAt": "2026-11-22T16:34:15.950Z",
-      "contentHash": "7c6e9e9786a9cd58e644b501e4fa840c22ee684eb8feef581a6c31826f893960",
-      "itemCreatedAt": "2026-11-22T13:10:01Z",
-      "itemUpdatedAt": "2026-11-22T13:10:01Z",
-      "assignees": []
-    },
-    {
-      "number": 349673,
-      "comment": "Thanks for the report. Could you provide a minimal file and exact edit prompt that fail in native Copilot, together with the tool name, schema sent to the model, generated arguments, and returned error, with private content removed? Copilot's replacement tool currently requires `oldString`, not `old_text`, and already supports whitespace-flexible matching, so those details will help identify the failing path. If available, please also identify the last working VS Code/Copilot version with the same model and example.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-23T10:10:48.583Z",
-      "verifiedAt": "2026-11-23T10:44:44.587Z",
-      "contentHash": "0124778766a866976804427b1a4e741f1ac3d2b2e652e0975fd1c224386336f1",
-      "itemCreatedAt": "2026-11-22T17:02:51Z",
-      "itemUpdatedAt": "2026-11-22T17:54:54Z",
-      "assignees": []
-    },
-    {
-      "number": 349728,
-      "comment": "Thanks for the report. What is failing to sync: VS Code settings/extensions, Git changes, files, or something else? Please include the steps you take, what you expect, what actually happens, and any error message. If you mean Settings Sync, please include the relevant output from “Settings Sync: Show Log” in the Command Palette, removing personal information. If you suspect storage cleanup is related, please describe what CleanMyMac removed and when the problem started.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-23T10:08:57.813Z",
-      "verifiedAt": "2026-11-23T10:44:54.121Z",
-      "contentHash": "a42299b050e0e35e3a69498eb71b8e38734c42908ab7b0e77f71498e18166d80",
-      "itemCreatedAt": "2026-11-23T02:37:19Z",
-      "itemUpdatedAt": "2026-11-23T02:37:19Z",
-      "assignees": []
-    },
-    {
       "number": 349623,
       "comment": "Thanks for the report. The screenshot shows unanswered messages, but we need a few details to investigate: which model and chat mode are selected, how long the request remains pending, and the steps that trigger it. Does it happen in a fresh chat immediately, or only after leaving a conversation idle? Does stopping the request and sending it again help?\n\nPlease include any relevant errors from the GitHub Copilot Chat output channel, removing sensitive information. These details will also help determine whether this matches https://github.com/microsoft/vscode/issues/348540. Issues marked info-needed automatically close after 7 days without a reply.",
       "reviewedAt": "2026-11-23T10:11:56.388Z",
@@ -216,13 +166,123 @@
       "assignees": []
     },
     {
+      "number": 350036,
+      "comment": "Thanks for testing. Which scenario and step in https://github.com/microsoft/vscode/issues/349740 failed? Please include the reproduction steps, expected and actual results, VS Code version, and local/remote operating systems and connection type. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:37:29.758Z",
+      "verifiedAt": "2026-11-24T20:18:19.591Z",
+      "contentHash": "87b4d0cd6aeb366b5c2a596a97f21a1b4cbce49e0447b0dfae3df3ebbe140deb",
+      "itemCreatedAt": "2026-11-24T00:51:52Z",
+      "itemUpdatedAt": "2026-11-24T00:51:52Z",
+      "assignees": []
+    },
+    {
+      "number": 350069,
+      "comment": "Thanks for the report. What exact action triggers this error—sending a chat message, applying an edit, or something else—and which model and mode are selected? Please try the latest VS Code and Copilot versions, then share the steps and the GitHub Copilot/Copilot Chat Output entries around the failure, including any error reason or status code, with credentials and private content removed. Issues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:36:13.668Z",
+      "verifiedAt": "2026-11-24T20:18:22.207Z",
+      "contentHash": "edf85b5ba89cf497075730ffed00f52b151d4a6b507e5ed7138192ad1c6aa68b",
+      "itemCreatedAt": "2026-11-24T06:38:32Z",
+      "itemUpdatedAt": "2026-11-24T06:38:32Z",
+      "assignees": []
+    },
+    {
+      "number": 350070,
+      "comment": "Thanks for the report and screenshots. Explorer shows Outline and Timeline, but the Folders view appears to be missing. Please try **View: Reset View Locations** from the Command Palette; this resets customized view placement. Does the file tree return?\n\nIf not, please provide the exact steps from opening a new window to the missing tree, whether it also happens with a small local folder in a Temporary Profile, and any errors shown in **Developer: Toggle Developer Tools** → Console. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:36:42.989Z",
+      "verifiedAt": "2026-11-24T20:18:27.826Z",
+      "contentHash": "0fe6e10fd0c49c73253299067d2b132c323facecc75fdc18325a8f2986ba49bb",
+      "itemCreatedAt": "2026-11-24T06:41:58Z",
+      "itemUpdatedAt": "2026-11-24T06:42:51Z",
+      "assignees": []
+    },
+    {
+      "number": 350196,
+      "comment": "Thanks for the report. Which agent/session type and model are you using, and how are you checking what reaches the model? Please share one minimal instruction file, its exact location relative to the open workspace or home directory, the steps used to start the session, and a sanitized request excerpt showing the omission. Does this happen in a new session created after saving the file?\n\nhttps://github.com/microsoft/vscode/issues/339832 describes a similar problem specifically in Copilot agent-host sessions on macOS; identifying the session type will help determine whether these are the same issue. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:32:09.466Z",
+      "verifiedAt": "2026-11-24T20:18:52.014Z",
+      "contentHash": "23a425a9c11d9f96119213c8577bd1b375b362d5b15f91fb59db4372867b3bdf",
+      "itemCreatedAt": "2026-11-24T16:19:04Z",
+      "itemUpdatedAt": "2026-11-24T16:24:13Z",
+      "assignees": []
+    },
+    {
+      "number": 350218,
+      "comment": "Thanks for the report. Does the entire application quit, does a window show a crash message, or does only the SSH connection disconnect? Please share any error text or exit code, the actions leading up to a crash, and a macOS crash report or VS Code logs from that time, with sensitive details removed. Does it also happen in a local window without an SSH connection?\n\nPlease also check whether it persists on the latest available build. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:31:08.214Z",
+      "verifiedAt": "2026-11-24T20:18:51.554Z",
+      "contentHash": "dba2b73bcdaef284dea2f442375f3269e5f7cec779940f5a0ffddcf8f053ebdb",
+      "itemCreatedAt": "2026-11-24T17:35:54Z",
+      "itemUpdatedAt": "2026-11-24T17:35:54Z",
+      "assignees": []
+    },
+    {
+      "number": 350221,
+      "comment": "Thanks for the report. Please provide your VS Code and OS versions, which feature or agent makes the connection, the exact command or steps that fail, and the full error output. Please also show where local-network access is reported as allowed; if this is an agent session, include its /sandbox output with sensitive information removed. A similar Agents Window report is tracked at https://github.com/microsoft/vscode/issues/349281, but we need these details to establish whether it is the same problem.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-24T19:31:13.071Z",
+      "verifiedAt": "2026-11-24T20:18:57.337Z",
+      "contentHash": "5a58d9af2b54387515b56dffb97ea559a70bb125c619678c7b5b7155596bb1e5",
+      "itemCreatedAt": "2026-11-24T18:27:50Z",
+      "itemUpdatedAt": "2026-11-24T18:27:50Z",
+      "assignees": []
+    },
+    {
+      "number": 350101,
+      "comment": "Thanks for the report. Which language and VS Code feature are affected? Please provide the exact error text or a screenshot, steps to reproduce it, what you expected instead, and the extension name associated with version 0.35.3. Please also check whether it occurs in the latest VS Code release. Issues labeled `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-25T18:43:49.592Z",
+      "verifiedAt": "2026-11-25T19:21:54.677Z",
+      "contentHash": "0f273acae472cee2bf8a786e3e1b3f683f3c2d1c86afc3f2faf46a592a5cda29",
+      "itemCreatedAt": "2026-11-24T09:45:57Z",
+      "itemUpdatedAt": "2026-11-24T21:35:38Z",
+      "assignees": []
+    },
+    {
+      "number": 349668,
+      "comment": "Thanks for the report. Please retry on the latest VS Code release and include the Live Server extension ID and version, the steps that trigger the failure, and the complete error message. Use `Developer: Set Log Level...` to select Trace, retry the installation, then open `F1 > Open View... > Shared` and share the signature verification result and output, removing any personal information. Issues labeled `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-25T18:46:50.043Z",
+      "verifiedAt": "2026-11-25T19:21:39.541Z",
+      "contentHash": "2cf3deac903bc78e1aa2f3babf9f27f70399c44795421008d05e00cd9d2e6b41",
+      "itemCreatedAt": "2026-11-22T13:10:01Z",
+      "itemUpdatedAt": "2026-11-24T21:47:18Z",
+      "assignees": []
+    },
+    {
+      "number": 349754,
+      "comment": "Thanks for the report. Could you share the prompt and steps that triggered the edits, the selected session provider and model, and whether you switched from Agent to Ask within the same conversation? Please include a sanitized Chat Debug transcript showing the file-writing tool calls, if available, and note any additional tools configured for Ask. Review any logs for sensitive content before sharing.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-25T18:46:31.541Z",
+      "verifiedAt": "2026-11-25T19:21:56.659Z",
+      "contentHash": "04dbb2b9e4ed6196dfce8641d04cf0c68dcbf3e14477f3653c8f19151b8f44d8",
+      "itemCreatedAt": "2026-11-23T08:54:02Z",
+      "itemUpdatedAt": "2026-11-24T22:09:11Z",
+      "assignees": []
+    },
+    {
       "number": 349846,
-      "comment": "Thanks for the report. Please paste the Shared log from `F1 > Open View... > Shared` immediately after retrying the installation, including the signature verification result and any associated error. Please also include the Google Antigravity version and whether this occurs during installation or an update. Issues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-23T20:07:02.533Z",
-      "verifiedAt": "2026-11-23T20:46:51.755Z",
-      "contentHash": "77f30860fb8f415b548dddcb0d2ab397c381c3e6bbb5811a41391526bafea9fc",
+      "comment": "Thanks for the report. Please share the affected extension's identifier and version, whether this happened during installation or update, the steps you followed, and the full error message. Please also include the relevant log from `F1 > Open View... > Shared`, removing any sensitive information, and let us know whether it still happens on the latest VS Code build.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-25T18:44:27.003Z",
+      "verifiedAt": "2026-11-25T19:21:49.534Z",
+      "contentHash": "ed6517fbdb00f858a02b1c13c570f3a5ad1650c1d04f643b63c25c1653b4efe2",
       "itemCreatedAt": "2026-11-23T13:31:33Z",
-      "itemUpdatedAt": "2026-11-23T13:31:33Z",
+      "itemUpdatedAt": "2026-11-24T22:10:07Z",
+      "assignees": []
+    },
+    {
+      "number": 349883,
+      "comment": "Thanks for the report. Please share the steps or a sample prompt that triggers this, whether it happens in a fresh Gemini Carbon conversation or only a long-running one, and whether the turn eventually completes or ends with another error. Please also include the relevant GitHub Copilot Chat output around a failure, including any error and request ID, with sensitive content removed, and confirm whether it still happens on the latest VS Code build.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-25T18:44:28.405Z",
+      "verifiedAt": "2026-11-25T19:22:01.093Z",
+      "contentHash": "8614b03031f502f6590601a4de7b15bcd159978c1eb0bd6b95944b8e8feecff5",
+      "itemCreatedAt": "2026-11-23T15:57:22Z",
+      "itemUpdatedAt": "2026-11-24T22:23:18Z",
+      "assignees": []
+    },
+    {
+      "number": 349728,
+      "comment": "Thanks for the report. What is failing to sync—VS Code settings/extensions, Git changes, or something else? Please share the steps that trigger the problem, what you expected, and the exact error or a screenshot. If this is Settings Sync, please include the relevant output from “Settings Sync: Show Log,” removing any sensitive information. Does it still happen on the latest VS Code version?\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-25T18:46:10.302Z",
+      "verifiedAt": "2026-11-25T19:21:45.499Z",
+      "contentHash": "521f3e63aafc17715d2557bf9debeae4fd704342e42b023c6d64d794dfc1648a",
+      "itemCreatedAt": "2026-11-23T02:37:19Z",
+      "itemUpdatedAt": "2026-11-24T22:25:14Z",
       "assignees": []
     },
     {
@@ -1532,6 +1592,26 @@
       "assignees": [
         "lszomoru"
       ]
+    },
+    {
+      "number": 349071,
+      "comment": "Thanks for the report. Please provide the title and description in English, including which feature you used, what happened, and what you expected.",
+      "reviewedAt": "2026-11-18T17:09:10.075Z",
+      "verifiedAt": "2026-11-18T17:46:17.388Z",
+      "contentHash": "a182f30c8f3ac82bd4c98e7a0d38530eec7f89b1761654c055fe4354e03305df",
+      "itemCreatedAt": "2026-11-18T13:56:13Z",
+      "itemUpdatedAt": "2026-11-18T13:56:13Z",
+      "assignees": []
+    },
+    {
+      "number": 348997,
+      "comment": "Thanks for the report. Please share a small sample showing the code before and after saving, the file's language, and the exact steps that cause the deletion. Include your `editor.formatOnSave` and `editor.codeActionsOnSave` settings, whether a Copilot edit or agent session is active, and whether it still happens on the latest VS Code version with Copilot disabled.\n\nIssues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-18T17:14:12.948Z",
+      "verifiedAt": "2026-11-18T17:45:58.893Z",
+      "contentHash": "73641106310664cfcb69f2f95a5e7adb27712de1318b372526f0456ae9ad32d1",
+      "itemCreatedAt": "2026-11-18T07:11:29Z",
+      "itemUpdatedAt": "2026-11-18T13:56:34Z",
+      "assignees": []
     },
     {
       "number": 346942,
