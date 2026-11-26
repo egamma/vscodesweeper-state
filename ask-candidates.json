@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-26T19:05:38.109Z",
+  "generatedAt": "2026-11-26T20:04:55.485Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -13,18 +13,6 @@
     ]
   },
   "candidates": [
-    {
-      "number": 349318,
-      "comment": "Thanks for the report. The screenshot shows overlapping repository headings, commit buttons, and changed-file rows. Please share the steps that produce this state, including the repository/worktree setup and whether it starts on opening the workspace or after an action. Please also include the extensions-disabled result and any Console or Git output errors requested above.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-20T17:01:43.424Z",
-      "verifiedAt": "2026-11-20T17:22:46.933Z",
-      "contentHash": "a5ca1ae0446ce31ba3862eeebc07b8385439bb0b5651e2eeed01ba34f449705a",
-      "itemCreatedAt": "2026-11-19T20:02:30Z",
-      "itemUpdatedAt": "2026-11-20T03:19:22Z",
-      "assignees": [
-        "lszomoru"
-      ]
-    },
     {
       "number": 349384,
       "comment": "Thanks for the report. Please try the latest stable VS Code and tell us whether you are signing in with GitHub or Microsoft, which command or feature starts sign-in, the steps you follow, and the complete error message. Please also describe whether the browser opens and returns to VS Code, and include relevant authentication Output logs with tokens and personal information removed.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
@@ -1612,6 +1600,18 @@
       "itemCreatedAt": "2026-11-19T01:56:09Z",
       "itemUpdatedAt": "2026-11-20T03:16:47Z",
       "assignees": []
+    },
+    {
+      "number": 349318,
+      "comment": "Thanks for the report. The screenshot shows overlapping repository headings, commit buttons, and changed-file rows. Please share the steps that produce this state, including the repository/worktree setup and whether it starts on opening the workspace or after an action. Please also include the extensions-disabled result and any Console or Git output errors requested above.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T17:01:43.424Z",
+      "verifiedAt": "2026-11-20T17:22:46.933Z",
+      "contentHash": "a5ca1ae0446ce31ba3862eeebc07b8385439bb0b5651e2eeed01ba34f449705a",
+      "itemCreatedAt": "2026-11-19T20:02:30Z",
+      "itemUpdatedAt": "2026-11-20T03:19:22Z",
+      "assignees": [
+        "lszomoru"
+      ]
     },
     {
       "number": 346942,
