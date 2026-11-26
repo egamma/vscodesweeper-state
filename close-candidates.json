@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-26T08:09:35.407Z",
+  "generatedAt": "2026-11-26T19:05:36.644Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,70 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 350581,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 321941,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The incorrect base branch and excessive Changes loading are already tracked in https://github.com/microsoft/vscode/issues/321941. This adds useful SSH/tunnel evidence: the worktree starts from `develop` while the persisted comparison base is `main`, and the resulting resource requests cause prolonged loading and reconnects; those details should remain part of the investigation.",
+      "reviewedAt": "2026-11-26T18:19:24.971Z",
+      "contentHash": "431eb0070e2b27adc92656e4495c9b648ec2dd237e8e0fec5d162a10302e5e40",
+      "verifiedAt": "2026-11-26T18:58:49.015Z",
+      "confidence": 0.91,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 350571,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 227281,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed reproduction. This is the same SHA-256 parsing problem tracked in https://github.com/microsoft/vscode/issues/227281: commit IDs are truncated to their last 40 characters while parent IDs remain full length. Your five-commit Linux reproduction on VS Code 1.148.0 provides a useful minimal example for that issue.",
+      "reviewedAt": "2026-11-26T18:19:06.790Z",
+      "contentHash": "a6bc5c8f5d78ab644e1bb4957f9ad84aa799c96e1577c32a438ed0c9f50783fc",
+      "verifiedAt": "2026-11-26T18:58:53.449Z",
+      "confidence": 0.97,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
+      "number": 350566,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 337517,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report. This matches the stale, unresponsive question interface tracked in https://github.com/microsoft/vscode/issues/337517. Your checkpoint/start-over reproduction on macOS with VS Code 1.147.0 adds another trigger that the fix should cover.",
+      "reviewedAt": "2026-11-26T18:19:16.511Z",
+      "contentHash": "a2592ec2d019964185f0792bd612850f112f0a31ec1b9e82eba0eb1449a084da",
+      "verifiedAt": "2026-11-26T18:58:46.428Z",
+      "confidence": 0.92,
+      "assignees": [
+        "roblourens"
+      ]
+    },
+    {
+      "number": 350538,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 341326,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. The same subscription-login rejection is tracked in https://github.com/microsoft/vscode/issues/341326, including Linux/Claude Team confirmations. Your Debian 13 reproduction and the voice-dictation consequence add useful context to that thread. Maintainer clarification in https://github.com/microsoft/vscode/issues/333738#issuecomment-5737308066 explains why subscription login is currently excluded; recognizing it is not merely an account-check correction.",
+      "reviewedAt": "2026-11-26T18:20:07.706Z",
+      "contentHash": "797b0f8710e406a9c86dc17358c58b6a0141d7303cf3a70889f00c8b42c8a6ea",
+      "verifiedAt": "2026-11-26T18:58:32.565Z",
+      "confidence": 0.96,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
     {
       "number": 350431,
       "lane": "duplicate",
@@ -152,6 +216,20 @@
       "contentHash": "3a3453fe04c9b167a107f5256617b327e736260882bfdc31cf003fe65c86253c",
       "verifiedAt": "2026-11-24T20:18:36.504Z",
       "confidence": 0.99,
+      "assignees": []
+    },
+    {
+      "number": 350089,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 347909,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed logs and retest. This matches the double-rebuild response stall tracked in https://github.com/microsoft/vscode/issues/347909. Please retain this report's additional evidence there: Windows 11 reproduction on 1.148.0 with MCP disabled, plugin-cache .in_use marker deletion and the suspected loading-to-loaded transition, plus steering releasing the stalled response; disabling plugins avoids the severe stall but not the rebinds.",
+      "reviewedAt": "2026-11-26T18:26:15.958Z",
+      "contentHash": "4f7ca387c0dc52d75187854170954a81ecd103d855ccb32a3ce69efc33660f9c",
+      "verifiedAt": "2026-11-26T18:58:15.144Z",
+      "confidence": 0.94,
       "assignees": []
     },
     {
@@ -390,6 +468,23 @@
       "confidence": 0.95,
       "assignees": [
         "Yoyokrazy"
+      ]
+    },
+    {
+      "number": 348591,
+      "lane": "implemented",
+      "evidence": {
+        "fixedSha": "3ee96c76ee5de933f1dcefe4b98f3bcdb1e0c7e7",
+        "fixedRelease": "1.146.0",
+        "fixUrl": "https://github.com/microsoft/vscode/commit/3ee96c76ee5de933f1dcefe4b98f3bcdb1e0c7e7"
+      },
+      "comment": "Thanks for the detailed trace. https://github.com/microsoft/vscode/commit/3ee96c76ee5de933f1dcefe4b98f3bcdb1e0c7e7 fixes this sequential-steering failure by preserving SDK readiness after the first message is consumed, allowing later steering to reach the running conversation. This can be closed as completed; please report a fresh trace if the same delay persists on the current release. The fix shipped in 1.146.0.",
+      "reviewedAt": "2026-11-26T18:26:40.893Z",
+      "contentHash": "f6d06ee97f9d0b50ece5688c09affb1c0405fc2b6201b52cc40eeead0b8bf4fd",
+      "verifiedAt": "2026-11-26T18:58:04.763Z",
+      "confidence": 0.91,
+      "assignees": [
+        "Giuspepe"
       ]
     },
     {
