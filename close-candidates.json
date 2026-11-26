@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-26T20:04:53.595Z",
+  "generatedAt": "2026-11-26T21:04:23.739Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -92,22 +92,6 @@
       "confidence": 0.97,
       "assignees": [
         "lszomoru"
-      ]
-    },
-    {
-      "number": 350430,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 332073,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed report. Both the stuck subagent indicators and the missing parent replies are tracked in https://github.com/microsoft/vscode/issues/332073. Your VS Code 1.146.0 macOS arm64 logs add confirmation that completed hand-backs produce `sdkUuid=undefined` results while the UI remains running. The proposed fix is still open at https://github.com/microsoft/vscode/pull/336753.",
-      "reviewedAt": "2026-11-25T18:36:54.684Z",
-      "contentHash": "f73046f0ecd51f80e103a97a1a4e10950e164d59fd1bff7acca0bcef45d2daa5",
-      "verifiedAt": "2026-11-25T19:22:15.335Z",
-      "confidence": 0.97,
-      "assignees": [
-        "Giuspepe"
       ]
     },
     {

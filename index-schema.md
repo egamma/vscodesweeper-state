@@ -40,7 +40,7 @@ _Generated from `src/index-schema.ts` — index schema 2. Do not edit by hand; r
 | `comments` | number | beside `lane` | Comment count at review time. |
 | `severity` | string | bugs lane | The bug's severity class. Values: `crash`, `data-loss`, `freeze`, `perf`, `correctness`, `visual`, `papercut`, `none`. |
 | `signal` | string | features lane | Demand signal: `backlog-candidate` (milestoned Backlog), `active` (recent demand), `dormant`. Values: `backlog-candidate`, `active`, `dormant`. |
-| `infoRequestedAt` | string | on a needs-info row whose request still stands (ISO, or `unknown`) | When the repo's needs-info label was applied. |
+| `infoRequestedAt` | string | on a needs-info row whose request still stands, and on an open keep-open row a maintainer asked on (ISO, or `unknown`) | When the repo's needs-info label was applied. On a keep-open row the review judged the report actionable, yet the label is on: an ask waiting on the reporter, or beside `infoAnsweredAt` one waiting on the maintainer. |
 | `infoAnsweredAt` | string | beside `infoRequestedAt`, when the reporter answered but the label is still on | The reporter's first reply after the ask — the issue now waits on the maintainer. |
 | `infoAnsweredBy` | string | beside `infoAnsweredAt` | Who answered. Values: `reporter`. |
 | `autoAskedAt` | string | beside `infoRequestedAt`, when the needs-info bot posted the ask (ISO) | The bot asked, not a maintainer — never count the row as a maintainer's ask. Absent until the auto-ask lane runs. |
