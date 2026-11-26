@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-25T19:29:30.261Z",
+  "generatedAt": "2026-11-26T08:09:35.407Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -127,22 +127,6 @@
       ]
     },
     {
-      "number": 350154,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 289346,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the report. This is the same submitted-message renumbering tracked in https://github.com/microsoft/vscode/issues/289346. Your example of answering questions 1 and 4 belongs there as another reproduction case.",
-      "reviewedAt": "2026-11-24T19:33:48.666Z",
-      "contentHash": "3ccf8cf90249d4e8e6a25fde06c9dbad7be2f830df933ef041e554e18110de26",
-      "verifiedAt": "2026-11-24T20:18:50.853Z",
-      "confidence": 0.97,
-      "assignees": [
-        "justschen"
-      ]
-    },
-    {
       "number": 350114,
       "lane": "duplicate",
       "evidence": {
@@ -168,20 +152,6 @@
       "contentHash": "3a3453fe04c9b167a107f5256617b327e736260882bfdc31cf003fe65c86253c",
       "verifiedAt": "2026-11-24T20:18:36.504Z",
       "confidence": 0.99,
-      "assignees": []
-    },
-    {
-      "number": 350089,
-      "lane": "duplicate",
-      "evidence": {
-        "canonical": 347909,
-        "kind": "peer"
-      },
-      "comment": "Thanks for the detailed logs and isolation steps. This matches https://github.com/microsoft/vscode/issues/347909, which tracks double rebuilds followed by completed Claude replies not reaching chat. Your Windows 11 report adds a useful trigger: plugin-cache `.in_use/<pid>` deletion, a suspected plugin loading-to-loaded transition, and 207–298-second first-progress delays that disappear with plugins disabled.",
-      "reviewedAt": "2026-11-24T19:35:33.782Z",
-      "contentHash": "2fc241226c8fc345f0fd02196add81966fc481d9376f096a5a6bdf8526f9fb4a",
-      "verifiedAt": "2026-11-24T20:18:36.939Z",
-      "confidence": 0.94,
       "assignees": []
     },
     {

@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-25T19:29:31.314Z",
+  "generatedAt": "2026-11-26T08:09:36.876Z",
   "policy": {
     "label": "info-needed",
     "closeDays": 7,
@@ -13,16 +13,6 @@
     ]
   },
   "candidates": [
-    {
-      "number": 349194,
-      "comment": "Thanks for the report. Please follow up on the questions above with a complete Go file showing whether `color` is used, your effective `editor.codeActionsOnSave` and `editor.formatOnSave` settings including `[go]` overrides, and whether saving still removes the import with extensions disabled. Issues marked `info-needed` automatically close after 7 days without a reply.",
-      "reviewedAt": "2026-11-20T17:04:28.410Z",
-      "verifiedAt": "2026-11-20T17:22:23.921Z",
-      "contentHash": "ea736867db26f35397ba4ea28d962c4d0fdd3f4da48758b4e0af0288a6db65c0",
-      "itemCreatedAt": "2026-11-19T01:56:09Z",
-      "itemUpdatedAt": "2026-11-20T03:16:47Z",
-      "assignees": []
-    },
     {
       "number": 349318,
       "comment": "Thanks for the report. The screenshot shows overlapping repository headings, commit buttons, and changed-file rows. Please share the steps that produce this state, including the repository/worktree setup and whether it starts on opening the workspace or after an action. Please also include the extensions-disabled result and any Console or Git output errors requested above.\n\nIssues marked info-needed automatically close after 7 days without a reply.",
@@ -1611,6 +1601,16 @@
       "contentHash": "73641106310664cfcb69f2f95a5e7adb27712de1318b372526f0456ae9ad32d1",
       "itemCreatedAt": "2026-11-18T07:11:29Z",
       "itemUpdatedAt": "2026-11-18T13:56:34Z",
+      "assignees": []
+    },
+    {
+      "number": 349194,
+      "comment": "Thanks for the report. Please follow up on the questions above with a complete Go file showing whether `color` is used, your effective `editor.codeActionsOnSave` and `editor.formatOnSave` settings including `[go]` overrides, and whether saving still removes the import with extensions disabled. Issues marked `info-needed` automatically close after 7 days without a reply.",
+      "reviewedAt": "2026-11-20T17:04:28.410Z",
+      "verifiedAt": "2026-11-20T17:22:23.921Z",
+      "contentHash": "ea736867db26f35397ba4ea28d962c4d0fdd3f4da48758b4e0af0288a6db65c0",
+      "itemCreatedAt": "2026-11-19T01:56:09Z",
+      "itemUpdatedAt": "2026-11-20T03:16:47Z",
       "assignees": []
     },
     {
