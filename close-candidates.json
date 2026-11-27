@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "target": "microsoft/vscode",
-  "generatedAt": "2026-11-26T21:04:23.739Z",
+  "generatedAt": "2026-11-27T18:50:50.781Z",
   "policy": {
     "lanes": [
       "duplicate",
@@ -14,6 +14,38 @@
     "includeAssignees": []
   },
   "candidates": [
+    {
+      "number": 350660,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 336534,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the request. https://github.com/microsoft/vscode/issues/336534 already tracks an indicator for chat sessions with edits awaiting Keep or Undo, so we can consolidate this request there.",
+      "reviewedAt": "2026-11-27T18:07:04.106Z",
+      "contentHash": "5cf2074e0ad21c73cdcefc8c36bbfe215e8ea182ed7017d2e0a49972866255bd",
+      "verifiedAt": "2026-11-27T18:42:49.311Z",
+      "confidence": 0.97,
+      "assignees": [
+        "sandy081"
+      ]
+    },
+    {
+      "number": 350627,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 349895,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. This matches the optional TLS client-certificate discovery failure tracked in https://github.com/microsoft/vscode/issues/349895. The Windows/plugin setup, TLS renegotiation diagnostics, direct-connection result, and observation that editor sign-in does not unblock the Agents window are useful additional evidence; the workaround reported there should not be assumed to work here.",
+      "reviewedAt": "2026-11-27T18:08:46.924Z",
+      "contentHash": "8d05e93297b4027e62a93ac5f7edab54aa8cd25bc859df0a5195dc7c88997a5f",
+      "verifiedAt": "2026-11-27T18:42:50.991Z",
+      "confidence": 0.93,
+      "assignees": [
+        "TylerLeonhardt"
+      ]
+    },
     {
       "number": 350581,
       "lane": "duplicate",
@@ -37,10 +69,10 @@
         "canonical": 227281,
         "kind": "peer"
       },
-      "comment": "Thanks for the detailed reproduction. This is the same SHA-256 parsing problem tracked in https://github.com/microsoft/vscode/issues/227281: commit IDs are truncated to their last 40 characters while parent IDs remain full length. Your five-commit Linux reproduction on VS Code 1.148.0 provides a useful minimal example for that issue.",
-      "reviewedAt": "2026-11-26T18:19:06.790Z",
-      "contentHash": "a6bc5c8f5d78ab644e1bb4957f9ad84aa799c96e1577c32a438ed0c9f50783fc",
-      "verifiedAt": "2026-11-26T18:58:53.449Z",
+      "comment": "Thanks for the report and clear reproduction. This is already tracked in https://github.com/microsoft/vscode/issues/227281, including the disconnected graph and truncation to the last 40 hash characters. Your five-empty-commit reproduction on Linux with VS Code 1.148.0 provides a useful current example of the same problem.",
+      "reviewedAt": "2026-11-27T18:11:55.581Z",
+      "contentHash": "f8a562a2199df0da3db26776b2eb86dc421d07ab418bc5c4ddab5c877fe30356",
+      "verifiedAt": "2026-11-27T18:42:36.199Z",
       "confidence": 0.97,
       "assignees": [
         "lszomoru"
@@ -92,6 +124,22 @@
       "confidence": 0.97,
       "assignees": [
         "lszomoru"
+      ]
+    },
+    {
+      "number": 350430,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 332073,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the detailed report. Both symptoms match the message-routing gap tracked in https://github.com/microsoft/vscode/issues/332073: after the parent turn ends, background completion notifications and subsequent parent replies are dropped. This report adds useful macOS arm64 evidence, including completed subagent metadata and the two `sdkUuid=undefined` result entries.",
+      "reviewedAt": "2026-11-27T18:11:53.276Z",
+      "contentHash": "a8f0160705ef6492323c6e528814c030765c9eaf96664d1d97cc539ee2c384bd",
+      "verifiedAt": "2026-11-27T18:42:21.025Z",
+      "confidence": 0.95,
+      "assignees": [
+        "Giuspepe"
       ]
     },
     {
@@ -472,6 +520,22 @@
       ]
     },
     {
+      "number": 347855,
+      "lane": "duplicate",
+      "evidence": {
+        "canonical": 321941,
+        "kind": "peer"
+      },
+      "comment": "Thanks for the report and detailed reproduction. This is the same non-default-parent comparison problem tracked in https://github.com/microsoft/vscode/issues/321941. This report adds a useful acceptance case: selecting `feature` for a New Worktree session and editing only `index.js` must exclude `featureA.js` and `featureB.js`, and Merge Changes and Create PR should target `feature`, not `master`. The Changes and merge-target behavior was confirmed on Insiders 1.147.0/macOS; Create PR remains reporter-observed.",
+      "reviewedAt": "2026-11-27T18:12:47.920Z",
+      "contentHash": "079d2fa2811e9df7345fb4c033386b91833768a92202fba4e6edfae11d9dd4e2",
+      "verifiedAt": "2026-11-27T18:42:13.398Z",
+      "confidence": 0.93,
+      "assignees": [
+        "lszomoru"
+      ]
+    },
+    {
       "number": 347581,
       "lane": "duplicate",
       "evidence": {
@@ -680,24 +744,6 @@
       "confidence": 0.91,
       "assignees": [
         "lszomoru"
-      ]
-    },
-    {
-      "number": 341150,
-      "lane": "implemented",
-      "evidence": {
-        "fixedSha": "8fb60541db0e1a371ea40157e0f58951ae4a485d",
-        "fixedRelease": "1.145.0",
-        "fixUrl": "https://github.com/microsoft/vscode/commit/8fb60541db0e1a371ea40157e0f58951ae4a485d"
-      },
-      "comment": "Thanks for the report. This was addressed in https://github.com/microsoft/vscode/commit/8fb60541db0e1a371ea40157e0f58951ae4a485d: Ctrl-selecting multiple Connected editor tabs now keeps a visible selection accent on both active and inactive selected tabs. The fix shipped in 1.145.0.",
-      "reviewedAt": "2026-11-23T09:22:08.332Z",
-      "contentHash": "39284dac659839c517e25ff74b95cd9b1ec8e6db19d97363839158b0d7f13a6f",
-      "verifiedAt": "2026-11-23T09:52:18.927Z",
-      "confidence": 0.94,
-      "assignees": [
-        "chryw",
-        "mrleemurray"
       ]
     },
     {
